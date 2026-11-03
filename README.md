@@ -1,290 +1,362 @@
-# SuperMimic reproduction on Isaac Lab 3 (kit-less, MuJoCo-Warp)
+<!--
+  Placeholders: every "TBD" cell and every block marked TODO is to be filled in once the runs exist.
+  Search for "TODO" and "TBD" before publishing. Numbers must come from runs in this repository.
+-->
 
-**Unofficial** reproduction of *SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World
-Model* (arXiv 2610.28480) — no official code is released, so everything here is implemented from
-the paper. Target experiment: the controlled LAFAN1 comparison (Fig. 4a): 40 G1-retargeted LAFAN1
-clips (2.45 h), one GPU; the paper reaches evaluation normalized return 0.82 after 1.2 h on an H100.
+# ACP-G1 <!-- TODO: final project name -->
 
-Author: **Chong Zhang** (ETH Zurich). License: [MIT](LICENSE).
+**Contact-planned whole-body mobility for the Unitree G1, trained through one differentiable world model.**
+<!-- TODO: one-sentence headline result, e.g. "X % success on Y procedural terrain types after Z h on one GPU". -->
 
-> **Disclaimer:** this repository was speed-vibecoded in 1 hour with an AI coding
-> assistant. It
-> deliberately does not live under any lab's organization, because the code is too much "slop"
-> for that: fast and unreviewed. Use it at
-> your own risk.
+ACP-G1 implements *Humanoid Mobility via Attention-based Contacts* (He, Wen, Zhang et al., arXiv:2610.31608) on
+the Unitree G1. It trains with SuperMimic instead of PPO: the policy learns by backpropagating imagined returns
+through a learned world model. An attention-based **contact planner** reads a height scan, proprioception and a
+goal, and predicts where each of 9 bodies (feet, knees, hands, elbows, pelvis) makes its next contact. A
+**contact tracker** turns these targets into joint commands. Motion data is used only as a training prior. The
+final stage fine-tunes both networks on procedural terrains for which no reference motion exists.
 
-> **One G1 motion tracker for all 40 LAFAN1 clips, trained in only ~1.5 GPU-hours**
-> (1.47 h on a single RTX PRO 6000): evaluation return **0.829** with **0/40 failed clips**.
-> For scale, the paper's PPO-in-simulator baseline does not reach return 0.82 within 18 h on up to
-> 8 GPUs.
+It runs on [mjlab](https://github.com/mujocolab/mjlab) / MuJoCo Warp and trains on the
+[PHP parkour](https://github.com/amazon-far/php_parkour) G1 motion bundles (296 clips, 1.0 h, 50 fps, each clip
+with its own box terrain in 10 variants).
 
-![SuperMimic G1 tracking LAFAN1 motions](results/supermimic_lafan1_highlight.gif)
+> **TODO: release note.** Version, date, and what the release contains, for example "v1.0 (YYYY-MM-DD): Stages 1–3,
+> procedural goal-reaching terrains, evaluation on N terrain types". Link [CHANGELOG.md](CHANGELOG.md) once it
+> exists.
 
-*Solid robot: the trained policy simulated in Isaac Lab with MuJoCo-Warp. Blue ghost: the reference
-motion. Clips: dance, jumps, fall-and-get-up, sprint.*
+<!-- TODO: teaser GIF, e.g. media/teaser.gif: the Stage 3 policy on stairs, a climb and stepping stones. -->
+![TODO: teaser](media/teaser.gif)
 
-Progress and timestamps: [MILESTONES.md](MILESTONES.md).
+*TODO: caption. State what is shown, the checkpoint, the terrain and level, and whether this is simulation (MuJoCo
+Warp) or hardware.*
 
-## Layout
+| on 1× TODO GPU | Stage 1 tracker | Stage 2 (planner targets) | **Stage 3** |
+|---|---|---|---|
+| seeds | TBD | TBD | TBD |
+| training time | TBD | TBD | TBD |
+| reference clips: normalized return / failed clips (of 296) | TBD | TBD | TBD |
+| goal reaching: success over all terrain types and levels | — | TBD (zero-shot) | TBD |
+| contact placement error, feet (median, cm) | TBD | TBD | TBD |
+| planner F1, feet / knees / hands | — | TBD | TBD |
 
-| Path | What |
-|---|---|
-| `IsaacLab/` | Isaac Lab `main` @ 46d6cc3 (VERSION 3.0.0), unmodified — cloned by `tools/setup.sh`, not tracked |
-| `docker/` | `Dockerfile`: `supermimic:latest` = `isaac-lab-kitless:main-46d6cc3` (built from `IsaacLab/docker/Dockerfile.kitless`) + tmux, ffmpeg, gcc (for `torch.compile`); `run_container.sh` |
-| `data/` | not tracked; `tools/download_data.sh` fetches LAFAN1 G1 retargets (HF `lvhaidong/LAFAN1_Retargeting_Dataset`) and the G1 URDF/meshes, then builds `g1_29dof.xml` (MJCF) and the USD |
-| `supermimic/` | implementation (see below) |
-| `supermimic/acp/` | attention-based contact planner + contact tracker for the G1 on box terrain, on mjlab ([below](#contact-planner-on-box-terrain-g1-mjlab)) |
-| `tools/` | setup, asset conversion, tests, benchmark, plotting, rendering, failure analysis |
-| `logs/<run>/` | not tracked: `train_log.csv`, `eval.csv`, checkpoints, stdout |
-| `results/` | success curve and highlight GIF (full videos are rendered locally with `tools/render.py`) |
+All numbers come from runs in this repository. TODO: say where each run's logs are kept (e.g. `results/runs/`) and
+which script regenerates the tables. Read [How to read these numbers](#how-to-read-these-numbers) before quoting
+them.
+
+**Contents:** [Overview](#overview) · [Differences from the paper](#differences-from-the-paper) ·
+[Results](#results) · [How to read these numbers](#how-to-read-these-numbers) · [Setup](#setup) ·
+[Training](#training) · [Evaluation](#evaluation-and-metrics) · [Reproducing the tables](#reproducing-the-tables) ·
+[Repository layout](#repository-layout) · [Attribution and licenses](#attribution-and-licenses) ·
+[Citation](#citation)
+
+---
+
+## Overview
+
+<!-- TODO: pipeline figure, e.g. media/pipeline.png: planner -> targets -> tracker -> simulator / world model. -->
+
+Two networks run at 50 Hz. Every quantity is expressed in the pelvis heading frame (origin at the pelvis, rotated by
+its yaw only), so deployment needs no global odometry.
+
+| network | inputs | output |
+|---|---|---|
+| **Contact planner** (paper Table S3, attention) | 17 × 11 height scan (0.1 m cells, 1.6 × 1.0 m), 5 steps of proprioception, goal command | per body: the top-1 terrain point of its next contact within 1.5 s, and an occupancy (contact or not) |
+| **Contact tracker** | 10 steps of proprioception, the 9 contact targets, goal command, 9 × 7 local height scan (0.8 × 0.6 m) | joint position targets (PD at 200 Hz) |
+
+The goal command is the paper's bounded direction d_xy / max(‖d_xy‖, r) and a relative heading. r is 0.3 m toward
+the reference 0.5–1.5 s ahead and 0.5 m toward a terrain goal. The world model and the critics also see an exact
+height scan of the terrain in every stage.
+
+The training follows the paper's three stages:
+
+| stage | script | what trains | episodes |
+|---|---|---|---|
+| labels | `make_labels` | per-frame contact labels of every clip and terrain variant (MuJoCo `mj_geomDistance`) | — |
+| 1 | `train_stage1` | tracker, on reference contact targets (terrain points of contacts ≥ 10 steps) | reference clips, backward curriculum |
+| 2, offline | `train_planner_offline` | planner, on hindsight labels of the frozen tracker | reference clips, uniform start phase |
+| 2 | `train_stage2` | tracker + planner; η_obs and η_rew hand the tracker over to the planner's targets | reference clips, uniform start phase |
+| 3 | `train_stage3` | tracker + planner on reference following and goal reaching, two critics | reference clips from frame 0 + procedural terrains |
+
+**Procedural terrains (Stage 3).** These are built from boxes: 9 types × 10 difficulty levels × N random instances,
+each rotated by a random yaw.
+
+| type | course | difficulty (level 0 → 9) |
+|---|---|---|
+| stairs_up / walled_stairs | 4–6 steps up to a landing (walls on both sides) | step height 5 → 20 cm |
+| stairs_down | start on a landing, 4–6 steps down | step height 5 → 20 cm |
+| platform | walk-up platform of random orientation | 10 → 40 cm |
+| climb | climbable obstacle | 40 → 85 cm |
+| gap | start platform, gap, goal platform | gap 10 → 60 cm |
+| stepping_stones | 6 stones between two platforms | stones 45 → 25 cm, gaps 5 → 35 cm |
+| balance_beam | beam between two platforms | width 50 → 20 cm |
+| pallets | narrow slats with gaps | slats 20 → 10 cm, gaps 5 → 25 cm |
+
+## Differences from the paper
+
+The baseline is the paper's three-stage pipeline. Where this implementation deviates, the reason is either the
+learner (gradients through a world model, not PPO), the robot or the data.
+
+| aspect | paper | here | why |
+|---|---|---|---|
+| tracker learning | PPO | SuperMimic: BPTT through 32 imagined steps of one world model, critic bootstrap | method choice |
+| contact detection | contact forces | signed distance of a sphere approximation of each body's collision geoms to the terrain (24 spheres per convex mesh) | differentiable, available on imagined states |
+| reward indicators (Stage 3) | 0/1 | sigmoids at the same thresholds | an indicator gives no gradient through the world model |
+| advantage normalization per group (Stage 3) | yes | each group's imagined return divided by an EMA of its own spread | no advantages without PPO |
+| stumbling term | yes | not used | needs contact forces |
+| terrains | ladders, get-up, scanned meshes, … | box-built types only (table above) | box slots per simulated world |
+| goal-buffer eviction | quality-based (positive work per goal distance) | FIFO per terrain type, sampling balanced across types | simplification |
+| fall termination | not specified | pelvis < 0.25 m above the terrain, or tilt 1 − R_zz > 0.8 | just beyond the G1 references' extremes (0.345 m, 0.695) |
+| perception | LiDAR neural mapping | exact height scan from the box geometry, Gaussian noise 3 cm (planner) / uniform 5 cm (tracker) | simulation only; TODO: mapping noise model |
+| domain randomization | Table S2 | friction U(0.3, 1.2), joint offsets ±0.01 rad, torso CoM offset; no pushes | TODO: match Table S2 if needed |
+
+TODO: anything else changed before release (e.g. hyperparameters tuned per stage).
+
+## Results
+
+Setup for all runs: TODO GPU, TODO CPU threads, 4096 parallel environments. The software stack is mjlab 1.6.0,
+MuJoCo / MuJoCo Warp 3.11, Warp 1.16, and torch 2.9.0 + CUDA 12.8. TODO: checkpoint interval, and whether
+evaluation time is excluded from training time.
+
+### Stage 1: contact tracker on reference targets
+
+TODO: learning curve, e.g. results/stage1_curve.png.
+
+| run | seeds | iterations | time (h) | return ↑ | failed (of 296) ↓ | touch precision / recall ↑ | placement err feet (cm) ↓ |
+|---|---|---|---|---|---|---|---|
+| TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+
+Per motion folder:
+
+| folder | return | fail rate |
+|---|---|---|
+| motions-low-step | TBD | TBD |
+| motions-high-step | TBD | TBD |
+| motions-low-climb-76 | TBD | TBD |
+| motions-high-climb-76 | TBD | TBD |
+| motions-locomotion | TBD | TBD |
+
+### Stage 2: planner
+
+Planner offline on the frozen tracker. The validation set is every 10th clip of each folder:
+
+| body | F1 ↑ | median top-1 error (cm) ↓ | within 0.1 m ↑ |
+|---|---|---|---|
+| feet (L / R) | TBD | TBD | TBD |
+| knees (L / R) | TBD | TBD | TBD |
+| hands (L / R) | TBD | TBD | TBD |
+| elbows (L / R) | TBD | TBD | TBD |
+| pelvis | TBD | TBD | TBD |
+
+Co-training: tracker driven by planner targets only (η_obs = 1):
+
+| checkpoint | return ↑ | failed ↓ | onset error, planner vs reference targets (cm) ↓ |
+|---|---|---|---|
+| TBD | TBD | TBD | TBD |
+
+### Stage 3: goal reaching
+
+TODO: figure of success per terrain type and level, e.g. results/stage3_levels.png.
+
+| terrain type | success ↑ | fall ↓ | time to goal (s) | highest level held |
+|---|---|---|---|---|
+| stairs_up | TBD | TBD | TBD | TBD |
+| stairs_down | TBD | TBD | TBD | TBD |
+| walled_stairs | TBD | TBD | TBD | TBD |
+| platform | TBD | TBD | TBD | TBD |
+| climb | TBD | TBD | TBD | TBD |
+| gap | TBD | TBD | TBD | TBD |
+| stepping_stones | TBD | TBD | TBD | TBD |
+| balance_beam | TBD | TBD | TBD | TBD |
+| pallets | TBD | TBD | TBD | TBD |
+| **all** | TBD | TBD | TBD | — |
+
+Reference following kept during Stage 3:
+
+| | Stage 2 | Stage 3 |
+|---|---|---|
+| return / failed clips | TBD | TBD |
+
+### Ablations
+
+Each row changes one thing from the main configuration.
+
+| configuration | seeds | metric 1 | metric 2 |
+|---|---|---|---|
+| main configuration | TBD | TBD | TBD |
+| blind tracker (`--blind`) | TBD | TBD | TBD |
+| SuperMimic tracking reward instead of the paper's (`train_stage1 --reward supermimic`) | TBD | TBD | TBD |
+| no backward curriculum (`--no-backward_curriculum`) | TBD | TBD | TBD |
+| reference termination window (`--term_window 0.5`) | TBD | TBD | TBD |
+| TBD | TBD | TBD | TBD |
+
+### What did not help
+
+TODO: list the configurations tried and not adopted, with numbers, as in the ablation table.
+
+## How to read these numbers
+
+- **Simulation only.** TODO: state whether any number comes from hardware.
+- **Exact perception.** The planner's height scan is computed from the box geometry with added noise, not from a
+  sensor pipeline. Results on a real robot depend on the mapping.
+- **Evaluation noise.** MuJoCo Warp on the GPU is not bit-deterministic. TODO: report how much re-evaluating one
+  checkpoint moves each metric.
+- **Seeds.** TODO: the number of seeds per row, and whether the tables show the mean, the median or the best seed.
+- **Terrain bank.** Stage 3 trains and evaluates on the same generator (seed 0 by default).
+  `evaluate_goal --terrain_seed` gives unseen instances of the same types. TODO: report both.
+- TODO: anything specific to comparing against the paper (different robot data, different learner, no PPO
+  baseline here).
 
 ## Setup
 
-Neither Isaac Lab nor any data is included in this repository; the steps below fetch them.
-
-**Requirements:** Linux, an NVIDIA GPU (tested: RTX PRO 6000 Blackwell, driver 580 / CUDA 13),
-Docker with the NVIDIA Container Toolkit (`docker run --gpus` must work), ~20 GB of disk for the
-images and ~0.2 GB for the data.
-
-Physics: Newton with the MuJoCo-Warp solver (`NewtonCfg(MJWarpSolverCfg(...))`), no Kit, no PhysX;
-50 Hz control, 4 substeps of 5 ms, implicitfast integrator, MuJoCo collision pipeline.
-
-### 1. Isaac Lab (kit-less Docker image)
-
-The code runs against Isaac Lab 3 `main` at commit
-[`46d6cc3`](https://github.com/isaac-sim/IsaacLab/commit/46d6cc3d7b115906fad12efd372fbf69f4e3d3ed)
-(VERSION 3.0.0), unmodified, inside Isaac Lab's **kit-less** image (no Isaac Sim / Kit, no PhysX).
-Newer `main` commits may work but are untested.
+**Requirements:**
+- Linux x86_64.
+- An NVIDIA GPU with a driver for CUDA 12.8. TODO: tested GPU and driver.
+- Python 3.10–3.13, `git`, `curl`.
+- About TODO GB of GPU memory at 4096 environments. The replay buffer alone takes about 7.5 GB, since it must hold
+  the longest episode (1326 frames).
 
 ```bash
-tools/setup.sh
+git clone TODO-repository-url && cd TODO-repository-dir
+pip install "mjlab==1.6.0" "torch==2.9.0" --extra-index-url https://download.pytorch.org/whl/cu128   # TODO: or uv sync
+tools/download_data.sh            # G1 URDF + meshes -> data/g1_description (also LAFAN1, unused here)
+python tools/urdf_to_mjcf.py      # builds data/g1_description/g1_29dof.xml (the script's last, Docker step is for Isaac Lab only)
+ln -s <php_parkour>/data data/php_parkour     # the five PHP bundles: motions-{low,high}-step, motions-{low,high}-climb-76, motions-locomotion
+python -m supermimic.acp.make_labels          # contact labels -> data/php_parkour_contacts (~1 min on 16 CPU workers)
 ```
 
-which is equivalent to:
+TODO: a sanity-check command (e.g. FK vs simulator, or reference playback on the boxes).
+
+## Training
 
 ```bash
-git clone https://github.com/isaac-sim/IsaacLab.git
-git -C IsaacLab checkout 46d6cc3d7b115906fad12efd372fbf69f4e3d3ed
-(cd IsaacLab && docker build -f docker/Dockerfile.kitless -t isaac-lab-kitless:main-46d6cc3 .)
-docker build -t supermimic:latest docker/     # + tmux, ffmpeg, gcc, NVIDIA EGL vendor file
+python -m supermimic.acp.train_stage1 --log_dir logs/acp_stage1
+python -m supermimic.acp.train_planner_offline --tracker logs/acp_stage1/ckpt_060000.pt --log_dir logs/acp_planner
+python -m supermimic.acp.train_stage2 --init logs/acp_stage1/last.pt --planner_init logs/acp_planner/planner_020000.pt --log_dir logs/acp_stage2
+python -m supermimic.acp.train_stage3 --init logs/acp_stage2/last.pt --log_dir logs/acp_stage3
 ```
 
-Then start the long-lived container (repository mounted at `/workspace/supermimic`):
+Settings travel in each checkpoint (`ctc_cfg`, `reward_cfg`, `planner_cfg`, `goal_cfg`, `terrain_args`), and
+later stages rebuild them from there. `--resume <last.pt>` continues a run. TODO: wall-clock time of each stage.
 
-```bash
-docker/run_container.sh 0 128g     # GPU index 0, 128 GB memory cap
-```
+Main flags:
 
-### 2. Data: LAFAN1 motions and the G1 model
-
-| What | Source | License | Goes to |
+| script | flag | default | meaning |
 |---|---|---|---|
-| 40 LAFAN1 clips retargeted to the 29-DoF G1 (30 fps CSV: root pos, root quat xyzw, 29 joint angles) | HF [`lvhaidong/LAFAN1_Retargeting_Dataset`](https://huggingface.co/datasets/lvhaidong/LAFAN1_Retargeting_Dataset), folder `g1/` | CC BY-NC-ND 4.0 (Ubisoft La Forge) | `data/lafan1_g1/*.csv` |
-| G1 description `g1_29dof_rev_1_0.urdf` + meshes (the model the clips were retargeted to) | same dataset, folder `robot_description/g1/` | BSD-3-Clause (Unitree) | `data/g1_description/` |
+| all | `--num_envs` | 4096 | parallel simulated robots |
+| all | `--horizon` | 32 | imagination horizon |
+| all | `--seed` | 0 | random seed |
+| `train_stage1` | `--iterations` | 60000 | |
+| `train_stage1` | `--blind` | off | drop the tracker's 9 × 7 height scan |
+| `train_stage1` | `--reward` | `paper` | `paper` (Stage 1 reward) or `supermimic` (tracking reward + contact labels) |
+| `train_stage1` | `--backward_curriculum` | on | the paper's start-phase curriculum |
+| `train_planner_offline` | `--steps` | 20000 | simulator steps |
+| `train_stage2` | `--u_obs`, `--u_rew`, `--n_ann` | 2000, 12000, 20000 | η_obs / η_rew ramps (Eq. 3), in iterations |
+| `train_stage2` | `--hold_admit` | 0.6 | pause the ramps while the hindsight admission rate drops below this share |
+| `train_stage2`, `train_stage3` | `--term_window` | 0 | s: tolerance of the reference termination to being early or late |
+| `train_stage3` | `--goal_frac` | 0.5 | share of goal-reaching environments and imagination samples |
+| `train_stage3` | `--critic_warmup` | 500 | iterations before goal samples enter the actor loss |
+| `train_stage3` | `--terrain_instances`, `--terrain_seed` | 16, 0 | the procedural terrain bank |
+| `train_stage3` | `--start_level` | 0 | goal environments start at a uniform level up to this |
 
-With the container from step 1 running:
-
-```bash
-tools/download_data.sh
-```
-
-This also caches Isaac Lab's official ground plane and textures in `data/ground/`.
-For existing datasets, run `bash tools/download_ground.sh` once. This avoids a startup
-stall in OmniClient's S3 download. No Docker rebuild is needed.
-
-It downloads both, then converts the robot inside the container:
-`tools/urdf_to_mjcf.py` compiles the URDF into `data/g1_description/g1_29dof.xml` (free-floating
-pelvis), and `tools/mjcf_to_usd.py` converts that MJCF to `data/g1_usd/g1_29dof/g1_29dof.usda`,
-which Isaac Lab spawns. The conversion is offline because the kit-less importers cannot run inside
-an Isaac Lab process (see Deviations). Expected result:
-
-```
-data/
-├── lafan1_g1/                  40 CSVs (dance, fallAndGetUp, fight, jumps, run, sprint, walk)
-├── g1_description/
-│   ├── g1_29dof_rev_1_0.urdf
-│   ├── g1_29dof.xml            generated MJCF
-│   └── meshes/*.STL            38 meshes
-└── g1_usd/g1_29dof/            generated USD (+ payloads/)
-```
-
-Check: `ls data/lafan1_g1 | wc -l` prints `40`, and the clips total 264,705 frames at 30 fps
-(2.45 h). `tools/test_env.py` checks the converted robot against the reference motions (FK vs.
-simulator should agree to ~1e-6):
+## Evaluation and metrics
 
 ```bash
-docker exec supermimic python tools/test_env.py
+# every clip once from its first frame, reference targets or the planner's
+python -m supermimic.acp.evaluate --ckpt logs/acp_stage2/ckpt_040000.pt --planner logs/acp_stage2/ckpt_040000.pt [--record traj.npz]
+# every procedural terrain type and level
+python -m supermimic.acp.evaluate_goal --ckpt logs/acp_stage3/ckpt_030000.pt --episodes 4
 ```
 
-## Usage
+Protocol: no randomization, no observation noise, deterministic policy, friction 1.0, each clip on its first valid
+terrain variant. Results go to a json next to the checkpoint.
 
-```bash
-CPUS=0-23 ./run_train.sh lafan1_main          # training in tmux session 'lafan1_main' (optional CPU pinning)
-docker exec -it supermimic tmux attach -t lafan1_main
-docker exec supermimic tmux new -d -s eval_main "cd /workspace/supermimic && python supermimic/evaluate.py --run_dir logs/lafan1_main --watch"
-docker exec supermimic python tools/plot.py logs/lafan1_main --out results/success_curve.png
-docker exec supermimic python supermimic/evaluate.py --run_dir logs/lafan1_main --ckpt logs/lafan1_main/ckpt_014000.pt --record traj.npz
-docker exec supermimic python tools/render.py traj.npz out.mp4 --clips dance2_subject1 --seconds 10
-```
+Definitions:
+- *Normalized return*: the SuperMimic tracking reward summed over the clip, divided by its maximum. A clip fails if
+  the training termination triggers.
+- *Touch precision / recall*: per body, frames touching the terrain (sphere approximation within 1 cm) against the
+  reference labels.
+- *Placement error*: per body, the distance from where each new contact lands to the nearest target commanded over
+  the last 5 steps.
+- *Planner F1 / top-1 error*: occupancy F1, and the distance from the top-1 point to the hindsight label, on
+  held-out clips.
+- *Goal success*: within 0.5 m horizontally and 0.1 m vertically of the goal, with no fall before the episode ends
+  (15 s).
 
-The first iterations are slow while `torch.compile` builds its kernels (cached in `.cache/`).
-Checkpoints are written every 2000 iterations to `logs/<run>/`; the eval watcher scores each on all
-40 clips and appends to `logs/<run>/eval.csv`.
+TODO: any further metric added for the tables (e.g. foot slip, penetration).
 
-### Community-trained checkpoint (Not Official)
+## Reproducing the tables
 
-[G1 policy weights on Hugging Face](https://huggingface.co/pantelismanouselis/g1-supermimic-lafan1),
-published by Pantelis Manouselis, include evaluation results and motion videos.
-This separate training run reached normalized return **0.8696**, with **0/40 failed training clips**.
-The inference-only release uses Safetensors. Follow the
-[compatible fork's loading instructions](https://github.com/Manouselis/supermimic_vibed_fork/blob/8bdf60a74c700720817669539e160f4f846b0cf4/docs/RELEASE.md).
-The local `.pt` workflow above is unchanged.
+TODO: the exact command lines (seeds, iterations, checkpoints), the script that collects the evaluation jsons into
+the tables, and where the figures are written.
 
-## Result (LAFAN1, 40 clips, one RTX PRO 6000 Blackwell)
+## Repository layout
 
-Evaluation return 0.824 at 1.24 h of training (paper: 0.82 at 1.2 h on an H100) and 0.829 with
-**0/40 failed clips** at 1.47 h (iteration 14000).
-
-![success curve](results/success_curve.png)
-
-## Implementation (paper section -> file)
-
-* G1 29-DoF, BeyondMimic actuators (10 Hz natural frequency, damping ratio 2, motor armatures,
-  action scale 0.25·τmax/Kp) — `supermimic/robot.py`.
-* Reference library: 30 -> 50 Hz resampling, finite-difference velocities, FK of 14 tracked bodies,
-  1 s bins — `supermimic/motion.py`, differentiable torch FK `supermimic/kinematics.py`
-  (matches the simulator's link poses/velocities to 1e-6).
-* MDP (App. A): observation (q−q0, q̇, IMU ω, projected gravity, a_{t−1}; 10-frame history; Table A.1
-  noise), K=10 future reference frames as the goal, BeyondMimic tracking reward without the
-  self-collision term and joint-limit weight −2, termination |e_z|>0.25 m or e_tilt>0.8, sim context
-  ξ = (friction U[0.3,1.2], joint offsets U[±0.01], torso CoM offset) — `supermimic/mdp.py`.
-* Simulator wrapper with return-based reset sampling (50% uniform / 40% softmax(−25 G_b/G_max) /
-  10% past-softmax) — `supermimic/env.py`.
-* World model f_ω: MLP(2048,2048,2048) on heading-invariant state features + action + ξ, predicting
-  frame-local increments; fit on k=8-step autoregressive windows (Eq. 1); analytic reward,
-  observation and termination heads — `supermimic/networks.py`, `supermimic/train.py`.
-* Policy: motion encoder MLP(2048,1024,512,256)->z∈R^32 (tanh), shared decoder
-  MLP(2048,1024,512,256); critic MLP(256,128). BPTT over H=32 imagined steps from replay-buffer
-  states with a soft survival weight and critic bootstrap (Eq. 2); critic on GAE(λ=0.95) targets
-  (Eq. 3), 5 epochs × 4 minibatches.
-* Hyperparameters as Table A.5: 4096 envs, buffer 1000 steps/env, action noise N(0, 0.1²),
-  UTD 0.4 (2.5 vectorized sim steps per iteration), 10 WM batches of 2048 windows per iteration,
-  4096 imagined rollouts, Adam lr 2e-4 (policy β=(0.9,0.95)), cosine decay to 0.03× over 250k
-  iterations, grad clip 1.0 (+ element-wise 0.1 for the policy), γ=0.99.
-* Evaluation (App. F.1): each clip once from its first frame, friction 1.0, no DR/noise,
-  deterministic policy; failure = training termination — `supermimic/evaluate.py`.
-
-## Deviations / choices not specified by the paper
-
-* **Self-collisions disabled** in the simulator (speed); robot–ground contacts use the URDF's
-  convex mesh hulls and foot spheres.
-* **bf16 autocast for MLP matmuls** (paper: TF32). On this RTX PRO 6000 it is 24 % faster; all
-  state integration, FK and rewards stay fp32.
-* Reward, observation and termination heads are **analytic** (allowed by §3.2); termination in
-  imagination is a sigmoid-softened version of the hard thresholds.
-* The policy observation additionally contains the reference root orientation relative to the
-  robot root (6D), i.e. BeyondMimic's `motion_anchor_ori_b` — IMU-observable; no global position.
-* 500 world-model-only warm-up iterations before policy updates start.
-* Torso-CoM and friction are randomized once per environment at start-up (BeyondMimic's
-  start-up events); joint offsets are resampled every episode. Episodes time out after 10 s or at
-  the clip end (bootstrapped, not terminal).
-* Do not run under a virtual-memory `ulimit -v`: Isaac Lab + Warp reserve ~430 GB of *virtual*
-  address space (CUDA VA reservations; RSS ~3 GB) and Warp's CUDA-graph capture needs its mempool,
-  which cannot initialize under such a limit. Cap memory with the container's cgroup
-  (`--memory`) instead. Rootless docker ignores `--cpuset-cpus`; pin CPUs with `taskset`
-  (`CPUS=...` in `run_train.sh`).
-* Asset import: the kit-less URDF/MJCF importers fail inside a running Isaac Lab process
-  (`PhysxJointAPI` schema not registered), so the USD is converted once, offline, by
-  `tools/mjcf_to_usd.py` (registers the importer's schema plugin first) and spawned with
-  `UsdFileCfg(variants={"Physics": "mujoco"})`.
-
-## Contact planner on box terrain (G1, mjlab)
-
-`supermimic/acp/` implements *Humanoid Mobility via Attention-based Contacts* (He, Wen, Zhang et al.,
-arXiv:2610.31608) with SuperMimic training (no PPO), on the PHP parkour G1 bundles. It is a self-contained
-package on [mjlab](https://github.com/mujocolab/mjlab) (MuJoCo-Warp) with the same G1 model, actuators and
-sim context as the Isaac Lab code above. It runs outside the container (`pip install mjlab`, torch with CUDA).
-
-* **Contact planner** (50 Hz): a 17 × 11 height scan around the pelvis (0.1 m cells, x ∈ [−0.8, 0.8],
-  y ∈ [−0.5, 0.5]; exact terrain height from the clip's boxes, Gaussian noise 3 cm), 5 steps of proprioception
-  and a goal → for each of 9 bodies (feet, knees, hands, elbows, pelvis) the terrain point of its next contact
-  within 1.5 s, or "no contact". This is the paper's Table S3 attention network, trained on hindsight labels.
-* **Contact tracker** (50 Hz): 10 steps of proprioception, the 9 targets, the goal command and the paper's
-  9 × 7 local height scan (0.8 × 0.6 m) → joint position targets (`--blind` drops the scan).
-* The goal command is the paper's: a bounded direction d_xy / max(‖d_xy‖, r) and a relative heading, with
-  r = 0.3 m toward the reference 0.5–1.5 s ahead and r = 0.5 m toward a terrain goal.
-* In every stage the world model and the critic also see an exact height scan (31 × 15 points ahead of the robot).
-
-Every quantity is in the pelvis heading frame, so the pipeline needs no odometry. Each clip has 10 terrain
-variants (boxes moved or resized slightly). Every episode draws one variant that the reference motion fits.
-
-### Data
-
-The five PHP bundles (`motions-{low,high}-step`, `motions-{low,high}-climb-76`, `motions-locomotion`: 296
-G1 clips at 50 fps, 1.0 h; each `<clip>_motion.npz` paired with `<clip>_terrain.npy`) go under
-`data/php_parkour/`, either copied or symlinked to their folder:
-
-```bash
-ln -s <php_parkour>/data data/php_parkour
-python -m supermimic.acp.make_labels          # contact labels -> data/php_parkour_contacts (~1 min, 16 CPU workers)
-```
-
-### Training pipeline
-
-| Step | Command | Output |
-|---|---|---|
-| 1. Tracker | `python -m supermimic.acp.train_stage1 --log_dir logs/acp_stage1` | `logs/acp_stage1/ckpt_*.pt`, `last.pt` |
-| 2. Planner, offline | `python -m supermimic.acp.train_planner_offline --tracker logs/acp_stage1/ckpt_060000.pt --log_dir logs/acp_planner` | `logs/acp_planner/planner_020000.pt` |
-| 3. Co-training | `python -m supermimic.acp.train_stage2 --init logs/acp_stage1/last.pt --planner_init logs/acp_planner/planner_020000.pt --log_dir logs/acp_stage2` | `logs/acp_stage2/ckpt_*.pt` (tracker `pi` + `planner`) |
-| 4. Stage 3 | `python -m supermimic.acp.train_stage3 --init logs/acp_stage2/last.pt --log_dir logs/acp_stage3` | `logs/acp_stage3/ckpt_*.pt` |
-| 5. Evaluate | `python -m supermimic.acp.evaluate --ckpt <ckpt> --planner <same ckpt> [--record traj.npz]`; `python -m supermimic.acp.evaluate_goal --ckpt <stage 3 ckpt>` | json next to the checkpoint |
-
-* **Stage 1** follows the paper: the Stage 1 reward (reference tracking, an asymmetric contact-label term,
-  contact positions, regularization), the backward curriculum, and targets on the touched terrain points of
-  contacts that last at least 10 steps.
-* **Offline planner:** the frozen tracker runs from uniform start phases. Successful episodes (started in the
-  first 10 % of their clip, reached 90 %) are labeled in hindsight. Every 10th clip of each folder is held out for
-  validation (`planner_val.csv`).
-* **Stage 2:** η_obs hands the tracker's targets over to the planner (from iteration 2k, over 20k iterations).
-  η_rew moves the reward to the planned contacts (from 12k). The planner keeps relabeling from the tracker's
-  new behavior.
-* **Stage 3** (the paper's Fig. 3) trains on reference-following and goal-reaching environments in one run
-  (`--goal_frac 0.5`).
-  * Reference environments start every clip from its first frame, with reward η_rew = 1.
-  * Goal environments use procedural box terrains with 9 types and 10 levels each (`supermimic/acp/goal.py`).
-    The types are stairs up and down, walled stairs, platforms of random orientation, climbs, gaps, stepping
-    stones, balance beams and pallets. Each terrain has a reachable goal, and episodes last at most 15 s.
-  * The goal reward is move2goal 40, standatgoal 20 and the planned-contact term 1.5, plus the style and
-    regularization terms. Its indicators are made smooth, as sigmoids.
-  * There are two critics, V_m and V_fs. V_fs warms up for 500 iterations and trains at a fixed lr of 1e-3.
-    The return of each group is scaled separately.
-  * The goal curriculum promotes a level on a success with success EMA > 0.5, and demotes it when the closest
-    approach to the goal stays beyond 1 m.
-  * The planner also learns from goal episodes that come within 0.5 m / 0.1 m of the goal. These samples are
-    kept in a buffer balanced by terrain type.
-  * Not built: ladders, get-up terrains, the stumbling term (it needs contact forces). Falls end an episode
-    when the pelvis is less than 0.25 m above the terrain or the tilt exceeds 0.8. These thresholds sit just
-    beyond the references' 0.345 m and 0.695; the paper gives none.
-* Settings travel in each checkpoint (`ctc_cfg`, `reward_cfg`, `planner_cfg`), and later scripts rebuild
-  them from there.
-* A replay buffer of 1350 rows × 4096 environments needs about 7.5 GB of GPU memory, since it must hold the
-  longest episode (1326 frames).
-* Open-loop, the G1 does not stand with these soft BeyondMimic gains: holding the reference pose, it tips over
-  within about a second. Short episodes under an untrained policy are expected.
+| path | contents |
+|---|---|
+| `supermimic/acp/g1.py`, `kinematics.py` | G1 entity (BeyondMimic actuators), contact bodies; differentiable FK |
+| `supermimic/acp/terrain.py`, `motion.py` | PHP clip boxes in all terrain variants, height scans, box distances; motion library |
+| `supermimic/acp/mdp.py`, `networks.py`, `buffer.py` | observation, tracking reward, termination; world model, policy, critic; replay buffer |
+| `supermimic/acp/env.py` | batched mjlab simulator with per-world box slots, reference and goal-reaching worlds |
+| `supermimic/acp/task.py` | contact command, sphere geometry of the bodies, the paper's Stage 1 reward |
+| `supermimic/acp/planner.py` | attention planner, hindsight labels, planner replay buffers |
+| `supermimic/acp/goal.py` | procedural terrains, goal reward and termination, terrain curriculum |
+| `supermimic/acp/make_labels.py` | contact labels of the motion set |
+| `supermimic/acp/train_stage1.py`, `train_planner_offline.py`, `train_stage2.py`, `train_stage3.py` | the training stages |
+| `supermimic/acp/evaluate.py`, `evaluate_goal.py` | evaluation on the clips and on the procedural terrains |
+| `supermimic/*.py`, `tools/`, `docker/` | the upstream SuperMimic reproduction on Isaac Lab 3 (LAFAN1 tracking); see [docs/supermimic_isaaclab.md](docs/supermimic_isaaclab.md) |
+| `results/` | TODO: tables, figures, per-run logs |
+| `media/` | TODO: videos and figures for this page |
 
 ## Attribution and licenses
 
-* Method: Q. Liao, Y. Shao, J. Long, K. Zakka, R. Horowitz, P. Abbeel, K. Sreenath,
-  *SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model*,
-  CoRL 2026, arXiv:2610.28480. This code is an independent re-implementation, not affiliated with
-  the authors.
-* Isaac Lab (BSD-3-Clause), Newton and MuJoCo-Warp (Apache-2.0) are used unmodified.
-* LAFAN1 motions (Ubisoft La Forge): CC BY-NC-ND 4.0; G1 retargets and description by Unitree
-  (BSD-3-Clause). The motion data is not redistributed here; the demo GIF shows the
-  reference motions for illustration only and is not covered by this repository's MIT license.
+- **Method.** J. He, K. Wen, C. Zhang, C. Schwarke, Z. Zhang, K. Qu, S. Hu, M. Müller, V. Koltun, M. Hutter,
+  *Humanoid Mobility via Attention-based Contacts*, arXiv:2610.31608, 2026. This is an independent implementation,
+  not affiliated with or endorsed by the authors.
+- **Learner.** Q. Liao, Y. Shao, J. Long, K. Zakka, R. Horowitz, P. Abbeel, K. Sreenath, *SuperMimic: Scaling
+  Humanoid Whole-Body Control with One Differentiable World Model*, arXiv:2610.28480, 2026.
+- **Code base.** Built next to [`supermimic_vibed`](https://github.com/zita-ch/supermimic_vibed) by Chong Zhang
+  (ETH Zurich), an unofficial SuperMimic reimplementation, MIT License. TODO: the license of this project's own
+  code.
+- **Data.**
+  - PHP parkour G1 motion and terrain bundles, from [amazon-far/php_parkour](https://github.com/amazon-far/php_parkour).
+    TODO: the license of the data bundles (the repository's code is Apache-2.0).
+  - Unitree G1 description (BSD-3-Clause), via the Hugging Face dataset
+    [`lvhaidong/LAFAN1_Retargeting_Dataset`](https://huggingface.co/datasets/lvhaidong/LAFAN1_Retargeting_Dataset).
+  - The data is not redistributed in this repository.
+- **Simulation.**
+  - [mjlab](https://github.com/mujocolab/mjlab) (Apache-2.0).
+  - [MuJoCo](https://mujoco.org) and [MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp) (Apache-2.0).
+  - [NVIDIA Warp](https://github.com/NVIDIA/warp) (Apache-2.0).
+  - [PyTorch](https://pytorch.org) (BSD-3-Clause).
+  - All are used unmodified.
 
-## License
+## Citation
 
-The code in this repository is released under the [MIT License](LICENSE).
+If you use this code, please cite this repository and the works it builds on:
 
-Copyright (c) 2026 ETH Zurich, Chong Zhang.
+```bibtex
+@misc{acpg1_2026,
+  title  = {TODO: project title},
+  author = {TODO},
+  year   = {2026},
+  url    = {TODO}
+}
+@article{he2026attentioncontacts,
+  title   = {Humanoid Mobility via Attention-based Contacts},
+  author  = {He, Junzhe and Wen, Kehan and Zhang, Chong and Schwarke, Clemens and Zhang, Zewei and Qu, Kaixian and Hu, Siyuan and M{\"u}ller, Matthias and Koltun, Vladlen and Hutter, Marco},
+  journal = {arXiv preprint arXiv:2610.31608},
+  year    = {2026}
+}
+@article{liao2026supermimic,
+  title   = {SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model},
+  author  = {Liao, Qiayuan and Shao, Yiyang and Long, Junfeng and Zakka, Kevin and Horowitz, Roberto and Abbeel, Pieter and Sreenath, Koushil},
+  journal = {arXiv preprint arXiv:2610.28480},
+  year    = {2026}
+}
+@misc{zakka2026mjlab,
+  title         = {mjlab: A Lightweight Framework for GPU-Accelerated Robot Learning},
+  author        = {Zakka, Kevin and Liao, Qiayuan and Yi, Brent and Le Lay, Louis and Sreenath, Koushil and Abbeel, Pieter},
+  year          = {2026},
+  eprint        = {2601.22074},
+  archivePrefix = {arXiv}
+}
+```
