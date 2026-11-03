@@ -45,7 +45,7 @@ them.
 **Contents:** [Overview](#overview) · [Differences from the paper](#differences-from-the-paper) ·
 [Results](#results) · [How to read these numbers](#how-to-read-these-numbers) · [Setup](#setup) ·
 [Training](#training) · [Evaluation](#evaluation-and-metrics) · [Reproducing the tables](#reproducing-the-tables) ·
-[Repository layout](#repository-layout) · [Attribution and licenses](#attribution-and-licenses) ·
+[Repository layout](#repository-layout) · [Contributors](#contributors) · [Attribution and licenses](#attribution-and-licenses) ·
 [Citation](#citation)
 
 ---
@@ -305,6 +305,13 @@ the tables, and where the figures are written.
 | `supermimic/*.py`, `tools/`, `docker/` | the upstream SuperMimic reproduction on Isaac Lab 3 (LAFAN1 tracking); see [docs/supermimic_isaaclab.md](docs/supermimic_isaaclab.md) |
 | `results/` | TODO: tables, figures, per-run logs |
 | `media/` | TODO: videos and figures for this page |
+
+## Contributors
+
+| | role |
+|---|---|
+| [Vu Dinh Quang](https://github.com/Quangvuisme) | project lead: direction, experiments, review |
+| [Claude](https://claude.com/claude-code) (Anthropic, Claude Code) | implementation of the pipeline, documentation |
 
 ## Attribution and licenses
 
