@@ -33,6 +33,7 @@ Progress and timestamps: [MILESTONES.md](MILESTONES.md).
 | `docker/` | `Dockerfile`: `supermimic:latest` = `isaac-lab-kitless:main-46d6cc3` (built from `IsaacLab/docker/Dockerfile.kitless`) + tmux, ffmpeg, gcc (for `torch.compile`); `run_container.sh` |
 | `data/` | not tracked; `tools/download_data.sh` fetches LAFAN1 G1 retargets (HF `lvhaidong/LAFAN1_Retargeting_Dataset`) and the G1 URDF/meshes, then builds `g1_29dof.xml` (MJCF) and the USD |
 | `supermimic/` | implementation (see below) |
+| `supermimic/acp/` | attention-based contact planner + contact tracker for the G1 on box terrain, on mjlab ([below](#contact-planner-on-box-terrain-g1-mjlab)) |
 | `tools/` | setup, asset conversion, tests, benchmark, plotting, rendering, failure analysis |
 | `logs/<run>/` | not tracked: `train_log.csv`, `eval.csv`, checkpoints, stdout |
 | `results/` | success curve and highlight GIF (full videos are rendered locally with `tools/render.py`) |
@@ -196,6 +197,80 @@ Evaluation return 0.824 at 1.24 h of training (paper: 0.82 at 1.2 h on an H100) 
   (`PhysxJointAPI` schema not registered), so the USD is converted once, offline, by
   `tools/mjcf_to_usd.py` (registers the importer's schema plugin first) and spawned with
   `UsdFileCfg(variants={"Physics": "mujoco"})`.
+
+## Contact planner on box terrain (G1, mjlab)
+
+`supermimic/acp/` implements *Humanoid Mobility via Attention-based Contacts* (He, Wen, Zhang et al.,
+arXiv:2610.31608) with SuperMimic training (no PPO), on the PHP parkour G1 bundles. It is a self-contained
+package on [mjlab](https://github.com/mujocolab/mjlab) (MuJoCo-Warp) with the same G1 model, actuators and
+sim context as the Isaac Lab code above. It runs outside the container (`pip install mjlab`, torch with CUDA).
+
+* **Contact planner** (50 Hz): a 17 × 11 height scan around the pelvis (0.1 m cells, x ∈ [−0.8, 0.8],
+  y ∈ [−0.5, 0.5]; exact terrain height from the clip's boxes, Gaussian noise 3 cm), 5 steps of proprioception
+  and a goal → for each of 9 bodies (feet, knees, hands, elbows, pelvis) the terrain point of its next contact
+  within 1.5 s, or "no contact". This is the paper's Table S3 attention network, trained on hindsight labels.
+* **Contact tracker** (50 Hz): 10 steps of proprioception, the 9 targets, the goal command and the paper's
+  9 × 7 local height scan (0.8 × 0.6 m) → joint position targets (`--blind` drops the scan).
+* The goal command is the paper's: a bounded direction d_xy / max(‖d_xy‖, r) and a relative heading, with
+  r = 0.3 m toward the reference 0.5–1.5 s ahead and r = 0.5 m toward a terrain goal.
+* In every stage the world model and the critic also see an exact height scan (31 × 15 points ahead of the robot).
+
+Every quantity is in the pelvis heading frame, so the pipeline needs no odometry. Each clip has 10 terrain
+variants (boxes moved or resized slightly). Every episode draws one variant that the reference motion fits.
+
+### Data
+
+The five PHP bundles (`motions-{low,high}-step`, `motions-{low,high}-climb-76`, `motions-locomotion`: 296
+G1 clips at 50 fps, 1.0 h; each `<clip>_motion.npz` paired with `<clip>_terrain.npy`) go under
+`data/php_parkour/`, either copied or symlinked to their folder:
+
+```bash
+ln -s <php_parkour>/data data/php_parkour
+python -m supermimic.acp.make_labels          # contact labels -> data/php_parkour_contacts (~1 min, 16 CPU workers)
+```
+
+### Training pipeline
+
+| Step | Command | Output |
+|---|---|---|
+| 1. Tracker | `python -m supermimic.acp.train_stage1 --log_dir logs/acp_stage1` | `logs/acp_stage1/ckpt_*.pt`, `last.pt` |
+| 2. Planner, offline | `python -m supermimic.acp.train_planner_offline --tracker logs/acp_stage1/ckpt_060000.pt --log_dir logs/acp_planner` | `logs/acp_planner/planner_020000.pt` |
+| 3. Co-training | `python -m supermimic.acp.train_stage2 --init logs/acp_stage1/last.pt --planner_init logs/acp_planner/planner_020000.pt --log_dir logs/acp_stage2` | `logs/acp_stage2/ckpt_*.pt` (tracker `pi` + `planner`) |
+| 4. Stage 3 | `python -m supermimic.acp.train_stage3 --init logs/acp_stage2/last.pt --log_dir logs/acp_stage3` | `logs/acp_stage3/ckpt_*.pt` |
+| 5. Evaluate | `python -m supermimic.acp.evaluate --ckpt <ckpt> --planner <same ckpt> [--record traj.npz]`; `python -m supermimic.acp.evaluate_goal --ckpt <stage 3 ckpt>` | json next to the checkpoint |
+
+* **Stage 1** follows the paper: the Stage 1 reward (reference tracking, an asymmetric contact-label term,
+  contact positions, regularization), the backward curriculum, and targets on the touched terrain points of
+  contacts that last at least 10 steps.
+* **Offline planner:** the frozen tracker runs from uniform start phases. Successful episodes (started in the
+  first 10 % of their clip, reached 90 %) are labeled in hindsight. Every 10th clip of each folder is held out for
+  validation (`planner_val.csv`).
+* **Stage 2:** η_obs hands the tracker's targets over to the planner (from iteration 2k, over 20k iterations).
+  η_rew moves the reward to the planned contacts (from 12k). The planner keeps relabeling from the tracker's
+  new behavior.
+* **Stage 3** (the paper's Fig. 3) trains on reference-following and goal-reaching environments in one run
+  (`--goal_frac 0.5`).
+  * Reference environments start every clip from its first frame, with reward η_rew = 1.
+  * Goal environments use procedural box terrains with 9 types and 10 levels each (`supermimic/acp/goal.py`).
+    The types are stairs up and down, walled stairs, platforms of random orientation, climbs, gaps, stepping
+    stones, balance beams and pallets. Each terrain has a reachable goal, and episodes last at most 15 s.
+  * The goal reward is move2goal 40, standatgoal 20 and the planned-contact term 1.5, plus the style and
+    regularization terms. Its indicators are made smooth, as sigmoids.
+  * There are two critics, V_m and V_fs. V_fs warms up for 500 iterations and trains at a fixed lr of 1e-3.
+    The return of each group is scaled separately.
+  * The goal curriculum promotes a level on a success with success EMA > 0.5, and demotes it when the closest
+    approach to the goal stays beyond 1 m.
+  * The planner also learns from goal episodes that come within 0.5 m / 0.1 m of the goal. These samples are
+    kept in a buffer balanced by terrain type.
+  * Not built: ladders, get-up terrains, the stumbling term (it needs contact forces). Falls end an episode
+    when the pelvis is less than 0.25 m above the terrain or the tilt exceeds 0.8. These thresholds sit just
+    beyond the references' 0.345 m and 0.695; the paper gives none.
+* Settings travel in each checkpoint (`ctc_cfg`, `reward_cfg`, `planner_cfg`), and later scripts rebuild
+  them from there.
+* A replay buffer of 1350 rows × 4096 environments needs about 7.5 GB of GPU memory, since it must hold the
+  longest episode (1326 frames).
+* Open-loop, the G1 does not stand with these soft BeyondMimic gains: holding the reference pose, it tips over
+  within about a second. Short episodes under an untrained policy are expected.
 
 ## Attribution and licenses
 
