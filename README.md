@@ -23,19 +23,26 @@ with its own box terrain in 10 variants).
 > procedural goal-reaching terrains, evaluation on N terrain types". Link [CHANGELOG.md](CHANGELOG.md) once it
 > exists.
 
-<!-- TODO: teaser GIF, e.g. media/teaser.gif: the Stage 3 policy on stairs, a climb and stepping stones. -->
-![TODO: teaser](media/teaser.gif)
+| high climb (76 cm boxes) | low climb (76 cm boxes) |
+|---|---|
+| ![tracker, high climb](media/tracker_high-climb-76.gif) | ![tracker, low climb](media/tracker_low-climb-76.gif) |
+| **high step** | **low step** |
+| ![tracker, high step](media/tracker_high-step.gif) | ![tracker, low step](media/tracker_low-step.gif) |
+| **locomotion** | |
+| ![tracker, locomotion](media/tracker_locomotion.gif) | |
 
-*TODO: caption. State what is shown, the checkpoint, the terrain and level, and whether this is simulation (MuJoCo
-Warp) or hardware.*
+*The Stage 1 contact tracker (`logs/acp_stage1_ft/ckpt_004000.pt`, see [Stage 1](#stage-1-contact-tracker-on-reference-targets))
+following one complete clip of each motion folder in simulation (MuJoCo Warp), first terrain variant, without noise.
+Solid: the simulated robot; translucent blue: the reference clip; spheres: the commanded contact targets (feet red /
+blue, knees orange, hands green). Real time, rendered by `supermimic.acp.render`.*
 
-| on 1× TODO GPU | Stage 1 tracker | Stage 2 (planner targets) | **Stage 3** |
+| on 1× RTX PRO 5000 Blackwell | Stage 1 tracker | Stage 2 (planner targets) | **Stage 3** |
 |---|---|---|---|
-| seeds | TBD | TBD | TBD |
-| training time | TBD | TBD | TBD |
-| reference clips: normalized return / failed clips (of 296) | TBD | TBD | TBD |
+| seeds | 1 | TBD | TBD |
+| training time | 5.4 h (4.6 + 0.7 fine-tune) | TBD | TBD |
+| reference clips: normalized return / failed clips (of 296) | 0.835 / 4 | TBD | TBD |
 | goal reaching: success over all terrain types and levels | — | TBD (zero-shot) | TBD |
-| contact placement error, feet (median, cm) | TBD | TBD | TBD |
+| contact placement error, feet (median, cm) | 10.0 / 10.2 | TBD | TBD |
 | planner F1, feet / knees / hands | — | TBD | TBD |
 
 All numbers come from runs in this repository. TODO: say where each run's logs are kept (e.g. `results/runs/`) and
@@ -71,6 +78,7 @@ The training follows the paper's three stages:
 | stage | script | what trains | episodes |
 |---|---|---|---|
 | labels | `make_labels` | per-frame contact labels of every clip and terrain variant (MuJoCo `mj_geomDistance`) | — |
+| data | `refine_motion`, then `make_labels` again | the clips cleaned against their terrain: no penetration, bodies in contact exactly on the surface | — |
 | 1 | `train_stage1` | tracker, on reference contact targets (terrain points of contacts ≥ 10 steps) | reference clips, backward curriculum |
 | 2, offline | `train_planner_offline` | planner, on hindsight labels of the frozen tracker | reference clips, uniform start phase |
 | 2 | `train_stage2` | tracker + planner; η_obs and η_rew hand the tracker over to the planner's targets | reference clips, uniform start phase |
@@ -107,6 +115,8 @@ learner (gradients through a world model, not PPO), the robot or the data.
 | fall termination | not specified | pelvis < 0.25 m above the terrain, or tilt 1 − R_zz > 0.8 | just beyond the G1 references' extremes (0.345 m, 0.695) |
 | perception | LiDAR neural mapping | exact height scan from the box geometry, Gaussian noise 3 cm (planner) / uniform 5 cm (tracker) | simulation only; TODO: mapping noise model |
 | domain randomization | Table S2 | friction U(0.3, 1.2), joint offsets ±0.01 rad, torso CoM offset; no pushes | TODO: match Table S2 if needed |
+| motion data | retargeted with minimum-distance and contact constraints | PHP parkour clips as published, then `refine_motion`: a whole-trajectory IK over root pose and joints keeps the bodies on the clip, out of the terrain, and on the surface during the clip's contacts | the published clips leave planted feet up to ~4 cm above or inside the boxes and palms up to 9 cm inside them |
+| hand collision | not specified | the rubber-hand mesh collides (the MJCF has no hand collision geom) | the climbs put the palms on the boxes |
 
 TODO: anything else changed before release (e.g. hyperparameters tuned per stage).
 
@@ -120,19 +130,24 @@ evaluation time is excluded from training time.
 
 TODO: learning curve, e.g. results/stage1_curve.png.
 
-| run | seeds | iterations | time (h) | return ↑ | failed (of 296) ↓ | touch precision / recall ↑ | placement err feet (cm) ↓ |
+| run | seeds | iterations | time (h) | return ↑ | failed (of 296) ↓ | touch precision / recall, feet ↑ | placement err feet (cm) ↓ |
 |---|---|---|---|---|---|---|---|
-| TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| `acp_stage1_ft`, ckpt 4000 | 1 | 30,000 on the published clips + 4,000 on the refined clips | 0.73 (fine-tune only) | 0.835 | 4 | 0.93 / 0.98, 0.91 / 0.98 | 10.0, 10.2 |
+
+The fine-tune starts from iteration 30,000 of a run on the published clips and trains on the refined clips with
+`--target_min_steps 4`. Later checkpoints of both runs are worse on this evaluation (8,000: 21 failed) although the
+training statistics keep improving; the cause is not identified yet. Evaluation: `supermimic.acp.evaluate`, every
+refined clip once from its first frame, first terrain variant, no noise.
 
 Per motion folder:
 
 | folder | return | fail rate |
 |---|---|---|
-| motions-low-step | TBD | TBD |
-| motions-high-step | TBD | TBD |
-| motions-low-climb-76 | TBD | TBD |
-| motions-high-climb-76 | TBD | TBD |
-| motions-locomotion | TBD | TBD |
+| motions-low-step | 0.867 | 0.018 |
+| motions-high-step | 0.819 | 0.000 |
+| motions-low-climb-76 | 0.828 | 0.000 |
+| motions-high-climb-76 | 0.749 | 0.075 |
+| motions-locomotion | 0.863 | 0.000 |
 
 ### Stage 2: planner
 

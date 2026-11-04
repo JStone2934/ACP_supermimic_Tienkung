@@ -206,8 +206,9 @@ def _critic_input(S, f, v, gs, xi_n, plan_w, plan_v, etas):
 wm_rollout = torch.compile(_wm_rollout)
 wm_err = torch.compile(_wm_err)
 imag_step = torch.compile(_imag_step)
-# max_fusion_size 32: Triton 3.5.0 fails to compile the fully fused backward kernel of this reward
-reward_term = torch.compile(_reward_term, options={"max_fusion_size": 32})
+# eager: with the planned term, Triton 3.5.0 fails to compile a fused backward reduction of this reward, whatever the
+# fusion limit (Stage 1 compiles it with max_fusion_size 32)
+reward_term = _reward_term
 critic_input = torch.compile(_critic_input)
 plan = torch.compile(plan)  # 33 calls per policy update
 

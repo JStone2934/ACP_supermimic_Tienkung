@@ -22,10 +22,12 @@ Modules:
 
 Scripts (``python -m supermimic.acp.<name>``), in pipeline order:
     make_labels             per-frame contact labels of every clip and terrain variant
+    refine_motion           the clips cleaned against their terrain (no penetration, exact contacts); label them again
     train_stage1            Stage 1: the contact tracker
     train_planner_offline   Stage 2, offline: the planner from the frozen tracker
     train_stage2            Stage 2: planner and tracker co-training
     train_stage3            Stage 3: reference following and goal reaching on procedural terrains
     evaluate                every clip once, with reference or planner targets
     evaluate_goal           goal reaching on every procedural terrain type and level
+    render, render_labels   videos of evaluate --record rollouts; of a motion set with its contact labels
 """
