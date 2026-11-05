@@ -25,8 +25,13 @@ parser.add_argument("--record", type=str, default=None, help="save trajectories 
 parser.add_argument("--planner", type=str, default=None, help="contact targets from this checkpoint's planner")
 parser.add_argument("--eta_obs", type=float, default=1.0, help="with --planner: per step and clip, the planner's targets with this probability")
 parser.add_argument("--term_window", type=float, default=None, help="s: termination window either side of the frame; default: the checkpoint's, else 0")
+parser.add_argument("--train_noise", nargs="*", default=None, choices=["obs", "command", "action"],
+                    help="the training noise (all three without a value): observations; contact targets and height scans;"
+                         " actions (0.1)")
 parser.add_argument("--seed", type=int, default=0)
 args = parser.parse_args()
+_noise = set() if args.train_noise is None else set(args.train_noise or ("obs", "command", "action"))
+NOISE_OBS, NOISE_CMD, NOISE_ACT = "obs" in _noise, "command" in _noise, "action" in _noise
 
 import numpy as np
 import torch
@@ -91,20 +96,23 @@ def evaluate() -> dict:
     while not bool(env.done_eval.all()):
         S = env.state()
         o = env.observe()
+        if NOISE_OBS:
+            o = mdp.add_noise(o)
         hist = o.unsqueeze(1).repeat(1, Hh, 1) if hist is None else torch.cat((hist[:, 1:], o.unsqueeze(1)), 1)
         tw, tv = ctc.next_pos[env.f, env.v], ctc.next_valid[env.f, env.v]
         if args.planner:
-            pw, pv = plan(planner, scan, pcfg, ctc, hist, S, env.f, env.v, gs, noise=False)
+            pw, pv = plan(planner, scan, pcfg, ctc, hist, S, env.f, env.v, gs, noise=NOISE_CMD)
             use = torch.rand(C, device=dev) < args.eta_obs
             tw, tv = torch.where(use[:, None, None], pw, tw), torch.where(use[:, None], pv, tv)
-        cmd = ctc.command(S, env.f, env.v, gs, noise=False, targets_w=tw, valid=tv)
+        cmd = ctc.command(S, env.f, env.v, gs, noise=NOISE_CMD, targets_w=tw, valid=tv)
         alive = ~env.done_eval.clone()
         tw_win, tv_win = torch.cat((tw_win[1:], tw[None])), torch.cat((tv_win[1:], tv[None]))
         if args.record:
             traj["root_p"].append(S[0].cpu()), traj["root_quat"].append(mat_to_quat(S[1]).cpu())
             traj["q"].append(S[4].cpu()), traj["f"].append(env.f.cpu()), traj["alive"].append(alive.cpu())
             traj["tgt_w"].append(tw.cpu()), traj["tgt_valid"].append(tv.cpu())
-        out = env.step(pi(hist, cmd))
+        a = pi(hist, cmd)
+        out = env.step(a + 0.1 * torch.randn_like(a) if NOISE_ACT else a)
         ret += torch.where(alive, out["r"], 0.0)
         f1 = out["f"] + 1
         S1 = env.state()

@@ -36,14 +36,30 @@ following one complete clip of each motion folder in simulation (MuJoCo Warp), f
 Solid: the simulated robot; translucent blue: the reference clip; spheres: the commanded contact targets (feet red /
 blue, knees orange, hands green). Real time, rendered by `supermimic.acp.render`.*
 
+**Stage 2: the planner chooses the contacts.** The co-trained tracker follows only the planner's targets (η_obs = 1);
+the reference serves only for the goal command and for scoring.
+
+| high climb (76 cm boxes) | low climb (76 cm boxes) |
+|---|---|
+| ![stage 2, high climb](media/stage2_high-climb-76.gif) | ![stage 2, low climb](media/stage2_low-climb-76.gif) |
+| **high step** | **low step** |
+| ![stage 2, high step](media/stage2_high-step.gif) | ![stage 2, low step](media/stage2_low-step.gif) |
+| **locomotion** | |
+| ![stage 2, locomotion](media/stage2_locomotion.gif) | |
+
+*Stage 2 (`logs/acp_stage2_tw/ckpt_040000.pt`, see [Stage 2](#stage-2-planner)) on one complete clip of each motion
+folder, with the training action noise (σ = 0.1) and the ±2 s termination window. The same clips as above, except the
+high climb, which fails at 38 % of its clip here (`run_forward_0.6s_step0.8s`); another high climb is shown instead.
+Spheres: the planner's targets. The robot lags the translucent reference: the planner sets its own pace.*
+
 | on 1× RTX PRO 5000 Blackwell | Stage 1 tracker | Stage 2 (planner targets) | **Stage 3** |
 |---|---|---|---|
-| seeds | 1 | TBD | TBD |
-| training time | 5.4 h (4.6 + 0.7 fine-tune) | TBD | TBD |
-| reference clips: normalized return / failed clips (of 296) | 0.835 / 4 | TBD | TBD |
+| seeds | 1 | 1 | TBD |
+| training time | 5.4 h (4.6 + 0.7 fine-tune) | 0.7 h planner + 14.7 h co-training | TBD |
+| reference clips: normalized return / failed clips (of 296) | 0.835 / 4 | 0.56 / 8 (±2 s window, action noise) | TBD |
 | goal reaching: success over all terrain types and levels | — | TBD (zero-shot) | TBD |
-| contact placement error, feet (median, cm) | 10.0 / 10.2 | TBD | TBD |
-| planner F1, feet / knees / hands | — | TBD | TBD |
+| contact placement error, feet (median, cm) | 10.0 / 10.2 | 4.2 / 3.9 | TBD |
+| planner F1, feet / knees / hands | — | 0.90 / 0.95 / 0.86 (left) | TBD |
 
 All numbers come from runs in this repository. TODO: say where each run's logs are kept (e.g. `results/runs/`) and
 which script regenerates the tables. Read [How to read these numbers](#how-to-read-these-numbers) before quoting
@@ -155,17 +171,33 @@ Planner offline on the frozen tracker. The validation set is every 10th clip of 
 
 | body | F1 ↑ | median top-1 error (cm) ↓ | within 0.1 m ↑ |
 |---|---|---|---|
-| feet (L / R) | TBD | TBD | TBD |
-| knees (L / R) | TBD | TBD | TBD |
-| hands (L / R) | TBD | TBD | TBD |
-| elbows (L / R) | TBD | TBD | TBD |
-| pelvis | TBD | TBD | TBD |
+| feet (L / R) | 0.90 / 0.89 | 7.2 / 7.2 | 70 % / 70 % |
+| knees (L / R) | 0.95 / 0.73 | 7.9 / 7.7 | 69 % / 68 % |
+| hands (L / R) | 0.86 / 0.92 | 8.2 / 7.2 | 64 % / 77 % |
+| elbows (L / R) | — | — | — |
+| pelvis | — | — | — |
 
-Co-training: tracker driven by planner targets only (η_obs = 1):
+`logs/acp_planner_ft/planner_020000.pt`, 20,000 steps (0.7 h) on the Stage 1 tracker `ckpt_004000`. Elbows and pelvis
+hardly touch the terrain in these clips: no validation contact.
 
-| checkpoint | return ↑ | failed ↓ | onset error, planner vs reference targets (cm) ↓ |
-|---|---|---|---|
-| TBD | TBD | TBD | TBD |
+Co-training (`train_stage2`, 40,000 iterations from the Stage 1 tracker): η_obs ramps over 2k–22k iterations, η_rew
+over 12k–32k. From 24k on, the run continues with `--term_window 2 --eta_rew_max 0.58` (`logs/acp_stage2_tw`). Tracker
+driven by planner targets only (η_obs = 1), ±2 s termination window, the training action noise (σ = 0.1):
+
+| checkpoint | return ↑ | failed (of 296) ↓ | high climb | low climb | high step | low step | locomotion |
+|---|---|---|---|---|---|---|---|
+| 24,000 | 0.59 | 10 | 12.5 % | 7.5 % | 0 % | 0 % | 2 % |
+| 40,000 | 0.56 | 8 | 10 % | 7.5 % | 0 % | 0 % | 1 % |
+
+The return measures timing against the reference; it is lower than Stage 1's because the robot keeps its own pace
+(it lags the reference by up to 2 s, inside the window). With the strict reference-anchored termination the same 40k
+checkpoint "fails" most climbs and steps on lateness alone, the robot still standing.
+
+**Evaluate with the training action noise.** Without it (`supermimic.acp.evaluate` without `--train_noise`) the same
+checkpoints fail far more: 165 of 296 at 40k, and the Stage 1 tracker at 44k fails 170 instead of 7. Observation,
+target or scan noise alone does not recover them, and a noisy previous-action input alone does not either; the
+action noise has to reach the robot, and σ = 0.05 is not enough (101 failed). The world model and the critic only
+ever see rollouts with σ = 0.1; why the noise-free policy degrades is not identified yet. Use `--train_noise action`.
 
 ### Stage 3: goal reaching
 

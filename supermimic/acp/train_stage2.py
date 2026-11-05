@@ -68,6 +68,8 @@ parser.add_argument("--n_ann", type=int, default=20_000, help="iterations of eac
 parser.add_argument("--hold_admit", type=float, default=0.6,
                     help="hold the schedules while the admission rate (last --hold_window iterations) is below this share of its eta=0 rate; 0: off")
 parser.add_argument("--hold_window", type=int, default=500)
+parser.add_argument("--eta_rew_max", type=float, default=1.0,
+                    help="cap on eta_rew: past it the reward stops moving from the reference contacts to the planned ones")
 parser.add_argument("--term_window", type=float, default=0.0,
                     help="s: end a state only if it matches no reference root (height, tilt) this far either side of its frame; 0: its frame only")
 parser.add_argument("--planned_std", type=float, default=None, help="m: width of the planned-contact term (default: the checkpoint's)")
@@ -455,7 +457,7 @@ for it in range(start_it, args.iterations):
     for o in (opt_wm, opt_pi, opt_v):
         for gparam in o.param_groups:
             gparam["lr"] = lr
-    e_obs, e_rew = eta(sched_it, args.u_obs), eta(sched_it, args.u_rew)
+    e_obs, e_rew = eta(sched_it, args.u_obs), min(eta(sched_it, args.u_rew), args.eta_rew_max)
     step_acc += 1.0 / args.utd
     n = int(step_acc)
     step_acc -= n
