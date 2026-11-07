@@ -80,6 +80,7 @@ def main():
     ap.add_argument("--height", type=int, default=540)
     ap.add_argument("--fps", type=int, default=50)
     ap.add_argument("--title", default=None, help="short video title")
+    ap.add_argument("--solid-label", default="policy", help="legend for the solid robot, e.g. reference PD")
     args = ap.parse_args()
 
     # Load once: accessing an NpzFile repeatedly decompresses whole arrays per frame.
@@ -130,7 +131,7 @@ def main():
             img = Image.fromarray(r.render())
             draw = ImageDraw.Draw(img)
             draw.text((10, 8), f"{args.title or names[c]}  t={t / args.fps:.2f}s" + ("  FAILED" if failed and t >= T_alive else ""), font=font, fill=(0, 0, 0))
-            draw.text((10, args.height - 30), "Solid: policy | Blue ghost: reference | Dots: planned contacts", font=font, fill=(0, 0, 0))
+            draw.text((10, args.height - 30), f"Solid: {args.solid_label} | Blue ghost: reference | Dots: planned contacts", font=font, fill=(0, 0, 0))
             ffmpeg.stdin.write(img.tobytes())
         r.close()
         print(f"{names[c]}: {T} frames, {'failed at %.2f s' % (T_alive / args.fps) if failed else 'completed'}", flush=True)
