@@ -3,25 +3,88 @@
   Search for "TODO" and "TBD" before publishing. Numbers must come from runs in this repository.
 -->
 
-# ACP-G1 <!-- TODO: final project name -->
+# ACP-TienKung
 
-**Contact-planned whole-body mobility for the Unitree G1, trained through one differentiable world model.**
-<!-- TODO: one-sentence headline result, e.g. "X % success on Y procedural terrain types after Z h on one GPU". -->
+**SuperMimic-based contact planning and whole-body control for TienKung 3.0, with 29 controlled joints.**
 
-ACP-G1 implements *Humanoid Mobility via Attention-based Contacts* (He, Wen, Zhang et al., arXiv:2610.31608) on
-the Unitree G1. It trains with SuperMimic instead of PPO: the policy learns by backpropagating imagined returns
+ACP-TienKung adapts the [ACP/SuperMimic G1 implementation](https://github.com/Quangvuisme/Acp_supermimic_vibed)
+to **TienKung 3.0 (天工 3.0)**. The target robot is `tienkung3_29dof`; G1 remains available as the baseline
+and the default for legacy commands. The project builds on *Humanoid Mobility via Attention-based Contacts*
+(He, Wen, Zhang et al., arXiv:2610.31608). It trains with SuperMimic: the policy learns by backpropagating imagined returns
 through a learned world model. An attention-based **contact planner** reads a height scan, proprioception and a
 goal, and predicts where each of 9 bodies (feet, knees, hands, elbows, pelvis) makes its next contact. A
 **contact tracker** turns these targets into joint commands. Motion data is used only as a training prior. The
-final stage fine-tunes both networks on procedural terrains for which no reference motion exists.
+final training stage is designed to fine-tune both networks on procedural terrains for which no reference motion exists.
 
-It runs on [mjlab](https://github.com/mujocolab/mjlab) / MuJoCo Warp and trains on the
-[PHP parkour](https://github.com/amazon-far/php_parkour) G1 motion bundles (296 clips, 1.0 h, 50 fps, each clip
-with its own box terrain in 10 variants).
+It runs on [mjlab](https://github.com/mujocolab/mjlab) / MuJoCo Warp. TienKung asset preparation,
+robot interfaces, FK/contact numerical validation and the synthetic standing pipeline have passed
+the checks recorded in [the acceptance report](docs/tienkung3_29dof/progress.md).
+Real-motion adaptation and formal TienKung locomotion/climbing training remain future work.
 
-> **TODO: release note.** Version, date, and what the release contains, for example "v1.0 (YYYY-MM-DD): Stages 1–3,
-> procedural goal-reaching terrains, evaluation on N terrain types". Link [CHANGELOG.md](CHANGELOG.md) once it
-> exists.
+**Start here:** [TienKung setup and evidence](docs/tienkung3_29dof/README.md) ·
+[Motion data](#public-tienkung-30-motion-data) · [Setup](#setup) ·
+[Migration plan](docs/tienkung3_29dof/migration_plan.md)
+
+## TienKung 3.0 29 DoF integration
+
+The `tienkung3_29dof` robot is integrated through an instance-local RobotSpec alongside the default G1. This delivery covers pinned assets, generic configuration, full-tree FK/contact numerical validation, and synthetic standing integration checks. It does **not** establish trained standing, walking, climbing, or Stage 2/3 task performance.
+
+See [reproduction and evidence](docs/tienkung3_29dof/README.md), [design](docs/tienkung3_29dof/design.md), [progress](docs/tienkung3_29dof/progress.md), and [task memory](docs/tienkung3_29dof/taskmemory.md). Large assets, motion fixtures and checkpoints are generated under ignored data/logs directories.
+
+### Public TienKung 3.0 motion data
+
+Checked on **2026-11-07**. Official xMimic provides three downloadable **29 DoF motion examples**.
+We have not found a TienKung 3.0 release equivalent to the G1 PHP collection of 296 parkour clips
+and paired terrain variants. The resources below are candidates for further integration;
+they have not been converted or validated for ACP tracking in this repository.
+
+| Resource | Available data | Fit for this project |
+|---|---|---|
+| [xMimic 29 DoF examples](https://github.com/Open-X-Humanoid/xMimic/tree/0385122a232279210e941c7bb28da6a0bbb42356/motion_example/29dof) | Three NPZ clips, 100 Hz, about 124 seconds total; joint and world body poses/velocities | Best initial full-body motion candidates; format adaptation and motion quality checks required |
+| [TienKung-Lab TienKung 3 datasets](https://github.com/Open-X-Humanoid/TienKung-Lab/tree/ffea8bde32fcb632b5ef2a700e452f99e907ea40/legged_lab/envs/tienkung3/datasets) | Walk/run visualization and AMP files | Walking bootstrap candidate; the inspected visualization walk contains root motion and 20 joint positions, requiring completion to 29 DoF |
+| [HEX TienKung 3 datasets](https://huggingface.co/datasets/X-Humanoid/HEX-Datasets/tree/main/pretrain/tiangong3) | 19 task directories, including ball handling, carrying and picking up objects while walking | LeRobot manipulation demonstrations; not a ready-to-load PHP motion/terrain library |
+
+The downloaded xMimic files were inspected with NumPy and compared with this repository's target model:
+
+| File | Frames | Duration at 100 Hz | Maximum joint-limit violation against the local model |
+|---|---:|---:|---:|
+| `dance1_easy.npz` | 3,982 | 39.81 s | 1.12 degrees |
+| `dance2_medium.npz` | 7,099 | 70.98 s | 4.00 degrees |
+| `weibst_hard.npz` | 1,335 | 13.34 s | 5.00 degrees |
+
+Durations use `(frames - 1) / fps`. All numeric arrays were finite and body quaternions were normalized.
+The 29 joint names match our target model, but their order differs. These checks do not establish
+collision-free motion, dynamic feasibility or successful tracking; the limit violations need to be
+resolved before accepting the clips as training references.
+
+To adapt xMimic data, extract the `pelvis` pose by `body_names`, reorder joints by name, and construct
+ACP's `joint_pos = root_xyz + root_quat_wxyz + joint_angles` array of shape `(T, 36)`.
+The source `joint_pos` has shape `(T, 29)` and does not include the root. Resample to 50 Hz,
+verify model compatibility, write the required robot metadata and a paired empty flat-terrain file,
+then recompute FK, velocities and contact labels with the target model. No automatic xMimic
+conversion is implemented yet; `tools/download_acp_data.sh` still downloads G1 assets and PHP data only.
+
+For HEX, the inspected walking-and-picking task contains leg joint observations but no explicitly
+documented world root-pose field. Its action representation is also different from ACP's reference
+trajectory. The [official HEX documentation](https://github.com/Open-X-Humanoid/HEX/blob/fe9ee4870c90f2c4c362e36e3202324523c0dda9/readme.md)
+states that the TienKung low-level whole-body controller is not released.
+
+Start with `dance1_easy` and the official walking reference for small-scale tracking experiments.
+PHP-style steps and climbing still require contact-constrained retargeting of the G1 clips or new
+motion collection. The [inspected xGMR registry](https://github.com/Open-X-Humanoid/xGMR/blob/70f08d75f5e03aa06ed6d521451bd1e6888f5c0f/general_motion_retargeting/params.py)
+does not register `tiangong3`, despite the example in xMimic's README, so that retargeting command
+must not be assumed to work without completing the target configuration.
+
+These links establish public availability. xMimic's README displays an MIT badge, but the inspected
+revision contains no standalone LICENSE/COPYING or separate motion-data license; no additional
+data license is asserted here. See the [Chinese data notes](docs/tienkung3_29dof/README.md#公开动作数据调研2026-11-07)
+for the corresponding integration guidance.
+
+## G1 baseline demonstrations
+
+The following videos and performance tables are inherited **G1 baseline results**, not TienKung results.
+The baseline uses the [PHP parkour](https://github.com/amazon-far/php_parkour) G1 motion bundles
+(296 clips, 1.0 h, 50 fps, each clip with its own box terrain in 10 variants).
 
 | high climb (76 cm boxes) | low climb (76 cm boxes) |
 |---|---|
@@ -61,7 +124,7 @@ Spheres: the planner's targets. The robot lags the translucent reference: the pl
 | contact placement error, feet (median, cm) | 10.0 / 10.2 | 4.2 / 3.9 | TBD |
 | planner F1, feet / knees / hands | — | 0.90 / 0.95 / 0.86 (left) | TBD |
 
-All numbers come from runs in this repository. TODO: say where each run's logs are kept (e.g. `results/runs/`) and
+These numbers are retained from the upstream G1 implementation. TODO: say where each run's logs are kept (e.g. `results/runs/`) and
 which script regenerates the tables. Read [How to read these numbers](#how-to-read-these-numbers) before quoting
 them.
 
@@ -116,7 +179,8 @@ each rotated by a random yaw.
 
 ## Differences from the paper
 
-The baseline is the paper's three-stage pipeline. Where this implementation deviates, the reason is either the
+This comparison describes the inherited G1 baseline. Its starting point is the paper's three-stage pipeline.
+Where the baseline implementation deviates, the reason is either the
 learner (gradients through a world model, not PPO), the robot or the data.
 
 | aspect | paper | here | why |
@@ -137,6 +201,9 @@ learner (gradients through a world model, not PPO), the robot or the data.
 TODO: anything else changed before release (e.g. hyperparameters tuned per stage).
 
 ## Results
+
+The performance tables in this section describe the G1 baseline. TienKung integration and synthetic
+pipeline results are reported separately in [the acceptance report](docs/tienkung3_29dof/progress.md).
 
 Setup for all runs: TODO GPU, TODO CPU threads, 4096 parallel environments. The software stack is mjlab 1.6.0,
 MuJoCo / MuJoCo Warp 3.11, Warp 1.16, and torch 2.9.0 + CUDA 12.8. TODO: checkpoint interval, and whether
@@ -266,6 +333,20 @@ git clone --branch feat/tienkung3-29dof-acp https://github.com/JStone2934/ACP_su
 cd ACP_supermimic_Tienkung
 conda env create -f environment.yml
 conda activate acp_supermimic
+
+# TienKung 3.0: prepare the model and synthetic standing reference
+python -m tools.prepare_tienkung3
+python -m tools.generate_standing_motion --robot tienkung3_29dof
+python -m supermimic.acp.make_labels --robot tienkung3_29dof \
+  --out data/tienkung3_29dof/contacts/bootstrap --workers 1
+```
+
+See [TienKung reproduction](docs/tienkung3_29dof/README.md) for validation commands and current training
+limits. The standing reference checks the integration pipeline; it is not a trained standing controller.
+
+For the optional G1 baseline, run the following in the same environment:
+
+```bash
 bash tools/download_acp_data.sh  # G1 model, five PHP bundles (296 clips), MJCF, and contact labels
 python -m tools.check_acp_setup  # CUDA compile/backward, all clips/labels, 16 GPU simulation steps
 ```
@@ -277,10 +358,14 @@ Re-running the script reuses verified assets and regenerates the MJCF and labels
 
 `tools/setup.sh`, `tools/download_data.sh`, and `run_train.sh` belong to the separate
 upstream **Isaac Lab 3.0.0 kit-less Docker** workflow described in
-[docs/supermimic_isaaclab.md](docs/supermimic_isaaclab.md). ACP-G1 uses mjlab directly
+[docs/supermimic_isaaclab.md](docs/supermimic_isaaclab.md). ACP-TienKung uses mjlab directly
 and does not require that Docker environment.
 
 ## Training
+
+The commands below reproduce the G1 baseline and use the default `g1` robot. TienKung commands require
+`--robot tienkung3_29dof` and matching motion/contact data; see [the TienKung guide](docs/tienkung3_29dof/README.md)
+for the validated synthetic pipeline. Formal TienKung Stage 1–3 training has not been completed.
 
 ```bash
 python -m supermimic.acp.train_stage1 --log_dir logs/acp_stage1
@@ -313,6 +398,9 @@ Main flags:
 | `train_stage3` | `--start_level` | 0 | goal environments start at a uniform level up to this |
 
 ## Evaluation and metrics
+
+The example checkpoints below belong to the G1 baseline. TienKung evaluation requires a TienKung
+checkpoint and matching data, as described in [the TienKung guide](docs/tienkung3_29dof/README.md).
 
 ```bash
 # every clip once from its first frame, reference targets or the planner's
@@ -347,7 +435,10 @@ the tables, and where the figures are written.
 
 | path | contents |
 |---|---|
-| `supermimic/acp/g1.py`, `kinematics.py` | G1 entity (BeyondMimic actuators), contact bodies; differentiable FK |
+| `supermimic/acp/robots.py`, `kinematics.py`, `geometry.py` | TienKung/G1 robot contracts, differentiable FK and contact geometry |
+| `supermimic/acp/g1.py` | legacy G1 model and actuator configuration |
+| `tools/prepare_tienkung3.py`, `generate_standing_motion.py`, `check_robot_numerics.py` | TienKung asset preparation, synthetic references and numerical validation |
+| `docs/tienkung3_29dof/` | TienKung setup, design, migration plan and acceptance evidence |
 | `supermimic/acp/terrain.py`, `motion.py` | PHP clip boxes in all terrain variants, height scans, box distances; motion library |
 | `supermimic/acp/mdp.py`, `networks.py`, `buffer.py` | observation, tracking reward, termination; world model, policy, critic; replay buffer |
 | `supermimic/acp/env.py` | batched mjlab simulator with per-world box slots, reference and goal-reaching worlds |
@@ -363,6 +454,9 @@ the tables, and where the figures are written.
 
 ## Contributors
 
+The original G1 implementation credits the following contributors. TienKung adaptation is maintained
+in [JStone2934/ACP_supermimic_Tienkung](https://github.com/JStone2934/ACP_supermimic_Tienkung).
+
 | | role |
 |---|---|
 | [Vu Dinh Quang](https://github.com/Quangvuisme) | project lead: direction, experiments, review |
@@ -375,7 +469,8 @@ the tables, and where the figures are written.
   not affiliated with or endorsed by the authors.
 - **Learner.** Q. Liao, Y. Shao, J. Long, K. Zakka, R. Horowitz, P. Abbeel, K. Sreenath, *SuperMimic: Scaling
   Humanoid Whole-Body Control with One Differentiable World Model*, arXiv:2610.28480, 2026.
-- **Code base.** Built next to [`supermimic_vibed`](https://github.com/zita-ch/supermimic_vibed) by Chong Zhang
+- **Code base.** Adapted from [Quangvuisme/Acp_supermimic_vibed](https://github.com/Quangvuisme/Acp_supermimic_vibed),
+  whose G1 implementation was built next to [`supermimic_vibed`](https://github.com/zita-ch/supermimic_vibed) by Chong Zhang
   (ETH Zurich), an unofficial SuperMimic reimplementation, MIT License. TODO: the license of this project's own
   code.
 - **Data.**
@@ -396,11 +491,11 @@ the tables, and where the figures are written.
 If you use this code, please cite this repository and the works it builds on:
 
 ```bibtex
-@misc{acpg1_2026,
-  title  = {TODO: project title},
-  author = {TODO},
+@misc{acp_tienkung_2026,
+  title  = {ACP-TienKung: SuperMimic-Based Contact Planning for TienKung 3.0},
+  author = {{ACP-TienKung contributors}},
   year   = {2026},
-  url    = {TODO}
+  url    = {https://github.com/JStone2934/ACP_supermimic_Tienkung}
 }
 @article{he2026attentioncontacts,
   title   = {Humanoid Mobility via Attention-based Contacts},
@@ -422,59 +517,3 @@ If you use this code, please cite this repository and the works it builds on:
   archivePrefix = {arXiv}
 }
 ```
-
-
-## TienKung 3.0 29 DoF integration
-
-The `tienkung3_29dof` robot is integrated through an instance-local RobotSpec alongside the default G1. This delivery covers pinned assets, generic configuration, full-tree FK/contact numerical validation, and synthetic standing integration checks. It does **not** establish trained standing, walking, climbing, or Stage 2/3 task performance.
-
-See [reproduction and evidence](docs/tienkung3_29dof/README.md), [design](docs/tienkung3_29dof/design.md), [progress](docs/tienkung3_29dof/progress.md), and [task memory](docs/tienkung3_29dof/taskmemory.md). Large assets, motion fixtures and checkpoints are generated under ignored data/logs directories.
-
-### Public TienKung 3.0 motion data
-
-Checked on **2026-11-07**. Official xMimic provides three downloadable **29 DoF motion examples**.
-We have not found a TienKung 3.0 release equivalent to the G1 PHP collection of 296 parkour clips
-and paired terrain variants. The resources below are candidates for further integration;
-they have not been converted or validated for ACP tracking in this repository.
-
-| Resource | Available data | Fit for this project |
-|---|---|---|
-| [xMimic 29 DoF examples](https://github.com/Open-X-Humanoid/xMimic/tree/0385122a232279210e941c7bb28da6a0bbb42356/motion_example/29dof) | Three NPZ clips, 100 Hz, about 124 seconds total; joint and world body poses/velocities | Best initial full-body motion candidates; format adaptation and motion quality checks required |
-| [TienKung-Lab TienKung 3 datasets](https://github.com/Open-X-Humanoid/TienKung-Lab/tree/ffea8bde32fcb632b5ef2a700e452f99e907ea40/legged_lab/envs/tienkung3/datasets) | Walk/run visualization and AMP files | Walking bootstrap candidate; the inspected visualization walk contains root motion and 20 joint positions, requiring completion to 29 DoF |
-| [HEX TienKung 3 datasets](https://huggingface.co/datasets/X-Humanoid/HEX-Datasets/tree/main/pretrain/tiangong3) | 19 task directories, including ball handling, carrying and picking up objects while walking | LeRobot manipulation demonstrations; not a ready-to-load PHP motion/terrain library |
-
-The downloaded xMimic files were inspected with NumPy and compared with this repository's target model:
-
-| File | Frames | Duration at 100 Hz | Maximum joint-limit violation against the local model |
-|---|---:|---:|---:|
-| `dance1_easy.npz` | 3,982 | 39.81 s | 1.12 degrees |
-| `dance2_medium.npz` | 7,099 | 70.98 s | 4.00 degrees |
-| `weibst_hard.npz` | 1,335 | 13.34 s | 5.00 degrees |
-
-Durations use `(frames - 1) / fps`. All numeric arrays were finite and body quaternions were normalized.
-The 29 joint names match our target model, but their order differs. These checks do not establish
-collision-free motion, dynamic feasibility or successful tracking; the limit violations need to be
-resolved before accepting the clips as training references.
-
-To adapt xMimic data, extract the `pelvis` pose by `body_names`, reorder joints by name, and construct
-ACP's `joint_pos = root_xyz + root_quat_wxyz + joint_angles` array of shape `(T, 36)`.
-The source `joint_pos` has shape `(T, 29)` and does not include the root. Resample to 50 Hz,
-verify model compatibility, write the required robot metadata and a paired empty flat-terrain file,
-then recompute FK, velocities and contact labels with the target model. No automatic xMimic
-conversion is implemented yet; `tools/download_acp_data.sh` still downloads G1 assets and PHP data only.
-
-For HEX, the inspected walking-and-picking task contains leg joint observations but no explicitly
-documented world root-pose field. Its action representation is also different from ACP's reference
-trajectory. The [official HEX documentation](https://github.com/Open-X-Humanoid/HEX/blob/fe9ee4870c90f2c4c362e36e3202324523c0dda9/readme.md)
-states that the TienKung low-level whole-body controller is not released.
-
-Start with `dance1_easy` and the official walking reference for small-scale tracking experiments.
-PHP-style steps and climbing still require contact-constrained retargeting of the G1 clips or new
-motion collection. The [inspected xGMR registry](https://github.com/Open-X-Humanoid/xGMR/blob/70f08d75f5e03aa06ed6d521451bd1e6888f5c0f/general_motion_retargeting/params.py)
-does not register `tiangong3`, despite the example in xMimic's README, so that retargeting command
-must not be assumed to work without completing the target configuration.
-
-These links establish public availability. xMimic's README displays an MIT badge, but the inspected
-revision contains no standalone LICENSE/COPYING or separate motion-data license; no additional
-data license is asserted here. See the [Chinese data notes](docs/tienkung3_29dof/README.md#公开动作数据调研2026-11-07)
-for the corresponding integration guidance.

@@ -1,4 +1,4 @@
-# 天工 3.0 29 DoF 接入：复现入口
+# ACP-TienKung：天工 3.0 29 DoF 复现入口
 
 本次范围为 **M0–M3 + 合成站立链路检查**。完整迁移计划保留在 [migration_plan.md](migration_plan.md)，当前状态见 [progress.md](progress.md)。设计与持续任务上下文分别见 [design.md](design.md)、[taskmemory.md](taskmemory.md)。
 
