@@ -447,7 +447,7 @@
     "generated/meshes/wrist_roll_r_link.obj": "1ac06cb34e7969325fc0e5a3ee0d2afa892ff7ec3005f70a8e98a533e37247f4",
     "generated/robot.urdf": "47297cb0f16bdbadfe32b3e77404f4a3c685b8ea47a0b85b715276aadf0af7ea",
     "generated/robot.xml": "cff2d29fa7dc14b88dde3117fe09badef90c303caa31f3ba73efdc388f18cb21",
-    "manifests/robot.json": "f621e0c4a4c85abd8ae40633faba9dd92cd3beeb9793d107dbdbe61f40b8987e",
+    "manifests/robot.json": "4c6792aa4533a77b4ffdc33322796d6d8ab632fa7aec028c658ce52a495c8afb",
     "upstream/lab_control.py": "2473ad7510c501d587b15135e9732599c89c2a71f494badbf99ebd032e9bb0f2",
     "upstream/tiangong3_urdf/meshes/ankle_pitch_l_link.STL": "278ccf6dd89d9607c463a9c7a81f1a9cfc2d891870471017ad71ea8e8e0cdee4",
     "upstream/tiangong3_urdf/meshes/ankle_pitch_r_link.STL": "b7c22d5aa05f11036c2490443ee9d8a96c2dccef44e321b24ca12a486b42a2f0",

@@ -27,3 +27,22 @@
 Python：`/home/js/miniforge3/envs/acp_supermimic/bin/python`。已探测 torch 2.9.0+cu128、MuJoCo 3.11.0、CUDA 可用，GPU 为 RTX PRO 6000 Blackwell。
 
 恢复工作先读 [progress.md](progress.md)、[design.md](design.md)，核对 git status 与 evidence。不要将原 migration_plan 的未实施命令当成已实现接口。
+
+## 已落实的关键修正
+
+- STL 面数超限：在 generated/meshes 无损转换 OBJ，原始资产保留。
+- 601 帧合成片段揭示末帧 reset bin 越界：bin 数按 T-1 个 transition 计算，terminal frame 映射至末 bin；eval 已结束环境 frame 不继续越界。
+- 阶段证据见 progress/evidence；旧 G1 checkpoint 对比使用 `.cache/tienkung_g1_baseline` detached worktree，数据与 logs 为符号链接，不修改源数据。
+
+- Git HTTPS 无终端凭据，但现有 SSH 凭据可用；origin fetch 保留 HTTPS，push URL 使用 git@github.com:JStone2934/ACP_supermimic_Tienkung.git，首批提交已普通推送。
+- 接触近似 v3 加入凸包面/箱体/棱边分离方向；原生 CCD 偶发零距离且 witness 分离，离线查询使用有界微位移重查（libccd 交叉检查发现同样不可靠，未采用）。变更已更新几何身份，需使用 v3 重生的动作/标签和最终证据。
+
+## 本轮交付完成状态
+
+- 实现提交 `ca74a80`；M0–M3 和合成链路已验收，具体命令/源码哈希/报告哈希见 evidence/run_manifest.json。工作分支保持 `feat/tienkung3-29dof-acp`，后续文档提交在该实现提交之上。
+- 最终 v3：1000 姿态 FK 通过，接触 900 样本 P95 0.0409 mm、最大 1.324 mm；15 项测试通过；1/16/64 env 各 500 步及 G1 回归通过。
+- Tiny Stage 1 路径为 `logs/tienkung3_29dof/integration_stage1_v3`：3 次更新后恢复至第 4 次。旧的 integration_stage1 / integration_stage1_v2 是中间实验，不要用作最终模型身份的 checkpoint。
+- 实际评估 1/1 片段失败，约 1.40 s；这不是稳定站立能力交付。录像在 results/tienkung3_tiny_policy.mp4，报告和哈希已提交，数据/权重/视频按既有规则留在本地。
+- shell 使用绝对 Python 路径时不会自动加入环境 bin；渲染须 conda activate acp_supermimic 或显式把其 bin 加入 PATH，环境内已安装 ffmpeg。
+- `--resume` 继续同一数据版本；`--init` 允许同模型的新数据微调，仍严格校验机器人身份。
+- 本次授权范围没有剩余实施项。下一阶段等真实动作数据进入 M4；未启动正式训练或实机部署。

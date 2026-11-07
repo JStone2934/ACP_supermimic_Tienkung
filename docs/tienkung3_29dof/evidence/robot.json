@@ -111,7 +111,7 @@
     "head_yaw_joint",
     "head_pitch_joint"
   ],
-  "geometry_version": "convex-surface-8mm-v1",
+  "geometry_version": "convex-surface-8mm-edge-sat-v3",
   "armature": [
     0.0,
     0.0,

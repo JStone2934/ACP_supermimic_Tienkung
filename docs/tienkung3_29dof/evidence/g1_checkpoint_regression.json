@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/js/robot/locomotion/Acp_supermimic_vibed/logs/acp_20261106_2326/stage1/ckpt_001000.pt",
+  "clips": [
+    "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s",
+    "motions-locomotion/cfg0001_stand_2.0s_run_left_45_2.0s_stand_2.0s",
+    "motions-locomotion/cfg0002_stand_2.0s_forward_1.2s_forward_1.6s_left_45_1.0s_right_45_2.0s_stand_2.0s"
+  ],
+  "steps": 20,
+  "finite": true,
+  "max_errors": {
+    "actions": 4.0531158447265625e-06,
+    "states": 2.0742416381835938e-05,
+    "rewards": 2.2351741790771484e-08
+  },
+  "passed": true
+}

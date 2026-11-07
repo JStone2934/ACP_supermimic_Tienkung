@@ -1,0 +1,74 @@
+{
+  "robot_metadata": {
+    "robot_id": "g1",
+    "model_hash": "f599416f2d4d5f724f34278baccb6630166e28191be5f4b221af05cbf7e86245",
+    "config_hash": "ffb59670263625e2b6f42e95fe53a4769497024532e4cdfc10b66e77a128de1f",
+    "joint_order": [
+      "left_hip_pitch_joint",
+      "left_hip_roll_joint",
+      "left_hip_yaw_joint",
+      "left_knee_joint",
+      "left_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_hip_pitch_joint",
+      "right_hip_roll_joint",
+      "right_hip_yaw_joint",
+      "right_knee_joint",
+      "right_ankle_pitch_joint",
+      "right_ankle_roll_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "left_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_shoulder_yaw_joint",
+      "left_elbow_joint",
+      "left_wrist_roll_joint",
+      "left_wrist_pitch_joint",
+      "left_wrist_yaw_joint",
+      "right_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_shoulder_yaw_joint",
+      "right_elbow_joint",
+      "right_wrist_roll_joint",
+      "right_wrist_pitch_joint",
+      "right_wrist_yaw_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "seed": 0,
+  "mujoco": "3.11.0",
+  "torch": "2.9.0+cu128",
+  "fk": {
+    "samples": 1000,
+    "dtype": "torch.float32",
+    "position_max_m": 9.539362508803606e-07,
+    "rotation_max_rad": 3.611371205511394e-07,
+    "linear_velocity_max": 1.0254771041218191e-06,
+    "angular_velocity_max": 2.7804144338006154e-06,
+    "passed": true
+  },
+  "gradient": {
+    "derivatives": 58,
+    "max_absolute_error": 5.561233695772216e-10,
+    "passed": true
+  },
+  "anchor_fixture": {
+    "fk": {
+      "samples": 100,
+      "dtype": "torch.float32",
+      "position_max_m": 3.375463109023258e-07,
+      "rotation_max_rad": 2.623137822696913e-07,
+      "linear_velocity_max": 9.310543305218744e-07,
+      "angular_velocity_max": 9.20501065593271e-07,
+      "passed": true
+    },
+    "gradient": {
+      "derivatives": 4,
+      "max_absolute_error": 2.665236920051939e-10,
+      "passed": true
+    }
+  },
+  "elapsed_s": 2.225123405456543,
+  "passed": true
+}

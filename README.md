@@ -262,7 +262,8 @@ TODO: list the configurations tried and not adopted, with numbers, as in the abl
   the longest episode (1326 frames).
 
 ```bash
-git clone TODO-repository-url && cd TODO-repository-dir
+git clone --branch feat/tienkung3-29dof-acp https://github.com/JStone2934/ACP_supermimic_Tienkung.git
+cd ACP_supermimic_Tienkung
 conda env create -f environment.yml
 conda activate acp_supermimic
 bash tools/download_acp_data.sh  # G1 model, five PHP bundles (296 clips), MJCF, and contact labels
@@ -421,3 +422,10 @@ If you use this code, please cite this repository and the works it builds on:
   archivePrefix = {arXiv}
 }
 ```
+
+
+## TienKung 3.0 29 DoF integration
+
+The `tienkung3_29dof` robot is integrated through an instance-local RobotSpec alongside the default G1. This delivery covers pinned assets, generic configuration, full-tree FK/contact numerical validation, and synthetic standing integration checks. It does **not** establish trained standing, walking, climbing, or Stage 2/3 task performance.
+
+See [reproduction and evidence](docs/tienkung3_29dof/README.md), [design](docs/tienkung3_29dof/design.md), [progress](docs/tienkung3_29dof/progress.md), and [task memory](docs/tienkung3_29dof/taskmemory.md). Large assets, motion fixtures and checkpoints are generated under ignored data/logs directories.

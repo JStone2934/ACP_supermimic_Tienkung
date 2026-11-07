@@ -1,0 +1,338 @@
+{
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "87d3d8d7398040721e0deafd2dd3f604211b0f96bad5b240dc1320c0ae7a7d58",
+    "config_hash": "ae5f542c770676d6470a3350fd3873d3e9ceca5568296c3b9befedc963fdfd01",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "seed": 0,
+  "mujoco": "3.11.0",
+  "torch": "2.9.0+cu128",
+  "fk": {
+    "samples": 1000,
+    "dtype": "torch.float32",
+    "position_max_m": 9.62942522164667e-07,
+    "rotation_max_rad": 4.2090862644398065e-07,
+    "linear_velocity_max": 2.0718509858852485e-06,
+    "angular_velocity_max": 2.970680270664161e-06,
+    "passed": true
+  },
+  "gradient": {
+    "derivatives": 58,
+    "max_absolute_error": 4.2325387639152723e-10,
+    "passed": true
+  },
+  "anchor_fixture": {
+    "fk": {
+      "samples": 100,
+      "dtype": "torch.float32",
+      "position_max_m": 3.375463109023258e-07,
+      "rotation_max_rad": 2.623137822696913e-07,
+      "linear_velocity_max": 9.310543305218744e-07,
+      "angular_velocity_max": 9.20501065593271e-07,
+      "passed": true
+    },
+    "gradient": {
+      "derivatives": 4,
+      "max_absolute_error": 2.665236920051939e-10,
+      "passed": true
+    }
+  },
+  "contact": {
+    "groups": {
+      "left_foot": {
+        "samples": 100,
+        "points": 27240,
+        "p95_m": 0.002876060940615777,
+        "max_m": 0.012638200462981402,
+        "exact_distance_range_m": [
+          -0.04935911681349526,
+          0.04970103181160707
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 3.758341776682879e-09,
+            "max_m": 4.421824795208806e-09
+          },
+          "box_top": {
+            "p95_m": 1.0000683872159188e-05,
+            "max_m": 1.0001825275929993e-05
+          },
+          "box_side": {
+            "p95_m": 1.0002369859375e-05,
+            "max_m": 1.000366822351273e-05
+          },
+          "box_edge": {
+            "p95_m": 0.010572647541060106,
+            "max_m": 0.012638200462981402
+          }
+        }
+      },
+      "right_foot": {
+        "samples": 100,
+        "points": 27288,
+        "p95_m": 0.0035199917677307384,
+        "max_m": 0.010718648455758182,
+        "exact_distance_range_m": [
+          -0.04880902903489449,
+          0.1849426078780816
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 4.396697669828415e-09,
+            "max_m": 4.9192296902589305e-09
+          },
+          "box_top": {
+            "p95_m": 1.0000243835441708e-05,
+            "max_m": 1.0001728791775993e-05
+          },
+          "box_side": {
+            "p95_m": 1.0000868431403465e-05,
+            "max_m": 1.0001190415297179e-05
+          },
+          "box_edge": {
+            "p95_m": 0.00982999316648286,
+            "max_m": 0.010718648455758182
+          }
+        }
+      },
+      "left_knee": {
+        "samples": 100,
+        "points": 61822,
+        "p95_m": 0.001543046938469847,
+        "max_m": 0.017664642306050613,
+        "exact_distance_range_m": [
+          -0.04962653057350935,
+          0.14180075344826773
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 8.830375025636872e-09,
+            "max_m": 1.311845793106059e-08
+          },
+          "box_top": {
+            "p95_m": 9.999870654312654e-06,
+            "max_m": 1.000139519907045e-05
+          },
+          "box_side": {
+            "p95_m": 1.0000448406767559e-05,
+            "max_m": 1.0003771978839976e-05
+          },
+          "box_edge": {
+            "p95_m": 0.009273193774929227,
+            "max_m": 0.017664642306050613
+          }
+        }
+      },
+      "right_knee": {
+        "samples": 100,
+        "points": 62587,
+        "p95_m": 0.005980292168539481,
+        "max_m": 0.009386333175959865,
+        "exact_distance_range_m": [
+          -0.049507327398741224,
+          0.049527973605753235
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 1.0919287718458278e-08,
+            "max_m": 1.2430949686281778e-08
+          },
+          "box_top": {
+            "p95_m": 1.0001601106623959e-05,
+            "max_m": 1.0005207513531095e-05
+          },
+          "box_side": {
+            "p95_m": 1.0003524161251304e-05,
+            "max_m": 1.000536956001876e-05
+          },
+          "box_edge": {
+            "p95_m": 0.007048034216831378,
+            "max_m": 0.009386333175959865
+          }
+        }
+      },
+      "left_hand": {
+        "samples": 100,
+        "points": 11875,
+        "p95_m": 0.0007674689055212242,
+        "max_m": 0.004326733123467477,
+        "exact_distance_range_m": [
+          -0.049032920271966325,
+          0.04894622423876572
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 1.2792489928470365e-09,
+            "max_m": 1.4349098610699773e-09
+          },
+          "box_top": {
+            "p95_m": 1.0000916861432028e-05,
+            "max_m": 1.000203275085959e-05
+          },
+          "box_side": {
+            "p95_m": 1.0000796548788674e-05,
+            "max_m": 1.0001383347883752e-05
+          },
+          "box_edge": {
+            "p95_m": 0.0025302979571006903,
+            "max_m": 0.004326733123467477
+          }
+        }
+      },
+      "right_hand": {
+        "samples": 100,
+        "points": 12032,
+        "p95_m": 0.00101191030257042,
+        "max_m": 0.008467870304314964,
+        "exact_distance_range_m": [
+          -0.047927134617721474,
+          0.049489694750485466
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 1.1625886697785856e-09,
+            "max_m": 1.3802025355946768e-09
+          },
+          "box_top": {
+            "p95_m": 1.0001402359562441e-05,
+            "max_m": 1.000147189905709e-05
+          },
+          "box_side": {
+            "p95_m": 1.0001118801279684e-05,
+            "max_m": 1.0001528363782347e-05
+          },
+          "box_edge": {
+            "p95_m": 0.006462748229423148,
+            "max_m": 0.008467870304314964
+          }
+        }
+      },
+      "left_elbow": {
+        "samples": 100,
+        "points": 29666,
+        "p95_m": 0.00787319957291121,
+        "max_m": 0.02251204934510675,
+        "exact_distance_range_m": [
+          -0.049314358631887045,
+          0.04996155132813507
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 1.6253690060530342e-09,
+            "max_m": 2.1202807287679093e-09
+          },
+          "box_top": {
+            "p95_m": 1.000179643464577e-05,
+            "max_m": 0.02251204934510675
+          },
+          "box_side": {
+            "p95_m": 1.0000675213601376e-05,
+            "max_m": 1.0001679413472464e-05
+          },
+          "box_edge": {
+            "p95_m": 0.011295415602544639,
+            "max_m": 0.013822670959601865
+          }
+        }
+      },
+      "right_elbow": {
+        "samples": 100,
+        "points": 29379,
+        "p95_m": 0.005566447695395086,
+        "max_m": 0.012597354865143,
+        "exact_distance_range_m": [
+          -0.049941314411737985,
+          0.04976479252338289
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 1.999379781181254e-09,
+            "max_m": 2.1288247276096683e-09
+          },
+          "box_top": {
+            "p95_m": 1.0001481427247827e-05,
+            "max_m": 1.000158452583999e-05
+          },
+          "box_side": {
+            "p95_m": 1.0001162141740072e-05,
+            "max_m": 1.00014736965498e-05
+          },
+          "box_edge": {
+            "p95_m": 0.011105826204528999,
+            "max_m": 0.012597354865143
+          }
+        }
+      },
+      "pelvis": {
+        "samples": 100,
+        "points": 91257,
+        "p95_m": 0.007997385697065663,
+        "max_m": 0.011492144157990117,
+        "exact_distance_range_m": [
+          -0.049903842032344825,
+          0.04610835923722145
+        ],
+        "surfaces": {
+          "plane": {
+            "p95_m": 4.85877046096927e-09,
+            "max_m": 5.7115523421913394e-09
+          },
+          "box_top": {
+            "p95_m": 1.0003082167324428e-05,
+            "max_m": 1.000364890162836e-05
+          },
+          "box_side": {
+            "p95_m": 1.0002789394598921e-05,
+            "max_m": 1.0003497020200786e-05
+          },
+          "box_edge": {
+            "p95_m": 0.009227134254616621,
+            "max_m": 0.011492144157990117
+          }
+        }
+      }
+    },
+    "p95_m": 0.004720897780668028,
+    "max_m": 0.02251204934510675,
+    "passed": false,
+    "gradient": {
+      "samples": 72,
+      "max_absolute_error": 9.554128976851928e-08,
+      "passed": true
+    }
+  },
+  "elapsed_s": 301.30349683761597,
+  "passed": false
+}

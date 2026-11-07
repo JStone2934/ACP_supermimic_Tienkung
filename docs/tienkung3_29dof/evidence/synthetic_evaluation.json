@@ -1,0 +1,109 @@
+{
+ "ckpt": "logs/tienkung3_29dof/integration_stage1_v3/last.pt",
+ "interface": "reference",
+ "eta_obs": 0.0,
+ "term_window": 0.0,
+ "norm_return": 0.097,
+ "n_failed": 1,
+ "failed": [
+  "synthetic/standing"
+ ],
+ "per_folder": {
+  "synthetic": {
+   "norm_return": 0.097,
+   "fail_rate": 1.0
+  }
+ },
+ "contacts": {
+  "left_foot": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "label_frames": 70,
+   "touch_frames": 70,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_foot": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "label_frames": 70,
+   "touch_frames": 70,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_knee": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_knee": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_hand": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_hand": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_elbow": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_elbow": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "pelvis": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  }
+ }
+}

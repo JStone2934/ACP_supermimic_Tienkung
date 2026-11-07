@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "scope": "actual 4-update policy evaluation, failed at 1.40 s",
+  "video": "results/tienkung3_tiny_policy.mp4",
+  "video_sha256": "c9637fc5220fb9803d51d8d240e13f5e497a01246b60ede24fd32ad39cf23a86",
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 640,
+        "height": 480,
+        "r_frame_rate": "50/1",
+        "duration": "1.400000",
+        "nb_frames": "70"
+      }
+    ]
+  },
+  "trajectory_sha256": "d249ee00d95ff05466954fe0fa60dca6f92aded4d2947c9d2a4b21fe6cbfe8f4",
+  "stdout": "synthetic/standing: 70 frames, failed at 1.40 s\nwrote results/tienkung3_tiny_policy.mp4\n"
+}
