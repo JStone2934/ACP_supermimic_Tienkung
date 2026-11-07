@@ -21,6 +21,7 @@ import os
 import time
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default="g1")
 parser.add_argument("--num_envs", type=int, default=4096)
 parser.add_argument("--iterations", type=int, default=60_000)
 parser.add_argument("--buffer_steps", type=int, default=1000)
@@ -66,8 +67,8 @@ import torch.nn as nn
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.g1 import MOTION_DIR, NUM_J, default_joint_pos_list
-from supermimic.acp.kinematics import G1Kinematics
+from supermimic.acp.robots import get_robot
+from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, normalize_xi, unflatten_state
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
@@ -81,10 +82,12 @@ dev = "cuda:0"
 os.makedirs(args.log_dir, exist_ok=True)
 json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
 
-motion_dir = args.motion_dir or MOTION_DIR
-kin = G1Kinematics(dev)
+robot = get_robot(args.robot)
+NUM_J, OBS_DIM, INV_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim
+motion_dir = args.motion_dir or robot.motion_dir
+kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
-mdp = MDP(kin, motion, torch.tensor(default_joint_pos_list(), device=dev))
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev))
 ctc_cfg = ContactCfg(contacts_dir=args.contacts_dir, target_noise=args.target_noise, scan_noise=args.scan_noise, w_label=args.w_label,
                      target_point=args.target_point, target_min_steps=args.target_min_steps, blind=args.blind)  # fmt: skip
 ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
@@ -93,8 +96,8 @@ paper_reward = PaperReward(reward_cfg, ctc) if reward_cfg is not None else None
 MAX_R = reward_cfg.max_step_reward if reward_cfg is not None else MAX_STEP_REWARD + args.w_label * CONTROL_DT
 Hh, HZ = args.hist, args.horizon
 
-wm = WorldModel(mdp.scan_dim).to(dev)
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh).to(dev)  # the contact command in place of the reference goal
+wm = WorldModel(mdp.scan_dim, robot=robot).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)  # the contact command in place of the reference goal
 critic = Critic(INV_DIM + mdp.critic_extra + ctc.cmd_dim).to(dev)
 opt_wm = torch.optim.Adam(wm.parameters(), lr=args.lr)
 opt_pi = torch.optim.Adam(pi.parameters(), lr=args.lr, betas=(0.9, 0.95))
@@ -103,6 +106,10 @@ start_it, wall_offset, sim_steps, lr_it0 = 0, 0.0, 0, 0
 wm_only_iters = 0 if args.init else args.wm_only_iters
 if args.resume or args.init:
     ck = torch.load(args.resume or args.init, map_location=dev)
+    robot.validate_metadata(ck.get("robot_metadata"), legacy=True)
+    # Resume continues the same run; --init explicitly fine-tunes on a new dataset.
+    if args.resume and robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
+        raise ValueError("checkpoint dataset mismatch")
     wm.load_state_dict(ck["wm"]), pi.load_state_dict(ck["pi"]), critic.load_state_dict(ck["critic"])
     opt_wm.load_state_dict(ck["opt_wm"]), opt_pi.load_state_dict(ck["opt_pi"]), opt_v.load_state_dict(ck["opt_v"])
     if args.resume:
@@ -275,7 +282,7 @@ if (args.resume or args.init) and "curriculum_phase" in ck:
 # clip groups for the curriculum log: the motion folders
 GROUPS = sorted({n.split("/")[0] for n in motion.names})
 clip_group = torch.tensor([GROUPS.index(n.split("/")[0]) for n in motion.names], device=dev)
-buffer = ReplayBuffer(args.buffer_steps, args.num_envs, dev)
+buffer = ReplayBuffer(args.buffer_steps, args.num_envs, dev, robot=robot)
 obs_hist = torch.zeros(args.num_envs, Hh, OBS_DIM, device=dev)
 goal_steps = ctc.sample_goal_steps(args.num_envs)
 
@@ -361,7 +368,7 @@ for it in range(start_it, args.iterations):
         stats = {k: [] for k in stats_keys}
         agg = {k: [] for k in agg}
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
-        ck = {"wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
+        ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
               "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(), "iteration": it + 1,
               "wall_time": time.time() - t_start, "sim_steps": sim_steps, "args": vars(args),
               "ctc_cfg": dataclasses.asdict(ctc_cfg), "curriculum_phase": env.phase.clone(), "lr_it0": lr_it0,
@@ -370,7 +377,7 @@ for it in range(start_it, args.iterations):
         last = os.path.join(args.log_dir, "last.pt")
         torch.save(ck, last + ".tmp")
         os.replace(last + ".tmp", last)
-        small = {k: ck[k] for k in ("pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "saved_at")}
+        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "saved_at")}
         path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
         torch.save(ck if args.save_full_checkpoints else small, path + ".tmp")
         os.replace(path + ".tmp", path)

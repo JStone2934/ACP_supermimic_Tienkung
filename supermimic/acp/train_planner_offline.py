@@ -20,6 +20,7 @@ import os
 import time
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--tracker", type=str, required=True, help="supermimic.acp.train_stage1 checkpoint")
 parser.add_argument("--num_envs", type=int, default=4096)
 parser.add_argument("--steps", type=int, default=20_000, help="simulator steps")
@@ -44,8 +45,8 @@ import torch
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.g1 import CONTACT_BODIES, MOTION_DIR, default_joint_pos_list
-from supermimic.acp.kinematics import G1Kinematics
+from supermimic.acp.robots import resolve_robot
+from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import MDP, OBS_DIM, REF_ORI_DIMS
 from supermimic.acp.motion import MotionLib
 from supermimic.acp.networks import Policy
@@ -59,15 +60,20 @@ os.makedirs(args.log_dir, exist_ok=True)
 json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
 
 ck = torch.load(args.tracker, map_location=dev)
+robot = resolve_robot(args.robot, ck)
+NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
+CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
 ta = ck["args"]
-motion_dir = ta.get("motion_dir") or MOTION_DIR
-kin = G1Kinematics(dev)
+motion_dir = ta.get("motion_dir") or robot.motion_dir
+kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
-mdp = MDP(kin, motion, torch.tensor(default_joint_pos_list(), device=dev))
+if robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
+    raise ValueError("checkpoint dataset mismatch")
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev))
 ctc = ContactTask(ContactCfg(**ck["ctc_cfg"]), mdp, motion_dir, dev)
 Hh = ta["hist"]
 networks.AMP_DTYPE = torch.bfloat16 if ta.get("amp", "none") == "bf16" else None
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)
 pi.load_state_dict(ck["pi"])
 pi.eval()
 
@@ -87,7 +93,7 @@ assert args.buffer_steps > int(motion.clip_len.max()), "the replay buffer must h
 
 N = args.num_envs
 env = TrackingSim(N, motion, mdp, dev, start_phase=(0.0, 0.98))
-buffer = ReplayBuffer(args.buffer_steps, N, dev)
+buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
 obs_hist = torch.zeros(N, Hh, OBS_DIM, device=dev)
 goal_steps = ctc.sample_goal_steps(N)
 
@@ -101,7 +107,7 @@ acc = {"ended": 0, "admitted": 0, "labeled": 0, "loss": []}
 
 
 def save(step: int):
-    torch.save({"planner": planner.state_dict(), "opt": opt.state_dict(), "planner_cfg": dataclasses.asdict(pcfg), "step": step,
+    torch.save({"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "planner": planner.state_dict(), "opt": opt.state_dict(), "planner_cfg": dataclasses.asdict(pcfg), "step": step,
                 "tracker": args.tracker, "prop_dim": planner.prop_dim, "args": vars(args)},
                os.path.join(args.log_dir, f"planner_{step:06d}.pt"))  # fmt: skip
 

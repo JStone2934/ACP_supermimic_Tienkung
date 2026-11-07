@@ -27,7 +27,7 @@ from mjlab.scene import Scene, SceneCfg
 from mjlab.sim import MujocoCfg, Simulation, SimulationCfg
 from mjlab.terrains import TerrainEntityCfg
 
-from .g1 import G1_JOINT_NAMES, NUM_J, action_scale, robot_cfg
+from .robots import get_robot
 from .goal import GoalCurriculum, GoalTask
 from .mdp import MAX_STEP_REWARD, MDP, XI_DIM, flatten_state
 from .motion import CONTROL_DT, MotionLib
@@ -63,14 +63,15 @@ def obstacles_cfg(n_boxes: int) -> EntityCfg:
     return EntityCfg(spec_fn=spec_fn)
 
 
-def make_scene_cfg(num_envs: int, n_boxes: int) -> SceneCfg:
+def make_scene_cfg(num_envs: int, n_boxes: int, robot="g1") -> SceneCfg:
     return SceneCfg(num_envs=num_envs, env_spacing=0.0, terrain=TerrainEntityCfg(terrain_type="plane"),
-                    entities={"robot": robot_cfg(), "obstacles": obstacles_cfg(n_boxes)})  # fmt: skip
+                    entities={"robot": get_robot(robot).entity_cfg(), "obstacles": obstacles_cfg(n_boxes)})  # fmt: skip
 
 
-def make_sim(njmax: int = 500, nconmax: int = 128) -> SimulationCfg:
+def make_sim(njmax: int = 500, nconmax: int = 128, robot="g1") -> SimulationCfg:
+    robot = get_robot(robot)
     return SimulationCfg(njmax=njmax, nconmax=nconmax,
-                         mujoco=MujocoCfg(timestep=PHYSICS_DT, integrator="implicitfast", cone="pyramidal", solver="newton",
+                         mujoco=MujocoCfg(timestep=robot.control_dt / robot.decimation, integrator="implicitfast", cone="pyramidal", solver="newton",
                                           iterations=100, ls_iterations=50, tolerance=1e-6, ccd_iterations=35))  # fmt: skip
 
 
@@ -82,12 +83,18 @@ class TrackingSim:
                  start_phase: tuple[float, float] | None = None, sim_cfg: SimulationCfg | None = None, goal: GoalTask | None = None,
                  num_goal_envs: int = 0, goal_curriculum: GoalCurriculum | None = None, start_yaw: float = 0.4):  # fmt: skip
         self.device = dev = device
+        self.spec = mdp.robot
+        self.num_joints = self.spec.num_joints
         n_boxes = motion.clip_boxes.shape[2]
-        self.scene = Scene(make_scene_cfg(num_envs, n_boxes), device=device)
-        self.sim = Simulation(num_envs=num_envs, cfg=sim_cfg or make_sim(), model=self.scene.compile(), device=device)
+        self.scene = Scene(make_scene_cfg(num_envs, n_boxes, self.spec), device=device)
+        self.sim = Simulation(num_envs=num_envs, cfg=sim_cfg or make_sim(robot=self.spec), model=self.scene.compile(), device=device)
         self.scene.initialize(mj_model=self.sim.mj_model, model=self.sim.model, data=self.sim.data)
         self.robot = self.scene["robot"]
-        assert list(self.robot.joint_names) == G1_JOINT_NAMES, self.robot.joint_names
+        internal = list(self.robot.joint_names)
+        if set(internal) != set(self.spec.joint_names):
+            raise ValueError(f"joint names differ: {internal}")
+        self.to_canonical = torch.tensor([internal.index(n) for n in self.spec.joint_names], device=dev)
+        self.to_internal = torch.argsort(self.to_canonical)
         self.N = num_envs
         self.motion, self.mdp, self.gamma = motion, mdp, gamma
         self.eval_mode = eval_mode
@@ -96,33 +103,33 @@ class TrackingSim:
         assert not (self.curriculum and self.start_phase), "one episode-start rule"
         self.max_episode_steps = max_episode_steps if not (eval_mode or self.curriculum or self.start_phase) else 10**9
         self.reset_noise = reset_noise and not eval_mode
-        self.default_q = self.robot.data.default_joint_pos[0].clone()
-        self.alpha = torch.tensor([action_scale(n) for n in G1_JOINT_NAMES], device=dev)
+        self.default_q = self.robot.data.default_joint_pos[0, self.to_canonical].clone()
+        self.alpha = torch.tensor(self.spec.action_scales, device=dev)
 
         # ---- box slots, placed on the episode's clip and variant at every reset ----
         self.box_geoms = self.scene["obstacles"].indexing.geom_ids
         m = self.sim.mj_model
         plane = torch.tensor([i for i in range(m.ngeom) if m.geom_type[i] == mujoco.mjtGeom.mjGEOM_PLANE], device=dev)
         self._terrain_geoms = torch.cat((plane, self.box_geoms.to(dev)))
-        torso = self.robot.indexing.body_ids[self.robot.find_bodies("torso_link")[0][0]]
+        torso = self.robot.indexing.body_ids[self.robot.find_bodies(self.spec.torso_body)[0][0]]
         self.sim.expand_model_fields(("geom_pos", "geom_quat", "geom_size", "geom_rbound", "geom_aabb", "geom_friction", "body_ipos"))
 
         # ---- sim context xi = [friction, joint offsets (29), torso CoM offset (3)], friction and CoM once per env ----
-        self.xi = torch.zeros(self.N, XI_DIM, device=dev)
+        self.xi = torch.zeros(self.N, self.spec.xi_dim, device=dev)
         # terrain (ground and boxes) at the lowest friction of the range, since MuJoCo takes the max of a pair
         self.sim.model.geom_friction[:, self._terrain_geoms, 0] = 1.0 if eval_mode else FRICTION[0]
         self.xi[:, 0] = 1.0 if eval_mode else torch.empty(self.N, device=dev).uniform_(*FRICTION)
         self.sim.model.geom_friction[:, self.robot.indexing.geom_ids, 0] = self.xi[:, :1]
         if not eval_mode:
             com = torch.stack([torch.empty(self.N, device=dev).uniform_(lo, hi) for lo, hi in COM_RANGE], -1)
-            self.xi[:, 1 + NUM_J :] = com
+            self.xi[:, 1 + self.num_joints :] = com
             self.sim.model.body_ipos[:, torso] = self.sim.get_default_field("body_ipos")[torso] + com
 
         # ---- episode bookkeeping ----
         self.f = torch.zeros(self.N, dtype=torch.long, device=dev)
         self.v = torch.zeros(self.N, dtype=torch.long, device=dev)  # terrain variant
         self.ep_step = torch.zeros(self.N, dtype=torch.long, device=dev)
-        self.a_prev = torch.zeros(self.N, NUM_J, device=dev)
+        self.a_prev = torch.zeros(self.N, self.num_joints, device=dev)
         self.start_bin = torch.zeros(self.N, dtype=torch.long, device=dev)
         self.ep_disc_ret = torch.zeros(self.N, device=dev)
         self.ep_ret = torch.zeros(self.N, device=dev)
@@ -165,7 +172,7 @@ class TrackingSim:
         # free joint velocity: world-frame linear velocity of the root origin, angular velocity in the root frame
         w = (R @ root_v[:, 3:6].unsqueeze(-1)).squeeze(-1)
         d = self.robot.data
-        return (p, R, root_v[:, :3].clone(), w, d.joint_pos.clone(), d.joint_vel.clone())
+        return (p, R, root_v[:, :3].clone(), w, d.joint_pos[:, self.to_canonical].clone(), d.joint_vel[:, self.to_canonical].clone())
 
     def boxes(self) -> torch.Tensor:
         """(N, K, 8) every world's current boxes."""
@@ -245,12 +252,12 @@ class TrackingSim:
         pose = torch.cat((p + self.scene.env_origins[env_ids], mat_to_quat(R)), -1)
         self.robot.write_root_link_pose_to_sim(pose, env_ids=env_ids)
         self.robot.write_root_link_velocity_to_sim(torch.cat((v, w), -1), env_ids=env_ids)
-        self.robot.write_joint_position_to_sim(q, env_ids=env_ids)
-        self.robot.write_joint_velocity_to_sim(qd, env_ids=env_ids)
+        self.robot.write_joint_position_to_sim(q[:, self.to_internal], env_ids=env_ids)
+        self.robot.write_joint_velocity_to_sim(qd[:, self.to_internal], env_ids=env_ids)
         # reset noise near a box pushes a foot or hand into it: lift the robot by its deepest terrain contact
         pose[:, 2] += self._terrain_penetration(env_ids)
         self.robot.write_root_link_pose_to_sim(pose, env_ids=env_ids)
-        self.robot.set_joint_position_target(q, env_ids=env_ids)
+        self.robot.set_joint_position_target(q[:, self.to_internal], env_ids=env_ids)
         self.f[env_ids] = frames
         self.v[env_ids] = variants
         self.ep_step[env_ids] = 0
@@ -262,7 +269,7 @@ class TrackingSim:
         self.min_dist[env_ids] = float("inf")
         self.first_close[env_ids] = -1
         if not self.eval_mode:
-            self.xi[env_ids, 1 : 1 + NUM_J] = torch.empty(n, NUM_J, device=dev).uniform_(-JOINT_OFFSET, JOINT_OFFSET)
+            self.xi[env_ids, 1 : 1 + self.num_joints] = torch.empty(n, self.num_joints, device=dev).uniform_(-JOINT_OFFSET, JOINT_OFFSET)
         self._obs = None
 
     def _write_boxes(self, env_ids: torch.Tensor, clips: torch.Tensor, variants: torch.Tensor):
@@ -315,15 +322,15 @@ class TrackingSim:
         xi = self.xi.clone()
         a_prev = self.a_prev.clone()
         ep_step = self.ep_step.clone()
-        target = self.default_q + xi[:, 1 : 1 + NUM_J] + self.alpha * a
-        self.robot.set_joint_position_target(target)
-        for _ in range(DECIMATION):
+        target = self.default_q + xi[:, 1 : 1 + self.num_joints] + self.alpha * a
+        self.robot.set_joint_position_target(target[:, self.to_internal])
+        for _ in range(self.spec.decimation):
             self.scene.write_data_to_sim()
             self.sim.step()
-            self.scene.update(PHYSICS_DT)
+            self.scene.update(self.spec.control_dt / self.spec.decimation)
         S1 = self.state()
         g = self.is_goal
-        f1 = torch.where(g, f, f + 1)  # goal worlds keep their (unused) reference frame
+        f1 = torch.where(g, f, torch.minimum(f + 1, self.motion.clip_end[self.motion.clip_id[f]]))  # goal worlds keep their (unused) reference frame
         r = self.mdp.reward(S1, f1, a, a_prev)
         term = self.mdp.termination(S1, f1)
         clip_end = self.motion.clip_end[self.motion.clip_id[f]]

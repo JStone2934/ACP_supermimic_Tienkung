@@ -40,6 +40,7 @@ import os
 import time
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--init", type=str, default=None, help="supermimic.acp.train_stage1 last.pt (terrain-point targets)")
 parser.add_argument("--planner_init", type=str, default=None, help="supermimic.acp.train_planner_offline checkpoint")
 parser.add_argument("--num_envs", type=int, default=4096)
@@ -91,8 +92,8 @@ import warp as wp
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.g1 import CONTACT_BODIES, MOTION_DIR, NB, NUM_J, default_joint_pos_list
-from supermimic.acp.kinematics import G1Kinematics
+from supermimic.acp.robots import resolve_robot
+from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_DIMS, RewardCfg, normalize_xi, unflatten_state
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
@@ -109,12 +110,17 @@ os.makedirs(args.log_dir, exist_ok=True)
 json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
 
 ck = torch.load(args.resume or args.init, map_location=dev)
+robot = resolve_robot(args.robot, ck)
+NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
+CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
 ia = ck["init_args"] if args.resume else ck["args"]  # the Stage 1 run's arguments
 assert ck.get("reward_cfg") is not None, "Stage 2 continues the paper reward (train_stage1 --reward paper)"
-motion_dir = ia.get("motion_dir") or MOTION_DIR
-kin = G1Kinematics(dev)
+motion_dir = ia.get("motion_dir") or robot.motion_dir
+kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
-mdp = MDP(kin, motion, torch.tensor(default_joint_pos_list(), device=dev), RewardCfg(term_window=int(round(args.term_window / CONTROL_DT))))
+if robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
+    raise ValueError("checkpoint dataset mismatch")
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev), RewardCfg(term_window=int(round(args.term_window / CONTROL_DT))))
 ctc_cfg = ContactCfg(**ck["ctc_cfg"])
 if ctc_cfg.target_point != "terrain":
     print("warning: the tracker's targets are body links, the planner's are terrain points", flush=True)
@@ -124,13 +130,14 @@ paper_reward = PaperReward(reward_cfg, ctc)
 MAX_R = reward_cfg.max_step_reward
 Hh, HZ = ia["hist"], args.horizon
 pk = torch.load(args.planner_init, map_location=dev) if args.planner_init and not args.resume else None
+if pk is not None: robot.validate_metadata(pk.get("robot_metadata"), legacy=True)
 saved_pcfg = ck["planner_cfg"] if args.resume else pk["planner_cfg"] if pk else {}  # the planner's inputs as trained
 pcfg = PlannerCfg(**{**saved_pcfg, "capacity": args.planner_capacity})
 scan = PlannerScan(pcfg, dev)
 CRITIC_EXTRA = NB * 3 + 2  # the planner's targets (base frame) and (eta_obs, eta_rew)
 
-wm = WorldModel(mdp.scan_dim).to(dev)
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh).to(dev)
+wm = WorldModel(mdp.scan_dim, robot=robot).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)
 critic = Critic(INV_DIM + mdp.critic_extra + ctc.cmd_dim + CRITIC_EXTRA).to(dev)
 planner = ContactPlanner(OBS_DIM - REF_ORI_DIMS, pcfg).to(dev)
 opt_wm = torch.optim.Adam(wm.parameters(), lr=args.lr)
@@ -347,7 +354,7 @@ env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=tuple(args.
 # Warp's pool otherwise returns its sim-step scratch to the driver at every sync and re-allocates it in the next graph
 # launch, which can fail once PyTorch's cache has grown into that space; keep it reserved instead
 wp.set_mempool_release_threshold(dev, torch.cuda.get_device_properties(dev).total_memory)
-buffer = ReplayBuffer(args.buffer_steps, N, dev)
+buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
 pbuf = PlannerBuffer(pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
 vbuf = PlannerBuffer(pcfg.capacity // 5, pcfg.hist, planner.prop_dim, scan.num_z, dev)
 folders = sorted({n.split("/")[0] for n in motion.names})
@@ -511,7 +518,7 @@ for it in range(start_it, args.iterations):
         val_f.write(",".join(str(x) for x in [it + 1, mt["aff"], mt["occ"]] + [v for k in keys for v in mt[k]]) + "\n")
         val_f.flush()
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
-        ck = {"wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "planner": planner.state_dict(),
+        ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "planner": planner.state_dict(),
               "opt_wm": opt_wm.state_dict(), "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(),
               "opt_planner": opt_pl.state_dict(), "iteration": it + 1, "wall_time": time.time() - t_start, "sim_steps": sim_steps,
               "args": vars(args), "init_args": init_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
@@ -520,7 +527,7 @@ for it in range(start_it, args.iterations):
         last = os.path.join(args.log_dir, "last.pt")
         torch.save(ck, last + ".tmp")
         os.replace(last + ".tmp", last)
-        small = {k: ck[k] for k in ("pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
+        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
                                     "planner_cfg", "eta", "saved_at")}  # fmt: skip
         path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
         torch.save(small, path + ".tmp")

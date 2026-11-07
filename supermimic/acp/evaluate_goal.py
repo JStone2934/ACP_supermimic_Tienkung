@@ -15,6 +15,7 @@ import argparse
 import json
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--ckpt", type=str, required=True)
 parser.add_argument("--episodes", type=int, default=4, help="instances per terrain type and level (at most the bank's)")
 parser.add_argument("--terrain_seed", type=int, default=None, help="default: the checkpoint's terrains (Stage 2: seed 0)")
@@ -26,9 +27,9 @@ import torch
 
 import supermimic.acp.networks as networks
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.g1 import MOTION_DIR, default_joint_pos_list
+from supermimic.acp.robots import resolve_robot
 from supermimic.acp.goal import LEVELS, TERRAIN_TYPES, GoalCfg, GoalTask, make_terrains
-from supermimic.acp.kinematics import G1Kinematics
+from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import MDP, OBS_DIM, REF_ORI_DIMS
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Policy
@@ -39,22 +40,25 @@ torch.backends.cuda.matmul.allow_tf32 = True
 torch.manual_seed(args.seed)
 dev = "cuda:0"
 ck = torch.load(args.ckpt, map_location=dev)
+robot = resolve_robot(args.robot, ck)
+NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
+CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
 ia = ck["init_args"]
-motion_dir = ia.get("motion_dir") or MOTION_DIR
-kin = G1Kinematics(dev)
+motion_dir = ia.get("motion_dir") or robot.motion_dir
+kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
-mdp = MDP(kin, motion, torch.tensor(default_joint_pos_list(), device=dev))
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev))
 ctc = ContactTask(ContactCfg(**ck["ctc_cfg"]), mdp, motion_dir, dev)
 terrain_args = dict(ck.get("terrain_args", {"instances": 16, "seed": 0}))
 if args.terrain_seed is not None:
     terrain_args["seed"] = args.terrain_seed
-terrains = make_terrains(**terrain_args)
+terrains = make_terrains(**terrain_args, stand_height=.78 if robot.robot_id == "g1" else robot.stand_height)
 motion.attach_terrains(terrains["boxes"])
 gcfg = GoalCfg(**ck["goal_cfg"]) if "goal_cfg" in ck else GoalCfg()
 goal = GoalTask(gcfg, ctc, PaperReward(PaperRewardCfg(), ctc), terrains)
 Hh = ia["hist"]
 networks.AMP_DTYPE = torch.bfloat16 if ck["args"].get("amp", "none") == "bf16" else None
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)
 pi.load_state_dict(ck["pi"])
 pi.eval()
 pcfg = PlannerCfg(**ck["planner_cfg"])

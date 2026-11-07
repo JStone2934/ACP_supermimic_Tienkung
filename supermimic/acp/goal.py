@@ -140,7 +140,7 @@ def _course(kind: str, u: float, rng: np.random.Generator) -> tuple[_Course, flo
     raise ValueError(kind)
 
 
-def make_terrains(instances: int = 16, seed: int = 0) -> dict:
+def make_terrains(instances: int = 16, seed: int = 0, stand_height: float = STAND_HEIGHT) -> dict:
     """The goal-reaching terrain bank: ``instances`` random courses per type and level. Returns tensors over the G =
     types x levels x instances terrains: ``boxes`` (G, MAX_BOXES, 8), ``start`` (G, 4) (x, y, surface height, yaw),
     ``goal`` (G, 4) (x, y, pelvis height, yaw), ``type`` (G,) and ``level`` (G,); terrain index of (type, level, i) =
@@ -159,7 +159,7 @@ def make_terrains(instances: int = 16, seed: int = 0) -> dict:
                 for k, (cx, cy, top, yaw, hx, hy, hz) in enumerate(course.boxes):
                     boxes[g, k] = (cs * cx - sn * cy, sn * cx + cs * cy, top, math.cos(psi + yaw), math.sin(psi + yaw), hx, hy, hz)
                 start.append((0.0, 0.0, z0, psi))
-                goal.append((cs * gx - sn * gy, sn * gx + cs * gy, gz + STAND_HEIGHT, math.atan2(sn * gx + cs * gy, cs * gx - sn * gy)))
+                goal.append((cs * gx - sn * gy, sn * gx + cs * gy, gz + stand_height, math.atan2(sn * gx + cs * gy, cs * gx - sn * gy)))
                 typ.append(ti), lvl.append(level)
                 g += 1
     t = lambda x, dt=torch.float32: torch.tensor(np.array(x), dtype=dt)  # noqa: E731
@@ -316,7 +316,7 @@ class GoalTask:
         e_pl = (mb * ((ctc.nearest_body_point(fk, plan_w) - plan_w) ** 2).sum(-1)).sum(-1) / (c.planned_std**2 * mb.sum(-1).clamp(min=1))
         foot_speed = fk[2][:, ctc.link_idx[FEET]].norm(dim=-1)
         slip = (touch[:, FEET] * torch.sigmoid((foot_speed - c.slip_speed) / c.tau_v)).sum(-1)
-        Rt, wt = fk[1][:, TORSO], fk[3][:, TORSO]
+        Rt, wt = fk[1][:, self.ctc.mdp.kin.tracked_names.index(self.ctc.robot.torso_body)], fk[3][:, self.ctc.mdp.kin.tracked_names.index(self.ctc.robot.torso_body)]
         r = (c.w_move * move + c.w_stand * stand + c.w_planned * torch.exp(-e_pl)
              + c.w_flat * (Rt[..., 2, 0] ** 2 + Rt[..., 2, 1] ** 2) + c.w_ang_vel_xy * (wt[..., :2] ** 2).sum(-1) + c.w_slip * slip
              + self.paper_reward.regularization(S, S_prev, a, a_prev, a_prev2, xi, fk))  # fmt: skip

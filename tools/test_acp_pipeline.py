@@ -15,6 +15,13 @@ from tools import train_acp_pipeline as pipeline
 class PipelineTests(unittest.TestCase):
     def exercise(self, directory, calls, fail=False):
         root = directory / "run"
+        source = directory / "motions" / "test"
+        source.mkdir(parents=True, exist_ok=True)
+        for i in range(40):
+            for suffix in ("_motion.npz", "_terrain.npy"):
+                path = source / (str(i) + suffix)
+                if not path.exists(): path.write_bytes(b"fixture")
+        robot = SimpleNamespace(robot_id="g1", motion_dir=str(source.parent), metadata=lambda: {"robot_id":"g1","model_hash":"test"})
 
         def value(cmd, flag):
             return cmd[cmd.index(flag) + 1]
@@ -38,7 +45,7 @@ class PipelineTests(unittest.TestCase):
                 Path(value(cmd, "--out")).write_text(json.dumps({"n_failed": failures, "norm_return": reward}))
             return SimpleNamespace(returncode=0)
 
-        with patch.object(pipeline, "REPO", directory), patch.object(pipeline.os, "chdir"), \
+        with patch.object(pipeline, "get_robot", return_value=robot), patch.object(pipeline, "REPO", directory), patch.object(pipeline.os, "chdir"), \
              patch.object(pipeline.sys, "argv", ["pipeline", "--run-dir", str(root)]), \
              patch.object(pipeline.subprocess, "run", side_effect=execute), \
              patch.object(pipeline.subprocess, "Popen", return_value=SimpleNamespace(pid=123, wait=lambda: 0)), \
@@ -64,6 +71,26 @@ class PipelineTests(unittest.TestCase):
             self.exercise(directory, calls)
             self.assertEqual(len(calls), count, "Restart must not repeat finished stages")
             self.assertEqual(json.loads((root / "status.json").read_text())["state"], "complete")
+
+    def test_changed_data_cannot_reuse_markers(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp); calls = []
+            self.exercise(directory, calls)
+            (directory / "motions/test/0_motion.npz").write_bytes(b"changed")
+            count = len(calls)
+            with self.assertRaisesRegex(ValueError, "inputs changed"):
+                self.exercise(directory, calls)
+            self.assertEqual(len(calls), count)
+
+    def test_changed_command_marker_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp); calls = []
+            root = self.exercise(directory, calls)
+            marker = root / "stage1.done.json"
+            data = json.loads(marker.read_text()); data["command_hash"] = "stale"
+            marker.write_text(json.dumps(data))
+            with self.assertRaisesRegex(ValueError, "stale completion"):
+                self.exercise(directory, calls)
 
     def test_failure_does_not_advance_and_restart_uses_checkpoint(self):
         with tempfile.TemporaryDirectory() as tmp:

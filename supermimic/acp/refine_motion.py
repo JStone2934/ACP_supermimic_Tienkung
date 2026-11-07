@@ -32,8 +32,9 @@ import numpy as np
 import torch
 
 from ..rotations import mat_to_quat, quat_to_mat, so3_exp
-from .g1 import CONTACT_BODIES, MOTION_DIR, MOTION_GLOB, NB, TRACKED_BODIES, get_spec
-from .kinematics import G1Kinematics
+from .g1 import MOTION_GLOB, NB
+from .robots import get_robot, sha256
+from .kinematics import RobotKinematics
 from .motion import load_php_npz
 from .task import BodySpheres
 from .terrain import box_sdf, load_terrain
@@ -82,13 +83,14 @@ def contact_segments(dist: np.ndarray, surface: np.ndarray, pos: np.ndarray, fps
 
 
 class Refiner:
-    def __init__(self, device: str, iters: int, lr: float, w_contact: float, w_clear: float, w_smooth: float):
+    def __init__(self, device: str, iters: int, lr: float, w_contact: float, w_clear: float, w_smooth: float, robot="g1"):
         self.dev, self.iters, self.lr = device, iters, lr
         self.w_contact, self.w_clear, self.w_smooth = w_contact, w_clear, w_smooth
-        self.kin = G1Kinematics(device)
-        sph = BodySpheres()
+        self.robot = get_robot(robot)
+        self.kin = RobotKinematics(device, self.robot)
+        sph = BodySpheres(self.robot)
         self.pts, self.rad = sph.pts.to(device), sph.rad.to(device)
-        frame = [TRACKED_BODIES.index(v[0]) for v in CONTACT_BODIES.values()]
+        frame = [self.kin.tracked_names.index(v[0]) for v in self.robot.contact_bodies.values()]
         self.frame = torch.tensor(frame, device=device)[sph.owner.to(device)]
         self.bounds = sph.bounds
 
@@ -165,9 +167,17 @@ def ang_vel_world(quat: np.ndarray, fps: float) -> np.ndarray:
     return out
 
 
-def write_clip(model: mujoco.MjModel, src_path: str, out_path: str, pos, quat, q):
+def write_clip(model: mujoco.MjModel, src_path: str, out_path: str, pos, quat, q, robot="g1"):
     """The source's fields for the new trajectory; velocities are central differences, as in the source."""
+    robot = get_robot(robot)
     src = dict(np.load(src_path))
+    if robot.robot_id != "g1":
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        np.savez_compressed(out_path, fps=src["fps"], joint_names=np.array(robot.joint_names),
+                            joint_pos=np.concatenate((pos, quat, q), -1), robot_metadata=json.dumps(robot.metadata()),
+                            source="refined target-model motion", data_version="refine-v1")
+        shutil.copy(src_path.replace("_motion.npz", "_terrain.npy"), out_path.replace("_motion.npz", "_terrain.npy"))
+        return
     fps = float(np.asarray(src["fps"]).reshape(-1)[0])
     jp = np.concatenate((pos, quat, q), -1).astype(np.float64)
     names = [str(n) for n in src["body_names"]]
@@ -199,7 +209,8 @@ def write_clip(model: mujoco.MjModel, src_path: str, out_path: str, pos, quat, q
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--motion_dir", default=MOTION_DIR)
+    ap.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default="g1")
+    ap.add_argument("--motion_dir", default=None)
     ap.add_argument("--contacts_dir", default=None, help="make_labels output of the source (default: <motion_dir>_contacts)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--iters", type=int, default=1500, help="600 on clips without boxes: nothing there conflicts")
@@ -210,22 +221,27 @@ def main():
     ap.add_argument("--clips", type=str, default=None, help="only clips whose name contains this (testing)")
     ap.add_argument("--device", default="cuda:0")
     args = ap.parse_args()
+    robot = get_robot(args.robot)
+    args.motion_dir = args.motion_dir or robot.motion_dir
     cdir = args.contacts_dir or args.motion_dir.rstrip("/") + "_contacts"
     files = sorted(glob.glob(os.path.join(args.motion_dir, MOTION_GLOB)))
     if args.clips:
         files = [f for f in files if args.clips in f]
-    rf = Refiner(args.device, args.iters, args.lr, args.w_contact, args.w_clear, args.w_smooth)
-    model = get_spec().compile()
+    rf = Refiner(args.device, args.iters, args.lr, args.w_contact, args.w_clear, args.w_smooth, robot)
+    model = robot.get_spec().compile()
     report, t0 = {}, time.time()
     for i, f in enumerate(files):
         rel = os.path.relpath(f, args.motion_dir)[: -len("_motion.npz")]
         lab = np.load(os.path.join(cdir, rel + ".npz"))
-        pos, quat, q, fps = load_php_npz(f)
+        robot.validate_metadata(json.loads(str(lab["robot_metadata"].item())) if "robot_metadata" in lab else None, legacy=True)
+        if robot.robot_id != "g1" and str(lab["motion_hash"].item()) != sha256(f):
+            raise ValueError("stale refinement labels")
+        pos, quat, q, fps = load_php_npz(f, robot)
         boxes = load_terrain(f)[0]
         boxes = boxes[boxes[:, 5] > 0]
         c = contact_segments(lab["contact_dist"][0], lab["contact_surface"][0], lab["body_pos_w"], fps)
         pn, qt, qn, st = rf.refine(pos, quat, q, boxes, c)
-        write_clip(model, f, os.path.join(args.out, rel + "_motion.npz"), pn, qt, qn)
+        write_clip(model, f, os.path.join(args.out, rel + "_motion.npz"), pn, qt, qn, robot)
         report[rel] = st
         print(f"{i + 1}/{len(files)} {rel}: " + " ".join(f"{k} {v:.4f}" if isinstance(v, float) else f"{k} {v}" for k, v in st.items()) + f" ({time.time() - t0:.0f} s)", flush=True)
     with open(os.path.join(args.out, f"refine_{args.clips or 'all'}.json"), "w") as fh:

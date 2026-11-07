@@ -30,8 +30,12 @@ def terrain_path(motion_file: str) -> str:
 def load_terrain(motion_file: str) -> np.ndarray:
     """(V, K, BOX_FIELDS) boxes of every variant of one clip (K may be 0)."""
     t = np.load(terrain_path(motion_file)).astype(np.float64)
+    if t.ndim != 3 or t.shape[2] != 10 or t.shape[1] < 1 or not np.isfinite(t).all():
+        raise ValueError(f"{motion_file}: invalid terrain shape/values")
     if t.size == 0:
-        return np.zeros((1, 0, BOX_FIELDS))
+        return np.zeros((t.shape[1], 0, BOX_FIELDS))
+    if (t[..., 7:] <= 0).any() or not np.allclose(np.linalg.norm(t[..., 3:7], axis=-1), 1, atol=1e-5):
+        raise ValueError(f"{motion_file}: invalid terrain size/quaternion")
     K, V, _ = t.shape
     out = np.zeros((V, K, BOX_FIELDS))
     for k in range(K):

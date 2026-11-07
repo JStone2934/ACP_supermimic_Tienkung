@@ -12,42 +12,53 @@ import argparse
 import os
 import re
 import subprocess
+import copy
+from pathlib import Path
+import xml.etree.ElementTree as ET
 
 os.environ.setdefault("MUJOCO_GL", "egl")
 import mujoco
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-from .g1 import MJCF_PATH
+from .robots import get_robot, resolve_robot
 
 TARGET_RGBA = [(0.9, 0.2, 0.2, 0.9), (0.2, 0.4, 0.95, 0.9), (1.0, 0.55, 0.1, 0.9), (1.0, 0.55, 0.1, 0.9), (0.2, 0.8, 0.3, 0.9),
                (0.2, 0.8, 0.3, 0.9), (0.6, 0.3, 0.8, 0.9), (0.6, 0.3, 0.8, 0.9), (0.95, 0.85, 0.2, 0.9)]  # fmt: skip
 
 
-def scene_xml(boxes: np.ndarray) -> str:
-    """The G1, a ghost copy (prefix ``ref_``), a floor, a light and ``boxes`` (K, 8)."""
-    xml = open(MJCF_PATH).read()
-    xml = re.sub(r'meshdir="[^"]*"', 'meshdir="' + os.path.dirname(MJCF_PATH) + '/"', xml)
-    body = xml[xml.index('<body name="pelvis"') : xml.index("</worldbody>")]
-    ghost = re.sub(r' name="([^"]+)"', r' name="ref_\1"', body)
-    ghost = re.sub(r' (rgba|contype|conaffinity|group|material)="[^"]*"', "", ghost)
-    ghost = ghost.replace("<geom ", '<geom contype="0" conaffinity="0" rgba="0.35 0.65 1.0 0.25" ')
-    extra = ['<light pos="0 0 6" dir="0 0 -1" directional="true" diffuse="0.8 0.8 0.8"/>',
-             '<geom name="floor" type="plane" size="0 0 0.05" material="grid" contype="0" conaffinity="0"/>']  # fmt: skip
-    for k, (cx, cy, top, c, s, hx, hy, hz) in enumerate(boxes):
-        if hx > 0:
-            yaw = np.arctan2(s, c)
-            extra.append(f'<geom name="box{k}" type="box" size="{hx} {hy} {hz}" pos="{cx} {cy} {top - hz}" '
-                         f'quat="{np.cos(yaw / 2)} 0 0 {np.sin(yaw / 2)}" rgba="0.62 0.55 0.45 1" contype="0" conaffinity="0"/>')  # fmt: skip
-    xml = xml.replace("</worldbody>", ghost + "\n".join(extra) + "</worldbody>")
-    assets = ('<texture name="sky" type="skybox" builtin="gradient" rgb1="0.85 0.9 0.97" rgb2="0.55 0.65 0.8" width="256" height="256"/>'
-              '<texture name="grid" type="2d" builtin="checker" rgb1="0.92 0.93 0.94" rgb2="0.80 0.82 0.85" width="512" height="512"/>'
-              '<material name="grid" texture="grid" texrepeat="8 8" reflectance="0.1"/>')  # fmt: skip
-    if "<asset>" in xml:
-        xml = xml.replace("<asset>", "<asset>" + assets, 1)
-    else:
-        xml = xml.replace("<worldbody>", "<asset>" + assets + "</asset><worldbody>", 1)
-    return xml
+def scene_xml(boxes: np.ndarray, robot="g1") -> str:
+    """Robot and ghost assembled by XML structure; assets and joints keep explicit names."""
+    robot = get_robot(robot)
+    root = ET.parse(robot.mjcf_path).getroot()
+    compiler = root.find("compiler")
+    meshdir = Path(robot.mjcf_path).parent / (compiler.get("meshdir", "") if compiler is not None else "")
+    asset = root.find("asset")
+    if asset is None: asset = ET.SubElement(root, "asset")
+    for mesh in asset.findall("mesh"):
+        mesh.set("file", str((meshdir / mesh.get("file")).resolve()))
+    wb = root.find("worldbody")
+    body = wb.find(f"body[@name='{robot.root_body}']")
+    if body is None: raise ValueError("root body missing")
+    ghost = copy.deepcopy(body)
+    for elem in ghost.iter():
+        if "name" in elem.attrib: elem.set("name", "ref_" + elem.get("name"))
+        if elem.tag == "geom":
+            elem.attrib.pop("material", None)
+            elem.set("rgba", "0.35 0.65 1.0 0.25")
+            elem.set("contype", "0"); elem.set("conaffinity", "0")
+    wb.append(ghost)
+    ET.SubElement(wb,"light",pos="0 0 6",dir="0 0 -1",directional="true",diffuse="0.8 0.8 0.8")
+    ET.SubElement(wb,"geom",name="floor",type="plane",size="0 0 0.05",material="grid",contype="0",conaffinity="0")
+    for k,(cx,cy,top,c,s,hx,hy,hz) in enumerate(boxes):
+        if hx>0:
+            yaw=np.arctan2(s,c)
+            ET.SubElement(wb,"geom",name=f"box{k}",type="box",size=f"{hx} {hy} {hz}",pos=f"{cx} {cy} {top-hz}",
+                          quat=f"{np.cos(yaw/2)} 0 0 {np.sin(yaw/2)}",rgba="0.62 0.55 0.45 1",contype="0",conaffinity="0")
+    ET.SubElement(asset,"texture",name="sky",type="skybox",builtin="gradient",rgb1="0.85 0.9 0.97",rgb2="0.55 0.65 0.8",width="256",height="256")
+    ET.SubElement(asset,"texture",name="grid",type="2d",builtin="checker",rgb1="0.92 0.93 0.94",rgb2="0.80 0.82 0.85",width="512",height="512")
+    ET.SubElement(asset,"material",name="grid",texture="grid",texrepeat="8 8",reflectance="0.1")
+    return ET.tostring(root,encoding="unicode")
 
 
 def mat_to_quat(R: np.ndarray) -> np.ndarray:
@@ -58,6 +69,7 @@ def mat_to_quat(R: np.ndarray) -> np.ndarray:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
     ap.add_argument("traj")
     ap.add_argument("out")
     ap.add_argument("--clips", nargs="*", default=None, help="clip names (default: --per_folder)")
@@ -73,6 +85,7 @@ def main():
     # Load once: accessing an NpzFile repeatedly decompresses whole arrays per frame.
     with np.load(args.traj) as archive:
         d = {key: archive[key] for key in archive.files}
+    robot = resolve_robot(args.robot, d)
     font = ImageFont.truetype("DejaVuSans.ttf", 20)
     names = list(d["names"])
     if args.clips:
@@ -85,11 +98,13 @@ def main():
                                "-r", str(args.fps), "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-movflags", "+faststart", args.out],
                               stdin=subprocess.PIPE)  # fmt: skip
     for c in clips:
-        m = mujoco.MjModel.from_xml_string(scene_xml(d["boxes"][c]))
+        m = mujoco.MjModel.from_xml_string(scene_xml(d["boxes"][c], robot))
         m.vis.global_.offwidth, m.vis.global_.offheight = args.width, args.height
         m.vis.headlight.ambient[:], m.vis.headlight.diffuse[:] = 0.45, 0.6
         data = mujoco.MjData(m)
         nq = 7 + d["q"].shape[-1]
+        qadr, _ = robot.joint_addresses(m)
+        ref_qadr = np.array([m.jnt_qposadr[m.joint("ref_" + n).id] for n in robot.joint_names])
         r = mujoco.Renderer(m, args.height, args.width)
         cam = mujoco.MjvCamera()
         cam.distance, cam.elevation, cam.azimuth = 4.0, -20.0, 135.0
@@ -100,9 +115,9 @@ def main():
         failed = T_alive < int(d["clip_len"][c]) - 1
         for t in range(T):
             fr = int(f[t, c])
-            data.qpos[:3], data.qpos[3:7], data.qpos[7:nq] = d["root_p"][t, c], d["root_quat"][t, c], d["q"][t, c]
+            data.qpos[:3], data.qpos[3:7], data.qpos[qadr] = d["root_p"][t, c], d["root_quat"][t, c], d["q"][t, c]
             data.qpos[nq : nq + 3], data.qpos[nq + 3 : nq + 7] = d["ref_root_p"][fr], mat_to_quat(d["ref_root_R"][fr])
-            data.qpos[nq + 7 :] = d["ref_q"][fr]
+            data.qpos[ref_qadr] = d["ref_q"][fr]
             mujoco.mj_kinematics(m, data)
             cam.lookat[:] = d["root_p"][t, c]
             r.update_scene(data, cam)

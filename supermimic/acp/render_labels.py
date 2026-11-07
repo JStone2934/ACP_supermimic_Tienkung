@@ -19,7 +19,8 @@ import mujoco
 import numpy as np
 from PIL import Image, ImageDraw
 
-from .g1 import MOTION_DIR
+from .robots import get_robot, resolve_robot
+import json
 from .motion import load_php_npz
 from .render import TARGET_RGBA, scene_xml
 from .terrain import load_terrain
@@ -41,16 +42,19 @@ def onset_points(c: np.ndarray, pos: np.ndarray) -> np.ndarray:
 
 
 def render_video(job: tuple) -> str:
-    out, motion_dir, rels, W, H, stride = job
+    out, motion_dir, rels, W, H, stride, robot_id, source_dir, contacts_dir = job
+    robot = get_robot(robot_id)
     ffmpeg = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(50 // stride),
                                "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "26", out + ".tmp.mp4"], stdin=subprocess.PIPE)  # fmt: skip
     for rel in rels:
         path = os.path.join(motion_dir, rel + "_motion.npz")
-        m, lab = np.load(path), np.load(os.path.join(motion_dir.rstrip("/") + "_contacts", rel + ".npz"))
-        src = os.path.join(MOTION_DIR, rel + "_motion.npz")
-        ref_p, ref_q, ref_j, fps = load_php_npz(src)
-        jp = m["joint_pos"]
-        model = mujoco.MjModel.from_xml_string(scene_xml(load_terrain(path)[0]))
+        m, lab = np.load(path), np.load(os.path.join(contacts_dir or motion_dir.rstrip("/") + "_contacts", rel + ".npz"))
+        resolve_robot(robot_id, dict(m))
+        src = os.path.join(source_dir or robot.motion_dir, rel + "_motion.npz")
+        ref_p, ref_q, ref_j, fps = load_php_npz(src, robot)
+        p, quat, q, _ = load_php_npz(path, robot)
+        jp = np.concatenate((p, quat, q), -1)
+        model = mujoco.MjModel.from_xml_string(scene_xml(load_terrain(path)[0], robot))
         model.vis.global_.offwidth, model.vis.global_.offheight = W, H
         model.vis.headlight.ambient[:], model.vis.headlight.diffuse[:] = 0.45, 0.6
         data = mujoco.MjData(model)
@@ -59,11 +63,14 @@ def render_video(job: tuple) -> str:
         cam.distance, cam.elevation = 3.0, -18.0
         cam.azimuth = np.degrees(np.arctan2(jp[-1, 1] - jp[0, 1], jp[-1, 0] - jp[0, 0])) + 110.0  # side-on
         nq = jp.shape[1]
+        qadr, _ = robot.joint_addresses(model)
+        rqadr = np.array([model.jnt_qposadr[model.joint("ref_" + n).id] for n in robot.joint_names])
         c = lab["contact_info"][0, ..., 0] > 0.5
         pos, dist = onset_points(c, lab["contact_pos_w"][0]), lab["contact_dist"][0]
         for t in range(0, len(jp), stride):
-            data.qpos[:nq] = jp[t]
-            data.qpos[nq : nq + 3], data.qpos[nq + 3 : nq + 7], data.qpos[nq + 7 :] = ref_p[t], ref_q[t], ref_j[t]
+            data.qpos[:7] = jp[t,:7]
+            data.qpos[qadr] = jp[t,7:]
+            data.qpos[nq : nq + 3], data.qpos[nq + 3 : nq + 7], data.qpos[rqadr] = ref_p[t], ref_q[t], ref_j[t]
             mujoco.mj_kinematics(model, data)
             cam.lookat[:] = (jp[t, 0], jp[t, 1], 0.6)
             renderer.update_scene(data, cam)
@@ -80,13 +87,16 @@ def render_video(job: tuple) -> str:
             ffmpeg.stdin.write(img.tobytes())
         renderer.close()
     ffmpeg.stdin.close()
-    ffmpeg.wait()
+    if ffmpeg.wait() != 0: raise RuntimeError("ffmpeg failed")
     os.replace(out + ".tmp.mp4", out)
     return out
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
+    ap.add_argument("--source-dir")
+    ap.add_argument("--contacts-dir")
     ap.add_argument("motion_dir")
     ap.add_argument("out_dir")
     ap.add_argument("--per_video", type=int, default=20)
@@ -97,12 +107,16 @@ def main():
     args = ap.parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
     rels = sorted(os.path.relpath(f, args.motion_dir)[: -len("_motion.npz")] for f in glob.glob(os.path.join(args.motion_dir, "*", "*_motion.npz")))
+    if not rels: raise ValueError("no motion files")
+    with np.load(os.path.join(args.motion_dir, rels[0] + "_motion.npz")) as data:
+        robot = resolve_robot(args.robot, dict(data))
     jobs = []
-    for folder in ORDER:
+    folders = list(ORDER) + sorted({r.split("/")[0] for r in rels} - set(ORDER))
+    for folder in folders:
         fr = [r for r in rels if r.startswith(folder + "/")]
         for i in range(0, len(fr), args.per_video):
             out = os.path.join(args.out_dir, f"{folder.removeprefix('motions-')}_{i // args.per_video + 1:02d}.mp4")
-            jobs.append((out, args.motion_dir, fr[i : i + args.per_video], args.width, args.height, args.stride))
+            jobs.append((out, args.motion_dir, fr[i : i + args.per_video], args.width, args.height, args.stride, robot.robot_id, args.source_dir, args.contacts_dir))
     print(len(rels), "clips,", len(jobs), "videos", flush=True)
     with Pool(args.workers) as pool:
         for out in pool.imap_unordered(render_video, jobs):

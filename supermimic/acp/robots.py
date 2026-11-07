@@ -41,6 +41,14 @@ class RobotSpec:
     locked_joints: tuple[str, ...] = ()
     geometry_version: str = 'legacy-g1-spheres-v1'
 
+    def __post_init__(self):
+        if self.control_dt != .02:
+            raise ValueError("ACP currently requires 50 Hz control; changing history/horizon timing needs a separate audit")
+        if self.decimation < 1:
+            raise ValueError("positive physics decimation required")
+        if len(self.joint_names) != len(set(self.joint_names)):
+            raise ValueError("duplicate canonical joint names")
+
     @property
     def num_joints(self): return len(self.joint_names)
     @property

@@ -14,3 +14,5 @@ dependencies:
       - mujoco==3.11.0
       - mujoco-warp==3.11.0
       - warp-lang==1.16.0
+      - scipy==1.17.1
+      - trimesh==5.2.0

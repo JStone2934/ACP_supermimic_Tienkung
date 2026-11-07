@@ -39,6 +39,7 @@ import os
 import time
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--init", type=str, default=None, help="supermimic.acp.train_stage2 last.pt")
 parser.add_argument("--num_envs", type=int, default=4096)
 parser.add_argument("--goal_frac", type=float, default=0.5, help="share of goal-reaching environments and imagination samples")
@@ -87,9 +88,9 @@ import warp as wp
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.g1 import CONTACT_BODIES, MOTION_DIR, NB, NUM_J, default_joint_pos_list
+from supermimic.acp.robots import resolve_robot
 from supermimic.acp.goal import LEVELS, TERRAIN_TYPES, GoalCfg, GoalCurriculum, GoalTask, make_terrains
-from supermimic.acp.kinematics import G1Kinematics
+from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_DIMS, XI_DIM, RewardCfg, normalize_xi, unflatten_state
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
@@ -106,11 +107,16 @@ os.makedirs(args.log_dir, exist_ok=True)
 json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
 
 ck = torch.load(args.resume or args.init, map_location=dev)
+robot = resolve_robot(args.robot, ck)
+NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
+CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
 ia = ck["init_args"]  # the Stage 1 run's arguments (Stage 2 and 3 checkpoints carry them)
-motion_dir = ia.get("motion_dir") or MOTION_DIR
-kin = G1Kinematics(dev)
+motion_dir = ia.get("motion_dir") or robot.motion_dir
+kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
-mdp = MDP(kin, motion, torch.tensor(default_joint_pos_list(), device=dev), RewardCfg(term_window=int(round(args.term_window / CONTROL_DT))))
+if robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
+    raise ValueError("checkpoint dataset mismatch")
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev), RewardCfg(term_window=int(round(args.term_window / CONTROL_DT))))
 ctc_cfg = ContactCfg(**ck["ctc_cfg"])
 ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
 reward_cfg = PaperRewardCfg(**ck["reward_cfg"])
@@ -118,7 +124,7 @@ paper_reward = PaperReward(reward_cfg, ctc)
 pcfg = PlannerCfg(**{**ck["planner_cfg"], "capacity": args.planner_capacity})
 scan = PlannerScan(pcfg, dev)
 terrain_args = ck["terrain_args"] if args.resume else {"instances": args.terrain_instances, "seed": args.terrain_seed}
-terrains = make_terrains(**terrain_args)
+terrains = make_terrains(**terrain_args, stand_height=.78 if robot.robot_id == "g1" else robot.stand_height)
 motion.attach_terrains(terrains["boxes"])  # terrain index v >= V: the goal-reaching bank
 gcfg = GoalCfg()
 goal = GoalTask(gcfg, ctc, paper_reward, terrains)
@@ -135,8 +141,8 @@ B_GOAL = int(round(B * args.goal_frac))
 B_REF = B - B_GOAL
 REF_ENVS, GOAL_ENVS = torch.arange(N_REF, device=dev), torch.arange(N_REF, N, device=dev)
 
-wm = WorldModel(mdp.scan_dim).to(dev)
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh).to(dev)
+wm = WorldModel(mdp.scan_dim, robot=robot).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)
 critic_m = Critic(INV_DIM + mdp.critic_extra + ctc.cmd_dim + CRITIC_EXTRA).to(dev)
 critic_fs = Critic(INV_DIM + XI_DIM + mdp.scan_dim + goal.critic_dim + NB * 3).to(dev)
 planner = ContactPlanner(OBS_DIM - REF_ORI_DIMS, pcfg).to(dev)
@@ -374,7 +380,7 @@ env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=(0.0, 0.0),
 # Warp's pool otherwise returns its sim-step scratch to the driver at every sync and re-allocates it in the next graph
 # launch, which can fail once PyTorch's cache has grown into that space; keep it reserved instead
 wp.set_mempool_release_threshold(dev, torch.cuda.get_device_properties(dev).total_memory)
-buffer = ReplayBuffer(args.buffer_steps, N, dev)
+buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
 pbuf_ref = PlannerBuffer(pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
 pbuf_goal = GroupedPlannerBuffer(len(TERRAIN_TYPES), pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
 pbuf = MixedPlannerBuffer(pbuf_ref, pbuf_goal)
@@ -518,7 +524,7 @@ for it in range(start_it, args.iterations):
         val_f.write(",".join(str(x) for x in [it + 1, mt["aff"], mt["occ"]] + [v for k in keys for v in mt[k]]) + "\n")
         val_f.flush()
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
-        ck = {"wm": wm.state_dict(), "pi": pi.state_dict(), "critic_m": critic_m.state_dict(), "critic_fs": critic_fs.state_dict(),
+        ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic_m": critic_m.state_dict(), "critic_fs": critic_fs.state_dict(),
               "planner": planner.state_dict(), "opt_wm": opt_wm.state_dict(), "opt_pi": opt_pi.state_dict(), "opt_vm": opt_vm.state_dict(),
               "opt_vfs": opt_vfs.state_dict(), "opt_planner": opt_pl.state_dict(), "iteration": it + 1, "wall_time": time.time() - t_start,
               "sim_steps": sim_steps, "args": vars(args), "init_args": ia, "stage2_args": stage2_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
@@ -529,7 +535,7 @@ for it in range(start_it, args.iterations):
         last = os.path.join(args.log_dir, "last.pt")
         torch.save(ck, last + ".tmp")
         os.replace(last + ".tmp", last)
-        small = {k: ck[k] for k in ("pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
+        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
                                     "planner_cfg", "goal_cfg", "terrain_args", "saved_at")}  # fmt: skip
         path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
         torch.save(small, path + ".tmp")

@@ -39,14 +39,17 @@ from multiprocessing import Pool
 import mujoco
 import numpy as np
 
-from supermimic.acp.g1 import CONTACT_BODIES, MOTION_DIR, MOTION_GLOB, get_spec
+from supermimic.acp.g1 import MOTION_GLOB
+from supermimic.acp.robots import get_robot, sha256
+from supermimic.acp.geometry import surface_points
+from supermimic.acp.terrain import terrain_path
 from supermimic.acp.motion import load_php_npz
 from supermimic.acp.terrain import load_terrain
 
 
-def build_model(boxes: np.ndarray) -> mujoco.MjModel:
+def build_model(boxes: np.ndarray, robot="g1") -> mujoco.MjModel:
     """The robot with the ground plane and ``boxes`` (rows with zero size are padding)."""
-    spec = get_spec()
+    spec = get_robot(robot).get_spec()
     wb = spec.worldbody
     wb.add_geom(name="ground", type=mujoco.mjtGeom.mjGEOM_PLANE, size=[0, 0, 1], contype=0, conaffinity=0)
     for k, (cx, cy, top, c, s, hx, hy, hz) in enumerate(boxes):
@@ -67,21 +70,46 @@ def box_normal(p: np.ndarray, box: np.ndarray) -> np.ndarray:
     return np.sign(q[i]) * R[:, i]
 
 
-def surface_points(m: mujoco.MjModel, g: int) -> np.ndarray:
-    """Points on the surface of geom g, in its frame: a mesh's vertices, or a sampled box surface."""
-    if m.geom_type[g] == mujoco.mjtGeom.mjGEOM_MESH:
-        i = m.geom_dataid[g]
-        return m.mesh_vert[m.mesh_vertadr[i] : m.mesh_vertadr[i] + m.mesh_vertnum[i]].astype(np.float64)
-    if m.geom_type[g] == mujoco.mjtGeom.mjGEOM_SPHERE:
-        u = np.random.default_rng(0).normal(size=(512, 3))
-        return m.geom_size[g][0] * u / np.linalg.norm(u, axis=-1, keepdims=True)
-    raise RuntimeError(f"mj_geomDistance degenerate for {m.geom(g).name}, no surface sampling for its type")
+def geom_distance(m: mujoco.MjModel, d: mujoco.MjData, g: int, tg: int, max_dist: float, fromto: np.ndarray, *, strict_reference: bool = False) -> float:
+    """Checked native distance, retrying inconsistent zero/witness results with bounded translations.
 
-
-def geom_distance(m: mujoco.MjModel, d: mujoco.MjData, g: int, tg: int, max_dist: float, fromto: np.ndarray) -> float:
-    """``mj_geomDistance`` from robot geom g to terrain geom tg, checked: near a box edge its GJK can return exactly 0
-    with a witness point far outside geom g; then the distance comes from points on g's surface."""
+    Labels retain a surface fallback for out-of-bounds witnesses. Numerical validation
+    sets strict_reference=True to disable that approximation in the independent oracle.
+    """
     dist = mujoco.mj_geomDistance(m, d, g, tg, max_dist, fromto)
+    inconsistent_zero = abs(dist) < 1e-10 and np.linalg.norm(fromto[:3] - fromto[3:]) > 1e-5
+    if inconsistent_zero:
+        # MuJoCo 3.11 native GJK has an early-exit bug (upstream issue #3383).
+        # Use bounded translations ONLY in this offline query; libccd is not a reliable oracle.
+        original = d.geom_xpos[g].copy()
+        try:
+            recovered = None
+            for eps in (1e-7, 1e-6, 1e-5):
+                candidates = []
+                for axis in range(3):
+                    for sign in (-1, 1):
+                        shift = np.zeros(3); shift[axis] = sign * eps
+                        d.geom_xpos[g] = original + shift
+                        witness = np.zeros(6)
+                        value = mujoco.mj_geomDistance(m, d, g, tg, max_dist, witness)
+                        gap = np.linalg.norm(witness[:3] - witness[3:])
+                        if abs(value) > 1e-10 and value < max_dist and abs(abs(value) - gap) < 1e-5:
+                            witness[:3] -= shift
+                            candidates.append((value, witness))
+                if len(candidates) >= 2:
+                    values = [x[0] for x in candidates]
+                    if max(values) - min(values) <= 2 * eps + 1e-5:
+                        recovered = sorted(candidates, key=lambda x: x[0])[len(candidates)//2]
+                        break
+            if recovered is None:
+                raise RuntimeError("inconsistent MuJoCo distance: bounded native retries did not agree")
+            dist, witness = recovered
+            fromto[:] = witness
+        finally:
+            d.geom_xpos[g] = original
+        return float(dist)
+    if strict_reference:
+        return float(dist)  # independent numerical oracle: never use sampled-surface fallback
     if np.linalg.norm(fromto[:3] - d.geom_xpos[g]) <= m.geom_rbound[g] + 1e-4 or dist >= max_dist:
         return dist
     if m.geom_type[tg] != mujoco.mjtGeom.mjGEOM_BOX:
@@ -94,17 +122,22 @@ def geom_distance(m: mujoco.MjModel, d: mujoco.MjData, g: int, tg: int, max_dist
     if sdf[i] >= max_dist:
         return max_dist
     on_box = np.sign(q[i]) * np.minimum(np.abs(q[i]), m.geom_size[tg])  # nearest box point (outside the box)
+    if sdf[i] < 0:
+        axis = int(np.argmax(np.abs(q[i]) - m.geom_size[tg]))
+        on_box[axis] = (1 if q[i, axis] >= 0 else -1) * m.geom_size[tg, axis]
     fromto[:3], fromto[3:] = x[i], d.geom_xpos[tg] + d.geom_xmat[tg].reshape(3, 3) @ on_box
     return float(sdf[i])
 
 
 def variant_labels(args) -> dict:
     """Labels of one clip in one terrain variant."""
-    path, boxes, threshold, max_dist = args
+    path, boxes, threshold, max_dist, *robot_arg = args
+    robot = get_robot(robot_arg[0] if robot_arg else "g1")
+    CONTACT_BODIES = robot.contact_bodies
     boxes = boxes[boxes[:, 5] > 0]
-    m = build_model(boxes)
+    m = build_model(boxes, robot)
     d = mujoco.MjData(m)
-    pos, quat, jp, fps = load_php_npz(path)
+    pos, quat, jp, fps = load_php_npz(path, robot)
     T, B = len(pos), len(CONTACT_BODIES)
 
     terrain = {m.geom("ground").id} | {m.geom(f"box{k}").id for k in range(len(boxes))}
@@ -117,6 +150,9 @@ def variant_labels(args) -> dict:
     other_bodies = sorted(set(col_body[owner < 0].tolist()))
     other_of = np.array([other_bodies.index(bid) if o < 0 else -1 for bid, o in zip(col_body, owner)])
     frame_ids = [m.body(link).id for link, _ in CONTACT_BODIES.values()]
+    if set(owner[owner >= 0]) != set(range(B)):
+        raise ValueError("empty contact geometry group")
+    qadr, _ = robot.joint_addresses(m)
     ground = m.geom("ground").id
     box_ids = np.array([m.geom(f"box{k}").id for k in range(len(boxes))], dtype=int)
     rb = m.geom_rbound[col]
@@ -134,7 +170,7 @@ def variant_labels(args) -> dict:
     other_dist = np.full((T, len(other_bodies)), max_dist, np.float32)
     fromto = np.zeros(6)
     for t in range(T):
-        d.qpos[:3], d.qpos[3:7], d.qpos[7:] = pos[t], quat[t], jp[t]
+        d.qpos[:3], d.qpos[3:7], d.qpos[qadr] = pos[t], quat[t], jp[t]
         mujoco.mj_kinematics(m, d)
         out["body_pos_w"][t] = d.xpos[frame_ids]
         out["body_quat_w"][t] = d.xquat[frame_ids]
@@ -155,7 +191,8 @@ def variant_labels(args) -> dict:
                     if surf == 0:
                         out["contact_normal_w"][t, b] = (0.0, 0.0, 1.0)
                     elif abs(dist) > 1e-6:  # witness points: the face normal on a face, in between on an edge
-                        out["contact_normal_w"][t, b] = (fromto[:3] - fromto[3:]) / dist
+                        delta = fromto[:3] - fromto[3:]
+                        out["contact_normal_w"][t, b] = np.sign(dist) * delta / max(np.linalg.norm(delta), 1e-12)
                     else:
                         out["contact_normal_w"][t, b] = box_normal(fromto[:3], boxes[surf - 1])
     out["other_dist"] = other_dist
@@ -175,9 +212,10 @@ def segments(c: np.ndarray) -> np.ndarray:
     return np.flatnonzero(e == -1) - np.flatnonzero(e == 1)
 
 
-def summarize(results: list[tuple[str, dict]], threshold: float) -> dict:
+def summarize(results: list[tuple[str, dict]], threshold: float, robot="g1") -> dict:
     """Per folder (and "all") and body, on each clip's first variant: % of frames in contact, its ground / box top /
     side / edge split, contact segments per clip, and the share of segments of at most 2 frames (flicker)."""
+    CONTACT_BODIES = get_robot(robot).contact_bodies
     by_folder: dict[str, list[dict]] = {}
     for rel, r in results:
         by_folder.setdefault(rel.split("/")[0], []).append(r)
@@ -213,20 +251,25 @@ def summarize(results: list[tuple[str, dict]], threshold: float) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--motion_dir", default=MOTION_DIR)
+    ap.add_argument("--robot", default="g1", choices=["g1", "tienkung3_29dof"])
+    ap.add_argument("--motion_dir", default=None)
     ap.add_argument("--out", default=None, help="default: <motion_dir>_contacts")
     ap.add_argument("--threshold", type=float, default=0.005, help="contact if the signed distance is at most this (m)")
     ap.add_argument("--max_dist", type=float, default=0.1, help="distances, terrain points and normals beyond this are not resolved (m)")
     ap.add_argument("--workers", type=int, default=12)
     ap.add_argument("--clips", type=str, default=None, help="only clips whose name contains this (testing)")
     args = ap.parse_args()
+    robot = get_robot(args.robot)
+    CONTACT_BODIES = robot.contact_bodies
+    args.motion_dir = args.motion_dir or robot.motion_dir
     out_dir = args.out or args.motion_dir.rstrip("/") + "_contacts"
 
     files = sorted(glob.glob(os.path.join(args.motion_dir, MOTION_GLOB)))
     if args.clips:
         files = [f for f in files if args.clips in f]
+    if not files: raise ValueError("no motion files found")
     terrains = [load_terrain(f) for f in files]
-    tasks = [(f, b, args.threshold, args.max_dist) for f, tv in zip(files, terrains) for b in tv]
+    tasks = [(f, b, args.threshold, args.max_dist, args.robot) for f, tv in zip(files, terrains) for b in tv]
     t0 = time.time()
     with Pool(args.workers) as pool:
         res = pool.map(variant_labels, tasks, chunksize=1)
@@ -237,11 +280,12 @@ def main():
         r.update(body_pos_w=rs[0]["body_pos_w"], body_quat_w=rs[0]["body_quat_w"], other_link_names=rs[0]["other_link_names"],
                  fps=rs[0]["fps"], boxes=tv.astype(np.float32), threshold=np.float32(args.threshold),
                  body_names=np.array(list(CONTACT_BODIES)), link_names=np.array([v[0] for v in CONTACT_BODIES.values()]))  # fmt: skip
+        r.update(robot_metadata=json.dumps(robot.metadata()), motion_hash=sha256(f), terrain_hash=sha256(terrain_path(f)))
         rel = os.path.relpath(f, args.motion_dir)[: -len("_motion.npz")] + ".npz"
         os.makedirs(os.path.join(out_dir, os.path.dirname(rel)), exist_ok=True)
         np.savez_compressed(os.path.join(out_dir, rel), source_motion=rel, **r)
         results.append((rel, r))
-    summary = summarize(results, args.threshold)
+    summary = summarize(results, args.threshold, robot)
     summary["config"] = {"threshold": args.threshold, "max_dist": args.max_dist,
                          "bodies": {k: {"frame": v[0], "geoms_of": list(v[1])} for k, v in CONTACT_BODIES.items()}}  # fmt: skip
     with open(os.path.join(out_dir, "summary.json"), "w") as fh:

@@ -73,27 +73,33 @@ INV_DIM = 1 + 6 + 3 + 3 + NUM_J + NUM_J
 
 
 def normalize_xi(xi: torch.Tensor) -> torch.Tensor:
-    return torch.cat(((xi[..., :1] - 0.75) / 0.45, xi[..., 1 : 1 + NUM_J] / 0.01, xi[..., 1 + NUM_J :] / 0.05), -1)
+    return torch.cat(((xi[..., :1] - 0.75) / 0.45, xi[..., 1 : -3] / 0.01, xi[..., -3:] / 0.05), -1)
 
 
 class MDP:
     def __init__(self, kin: G1Kinematics, motion: MotionLib, default_q: torch.Tensor, cfg: RewardCfg = RewardCfg()):
         self.kin, self.motion, self.cfg = kin, motion, cfg
+        self.robot = kin.robot
+        self.num_joints = self.robot.num_joints
+        self.obs_dim, self.xi_dim, self.state_dim = self.robot.obs_dim, self.robot.xi_dim, self.robot.state_dim
+        self.inv_dim = self.robot.inv_dim
         self.default_q = default_q
         mid, half = (kin.q_lo + kin.q_hi) / 2, (kin.q_hi - kin.q_lo) / 2
         self.soft_lo, self.soft_hi = mid - half * cfg.soft_limit_factor, mid + half * cfg.soft_limit_factor
         dev = default_q.device
-        self.obs_noise = OBS_NOISE.to(dev)
+        J = self.num_joints
+        self.obs_noise = torch.cat((torch.full((J,), .01), torch.full((J,), .5), torch.full((3,), .2),
+                                    torch.full((3,), .05), torch.zeros(J), torch.full((6,), .05))).to(dev)
         self.scan_offsets = grid_offsets(*CRITIC_SCAN, device=dev)
         self.scan_dim = self.scan_offsets.shape[0]
-        self.critic_extra = NUM_J + len(kin.tracked_idx) * 3 + 3 + 6 + XI_DIM + self.scan_dim
+        self.critic_extra = self.num_joints + len(kin.tracked_idx) * 3 + 3 + 6 + self.xi_dim + self.scan_dim
 
     # ---------------- observation ----------------
     def obs(self, S, a_prev, xi) -> torch.Tensor:
         """Noise-free proprioceptive observation (attitude relative to the robot's own heading)."""
         p, R, v, w, q, qd = S
         Rt = R.transpose(-1, -2)
-        dq0 = xi[..., 1 : 1 + NUM_J]
+        dq0 = xi[..., 1 : 1 + self.num_joints]
         g_b = -R[..., 2, :]  # R^T (0,0,-1)
         att = mat_to_6d(Rt @ yaw_mat(R))
         return torch.cat((q - self.default_q - dq0, qd, (Rt @ w.unsqueeze(-1)).squeeze(-1), g_b, a_prev, att), -1)

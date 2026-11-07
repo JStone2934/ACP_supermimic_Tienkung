@@ -10,12 +10,16 @@ through (no body origin more than :data:`VARIANT_TOL` below the terrain under it
 from __future__ import annotations
 
 import glob
+import json
+import hashlib
 import os
 
 import numpy as np
 import torch
 
-from .g1 import G1_JOINT_NAMES, MOTION_GLOB
+from .g1 import MOTION_GLOB
+from .robots import get_robot, sha256
+from .terrain import terrain_path
 from .kinematics import G1Kinematics
 from .terrain import box_heights, load_clip_boxes
 from ..rotations import quat_slerp, quat_to_mat, so3_log
@@ -27,11 +31,29 @@ VARIANT_TOL = 0.02
 step clip lands an ankle origin 1 mm below its box top in every variant; one locomotion variant cuts 0.56 m)."""
 
 
-def load_php_npz(path: str) -> tuple[np.ndarray, np.ndarray, np.ndarray, float]:
-    d = np.load(path)
-    assert list(d["joint_names"]) == G1_JOINT_NAMES, f"{path}: joint order differs from G1_JOINT_NAMES"
-    jp = d["joint_pos"]
-    return jp[:, :3], jp[:, 3:7], jp[:, 7:], float(np.asarray(d["fps"]).reshape(-1)[0])
+def load_php_npz(path: str, robot="g1") -> tuple[np.ndarray, np.ndarray, np.ndarray, float]:
+    robot = get_robot(robot)
+    with np.load(path, allow_pickle=False) as d:
+        meta = json.loads(str(d["robot_metadata"].item())) if "robot_metadata" in d else None
+        robot.validate_metadata(meta, legacy=True)
+        names = list(d["joint_names"])
+        if len(names) != len(set(names)) or set(names) != set(robot.joint_names):
+            raise ValueError(f"{path}: missing/duplicate/unknown joint names")
+        jp = d["joint_pos"].copy()
+        fps_arr = np.asarray(d["fps"])
+        if fps_arr.size != 1: raise ValueError(f"{path}: fps must be scalar")
+        fps = float(fps_arr.reshape(-1)[0])
+    if jp.ndim != 2 or jp.shape[1] != 7+robot.num_joints or len(jp)<2 or not np.isfinite(jp).all():
+        raise ValueError(f"{path}: invalid joint_pos shape or values")
+    if not np.isfinite(fps) or fps<=0: raise ValueError(f"{path}: invalid fps")
+    if not np.allclose(np.linalg.norm(jp[:,3:7],axis=-1),1,rtol=0,atol=1e-4):
+        raise ValueError(f"{path}: quaternion must be unit wxyz")
+    # Canonicalize quaternion signs before interpolation and finite differences.
+    quat = jp[:,3:7].copy()
+    for i in range(1,len(quat)):
+        if np.dot(quat[i-1],quat[i]) < 0: quat[i] *= -1
+    order = [names.index(n) for n in robot.joint_names]
+    return jp[:,:3], quat, jp[:,7:][:,order], fps
 
 
 def _resample(p: torch.Tensor, quat: torch.Tensor, j: torch.Tensor, fps: float):
@@ -50,11 +72,13 @@ def _resample(p: torch.Tensor, quat: torch.Tensor, j: torch.Tensor, fps: float):
 class MotionLib:
     def __init__(self, files: list[str], kin: G1Kinematics, device: str, root: str):
         self.device = device
+        self.robot = kin.robot
+        self.data_hash = hashlib.sha256(json.dumps([(sha256(f), sha256(terrain_path(f))) for f in files]).encode()).hexdigest()
         self.files = files
         self.names = [os.path.relpath(f, root)[: -len("_motion.npz")] for f in files]
         ps, qs, js, lens = [], [], [], []
         for f in files:
-            p, quat, j, fps = load_php_npz(f)
+            p, quat, j, fps = load_php_npz(f, self.robot)
             p, quat, j = _resample(*(torch.tensor(x, dtype=torch.float32) for x in (p, quat, j)), fps)
             ps.append(p), qs.append(quat), js.append(j), lens.append(len(p))
         self.clip_len = torch.tensor(lens, device=device)
@@ -93,7 +117,7 @@ class MotionLib:
         # 1 s bins
         bin_clip, bin_start = [], []
         for c in range(len(lens)):
-            nb = int(np.ceil(lens[c] / BIN_FRAMES))
+            nb = int(np.ceil((lens[c] - 1) / BIN_FRAMES))  # only frames with an outgoing transition
             for b in range(nb):
                 bin_clip.append(c)
                 bin_start.append(int(self.clip_start[c]) + b * BIN_FRAMES)
@@ -106,6 +130,7 @@ class MotionLib:
             s = bin_start[b]
             e = min(s + BIN_FRAMES, int(self.clip_end[c]) + 1)
             self.frame_bin[s:e] = b
+        self.frame_bin[self.clip_end] = self.frame_bin[self.clip_end - 1]
 
     @torch.no_grad()
     def _variants_ok(self, kin: G1Kinematics) -> torch.Tensor:
@@ -120,6 +145,8 @@ class MotionLib:
             h = box_heights(P[None, :, :2].expand(len(boxes), -1, -1), boxes)  # (V, T * bodies)
             ok[c] = (h - P[None, :, 2]).amax(-1) <= VARIANT_TOL
             if not ok[c].any():
+                if self.robot.robot_id != "g1":
+                    raise ValueError(f"no valid terrain variant: {self.names[c]}")
                 print(f"warning: every terrain variant of {self.names[c]} cuts the reference; keeping them all", flush=True)
                 ok[c] = True
         return ok

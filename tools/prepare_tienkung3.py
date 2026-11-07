@@ -91,7 +91,7 @@ def main():
     frames=['ankle_roll_l_link','ankle_roll_r_link','knee_pitch_l_link','knee_pitch_r_link','left_tcp_link','right_tcp_link','elbow_pitch_l_link','elbow_pitch_r_link','pelvis']
     cfg=dict(robot_id='tienkung3_29dof',joint_names=names,tracked_bodies=tracked,contact_bodies={n:(f,(f,)) for n,f in zip(CONTACT_NAMES,frames)},
              torso_body='waist_pitch_link',root_body='pelvis',control_dt=.02,decimation=4,locked_joints=locked,
-             geometry_version='convex-surface-8mm-v1',armature=[0.]*29,action_scales=[.25]*29)
+             geometry_version='convex-surface-8mm-edge-sat-v3',armature=[0.]*29,action_scales=[.25]*29)
     rows=[]
     for n in names:
         key=n.removesuffix('_joint').removesuffix('_l').removesuffix('_r')

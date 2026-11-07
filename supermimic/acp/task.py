@@ -28,7 +28,11 @@ import mujoco
 import numpy as np
 import torch
 
-from .g1 import CONTACT_BODIES, NB, TRACKED_BODIES, action_scale, G1_JOINT_NAMES, get_spec, pd_params
+from .g1 import NB
+from .robots import get_robot, sha256
+from .geometry import fixed_transform, surface_points, hull_data, hull_box_penetration
+from .terrain import terrain_path
+import json
 from .mdp import MDP
 from .motion import CONTROL_DT
 from .terrain import box_closest_point, box_sdf, grid_offsets, height_scan
@@ -131,27 +135,31 @@ class BodySpheres:
     """Spheres covering each contact body's collision geoms, in its target link's frame: spheres exactly, capsules as
     3 spheres along their axis, convex meshes (the G1's limb hulls) as :data:`MESH_POINTS` spheres on their surface."""
 
-    def __init__(self):
-        m = get_spec().compile()
+    def __init__(self, robot="g1"):
+        robot = get_robot(robot)
+        m = robot.get_spec().compile()
         pts, rad, owner = [], [], []
-        for b, (frame, links) in enumerate(CONTACT_BODIES.values()):
+        self.hulls = {}
+        for b, (frame, links) in enumerate(robot.contact_bodies.values()):
             fid = m.body(frame).id
             for link in links:
                 lid = m.body(link).id
-                if lid == fid:
-                    p0, R0 = np.zeros(3), np.eye(3)
-                else:  # a jointless child of the frame link
-                    assert m.body_parentid[lid] == fid and m.body_jntnum[lid] == 0, link
-                    p0, R0 = m.body_pos[lid].copy(), _quat_mat(m.body_quat[lid])
+                p0, R0 = fixed_transform(m, fid, lid)
                 for g in range(m.ngeom):
                     if m.geom_bodyid[g] != lid or not (m.geom_contype[g] or m.geom_conaffinity[g]):
                         continue
                     c, Rg = p0 + R0 @ m.geom_pos[g], R0 @ _quat_mat(m.geom_quat[g])
                     t, size = m.geom_type[g], m.geom_size[g]
-                    if t == mujoco.mjtGeom.mjGEOM_SPHERE:
+                    if robot.robot_id != "g1" and t == mujoco.mjtGeom.mjGEOM_MESH:
+                        if b in self.hulls: raise ValueError("multiple contact mesh hulls need explicit geometry ownership")
+                        self.hulls[b] = {k: torch.tensor(v, dtype=torch.float32) for k,v in hull_data(m,g,p0,R0).items()}
+                    if robot.robot_id != "g1" and t not in (mujoco.mjtGeom.mjGEOM_SPHERE, mujoco.mjtGeom.mjGEOM_CAPSULE):
+                        for x in surface_points(m, g):
+                            pts.append(c + Rg @ x), rad.append(0.), owner.append(b)
+                    elif t == mujoco.mjtGeom.mjGEOM_SPHERE:
                         pts.append(c), rad.append(size[0]), owner.append(b)
                     elif t == mujoco.mjtGeom.mjGEOM_CAPSULE:
-                        for u in (-1.0, 0.0, 1.0):
+                        for u in ((-1.0, 0.0, 1.0) if robot.robot_id == "g1" else np.linspace(-1,1,max(3,int(np.ceil(2*size[1]/.008))+1))):
                             pts.append(c + u * size[1] * Rg[:, 2]), rad.append(size[0]), owner.append(b)
                     elif t == mujoco.mjtGeom.mjGEOM_MESH:
                         i = m.geom_dataid[g]
@@ -162,7 +170,10 @@ class BodySpheres:
                         for x in sel:
                             pts.append(c + Rg @ x), rad.append(MESH_RADIUS), owner.append(b)
                     else:
-                        raise ValueError(f"{m.geom(g).name}: unsupported geom type {t}")
+                        for x in surface_points(m, g):
+                            pts.append(c + Rg @ x), rad.append(0.), owner.append(b)
+        if set(owner) != set(range(len(robot.contact_bodies))):
+            raise ValueError("empty contact geometry group")
         order = np.argsort(owner, kind="stable")
         self.pts = torch.tensor(np.array(pts)[order], dtype=torch.float32)
         self.rad = torch.tensor(np.array(rad)[order], dtype=torch.float32)
@@ -226,6 +237,7 @@ class ContactTask:
 
     def __init__(self, cfg: ContactCfg, mdp: MDP, motion_dir: str, device: str):
         self.cfg, self.mdp, self.motion = cfg, mdp, mdp.motion
+        self.robot = robot = mdp.robot
         m, dev = self.motion, device
         cdir = cfg.contacts_dir or motion_dir.rstrip("/") + "_contacts"
         H = int(round(cfg.horizon_s / CONTROL_DT))
@@ -236,7 +248,16 @@ class ContactTask:
             path = os.path.join(cdir, name + ".npz")
             assert os.path.exists(path), f"{path} missing: run python -m supermimic.acp.make_labels"
             d = np.load(path)
-            assert list(d["body_names"]) == list(CONTACT_BODIES), d["body_names"]
+            assert list(d["body_names"]) == list(robot.contact_bodies), d["body_names"]
+            meta = json.loads(str(d["robot_metadata"].item())) if "robot_metadata" in d else None
+            robot.validate_metadata(meta, legacy=True)
+            if robot.robot_id != "g1" or meta is not None:
+                if str(d["motion_hash"].item()) != sha256(m.files[c]) or str(d["terrain_hash"].item()) != sha256(terrain_path(m.files[c])):
+                    raise ValueError(f"stale contact labels: {path}")
+                if abs(float(d["fps"]) - 1/robot.control_dt) > 1e-5:
+                    raise ValueError(f"label control rate mismatch: {path}")
+                if list(d["link_names"]) != [x[0] for x in robot.contact_bodies.values()]:
+                    raise ValueError(f"label frame mismatch: {path}")
             raw = d["contact_info"][..., 0] > 0.5  # (V_clip, T, NB)
             s, n = int(m.clip_start[c]), int(m.clip_len[c])
             assert raw.shape[1] == n, (name, n, raw.shape)
@@ -246,11 +267,12 @@ class ContactTask:
                 on = next_onsets(drop_short(lab, cfg.target_min_steps) if cfg.target_min_steps else lab, H)
                 touched[s : s + n, v] = d["contact_pos_w"][vc]
                 labels[s : s + n, v], onset[s : s + n, v] = lab, np.where(on >= 0, on + s, -1)
+        self.has_box_terrain = bool((m.clip_boxes[..., 5] > 0).any())
         self.V = V
         self.labels = torch.tensor(labels, device=dev)
         self.next_valid = torch.tensor(onset >= 0, device=dev)
         self.next_onset = torch.tensor(onset, device=dev)
-        self.link_idx = torch.tensor([TRACKED_BODIES.index(frame) for frame, _ in CONTACT_BODIES.values()], device=dev)
+        self.link_idx = torch.tensor([mdp.kin.tracked_names.index(frame) for frame, _ in robot.contact_bodies.values()], device=dev)
         on = torch.tensor(np.maximum(onset, 0), device=dev)  # (F, V, NB)
         if cfg.target_point == "terrain":  # the terrain point touched at the onset frame (NaN only away from contact)
             vv = torch.arange(V, device=dev).view(1, V, 1)
@@ -260,9 +282,10 @@ class ContactTask:
         else:
             assert cfg.target_point == "link", cfg.target_point
             self.next_pos = m.body_p[on, self.link_idx.view(1, 1, NB)]  # reference links at the onset frame
-        sp = BodySpheres()
+        sp = BodySpheres(robot)
         self.sph_pts, self.sph_rad, self.sph_owner = sp.pts.to(dev), sp.rad.to(dev), sp.owner.to(dev)
         self.sph_bounds = sp.bounds
+        self.hulls = {b: {k:x.to(dev) for k,x in h.items()} for b,h in sp.hulls.items()}
         self.scan_offsets = grid_offsets(cfg.scan_x, cfg.scan_y, device=dev)
         self.goal_steps = (int(round(cfg.goal_s[0] / CONTROL_DT)), int(round(cfg.goal_s[1] / CONTROL_DT)))
         self.cmd_dim = NB * 3 + 3 + (0 if cfg.blind else self.scan_offsets.shape[0])
@@ -313,13 +336,24 @@ class ContactTask:
     def body_distance(self, S, boxes: torch.Tensor, fk=None) -> torch.Tensor:
         """(B, 9) signed distance of each contact body's spheres to the ground and the nearest of ``boxes`` (B, K, 8);
         ``fk``: ``kin.forward(*S)`` if already computed."""
-        x = self._sphere_centers(self.mdp.kin.forward(*S) if fk is None else fk)
+        fk = self.mdp.kin.forward(*S) if fk is None else fk
+        x = self._sphere_centers(fk)
         near = self._near_boxes(S[0], boxes)
-        d = x[..., 2]
+        d = x[..., 2] - self.sph_rad
+        result = [d[:, s:e].min(-1).values for s,e in self.sph_bounds]
+        # All callers supply terrain from this MotionLib; goal terrain can be attached later.
+        if not self.has_box_terrain and self.motion.goal_boxes is None:
+            return torch.stack(result, -1)
         for k in range(near.shape[1]):
-            d = torch.minimum(d, box_sdf(x, near[:, k]))
-        d = d - self.sph_rad
-        return torch.stack([d[:, s:e].min(-1).values for s, e in self.sph_bounds], -1)
+            dk = box_sdf(x, near[:, k]) - self.sph_rad
+            for b,(s,e) in enumerate(self.sph_bounds):
+                distance = dk[:,s:e].min(-1).values
+                if b in self.hulls:
+                    idx = self.link_idx[b]
+                    penetration = hull_box_penetration(fk[0][:,idx], fk[1][:,idx], near[:,k], self.hulls[b])
+                    distance = torch.where((distance < 0) & (near[:,k,5] > 0), penetration, distance)
+                result[b] = torch.minimum(result[b], distance)
+        return torch.stack(result, -1)
 
     @torch.no_grad()
     def contact_point(self, S, boxes: torch.Tensor, fk=None) -> torch.Tensor:
@@ -448,8 +482,8 @@ class PaperReward:
     def __init__(self, cfg: PaperRewardCfg, ctc: ContactTask):
         self.cfg, self.ctc, self.mdp, self.motion = cfg, ctc, ctc.mdp, ctc.motion
         dev = ctc.labels.device
-        self.kp, self.kd, self.effort, self.vel_limit = (torch.tensor(x, device=dev) for x in pd_params())
-        self.alpha = torch.tensor([action_scale(n) for n in G1_JOINT_NAMES], device=dev)
+        self.kp, self.kd, self.effort, self.vel_limit = (torch.tensor(x, device=dev) for x in self.mdp.robot.pd_params())
+        self.alpha = torch.tensor(self.mdp.robot.action_scales, device=dev)
 
     def __call__(self, S, S_prev, f, v, a, a_prev, a_prev2, xi, plan_w=None, plan_valid=None, eta_rew=None) -> torch.Tensor:
         """Reward of S (reference frame f, terrain variant v) reached from S_prev by action a after a_prev, a_prev2; xi

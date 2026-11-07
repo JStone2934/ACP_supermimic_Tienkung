@@ -18,6 +18,7 @@ import argparse
 import json
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--ckpt", type=str, required=True)
 parser.add_argument("--goal_s", type=float, default=1.0)
 parser.add_argument("--out", type=str, default=None, help="results json (default: next to the checkpoint)")
@@ -38,8 +39,8 @@ import torch
 
 import supermimic.acp.networks as networks
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.g1 import CONTACT_BODIES, MOTION_DIR, NB, default_joint_pos_list
-from supermimic.acp.kinematics import G1Kinematics
+from supermimic.acp.robots import resolve_robot
+from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_DIMS, RewardCfg
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Policy
@@ -51,22 +52,26 @@ torch.backends.cuda.matmul.allow_tf32 = True
 torch.manual_seed(args.seed)
 dev = "cuda:0"
 ck = torch.load(args.ckpt, map_location=dev)
+robot = resolve_robot(args.robot, ck)
+NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
+CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
 a_ = ck["args"]
 ia = ck.get("init_args", a_)
-motion_dir = ia.get("motion_dir") or MOTION_DIR
-kin = G1Kinematics(dev)
+motion_dir = ia.get("motion_dir") or robot.motion_dir
+kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
 term_win = a_.get("term_window", 0.0) if args.term_window is None else args.term_window
-mdp = MDP(kin, motion, torch.tensor(default_joint_pos_list(), device=dev), RewardCfg(term_window=int(round(term_win / CONTROL_DT))))
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev), RewardCfg(term_window=int(round(term_win / CONTROL_DT))))
 ctc = ContactTask(ContactCfg(**ck["ctc_cfg"]), mdp, motion_dir, dev)
 Hh = ia["hist"]
 networks.AMP_DTYPE = torch.bfloat16 if a_.get("amp", "none") == "bf16" else None
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)
 pi.load_state_dict(ck["pi"])
 pi.eval()
 
 if args.planner:
     pk = torch.load(args.planner, map_location=dev)
+    robot.validate_metadata(pk.get("robot_metadata"), legacy=True)
     pcfg = PlannerCfg(**pk["planner_cfg"])
     scan = PlannerScan(pcfg, dev)
     planner = ContactPlanner(OBS_DIM - REF_ORI_DIMS, pcfg).to(dev)
@@ -114,7 +119,7 @@ def evaluate() -> dict:
         a = pi(hist, cmd)
         out = env.step(a + 0.1 * torch.randn_like(a) if NOISE_ACT else a)
         ret += torch.where(alive, out["r"], 0.0)
-        f1 = out["f"] + 1
+        f1 = torch.minimum(out["f"] + 1, motion.clip_end[motion.clip_id[out["f"]]])
         S1 = env.state()
         boxes1 = motion.boxes(f1, out["v"])
         touch = (ctc.body_distance(S1, boxes1) <= ctc.cfg.touch_dist) & alive.unsqueeze(-1)
@@ -127,7 +132,7 @@ def evaluate() -> dict:
         n_label += label.sum(0)
         env.f = torch.minimum(env.f, clip_end - 1)  # finished clips keep stepping; keep f+1 in range
     if args.record:
-        np.savez_compressed(args.record, names=np.array(motion.names), variant=env.v.cpu().numpy(),
+        np.savez_compressed(args.record, robot_metadata=json.dumps(robot.metadata()), names=np.array(motion.names), variant=env.v.cpu().numpy(),
                             boxes=motion.clip_boxes[torch.arange(C, device=dev), env.v].cpu().numpy(),
                             **{k: torch.stack(v).numpy() for k, v in traj.items()}, ref_root_p=motion.root_p.cpu().numpy(),
                             ref_root_R=motion.root_R.cpu().numpy(), ref_q=motion.q.cpu().numpy(),

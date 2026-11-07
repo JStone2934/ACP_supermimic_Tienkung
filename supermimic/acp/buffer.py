@@ -11,17 +11,19 @@ from __future__ import annotations
 import torch
 
 from .g1 import NUM_J
+from .robots import get_robot
 from .mdp import OBS_DIM, STATE_DIM, XI_DIM
 
 
-def fields(extra: dict | None = None) -> dict:
+def fields(extra: dict | None = None, robot="g1") -> dict:
+    spec = get_robot(robot)
     return {
-        "s": (STATE_DIM, torch.float32),
-        "s1": (STATE_DIM, torch.float32),
-        "a": (NUM_J, torch.float32),
-        "a_prev": (NUM_J, torch.float32),
-        "xi": (XI_DIM, torch.float32),
-        "o": (OBS_DIM, torch.float32),
+        "s": (spec.state_dim, torch.float32),
+        "s1": (spec.state_dim, torch.float32),
+        "a": (spec.num_joints, torch.float32),
+        "a_prev": (spec.num_joints, torch.float32),
+        "xi": (spec.xi_dim, torch.float32),
+        "o": (spec.obs_dim, torch.float32),
         "r": ((), torch.float32),
         "f": ((), torch.long),
         "v": ((), torch.long),
@@ -33,9 +35,9 @@ def fields(extra: dict | None = None) -> dict:
 
 
 class ReplayBuffer:
-    def __init__(self, T: int, N: int, device: str, extra: dict | None = None):
+    def __init__(self, T: int, N: int, device: str, extra: dict | None = None, robot="g1"):
         self.T, self.N, self.device = T, N, device
-        self.fields = fields(extra)
+        self.fields = fields(extra, robot)
         self.data = {}
         for k, (shape, dt) in self.fields.items():
             shp = (T, N) + ((shape,) if isinstance(shape, int) else shape)
