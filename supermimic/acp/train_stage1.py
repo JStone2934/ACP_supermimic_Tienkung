@@ -41,6 +41,7 @@ parser.add_argument("--warmup_steps", type=int, default=64, help="sim steps befo
 parser.add_argument("--wm_only_iters", type=int, default=500, help="world-model-only iterations at the start")
 parser.add_argument("--lr_decay_iters", type=int, default=250_000)
 parser.add_argument("--ckpt_every", type=int, default=2000)
+parser.add_argument("--save_full_checkpoints", action="store_true", help="keep optimizer/critic state in numbered checkpoints for selection and resume")
 parser.add_argument("--log_every", type=int, default=50)
 parser.add_argument("--motion_dir", type=str, default=None, help="default: data/php_parkour")
 parser.add_argument("--contacts_dir", type=str, default=None, help="supermimic.acp.make_labels output (default: <motion_dir>_contacts)")
@@ -371,5 +372,5 @@ for it in range(start_it, args.iterations):
         os.replace(last + ".tmp", last)
         small = {k: ck[k] for k in ("pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "saved_at")}
         path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
-        torch.save(small, path + ".tmp")
+        torch.save(ck if args.save_full_checkpoints else small, path + ".tmp")
         os.replace(path + ".tmp", path)

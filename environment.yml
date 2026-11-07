@@ -1,0 +1,16 @@
+name: acp_supermimic
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - ffmpeg
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.9.0+cu128
+      - torchvision==0.24.0+cu128
+      - tensordict==0.10.0
+      - mjlab==1.6.0
+      - mujoco==3.11.0
+      - mujoco-warp==3.11.0
+      - warp-lang==1.16.0

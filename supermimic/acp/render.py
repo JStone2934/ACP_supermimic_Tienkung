@@ -16,7 +16,7 @@ import subprocess
 os.environ.setdefault("MUJOCO_GL", "egl")
 import mujoco
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 from .g1 import MJCF_PATH
 
@@ -67,9 +67,13 @@ def main():
     ap.add_argument("--width", type=int, default=960)
     ap.add_argument("--height", type=int, default=540)
     ap.add_argument("--fps", type=int, default=50)
+    ap.add_argument("--title", default=None, help="short video title")
     args = ap.parse_args()
 
-    d = np.load(args.traj)
+    # Load once: accessing an NpzFile repeatedly decompresses whole arrays per frame.
+    with np.load(args.traj) as archive:
+        d = {key: archive[key] for key in archive.files}
+    font = ImageFont.truetype("DejaVuSans.ttf", 20)
     names = list(d["names"])
     if args.clips:
         clips = [names.index(c) for c in args.clips]
@@ -78,7 +82,7 @@ def main():
         clips = [i for g in folders for i in [j for j, n in enumerate(names) if n.startswith(g + "/")][: args.per_folder]]
     alive, f = d["alive"], d["f"]  # (T, C)
     ffmpeg = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{args.width}x{args.height}",
-                               "-r", str(args.fps), "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", args.out],
+                               "-r", str(args.fps), "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-movflags", "+faststart", args.out],
                               stdin=subprocess.PIPE)  # fmt: skip
     for c in clips:
         m = mujoco.MjModel.from_xml_string(scene_xml(d["boxes"][c]))
@@ -88,7 +92,7 @@ def main():
         nq = 7 + d["q"].shape[-1]
         r = mujoco.Renderer(m, args.height, args.width)
         cam = mujoco.MjvCamera()
-        cam.distance, cam.elevation, cam.azimuth = 3.2, -15.0, 135.0
+        cam.distance, cam.elevation, cam.azimuth = 4.0, -20.0, 135.0
         T_alive = int(alive[:, c].sum())
         T = min(T_alive + int(args.tail * args.fps), len(alive))
         if args.seconds:
@@ -100,7 +104,7 @@ def main():
             data.qpos[nq : nq + 3], data.qpos[nq + 3 : nq + 7] = d["ref_root_p"][fr], mat_to_quat(d["ref_root_R"][fr])
             data.qpos[nq + 7 :] = d["ref_q"][fr]
             mujoco.mj_kinematics(m, data)
-            cam.lookat[:] = (d["root_p"][t, c][0], d["root_p"][t, c][1], 0.6)
+            cam.lookat[:] = d["root_p"][t, c]
             r.update_scene(data, cam)
             scn = r.scene
             for b in np.flatnonzero(d["tgt_valid"][t, c]):
@@ -109,12 +113,15 @@ def main():
                                         np.eye(3).reshape(-1), np.array(TARGET_RGBA[b], dtype=np.float32))  # fmt: skip
                     scn.ngeom += 1
             img = Image.fromarray(r.render())
-            ImageDraw.Draw(img).text((10, 8), f"{names[c]}  t={t / args.fps:.2f}s" + ("  FAILED" if failed and t >= T_alive else ""), fill=(0, 0, 0))
+            draw = ImageDraw.Draw(img)
+            draw.text((10, 8), f"{args.title or names[c]}  t={t / args.fps:.2f}s" + ("  FAILED" if failed and t >= T_alive else ""), font=font, fill=(0, 0, 0))
+            draw.text((10, args.height - 30), "Solid: policy | Blue ghost: reference | Dots: planned contacts", font=font, fill=(0, 0, 0))
             ffmpeg.stdin.write(img.tobytes())
         r.close()
         print(f"{names[c]}: {T} frames, {'failed at %.2f s' % (T_alive / args.fps) if failed else 'completed'}", flush=True)
     ffmpeg.stdin.close()
-    ffmpeg.wait()
+    if ffmpeg.wait() != 0:
+        raise RuntimeError("ffmpeg failed to encode the video")
     print("wrote", args.out)
 
 

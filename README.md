@@ -263,14 +263,21 @@ TODO: list the configurations tried and not adopted, with numbers, as in the abl
 
 ```bash
 git clone TODO-repository-url && cd TODO-repository-dir
-pip install "mjlab==1.6.0" "torch==2.9.0" --extra-index-url https://download.pytorch.org/whl/cu128   # TODO: or uv sync
-tools/download_data.sh            # G1 URDF + meshes -> data/g1_description (also LAFAN1, unused here)
-python tools/urdf_to_mjcf.py      # builds data/g1_description/g1_29dof.xml (the script's last, Docker step is for Isaac Lab only)
-ln -s <php_parkour>/data data/php_parkour     # the five PHP bundles: motions-{low,high}-step, motions-{low,high}-climb-76, motions-locomotion
-python -m supermimic.acp.make_labels          # contact labels -> data/php_parkour_contacts (~1 min on 16 CPU workers)
+conda env create -f environment.yml
+conda activate acp_supermimic
+bash tools/download_acp_data.sh  # G1 model, five PHP bundles (296 clips), MJCF, and contact labels
+python -m tools.check_acp_setup  # CUDA compile/backward, all clips/labels, 16 GPU simulation steps
 ```
 
-TODO: a sanity-check command (e.g. FK vs simulator, or reference playback on the boxes).
+The downloader verifies the PHP archives and extracted files against the upstream SHA-256
+manifest, and verifies the G1 files against Hugging Face's hashes. Downloads go to
+`data/g1_description` and `data/php_parkour`; generated labels go to `data/php_parkour_contacts`.
+Re-running the script reuses verified assets and regenerates the MJCF and labels.
+
+`tools/setup.sh`, `tools/download_data.sh`, and `run_train.sh` belong to the separate
+upstream **Isaac Lab 3.0.0 kit-less Docker** workflow described in
+[docs/supermimic_isaaclab.md](docs/supermimic_isaaclab.md). ACP-G1 uses mjlab directly
+and does not require that Docker environment.
 
 ## Training
 
