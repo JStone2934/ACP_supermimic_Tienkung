@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-07",
+  "initial_head": "751aa5c3ccb70ad8b9e74f8f1c53c9b61f35c459",
+  "initial_branch": "main",
+  "initial_staged_diff": "empty",
+  "files": {
+    "README.md": "92292f2501d272d564d423ac40ddf9383bb73c55379a08640a5479a476df89f5",
+    "supermimic/acp/render.py": "6dc7419d414283263421bf5dc6377d9845310e95d2372ed594dec6e5c54eeca9",
+    "supermimic/acp/train_stage1.py": "a23b6e88d5e390347eae8ced81a6ddd33b9b96222d190aa3f4ce4648c139610c",
+    "environment.yml": "9811c15aeded823c3c889a25197804c651c83877a7330eeb1c42a353dbeaf450",
+    "tools/check_acp_setup.py": "abf37c1510bc061bb3f9929434cf06c19a2bb9f14866cb9a3d2842d291e33004",
+    "tools/download_acp_data.sh": "63b540eb5d0421deb3108302bda45953247e86839baec3eb96e62b80df1e7c81",
+    "tools/test_acp_pipeline.py": "c56316e76d934452ceed7bc73e3749d2fda682ec1ef15759ca06ad51ca959d64",
+    "tools/train_acp_pipeline.py": "1e2a746b306af1c35496e13821810869ad5c8ff32fcd21ce7e13cd696433e906",
+    "docs/tienkung3_migration_analysis.md": "b7db5b89ddaa13df37ebbb8d182e65da1c3f9d20940af57abc1e9c1328fa656b",
+    "docs/tienkung3_29dof/migration_plan.md": "16527263d61b33e21977daab846f25c35ea3bb022f50c4030f0825b2553a85ed"
+  }
+}
