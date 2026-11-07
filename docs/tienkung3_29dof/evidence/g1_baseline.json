@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "versions": {
+    "torch": "2.9.0+cu128",
+    "mjlab": "1.6.0",
+    "mujoco": "3.11.0",
+    "mujoco-warp": "3.11.0",
+    "warp-lang": "1.16.0"
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "cuda": "12.8",
+  "clips": 296,
+  "frames": 181236,
+  "num_envs": 16,
+  "control_steps": 16,
+  "contact_command_dim": 93,
+  "torch_compile_backward": "PASS"
+}
