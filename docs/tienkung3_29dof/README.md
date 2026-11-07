@@ -70,3 +70,37 @@ python -m tools.preview_robot \
 运行清单中保存了小规模训练、恢复、评估和录像的完整命令。训练只做 3 次更新后恢复至第 4 次，不是正式训练；评估在约 1.40 s 失败，未达到稳定站立能力。使用 `--resume` 时数据哈希必须一致；显式 `--init` 可在同模型的新数据上微调。
 
 视频复现须先激活 conda 环境，确保 ffmpeg 位于 PATH。实际评估轨迹和视频保留于本地 `results/tienkung3_tiny_policy.npz` / `results/tienkung3_tiny_policy.mp4`，证据目录记录哈希与编码检查结果。模型/动作/标签/checkpoint/视频不随代码推送；新机器应按本页命令重建资产和合成数据。
+
+## 公开动作数据调研（2026-11-07）
+
+已找到官方天工 3.0 的现成 29 DoF 动作示例；本次检索尚未找到与 G1 PHP 的 296 段动作及配套地形相当的天工跑酷数据包。以下是候选数据，不代表已完成转换、正式训练或动力学验收。
+
+### 优先候选：xMimic 29 DoF
+
+[固定版本下载目录](https://github.com/Open-X-Humanoid/xMimic/tree/0385122a232279210e941c7bb28da6a0bbb42356/motion_example/29dof) 包含以下三个 NPZ。本次已下载并实际读取，帧率均为 100 Hz；时长按 `(T-1)/fps` 计算。
+
+| 文件 | 帧数 | 时长 | 相对本地目标模型的最大关节越限 |
+|---|---:|---:|---:|
+| `dance1_easy.npz` | 3,982 | 39.81 s | 1.12° |
+| `dance2_medium.npz` | 7,099 | 70.98 s | 4.00° |
+| `weibst_hard.npz` | 1,335 | 13.34 s | 5.00° |
+
+三个文件的 29 个关节名均与本地模型一致，但排列不同。包含 `joint_pos`、`joint_vel`、`body_pos_w`、`body_quat_w`、body 线角速度及 joint/body 名称；所有数值有限、四元数归一化正常。源 `joint_pos` 为 `(T,29)`，根部世界位姿在名为 `pelvis` 的 body 数据中。没有随示例发布 PHP 箱体地形或本项目接触标签。
+
+接入步骤：
+
+1. 对照模型版本和关节定义，按名称重排关节，提取 pelvis 根部位姿。
+2. 组合为 `(T,36)` 的 `root_xyz + root_quat_wxyz + joint_angles`，统一至 50 Hz。
+3. 检查并处理限位、地面穿透、脚滑和自碰撞；不能用添加模型元数据代替模型兼容性验证。
+4. 写入本项目要求的机器人身份信息及空平地 terrain，以目标模型重算 FK、速度和接触标签。
+5. 先验证 `dance1_easy` 的小规模跟踪，再扩展动作难度。
+
+尚未实现 xMimic 自动转换器，现有 `tools/download_acp_data.sh` 仍只下载 G1/PHP 数据。本次检查证明数据可读取且关节名可映射，不证明动作能稳定执行。xMimic README 标注 MIT，但所检查提交没有独立 LICENSE/COPYING 或动作数据许可文件，因此这里只确认公开可下载，不额外推定数据授权范围。
+
+### 其他来源与用途
+
+- [TienKung-Lab 天工 3 数据](https://github.com/Open-X-Humanoid/TienKung-Lab/tree/ffea8bde32fcb632b5ef2a700e452f99e907ea40/legged_lab/envs/tienkung3/datasets)：包含 walk/run。此前核验的 visualization walk 有 736 帧，`FrameDuration=0.033`，包含 root 与 20 个关节位置，需要补齐腰部和其余关节。AMP expert 文件不包含同样的完整 root 世界轨迹，不能因维度相同而混用。
+- [HEX 天工 3 数据](https://huggingface.co/datasets/X-Humanoid/HEX-Datasets/tree/main/pretrain/tiangong3)：当前列出 19 个任务目录。抽查 `dex7_pick_up_toy_while_walking` 的 `meta/info.json` 与 `meta/modality.json`，为 99 episodes、40,412 帧、30 Hz，state 45 维、action 19 维。state 包含双腿关节，但没有明确说明的 root 世界位姿字段。适合操作/VLA 研究，不能直接替代 PHP 参考库；[官方说明](https://github.com/Open-X-Humanoid/HEX/blob/fe9ee4870c90f2c4c362e36e3202324523c0dda9/readme.md) 中天工底层全身控制器未开放。
+- [xGMR 注册表](https://github.com/Open-X-Humanoid/xGMR/blob/70f08d75f5e03aa06ed6d521451bd1e6888f5c0f/general_motion_retargeting/params.py)：仍未注册 xMimic README 示例中的 `tiangong3`。人体动作扩充路线需要先补齐真实可用的目标模型与 IK 配置，不能把旧天工型号直接当作 3.0。
+
+建议用 xMimic 示例与官方 walk 启动真实动作验证；PHP 台阶、翻越、攀爬能力继续依赖 G1 → 天工的接触约束重定向或新采集数据。本节补充此前迁移报告未列出的 xMimic 现成 NPZ，不改变已完成的 M0–M3 验收范围。

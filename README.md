@@ -429,3 +429,52 @@ If you use this code, please cite this repository and the works it builds on:
 The `tienkung3_29dof` robot is integrated through an instance-local RobotSpec alongside the default G1. This delivery covers pinned assets, generic configuration, full-tree FK/contact numerical validation, and synthetic standing integration checks. It does **not** establish trained standing, walking, climbing, or Stage 2/3 task performance.
 
 See [reproduction and evidence](docs/tienkung3_29dof/README.md), [design](docs/tienkung3_29dof/design.md), [progress](docs/tienkung3_29dof/progress.md), and [task memory](docs/tienkung3_29dof/taskmemory.md). Large assets, motion fixtures and checkpoints are generated under ignored data/logs directories.
+
+### Public TienKung 3.0 motion data
+
+Checked on **2026-11-07**. Official xMimic provides three downloadable **29 DoF motion examples**.
+We have not found a TienKung 3.0 release equivalent to the G1 PHP collection of 296 parkour clips
+and paired terrain variants. The resources below are candidates for further integration;
+they have not been converted or validated for ACP tracking in this repository.
+
+| Resource | Available data | Fit for this project |
+|---|---|---|
+| [xMimic 29 DoF examples](https://github.com/Open-X-Humanoid/xMimic/tree/0385122a232279210e941c7bb28da6a0bbb42356/motion_example/29dof) | Three NPZ clips, 100 Hz, about 124 seconds total; joint and world body poses/velocities | Best initial full-body motion candidates; format adaptation and motion quality checks required |
+| [TienKung-Lab TienKung 3 datasets](https://github.com/Open-X-Humanoid/TienKung-Lab/tree/ffea8bde32fcb632b5ef2a700e452f99e907ea40/legged_lab/envs/tienkung3/datasets) | Walk/run visualization and AMP files | Walking bootstrap candidate; the inspected visualization walk contains root motion and 20 joint positions, requiring completion to 29 DoF |
+| [HEX TienKung 3 datasets](https://huggingface.co/datasets/X-Humanoid/HEX-Datasets/tree/main/pretrain/tiangong3) | 19 task directories, including ball handling, carrying and picking up objects while walking | LeRobot manipulation demonstrations; not a ready-to-load PHP motion/terrain library |
+
+The downloaded xMimic files were inspected with NumPy and compared with this repository's target model:
+
+| File | Frames | Duration at 100 Hz | Maximum joint-limit violation against the local model |
+|---|---:|---:|---:|
+| `dance1_easy.npz` | 3,982 | 39.81 s | 1.12 degrees |
+| `dance2_medium.npz` | 7,099 | 70.98 s | 4.00 degrees |
+| `weibst_hard.npz` | 1,335 | 13.34 s | 5.00 degrees |
+
+Durations use `(frames - 1) / fps`. All numeric arrays were finite and body quaternions were normalized.
+The 29 joint names match our target model, but their order differs. These checks do not establish
+collision-free motion, dynamic feasibility or successful tracking; the limit violations need to be
+resolved before accepting the clips as training references.
+
+To adapt xMimic data, extract the `pelvis` pose by `body_names`, reorder joints by name, and construct
+ACP's `joint_pos = root_xyz + root_quat_wxyz + joint_angles` array of shape `(T, 36)`.
+The source `joint_pos` has shape `(T, 29)` and does not include the root. Resample to 50 Hz,
+verify model compatibility, write the required robot metadata and a paired empty flat-terrain file,
+then recompute FK, velocities and contact labels with the target model. No automatic xMimic
+conversion is implemented yet; `tools/download_acp_data.sh` still downloads G1 assets and PHP data only.
+
+For HEX, the inspected walking-and-picking task contains leg joint observations but no explicitly
+documented world root-pose field. Its action representation is also different from ACP's reference
+trajectory. The [official HEX documentation](https://github.com/Open-X-Humanoid/HEX/blob/fe9ee4870c90f2c4c362e36e3202324523c0dda9/readme.md)
+states that the TienKung low-level whole-body controller is not released.
+
+Start with `dance1_easy` and the official walking reference for small-scale tracking experiments.
+PHP-style steps and climbing still require contact-constrained retargeting of the G1 clips or new
+motion collection. The [inspected xGMR registry](https://github.com/Open-X-Humanoid/xGMR/blob/70f08d75f5e03aa06ed6d521451bd1e6888f5c0f/general_motion_retargeting/params.py)
+does not register `tiangong3`, despite the example in xMimic's README, so that retargeting command
+must not be assumed to work without completing the target configuration.
+
+These links establish public availability. xMimic's README displays an MIT badge, but the inspected
+revision contains no standalone LICENSE/COPYING or separate motion-data license; no additional
+data license is asserted here. See the [Chinese data notes](docs/tienkung3_29dof/README.md#公开动作数据调研2026-11-07)
+for the corresponding integration guidance.
