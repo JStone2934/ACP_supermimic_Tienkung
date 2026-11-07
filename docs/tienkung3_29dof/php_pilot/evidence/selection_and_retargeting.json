@@ -1,0 +1,252 @@
+{
+  "version": "php-pilot-taskspace-v2",
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "seed": 0,
+  "arm_mode": "per clip",
+  "iterations": "per clip",
+  "split": "development only; insufficient independent source families",
+  "clips": [
+    {
+      "name": "standing/stand",
+      "source": "data/php_parkour/motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s_motion.npz",
+      "source_hash": "fef9f7ce29d01c8e1441ab7f99a142bf13a76a26cc7598361d927626d96c3ecc",
+      "source_labels_hash": "6ebfbca3952516b35772673d6552de90fd462534e89d126fd4c3c44695be7efb",
+      "source_frames": [
+        0,
+        100
+      ],
+      "source_command_counts": {
+        "0": 100
+      },
+      "source_terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_stand",
+      "frames": 100,
+      "motion_hash": "078e3ea4b9e68d2529306b1410b590e22d39b1dee8752ae91510fa26cee53035",
+      "stats": {
+        "iteration": 1000,
+        "loss": 0.0013327019987627864,
+        "foot_rmse": 6.212117114046123e-06,
+        "seconds": 44.76065731048584
+      },
+      "iterations": 1000,
+      "arm_mode": "neutral",
+      "solver_version": "php-pilot-taskspace-v2",
+      "terrain_hash": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "intent_hash": "8b636b47291aaef7bb9dfcc2c36efdac7b718e95aad864a9ff5d57145820f5c8"
+    },
+    {
+      "name": "walking/forward_a",
+      "source": "data/php_parkour/motions-locomotion/cfg0002_stand_2.0s_forward_1.2s_forward_1.6s_left_45_1.0s_right_45_2.0s_stand_2.0s_motion.npz",
+      "source_hash": "26ce6eb495c7e9dbb4cd15748d2294a3a4c0d445653af8658eca29d6319a5e63",
+      "source_labels_hash": "f129fe56c094e27bf292b9ba5ce9541c4152697b6f850e991beb2a48c96db860",
+      "source_frames": [
+        100,
+        240
+      ],
+      "source_command_counts": {
+        "1": 140
+      },
+      "source_terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_forward",
+      "frames": 140,
+      "motion_hash": "6802d691fbf967970791fc3d7220a0c121ff247012eb486be92089ba27a0c0a2",
+      "stats": {
+        "iteration": 1000,
+        "loss": 0.01796734519302845,
+        "foot_rmse": 0.001227542175911367,
+        "seconds": 50.10606789588928
+      },
+      "iterations": 1000,
+      "arm_mode": "neutral",
+      "solver_version": "php-pilot-taskspace-v2",
+      "terrain_hash": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "intent_hash": "116596e04e723571e02bd804455e84071c439a72340662cd5c8dd054a9e2886c"
+    },
+    {
+      "name": "walking/forward_b",
+      "source": "data/php_parkour/motions-locomotion/cfg0014_stand_2.0s_forward_1.3s_right_45_0.6s_forward_2.2s_stand_2.0s_motion.npz",
+      "source_hash": "82d417627d95a5b073e107f28368cce1e56a8656f599ff918481e281bcd8178c",
+      "source_labels_hash": "433fd796eac8a89e3bf5a26a385388e67b7bf3f4f231e19ec06025b420b9b881",
+      "source_frames": [
+        100,
+        160
+      ],
+      "source_command_counts": {
+        "1": 60
+      },
+      "source_terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_forward",
+      "frames": 60,
+      "motion_hash": "cd6a058390998c8329f03c07c4b78d891232b47cbf639677924ad41c7abd63ab",
+      "stats": {
+        "iteration": 1000,
+        "loss": 0.015882233157753944,
+        "foot_rmse": 0.0010873175924643874,
+        "seconds": 52.29500913619995
+      },
+      "iterations": 1000,
+      "arm_mode": "neutral",
+      "solver_version": "php-pilot-taskspace-v2",
+      "terrain_hash": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "intent_hash": "48648b90ada56d089ba7d696365bd939f3b96136e2d14b6390c7dd9d8136f712"
+    },
+    {
+      "name": "turning/left45",
+      "source": "data/php_parkour/motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s_motion.npz",
+      "source_hash": "fef9f7ce29d01c8e1441ab7f99a142bf13a76a26cc7598361d927626d96c3ecc",
+      "source_labels_hash": "6ebfbca3952516b35772673d6552de90fd462534e89d126fd4c3c44695be7efb",
+      "source_frames": [
+        100,
+        170
+      ],
+      "source_command_counts": {
+        "2": 70
+      },
+      "source_terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_left45",
+      "frames": 70,
+      "motion_hash": "44f3bef3c3a5684e1d0fe549fe207ccb6cf5cfba41821e3283336651bab7485c",
+      "stats": {
+        "iteration": 1000,
+        "loss": 0.025444205850362778,
+        "foot_rmse": 0.0007835704018361866,
+        "seconds": 53.294222593307495
+      },
+      "iterations": 1000,
+      "arm_mode": "neutral",
+      "solver_version": "php-pilot-taskspace-v2",
+      "terrain_hash": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "intent_hash": "0776411855966ac3af397ab9aceb2ed46c274d418fe71f59d94183522f7e952e"
+    },
+    {
+      "name": "turning/right45",
+      "source": "data/php_parkour/motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s_motion.npz",
+      "source_hash": "3893af21e7729a349b2d6279e90c683ea37e41574312d702bb151b95f90fb7e6",
+      "source_labels_hash": "8edf241ef363ef9cd53963ae079b9ed8bd834f3f90be2e2ab19eafd2217e8c34",
+      "source_frames": [
+        100,
+        200
+      ],
+      "source_command_counts": {
+        "4": 100
+      },
+      "source_terrain_hash": "6704684b7d37014144a9512663d446a4aa5339db1f57e7d1f044d205d286924f",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_right45",
+      "frames": 100,
+      "motion_hash": "2306a440658898db0029943ddf543a43e0764706d167b13023bf0a6f1703ca3f",
+      "stats": {
+        "iteration": 1000,
+        "loss": 0.026308376342058182,
+        "foot_rmse": 0.0010731664951890707,
+        "seconds": 70.12185192108154
+      },
+      "iterations": 1000,
+      "arm_mode": "neutral",
+      "solver_version": "php-pilot-taskspace-v2",
+      "terrain_hash": "43300f7dd9ec8c6243999203aada55885f8656f2b2f4afdd7c790fa2aa2ec226",
+      "intent_hash": "d5d9ced540974a4072111588d01a4feda9aa9f38a856f534e4439fd8dffdf233"
+    },
+    {
+      "name": "low_step/forward_a",
+      "solver_version": "php-pilot-taskspace-v2",
+      "iterations": 1200,
+      "arm_mode": "clearance",
+      "source": "data/php_parkour/motions-low-step/forward_walk0.5s_step0s_motion.npz",
+      "source_hash": "cd23725e7a21a321f397ecde52024e43da9b4dba7bff95a79a5797973d6924dd",
+      "source_labels_hash": "3ce6dc4cdf9ae35b6c8b70b35416c5a00644e5dbe822f91042f76a92c3ab5e92",
+      "source_frames": [
+        0,
+        363
+      ],
+      "source_command_counts": {
+        "0": 174,
+        "1": 189
+      },
+      "source_terrain_hash": "a87f6c918d40a91049e3bcef4cfabf863514b07dffc8fb24c973a11c677fd986",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_low_step",
+      "frames": 363,
+      "motion_hash": "e7c0f7df5acd90ab24f87190273d75d7d6236254c736cbbdb80080d0fe3b87b9",
+      "stats": {
+        "iteration": 1200,
+        "loss": 0.016271693632006645,
+        "foot_rmse": 0.0009167329990305007,
+        "seconds": 55.738789796829224
+      },
+      "terrain_hash": "7ec18e136962164566e17082eada647f206c3338e7b1fae3114968e46151737c",
+      "intent_hash": "e77c114ce4ccfb864b6617d252f9b9c23f7bb005a72668e3dd15853632e92442"
+    },
+    {
+      "name": "low_step/forward_b",
+      "solver_version": "php-pilot-taskspace-v2",
+      "iterations": 1200,
+      "arm_mode": "clearance",
+      "source": "data/php_parkour/motions-low-step/forward_walk0.8s_step0s_motion.npz",
+      "source_hash": "2ba8bea58ef9b5cc8d40a79a8cb80b96a73dd4fd4a260abc7dc29137a8a9da0e",
+      "source_labels_hash": "4e759486b5fd2b5df916a889066582273b3d6b2c66de0b8e4af45efe48bf0491",
+      "source_frames": [
+        0,
+        387
+      ],
+      "source_command_counts": {
+        "0": 174,
+        "1": 213
+      },
+      "source_terrain_hash": "34f7e1f0312f0cc7783e1b97c76e25533655805df174901266aac9d8d8aa6587",
+      "terrain_variant": 0,
+      "source_family": "php_atomic_low_step",
+      "frames": 387,
+      "motion_hash": "d8dba2aa6d6cb26e1e728e7aaff3a3c4f766602138958e295196f23b9e0d8ac9",
+      "stats": {
+        "iteration": 1200,
+        "loss": 0.015462477691471577,
+        "foot_rmse": 0.0009693452739156783,
+        "seconds": 67.40376687049866
+      },
+      "terrain_hash": "f0c08241e6d8a552b73fa1bce0606aeb3a53200e9ed7e9692ecf82816c5718cb",
+      "intent_hash": "1eaf971aee29b8dcdc5d18111d88abc7f37c2d49a9a5b93059c7d861b4d90981"
+    }
+  ],
+  "assembly": "flat neutral-arm v2 + low-step clearance-arm v2"
+}

@@ -1,0 +1,97 @@
+{
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "mujoco": "3.11.0",
+  "terrain_variant": 0,
+  "baseline_overlap_pairs": [
+    [
+      "ankle_roll_l_link",
+      "knee_pitch_l_link"
+    ],
+    [
+      "ankle_roll_r_link",
+      "knee_pitch_r_link"
+    ]
+  ],
+  "self_collision_policy": "MuJoCo default same-weld and parent-child exclusions; raw and two baseline ankle-overlap exceptions separately reported",
+  "clips": {
+    "low_step/forward_b": {
+      "frames": 387,
+      "duration_s": 7.72,
+      "source_motion_hash": "d8dba2aa6d6cb26e1e728e7aaff3a3c4f766602138958e295196f23b9e0d8ac9",
+      "joint_limit_max_rad": 0.0,
+      "quaternion_norm_max_error": 5.960464477539063e-08,
+      "joint_velocity_max_ratio": 0.8083894018609116,
+      "terrain_penetration_max_m": 0.0013338454209726458,
+      "terrain_penetration_over_2mm_longest_frames": 0,
+      "self_penetration_raw_max_m": 0.035956998829652614,
+      "self_penetration_excluding_baseline_max_m": 0.001240371047671055,
+      "self_penetration_over_2mm_longest_frames": 0,
+      "self_pair_max_m": {
+        "pelvis / waist_roll_link": 0.001240371047671055,
+        "ankle_roll_l_link / knee_pitch_l_link": 0.035956998829652614,
+        "ankle_roll_r_link / knee_pitch_r_link": 0.03503438727008778
+      },
+      "terrain_pair_max_m": {
+        "ankle_roll_l_link / world": 0.0013338454209726458,
+        "ankle_roll_r_link / world": 0.0011913600037430916
+      },
+      "support_frames": 547,
+      "support_distance_p95_m": 0.0009268818313852755,
+      "support_slip_p95_m_s": 0.007455151970873059,
+      "strict_geometry_pass": false,
+      "pilot_screen_pass": true,
+      "rejection_reasons": [],
+      "baseline_self_collision_exception": true,
+      "pd": {
+        "protocol": "free-root joint-position PD; no root support or reference forces; no self collisions as in ACP",
+        "completed": false,
+        "tracking_pass": false,
+        "simulated_s": 1.32,
+        "reference_s": 7.72,
+        "root_error_rmse_m": 0.1958548145552745,
+        "root_error_max_m": 0.49890768153924536,
+        "joint_error_rmse_rad": 0.06326824582584065,
+        "torque_saturation_fraction": 0.0,
+        "joint_velocity_exceed_fraction": 0.0,
+        "trajectory": "results/php_pilot_final/low_step/forward_b_pd.npz"
+      },
+      "exported_for_exploratory_training": false
+    }
+  }
+}

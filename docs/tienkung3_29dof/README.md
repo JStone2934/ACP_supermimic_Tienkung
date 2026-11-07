@@ -104,3 +104,7 @@ python -m tools.preview_robot \
 - [xGMR 注册表](https://github.com/Open-X-Humanoid/xGMR/blob/70f08d75f5e03aa06ed6d521451bd1e6888f5c0f/general_motion_retargeting/params.py)：仍未注册 xMimic README 示例中的 `tiangong3`。人体动作扩充路线需要先补齐真实可用的目标模型与 IK 配置，不能把旧天工型号直接当作 3.0。
 
 建议用 xMimic 示例与官方 walk 启动真实动作验证；PHP 台阶、翻越、攀爬能力继续依赖 G1 → 天工的接触约束重定向或新采集数据。本节补充此前迁移报告未列出的 xMimic 现成 NPZ，不改变已完成的 M0–M3 验收范围。
+
+## PHP 小批量重定向试验
+
+站立/直行/转向/低台阶共7个片段已完成重定向和质量检查，后续训练按用户要求停止。模型自碰撞例外、PD失败、显存不足以及参考录像位置见 [本轮收尾说明](php_pilot/README.md)；没有交付训练成功的跟踪策略。

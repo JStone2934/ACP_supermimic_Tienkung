@@ -1,0 +1,130 @@
+{
+  "stopped_at": "2026-11-07T22:18:08.107091+08:00",
+  "status": "stopped_by_user_and_closed_out",
+  "baseline_commit": "36219b6",
+  "implementation_commit": "c79c31ec4568f30078767fbfe097b4304e5b647b",
+  "source_sha256": {
+    "tools/retarget_php_pilot.py": "b077c4b93e2d2036b2a34b416ae3c44283eb30f0c1ac662ba955aa414b32204f",
+    "tools/check_php_pilot.py": "9811f4303d42b6fc8fc99ea48cf2ef0bb97a3e899a6fb02b6a891bb809ca37d5",
+    "tools/record_motion_reference.py": "b3b1a76a7e6160c1198914c17475a3fcb5ff292dc8d85f68c115b9e2e77e6d56",
+    "tools/test_php_pilot.py": "b03f8dfea565aa642fd72b459fc47a7d842a89853e75aba83a84e78c92553008",
+    "supermimic/acp/evaluate.py": "602db4c13bc760c58eead7f78047fb56ef0e1e007430ad335baa8a55f3e9643e",
+    "supermimic/acp/render.py": "2a89387597e2897606ee6bc5685f7d5d64f20305112431f4d5e2242e7e4766a2"
+  },
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "clips": 7,
+  "frames": 1220,
+  "seed": 0,
+  "quality": {
+    "pilot_screen_pass": 7,
+    "strict_geometry_pass": 0,
+    "pd_tracking_pass": 0
+  },
+  "standing_training": {
+    "status": "interrupted_on_user_request",
+    "last_logged_iteration": 250,
+    "checkpoint_iteration": 200,
+    "checkpoint_path": "logs/tienkung3_29dof/php_pilot_stand_v2/last.pt",
+    "checkpoint_sha256": "ad4c6f5168eb2a8f29e75611b4906e6393e484f71b84e1683ee2991acf96d1a3",
+    "finite_parameters": true,
+    "data_hash": "7ebf428edca084738cc417db16eb2b3886ec66daa9aab11e83009fa946b91ba2",
+    "evaluated": false
+  },
+  "flat_training": {
+    "status": "failed_cuda_out_of_memory",
+    "last_logged_iteration": 100,
+    "checkpoint": null,
+    "evaluated": false
+  },
+  "video": {
+    "path": "results/php_pilot_final/reference.mp4",
+    "sha256": "c1f9c9cc4a56eac4c68319bb16e4b7d0b020828874016be965bac19ead565237",
+    "purpose": "kinematic reference only, no trained-policy playback",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 640,
+          "height": 480,
+          "r_frame_rate": "50/1",
+          "duration": "29.880000",
+          "nb_frames": "1494"
+        }
+      ]
+    }
+  },
+  "evidence_sha256": {
+    "final_labels.json": "b0efd33cd81080f0342dec79b87b1cddf6800f642d714430e0abc00cbcc55e58",
+    "flat_args.json": "f00f16cbc00e848bbb139c056caf033008f4c8a90e48f7398242c43cdedd5e74",
+    "flat_train_log.csv": "3320de4568b82175ff32322dadaa021ce5a3cf5e3f5b8c8fbf7291e4587d82af",
+    "flat_training.log": "3c1ca3388a41ba165eaf7fa520cab151d9035022074ef2ba27550e683a4d4629",
+    "flat_training_gate.json": "5335c0a4be0c5b8cffa97d8b52291452230a977062571a3a937811fc38362305",
+    "left_turn_v2.json": "51388de8d306417be91516a3c4620df7003d95943280e123c27108cfd317cedf",
+    "quality_final.json": "e3d565c157c25617901ec86ddea738599c581d22019b205f007cad8d7bf2d145",
+    "quality_v1.json": "ab9c6b63213d7e222c5c7e65f97141480a99234bf441cc85d06a4ad4e8cec7f3",
+    "quality_v1_remaining.json": "d500e7cf94ddac994d682af9fd91f8321e6484daaf7ecfdc18def39e50fbfb77",
+    "right_turn_v2.json": "ce2b2ca21f82932708729d977be20eb6b8652bca71208e7e851df19c0f59bd75",
+    "selection_and_retargeting.json": "37b7dd1ba13cc56b927c8b3d50c830a00608eaadadb97d1ddd5ada532c5f991a",
+    "source_g1_pd.json": "8f38c5acc3cf126c1f20e9df33e930caed0e9fda842f94efda74a9eb16fb4013",
+    "standing_args.json": "63a056a347c97624caa7d52a81a19844c34157f254324670e8ee46c2be47731c",
+    "standing_prior_tiny_policy.json": "4ee4adeaf776dcd5abb755a3e6b9df39091655be92515e45f41c797efd1ec3da",
+    "standing_train_log.csv": "57f6a03cc98e12ae0259749428c8576d935d931f60a7f1441d005264801e8dcf",
+    "standing_training.log": "cac555711e4b80da889506bb1cbdf690e21c113db9248bddab8a4421d6809373",
+    "standing_training_gate.json": "530482077347654b3c8f33cc975f779d961ec5bc05b50281295ea25cc002db59",
+    "standing_v2.json": "0e689c28af74b955a1c4bc0a8b53a03eb2136a5dc74cc008d91de18d85585b54",
+    "step_a_v2.json": "378f5900c6e9e9b358b12a337d80d433b0da71b1b861293d027b6302922953b4",
+    "step_b_v2.json": "d365aa7150259f99aa62b11b5fef1d6ac489955dc4deac0ac719593c3df8c1b9",
+    "step_clearance_a.json": "e1701d7a5c3b2117914971c2f4167c0b13b358c9a8962eeacd00f239128bd69e",
+    "step_clearance_b.json": "827cbc820cc04db7a4cba77506efff24e5d032f183b311f7fd6a86caf4abe05c",
+    "tests.txt": "e03f563f84d43fdee4ca37cad39655ae223462e0844f43fa034bba711011f7be",
+    "walking_v2.json": "2a3f66c7934c84f4784ff65e1f31674b8a0c1626d5304307e7fd6e35f0ef3add"
+  },
+  "tests": {
+    "count": 20,
+    "status": "PASS",
+    "scope": "selection, collision/slip rejection, existing robot contracts and pipeline regression"
+  },
+  "remaining": [
+    "Resolve or formally justify baseline mesh overlaps",
+    "Diagnose training CUDA graph out-of-memory and reduce trial load",
+    "Complete learning-controller tracking evaluation and recordings",
+    "Independent family split/generalization not established"
+  ],
+  "automatic_resume": false
+}
