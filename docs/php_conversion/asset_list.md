@@ -6,6 +6,21 @@
 
 ## 1. 工具与文档
 
+### 2026-11-08 新增资产
+
+| 路径 | 用途/状态 | 来源与证据 |
+|---|---|---|
+| `supermimic/acp/php_conversion.py` | 通用九类接触求解与窗口恢复 | 当前工作分支；原 pilot 未替换 |
+| `tools/convert_php.py`、`tools/check_php_conversion.py` | 双 GPU/CPU 队列、逐变体验收与正式子集导出 | plan/task/quality manifest 绑定身份与产物哈希 |
+| `tools/test_php_conversion.py` | FK 原生对照、侧面投影、穿透/滑动/超速/假手支撑拒绝及过期产物检查 | 与旧 pilot、机器人契约、流水线共 36 项回归通过；日志暂在 `.cache/php_conversion/tests_v1.log` |
+| [source_inventory.json](evidence/source_inventory.json) | 全部 296 源动作、地形与源标签路径和 SHA-256 | 181236 帧；2960 槽位；2510 不同动作/地形组合 |
+| [collision_policy.json](evidence/collision_policy.json) | 踝部模型层级、4 组代表姿态和原始重叠 | 保留历史模型身份，仅新增有版本的几何验收排除规则 |
+| `.cache/php_conversion/smoke/` | 100 帧站立算法检查 | 1000 次迭代约 3.8 s；有结构排除时通过，原始碰撞仍失败 |
+| `.cache/php_conversion/representative_v1/` | 首轮批量接线失败证据 | numpy int64 接触段索引无法 JSON 序列化；候选/窗口保留，未计为验收成功 |
+| `.cache/php_conversion/representative_v2/` | 修复序列化后的十样本双卡验证 | 正在运行；最终状态以该目录 manifest 为准 |
+
+上述缓存中的候选、标签、窗口与日志均为本地资产，不进入 Git。小型配置、盘点和验收证据进入 Git；完整全量输出完成后在此追加实际路径与覆盖数。
+
 | 资产 | 用途/生成入口 | 版本与证据 | 本地 / Git |
 |---|---|---|---|
 | [下载工具](../../tools/download_acp_data.sh)、[G1 MJCF 转换](../../tools/urdf_to_mjcf.py) | 下载 PHP/G1，转换 G1 模型并生成源标签 | 下载器固定 PHP 和 G1 上游版本，见下表 | 存在 / 已跟踪 |

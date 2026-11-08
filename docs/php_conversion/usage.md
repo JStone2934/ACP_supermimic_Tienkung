@@ -1,6 +1,37 @@
 # PHP 转换工具链使用手册
 
-更新日期：2026-11-08。返回[文档入口](README.md)。本页命令根据当前源码核对，供后续主动运行；本轮文档整理没有执行下载、转换、标注、训练或渲染。
+更新日期：2026-11-08。返回[文档入口](README.md)。先阅读以下通用入口；后续编号章节保留历史 pilot 的复现方式。
+
+## 通用全量入口
+
+本机使用 `/home/js/miniconda3/envs/acp_supermimic/bin/python`；工作区为 `/home/js/robot/locomotion/ACP_supermimic_Tienkung`。新入口一次串接求解、逐变体独立验收、标签、合格子集及汇总，不需要另行对候选数据运行筛选脚本。
+
+```bash
+conda activate acp_supermimic
+cd /home/js/robot/locomotion/ACP_supermimic_Tienkung
+
+# 只扫描：写 plan，不创建任何 motion 输出。
+python -m tools.convert_php --scan --out .cache/php_conversion/plan_01
+
+# 每次新实验选择新目录；两卡各一个 worker，CPU 独立验收池。
+python -m tools.convert_php \
+  --out data/tienkung3_29dof/motions/php_full_v1 \
+  --devices 0,1 --workers-per-gpu 1 --cpu-workers 12 \
+  --window-frames 512 --overlap 48 --iterations 1000
+
+# 恢复时保持源码、输入、模型与求解配置相同；可调整设备/CPU 并发。
+python -m tools.convert_php \
+  --out data/tienkung3_29dof/motions/php_full_v1 --resume \
+  --devices 0,1 --cpu-workers 12
+```
+
+任务目录说明：`plan.json` 保存冻结输入、源码哈希及配置；`tasks/*.json` 保存逐任务状态和输出哈希；`checkpoints/*.npz` 保存已完成窗口；`candidates/` 与 `candidate_contacts/` 保存所有已转换动作及诊断标签；`quality/` 保存逐变体结果；`accepted/` 与 `accepted_contacts/` 只含合格变体；`manifest.json` 汇总覆盖数；`splits.json` 记录来源家族与当前 development 状态。候选动作保留原始 10 个地形槽位，即使几何完全相同也保留编号映射。
+
+`--only` 按源动作键子串筛选。`--selections file.json` 接收列表，每项含 `source_key`、`key`（输出类别/名）、`start`、`end` 和可选 `solve_variant`。见 [十个代表样本配置](evidence/representative_selections.json)。接触 intent 现为 `(V,T,9)`，另含 offsets/anchors/normals/surfaces，不应交给只懂 `(T,2)` 的旧 pilot 检查器。
+
+`--max-attempts` 默认 2；求解运行错误重试后仍失败则记录为 failed，队列继续，最后以退出码 2 报告。几何拒绝是有效检查结果，退出码 0 只代表批次运行完成，**不代表所有动作合格**。恢复会校验每个完成任务的产物哈希；输入、代码、模型、策略或参数变化必须使用新目录。`--retry-failed` 显式重试已有失败任务。
+
+`geometry_pass` 使用有依据的踝部相邻组件排除，`strict_raw_geometry_pass` 仍包含原始两对重叠；两种结果同时保存。读取 `accepted` 时必须同时保留 collision policy 与 quality 报告，不能将其描述为未排除任何碰撞对的严格通过。动力学和学习策略跟踪本轮未运行。
 
 ## 1. 环境与输入
 

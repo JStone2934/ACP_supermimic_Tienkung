@@ -1,0 +1,59 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s",
+    "key": "standing/stand",
+    "start": 0,
+    "end": 100
+  },
+  {
+    "source_key": "motions-locomotion/cfg0002_stand_2.0s_forward_1.2s_forward_1.6s_left_45_1.0s_right_45_2.0s_stand_2.0s",
+    "key": "walking/forward_a",
+    "start": 100,
+    "end": 240
+  },
+  {
+    "source_key": "motions-locomotion/cfg0014_stand_2.0s_forward_1.3s_right_45_0.6s_forward_2.2s_stand_2.0s",
+    "key": "walking/forward_b",
+    "start": 100,
+    "end": 160
+  },
+  {
+    "source_key": "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s",
+    "key": "turning/left45",
+    "start": 100,
+    "end": 170
+  },
+  {
+    "source_key": "motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s",
+    "key": "turning/right45",
+    "start": 100,
+    "end": 200
+  },
+  {
+    "source_key": "motions-low-step/forward_walk0.5s_step0s",
+    "key": "low_step/forward_a",
+    "start": 0,
+    "end": null
+  },
+  {
+    "source_key": "motions-low-step/forward_walk0.8s_step0s",
+    "key": "low_step/forward_b",
+    "start": 0,
+    "end": null
+  },
+  {
+    "source_key": "motions-high-step/run_forward_0.6s_step0.5s",
+    "key": "representative/high-step",
+    "start": 0
+  },
+  {
+    "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+    "key": "representative/low-climb-76",
+    "start": 0
+  },
+  {
+    "source_key": "motions-high-climb-76/run_forward_0.6s_step0.8s",
+    "key": "representative/high-climb-76",
+    "start": 0
+  }
+]

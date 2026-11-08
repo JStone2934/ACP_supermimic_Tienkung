@@ -1,0 +1,100 @@
+{
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "policy": {
+    "version": "serial-ankle-adjacency-v1",
+    "excluded_pairs": [
+      [
+        "ankle_roll_l_link",
+        "knee_pitch_l_link"
+      ],
+      [
+        "ankle_roll_r_link",
+        "knee_pitch_r_link"
+      ]
+    ],
+    "reason": "Shank and foot are adjacent physical assemblies across the two serial ankle hinges; the intervening ankle_pitch link is the universal-joint bearing. Original convex hulls overlap at this articulation. Exclude only these two self pairs, retain all terrain collisions and report raw penetration separately. No collision mesh is changed."
+  },
+  "chains": [
+    [
+      "knee_pitch_l_link",
+      "ankle_pitch_l_link",
+      "ankle_roll_l_link"
+    ],
+    [
+      "knee_pitch_r_link",
+      "ankle_pitch_r_link",
+      "ankle_roll_r_link"
+    ]
+  ],
+  "representative_poses": [
+    {
+      "ankle_pitch": 0.0,
+      "ankle_roll": 0.0,
+      "pair_distance_m": {
+        "ankle_roll_l_link / knee_pitch_l_link": -0.03411837014234891,
+        "ankle_roll_r_link / knee_pitch_r_link": -0.03411839122492711
+      }
+    },
+    {
+      "ankle_pitch": -0.15,
+      "ankle_roll": 0.0,
+      "pair_distance_m": {
+        "ankle_roll_l_link / knee_pitch_l_link": -0.034082034999435296,
+        "ankle_roll_r_link / knee_pitch_r_link": -0.03408204883222311
+      }
+    },
+    {
+      "ankle_pitch": 0.25,
+      "ankle_roll": 0.1,
+      "pair_distance_m": {
+        "ankle_roll_l_link / knee_pitch_l_link": -0.034087188593678264,
+        "ankle_roll_r_link / knee_pitch_r_link": -0.034087181997440506
+      }
+    },
+    {
+      "ankle_pitch": -0.35,
+      "ankle_roll": -0.1,
+      "pair_distance_m": {
+        "ankle_roll_l_link / knee_pitch_l_link": -0.03405660689255609,
+        "ankle_roll_r_link / knee_pitch_r_link": -0.03405682545782963
+      }
+    }
+  ],
+  "note": "This changes the documented acceptance pair policy, not robot geometry, FK, mass or raw metrics. Old reports remain historical; every new output is checked and relabeled with this policy hash."
+}
