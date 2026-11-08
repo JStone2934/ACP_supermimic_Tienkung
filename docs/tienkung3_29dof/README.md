@@ -2,6 +2,8 @@
 
 本次范围为 **M0–M3 + 合成站立链路检查**。完整迁移计划保留在 [migration_plan.md](migration_plan.md)，当前状态见 [progress.md](progress.md)。设计与持续任务上下文分别见 [design.md](design.md)、[taskmemory.md](taskmemory.md)。
 
+PHP → 天工转换的持续使用与开发入口见 [PHP 数据转换文档](../php_conversion/README.md)，包含操作手册、开发计划、任务记忆和资产清单；既有 PHP pilot 文档继续保留历史试验与停止证据。
+
 ## 环境与资产
 
 ```bash
