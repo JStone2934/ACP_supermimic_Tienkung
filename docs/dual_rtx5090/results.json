@@ -1,0 +1,1955 @@
+{
+  "recorded_at": "2026-11-08T12:36:47.130308+00:00",
+  "memory_units": "bytes",
+  "performance": {
+    "stage1": {
+      "single": {
+        "artifact_directory": ".cache/dual-5090/acceptance/single_measured/stage1",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 98.36172485351562,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160
+          },
+          "synchronized_sha256": "5ff10311f2a01e064a24df0f8c8a4c3c28c944a8429f46d4fc39917d5b62c9e7"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 1,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 13619672576,
+              "torch_peak_reserved": 21334327296,
+              "device_used": 22555262976,
+              "warp_pool_used": 322774407,
+              "warp_pool_peak": 322775367
+            }
+          ],
+          "state_sha256": "5ff10311f2a01e064a24df0f8c8a4c3c28c944a8429f46d4fc39917d5b62c9e7"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "num_envs": 64,
+          "iterations": 80,
+          "buffer_steps": 64,
+          "utd": 0.4,
+          "horizon": 8,
+          "hist": 5,
+          "wm_window": 2,
+          "wm_batches": 1,
+          "wm_batch": 64,
+          "pi_batch": 64,
+          "lr": 1e-06,
+          "gamma": 0.99,
+          "lam": 0.95,
+          "action_noise": 0.01,
+          "critic_epochs": 1,
+          "critic_minibatches": 2,
+          "warmup_steps": 48,
+          "wm_only_iters": 0,
+          "lr_decay_iters": 250000,
+          "ckpt_every": 80,
+          "save_full_checkpoints": false,
+          "log_every": 10,
+          "motion_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/motions",
+          "contacts_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/contacts",
+          "target_noise": 0.05,
+          "scan_noise": 0.05,
+          "target_point": "terrain",
+          "target_min_steps": 10,
+          "blind": false,
+          "reward": "paper",
+          "w_label": 1.0,
+          "backward_curriculum": false,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/single_measured/stage1",
+          "seed": 0,
+          "resume": null,
+          "init": null,
+          "amp": "bf16",
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "reward_chunk_size": 0
+        },
+        "runtime": {
+          "world_size": 1,
+          "global_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "local_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "visible_devices": "1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 1,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 42.38820698601194,
+          "iterations_per_s": 1.1795733661605443,
+          "transitions_per_s": 188.73173858568708,
+          "updates": {
+            "wm": 50,
+            "pi": 50,
+            "critic": 100
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 42.38820698601194,
+              "torch_peak_allocated": 13619672576,
+              "torch_peak_reserved": 21334327296,
+              "device_used": 22555262976,
+              "warp_pool_used": 322774407,
+              "warp_pool_peak": 322775367,
+              "device_peak_used": 22555262976
+            }
+          ]
+        }
+      },
+      "dual": {
+        "artifact_directory": ".cache/dual-5090/acceptance/dual_measured/stage1",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 73.5955138206482,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160
+          },
+          "synchronized_sha256": "a78fe3e4de1a0dc8cf7fac596739fb59a2a7293a535a8b8f51f06f262e3007d5"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 2,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 7091727872,
+              "torch_peak_reserved": 10741612544,
+              "device_used": 12907642880,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655
+            },
+            {
+              "rank": 1,
+              "device": "cuda:1",
+              "torch_peak_allocated": 7091727872,
+              "torch_peak_reserved": 10741612544,
+              "device_used": 12105220096,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655
+            }
+          ],
+          "state_sha256": "a78fe3e4de1a0dc8cf7fac596739fb59a2a7293a535a8b8f51f06f262e3007d5"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "num_envs": 64,
+          "iterations": 80,
+          "buffer_steps": 64,
+          "utd": 0.4,
+          "horizon": 8,
+          "hist": 5,
+          "wm_window": 2,
+          "wm_batches": 1,
+          "wm_batch": 64,
+          "pi_batch": 64,
+          "lr": 1e-06,
+          "gamma": 0.99,
+          "lam": 0.95,
+          "action_noise": 0.01,
+          "critic_epochs": 1,
+          "critic_minibatches": 2,
+          "warmup_steps": 48,
+          "wm_only_iters": 0,
+          "lr_decay_iters": 250000,
+          "ckpt_every": 80,
+          "save_full_checkpoints": false,
+          "log_every": 10,
+          "motion_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/motions",
+          "contacts_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/contacts",
+          "target_noise": 0.05,
+          "scan_noise": 0.05,
+          "target_point": "terrain",
+          "target_min_steps": 10,
+          "blind": false,
+          "reward": "paper",
+          "w_label": 1.0,
+          "backward_curriculum": false,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_measured/stage1",
+          "seed": 0,
+          "resume": null,
+          "init": null,
+          "amp": "bf16",
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "reward_chunk_size": 0
+        },
+        "runtime": {
+          "world_size": 2,
+          "global_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "local_sizes": {
+            "num_envs": 32,
+            "wm_batch": 32,
+            "pi_batch": 32
+          },
+          "visible_devices": "0,1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 2,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 25.03976132592652,
+          "iterations_per_s": 1.9968241449741495,
+          "transitions_per_s": 319.4918631958639,
+          "updates": {
+            "wm": 50,
+            "pi": 50,
+            "critic": 100
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 25.03970117098652,
+              "torch_peak_allocated": 7091727872,
+              "torch_peak_reserved": 10741612544,
+              "device_used": 12907642880,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655,
+              "device_peak_used": 12907642880
+            },
+            {
+              "rank": 1,
+              "elapsed_s": 25.03976132592652,
+              "torch_peak_allocated": 7091727872,
+              "torch_peak_reserved": 10741612544,
+              "device_used": 12105220096,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655,
+              "device_peak_used": 12105220096
+            }
+          ]
+        }
+      },
+      "speedup": 1.6928359034366112,
+      "identical_global_args_except_log_dir": true,
+      "identical_measured_optimizer_update_counts": true
+    },
+    "planner": {
+      "single": {
+        "artifact_directory": ".cache/dual-5090/acceptance/single_measured/planner",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 27.829307794570923,
+          "updates": {
+            "planner": 76
+          },
+          "synchronized_sha256": "26f4ebd293113e1ee3351d55d56afe2cde8c6031b75b2863000c2d827343bf9a"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 1,
+          "updates": {
+            "planner": 76
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 2880886272,
+              "torch_peak_reserved": 4466933760,
+              "device_used": 5704646656,
+              "warp_pool_used": 322774407,
+              "warp_pool_peak": 322775367
+            }
+          ],
+          "state_sha256": "26f4ebd293113e1ee3351d55d56afe2cde8c6031b75b2863000c2d827343bf9a"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "tracker": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/stage1/last.pt",
+          "num_envs": 64,
+          "steps": 80,
+          "updates_per_step": 1,
+          "buffer_steps": 64,
+          "capacity": 2048,
+          "action_noise": 0.01,
+          "val_samples": 16384,
+          "goal_radius": 0.3,
+          "scan_noise": 0.03,
+          "start_max": 1.0,
+          "reach_min": 0.0,
+          "log_every": 10,
+          "val_every": 40,
+          "ckpt_every": 80,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/single_measured/planner",
+          "seed": 0,
+          "resume": null,
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "planner_batch": 64,
+          "planner_sub_batches": 2,
+          "planner_min_entries": 16
+        },
+        "runtime": {
+          "world_size": 1,
+          "global_sizes": {
+            "num_envs": 64
+          },
+          "local_sizes": {
+            "num_envs": 64
+          },
+          "visible_devices": "1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 1,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 5.190507994033396,
+          "iterations_per_s": 9.632968498936155,
+          "transitions_per_s": 616.5099839319139,
+          "updates": {
+            "planner": 50
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 5.190507994033396,
+              "torch_peak_allocated": 2880886272,
+              "torch_peak_reserved": 4466933760,
+              "device_used": 5704646656,
+              "warp_pool_used": 322774407,
+              "warp_pool_peak": 322775367,
+              "device_peak_used": 5704646656
+            }
+          ]
+        }
+      },
+      "dual": {
+        "artifact_directory": ".cache/dual-5090/acceptance/dual_measured/planner",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 30.030534505844116,
+          "updates": {
+            "planner": 76
+          },
+          "synchronized_sha256": "93e3419756d633558d683b16cd7baf75178beafabd0e2dbc6b921752d23bd230"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 2,
+          "updates": {
+            "planner": 76
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 2874853888,
+              "torch_peak_reserved": 5026873344,
+              "device_used": 7207583744,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655
+            },
+            {
+              "rank": 1,
+              "device": "cuda:1",
+              "torch_peak_allocated": 2874923520,
+              "torch_peak_reserved": 3913285632,
+              "device_used": 5291507712,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655
+            }
+          ],
+          "state_sha256": "93e3419756d633558d683b16cd7baf75178beafabd0e2dbc6b921752d23bd230"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "tracker": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/stage1/last.pt",
+          "num_envs": 64,
+          "steps": 80,
+          "updates_per_step": 1,
+          "buffer_steps": 64,
+          "capacity": 2048,
+          "action_noise": 0.01,
+          "val_samples": 16384,
+          "goal_radius": 0.3,
+          "scan_noise": 0.03,
+          "start_max": 1.0,
+          "reach_min": 0.0,
+          "log_every": 10,
+          "val_every": 40,
+          "ckpt_every": 80,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_measured/planner",
+          "seed": 0,
+          "resume": null,
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "planner_batch": 64,
+          "planner_sub_batches": 2,
+          "planner_min_entries": 16
+        },
+        "runtime": {
+          "world_size": 2,
+          "global_sizes": {
+            "num_envs": 64
+          },
+          "local_sizes": {
+            "num_envs": 32
+          },
+          "visible_devices": "0,1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 2,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 4.576197328977287,
+          "iterations_per_s": 10.926102264732162,
+          "transitions_per_s": 699.2705449428584,
+          "updates": {
+            "planner": 50
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 4.576174563961104,
+              "torch_peak_allocated": 2874853888,
+              "torch_peak_reserved": 5026873344,
+              "device_used": 7207583744,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655,
+              "device_peak_used": 7207583744
+            },
+            {
+              "rank": 1,
+              "elapsed_s": 4.576197328977287,
+              "torch_peak_allocated": 2874923520,
+              "torch_peak_reserved": 3913285632,
+              "device_used": 5291507712,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655,
+              "device_peak_used": 5291507712
+            }
+          ]
+        }
+      },
+      "speedup": 1.1342404229743737,
+      "identical_global_args_except_log_dir": true,
+      "identical_measured_optimizer_update_counts": true
+    },
+    "stage2": {
+      "single": {
+        "artifact_directory": ".cache/dual-5090/acceptance/single_measured/stage2",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 155.38474106788635,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160,
+            "planner": 80
+          },
+          "synchronized_sha256": "22e9f033a086f60f32414986b1cd7daef528a05fb893fec9d78b3cac0b986397"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 1,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160,
+            "planner": 80
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 18747312128,
+              "torch_peak_reserved": 29460791296,
+              "device_used": 30702698496,
+              "warp_pool_used": 322774407,
+              "warp_pool_peak": 322775367
+            }
+          ],
+          "state_sha256": "22e9f033a086f60f32414986b1cd7daef528a05fb893fec9d78b3cac0b986397"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/stage1/last.pt",
+          "planner_init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/planner/last.pt",
+          "num_envs": 64,
+          "iterations": 80,
+          "buffer_steps": 64,
+          "utd": 0.4,
+          "horizon": 8,
+          "wm_window": 2,
+          "wm_batches": 1,
+          "wm_batch": 64,
+          "pi_batch": 64,
+          "lr": 1e-06,
+          "gamma": 0.99,
+          "lam": 0.95,
+          "action_noise": 0.01,
+          "critic_epochs": 1,
+          "critic_minibatches": 2,
+          "warmup_steps": 48,
+          "lr_decay_iters": 250000,
+          "start_phase": [
+            0.0,
+            0.98
+          ],
+          "planner_updates": 1,
+          "planner_capacity": 2048,
+          "u_obs": 2,
+          "u_rew": 4,
+          "n_ann": 20,
+          "hold_admit": 0.6,
+          "hold_window": 4,
+          "eta_rew_max": 1.0,
+          "term_window": 0.0,
+          "planned_std": null,
+          "ckpt_every": 80,
+          "log_every": 10,
+          "val_every": 40,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/single_measured/stage2",
+          "seed": 0,
+          "resume": null,
+          "amp": "bf16",
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "reward_chunk_size": 0,
+          "planner_batch": 64,
+          "planner_sub_batches": 2,
+          "planner_min_entries": 16
+        },
+        "runtime": {
+          "world_size": 1,
+          "global_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "local_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "visible_devices": "1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 1,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 69.9113599419361,
+          "iterations_per_s": 0.7151913514703019,
+          "transitions_per_s": 114.4306162352483,
+          "updates": {
+            "wm": 50,
+            "pi": 50,
+            "critic": 100,
+            "planner": 50
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 69.9113599419361,
+              "torch_peak_allocated": 18747291136,
+              "torch_peak_reserved": 29460791296,
+              "device_used": 30702698496,
+              "warp_pool_used": 322774407,
+              "warp_pool_peak": 322775367,
+              "device_peak_used": 30702698496
+            }
+          ]
+        }
+      },
+      "dual": {
+        "artifact_directory": ".cache/dual-5090/acceptance/dual_measured/stage2",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 117.73272824287415,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160,
+            "planner": 80
+          },
+          "synchronized_sha256": "75541b74bcf93664856c92eefcfebb45234d468bc202536dabb1e5c57c0685e7"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 2,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic": 160,
+            "planner": 80
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 9682095104,
+              "torch_peak_reserved": 12629049344,
+              "device_used": 14816051200,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655
+            },
+            {
+              "rank": 1,
+              "device": "cuda:1",
+              "torch_peak_allocated": 9682093568,
+              "torch_peak_reserved": 15529410560,
+              "device_used": 16913989632,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655
+            }
+          ],
+          "state_sha256": "75541b74bcf93664856c92eefcfebb45234d468bc202536dabb1e5c57c0685e7"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/stage1/last.pt",
+          "planner_init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/planner/last.pt",
+          "num_envs": 64,
+          "iterations": 80,
+          "buffer_steps": 64,
+          "utd": 0.4,
+          "horizon": 8,
+          "wm_window": 2,
+          "wm_batches": 1,
+          "wm_batch": 64,
+          "pi_batch": 64,
+          "lr": 1e-06,
+          "gamma": 0.99,
+          "lam": 0.95,
+          "action_noise": 0.01,
+          "critic_epochs": 1,
+          "critic_minibatches": 2,
+          "warmup_steps": 48,
+          "lr_decay_iters": 250000,
+          "start_phase": [
+            0.0,
+            0.98
+          ],
+          "planner_updates": 1,
+          "planner_capacity": 2048,
+          "u_obs": 2,
+          "u_rew": 4,
+          "n_ann": 20,
+          "hold_admit": 0.6,
+          "hold_window": 4,
+          "eta_rew_max": 1.0,
+          "term_window": 0.0,
+          "planned_std": null,
+          "ckpt_every": 80,
+          "log_every": 10,
+          "val_every": 40,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_measured/stage2",
+          "seed": 0,
+          "resume": null,
+          "amp": "bf16",
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "reward_chunk_size": 0,
+          "planner_batch": 64,
+          "planner_sub_batches": 2,
+          "planner_min_entries": 16
+        },
+        "runtime": {
+          "world_size": 2,
+          "global_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "local_sizes": {
+            "num_envs": 32,
+            "wm_batch": 32,
+            "pi_batch": 32
+          },
+          "visible_devices": "0,1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 2,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 44.57209430390503,
+          "iterations_per_s": 1.1217781165741503,
+          "transitions_per_s": 179.48449865186404,
+          "updates": {
+            "wm": 50,
+            "pi": 50,
+            "critic": 100,
+            "planner": 50
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 44.572050493909046,
+              "torch_peak_allocated": 9682091520,
+              "torch_peak_reserved": 12629049344,
+              "device_used": 14816051200,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655,
+              "device_peak_used": 14816051200
+            },
+            {
+              "rank": 1,
+              "elapsed_s": 44.57209430390503,
+              "torch_peak_allocated": 9682093568,
+              "torch_peak_reserved": 15529410560,
+              "device_used": 16913989632,
+              "warp_pool_used": 317534695,
+              "warp_pool_peak": 317535655,
+              "device_peak_used": 16913989632
+            }
+          ]
+        }
+      },
+      "speedup": 1.5685006736560514,
+      "identical_global_args_except_log_dir": true,
+      "identical_measured_optimizer_update_counts": true
+    },
+    "stage3": {
+      "single": {
+        "artifact_directory": ".cache/dual-5090/acceptance/single_measured/stage3",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 540.6979763507843,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic_m": 160,
+            "critic_fs": 160,
+            "planner": 80
+          },
+          "synchronized_sha256": "0b9660668b9979e57b9074a4136a90f70bd9b045975368be46bd1f4c5c610ca1"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 1,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic_m": 160,
+            "critic_fs": 160,
+            "planner": 80
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 14489703936,
+              "torch_peak_reserved": 15521021952,
+              "device_used": 16765026304,
+              "warp_pool_used": 322929687,
+              "warp_pool_peak": 322930827
+            }
+          ],
+          "state_sha256": "0b9660668b9979e57b9074a4136a90f70bd9b045975368be46bd1f4c5c610ca1"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/stage2/last.pt",
+          "num_envs": 64,
+          "goal_frac": 0.5,
+          "iterations": 80,
+          "buffer_steps": 768,
+          "utd": 0.4,
+          "horizon": 8,
+          "wm_window": 2,
+          "wm_batches": 1,
+          "wm_batch": 64,
+          "pi_batch": 64,
+          "lr": 1e-06,
+          "lr_fs": 1e-06,
+          "gamma": 0.99,
+          "lam": 0.95,
+          "action_noise": 0.01,
+          "critic_epochs": 1,
+          "critic_minibatches": 2,
+          "critic_warmup": 2,
+          "scale_ema": 0.99,
+          "warmup_steps": 48,
+          "lr_decay_iters": 250000,
+          "planner_updates": 1,
+          "planner_capacity": 2048,
+          "term_window": 0.0,
+          "terrain_instances": 1,
+          "terrain_seed": 0,
+          "start_level": 0,
+          "ckpt_every": 80,
+          "log_every": 10,
+          "val_every": 40,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/single_measured/stage3",
+          "seed": 0,
+          "resume": null,
+          "amp": "bf16",
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "reward_chunk_size": 64,
+          "planner_batch": 64,
+          "planner_sub_batches": 2,
+          "planner_min_entries": 16
+        },
+        "runtime": {
+          "world_size": 1,
+          "global_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "local_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "visible_devices": "1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 1,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 308.1128984140232,
+          "iterations_per_s": 0.16227817873698058,
+          "transitions_per_s": 25.964508597916893,
+          "updates": {
+            "wm": 50,
+            "pi": 50,
+            "critic_m": 100,
+            "critic_fs": 100,
+            "planner": 50
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 308.1128984140232,
+              "torch_peak_allocated": 14489703936,
+              "torch_peak_reserved": 15521021952,
+              "device_used": 16765026304,
+              "warp_pool_used": 322929687,
+              "warp_pool_peak": 322930827,
+              "device_peak_used": 16765026304
+            }
+          ]
+        }
+      },
+      "dual": {
+        "artifact_directory": ".cache/dual-5090/acceptance/dual_measured/stage3",
+        "acceptance": {
+          "status": "PASS",
+          "elapsed_s": 326.9927308559418,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic_m": 160,
+            "critic_fs": 160,
+            "planner": 80
+          },
+          "synchronized_sha256": "001fa874a080353eff7c4872a11d6596f0ac3bce8c8d0d59365077b27836386a"
+        },
+        "updates": {
+          "version": 1,
+          "world_size": 2,
+          "updates": {
+            "wm": 80,
+            "pi": 80,
+            "critic_m": 160,
+            "critic_fs": 160,
+            "planner": 80
+          },
+          "skipped": {},
+          "ranks": [
+            {
+              "rank": 0,
+              "device": "cuda:0",
+              "torch_peak_allocated": 14441152512,
+              "torch_peak_reserved": 15481176064,
+              "device_used": 17668177920,
+              "warp_pool_used": 317628535,
+              "warp_pool_peak": 317629675
+            },
+            {
+              "rank": 1,
+              "device": "cuda:1",
+              "torch_peak_allocated": 14438403072,
+              "torch_peak_reserved": 15212740608,
+              "device_used": 16597319680,
+              "warp_pool_used": 317628535,
+              "warp_pool_peak": 317629675
+            }
+          ],
+          "state_sha256": "001fa874a080353eff7c4872a11d6596f0ac3bce8c8d0d59365077b27836386a"
+        },
+        "args": {
+          "robot": "tienkung3_29dof",
+          "init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual/stage2/last.pt",
+          "num_envs": 64,
+          "goal_frac": 0.5,
+          "iterations": 80,
+          "buffer_steps": 768,
+          "utd": 0.4,
+          "horizon": 8,
+          "wm_window": 2,
+          "wm_batches": 1,
+          "wm_batch": 64,
+          "pi_batch": 64,
+          "lr": 1e-06,
+          "lr_fs": 1e-06,
+          "gamma": 0.99,
+          "lam": 0.95,
+          "action_noise": 0.01,
+          "critic_epochs": 1,
+          "critic_minibatches": 2,
+          "critic_warmup": 2,
+          "scale_ema": 0.99,
+          "warmup_steps": 48,
+          "lr_decay_iters": 250000,
+          "planner_updates": 1,
+          "planner_capacity": 2048,
+          "term_window": 0.0,
+          "terrain_instances": 1,
+          "terrain_seed": 0,
+          "start_level": 0,
+          "ckpt_every": 80,
+          "log_every": 10,
+          "val_every": 40,
+          "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_measured/stage3",
+          "seed": 0,
+          "resume": null,
+          "amp": "bf16",
+          "device": null,
+          "local_rank": null,
+          "dist_timeout": 1800,
+          "verify_sync": true,
+          "benchmark_warmup": 10,
+          "benchmark_steps": 50,
+          "reward_chunk_size": 64,
+          "planner_batch": 64,
+          "planner_sub_batches": 2,
+          "planner_min_entries": 16
+        },
+        "runtime": {
+          "world_size": 2,
+          "global_sizes": {
+            "num_envs": 64,
+            "wm_batch": 64,
+            "pi_batch": 64
+          },
+          "local_sizes": {
+            "num_envs": 32,
+            "wm_batch": 32,
+            "pi_batch": 32
+          },
+          "visible_devices": "0,1",
+          "device": "cuda:0"
+        },
+        "benchmark": {
+          "world_size": 2,
+          "measured_iterations": 50,
+          "warmup_updates": 10,
+          "elapsed_s": 172.6887556030415,
+          "iterations_per_s": 0.28953824946735196,
+          "transitions_per_s": 46.326119914776314,
+          "updates": {
+            "wm": 50,
+            "pi": 50,
+            "critic_m": 100,
+            "critic_fs": 100,
+            "planner": 50
+          },
+          "ranks": [
+            {
+              "rank": 0,
+              "elapsed_s": 172.6887175089214,
+              "torch_peak_allocated": 14441152512,
+              "torch_peak_reserved": 15481176064,
+              "device_used": 17668177920,
+              "warp_pool_used": 317628535,
+              "warp_pool_peak": 317629675,
+              "device_peak_used": 17668177920
+            },
+            {
+              "rank": 1,
+              "elapsed_s": 172.6887556030415,
+              "torch_peak_allocated": 14438403072,
+              "torch_peak_reserved": 15212740608,
+              "device_used": 16597319680,
+              "warp_pool_used": 317628535,
+              "warp_pool_peak": 317629675,
+              "device_peak_used": 16597319680
+            }
+          ]
+        }
+      },
+      "speedup": 1.7842093849021665,
+      "identical_global_args_except_log_dir": true,
+      "identical_measured_optimizer_update_counts": true
+    }
+  },
+  "local512": {
+    "stage1": {
+      "artifact_directory": ".cache/dual-5090/acceptance/dual_local512/stage1",
+      "acceptance": {
+        "status": "PASS",
+        "elapsed_s": 224.66601610183716,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic": 60
+        },
+        "synchronized_sha256": "937ad7fba3234a2e10480082f846ed20dd06af376688fa6fc8759b09446525e2"
+      },
+      "updates": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic": 60
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 7179193856,
+            "torch_peak_reserved": 9479127040,
+            "device_used": 12223971328,
+            "warp_pool_used": 354212679,
+            "warp_pool_peak": 354213639
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 7179193856,
+            "torch_peak_reserved": 9479127040,
+            "device_used": 11421548544,
+            "warp_pool_used": 354212679,
+            "warp_pool_peak": 354213639
+          }
+        ],
+        "state_sha256": "937ad7fba3234a2e10480082f846ed20dd06af376688fa6fc8759b09446525e2"
+      },
+      "args": {
+        "robot": "tienkung3_29dof",
+        "num_envs": 512,
+        "iterations": 3,
+        "buffer_steps": 1000,
+        "utd": 0.4,
+        "horizon": 32,
+        "hist": 10,
+        "wm_window": 8,
+        "wm_batches": 10,
+        "wm_batch": 256,
+        "pi_batch": 256,
+        "lr": 1e-06,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "action_noise": 0.01,
+        "critic_epochs": 5,
+        "critic_minibatches": 4,
+        "warmup_steps": 64,
+        "wm_only_iters": 0,
+        "lr_decay_iters": 250000,
+        "ckpt_every": 3,
+        "save_full_checkpoints": false,
+        "log_every": 10,
+        "motion_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/motions",
+        "contacts_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/contacts",
+        "target_noise": 0.05,
+        "scan_noise": 0.05,
+        "target_point": "terrain",
+        "target_min_steps": 10,
+        "blind": false,
+        "reward": "paper",
+        "w_label": 1.0,
+        "backward_curriculum": false,
+        "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/stage1",
+        "seed": 0,
+        "resume": null,
+        "init": null,
+        "amp": "bf16",
+        "device": null,
+        "local_rank": null,
+        "dist_timeout": 1800,
+        "verify_sync": true,
+        "benchmark_warmup": 10,
+        "benchmark_steps": 0,
+        "reward_chunk_size": 64
+      },
+      "runtime": {
+        "world_size": 2,
+        "global_sizes": {
+          "num_envs": 512,
+          "wm_batch": 256,
+          "pi_batch": 256
+        },
+        "local_sizes": {
+          "num_envs": 256,
+          "wm_batch": 128,
+          "pi_batch": 128
+        },
+        "visible_devices": "0,1",
+        "device": "cuda:0"
+      }
+    },
+    "planner": {
+      "artifact_directory": ".cache/dual-5090/acceptance/dual_local512/planner",
+      "acceptance": {
+        "status": "PASS",
+        "elapsed_s": 29.051207542419434,
+        "updates": {
+          "planner": 9
+        },
+        "synchronized_sha256": "6ce4740cf5902861ee132af827b16db155ed43455960e202d9b4a711cf20cf8b"
+      },
+      "updates": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "planner": 9
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 3506140672,
+            "torch_peak_reserved": 4521459712,
+            "device_used": 7272595456,
+            "warp_pool_used": 354212679,
+            "warp_pool_peak": 354213639
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 3506309632,
+            "torch_peak_reserved": 5249171456,
+            "device_used": 7197818880,
+            "warp_pool_used": 354212679,
+            "warp_pool_peak": 354213639
+          }
+        ],
+        "state_sha256": "6ce4740cf5902861ee132af827b16db155ed43455960e202d9b4a711cf20cf8b"
+      },
+      "args": {
+        "robot": "tienkung3_29dof",
+        "tracker": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/stage1/last.pt",
+        "num_envs": 512,
+        "steps": 20,
+        "updates_per_step": 1,
+        "buffer_steps": 1000,
+        "capacity": 300000,
+        "action_noise": 0.01,
+        "val_samples": 16384,
+        "goal_radius": 0.3,
+        "scan_noise": 0.03,
+        "start_max": 1.0,
+        "reach_min": 0.0,
+        "log_every": 10,
+        "val_every": 40,
+        "ckpt_every": 3,
+        "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/planner",
+        "seed": 0,
+        "resume": null,
+        "device": null,
+        "local_rank": null,
+        "dist_timeout": 1800,
+        "verify_sync": true,
+        "benchmark_warmup": 10,
+        "benchmark_steps": 0,
+        "planner_batch": 512,
+        "planner_sub_batches": 8,
+        "planner_min_entries": 1000
+      },
+      "runtime": {
+        "world_size": 2,
+        "global_sizes": {
+          "num_envs": 512
+        },
+        "local_sizes": {
+          "num_envs": 256
+        },
+        "visible_devices": "0,1",
+        "device": "cuda:0"
+      }
+    },
+    "stage2": {
+      "artifact_directory": ".cache/dual-5090/acceptance/dual_local512/stage2",
+      "acceptance": {
+        "status": "PASS",
+        "elapsed_s": 246.10995626449585,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic": 60,
+          "planner": 3
+        },
+        "synchronized_sha256": "f771d8764df426573e82841a7e3493e1991a758aed42e2ec5b1b4157d2c5d462"
+      },
+      "updates": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic": 60,
+          "planner": 3
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 11424068096,
+            "torch_peak_reserved": 14516486144,
+            "device_used": 17280204800,
+            "warp_pool_used": 354212679,
+            "warp_pool_peak": 354213639
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 11423989760,
+            "torch_peak_reserved": 14516486144,
+            "device_used": 16477782016,
+            "warp_pool_used": 354212679,
+            "warp_pool_peak": 354213639
+          }
+        ],
+        "state_sha256": "f771d8764df426573e82841a7e3493e1991a758aed42e2ec5b1b4157d2c5d462"
+      },
+      "args": {
+        "robot": "tienkung3_29dof",
+        "init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/stage1/last.pt",
+        "planner_init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/planner/last.pt",
+        "num_envs": 512,
+        "iterations": 3,
+        "buffer_steps": 1000,
+        "utd": 0.4,
+        "horizon": 32,
+        "wm_window": 8,
+        "wm_batches": 10,
+        "wm_batch": 256,
+        "pi_batch": 256,
+        "lr": 1e-06,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "action_noise": 0.01,
+        "critic_epochs": 5,
+        "critic_minibatches": 4,
+        "warmup_steps": 64,
+        "lr_decay_iters": 250000,
+        "start_phase": [
+          0.0,
+          0.98
+        ],
+        "planner_updates": 1,
+        "planner_capacity": 300000,
+        "u_obs": 2,
+        "u_rew": 4,
+        "n_ann": 20,
+        "hold_admit": 0.6,
+        "hold_window": 4,
+        "eta_rew_max": 1.0,
+        "term_window": 0.0,
+        "planned_std": null,
+        "ckpt_every": 3,
+        "log_every": 10,
+        "val_every": 40,
+        "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/stage2",
+        "seed": 0,
+        "resume": null,
+        "amp": "bf16",
+        "device": null,
+        "local_rank": null,
+        "dist_timeout": 1800,
+        "verify_sync": true,
+        "benchmark_warmup": 10,
+        "benchmark_steps": 0,
+        "reward_chunk_size": 64,
+        "planner_batch": 512,
+        "planner_sub_batches": 8,
+        "planner_min_entries": 1000
+      },
+      "runtime": {
+        "world_size": 2,
+        "global_sizes": {
+          "num_envs": 512,
+          "wm_batch": 256,
+          "pi_batch": 256
+        },
+        "local_sizes": {
+          "num_envs": 256,
+          "wm_batch": 128,
+          "pi_batch": 128
+        },
+        "visible_devices": "0,1",
+        "device": "cuda:0"
+      }
+    },
+    "stage3": {
+      "artifact_directory": ".cache/dual-5090/acceptance/dual_local512/stage3",
+      "acceptance": {
+        "status": "PASS",
+        "elapsed_s": 368.1718747615814,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic_m": 60,
+          "critic_fs": 60,
+          "planner": 3
+        },
+        "synchronized_sha256": "c5e73620911c5dab3033516173d5fdff81a8adbf9cc927a353e48eff01c4a587"
+      },
+      "updates": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic_m": 60,
+          "critic_fs": 60,
+          "planner": 3
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 16425655808,
+            "torch_peak_reserved": 17200840704,
+            "device_used": 19964559360,
+            "warp_pool_used": 354736599,
+            "warp_pool_peak": 354737739
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 16430427136,
+            "torch_peak_reserved": 17507024896,
+            "device_used": 19468320768,
+            "warp_pool_used": 354736599,
+            "warp_pool_peak": 354737739
+          }
+        ],
+        "state_sha256": "c5e73620911c5dab3033516173d5fdff81a8adbf9cc927a353e48eff01c4a587"
+      },
+      "args": {
+        "robot": "tienkung3_29dof",
+        "init": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/stage2/last.pt",
+        "num_envs": 512,
+        "goal_frac": 0.5,
+        "iterations": 3,
+        "buffer_steps": 1350,
+        "utd": 0.4,
+        "horizon": 32,
+        "wm_window": 8,
+        "wm_batches": 10,
+        "wm_batch": 256,
+        "pi_batch": 256,
+        "lr": 1e-06,
+        "lr_fs": 1e-06,
+        "gamma": 0.99,
+        "lam": 0.95,
+        "action_noise": 0.01,
+        "critic_epochs": 5,
+        "critic_minibatches": 4,
+        "critic_warmup": 2,
+        "scale_ema": 0.99,
+        "warmup_steps": 64,
+        "lr_decay_iters": 250000,
+        "planner_updates": 1,
+        "planner_capacity": 300000,
+        "term_window": 0.0,
+        "terrain_instances": 16,
+        "terrain_seed": 0,
+        "start_level": 0,
+        "ckpt_every": 3,
+        "log_every": 10,
+        "val_every": 40,
+        "log_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/dual_local512/stage3",
+        "seed": 0,
+        "resume": null,
+        "amp": "bf16",
+        "device": null,
+        "local_rank": null,
+        "dist_timeout": 1800,
+        "verify_sync": true,
+        "benchmark_warmup": 10,
+        "benchmark_steps": 0,
+        "reward_chunk_size": 64,
+        "planner_batch": 512,
+        "planner_sub_batches": 8,
+        "planner_min_entries": 1000
+      },
+      "runtime": {
+        "world_size": 2,
+        "global_sizes": {
+          "num_envs": 512,
+          "wm_batch": 256,
+          "pi_batch": 256
+        },
+        "local_sizes": {
+          "num_envs": 256,
+          "wm_batch": 128,
+          "pi_batch": 128
+        },
+        "visible_devices": "0,1",
+        "device": "cuda:0"
+      }
+    }
+  },
+  "recovery": {
+    "resume/stage1/dual_to_dual": {
+      "status": "PASS",
+      "sim_steps": 19264,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 82,
+          "pi": 82,
+          "critic": 164
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 7158622720,
+            "torch_peak_reserved": 10949230592,
+            "device_used": 13115260928,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 7158618624,
+            "torch_peak_reserved": 10949230592,
+            "device_used": 12312838144,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "17a376fe7d2c88a9a2cfa23eccaedcf8730d94e3e43009b4498597293d1ec618"
+      }
+    },
+    "resume/stage1/dual_to_single": {
+      "status": "PASS",
+      "sim_steps": 19264,
+      "distributed": {
+        "version": 1,
+        "world_size": 1,
+        "updates": {
+          "wm": 82,
+          "pi": 82,
+          "critic": 164
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:1",
+            "torch_peak_allocated": 13756901376,
+            "torch_peak_reserved": 21544042496,
+            "device_used": 22771269632,
+            "warp_pool_used": 322774407,
+            "warp_pool_peak": 322775367
+          }
+        ],
+        "state_sha256": "c8f68310a11403499bb864a32fd4bdab24d6753ad2bf1e14003edce0d5f812c7"
+      }
+    },
+    "resume/stage1/single_to_dual": {
+      "status": "PASS",
+      "sim_steps": 22656,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 84,
+          "pi": 84,
+          "critic": 168
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 7158622720,
+            "torch_peak_reserved": 10949230592,
+            "device_used": 13115260928,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 7158618624,
+            "torch_peak_reserved": 10949230592,
+            "device_used": 12312838144,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "fadd74cb904e8687a3ae51869d925edaf67aef2f0cdaa1b048dd1a852f1f3d65"
+      }
+    },
+    "resume/planner/dual_to_dual": {
+      "status": "PASS",
+      "sim_steps": 6400,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "planner": 92
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 2471711232,
+            "torch_peak_reserved": 4215275520,
+            "device_used": 6395985920,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 1742255104,
+            "torch_peak_reserved": 2168455168,
+            "device_used": 3546677248,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "402b7c8762f76e822b9a1443c3aa224a509c36173cb5ff84775c4c752186e38a"
+      }
+    },
+    "resume/planner/dual_to_single": {
+      "status": "PASS",
+      "sim_steps": 6400,
+      "distributed": {
+        "version": 1,
+        "world_size": 1,
+        "updates": {
+          "planner": 92
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:1",
+            "torch_peak_allocated": 3207881216,
+            "torch_peak_reserved": 4638900224,
+            "device_used": 5876613120,
+            "warp_pool_used": 322774407,
+            "warp_pool_peak": 322775367
+          }
+        ],
+        "state_sha256": "feec62012058c5f35ee49917596da7142157c4df0bd9bc1998420fa322d51ea5"
+      }
+    },
+    "resume/planner/single_to_dual": {
+      "status": "PASS",
+      "sim_steps": 7680,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "planner": 108
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 2471711232,
+            "torch_peak_reserved": 4215275520,
+            "device_used": 6395985920,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 1742255104,
+            "torch_peak_reserved": 2168455168,
+            "device_used": 3546677248,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "edb58455624d84f3d9af5c8e6679c709375adc8778c7b96129410df0f15b10f9"
+      }
+    },
+    "resume/stage2/dual_to_dual": {
+      "status": "PASS",
+      "sim_steps": 19264,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 82,
+          "pi": 82,
+          "critic": 164,
+          "planner": 82
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 9680604672,
+            "torch_peak_reserved": 15661531136,
+            "device_used": 17848532992,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 9680610304,
+            "torch_peak_reserved": 16080961536,
+            "device_used": 17465540608,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "818d6cf49fb0f2821d105cf5b1279ccddcc92a2e5ace5b38fc46b18b7ec0a616"
+      }
+    },
+    "resume/stage2/dual_to_single": {
+      "status": "PASS",
+      "sim_steps": 19264,
+      "distributed": {
+        "version": 1,
+        "world_size": 1,
+        "updates": {
+          "wm": 82,
+          "pi": 82,
+          "critic": 164,
+          "planner": 82
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:1",
+            "torch_peak_allocated": 18743795200,
+            "torch_peak_reserved": 30670848000,
+            "device_used": 20170801152,
+            "warp_pool_used": 322774407,
+            "warp_pool_peak": 322775367
+          }
+        ],
+        "state_sha256": "3dd3a5cf8d94370e0f295420eb3fb0fbd4bd3607ee1dbbdd4ff374bb24383324"
+      }
+    },
+    "resume/stage2/single_to_dual": {
+      "status": "PASS",
+      "sim_steps": 22656,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 84,
+          "pi": 84,
+          "critic": 168,
+          "planner": 84
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 9680604672,
+            "torch_peak_reserved": 14417920000,
+            "device_used": 16604921856,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 9680610304,
+            "torch_peak_reserved": 15424552960,
+            "device_used": 16809132032,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "41903fcc94baa7acd770069fe073b6cb81bef10ba97dce91296b63534324841a"
+      }
+    },
+    "resume/stage1/evaluation_load": {
+      "status": "PASS",
+      "output": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/resume/stage1_evaluation.json"
+    },
+    "resume/stage2/evaluation_load": {
+      "status": "PASS",
+      "output": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/resume/stage2_evaluation.json"
+    },
+    "resume/legacy_stage1_resume": {
+      "status": "PASS",
+      "checkpoint": "logs/tienkung3_29dof/integration_stage1_v3/last.pt"
+    },
+    "resume/legacy_stage1_init": {
+      "status": "PASS",
+      "checkpoint": "logs/tienkung3_29dof/integration_stage1_v3/last.pt"
+    },
+    "resume_memory/stage3/dual_to_dual": {
+      "status": "PASS",
+      "sim_steps": 19264,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 82,
+          "pi": 82,
+          "critic_m": 164,
+          "critic_fs": 164,
+          "planner": 82
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 14450900480,
+            "torch_peak_reserved": 15474884608,
+            "device_used": 17661886464,
+            "warp_pool_used": 317628535,
+            "warp_pool_peak": 317629675
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 14442415616,
+            "torch_peak_reserved": 15193866240,
+            "device_used": 16578445312,
+            "warp_pool_used": 317628535,
+            "warp_pool_peak": 317629675
+          }
+        ],
+        "state_sha256": "eeb37c7567ce7b6b87ba9c034d0033831fb2dbda3c9b81fea51d5c08d43dd623"
+      }
+    },
+    "resume_memory/stage3/dual_to_single": {
+      "status": "PASS",
+      "sim_steps": 19264,
+      "distributed": {
+        "version": 1,
+        "world_size": 1,
+        "updates": {
+          "wm": 82,
+          "pi": 82,
+          "critic_m": 164,
+          "critic_fs": 164,
+          "planner": 82
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:1",
+            "torch_peak_allocated": 14497918464,
+            "torch_peak_reserved": 15258877952,
+            "device_used": 16502882304,
+            "warp_pool_used": 322929687,
+            "warp_pool_peak": 322930827
+          }
+        ],
+        "state_sha256": "4cc6ddbe0035bdc403ae7402f5a9fc7aef190d2d62ac7d192b7f3c041d842fdc"
+      }
+    },
+    "resume_memory/stage3/single_to_dual": {
+      "status": "PASS",
+      "sim_steps": 22656,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 84,
+          "pi": 84,
+          "critic_m": 168,
+          "critic_fs": 168,
+          "planner": 84
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 14450900480,
+            "torch_peak_reserved": 15474884608,
+            "device_used": 17661886464,
+            "warp_pool_used": 317628535,
+            "warp_pool_peak": 317629675
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 14444264448,
+            "torch_peak_reserved": 15210643456,
+            "device_used": 16595222528,
+            "warp_pool_used": 317628535,
+            "warp_pool_peak": 317629675
+          }
+        ],
+        "state_sha256": "08fba064d28fb8064fe8e436981d2c428801cd1c5a605ac9e7ae1dbb9886bce8"
+      }
+    },
+    "resume_memory/stage3/changed_environments_rejected": {
+      "status": "PASS"
+    },
+    "resume_memory/stage3/evaluation_load": {
+      "status": "PASS",
+      "output": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/dual-5090/acceptance/resume_memory/stage3_evaluation.json"
+    }
+  },
+  "regression": {
+    "status": "PASS",
+    "count": 24,
+    "command": "python -m unittest tools.test_acp_distributed tools.test_acp_pipeline tools.test_robot_contracts",
+    "artifact": ".cache/dual-5090/unit-tests.log",
+    "sha256": "a04ef98b1dccc3d1ed3e8730626c2888108614e2615354cd0359f738d76a66b7",
+    "summary": [
+      "----------------------------------------------------------------------",
+      "Ran 24 tests in 35.939s",
+      "",
+      "OK"
+    ]
+  },
+  "fixture": {
+    "robot": {
+      "robot_id": "tienkung3_29dof",
+      "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+      "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+      "joint_order": [
+        "hip_pitch_l_joint",
+        "hip_roll_l_joint",
+        "hip_yaw_l_joint",
+        "knee_pitch_l_joint",
+        "ankle_pitch_l_joint",
+        "ankle_roll_l_joint",
+        "hip_pitch_r_joint",
+        "hip_roll_r_joint",
+        "hip_yaw_r_joint",
+        "knee_pitch_r_joint",
+        "ankle_pitch_r_joint",
+        "ankle_roll_r_joint",
+        "waist_yaw_joint",
+        "waist_roll_joint",
+        "waist_pitch_joint",
+        "shoulder_pitch_l_joint",
+        "shoulder_roll_l_joint",
+        "shoulder_yaw_l_joint",
+        "elbow_pitch_l_joint",
+        "elbow_yaw_l_joint",
+        "wrist_pitch_l_joint",
+        "wrist_roll_l_joint",
+        "shoulder_pitch_r_joint",
+        "shoulder_roll_r_joint",
+        "shoulder_yaw_r_joint",
+        "elbow_pitch_r_joint",
+        "elbow_yaw_r_joint",
+        "wrist_pitch_r_joint",
+        "wrist_roll_r_joint"
+      ],
+      "control_dt": 0.02
+    },
+    "frames_per_clip": 41,
+    "clips": 10,
+    "purpose": "numerical integration only; no policy capability claim",
+    "planner_test_overrides": {
+      "start_max": 1.0,
+      "reach_min": 0.0,
+      "min_entries": 16
+    },
+    "learning_test_overrides": {
+      "lr": 1e-06,
+      "lr_fs": 1e-06,
+      "wm_only_iters": 0
+    }
+  },
+  "measurement_notes": [
+    "Single and dual use the same global arguments, precision and initialization checkpoints.",
+    "Performance window: 10 warmup valid iterations, then 50 measured; whole jobs run 80 iterations.",
+    "Warp pool high-water includes warmup; PyTorch peaks reset at performance window start.",
+    "device_peak_used is sampled at iteration boundaries, not an instantaneous device-wide maximum.",
+    "local512 device_used is measured at checkpoint save, not a peak.",
+    "Synthetic short clips and test-specific learning/admission settings validate execution, not policy quality."
+  ]
+}

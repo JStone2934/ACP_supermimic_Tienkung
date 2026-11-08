@@ -34,7 +34,6 @@ from __future__ import annotations
 import argparse
 import collections
 import dataclasses
-import json
 import math
 import os
 import time
@@ -81,16 +80,18 @@ parser.add_argument("--log_dir", type=str, required=True)
 parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--resume", type=str, default=None)
 parser.add_argument("--amp", type=str, default="bf16", choices=["none", "bf16"], help="autocast dtype for MLP matmuls")
+from supermimic.acp.distributed import Runtime, add_arguments
+add_arguments(parser, planner=True)
 args = parser.parse_args()
 if not (args.init or args.resume):
     parser.error("--init (or --resume) is required")
 
 import torch
 import torch.nn as nn
-import warp as wp
 
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
+from supermimic.acp.memory import checkpoint_reward, reward_batch
 from supermimic.acp.env import TrackingSim
 from supermimic.acp.robots import resolve_robot
 from supermimic.acp.kinematics import RobotKinematics
@@ -98,16 +99,14 @@ from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_D
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
 from supermimic.acp.planner import (ContactPlanner, PlannerBuffer, PlannerCfg, PlannerScan, label_episodes, plan, planner_batch_loss,
-                                    planner_metrics, planner_update)  # fmt: skip
+                                    distributed_planner_metrics, planner_update)  # fmt: skip
 from supermimic.acp.task import PLACE_WINDOW, ContactCfg, ContactTask, PaperReward, PaperRewardCfg, placement_error, to_base
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
-torch.manual_seed(args.seed)
 networks.AMP_DTYPE = torch.bfloat16 if args.amp == "bf16" else None
-dev = "cuda:0"
-os.makedirs(args.log_dir, exist_ok=True)
-json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
+rt = Runtime(args)
+dev = rt.device
 
 ck = torch.load(args.resume or args.init, map_location=dev)
 robot = resolve_robot(args.robot, ck)
@@ -123,7 +122,7 @@ if robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
 mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev), RewardCfg(term_window=int(round(args.term_window / CONTROL_DT))))
 ctc_cfg = ContactCfg(**ck["ctc_cfg"])
 if ctc_cfg.target_point != "terrain":
-    print("warning: the tracker's targets are body links, the planner's are terrain points", flush=True)
+    rt.print("warning: the tracker's targets are body links, the planner's are terrain points", flush=True)
 ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
 reward_cfg = PaperRewardCfg(**{**ck["reward_cfg"], **({"planned_std": args.planned_std} if args.planned_std else {})})
 paper_reward = PaperReward(reward_cfg, ctc)
@@ -133,6 +132,7 @@ pk = torch.load(args.planner_init, map_location=dev) if args.planner_init and no
 if pk is not None: robot.validate_metadata(pk.get("robot_metadata"), legacy=True)
 saved_pcfg = ck["planner_cfg"] if args.resume else pk["planner_cfg"] if pk else {}  # the planner's inputs as trained
 pcfg = PlannerCfg(**{**saved_pcfg, "capacity": args.planner_capacity})
+pcfg = rt.planner_config(pcfg)
 scan = PlannerScan(pcfg, dev)
 CRITIC_EXTRA = NB * 3 + 2  # the planner's targets (base frame) and (eta_obs, eta_rew)
 
@@ -173,6 +173,11 @@ init_args = ia
 def eta(it: int, u: int) -> float:
     """The paper's Eq. 3: 0 until u, then linear to 1 over n_ann iterations."""
     return min(max((it - u) / args.n_ann, 0.0), 1.0)
+
+
+rt.register({"wm": wm, "pi": pi, "critic": critic, "planner": planner}, {"opt_wm": opt_wm, "opt_pi": opt_pi, "opt_v": opt_v, "opt_planner": opt_pl}, deferred=(planner.prop_norm,))
+if args.resume:
+    rt.restore(ck)
 
 
 # per-component floors on the error normalization (pos, rot, lin vel, ang vel, q, qd increments)
@@ -217,7 +222,7 @@ wm_err = torch.compile(_wm_err)
 imag_step = torch.compile(_imag_step)
 # eager: with the planned term, Triton 3.5.0 fails to compile a fused backward reduction of this reward, whatever the
 # fusion limit (Stage 1 compiles it with max_fusion_size 32)
-reward_term = _reward_term
+reward_term = checkpoint_reward(_reward_term) if args.reward_chunk_size else _reward_term
 critic_input = torch.compile(_critic_input)
 plan = torch.compile(plan)  # 33 calls per policy update
 
@@ -247,17 +252,20 @@ def wm_update():
     loss, e_last = wm_err(S_hat, w["s1"], w["mask"])
     opt_wm.zero_grad(set_to_none=True)
     loss.backward()
-    nn.utils.clip_grad_norm_(wm.parameters(), 1.0)
-    opt_wm.step()
+    rt.step(opt_wm, wm, "wm", max_norm=1.0)
     m = w["mask"][:, -1]
-    return loss.detach() / args.wm_window, (e_last.detach() * m).sum() / m.sum().clamp(min=1)
+    return loss.detach() / args.wm_window, rt.ratio((e_last.detach() * m).sum(), m.sum())
 
 
 def sample_starts(B: int):
     """Start points with H reference frames left in their clip, the action before their previous one (``a_prev2``)
     and the observations the policy saw before them."""
     starts, hists, n = [], [], 0
+    attempts = 0
     while n < B:
+        attempts += 1
+        if attempts > 100:
+            raise RuntimeError("no eligible imagination starts; check horizon, clip length and warmup")
         s, h = buffer.sample_starts(2 * B, Hh)
         ok = s["f"] + HZ <= motion.clip_end[motion.clip_id[s["f"]]]
         idx = ok.nonzero(as_tuple=False).squeeze(-1)[: B - n]
@@ -294,7 +302,7 @@ def policy_update(eta_obs: float, eta_rew: float):
     S_prev = tuple(flat([St[i] for St in Sps]) for i in range(6))
     xi_all = xi.unsqueeze(0).expand(HZ, -1, -1).flatten(0, 1)
     f_all, v_all = flat(F1s), v.repeat(HZ)
-    r = reward_term(S_all, S_prev, f_all, v_all, flat(As), flat(Aps), flat(Ap2s), xi_all, flat(Pws), flat(Pvs), etas[1])
+    r = reward_batch(reward_term, S_all, S_prev, f_all, v_all, flat(As), flat(Aps), flat(Ap2s), xi_all, flat(Pws), flat(Pvs), etas[1], chunk_size=args.reward_chunk_size)
     d = mdp.soft_termination(S_all, f_all)  # eager: inside the compiled reward it changed the fused backward kernels
     r, d = r.view(HZ, B), d.view(HZ, B)
     alive = torch.cumprod(1 - d, 0)  # c_{t+1}
@@ -308,10 +316,7 @@ def policy_update(eta_obs: float, eta_rew: float):
     loss = -Jr.mean()
     opt_pi.zero_grad(set_to_none=True)
     loss.backward()
-    gn = nn.utils.clip_grad_norm_(pi.parameters(), 1.0)
-    nn.utils.clip_grad_value_(pi.parameters(), 0.1)
-    if torch.isfinite(gn):
-        opt_pi.step()
+    gn = rt.step(opt_pi, pi, "pi", max_norm=1.0, clip_value=0.1)
     set_requires_grad(wm, True)
     set_requires_grad(critic, True)
     # ---------------- critic: GAE(lambda) targets over the imagined transitions ----------------
@@ -341,8 +346,7 @@ def policy_update(eta_obs: float, eta_rew: float):
             v_loss = ((critic(Xf[idx]) - Yf[idx]) ** 2).mean()
             opt_v.zero_grad(set_to_none=True)
             v_loss.backward()
-            nn.utils.clip_grad_norm_(critic.parameters(), 1.0)
-            opt_v.step()
+            rt.step(opt_v, critic, "critic", max_norm=1.0)
     imag_r = (r_sum / HZ / MAX_R).mean()
     return loss.detach(), v_loss.detach(), imag_r, gn.detach(), c.mean().detach()
 
@@ -350,13 +354,10 @@ def policy_update(eta_obs: float, eta_rew: float):
 # ------------------------------------------------------------------------------------------------
 N = args.num_envs
 assert args.buffer_steps > int(motion.clip_len.max()), "the replay buffer must hold a whole episode"
-env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=tuple(args.start_phase))
-# Warp's pool otherwise returns its sim-step scratch to the driver at every sync and re-allocates it in the next graph
-# launch, which can fail once PyTorch's cache has grown into that space; keep it reserved instead
-wp.set_mempool_release_threshold(dev, torch.cuda.get_device_properties(dev).total_memory)
+env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=tuple(args.start_phase), runtime=rt)
 buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
-pbuf = PlannerBuffer(pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
-vbuf = PlannerBuffer(pcfg.capacity // 5, pcfg.hist, planner.prop_dim, scan.num_z, dev)
+pbuf = PlannerBuffer(rt.capacity(pcfg.capacity), pcfg.hist, planner.prop_dim, scan.num_z, dev)
+vbuf = PlannerBuffer(rt.capacity(pcfg.capacity // 5), pcfg.hist, planner.prop_dim, scan.num_z, dev)
 folders = sorted({n.split("/")[0] for n in motion.names})
 val_clip = torch.zeros(len(motion.names), dtype=torch.bool, device=dev)
 for g in folders:  # every 10th clip of each folder: planner validation only (the tracker trains on every clip)
@@ -369,6 +370,9 @@ tw_win = torch.zeros(PLACE_WINDOW, N, NB, 3, device=dev)  # recent commands' tar
 tv_win = torch.zeros(PLACE_WINDOW, N, NB, dtype=torch.bool, device=dev)
 n_ended, n_admitted = 0, 0
 adm_hist = collections.deque(maxlen=args.hold_window + 1)  # (ended, admitted) totals after each iteration
+if args.resume:
+    n_ended, n_admitted = ck.get('admission_totals', (0, 0))
+    adm_hist.extend(ck.get('admission_history', ()))
 
 
 def admit_rate() -> float | None:
@@ -381,6 +385,7 @@ def admit_rate() -> float | None:
 @torch.no_grad()
 def collect(n_steps: int, stats: dict, eta_obs: float):
     global obs_hist, sim_steps, prev_touch, tw_win, tv_win, n_ended, n_admitted
+    ended_before, admitted_before = n_ended, n_admitted
     for _ in range(n_steps):
         o = env.observe()
         fresh = env.ep_step == 0
@@ -400,7 +405,7 @@ def collect(n_steps: int, stats: dict, eta_obs: float):
         S0, S1 = unflatten_state(out["s"]), unflatten_state(out["s1"])
         wm.in_norm.update(wm.inputs(S0, out["a"], normalize_xi(out["xi"]), mdp.scan(S0, motion.boxes(out["f"], out["v"]))))
         wm.out_norm.update(wm.targets(S0, S1))
-        sim_steps += N
+        sim_steps += rt.args["num_envs"]
         # contacts in the simulator: touch per body vs the reference label; where new contacts land vs their target
         f1 = out["f"] + 1
         boxes1 = motion.boxes(f1, out["v"])
@@ -436,7 +441,10 @@ def collect(n_steps: int, stats: dict, eta_obs: float):
                     planner.prop_norm.update(d["prop"].float())
                     pbuf.add(d)
                     stats["labeled"].append(len(d["occ"]))
+        rt.flush_norm(planner.prop_norm)
         goal_steps[done] = ctc.sample_goal_steps(int(done.sum()))
+    counts = rt.sum([n_ended - ended_before, n_admitted - admitted_before]).tolist()
+    n_ended, n_admitted = ended_before + counts[0], admitted_before + counts[1]
 
 
 stats_keys = ("r", "len", "ret", "n_ep", "term", "tp", "n_touch", "n_label", "err_plan", "n_plan", "err_ref", "n_ref", "use",
@@ -446,8 +454,8 @@ collect(args.warmup_steps, stats, eta(sched_it, args.u_obs))  # the replay buffe
 BODIES = list(CONTACT_BODIES)
 csv_path = os.path.join(args.log_dir, "train_log.csv")
 new_log = not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0
-log_f = open(csv_path, "a")
-val_f = open(os.path.join(args.log_dir, "planner_val.csv"), "a")
+log_f = rt.open_log(csv_path)
+val_f = rt.open_log(os.path.join(args.log_dir, "planner_val.csv"))
 if new_log:
     log_f.write("iteration,wall_h,sim_steps,wm_loss,wm_err8,pi_loss,v_loss,imag_rew,pi_gradnorm,imag_survival,"
                 "sim_rew,ep_len,ep_ret_norm,term_frac,touch_precision,touch_recall,it_per_s,lr,eta_obs,eta_rew,plan_frac,"
@@ -457,7 +465,7 @@ if new_log:
     log_f.flush(), val_f.flush()
 t_start = time.time() - wall_offset
 t_log = time.time()
-step_acc = 0.0
+step_acc = ck.get("step_acc", 0.0) if args.resume else 0.0
 agg = {"wm": [], "wm8": [], "pi": [], "v": [], "ir": [], "gn": [], "surv": []}
 for it in range(start_it, args.iterations):
     lr = lr_at(it)
@@ -474,9 +482,9 @@ for it in range(start_it, args.iterations):
     agg["wm"].append(l), agg["wm8"].append(e8)
     for k, x in zip(("pi", "v", "ir", "gn", "surv"), policy_update(e_obs, e_rew)):
         agg[k].append(x)
-    if pbuf.size >= pcfg.min_entries:
+    if rt.global_size(pbuf) >= pcfg.min_entries:
         for _ in range(args.planner_updates):
-            stats["pl"].append(planner_update(planner, opt_pl, pbuf, scan, pcfg))
+            stats["pl"].append(planner_update(planner, opt_pl, pbuf, scan, pcfg, rt))
     # the schedules' clock: with --hold_admit it stops while fewer episodes than that share of the eta=0 rate are admitted
     adm_hist.append((n_ended, n_admitted))
     rate = admit_rate()
@@ -485,7 +493,10 @@ for it in range(start_it, args.iterations):
     held = args.hold_admit > 0 and sched_it >= args.u_obs and admit_base is not None and (rate is None or rate < args.hold_admit * admit_base)
     if not held:
         sched_it += 1
+    rt.tick(it + 1, sim_steps, ready=rt.updates.get("pi", 0) > 0 and rt.updates.get("planner", 0) > 0)
     if (it + 1) % args.log_every == 0:
+        stats = rt.aggregate(stats)
+        agg = rt.aggregate(agg)
         mean = lambda x: float(sum(float(v) for v in x) / max(len(x), 1))  # noqa: E731
         total = lambda k: float(sum(float(v) for v in stats[k]))  # noqa: E731
         ratio = lambda a, b: total(a) / max(total(b), 1)  # noqa: E731
@@ -498,21 +509,21 @@ for it in range(start_it, args.iterations):
                mean(agg["gn"]), mean(agg["surv"]), mean(stats["r"]), ratio("len", "n_ep"), ratio("ret", "n_ep"),
                ratio("term", "n_ep"), ratio("tp", "n_touch"), ratio("tp", "n_label"), ips, lr, e_obs, e_rew, mean(stats["use"]),
                ratio_nan("err_plan", "n_plan"), ratio_nan("err_ref", "n_ref"), int(total("ended")), int(total("admitted")),
-               int(total("labeled")), pbuf.size, *pair("pl"), *pair("fresh"), sched_it, float("nan") if rate is None else rate,
+               int(total("labeled")), rt.global_size(pbuf), *pair("pl"), *pair("fresh"), sched_it, float("nan") if rate is None else rate,
                int(held)]  # fmt: skip
         log_f.write(",".join(f"{x:.6g}" if isinstance(x, float) else str(x) for x in row) + "\n")
         log_f.flush()
-        print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v {row[6]:.4f} imag_r {row[7]:.3f} "
+        rt.print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v {row[6]:.4f} imag_r {row[7]:.3f} "
               f"surv {row[9]:.3f} | sim_r {row[10]:.3f} ep_len {row[11]:.1f} ep_ret {row[12]:.3f} term {row[13]:.2f} "
               f"touch P/R {row[14]:.3f}/{row[15]:.3f} | eta {e_obs:.2f}/{e_rew:.2f} onset err plan {row[21]:.3f} ref {row[22]:.3f} "
-              f"| admitted {row[24]}/{row[23]} buf {pbuf.size} aff {row[27]:.3f} occ {row[28]:.3f} fresh {row[29]:.3f}/{row[30]:.3f} "
+              f"| admitted {row[24]}/{row[23]} buf {row[26]} aff {row[27]:.3f} occ {row[28]:.3f} fresh {row[29]:.3f}/{row[30]:.3f} "
               f"| sched {sched_it}{' HELD' if held else ''} admit {row[32]:.3f} | {ips:.2f} it/s "
               f"| torch mem {torch.cuda.memory_reserved(dev) / 2**30:.1f}/{torch.cuda.max_memory_reserved(dev) / 2**30:.1f} GiB", flush=True)  # fmt: skip
         stats = {k: [] for k in stats_keys}
         agg = {k: [] for k in agg}
-    if (it + 1) % args.val_every == 0 and vbuf.size > 0:
+    if (it + 1) % args.val_every == 0 and rt.global_size(vbuf) > 0:
         planner.eval()
-        mt = planner_metrics(planner, vbuf.sample(min(16384, vbuf.size)), scan, pcfg)
+        mt = distributed_planner_metrics(planner, vbuf, scan, pcfg, rt)
         planner.train()
         keys = ("precision", "recall", "f1", "median_err", "within_0.1")
         val_f.write(",".join(str(x) for x in [it + 1, mt["aff"], mt["occ"]] + [v for k in keys for v in mt[k]]) + "\n")
@@ -520,15 +531,14 @@ for it in range(start_it, args.iterations):
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
         ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "planner": planner.state_dict(),
               "opt_wm": opt_wm.state_dict(), "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(),
-              "opt_planner": opt_pl.state_dict(), "iteration": it + 1, "wall_time": time.time() - t_start, "sim_steps": sim_steps,
-              "args": vars(args), "init_args": init_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
+              "opt_planner": opt_pl.state_dict(), "iteration": it + 1, "wall_time": time.time() - t_start, "sim_steps": sim_steps, "step_acc": step_acc,
+              "args": rt.args, "init_args": init_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
               "reward_cfg": dataclasses.asdict(reward_cfg), "planner_cfg": dataclasses.asdict(pcfg), "lr_it0": lr_it0,
-              "eta": (e_obs, e_rew), "sched_it": sched_it, "admit_base": admit_base, "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
-        last = os.path.join(args.log_dir, "last.pt")
-        torch.save(ck, last + ".tmp")
-        os.replace(last + ".tmp", last)
+              "eta": (e_obs, e_rew), "sched_it": sched_it, "admit_base": admit_base,
+              "admission_totals": (n_ended, n_admitted), "admission_history": list(adm_hist),
+              "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
         small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
                                     "planner_cfg", "eta", "saved_at")}  # fmt: skip
-        path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
-        torch.save(small, path + ".tmp")
-        os.replace(path + ".tmp", path)
+        rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=False)
+
+rt.close()

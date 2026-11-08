@@ -81,13 +81,17 @@ class TrackingSim:
     def __init__(self, num_envs: int, motion: MotionLib, mdp: MDP, device: str, gamma: float = 0.99, eval_mode: bool = False,
                  max_episode_steps: int = 500, reset_noise: bool = True, backward_curriculum: bool = False,
                  start_phase: tuple[float, float] | None = None, sim_cfg: SimulationCfg | None = None, goal: GoalTask | None = None,
-                 num_goal_envs: int = 0, goal_curriculum: GoalCurriculum | None = None, start_yaw: float = 0.4):  # fmt: skip
+                 num_goal_envs: int = 0, goal_curriculum: GoalCurriculum | None = None, start_yaw: float = 0.4,
+                 runtime=None):  # fmt: skip
         self.device = dev = device
+        self.runtime = runtime
         self.spec = mdp.robot
         self.num_joints = self.spec.num_joints
         n_boxes = motion.clip_boxes.shape[2]
         self.scene = Scene(make_scene_cfg(num_envs, n_boxes, self.spec), device=device)
         self.sim = Simulation(num_envs=num_envs, cfg=sim_cfg or make_sim(robot=self.spec), model=self.scene.compile(), device=device)
+        # Retain Warp scratch across PyTorch synchronization/compilation in all stages.
+        wp.set_mempool_release_threshold(device, torch.cuda.get_device_properties(device).total_memory)
         self.scene.initialize(mj_model=self.sim.mj_model, model=self.sim.model, data=self.sim.data)
         self.robot = self.scene["robot"]
         internal = list(self.robot.joint_names)
@@ -191,7 +195,8 @@ class TrackingSim:
             f = m.clip_start[clips] + (u * (m.clip_len[clips] - 1).float()).long()
             return f, m.frame_bin[f]
         soft = torch.softmax(-25.0 * self.bin_G / self.G_max, 0)
-        self.bin_w_avg.mul_(0.999).add_(0.001 * soft)
+        if self.runtime is None or not self.runtime.active:
+            self.bin_w_avg.mul_(0.999).add_(0.001 * soft)
         probs = 0.5 / m.num_bins + 0.4 * soft + 0.1 * self.bin_w_avg / self.bin_w_avg.sum()
         bins = torch.multinomial(probs, n, replacement=True)
         start = m.bin_start[bins]
@@ -360,14 +365,30 @@ class TrackingSim:
             self.done_eval |= done
             return out
         ids = done.nonzero(as_tuple=False).squeeze(-1)
+        if self.runtime is not None and self.runtime.active:
+            # Every rank participates, including ranks without a finished episode.
+            rid = ids[~g[ids]]
+            T_ref = self.ep_step[rid].float()
+            boot_ref = torch.where(term[rid], 0.0, (self.gamma**T_ref) * (self.ep_ret[rid] / T_ref) / (1 - self.gamma))
+            returns = self.ep_disc_ret[rid] + boot_ref
+            delta = torch.zeros_like(self.phase)
+            if self.curriculum:
+                m = self.motion
+                c = m.clip_id[f[rid]]
+                reached = (f1[rid] - m.clip_start[c]).float() >= CURRICULUM_REACH * (m.clip_len[c] - 1).float()
+                delta.index_add_(0, c, torch.where(reached, -CURRICULUM_STEP, CURRICULUM_STEP))
+            self.runtime.reference_sampling(self.bin_G, self.start_bin[rid], returns, phase=self.phase, delta=delta,
+                phase_max=CURRICULUM_MAX, bin_w_avg=self.bin_w_avg, G_max=self.G_max,
+                update_weights=not self.curriculum and self.start_phase is None, ended=len(ids))
         if len(ids) > 0:
             # bin return estimate; truncated episodes bootstrap with their mean reward
             T = self.ep_step[ids].float()
             boot = torch.where(term[ids], 0.0, (self.gamma**T) * (self.ep_ret[ids] / T) / (1 - self.gamma))
             G = self.ep_disc_ret[ids] + boot
             ref = ~g[ids]
-            update_bin_returns(self.bin_G, self.start_bin[ids[ref]], G[ref])
-            if self.curriculum:  # every finished episode moves its clip's start phase
+            if self.runtime is None or not self.runtime.active:
+                update_bin_returns(self.bin_G, self.start_bin[ids[ref]], G[ref])
+            if self.curriculum and (self.runtime is None or not self.runtime.active):  # every finished episode moves its clip's start phase
                 m, rid = self.motion, ids[ref]
                 c = m.clip_id[f[rid]]
                 reached = (f1[rid] - m.clip_start[c]).float() >= CURRICULUM_REACH * (m.clip_len[c] - 1).float()

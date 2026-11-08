@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
-import json
 import math
 import os
 import time
@@ -59,6 +58,8 @@ parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--resume", type=str, default=None)
 parser.add_argument("--init", type=str, default=None, help="fine-tune: start from this run's last.pt")
 parser.add_argument("--amp", type=str, default="bf16", choices=["none", "bf16"], help="autocast dtype for MLP matmuls")
+from supermimic.acp.distributed import Runtime, add_arguments
+add_arguments(parser, planner=False)
 args = parser.parse_args()
 
 import torch
@@ -66,6 +67,7 @@ import torch.nn as nn
 
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
+from supermimic.acp.memory import compile_reward, reward_batch
 from supermimic.acp.env import TrackingSim
 from supermimic.acp.robots import get_robot
 from supermimic.acp.kinematics import RobotKinematics
@@ -76,11 +78,9 @@ from supermimic.acp.task import ContactCfg, ContactTask, PaperReward, PaperRewar
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
-torch.manual_seed(args.seed)
 networks.AMP_DTYPE = torch.bfloat16 if args.amp == "bf16" else None
-dev = "cuda:0"
-os.makedirs(args.log_dir, exist_ok=True)
-json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
+rt = Runtime(args)
+dev = rt.device
 
 robot = get_robot(args.robot)
 NUM_J, OBS_DIM, INV_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim
@@ -116,6 +116,11 @@ if args.resume or args.init:
         start_it, wall_offset, sim_steps, lr_it0 = ck["iteration"], ck["wall_time"], ck["sim_steps"], ck.get("lr_it0", 0)
     else:  # the learning-rate schedule continues from the initial run's iteration
         lr_it0 = ck["iteration"] + ck.get("lr_it0", 0)
+
+
+rt.register({"wm": wm, "pi": pi, "critic": critic}, {"opt_wm": opt_wm, "opt_pi": opt_pi, "opt_v": opt_v})
+if args.resume:
+    rt.restore(ck)
 
 
 # per-component floors on the error normalization (pos, rot, lin vel, ang vel, q, qd increments)
@@ -158,7 +163,7 @@ wm_rollout = torch.compile(_wm_rollout)
 wm_err = torch.compile(_wm_err)
 imag_step = torch.compile(_imag_step)
 # max_fusion_size 32: Triton 3.5.0 fails to compile the fully fused backward kernel of this reward
-reward_term = torch.compile(_reward_term, options={"max_fusion_size": 32})
+reward_term = compile_reward(_reward_term, recompute=bool(args.reward_chunk_size))
 critic_input_c = torch.compile(ctc.critic_input)
 
 
@@ -181,17 +186,20 @@ def wm_update():
     loss, e_last = wm_err(S_hat, w["s1"], w["mask"])
     opt_wm.zero_grad(set_to_none=True)
     loss.backward()
-    nn.utils.clip_grad_norm_(wm.parameters(), 1.0)
-    opt_wm.step()
+    rt.step(opt_wm, wm, "wm", max_norm=1.0)
     m = w["mask"][:, -1]
-    return loss.detach() / args.wm_window, (e_last.detach() * m).sum() / m.sum().clamp(min=1)
+    return loss.detach() / args.wm_window, rt.ratio((e_last.detach() * m).sum(), m.sum())
 
 
 def sample_starts(B: int):
     """Start points with H reference frames left in their clip, the action before their previous one (``a_prev2``)
     and the observations the policy saw before them."""
     starts, hists, n = [], [], 0
+    attempts = 0
     while n < B:
+        attempts += 1
+        if attempts > 100:
+            raise RuntimeError("no eligible imagination starts; check horizon, clip length and warmup")
         s, h = buffer.sample_starts(2 * B, Hh)
         ok = s["f"] + HZ <= motion.clip_end[motion.clip_id[s["f"]]]
         idx = ok.nonzero(as_tuple=False).squeeze(-1)[: B - n]
@@ -224,7 +232,7 @@ def policy_update():
     S_prev = tuple(flat([St[i] for St in Sps]) for i in range(6))
     xi_all = xi.unsqueeze(0).expand(HZ, -1, -1).flatten(0, 1)
     v_all = v.repeat(HZ)
-    r, d = reward_term(S_all, S_prev, flat(F1s), v_all, flat(As), flat(Aps), flat(Ap2s), xi_all)
+    r, d = reward_batch(reward_term, S_all, S_prev, flat(F1s), v_all, flat(As), flat(Aps), flat(Ap2s), xi_all, chunk_size=args.reward_chunk_size)
     r, d = r.view(HZ, B), d.view(HZ, B)
     alive = torch.cumprod(1 - d, 0)  # c_{t+1}
     c_t = torch.cat((torch.ones(1, B, device=dev), alive[:-1]), 0)
@@ -237,10 +245,7 @@ def policy_update():
     loss = -Jr.mean()
     opt_pi.zero_grad(set_to_none=True)
     loss.backward()
-    gn = nn.utils.clip_grad_norm_(pi.parameters(), 1.0)
-    nn.utils.clip_grad_value_(pi.parameters(), 0.1)
-    if torch.isfinite(gn):
-        opt_pi.step()
+    gn = rt.step(opt_pi, pi, "pi", max_norm=1.0, clip_value=0.1)
     set_requires_grad(wm, True)
     set_requires_grad(critic, True)
     # ---------------- critic: GAE(lambda) targets over the imagined transitions ----------------
@@ -269,16 +274,21 @@ def policy_update():
             v_loss = ((critic(Xf[idx]) - Yf[idx]) ** 2).mean()
             opt_v.zero_grad(set_to_none=True)
             v_loss.backward()
-            nn.utils.clip_grad_norm_(critic.parameters(), 1.0)
-            opt_v.step()
+            rt.step(opt_v, critic, "critic", max_norm=1.0)
     imag_r = (r_sum / HZ / MAX_R).mean()
     return loss.detach(), v_loss.detach(), imag_r, gn.detach(), c.mean().detach()
 
 
 # ------------------------------------------------------------------------------------------------
-env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum)
+env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum, runtime=rt)
 if (args.resume or args.init) and "curriculum_phase" in ck:
     env.phase.copy_(ck["curriculum_phase"])
+if args.resume:
+    for key in ('bin_G', 'bin_w_avg'):
+        if key in ck:
+            getattr(env, key).copy_(ck[key])
+if args.resume or args.init:
+    env.reset(torch.arange(args.num_envs, device=dev))
 # clip groups for the curriculum log: the motion folders
 GROUPS = sorted({n.split("/")[0] for n in motion.names})
 clip_group = torch.tensor([GROUPS.index(n.split("/")[0]) for n in motion.names], device=dev)
@@ -305,7 +315,7 @@ def collect(n_steps: int, stats: dict):
         S0, S1 = unflatten_state(out["s"]), unflatten_state(out["s1"])
         wm.in_norm.update(wm.inputs(S0, out["a"], normalize_xi(out["xi"]), mdp.scan(S0, motion.boxes(out["f"], out["v"]))))
         wm.out_norm.update(wm.targets(S0, S1))
-        sim_steps += args.num_envs
+        sim_steps += rt.args["num_envs"]
         # contact labels in the simulator: touch per body vs the reference label
         f1 = out["f"] + 1
         touch = ctc.body_distance(S1, motion.boxes(f1, out["v"])) <= ctc.cfg.touch_dist
@@ -322,14 +332,14 @@ def collect(n_steps: int, stats: dict):
 stats_keys = ("r", "len", "ret", "n_ep", "term", "tp", "n_touch", "n_label")
 stats = {k: [] for k in stats_keys}
 collect(args.warmup_steps, stats)  # the replay buffer is not checkpointed, so a resumed run refills it too
-log_f = open(os.path.join(args.log_dir, "train_log.csv"), "a")
+log_f = rt.open_log(os.path.join(args.log_dir, "train_log.csv"))
 if start_it == 0:
     log_f.write("iteration,wall_h,sim_steps,wm_loss,wm_err8,pi_loss,v_loss,imag_rew,pi_gradnorm,imag_survival,"
                 "sim_rew,ep_len,ep_ret_norm,term_frac,touch_precision,touch_recall,it_per_s,lr,phase_zero_frac"
                 + "".join(f",phase_{g}" for g in GROUPS) + "\n")  # fmt: skip
 t_start = time.time() - wall_offset
 t_log = time.time()
-step_acc = 0.0
+step_acc = ck.get("step_acc", 0.0) if args.resume else 0.0
 agg = {"wm": [], "wm8": [], "pi": [], "v": [], "ir": [], "gn": [], "surv": []}
 for it in range(start_it, args.iterations):
     lr = lr_at(it)
@@ -346,7 +356,10 @@ for it in range(start_it, args.iterations):
     if it >= wm_only_iters:
         for k, v in zip(("pi", "v", "ir", "gn", "surv"), policy_update()):
             agg[k].append(v)
+    rt.tick(it + 1, sim_steps, ready=rt.updates.get("pi", 0) > 0)
     if (it + 1) % args.log_every == 0:
+        stats = rt.aggregate(stats)
+        agg = rt.aggregate(agg)
         mean = lambda x: float(sum(float(v) for v in x) / max(len(x), 1))  # noqa: E731
         total = lambda k: float(sum(float(v) for v in stats[k]))  # noqa: E731
         ratio = lambda a, b: total(a) / max(total(b), 1)  # noqa: E731
@@ -361,7 +374,7 @@ for it in range(start_it, args.iterations):
         row += [float((env.phase == 0).float().mean())] + phase_g
         log_f.write(",".join(f"{x:.6g}" if isinstance(x, float) else str(x) for x in row) + "\n")
         log_f.flush()
-        print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v {row[6]:.4f} imag_r {row[7]:.3f} "
+        rt.print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v {row[6]:.4f} imag_r {row[7]:.3f} "
               f"surv {row[9]:.3f} | sim_r {row[10]:.3f} ep_len {row[11]:.1f} ep_ret {row[12]:.3f} term {row[13]:.2f} "
               f"touch P/R {row[14]:.3f}/{row[15]:.3f} | phase0 {row[18]:.2f}"
               + "".join(f" {g.removeprefix('motions-')} {p:.2f}" for g, p in zip(GROUPS, phase_g)) + f" | {ips:.2f} it/s", flush=True)  # fmt: skip
@@ -370,14 +383,12 @@ for it in range(start_it, args.iterations):
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
         ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
               "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(), "iteration": it + 1,
-              "wall_time": time.time() - t_start, "sim_steps": sim_steps, "args": vars(args),
+              "wall_time": time.time() - t_start, "sim_steps": sim_steps, "step_acc": step_acc, "args": rt.args,
               "ctc_cfg": dataclasses.asdict(ctc_cfg), "curriculum_phase": env.phase.clone(), "lr_it0": lr_it0,
+              "bin_G": env.bin_G.clone(), "bin_w_avg": env.bin_w_avg.clone(),
               "reward_cfg": dataclasses.asdict(reward_cfg) if reward_cfg is not None else None,
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
-        last = os.path.join(args.log_dir, "last.pt")
-        torch.save(ck, last + ".tmp")
-        os.replace(last + ".tmp", last)
         small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "saved_at")}
-        path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
-        torch.save(ck if args.save_full_checkpoints else small, path + ".tmp")
-        os.replace(path + ".tmp", path)
+        rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=args.save_full_checkpoints)
+
+rt.close()

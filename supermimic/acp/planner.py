@@ -183,6 +183,19 @@ def hindsight_labels(on: torch.Tensor, cp: torch.Tensor, p: torch.Tensor, R: tor
 
 
 @torch.no_grad()
+def label_geometry(ctc, state, boxes, chunk_size=64):
+    """All contact rows with bounded temporary sphere/hull geometry allocations."""
+    touches, points = [], []
+    for start in range(0, len(boxes), chunk_size):
+        part = tuple(x[start:start+chunk_size] for x in state)
+        terrain = boxes[start:start+chunk_size]
+        fk = ctc.mdp.kin.forward(*part)
+        touches.append(ctc.body_distance(part, terrain, fk) <= ctc.cfg.touch_dist)
+        points.append(ctc.contact_point(part, terrain, fk))
+    return torch.cat(touches), torch.cat(points)
+
+
+@torch.no_grad()
 def label_episodes(buf, envs: torch.Tensor, rows_end: torch.Tensor, lens: torch.Tensor, ctc: ContactTask, scan: PlannerScan,
                    cfg: PlannerCfg, success: torch.Tensor | None = None, keep: torch.Tensor | None = None,
                    goal_radius: float = 0.5) -> tuple[dict | None, int]:  # fmt: skip
@@ -216,9 +229,11 @@ def label_episodes(buf, envs: torch.Tensor, rows_end: torch.Tensor, lens: torch.
     S = unflatten_state(buf.data["s"][rows, e2].flatten(0, 1))
     ff, vv = f.flatten(), buf.data["v"][rows, e2].flatten()
     boxes = m.boxes(ff, vv)
-    fk = ctc.mdp.kin.forward(*S)
-    touch = (ctc.body_distance(S, boxes, fk) <= ctc.cfg.touch_dist).view(E, T, NB).cpu().numpy()
-    cp = ctc.contact_point(S, boxes, fk).view(E, T, NB, 3)
+    # Many environments may end together after replay refill. Bound the sphere /
+    # hull workspace independently of episode count, preserving every label row.
+    touch, cp = label_geometry(ctc, S, boxes)
+    touch = touch.view(E, T, NB).cpu().numpy()
+    cp = cp.view(E, T, NB, 3)
     H = int(round(cfg.horizon_s / CONTROL_DT))
     on = np.full((E, T, NB), -1, np.int64)
     for e, n in enumerate(lens.tolist()):
@@ -280,8 +295,11 @@ class GroupedPlannerBuffer:
     """Planner buffers per group (the paper's goal-reaching buffer, partitioned by terrain type), sampled uniformly over
     the groups that hold samples, then uniformly within the group."""
 
-    def __init__(self, groups: int, capacity: int, hist: int, prop_dim: int, num_points: int, device: str):
-        self.bufs = [PlannerBuffer(capacity // groups, hist, prop_dim, num_points, device) for _ in range(groups)]
+    def __init__(self, groups: int, capacity: int, hist: int, prop_dim: int, num_points: int, device: str, runtime=None):
+        caps = [capacity // groups + int(i < capacity % groups) for i in range(groups)]
+        if runtime is not None:
+            caps = [runtime.capacity(n) for n in caps]
+        self.bufs = [PlannerBuffer(n, hist, prop_dim, num_points, device) for n in caps]
         self.device = device
 
     @property
@@ -326,18 +344,101 @@ def planner_batch_loss(planner: ContactPlanner, b: dict, scan: PlannerScan, cfg:
 
 
 def planner_update(planner: ContactPlanner, opt: torch.optim.Optimizer, pbuf: PlannerBuffer, scan: PlannerScan,
-                   cfg: PlannerCfg) -> torch.Tensor:  # fmt: skip
+                   cfg: PlannerCfg, runtime=None) -> torch.Tensor:  # fmt: skip
     """One optimizer update on ``cfg.batch`` samples in ``cfg.sub_batches`` accumulated parts; (affordance, occupancy)."""
-    batch = pbuf.sample(cfg.batch)
+    batch = global_sample(pbuf, cfg.batch, runtime) if runtime is not None and runtime.active else pbuf.sample(cfg.batch)
     sb = cfg.batch // cfg.sub_batches
+    world = runtime.world_size if runtime is not None else 1
+    rank = runtime.rank if runtime is not None else 0
+    local_sb = sb // world
     opt.zero_grad(set_to_none=True)
     tot = torch.zeros(2, device=pbuf.device)
     for i in range(cfg.sub_batches):
-        (l_aff, l_occ), _ = planner_batch_loss(planner, {k: v[i * sb : (i + 1) * sb] for k, v in batch.items()}, scan, cfg)
+        b = {k: v[i * sb + rank * local_sb:i * sb + (rank + 1) * local_sb] for k, v in batch.items()}
+        (l_aff, l_occ), _ = planner_batch_loss(planner, b, scan, cfg)
+        if runtime is not None and runtime.active:
+            contacts = b['occ'].sum().float()
+            denominator = runtime.sum(contacts).clamp(min=1)
+            l_aff = l_aff * contacts * world / denominator
         ((l_aff + l_occ) / cfg.sub_batches).backward()
         tot += torch.stack((l_aff.detach(), l_occ.detach())) / cfg.sub_batches
-    opt.step()
-    return tot
+    if runtime is None:
+        opt.step()
+    else:
+        runtime.step(opt, planner, 'planner')
+    return runtime.average(tot) if runtime is not None else tot
+
+
+@torch.no_grad()
+def global_sample(buffer, batch_size, runtime):
+    """Sample the union of shards, respecting Mixed/Grouped sampling semantics.
+
+    Only the selected batch crosses devices. A rank with an empty replay can still
+    learn, and rare terrain groups are balanced globally rather than per worker.
+    """
+    leaves = []
+
+    def flatten(node):
+        if isinstance(node, PlannerBuffer):
+            leaves.append(node)
+        else:
+            for child in node.bufs:
+                flatten(child)
+
+    flatten(buffer)
+    sizes = torch.tensor([b.size for b in leaves], dtype=torch.float64, device=buffer.device)
+    counts = torch.stack(runtime.gather(sizes))
+    totals = counts.sum(0)
+    cursor = 0
+
+    def weights(node):
+        nonlocal cursor
+        if isinstance(node, PlannerBuffer):
+            p = torch.zeros_like(totals)
+            p[cursor] = 1 if totals[cursor] > 0 else 0
+            size = totals[cursor].clone()
+            cursor += 1
+            return p, size
+        children = [weights(b) for b in node.bufs]
+        sizes = torch.stack([size for _, size in children])
+        w = (sizes > 0).double() if isinstance(node, GroupedPlannerBuffer) else sizes
+        w = w / w.sum().clamp(min=1)
+        return sum(p * part for (p, _), part in zip(children, w)), sizes.sum()
+
+    leaf_prob, size = weights(buffer)
+    if size == 0:
+        raise ValueError('cannot sample an empty global planner buffer')
+    owner_prob = counts / totals.clamp(min=1) * leaf_prob
+    draws = torch.empty(batch_size, dtype=torch.long, device=buffer.device)
+    if runtime.main:
+        draws.copy_(torch.multinomial(owner_prob.flatten(), batch_size, replacement=True))
+    if runtime.active:
+        torch.distributed.broadcast(draws, 0)
+    owners, which = draws // len(leaves), draws % len(leaves)
+    samples = []
+    for i, leaf in enumerate(leaves):
+        ids = ((owners == runtime.rank) & (which == i)).nonzero().flatten()
+        if len(ids):
+            samples.append((ids, leaf.sample(len(ids))))
+    out = {}
+    for key, exemplar in leaves[0].data.items():
+        # SUM is supported for the numeric transfer representation, including bool labels.
+        dtype = torch.int32 if exemplar.dtype == torch.bool else exemplar.dtype
+        value = torch.zeros((batch_size, *exemplar.shape[1:]), dtype=dtype, device=buffer.device)
+        for ids, sample in samples:
+            value[ids] = sample[key].to(dtype)
+        out[key] = runtime.sum(value).to(exemplar.dtype)
+    return out
+
+
+@torch.no_grad()
+def distributed_planner_metrics(planner, buffer, scan, cfg, runtime, max_samples=16384):
+    n = min(max_samples, runtime.global_size(buffer))
+    if not n:
+        return None
+    batch = global_sample(buffer, n, runtime) if runtime.active else buffer.sample(n)
+    result = planner_metrics(planner, batch, scan, cfg) if runtime.main else None
+    return runtime.objects(result)[0]
 
 
 @torch.no_grad()

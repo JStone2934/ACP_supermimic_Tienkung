@@ -15,13 +15,12 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
-import json
 import os
 import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
-parser.add_argument("--tracker", type=str, required=True, help="supermimic.acp.train_stage1 checkpoint")
+parser.add_argument("--tracker", type=str, default=None, help="supermimic.acp.train_stage1 checkpoint")
 parser.add_argument("--num_envs", type=int, default=4096)
 parser.add_argument("--steps", type=int, default=20_000, help="simulator steps")
 parser.add_argument("--updates_per_step", type=int, default=1, help="planner updates per simulator step")
@@ -38,26 +37,38 @@ parser.add_argument("--val_every", type=int, default=500)
 parser.add_argument("--ckpt_every", type=int, default=2000)
 parser.add_argument("--log_dir", type=str, required=True)
 parser.add_argument("--seed", type=int, default=0)
+parser.add_argument("--resume", default=None)
+from supermimic.acp.distributed import Runtime, add_arguments
+add_arguments(parser, planner=True, reward=False)
 args = parser.parse_args()
+if not (args.tracker or args.resume):
+    parser.error("--tracker or --resume is required")
 
 import torch
 
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.robots import resolve_robot
+from supermimic.acp.robots import resolve_robot, sha256
 from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import MDP, OBS_DIM, REF_ORI_DIMS
 from supermimic.acp.motion import MotionLib
 from supermimic.acp.networks import Policy
-from supermimic.acp.planner import ContactPlanner, PlannerBuffer, PlannerCfg, PlannerScan, label_episodes, planner_metrics, planner_update
+from supermimic.acp.planner import (ContactPlanner, PlannerBuffer, PlannerCfg, PlannerScan, label_episodes,
+                                    distributed_planner_metrics, planner_update)
 from supermimic.acp.task import ContactCfg, ContactTask
 
 torch.backends.cuda.matmul.allow_tf32 = True
-torch.manual_seed(args.seed)
-dev = "cuda:0"
-os.makedirs(args.log_dir, exist_ok=True)
-json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
+rt = Runtime(args)
+dev = rt.device
+resume_ck = torch.load(args.resume, map_location=dev) if args.resume else None
+if resume_ck is not None:
+    args.tracker = args.tracker or resume_ck['tracker']
+    if resume_ck.get('tracker_hash') and sha256(args.tracker) != resume_ck['tracker_hash']:
+        raise ValueError('resume tracker checkpoint changed')
+rt.args['tracker'] = args.tracker
+rt.write_json('args.json', rt.args)
+tracker_hash = sha256(args.tracker)
 
 ck = torch.load(args.tracker, map_location=dev)
 robot = resolve_robot(args.robot, ck)
@@ -79,11 +90,26 @@ pi.eval()
 
 pcfg = PlannerCfg(capacity=args.capacity, goal_radius=args.goal_radius, scan_noise=args.scan_noise, start_max=args.start_max,
                  reach_min=args.reach_min)
+if resume_ck is not None:
+    pcfg = PlannerCfg(**{**resume_ck['planner_cfg'], 'capacity': args.capacity})
+pcfg = rt.planner_config(pcfg)
 scan = PlannerScan(pcfg, dev)
 planner = ContactPlanner(OBS_DIM - REF_ORI_DIMS, pcfg).to(dev)
 opt = torch.optim.Adam(planner.parameters(), lr=pcfg.lr, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.0)
-pbuf = PlannerBuffer(pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
-vbuf = PlannerBuffer(args.capacity // 5, pcfg.hist, planner.prop_dim, scan.num_z, dev)
+start_step, wall_offset, sim_steps = 0, 0., 0
+if resume_ck is not None:
+    robot.validate_metadata(resume_ck.get('robot_metadata'), legacy=True)
+    if (robot.robot_id != 'g1' or resume_ck.get('data_hash') is not None) and resume_ck.get('data_hash') != motion.data_hash:
+        raise ValueError('checkpoint dataset mismatch')
+    planner.load_state_dict(resume_ck['planner'])
+    opt.load_state_dict(resume_ck['opt'])
+    start_step = resume_ck['step']
+    wall_offset = resume_ck.get('wall_time', 0.)
+    sim_steps = resume_ck.get('sim_steps', start_step * rt.args['num_envs'])
+    rt.restore(resume_ck)
+rt.register({'pi': pi, 'planner': planner}, {'opt_planner': opt}, deferred=(planner.prop_norm,))
+pbuf = PlannerBuffer(rt.capacity(pcfg.capacity), pcfg.hist, planner.prop_dim, scan.num_z, dev)
+vbuf = PlannerBuffer(rt.capacity(pcfg.capacity // 5), pcfg.hist, planner.prop_dim, scan.num_z, dev)
 folders = sorted({n.split("/")[0] for n in motion.names})
 val_clip = torch.zeros(len(motion.names), dtype=torch.bool, device=dev)
 for g in folders:  # every 10th clip of each folder
@@ -92,27 +118,30 @@ for g in folders:  # every 10th clip of each folder
 assert args.buffer_steps > int(motion.clip_len.max()), "the replay buffer must hold a whole episode"
 
 N = args.num_envs
-env = TrackingSim(N, motion, mdp, dev, start_phase=(0.0, 0.98))
+env = TrackingSim(N, motion, mdp, dev, start_phase=(0.0, 0.98), runtime=rt)
 buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
 obs_hist = torch.zeros(N, Hh, OBS_DIM, device=dev)
 goal_steps = ctc.sample_goal_steps(N)
 
 BODIES = list(CONTACT_BODIES)
-log_f = open(os.path.join(args.log_dir, "train_log.csv"), "w")
-log_f.write("step,wall_h,steps_per_s,ended,admitted,admit_rate,labeled,buffer,val_buffer,aff,occ\n")
-val_f = open(os.path.join(args.log_dir, "planner_val.csv"), "w")
-val_f.write("step,aff,occ," + ",".join(f"{m}_{b}" for m in ("precision", "recall", "f1", "median_err", "within_0.1") for b in BODIES) + "\n")
-t0 = t_log = time.time()
+new_log = not os.path.exists(os.path.join(args.log_dir, "train_log.csv"))
+log_f = rt.open_log(os.path.join(args.log_dir, "train_log.csv"))
+if new_log: log_f.write("step,wall_h,steps_per_s,ended,admitted,admit_rate,labeled,buffer,val_buffer,aff,occ\n")
+val_f = rt.open_log(os.path.join(args.log_dir, "planner_val.csv"))
+if new_log: val_f.write("step,aff,occ," + ",".join(f"{m}_{b}" for m in ("precision", "recall", "f1", "median_err", "within_0.1") for b in BODIES) + "\n")
+t_log = time.time()
+t0 = t_log - wall_offset
 acc = {"ended": 0, "admitted": 0, "labeled": 0, "loss": []}
 
 
 def save(step: int):
-    torch.save({"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "planner": planner.state_dict(), "opt": opt.state_dict(), "planner_cfg": dataclasses.asdict(pcfg), "step": step,
-                "tracker": args.tracker, "prop_dim": planner.prop_dim, "args": vars(args)},
-               os.path.join(args.log_dir, f"planner_{step:06d}.pt"))  # fmt: skip
+    ck = dict(robot_metadata=robot.metadata(), data_hash=motion.data_hash, planner=planner.state_dict(), opt=opt.state_dict(),
+              planner_cfg=dataclasses.asdict(pcfg), step=step, tracker=args.tracker, tracker_hash=tracker_hash,
+              prop_dim=planner.prop_dim, args=rt.args, wall_time=time.time()-t0, sim_steps=sim_steps)
+    rt.save(ck, numbered=f'planner_{step:06d}.pt', full=True)
 
 
-for step in range(1, args.steps + 1):
+for step in range(start_step + 1, args.steps + 1):
     with torch.no_grad():
         o = env.observe()
         fresh = env.ep_step == 0
@@ -121,6 +150,7 @@ for step in range(1, args.steps + 1):
         out = env.step(torch.clamp(a + args.action_noise * torch.randn_like(a), -20, 20))
         out["goal_steps"] = goal_steps.clone()
         buffer.add(out)
+        sim_steps += rt.args["num_envs"]
         done = out["done"]
         envs = done.nonzero(as_tuple=False).squeeze(-1)
         if len(envs) > 0:
@@ -136,28 +166,34 @@ for step in range(1, args.steps + 1):
                 pbuf.add({k: v[~val] for k, v in d.items()})
                 vbuf.add({k: v[val] for k, v in d.items()})
             goal_steps[done] = ctc.sample_goal_steps(len(envs))
-    if pbuf.size >= pcfg.min_entries:
+    rt.flush_norm(planner.prop_norm)
+    if rt.global_size(pbuf) >= pcfg.min_entries:
         for _ in range(args.updates_per_step):
-            acc["loss"].append(planner_update(planner, opt, pbuf, scan, pcfg))
+            acc["loss"].append(planner_update(planner, opt, pbuf, scan, pcfg, rt))
+    rt.tick(step, sim_steps, ready=rt.updates.get('planner', 0) > 0)
     if step % args.log_every == 0:
+        merged = rt.aggregate({k: [v] if k != 'loss' else v for k, v in acc.items()})
+        acc = {k: sum(v) if k != 'loss' else v for k, v in merged.items()}
         sps = args.log_every / (time.time() - t_log)
         t_log = time.time()
         loss = torch.stack(acc["loss"]).mean(0).tolist() if acc["loss"] else [float("nan")] * 2
         row = [step, (time.time() - t0) / 3600, sps, acc["ended"], acc["admitted"], acc["admitted"] / max(acc["ended"], 1), acc["labeled"],
-               pbuf.size, vbuf.size, *loss]  # fmt: skip
+               rt.global_size(pbuf), rt.global_size(vbuf), *loss]  # fmt: skip
         log_f.write(",".join(f"{x:.6g}" if isinstance(x, float) else str(x) for x in row) + "\n")
         log_f.flush()
-        print(f"step {step} | {row[1]:.3f} h | {sps:.1f} steps/s | ended {acc['ended']} admitted {acc['admitted']} ({row[5]:.3f}) "
-              f"labeled {acc['labeled']} | buffer {pbuf.size} val {vbuf.size} | aff {loss[0]:.3f} occ {loss[1]:.3f}", flush=True)  # fmt: skip
+        rt.print(f"step {step} | {row[1]:.3f} h | {sps:.1f} steps/s | ended {acc['ended']} admitted {acc['admitted']} ({row[5]:.3f}) "
+              f"labeled {acc['labeled']} | buffer {row[7]} val {row[8]} | aff {loss[0]:.3f} occ {loss[1]:.3f}", flush=True)  # fmt: skip
         acc = {"ended": 0, "admitted": 0, "labeled": 0, "loss": []}
-    if step % args.val_every == 0 and vbuf.size > 0:
+    if step % args.val_every == 0 and rt.global_size(vbuf) > 0:
         planner.eval()
-        mt = planner_metrics(planner, vbuf.sample(min(args.val_samples, vbuf.size)), scan, pcfg)
+        mt = distributed_planner_metrics(planner, vbuf, scan, pcfg, rt, args.val_samples)
         planner.train()
         keys = ("precision", "recall", "f1", "median_err", "within_0.1")
         val_f.write(",".join(str(x) for x in [step, mt["aff"], mt["occ"]] + [v for k in keys for v in mt[k]]) + "\n")
         val_f.flush()
-        print("  val " + " | ".join(f"{b} F1 {mt['f1'][i]:.2f} err {mt['median_err'][i]:.3f} <0.1 {mt['within_0.1'][i]:.2f}"
+        rt.print("  val " + " | ".join(f"{b} F1 {mt['f1'][i]:.2f} err {mt['median_err'][i]:.3f} <0.1 {mt['within_0.1'][i]:.2f}"
                                     for i, b in enumerate(BODIES[:6])), flush=True)  # fmt: skip
     if step % args.ckpt_every == 0 or step == args.steps:
         save(step)
+
+rt.close()

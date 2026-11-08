@@ -171,9 +171,9 @@ class GoalCurriculum:
     """Per goal environment a fixed terrain type (round robin) and a level, moved by its episodes' outcomes."""
 
     def __init__(self, terrains: dict, num_envs: int, device: str, promote_ema: float = 0.5, demote_dist: float = 1.0,
-                 max_start_level: int = 0):  # fmt: skip
+                 max_start_level: int = 0, global_offset: int = 0):  # fmt: skip
         self.n_inst = terrains["instances"]
-        self.type = torch.arange(num_envs, device=device) % len(TERRAIN_TYPES)
+        self.type = (torch.arange(num_envs, device=device) + global_offset) % len(TERRAIN_TYPES)
         self.level = torch.randint(0, max_start_level + 1, (num_envs,), device=device)
         self.success = torch.zeros(num_envs, device=device)
         self.promote_ema, self.demote_dist = promote_ema, demote_dist

@@ -1,6 +1,6 @@
 # ACP-TienKung：天工 3.0 29 DoF 复现入口
 
-本次范围为 **M0–M3 + 合成站立链路检查**。完整迁移计划保留在 [migration_plan.md](migration_plan.md)，当前状态见 [progress.md](progress.md)。设计与持续任务上下文分别见 [design.md](design.md)、[taskmemory.md](taskmemory.md)。
+本页记录 **M0–M3 + 合成站立链路检查**。新增的全阶段双 RTX 5090 适配见 [双卡训练指南](dual_gpu.md)，本机环境、显存与性能数据见 [双卡测试档案](../dual_rtx5090/README.md)。完整迁移计划保留在 [migration_plan.md](migration_plan.md)，迁移状态见 [progress.md](progress.md)。设计与持续任务上下文分别见 [design.md](design.md)、[taskmemory.md](taskmemory.md)。
 
 ## 环境与资产
 
@@ -13,7 +13,35 @@ python -m supermimic.acp.make_labels \
   --out data/tienkung3_29dof/contacts/bootstrap --workers 1
 ```
 
-环境锁定见仓库根目录 `environment.yml`。本机解释器为 `/home/js/miniforge3/envs/acp_supermimic/bin/python`。转换器下载固定上游提交，保留原 URDF/网格，在 generated 生成无损 OBJ 与固定头部的派生 URDF/MJCF；不将模型网格或训练文件加入 Git。上游归档未包含 LICENSE/COPYING，来源记录保留在 manifest，未替上游添加许可。
+环境依赖见仓库根目录 `environment.yml`，新机器先执行 `conda env create -f environment.yml`。激活后用 `which python` 确认解释器；当前双 RTX 5090 主机的路径为 `/home/js/miniconda3/envs/acp_supermimic/bin/python`。
+
+天工 ACP 入口 `supermimic/acp/` 使用 mjlab + MuJoCo Warp，无需安装 Isaac Lab。仓库保留的 `supermimic/train.py`、`run_train.sh` 属于上游 Isaac Lab 3 kit-less Docker 流程，不是这里的训练入口。
+
+2026-11-08 双卡主机检查：Ubuntu 22.04.5、Xeon w9-3475X（36 核 / 72 线程）、128 GB 内存、2 × RTX 5090 32 GB，驱动 580.178.04。两卡拓扑为 PCIe `NODE`。`nvidia-smi` 显示的 CUDA 13.0 是驱动支持版本，项目使用 PyTorch wheel 自带的 CUDA 12.8 运行库；版本组合见 [PyTorch 官方安装记录](https://pytorch.org/get-started/previous-versions/#v290)。
+
+本机 Conda 位于 `/home/js/miniconda3`。创建本项目环境前已有 `base`、`cage-thermal-mask`、`env_isaaclab`、`mrdrl_nav`、`reward-scope`、`tv`、`unitree_lerobot`、`unitree_sim_env`，以及 `/home/js/robot/PressButton/.conda/envs/` 下的 `lerobot`、`pressb`；本次保留这些环境。
+
+环境激活时设置 `MUJOCO_GL=egl`（无窗口渲染）和 `PYTHONNOUSERSITE=1`（隔离用户目录的 Python 包），保留两张 GPU 可见。已有环境可通过 `conda env config vars set -n acp_supermimic MUJOCO_GL=egl PYTHONNOUSERSITE=1` 更新，然后重新激活。
+
+本机主机名 `5090` 被解析为 `0.0.19.226`，实测 `torchrun --standalone` 无法正常建立 rendezvous；单机双进程检查改用 `torchrun --nnodes=1 --nproc-per-node=2 --master-addr=127.0.0.1 --master-port=29547 ...` 后 NCCL all-reduce 通过。端口需空闲，多个作业使用不同端口。当前驱动下 `torch.cuda.can_device_access_peer(0, 1)` 为 `False`；通信通过不代表 GPU P2P 可用。四阶段训练的双卡实现、启动和验收说明见 [双卡训练文档](dual_gpu.md)。
+
+本次安装实测 Python 3.11.18、PyTorch 2.9.0+cu128（含 `sm_120`）、torchvision 0.24.0+cu128、mjlab 1.6.0、MuJoCo / MuJoCo Warp 3.11.0、Warp 1.16.0、FFmpeg 9.0.2。`pip check`、15 项机器人/流水线回归测试、两卡矩阵梯度与 torchvision CUDA 算子、双进程 NCCL all-reduce、EGL 图像与 H.264 编码均通过。两张卡分别通过 16 环境 × 16 控制步的天工仿真和 `torch.compile` 反向传播检查；这是环境与数值链路验收，不是完整训练或策略能力验收。
+
+本机检查日志、JSON 结果和完整依赖快照保存在 `.cache/environment-check/`（不纳入 Git）。从仓库根目录复现核心检查：
+
+```bash
+conda activate acp_supermimic
+python -m pip check
+OMP_NUM_THREADS=8 python -m unittest tools.test_robot_contracts tools.test_acp_pipeline
+for gpu in 0 1; do
+  python -m tools.check_acp_setup --robot tienkung3_29dof \
+    --contacts-dir data/tienkung3_29dof/contacts/bootstrap \
+    --device "cuda:$gpu" --num-envs 16 --steps 16 \
+    --out ".cache/environment-check/smoke_gpu${gpu}.json"
+done
+```
+
+转换器下载固定上游提交，保留原 URDF/网格，在 generated 生成无损 OBJ 与固定头部的派生 URDF/MJCF；不将模型网格或训练文件加入 Git。上游归档未包含 LICENSE/COPYING，来源记录保留在 manifest，未替上游添加许可。
 
 模型规格：29 个受控 hinge + 1 个 freejoint，裸模型 `nq=36, nv=35, nu=0`，mjlab 组装后 `nu=29`。根为 pelvis，躯干为 waist_pitch_link。策略 50 Hz、物理 200 Hz；动作目标为 `q_default + joint_offset + 0.25 * action`。速度限值没有物理硬约束。armature=0 是未辨识的仿真假设。
 
@@ -47,7 +75,7 @@ python -m tools.preview_robot \
 - 关节按名字双向重排，不能把两个机器人的 29 维数组视为兼容。
 - 新文件/checkpoint 带 robot_id、model/config hash、canonical joint order、control_dt；checkpoint 记录数据哈希，标签绑定 motion/terrain 文件哈希。旧无身份文件只允许走 G1 路径。
 - `MotionLib` 支持 `(T,36)` motion 和 `(0,1,10)` 空平地 terrain；合成站立为 601 帧、50 Hz。末帧不能作为有后继动作的 reset 起点。
-- 运行目录绑定模型、配置、输入文件；更换输入不能复用旧流水线完成标记。正式流水线仍为 Stage 1 → offline planner → Stage 2；本次未新增或运行完整 Stage 3 流水线。
+- 运行目录绑定模型、配置、输入文件；更换输入不能复用旧流水线完成标记。流水线默认运行 Stage 1 → offline planner → Stage 2，指定 `--through-stage 3` 可追加 Stage 3 及目标任务评估。本次只运行短训验收，未启动长期流水线训练。
 
 ## 交付边界
 
@@ -57,7 +85,7 @@ python -m tools.preview_robot \
 
 ## Git 管理
 
-工作分支 `feat/tienkung3-29dof-acp`。`origin` 为用户指定的 `JStone2934/ACP_supermimic_Tienkung`（HTTPS fetch，SSH push）；原仓库保留为 `upstream`。既有工作区改动已单独保存为 `98f38d2`，原始文件哈希见 evidence/baseline.json。没有强推或直接修改远程 main。
+双卡适配工作分支为 `feat/dual-5090-scheduling`，此前机器人迁移分支为 `feat/tienkung3-29dof-acp`。`origin` 为用户指定的 `JStone2934/ACP_supermimic_Tienkung`；本机 Git URL 重写可能显示 SSH 地址。原仓库保留为 `upstream`。此前工作区改动已单独保存为 `98f38d2`，原始文件哈希见 evidence/baseline.json。没有强推或直接修改远程 main。
 
 ## 默认姿态
 

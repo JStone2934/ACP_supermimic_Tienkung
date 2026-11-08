@@ -33,7 +33,6 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
-import json
 import math
 import os
 import time
@@ -75,6 +74,8 @@ parser.add_argument("--log_dir", type=str, required=True)
 parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--resume", type=str, default=None)
 parser.add_argument("--amp", type=str, default="bf16", choices=["none", "bf16"], help="autocast dtype for MLP matmuls")
+from supermimic.acp.distributed import Runtime, add_arguments
+add_arguments(parser, planner=True)
 args = parser.parse_args()
 if not (args.init or args.resume):
     parser.error("--init (or --resume) is required")
@@ -83,10 +84,10 @@ if not 0 < args.goal_frac < 1:
 
 import torch
 import torch.nn as nn
-import warp as wp
 
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
+from supermimic.acp.memory import compile_reward, reward_batch
 from supermimic.acp.env import TrackingSim
 from supermimic.acp.robots import resolve_robot
 from supermimic.acp.goal import LEVELS, TERRAIN_TYPES, GoalCfg, GoalCurriculum, GoalTask, make_terrains
@@ -95,16 +96,14 @@ from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_D
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
 from supermimic.acp.planner import (ContactPlanner, GroupedPlannerBuffer, MixedPlannerBuffer, PlannerBuffer, PlannerCfg, PlannerScan,
-                                    label_episodes, plan, planner_metrics, planner_update)  # fmt: skip
+                                    label_episodes, plan, distributed_planner_metrics, planner_update)  # fmt: skip
 from supermimic.acp.task import ContactCfg, ContactTask, PaperReward, PaperRewardCfg, to_base
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
-torch.manual_seed(args.seed)
 networks.AMP_DTYPE = torch.bfloat16 if args.amp == "bf16" else None
-dev = "cuda:0"
-os.makedirs(args.log_dir, exist_ok=True)
-json.dump(vars(args), open(os.path.join(args.log_dir, "args.json"), "w"), indent=2)
+rt = Runtime(args)
+dev = rt.device
 
 ck = torch.load(args.resume or args.init, map_location=dev)
 robot = resolve_robot(args.robot, ck)
@@ -122,6 +121,7 @@ ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
 reward_cfg = PaperRewardCfg(**ck["reward_cfg"])
 paper_reward = PaperReward(reward_cfg, ctc)
 pcfg = PlannerCfg(**{**ck["planner_cfg"], "capacity": args.planner_capacity})
+pcfg = rt.planner_config(pcfg)
 scan = PlannerScan(pcfg, dev)
 terrain_args = ck["terrain_args"] if args.resume else {"instances": args.terrain_instances, "seed": args.terrain_seed}
 terrains = make_terrains(**terrain_args, stand_height=.78 if robot.robot_id == "g1" else robot.stand_height)
@@ -153,7 +153,7 @@ opt_vfs = torch.optim.Adam(critic_fs.parameters(), lr=args.lr_fs)
 opt_pl = torch.optim.Adam(planner.parameters(), lr=pcfg.lr, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.0)
 wm.load_state_dict(ck["wm"]), pi.load_state_dict(ck["pi"]), planner.load_state_dict(ck["planner"])
 opt_wm.load_state_dict(ck["opt_wm"]), opt_pi.load_state_dict(ck["opt_pi"]), opt_pl.load_state_dict(ck["opt_planner"])
-curriculum = GoalCurriculum(terrains, N_GOAL, dev, max_start_level=args.start_level)
+curriculum = GoalCurriculum(terrains, N_GOAL, dev, max_start_level=args.start_level, global_offset=rt.rank * N_GOAL)
 scale = {"ref": None, "goal": None}  # running spread of each group's imagined return
 start_it, wall_offset, sim_steps = 0, 0.0, 0
 if args.resume:
@@ -161,11 +161,19 @@ if args.resume:
     critic_fs.load_state_dict(ck["critic_fs"]), opt_vfs.load_state_dict(ck["opt_vfs"])
     start_it, wall_offset, sim_steps, lr_it0 = ck["iteration"], ck["wall_time"], ck["sim_steps"], ck["lr_it0"]
     scale = {k: None if v is None else torch.tensor(v, device=dev) for k, v in ck["scale"].items()}
-    curriculum.level.copy_(ck["curriculum_level"]), curriculum.success.copy_(ck["curriculum_success"])
+    if len(ck['curriculum_level']) != N_GOAL * rt.world_size or ck['args']['num_envs'] != rt.args['num_envs']:
+        raise ValueError('resume requires the same global environment/group counts; use --init for a new run')
+    shard = slice(rt.rank * N_GOAL, (rt.rank + 1) * N_GOAL)
+    curriculum.level.copy_(ck["curriculum_level"][shard]), curriculum.success.copy_(ck["curriculum_success"][shard])
 else:  # V_m: the Stage 2 critic; V_fs: new; the learning-rate schedule continues from Stage 2
     critic_m.load_state_dict(ck["critic"]), opt_vm.load_state_dict(ck["opt_v"])
     lr_it0 = ck["iteration"] + ck.get("lr_it0", 0)
 stage2_args = ck["stage2_args"] if args.resume else ck["args"]
+
+
+rt.register({"wm": wm, "pi": pi, "critic_m": critic_m, "critic_fs": critic_fs, "planner": planner}, {"opt_wm": opt_wm, "opt_pi": opt_pi, "opt_vm": opt_vm, "opt_vfs": opt_vfs, "opt_planner": opt_pl}, deferred=(planner.prop_norm,))
+if args.resume:
+    rt.restore(ck)
 
 
 # per-component floors on the error normalization (pos, rot, lin vel, ang vel, q, qd increments)
@@ -224,8 +232,8 @@ wm_err = torch.compile(_wm_err)
 imag_step = torch.compile(_imag_step)
 plan_c = torch.compile(_plan)
 # max_fusion_size 32: Triton 3.5.0 fails to compile the fully fused backward kernels of these rewards
-reward_ref = torch.compile(_reward_ref, options={"max_fusion_size": 32})
-reward_goal = torch.compile(_reward_goal, options={"max_fusion_size": 32})
+reward_ref = compile_reward(_reward_ref, recompute=bool(args.reward_chunk_size))
+reward_goal = compile_reward(_reward_goal, recompute=bool(args.reward_chunk_size))
 critic_input_m = torch.compile(_critic_input_m)
 critic_input_fs = torch.compile(goal.critic_features)
 
@@ -249,17 +257,20 @@ def wm_update():
     loss, e_last = wm_err(S_hat, w["s1"], w["mask"])
     opt_wm.zero_grad(set_to_none=True)
     loss.backward()
-    nn.utils.clip_grad_norm_(wm.parameters(), 1.0)
-    opt_wm.step()
+    rt.step(opt_wm, wm, "wm", max_norm=1.0)
     m = w["mask"][:, -1]
-    return loss.detach() / args.wm_window, (e_last.detach() * m).sum() / m.sum().clamp(min=1)
+    return loss.detach() / args.wm_window, rt.ratio((e_last.detach() * m).sum(), m.sum())
 
 
 def sample_starts(n: int, envs: torch.Tensor):
     """``n`` start points of environments ``envs`` with H frames left in their clip (goal worlds keep their clip's first
     frame), the action before their previous one (``a_prev2``) and the observations the policy saw before them."""
     starts, hists, k = [], [], 0
+    attempts = 0
     while k < n:
+        attempts += 1
+        if attempts > 100:
+            raise RuntimeError("no eligible imagination starts; check horizon, clip length and warmup")
         s, h = buffer.sample_starts(2 * n, Hh, envs)
         ok = s["f"] + HZ <= motion.clip_end[motion.clip_id[s["f"]]]
         idx = ok.nonzero(as_tuple=False).squeeze(-1)[: n - k]
@@ -292,8 +303,7 @@ def fit_critic(critic: Critic, opt: torch.optim.Optimizer, X: torch.Tensor, rews
             v_loss = ((critic(Xf[idx]) - Yf[idx]) ** 2).mean()
             opt.zero_grad(set_to_none=True)
             v_loss.backward()
-            nn.utils.clip_grad_norm_(critic.parameters(), 1.0)
-            opt.step()
+            rt.step(opt, critic, "critic_m" if critic is critic_m else "critic_fs", max_norm=1.0)
     return v_loss.detach()
 
 
@@ -329,17 +339,17 @@ def policy_update(train_goal: bool) -> dict:
         f_all = stk(F1s)
         S_H = tuple(x[g] for x in S)
         if key == "ref":
-            r = reward_ref(S_all, S_prev, f_all, rep(v), stk(As), stk(Aps), stk(Ap2s), rep(xi), stk(Pws), stk(Pvs))
+            r = reward_batch(reward_ref, S_all, S_prev, f_all, rep(v), stk(As), stk(Aps), stk(Ap2s), rep(xi), stk(Pws), stk(Pvs), chunk_size=args.reward_chunk_size)
             d = mdp.soft_termination(S_all, f_all)  # eager: inside the compiled reward it changed the fused backward kernels
             boot = critic_m(critic_input_m(S_H, f[g], v[g], gs[g], xi_n[g], pw_H[g], pv_H[g]))
         else:
-            r, d = reward_goal(S_all, S_prev, rep(boxes), rep(gw), goal.v_max(rep(v)), stk(As), stk(Aps), stk(Ap2s), rep(xi), stk(Pws), stk(Pvs))
+            r, d = reward_batch(reward_goal, S_all, S_prev, rep(boxes), rep(gw), goal.v_max(rep(v)), stk(As), stk(Aps), stk(Ap2s), rep(xi), stk(Pws), stk(Pvs), chunk_size=args.reward_chunk_size)
             boot = critic_fs(critic_input_fs(S_H, xi_n[g], boxes[g], gw[g], (t0[g] + HZ) / gcfg.max_steps, pw_H[g], pv_H[g]))
         r, d = r.view(HZ, nb), d.view(HZ, nb)
         alive = torch.cumprod(1 - d, 0)  # c_{t+1}
         c_t = torch.cat((torch.ones(1, nb, device=dev), alive[:-1]), 0)
         Js[key] = (disc * c_t * r).sum(0) + (args.gamma**HZ) * alive[-1] * boot
-        sd = Js[key].detach().std()
+        sd = rt.global_std(Js[key])
         scale[key] = sd if scale[key] is None else args.scale_ema * scale[key] + (1 - args.scale_ema) * sd
         fit[key] = (r.detach(), d.detach())
         stats[f"imag_r_{key}"] = ((c_t * r).detach().sum(0) / HZ / MAX_R[key]).mean()
@@ -349,10 +359,7 @@ def policy_update(train_goal: bool) -> dict:
     loss = -((Js["ref"] / scale["ref"].clamp(min=1e-3)).sum() + w_goal * (Js["goal"] / scale["goal"].clamp(min=1e-3)).sum()) / (B_REF + w_goal * B_GOAL)
     opt_pi.zero_grad(set_to_none=True)
     loss.backward()
-    gn = nn.utils.clip_grad_norm_(pi.parameters(), 1.0)
-    nn.utils.clip_grad_value_(pi.parameters(), 0.1)
-    if torch.isfinite(gn):
-        opt_pi.step()
+    gn = rt.step(opt_pi, pi, "pi", max_norm=1.0, clip_value=0.1)
     for m in (wm, critic_m, critic_fs):
         set_requires_grad(m, True)
     # ---------------- critics: each on its group's GAE(lambda) targets ----------------
@@ -376,15 +383,12 @@ def policy_update(train_goal: bool) -> dict:
 
 # ------------------------------------------------------------------------------------------------
 assert args.buffer_steps > max(int(motion.clip_len.max()), gcfg.max_steps), "the replay buffer must hold a whole episode"
-env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=(0.0, 0.0), goal=goal, num_goal_envs=N_GOAL, goal_curriculum=curriculum)
-# Warp's pool otherwise returns its sim-step scratch to the driver at every sync and re-allocates it in the next graph
-# launch, which can fail once PyTorch's cache has grown into that space; keep it reserved instead
-wp.set_mempool_release_threshold(dev, torch.cuda.get_device_properties(dev).total_memory)
+env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=(0.0, 0.0), goal=goal, num_goal_envs=N_GOAL, goal_curriculum=curriculum, runtime=rt)
 buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
-pbuf_ref = PlannerBuffer(pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
-pbuf_goal = GroupedPlannerBuffer(len(TERRAIN_TYPES), pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev)
+pbuf_ref = PlannerBuffer(rt.capacity(pcfg.capacity), pcfg.hist, planner.prop_dim, scan.num_z, dev)
+pbuf_goal = GroupedPlannerBuffer(len(TERRAIN_TYPES), pcfg.capacity, pcfg.hist, planner.prop_dim, scan.num_z, dev, runtime=rt)
 pbuf = MixedPlannerBuffer(pbuf_ref, pbuf_goal)
-vbuf = PlannerBuffer(pcfg.capacity // 5, pcfg.hist, planner.prop_dim, scan.num_z, dev)
+vbuf = PlannerBuffer(rt.capacity(pcfg.capacity // 5), pcfg.hist, planner.prop_dim, scan.num_z, dev)
 folders = sorted({n.split("/")[0] for n in motion.names})
 val_clip = torch.zeros(len(motion.names), dtype=torch.bool, device=dev)
 for gname in folders:  # every 10th clip of each folder: planner validation only (the tracker trains on every clip)
@@ -416,7 +420,7 @@ def collect(n_steps: int, stats: dict):
         S0, S1 = unflatten_state(out["s"]), unflatten_state(out["s1"])
         wm.in_norm.update(wm.inputs(S0, out["a"], normalize_xi(out["xi"]), mdp.scan(S0, motion.boxes(out["f"], out["v"]))))
         wm.out_norm.update(wm.targets(S0, S1))
-        sim_steps += N
+        sim_steps += rt.args["num_envs"]
         stats["r_ref"].append(out["r"][:N_REF].mean() / MAX_STEP_REWARD)
         stats["r_goal"].append(out["r"][N_REF:].mean() / ((gcfg.w_move + gcfg.w_stand) * CONTROL_DT))
         done = out["done"]
@@ -450,6 +454,7 @@ def collect(n_steps: int, stats: dict):
                 if d is not None and len(d["occ"]) > 0:
                     planner.prop_norm.update(d["prop"].float())
                     pbuf_goal.add(d, terrains["type"].to(dev)[d["v"] - motion.num_variants])
+        rt.flush_norm(planner.prop_norm)
         goal_steps[done] = ctc.sample_goal_steps(int(done.sum()))
 
 
@@ -460,8 +465,8 @@ collect(args.warmup_steps, stats)  # the replay buffer is not checkpointed: a re
 BODIES = list(CONTACT_BODIES)
 csv_path = os.path.join(args.log_dir, "train_log.csv")
 new_log = not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0
-log_f = open(csv_path, "a")
-val_f = open(os.path.join(args.log_dir, "planner_val.csv"), "a")
+log_f = rt.open_log(csv_path)
+val_f = rt.open_log(os.path.join(args.log_dir, "planner_val.csv"))
 COLS = ("iteration,wall_h,sim_steps,wm_loss,wm_err8,pi_loss,v_m,v_fs,pi_gradnorm,imag_r_ref,surv_ref,imag_r_goal,surv_goal,scale_ref,"
         "scale_goal,sim_r_ref,sim_r_goal,ep_len_ref,ep_len_goal,term_ref,fell_goal,reached_goal,success_goal,admitted_ref,admitted_goal,"
         "planner_ref_buffer,planner_goal_buffer,planner_aff,planner_occ,it_per_s,lr" + "".join(f",level_{t}" for t in TERRAIN_TYPES))  # fmt: skip
@@ -471,7 +476,7 @@ if new_log:
     log_f.flush(), val_f.flush()
 t_start = time.time() - wall_offset
 t_log = time.time()
-step_acc = 0.0
+step_acc = ck.get("step_acc", 0.0) if args.resume else 0.0
 agg = {}
 for it in range(start_it, args.iterations):
     lr = lr_at(it)
@@ -485,12 +490,15 @@ for it in range(start_it, args.iterations):
     for _ in range(args.wm_batches):
         l, e8 = wm_update()
     agg.setdefault("wm", []).append(l), agg.setdefault("wm8", []).append(e8)
-    for k, x in policy_update(train_goal=it - start_it >= args.critic_warmup or args.resume is not None).items():
+    for k, x in policy_update(train_goal=it >= args.critic_warmup).items():
         agg.setdefault(k, []).append(x)
-    if pbuf.size >= pcfg.min_entries:
+    if rt.global_size(pbuf) >= pcfg.min_entries:
         for _ in range(args.planner_updates):
-            stats["pl"].append(planner_update(planner, opt_pl, pbuf, scan, pcfg))
+            stats["pl"].append(planner_update(planner, opt_pl, pbuf, scan, pcfg, rt))
+    rt.tick(it + 1, sim_steps, ready=rt.updates.get("pi", 0) > 0 and rt.updates.get("planner", 0) > 0)
     if (it + 1) % args.log_every == 0:
+        stats = rt.aggregate(stats)
+        agg = rt.aggregate(agg)
         mean = lambda k: float(sum(float(v) for v in agg.get(k, [])) / max(len(agg.get(k, [])), 1))  # noqa: E731
         total = lambda k: float(sum(float(v) for v in stats[k]))  # noqa: E731
         ratio = lambda a, b: total(a) / max(total(b), 1)  # noqa: E731
@@ -499,26 +507,28 @@ for it in range(start_it, args.iterations):
         ips = args.log_every / (time.time() - t_log)
         t_log = time.time()
         wall_h = (time.time() - t_start) / 3600
-        levels = [float(curriculum.level[curriculum.type == i].float().mean()) for i in range(len(TERRAIN_TYPES))]
+        all_levels = torch.cat(rt.gather(curriculum.level))
+        all_types = torch.cat(rt.gather(curriculum.type))
+        levels = [float(all_levels[all_types == i].float().mean()) for i in range(len(TERRAIN_TYPES))]
         row = [it + 1, wall_h, sim_steps, mean("wm"), mean("wm8"), mean("pi"), mean("v_m"), mean("v_fs"), mean("gn"), mean("imag_r_ref"),
                mean("surv_ref"), mean("imag_r_goal"), mean("surv_goal"), mean("scale_ref"), mean("scale_goal"), avg("r_ref"), avg("r_goal"),
                ratio("len_ref", "n_ep_ref"), ratio("len_goal", "n_ep_goal"), ratio("term_ref", "n_ep_ref"), ratio("term_goal", "n_ep_goal"),
                ratio("reached", "n_ep_goal"), ratio("success", "n_ep_goal"), int(total("admitted_ref")), int(total("admitted_goal")),
-               pbuf_ref.size, pbuf_goal.size, *pl, ips, lr] + levels  # fmt: skip
+               rt.global_size(pbuf_ref), rt.global_size(pbuf_goal), *pl, ips, lr] + levels  # fmt: skip
         log_f.write(",".join(f"{x:.6g}" if isinstance(x, float) else str(x) for x in row) + "\n")
         log_f.flush()
-        warm = "" if it - start_it >= args.critic_warmup or args.resume else " (V_fs warm-up)"
-        print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v_m {row[6]:.4f} v_fs {row[7]:.4f}{warm} | "
+        warm = "" if it >= args.critic_warmup else " (V_fs warm-up)"
+        rt.print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v_m {row[6]:.4f} v_fs {row[7]:.4f}{warm} | "
               f"REF imag_r {row[9]:.3f} surv {row[10]:.3f} sim_r {row[15]:.3f} ep_len {row[17]:.0f} term {row[19]:.2f} | "
               f"GOAL imag_r {row[11]:.3f} surv {row[12]:.3f} sim_r {row[16]:.3f} ep_len {row[18]:.0f} fell {row[20]:.2f} "
-              f"reached {row[21]:.2f} success {row[22]:.2f} | planner adm {row[23]}/{row[24]} buf {pbuf_ref.size}/{pbuf_goal.size} "
+              f"reached {row[21]:.2f} success {row[22]:.2f} | planner adm {row[23]}/{row[24]} buf {row[25]}/{row[26]} "
               f"aff {pl[0]:.3f} occ {pl[1]:.3f} | level " + " ".join(f"{t[:6]} {lv:.1f}" for t, lv in zip(TERRAIN_TYPES, levels))
               + f" | {ips:.2f} it/s", flush=True)  # fmt: skip
         stats = {k: [] for k in stats_keys}
         agg = {}
-    if (it + 1) % args.val_every == 0 and vbuf.size > 0:
+    if (it + 1) % args.val_every == 0 and rt.global_size(vbuf) > 0:
         planner.eval()
-        mt = planner_metrics(planner, vbuf.sample(min(16384, vbuf.size)), scan, pcfg)
+        mt = distributed_planner_metrics(planner, vbuf, scan, pcfg, rt)
         planner.train()
         keys = ("precision", "recall", "f1", "median_err", "within_0.1")
         val_f.write(",".join(str(x) for x in [it + 1, mt["aff"], mt["occ"]] + [v for k in keys for v in mt[k]]) + "\n")
@@ -527,16 +537,13 @@ for it in range(start_it, args.iterations):
         ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic_m": critic_m.state_dict(), "critic_fs": critic_fs.state_dict(),
               "planner": planner.state_dict(), "opt_wm": opt_wm.state_dict(), "opt_pi": opt_pi.state_dict(), "opt_vm": opt_vm.state_dict(),
               "opt_vfs": opt_vfs.state_dict(), "opt_planner": opt_pl.state_dict(), "iteration": it + 1, "wall_time": time.time() - t_start,
-              "sim_steps": sim_steps, "args": vars(args), "init_args": ia, "stage2_args": stage2_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
+              "sim_steps": sim_steps, "step_acc": step_acc, "args": rt.args, "init_args": ia, "stage2_args": stage2_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
               "reward_cfg": dataclasses.asdict(reward_cfg), "planner_cfg": dataclasses.asdict(pcfg), "goal_cfg": dataclasses.asdict(gcfg),
               "terrain_args": terrain_args, "lr_it0": lr_it0, "scale": {k: None if v is None else float(v) for k, v in scale.items()},
-              "curriculum_level": curriculum.level.clone(), "curriculum_success": curriculum.success.clone(),
+              "curriculum_level": torch.cat(rt.gather(curriculum.level)), "curriculum_success": torch.cat(rt.gather(curriculum.success)),
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
-        last = os.path.join(args.log_dir, "last.pt")
-        torch.save(ck, last + ".tmp")
-        os.replace(last + ".tmp", last)
         small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
                                     "planner_cfg", "goal_cfg", "terrain_args", "saved_at")}  # fmt: skip
-        path = os.path.join(args.log_dir, f"ckpt_{it + 1:06d}.pt")
-        torch.save(small, path + ".tmp")
-        os.replace(path + ".tmp", path)
+        rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=False)
+
+rt.close()

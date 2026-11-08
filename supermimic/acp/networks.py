@@ -38,7 +38,12 @@ class RunningNorm(nn.Module):
 
     @torch.no_grad()
     def update(self, x: torch.Tensor):
+        runtime = getattr(self, '_runtime', None)
+        if runtime is not None:
+            return runtime.norm_update(self, x)
         x = x.reshape(-1, x.shape[-1]).float()
+        if len(x) == 0:
+            return
         if self.count >= self.max_count:
             return
         n = x.shape[0]
