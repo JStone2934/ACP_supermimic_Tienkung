@@ -6,7 +6,7 @@ from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation
 from supermimic.acp.php_conversion import STRUCTURAL_PAIRS
 from supermimic.acp.robots import CONTACT_NAMES
-from supermimic.acp.retarget_fidelity import free_arm_mask
+from supermimic.acp.retarget_fidelity import free_arm_mask,score_arm_trajectories,ARM_NAMES
 from tools.check_php_pilot import scene
 
 def velocity_bounds(joints, frame, velocity, fps):
@@ -27,11 +27,25 @@ def velocity_bounds(joints, frame, velocity, fps):
         upper=np.minimum(upper,joints[other]+radius)
     return lower,upper
 
-def polish(robot,motion,boxes,contact,offsets,max_nfev=120):
+
+def violating_arm_phases(report):
+    policy=report['policy'];selected=set()
+    for point,name in enumerate(ARM_NAMES):
+        for row in report['points'][name]['phases']:
+            bad=row['rmse_m']>policy['rmse_max_m'] or row['p95_m']>policy['p95_max_m']
+            if row['dynamic']:
+                bad=bad or not policy['amplitude_ratio_min']<=row['amplitude_ratio']<=policy['amplitude_ratio_max']
+                bad=bad or row['correlation']<policy['correlation_min'] or abs(row['best_lag_frames'])>policy['max_lag_frames']
+            if bad:selected.add((point//2,row['start'],row['end']))
+    return sorted(selected)
+
+def polish(robot,motion,boxes,contact,offsets,max_nfev=120,arm_target=None):
     if (motion.ndim != 2 or motion.shape[1] != 36 or len(motion) == 0 or
         contact.shape != (len(motion), 9) or offsets.shape != (len(motion), 9, 3) or
         not np.isfinite(motion).all() or not np.isfinite(offsets).all() or max_nfev < 1):
         raise ValueError('invalid native polish input')
+    if arm_target is not None and (np.shape(arm_target)!=(len(motion),4,3) or not np.isfinite(arm_target).all()):
+        raise ValueError('invalid original arm reference')
     model=scene(robot,boxes,self_collision=True);d=mujoco.MjData(model)
     qa,_=robot.joint_addresses(model)
     contact_ids=np.array([model.body(robot.contact_bodies[n][0]).id for n in CONTACT_NAMES])
@@ -99,7 +113,43 @@ def polish(robot,motion,boxes,contact,offsets,max_nfev=120):
             torso_change_deg=float(Rotation.from_matrix(torso0.T@R).magnitude()*180/np.pi),
             free_arm_displacement_m=np.linalg.norm(arms[free[frame]]-arms0[free[frame]],axis=1).tolist(),
             root_displacement_m=[0.,0.,0.],max_joint_change_rad=float(np.abs(result.x).max())))
+    arm_rows=[]
+    if arm_target is not None:
+        def arm_poses(frame):
+            d.qpos[:7]=out[frame,:7];d.qpos[qa]=out[frame,7:];mujoco.mj_forward(model,d)
+            return (d.xpos[arm_ids]-d.xpos[torso])@d.xmat[torso].reshape(3,3)
+        actual=np.stack([arm_poses(i) for i in range(len(out))])
+        report=score_arm_trajectories(arm_target,actual,free)
+        for side,a,z in violating_arm_phases(report):
+            joints=np.arange(15,22) if side==0 else np.arange(22,29)
+            points=slice(2*side,2*side+2)
+            for frame in range(a,z):
+                assert free[frame,2*side:2*side+2].all()
+                original=out[frame,7:].copy()
+                before_points=arm_poses(frame)[points].copy();before_collision=float(violations().max())
+                target=arm_target[frame,points]
+                before_error=float(np.square(before_points-target).sum())
+                def arm_residual(x):
+                    d.qpos[:7]=out[frame,:7];d.qpos[qa]=original;d.qpos[qa[joints]]=original[joints]+x
+                    mujoco.mj_forward(model,d)
+                    points_now=((d.xpos[arm_ids]-d.xpos[torso])@d.xmat[torso].reshape(3,3))[points]
+                    return np.r_[100*(points_now-target).ravel(),1000*np.maximum(0,violations()-.0015),.1*x]
+                vlo,vhi=velocity_bounds(out[:,7:],frame,np.asarray(robot.velocity)*(1-1e-7),1/robot.control_dt)
+                lower=np.maximum.reduce([np.full(7,-.25),lo[joints]-original[joints]+1e-5,vlo[joints]-original[joints]])
+                upper=np.minimum.reduce([np.full(7,.25),hi[joints]-original[joints]-1e-5,vhi[joints]-original[joints]])
+                if np.any(lower>=upper):
+                    arm_rows.append(dict(side=side,frame=frame,applied=False,reason='infeasible_velocity_bounds'))
+                    continue
+                initial=np.clip(np.zeros(7),lower+1e-12,upper-1e-12)
+                result=least_squares(arm_residual,initial,jac='3-point',diff_step=1e-5,bounds=(lower,upper),max_nfev=60,ftol=1e-9,xtol=1e-9,gtol=1e-9)
+                residual_value=arm_residual(result.x);after_error=float(np.square(residual_value[:6]/100).sum());after_collision=float(violations().max())
+                applied=after_error<before_error and after_collision<=max(.002,before_collision+1e-8) and np.isfinite(result.x).all()
+                if applied:
+                    out[frame,7+joints]+=result.x
+                    selected.append(frame)
+                arm_rows.append(dict(side=side,frame=frame,applied=bool(applied),point_error_before_m2=before_error,point_error_after_m2=after_error,collision_before_m=before_collision,collision_after_m=after_collision,nfev=result.nfev,optimizer_success=bool(result.success)))
+    selected=sorted(set(selected))
     np.testing.assert_array_equal(out[:,:7],motion[:,:7])
     unchanged=np.ones(len(motion),bool);unchanged[selected]=False
     np.testing.assert_array_equal(out[unchanged],motion[unchanged])
-    return out,dict(policy='native-joint-polish-fixed-root-velocity-v1',selected_frames=selected,rows=rows)
+    return out,dict(policy='native-joint-polish-fixed-root-velocity-free-arm-v1',selected_frames=selected,rows=rows,arm_rows=arm_rows)

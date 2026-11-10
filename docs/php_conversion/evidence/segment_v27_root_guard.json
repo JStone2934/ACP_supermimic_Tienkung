@@ -1,0 +1,9 @@
+{
+  "legacy_v26_complete_seed_provenances_verified": 20,
+  "legacy_v25_complete_seed_provenances_verified": 16,
+  "verified": true,
+  "forged_root_translation_rejected": true,
+  "changed_policy_rejected": true,
+  "legacy_v24_complete_seed_provenances_verified": 12,
+  "scope": "Current fixed-root audit rejects translation, while explicitly recognized v24 policy retains its original root-rotation-only invariant"
+}

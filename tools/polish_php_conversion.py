@@ -8,7 +8,7 @@ from supermimic.acp.native_pose_polish import polish
 from supermimic.acp.motion import load_php_npz
 from supermimic.acp.robots import ROOT,get_robot,sha256
 from supermimic.acp.terrain import load_terrain,terrain_path
-from supermimic.acp.retarget_fidelity import POLICY as FIDELITY_POLICY,POSTURE_POLICY
+from supermimic.acp.retarget_fidelity import POLICY as FIDELITY_POLICY,POSTURE_POLICY,native_arm_trajectories
 from supermimic.acp.root_continuity import POLICY as ROOT_POLICY
 from supermimic.acp.source_contacts import SOURCE_CONTACT_POLICY
 from supermimic.acp.contact_intent import POLICY as CONTACT_INTENT_POLICY,PATCH_POLICY
@@ -19,13 +19,15 @@ FIXED_ROOT_POLISH_POLICY=dict(version='native-joint-polish-fixed-root-v1',trigge
                   target_penetration_m=.0015,max_nfev=120,root_position_bound_m=0.,joint_change_bound_rad=.4,
                   scope='Native pose refinement of collision frames; complete root poses and other frames exact; all original gates must pass after refinement')
 
-POLISH_POLICY=dict(version='native-joint-polish-fixed-root-velocity-v1',trigger_m=.002,
+VELOCITY_POLISH_POLICY=dict(version='native-joint-polish-fixed-root-velocity-v1',trigger_m=.002,
                   target_penetration_m=.0015,max_nfev=120,root_position_bound_m=0.,joint_change_bound_rad=.4,
                   velocity_stencil='numpy-gradient-first-order-edges',velocity_margin_ratio=1e-7,
                   scope='Velocity-bounded native pose refinement of collision frames; complete root poses and other frames exact; all original gates must pass after refinement')
 
+POLISH_POLICY=dict(VELOCITY_POLISH_POLICY,version='native-joint-polish-fixed-root-velocity-free-arm-v1',free_arm_joint_change_bound_rad=.25,free_arm_max_nfev=60,scope='Fixed-root velocity-bounded collision refinement plus failed free-arm phases tracked against original segment-length reference; all original gates remain mandatory')
+
 LEGACY_POLISH_POLICY={'version': 'native-pose-polish-fixed-root-rotation-v1', 'trigger_m': 0.002, 'target_penetration_m': 0.0015, 'max_nfev': 120, 'root_position_bound_m': 0.1, 'joint_change_bound_rad': 0.4, 'scope': 'Native pose refinement of collision frames; root quaternions and other frames exact; all original gates must pass after refinement'}
-SUPPORTED_POLISH_POLICIES=(LEGACY_POLISH_POLICY,FIXED_ROOT_POLISH_POLICY,POLISH_POLICY)
+SUPPORTED_POLISH_POLICIES=(LEGACY_POLISH_POLICY,FIXED_ROOT_POLISH_POLICY,VELOCITY_POLISH_POLICY,POLISH_POLICY)
 
 def seed_receipt(parent,task_id):
     parent=Path(parent).resolve();plan=load_json(parent/'plan.json')
@@ -62,7 +64,7 @@ def refine(task,root):
     p,quat,q,fps=load_php_npz(seed,robot);record=task['record'];motion=np.concatenate((p,quat,q),axis=1)
     if len(motion)!=record['frames'] or fps!=50:raise ValueError('seed frame/fps mismatch')
     with np.load(str(seed).replace('_motion.npz','_intent.npz')) as z:intent={k:z[k].copy() for k in z.files}
-    v=task['solve_variant'];result,stats=polish(robot,motion,load_terrain(str(seed))[v],intent['contact'][v],intent['offsets'][v])
+    v=task['solve_variant'];result,stats=polish(robot,motion,load_terrain(str(seed))[v],intent['contact'][v],intent['offsets'][v],arm_target=native_arm_trajectories(record,seed)[0])
     dest=root/'candidates'/(record['key']+'_motion.npz')
     atomic_npz(dest,joint_pos=result,joint_names=np.array(robot.joint_names),fps=[fps],robot_metadata=json.dumps(robot.metadata()),
                data_version=VERSION,source=record['source'],source_frames=record['source_frames'],task_id=task['id'],
@@ -76,7 +78,7 @@ def audit_seed_provenance(root,plan):
     root=Path(root)
     declared=plan.get('native_polish_policy')
     if declared not in SUPPORTED_POLISH_POLICIES:raise ValueError('missing or unsupported native polish policy')
-    fixed_root=declared['version'] in ('native-joint-polish-fixed-root-v1','native-joint-polish-fixed-root-velocity-v1')
+    fixed_root=declared['version']!=LEGACY_POLISH_POLICY['version']
     robot=get_robot('tienkung3_29dof')
     for task in plan['tasks']:
         seed=verify_seed(task);state=load_json(root/'tasks'/(task['id']+'.json'))

@@ -1,0 +1,39 @@
+{
+  "time": "2026-11-10T17:25:49.488701+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v29_root_tail_pilot_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v29/frozen_runner",
+  "job_id": "ebb44688d98581c97101",
+  "unit": "php-job@ebb44688d98581c97101.service",
+  "status_at_submission": "running",
+  "resources": {
+    "gpu_workers": 2,
+    "cpu_workers": 2,
+    "reserve_gib": 32
+  },
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v29_root_tail_pilot_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v29_root_tail_selections.json",
+    "--devices",
+    "0,1",
+    "--workers-per-gpu",
+    "1",
+    "--cpu-workers",
+    "2",
+    "--collision-rounds",
+    "12",
+    "--resume"
+  ],
+  "solves": 5,
+  "sources": 5,
+  "frames": 1799,
+  "checked_slots": 50,
+  "targeted_missing_slots": 10,
+  "code_files": 50,
+  "tests_targeted": 11,
+  "scope": "Upper five percent root velocity penalty; all original gates unchanged"
+}

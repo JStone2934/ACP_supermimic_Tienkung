@@ -1,0 +1,13 @@
+..F........
+======================================================================
+FAIL: test_peak_guard_is_not_diluted_by_stationary_prefix (tools.test_php_root_temporal.RootTemporalTests.test_peak_guard_is_not_diluted_by_stationary_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v29/frozen_runner/tools/test_php_root_temporal.py", line 30, in test_peak_guard_is_not_diluted_by_stationary_prefix
+    self.assertGreaterEqual(float(root_excess_cost(long)),.99*float(root_excess_cost(short)))
+AssertionError: 57.34485 not greater than or equal to 59.5655775
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.033s
+
+FAILED (failures=1)

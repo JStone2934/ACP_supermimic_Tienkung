@@ -1,0 +1,473 @@
+{
+  "planning_sha256": "3214b3ab4870265e8bd09725a942ca6941dd9c230805c39a69ff60370ccede32",
+  "audit_sha256": "b39d2cb893c8915a6c8d6b7d44339ac78dd3cff3eb800c685157f6ce3a896727",
+  "sources": 8,
+  "solves": 17,
+  "checked_variants": 170,
+  "accepted_checks": 149,
+  "targeted_original_slots": 17,
+  "targeted_passed": 17,
+  "new_original_slots": 17,
+  "new": [
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "variant": 2
+    },
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "variant": 9
+    },
+    {
+      "source_key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s",
+      "variant": 5
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variant": 4
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variant": 6
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variant": 9
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "variant": 1
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "variant": 9
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variant": 1
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variant": 2
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variant": 9
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variant": 1
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variant": 4
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variant": 5
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "variant": 1
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "variant": 9
+    },
+    {
+      "source_key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s",
+      "variant": 9
+    }
+  ],
+  "targets": [
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "variant": 2,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "variant": 9,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s",
+      "variant": 5,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variant": 4,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variant": 6,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variant": 9,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "variant": 1,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "variant": 9,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variant": 1,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variant": 2,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variant": 9,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variant": 1,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variant": 4,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variant": 5,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "variant": 1,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "variant": 9,
+      "passed": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s",
+      "variant": 9,
+      "passed": true
+    }
+  ],
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "solve_variant": 2,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "fc07c97119d54805843821852823dc854e26c976e72774a06b7d8ba48cb1679e",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b3e9e6043873ca00351cbc9405274038303733379c8c60cf2b466138bdcd7abe",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s",
+      "solve_variant": 5,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "865ef34f76cb041c41f62f859750d6a5336dc93cbc9da0f12c46df010700f75e",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "solve_variant": 4,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "quality_sha256": "2980c045a5c7cd1d6939821b21fc9b909089265cbffc4009a7e53b5eccc9285c",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "solve_variant": 6,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "d40f7d320444081384d29824efd1ec1c5d81a11a9aaaa6837d867a1fb66bd5a6",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "188d871c9b84d2d333ad0ab3e44bd4bb48a660d3b0bb44c3defe6da4d228ab8a",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "solve_variant": 1,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "quality_sha256": "ef33c211a775039d5cda558db5efca271dc18bea5ca357981fe1661aa2d19d2f",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9cab0bb0cb8aba1e54c49db49c5aa549cf3568158baf1df1f05656c55b3aa4e6",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "solve_variant": 1,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "54dab1cd5b215c416c6d0a7ac69f16787bc610c7c1ff48b0d6965939802d9a03",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "solve_variant": 2,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "a7e53409033aa4f0445cd63cb945690c3554ba983a843943130b29dbf38f59e9",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "55be266ac70a451148109ef8a141c0efedf5eb17cdb15eb4a49c5ece1c2adadc",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "solve_variant": 1,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d4424ab1595ff8e64cd29f6a537178f6537b36002d629f9b33ce03b5200d1534",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "solve_variant": 4,
+      "target_pass": true,
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "f06ce53fcc59b6839783a3ee9e5591cab99b9a050bb88f8d2bd21c7a64d42bdf",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "solve_variant": 5,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "c9258c08e3fb17c6aab8966b39032b102f228ee2b3c9d53e5ec76fea98c14acd",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "solve_variant": 1,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "719cd4d8b6abf9471c2acb8946f28098f96ac14dab411985de88b500cb57410e",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "c06e089cb6fab5f1352b50649a137aef9860423c46f9b3164729a64ff7b5c21f",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "72d0525e1872f2b0ab07aa88b19425c88c1468f9ee60d217d956e7ed7c95aca4",
+      "target_reasons": []
+    }
+  ],
+  "scope": "Unique original source/variant union versus receipt-bound planning snapshot; per-solve checks not counted as new slots"
+}

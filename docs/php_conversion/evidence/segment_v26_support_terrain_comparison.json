@@ -1,0 +1,171 @@
+{
+  "planning_sha256": "33ed114fa8d27b181266e465bc728d247cbdabd90b9fd4a8b44cd7b505560581",
+  "audit_sha256": "bbf247cf09cf08da374c88fec4e25258dc63124b3b9e76758798c07965964e7e",
+  "sources": 2,
+  "solves": 7,
+  "checked_variants": 70,
+  "accepted_checks": 27,
+  "targeted_original_slots": 7,
+  "targeted_passed": 7,
+  "new_original_slots": 7,
+  "new": [
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 3
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 1
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 4
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 6
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 7
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 8
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 9
+    }
+  ],
+  "targets": [
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 3,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 1,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 4,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 6,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 7,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 8,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 9,
+      "passed": true
+    }
+  ],
+  "rows": [
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "solve_variant": 3,
+      "target_pass": true,
+      "accepted": [
+        3
+      ],
+      "quality_sha256": "38e2edaa0377acdfa5ccd028b289412f9bff82885be74109c6c8d09bb9002547",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 1,
+      "target_pass": true,
+      "accepted": [
+        1
+      ],
+      "quality_sha256": "a8238c11ca72fd67a38d0c3fb57b7d606c49b273eeca79aeec5ed87cb66d652d",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 4,
+      "target_pass": true,
+      "accepted": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "13d9c4f67e9ce1809266901e2b82863e327a2f37aa0ae37423ca864881420da8",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 6,
+      "target_pass": true,
+      "accepted": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "f4849c0135b0bee8278e72651d6ad1e4ecfd3d2e2daae510022138dd30a3453f",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 7,
+      "target_pass": true,
+      "accepted": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9c3a77774c86a9476dfe72817afb8f65a7cf2e37f50b3f6743c70cb7f83961e7",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 8,
+      "target_pass": true,
+      "accepted": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "6e23cb08ca953af2423fd1ac42a479222434da73afed57012349a226222b7646",
+      "target_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 9,
+      "target_pass": true,
+      "accepted": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "6f3c1a401b85066b0c1b3c045c6c92d22aaa45ac6ac6d7e6edea57d8f3659f66",
+      "target_reasons": []
+    }
+  ],
+  "scope": "Unique original source/variant union versus receipt-bound planning snapshot; per-solve checks not counted as new slots"
+}

@@ -1,0 +1,3357 @@
+{
+  "time": "2026-11-10T17:26:15.262140+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+  "audit_sha256": "a2f0de90b1f56e1f51ade05c51ef2175f8d45a056289ce32f2decb9672004303",
+  "statuses": {
+    "accepted": 271,
+    "rejected": 25
+  },
+  "checked_original_slots": 2960,
+  "accepted_within_this_run": 2593,
+  "rejected_within_this_run": 367,
+  "reasons": {
+    "terrain_penetration": 272,
+    "fidelity:left_elbow:amplitude": 10,
+    "self_collision": 200,
+    "right_hand:support_slip": 13,
+    "root_continuity:added_velocity_p95_m_s": 10,
+    "root_continuity:added_velocity_max_m_s": 20,
+    "joint_velocity": 10,
+    "root_continuity:added_acceleration_max_m_s2": 30,
+    "left_hand:support_slip": 1,
+    "right_hand:support_distance": 2,
+    "right_knee:support_distance": 1,
+    "right_knee:support_slip": 1,
+    "left_knee:support_distance": 1,
+    "left_knee:support_slip": 1
+  },
+  "source_rows": [
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_forward_1.5s_step0s_motion.npz",
+      "task_id": "55c6247dece25582eee12629",
+      "quality_sha256": "ba10f655a1a483953ab593d4602b0411f0d9cedcaa36a3dc80d4434e083c0f17",
+      "accepted": [
+        0,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_left_45_1.0s_step0s_motion.npz",
+      "task_id": "e04798fc0ca1ac072b03512d",
+      "quality_sha256": "f1d1dcd6e78065976adb3a79253c90086d384ae271f5113935d35131d8332ab7",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "fidelity:left_elbow:amplitude"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_left_45_1.5s_step0.8s_motion.npz",
+      "task_id": "285f84cd89371b8bb2c71757",
+      "quality_sha256": "f155e4955ccb4d2624c1a60ef679d24a89333c187582a187720f9a2d3395d73f",
+      "accepted": [
+        0,
+        1,
+        2,
+        7,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_left_90_1.0s_step0s_motion.npz",
+      "task_id": "c65b7f36c1a3d60d38b1ccc9",
+      "quality_sha256": "b12a931ada7082f99ede27718bd41070f02ec4e5a4eb666df31f1862e3f1e3d4",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_right_45_1.2s_step0.8s_motion.npz",
+      "task_id": "9f324fb53048e03566350ee9",
+      "quality_sha256": "e70080830b952fecefe372a096d21ade9743f883509ca0a74d95f20d149ae555",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_right_90_0.6s_step0.8s_motion.npz",
+      "task_id": "aa096389f13f959149c16381",
+      "quality_sha256": "b5d92c33d31e7d048f24c263e135dca2e793ec7781544315a776a93e7487c233",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_right_90_0.6s_step0s_motion.npz",
+      "task_id": "ac225f7ab93785589e1c62b7",
+      "quality_sha256": "431e63a7a42424e308d37e99124330923c432bd2e5c9d94f8aff5730ab360b1e",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-step/run_right_90_1.2s_step0.5s_motion.npz",
+      "task_id": "88895f7185c6f60cac1e0dd3",
+      "quality_sha256": "bb4f89ab67582289820cadba71989c475fe1b89e91d1acd31339d73761a90d2b",
+      "accepted": [
+        0,
+        1,
+        3
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-step/run_right_90_1.2s_step1.0s_motion.npz",
+      "task_id": "6834553a0ef2bdd08cef031d",
+      "quality_sha256": "474c39e17c1920774fb1b857709566ce52a515c6733d189ea108986d6bca7a52",
+      "accepted": [
+        0,
+        3
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s_motion.npz",
+      "task_id": "29c805b0aaa20bfab7ec8c5a",
+      "quality_sha256": "8569df84e2ed6cada7c2d21a3ee7ad890db31d52a1c07d5af281049260b6228d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s_motion.npz",
+      "task_id": "d253eb3806b7e499708ba89d",
+      "quality_sha256": "c79533892c1d3ef67f0252f6f98181c7433af77c0cfcdb1bab072e87c5ed5c65",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s_motion.npz",
+      "task_id": "d48f538d19b1b1b672ec477a",
+      "quality_sha256": "c249cd4bb211d0011825d32686ce0e2dcbaa4ff1710d6d6a643c8bae01421d4a",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s_motion.npz",
+      "task_id": "17e0e91f8f6083019f2b1d9c",
+      "quality_sha256": "11dd2605a2faa815013583a99dfb46dbd754cf03d5d2e71747477936fa0db108",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s_motion.npz",
+      "task_id": "9095d779011d38a4e736baba",
+      "quality_sha256": "b1391f492f26b94b40c43a6b0cc50ec007e1a66fdab37428e331b650dd0d0dcb",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s_motion.npz",
+      "task_id": "52077a2d66da75e1dea14b72",
+      "quality_sha256": "043fe1c3123ae9aaa5e80252b09c1a6251c491e0fb91501335214e8b800d4b0c",
+      "accepted": [
+        0,
+        1,
+        3,
+        6,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s_motion.npz",
+      "task_id": "d58502440d584a62caf35124",
+      "quality_sha256": "1a531fa89e5e1c9c9444cf693eb1f30aeb0816bd377e3868a0459e96c8fde3d8",
+      "accepted": [
+        0,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s_motion.npz",
+      "task_id": "ce11c9241752854eb596f981",
+      "quality_sha256": "b5a3104d9eb9cac517970f32461c0dd2cea59d73cb7d42216307c5a0093edbe1",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "root_continuity:added_velocity_p95_m_s",
+            "root_continuity:added_velocity_max_m_s"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s_motion.npz",
+      "task_id": "e5628ba6b25b1d9b74649512",
+      "quality_sha256": "3ad1c5edb356f1408f375b792c799861b9406705c35187ca895527e5a65eb7a3",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s_motion.npz",
+      "task_id": "bea5b8fb96aead5cd611e5c9",
+      "quality_sha256": "6d644c90d50ef458a13473b09a5592612d5336ad02d3d5a1269698b28ceea51e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0033_stand_2.0s_left_90_1.7s_left_90_0.9s_run_left_90_1.5s_run_right_45_2.1s_stand_2.0s_motion.npz",
+      "task_id": "2032956425da70f1dd0a67a9",
+      "quality_sha256": "d993c9883301e04521cdbf90bda839510209777f8ac658fcbf252e24ee2634c9",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s_motion.npz",
+      "task_id": "e384ae829a9c1d396e88c147",
+      "quality_sha256": "ee65d554725f644a7ec636e79ac0fcde45d0de67c8eb93c368305d9e8b508c7e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0037_stand_2.0s_run_right_45_1.2s_run_left_90_1.2s_left_45_2.6s_stand_2.0s_motion.npz",
+      "task_id": "181f6b1e93327a9da72331b1",
+      "quality_sha256": "20098b4c32527ac0dfed38da22df11a5544edf3f7186619b90c57e6313769ccb",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0039_stand_2.0s_forward_2.4s_left_45_0.8s_forward_1.8s_right_45_1.3s_left_45_1.5s_stand_2.0s_motion.npz",
+      "task_id": "9a62bb99dc0d2d6b905c85ea",
+      "quality_sha256": "a2ef645505576843b9b110b9a6aea1a8187bcbfe3d38a31463dce659f5c26de2",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s_motion.npz",
+      "task_id": "50539994f1f7524c2409c82a",
+      "quality_sha256": "b8ff0dd7d1da2660090fbcafdeb4da21649f37d949c32389b41c6d9fad97b64b",
+      "accepted": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s_motion.npz",
+      "task_id": "4931a9f92398ddbdecab2864",
+      "quality_sha256": "2ad93aff4285a7c4172347b73fc0e4d8296142523287631b7f124765c03ec106",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s_motion.npz",
+      "task_id": "3f2423beae2c3ec95ab5542a",
+      "quality_sha256": "c2f3f60773fbf398c86a663922387249ed606e29feb47cec289b3a1b0142f6f6",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s_motion.npz",
+      "task_id": "83d9ddca21d3448c88b49e3a",
+      "quality_sha256": "d3a20a640e278a022cc84716e0bd28c86581b5fb5f7649cb5ac7ef2795081a31",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s_motion.npz",
+      "task_id": "540ab6f9b648d2638d007b7b",
+      "quality_sha256": "c85b05f40dc2635d5d0d5311fda27970ed36779c477c26fd62c3aa9f80334025",
+      "accepted": [
+        0,
+        2,
+        4,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0053_stand_2.0s_run_right_90_1.4s_run_left_90_1.5s_run_right_45_2.8s_run_right_45_1.8s_left_90_1.5s_forward_2.7s_run_right_45_1.2s_left_45_1.7s_left_90_1.6s_left_45_1.7s_stand_2.0s_motion.npz",
+      "task_id": "b12658b5420b5a2068cbdd57",
+      "quality_sha256": "5e6a20c5bed0f683d2d6e58d65c22cd23202418c41236d71606ab83794c803ad",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0057_stand_2.0s_run_right_90_1.2s_left_45_1.0s_run_left_45_1.8s_run_right_90_1.2s_run_right_90_2.1s_stand_2.0s_motion.npz",
+      "task_id": "e47703bc86accf8e55c7bc85",
+      "quality_sha256": "5a79848f6689c0b0bb929f79ec97a92b657bae58bdfdd73fdff5541cc762ba02",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s_motion.npz",
+      "task_id": "6ed6a4c251a65e49f6e92856",
+      "quality_sha256": "a99e9dde0c65d256f4c8be783b913843ad1599a8962ffe8e65d639671f092088",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0061_stand_2.0s_run_right_45_1.2s_right_90_2.1s_left_90_1.4s_run_forward_2.0s_left_45_0.8s_right_45_1.1s_run_forward_1.2s_right_90_0.9s_left_90_0.7s_run_left_90_1.5s_stand_2.0s_motion.npz",
+      "task_id": "6d6ee2e0a95b9459bf2e869e",
+      "quality_sha256": "330376e0b822b7f3e5e74ff6f6683e236730f464dea3ab45fabf7b19c11325c0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s_motion.npz",
+      "task_id": "0deb256c5da684dda4f153b2",
+      "quality_sha256": "bd76370f8f06aff170f92a616becb0f608c0687bd892be55513957c2c7b40847",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0065_stand_2.0s_right_90_0.7s_right_90_1.3s_run_right_90_1.2s_right_45_2.4s_run_forward_1.7s_right_45_1.4s_right_90_2.6s_run_right_45_1.2s_run_left_90_2.8s_right_90_0.7s_stand_2.0s_motion.npz",
+      "task_id": "1d3778a9f0946669ad91ca88",
+      "quality_sha256": "e89326292007fc45e83176fae2169feac2d820f097ce2aabecb596ed389affa6",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0067_stand_2.0s_run_left_90_1.2s_run_right_45_1.5s_run_left_45_2.8s_run_right_45_1.2s_forward_2.1s_left_45_0.8s_left_45_2.1s_left_90_2.7s_run_right_45_1.2s_forward_1.1s_stand_2.0s_motion.npz",
+      "task_id": "8f867310ab23176c85bd5fe3",
+      "quality_sha256": "cebfc9b56e0c501c2c4c0cebe508b2b2a9b9e5d8e02561cebc714f3dececaf66",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0069_stand_2.0s_forward_1.1s_right_90_2.3s_run_forward_2.2s_forward_1.1s_run_forward_1.2s_right_45_2.0s_right_45_1.7s_left_45_0.9s_run_forward_1.8s_run_right_45_1.2s_stand_2.0s_motion.npz",
+      "task_id": "43875ec28ced4398037703e4",
+      "quality_sha256": "a5f29d9c43e2117aaec9c51c7d3196b505dbd97e5d7bba0a3d43b8489ea21403",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s_motion.npz",
+      "task_id": "476bc9a056087d785635799c",
+      "quality_sha256": "d5513ee1b2cca6d31b389c6a7274ab6fd508878e2a97fadc77c83de6857ed5b5",
+      "accepted": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s_motion.npz",
+      "task_id": "8ba317d8a2423bdf01f964b5",
+      "quality_sha256": "cc36dfce3fc5f93914eb516bd47b630eb875a0069f248c8591a30c824188e926",
+      "accepted": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s_motion.npz",
+      "task_id": "3e3b7b6b28e93f6ccdf15945",
+      "quality_sha256": "3c9f0f57fbc845f9f409951193d85183fa32259a00ca03f3b4efbfdf97e6abdd",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s_motion.npz",
+      "task_id": "7a573ee5d33faf37e670645b",
+      "quality_sha256": "f1b33abcc0b7b0d3eeda4611ac4264bfccd9e9279ef7532a7a1b70f6983e2bf5",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "joint_velocity",
+            "root_continuity:added_velocity_max_m_s",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s_motion.npz",
+      "task_id": "f0a75943a9b33a24d1e59056",
+      "quality_sha256": "b68a5ce337c3cf62218a3b1a27b2cd83987d9144dd6589ec9ff697a2807b53c6",
+      "accepted": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s_motion.npz",
+      "task_id": "c44546f39cdf118bf23f255d",
+      "quality_sha256": "b86497955aab964cf5ca6d4dd83c5df619f8235def767e1e0c24bfb56277ca30",
+      "accepted": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s_motion.npz",
+      "task_id": "cb3daab60f0187be49ac84e5",
+      "quality_sha256": "dcee0a369e36493dafdec75a955dfd8f63ee70d4fd5ca77db3f2df5c5e20045b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s_motion.npz",
+      "task_id": "588e351d9d3447a57a3a63fa",
+      "quality_sha256": "8d81147a99fdf25c6b82fe792523aa0af34240eceabafcb0f0899c1357c179e7",
+      "accepted": [
+        0,
+        1,
+        5,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s_motion.npz",
+      "task_id": "7dedeb864d92eea40d906706",
+      "quality_sha256": "7842ff482fafdca281b1ef982946921a39b331c9f94714eae0a6d150ab6e0628",
+      "accepted": [
+        0,
+        1,
+        3,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s_motion.npz",
+      "task_id": "46b36dd702e620f7119a913a",
+      "quality_sha256": "777b7edef3a4e006141a593399285963bb90cb47e05f9b1d4e97411266b13743",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/forward_walk0.6s_step0.7s_motion.npz",
+      "task_id": "353a6d02a02dace3b005c5b7",
+      "quality_sha256": "d11a2bfda16791a4f1928f36c7ccd4a184945978bc547a4de9072628a8651d38",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "left_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/forward_walk0.6s_step1.2s_motion.npz",
+      "task_id": "c047682ad2ce75d09945ca21",
+      "quality_sha256": "bb0fc89c52965e9bbf17962da596ebcaf0539d2160ebe9a91df571f97f09e1e0",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/forward_walk0.9s_step0.7s_motion.npz",
+      "task_id": "fbbcf91f87747da564288da0",
+      "quality_sha256": "c93af33884c69f51cb58c6ff06ad059c27e8bcf24ca61ada36bfe6cc5c5c8649",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/forward_walk0.9s_step1.2s_motion.npz",
+      "task_id": "d9216fe327d359b4dbf19479",
+      "quality_sha256": "ee7bd68b00bf1acb106e5ece9638f3e90e1a70a070fa57b7a27e71863badbef9",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_45_walk0.6s_step0.7s_motion.npz",
+      "task_id": "1b1332cf3973bb2e837ed1d1",
+      "quality_sha256": "f82e23b0a74a97cc556ecbfdc1550fb4e608423c426d9f62b8318f30e34b383b",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_45_walk0.9s_step1.2s_motion.npz",
+      "task_id": "561b1d1334b5cf3b20ba5952",
+      "quality_sha256": "0f8de5d016173d0f37caab156ae2c635bc9adb0344afa02d248f571b4c53476f",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "root_continuity:added_acceleration_max_m_s2"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_45_walk1.2s_step0.7s_motion.npz",
+      "task_id": "b74b52e8ebbec9562a8a97ed",
+      "quality_sha256": "e31449bf2ebdd655c45b934fa79a403f3c88701c03b5f7f71271fd7f57404313",
+      "accepted": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "failed": [
+        {
+          "variant": 1,
+          "reasons": [
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "right_hand:support_distance"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "right_hand:support_slip"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_45_walk1.5s_step1.2s_motion.npz",
+      "task_id": "4c4c94bb0f74de38367c1684",
+      "quality_sha256": "ebf84c8ed845f78fddc084e44bdfd2b3ab460135e53a5c9f04f9523d4af068ee",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "failed": [
+        {
+          "variant": 2,
+          "reasons": [
+            "right_knee:support_distance",
+            "right_knee:support_slip"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_90_walk0.6s_step0.7s_motion.npz",
+      "task_id": "3986414b675c02ed5c88553d",
+      "quality_sha256": "784ad0a9d57ae8fe82feea36466da3280435a1de912163b8d7c78a8a64902f48",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_90_walk0.9s_step0.7s_motion.npz",
+      "task_id": "5d0b9024b383886112925d9e",
+      "quality_sha256": "a88a8912176de6eb11772422ac9a231a491aac7c68d50231bf16b4ee5d1a92ca",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/left_90_walk0.9s_step1.2s_motion.npz",
+      "task_id": "fef1ff175c8ce59057e5eb1c",
+      "quality_sha256": "12f6c25955a0e76b1f46d7dd3eaa0d204153f6d96831d440109414a6aa2fd359",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_45_walk0.6s_step1.2s_motion.npz",
+      "task_id": "37bc74c2171828380b320950",
+      "quality_sha256": "1a6eb161225bfe98802a407cf7d6aaa4d399a6245111a70c5a8f1f35cda3fcfb",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_45_walk1.5s_step0.7s_motion.npz",
+      "task_id": "e2516e9039a71a46f85ffd34",
+      "quality_sha256": "8b477134a06651aa076cddd5c77c228c90049327871ff57eca1b3a5834b06a71",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_45_walk1.5s_step1.2s_motion.npz",
+      "task_id": "12cf34b8d324238a1074f3af",
+      "quality_sha256": "d951bb23699506dff96f4f38be5fb9e01c3fdb14a9879503f5535d5a0ad43cdc",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_90_walk0.6s_step0.7s_motion.npz",
+      "task_id": "9905088ee0b7f96235304c66",
+      "quality_sha256": "677686caf648b6323abe34e66f0d253e3e2010867779192d11f8a849ddaa5292",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "self_collision",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "self_collision",
+            "right_hand:support_slip"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_90_walk0.9s_step0.7s_motion.npz",
+      "task_id": "ef927a4385e0321040e6edfe",
+      "quality_sha256": "3193ae9fe7cb458ea93bbfc137e53480ec35f9efc921d371ce6aa218dc080c6a",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_90_walk0.9s_step1.2s_motion.npz",
+      "task_id": "3e3c647fa9500a22261db9b5",
+      "quality_sha256": "8be9b8e6714ae3ca6d2c7027263ae8b24782333f4397584d27e9faff01890ef9",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_90_walk1.2s_step0.7s_motion.npz",
+      "task_id": "729ab16ba34f8d9eea8bd29c",
+      "quality_sha256": "fa323fba89d04d7599fe829413f560e5613e460cdd94d9afcd19fb544fc2b663",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_90_walk1.2s_step1.2s_motion.npz",
+      "task_id": "170f731aab72ba45d7340e63",
+      "quality_sha256": "5d79519bcabd8d4cd14727ca4e67f9eaaee672c941d24c99c5763758936c6e4c",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration",
+            "self_collision"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/right_90_walk1.5s_step1.2s_motion.npz",
+      "task_id": "f92a6eb3d7083e6df0ed135c",
+      "quality_sha256": "7ea5f4b2534ed3bf61df15440d8cdfd1b08f8b806fab88210d7f80c479bd5d9c",
+      "accepted": [],
+      "failed": [
+        {
+          "variant": 0,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 1,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 2,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 3,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 4,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 5,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 6,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 7,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 8,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        },
+        {
+          "variant": 9,
+          "reasons": [
+            "terrain_penetration"
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "Original full-run rejection baseline; later accepted repairs are preserved separately. Reasons overlap and are not current global missing count."
+}

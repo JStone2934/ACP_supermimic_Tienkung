@@ -368,3 +368,12 @@ python -m tools.audit_php_conversion new_run --out audit.json
 
 
 2026-11-10 16:45：上述统一入口已随v26正式推广，可在主源码的新输出目录使用；CPU修复命令明确 `--polish-seeds <seeds.json> --workers-per-gpu 0 --cpu-workers 4`，实际运行去掉--scan并加--resume。旧直接tools.polish_php_conversion命令仅作为历史复现记录，当前新批次统一走受保护convert入口。不要用主v26恢复任何v21/v25冻结批次。新source/variant专项也先查guard和已提交质量回执，队列queued不代表失败。
+
+
+2026-11-10 17:23：正式v27的自由臂修正由正常convert流程自动执行，全部原质量门槛不变。最新四完整同步录像为results/php_segment_v27_previews_20261110/comparison/all_comparisons.mp4（1397帧40/40）。原全库/57地形/7支撑批均已完成，不能重复resume。隔离v28根速度试验guard15882ae863a878b02eb0正在运行，2GPU worker+2CPU worker预约32GiB；主算法尚未推广v28。实时2933/2960不是最终资产覆盖验收，剩余清单见evidence/remaining_20261110_1717.json。
+
+
+2026-11-10 17:37：正式源码v29，四完整对照位于results/php_segment_v29_previews_20261110/comparison/all_comparisons.mp4（1397帧40/40），最后根部难例完整对照位于results/php_segment_v29_root_preview_20261110/comparison/01_cfg0026_comparison.mp4（402帧10/10）。全部转换已终态，实时2960/2960，但最终覆盖audit仍在运行，不能重复启动既有批次。预期最终索引evidence/all_original_variants_final_20261110.index.json是按原source_variant映射到motion/terrain/export_slot/labels的资产索引，不是可以直接交给MotionLib的目录；必须保留每项原编号与export_slot，不能把多个专项accepted目录简单拼接后把重复地形当新增。是否最终验收通过以对应.json的all_original_variants_pass、expected_variants=2960、missing_variants=0、root_continuity_required=true及snapshot_of_running_parents=false为准。
+
+
+2026-11-10 17:47:44最终状态：独立全库覆盖验收已完成，296源/181236帧/2960原地形槽位全部通过、剩余0。evidence/all_original_variants_final_20261110.json为最终报告，同名.index.json为原source_variant→motion/terrain/export_slot/labels完整映射；evidence/delivery_summary_20261110.json绑定交付证据。主v29、83项测试、小批50/50与四完整录像40/40通过，原门槛与完整源数据不变。最新四对照results/php_segment_v29_previews_20261110/comparison/all_comparisons.mp4；最后根难例results/php_segment_v29_root_preview_20261110/comparison/01_cfg0026_comparison.mp4。索引保留14个已终态父批的合格资产，勿把专项重复项计作新增或当作直接MotionLib目录；PD/策略/实机验证不在已通过声明内。

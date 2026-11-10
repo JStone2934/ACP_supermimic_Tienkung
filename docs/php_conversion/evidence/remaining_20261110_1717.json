@@ -1,0 +1,89 @@
+{
+  "time": "2026-11-10T17:20:28.692109+08:00",
+  "provisional": true,
+  "passed": 2933,
+  "remaining": 27,
+  "sources": [
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "variants": [
+        2,
+        9
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+      "variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s",
+      "variants": [
+        5
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "variants": [
+        4,
+        6,
+        9
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "variants": [
+        1,
+        9
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "variants": [
+        1,
+        2,
+        9
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "variants": [
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "variants": [
+        1,
+        9
+      ]
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s_motion.npz",
+      "key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s",
+      "variants": [
+        9
+      ]
+    }
+  ]
+}

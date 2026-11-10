@@ -1,0 +1,37 @@
+{
+  "time": "2026-11-10T17:23:59.692332+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_terrain_remaining_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v27/frozen_runner",
+  "job_id": "2eee2b74dffd9ec56a98",
+  "unit": "php-job@2eee2b74dffd9ec56a98.service",
+  "status_at_submission": "running",
+  "resources": {
+    "gpu_workers": 2,
+    "cpu_workers": 2,
+    "reserve_gib": 32
+  },
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_terrain_remaining_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v27_terrain_remaining_selections.json",
+    "--devices",
+    "0,1",
+    "--workers-per-gpu",
+    "1",
+    "--cpu-workers",
+    "2",
+    "--collision-rounds",
+    "12",
+    "--resume"
+  ],
+  "solves": 17,
+  "sources": 8,
+  "frames": 5810,
+  "checked_slots": 170,
+  "targeted_missing_slots": 17,
+  "code_files": 50
+}

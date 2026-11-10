@@ -1,0 +1,40 @@
+{
+  "time": "2026-11-10T17:08:55.223281+08:00",
+  "version": "php-segment-v27",
+  "scope": "Fixed-root collision refinement plus failed free-arm phase tracking with joint/velocity/native-collision bounds; source reference rebuilt independently, all original gates unchanged; existing frozen jobs unchanged",
+  "changed": {
+    "supermimic/acp/native_pose_polish.py": {
+      "before": "954c5d7fca22a041d20e44629bfd8626ceafb9a8e04e805d3fb66fefe61c8e87",
+      "after": "f1c40a270a3cc0d736da53df381c74060b534449a9dc2c59426070368253a90f"
+    },
+    "supermimic/acp/php_conversion.py": {
+      "before": "f60b3c1be937f27b52e8f3ab1c805d350aaf503c1898fade918c9f8f49ff2a7d",
+      "after": "6edf725e789ff004d30714dd67d17ddbc8a04d78c9486c5aef6d79a38403be04"
+    },
+    "tools/polish_php_conversion.py": {
+      "before": "dfc6356efac84d92c4def6e1aaf0c8026642bb8fa958ca8e61049ca426e42761",
+      "after": "25ec846e2a70cd5e3c55dfa521c5106ec7896b86f142d17c9822ab31175abb21"
+    },
+    "tools/test_php_native_arm_polish.py": {
+      "before": null,
+      "after": "28bb6b632b3189a17c48c0a0642a141b60d6dab72ec7e6ccc5b3c4e07e7b2a16"
+    }
+  },
+  "runtime_code_files": 50,
+  "evidence": {
+    "segment_v27_free_arm_report.json": "f7da550d4f3b64efbd82b4eb20653a81ded5314f8538c0da6a65c6df552ebae1",
+    "segment_v27_free_arm_comparison.json": "7101845f97b1c28b25520f583d247619877c91162456c349a1e74c9957149050",
+    "segment_v27_preview_summary.json": "2658025fdb74aebd70c8246dfae433b30360a62aeaa75f3f7ab7ad076427c866",
+    "segment_v27_preview_manifest.json": "62155814f05c550c7163e2ad307ac36801427ad8f7b6d79fb35cf4f11a37fb1a",
+    "segment_v27_root_guard.json": "710149dce847693a5976c721d59f9702313069f629c9dbb59a687a71e9b7b81b",
+    "segment_v27_full_tests.txt": "568fb40e55a682e28cee4c456c375f3f1121f6540a4bdca6dbee81fc6f27cfc6",
+    "segment_v27_arm_tests_corrected.txt": "403066def4832534fa4eb77ee24baeaf0468cdef38caa8345caa6eb032e81073"
+  },
+  "accepted_pilot_slots": 50,
+  "checked_pilot_slots": 50,
+  "new_slots_vs_seeds": 10,
+  "lost_slots_vs_seeds": 0,
+  "four_full_preview_frames": 1397,
+  "tests_passed": 80,
+  "all_library_complete": false
+}

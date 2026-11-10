@@ -1,0 +1,54 @@
+{
+  "provisional": true,
+  "slots": 2933,
+  "parents": [
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "new_slots": 2593
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+      "new_slots": 119
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "new_slots": 69
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_terrain_expand_20261110",
+      "new_slots": 57
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "new_slots": 37
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_full_window_20261110",
+      "new_slots": 30
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_free_arm_pilot_20261110",
+      "new_slots": 10
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_support_terrain_20261110",
+      "new_slots": 7
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_pilot_20261110",
+      "new_slots": 5
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_hand_terrain_20261110",
+      "new_slots": 4
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_knee_terrain_20261110",
+      "new_slots": 1
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_climb_targeted_20261110",
+      "new_slots": 1
+    }
+  ]
+}

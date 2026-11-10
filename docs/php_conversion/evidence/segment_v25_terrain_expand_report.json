@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v25_terrain_expand_20261110",
+  "identity": "be23fe5dcc16362334f27cee4eaa27888e2ffbc233b5b95a40d0da2b9312a155",
+  "verified": true,
+  "sources": 57,
+  "unique_source_files": 17,
+  "frames": 32586,
+  "checked_variants": 570,
+  "accepted_variants": 467,
+  "statuses": {
+    "accepted": 57
+  },
+  "checked_output_hashes": 513,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 650.5800000000003,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

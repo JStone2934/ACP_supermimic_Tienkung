@@ -1,0 +1,51 @@
+{
+  "verified": true,
+  "source": "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+  "frames": 402,
+  "fps": 50,
+  "accepted_variants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "root_continuity": {
+    "policy": {
+      "version": "root-continuity-v1",
+      "fps": 50,
+      "added_velocity_rmse_max_m_s": 0.5,
+      "added_velocity_p95_max_m_s": 1.0,
+      "added_velocity_max_m_s": 2.5,
+      "added_acceleration_max_m_s2": 100.0,
+      "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+    },
+    "frames": 402,
+    "fps": 50.0,
+    "metrics": {
+      "added_velocity_rmse_m_s": 0.3897800309372756,
+      "added_velocity_p95_m_s": 0.9293014538711301,
+      "added_velocity_max_m_s": 0.9857650589546119,
+      "added_acceleration_max_m_s2": 53.70637236398596
+    },
+    "worst_velocity_frame": 304,
+    "worst_acceleration_frame": 305,
+    "passed": true,
+    "rejection_reasons": [],
+    "source_sha256": "06f6f46091b67dc2f43f4c9248d1a2ba7ab885a4222c7f94e76c13f34dbeeed4",
+    "motion_sha256": "89a50a13eb9437429cabe91c7aebd35a81192d82ff85aee4f57fe6ce484b48c8",
+    "source_frames": [
+      0,
+      402
+    ]
+  },
+  "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v29_root_preview_20261110/comparison/01_cfg0026_comparison.mp4",
+  "video_sha256": "9372b16881a4329c28d0e1ca27c0bf595e63406f3186d5fc1fdf0a217c90d104",
+  "manifest_sha256": "b07868c78f79570abcf9dff3e080d9d1e2bb03b19522af60ad45cfa8de0d76d7",
+  "scope": "Complete final root velocity repair synchronized against original G1, same terrain, scale and timing; kinematic reference"
+}

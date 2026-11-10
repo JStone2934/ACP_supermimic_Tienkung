@@ -29,7 +29,7 @@ from .terrain import box_sdf, load_terrain, terrain_path
 from ..rotations import axis_angle_to_mat, mat_to_quat, quat_to_mat, so3_exp
 from tools.retarget_php_pilot import link_cloud, runs, sole, support_height
 
-VERSION = 'php-segment-v26'
+VERSION = 'php-segment-v29'
 STRUCTURAL_PAIRS = {frozenset((f'knee_pitch_{s}_link', f'ankle_roll_{s}_link')) for s in ('l', 'r')}
 COLLISION_POLICY = {
     'version': 'serial-ankle-adjacency-v1',
@@ -41,6 +41,19 @@ COLLISION_POLICY = {
 }
 
 
+def root_excess_cost(dp, fps=50.):
+    """Guide excessive added root speed/acceleration; acceptance stays independent."""
+    speed=((dp[1:]-dp[:-1])*fps).norm(dim=-1)
+    acceleration=((dp[2:]-2*dp[1:-1]+dp[:-2])*fps**2).norm(dim=-1)
+    # Optimize the worst five percent together: averaging over stationary
+    # frames hid a broad tail even after the isolated maximum was reduced.
+    tail_count=max(1,(speed.numel()+19)//20)
+    tail=torch.topk(torch.relu(speed-.9).square(),tail_count).values.mean()
+    return (.5*tail
+            +.1*torch.relu(speed-2.25).square().amax()
+            +.001*torch.relu(acceleration-90.).square().amax())
+
+
 def root_correction_cost(dp, fps=50.):
     """Penalize added root velocity/acceleration, preserving source motion.
 
@@ -50,7 +63,7 @@ def root_correction_cost(dp, fps=50.):
     """
     velocity = (dp[1:] - dp[:-1]) * fps
     acceleration = (dp[2:] - 2*dp[1:-1] + dp[:-2]) * fps**2
-    return .25*velocity.square().mean() + .001*acceleration.square().mean()
+    return .25*velocity.square().mean() + .001*acceleration.square().mean() + root_excess_cost(dp,fps)
 
 
 def digest(value):
@@ -485,7 +498,7 @@ class FullBodyRetargeter:
             stats[-1]['terrain_clearance'] = clearance
         from .native_pose_polish import polish
         result, native_polish = polish(self.dst, result.astype(np.float64), prepared['boxes'],
-                                       prepared['contact'], prepared['offsets'])
+                                       prepared['contact'], prepared['offsets'], arm_target=prepared['arm_target_local'])
         stats[-1]['native_polish'] = native_polish
         return result, stats
 
@@ -742,7 +755,7 @@ class FullBodyRetargeter:
         if not np.isfinite(motion).all():
             raise FloatingPointError('nonfinite output trajectory')
         values = losses.cpu().tolist()
-        return motion, dict(root_temporal_policy="source-relative-derivatives-v1", arm_transition_frames=8, initialization_loss=initialization_loss, iterations=iteration, seconds=time.monotonic()-start_time, loss=values[0],
+        return motion, dict(root_temporal_policy="source-relative-derivatives-tail-v3", arm_transition_frames=8, initialization_loss=initialization_loss, iterations=iteration, seconds=time.monotonic()-start_time, loss=values[0],
                             contact_mse=values[1], penetration_mse=values[2], self_overlap_mse=values[3],
                             speed_loss=values[4], foot_mse=values[5], collision_refinement=collision_stats, cuda_graph=graph is not None,
                             peak_allocated_bytes=torch.cuda.max_memory_allocated(device) if device.startswith('cuda') else 0)

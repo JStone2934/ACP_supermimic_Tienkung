@@ -1,0 +1,37 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+    "key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+    "start": 0,
+    "end": 269,
+    "solve_variant": 0
+  },
+  {
+    "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+    "start": 0,
+    "end": 260,
+    "solve_variant": 0
+  },
+  {
+    "source_key": "motions-low-step/forward_walk1.2s_step0s",
+    "key": "motions-low-step/forward_walk1.2s_step0s",
+    "start": 0,
+    "end": 413,
+    "solve_variant": 0
+  },
+  {
+    "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+    "key": "motions-high-step/run_forward_0.9s_step1.0s",
+    "start": 0,
+    "end": 455,
+    "solve_variant": 0
+  },
+  {
+    "source_key": "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+    "start": 0,
+    "end": 402,
+    "solve_variant": 0
+  }
+]

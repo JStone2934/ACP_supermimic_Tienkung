@@ -1,0 +1,17 @@
+{
+  "purpose": "Complete final root velocity repair, original G1 compared at identical scale and timing",
+  "clips": [
+    {
+      "name": "01_cfg0026",
+      "source_key": "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v29_root_tail_pilot_20261110",
+      "quality_path": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v29_root_tail_pilot_20261110/quality/d3ee80fff7ea7f65f76b05c1.json",
+      "quality_sha256": "b7c0cad675a6fd48d19970eea7016694396e055dffdda73a560004851a98f390",
+      "motion_sha256": "89a50a13eb9437429cabe91c7aebd35a81192d82ff85aee4f57fe6ce484b48c8",
+      "source_variant": 0,
+      "export_slot": 0,
+      "frames": 402,
+      "fps": 50
+    }
+  ]
+}

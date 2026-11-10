@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-10T17:23:59.692070+08:00",
+  "scope": "Four full controls plus cfg0026; upper 5% velocity correction loss, unchanged independent thresholds",
+  "parent_audit": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v28_root_peak_report.json",
+  "parent_audit_sha256": "a88e7db753682a8a8e94e2dc04a0b6f324816f328a6c44fec1c285706e38c4a5",
+  "sources": 5,
+  "frames": 1799,
+  "slots": 50,
+  "tail_fraction": 0.05,
+  "tail_guidance_m_s": 0.9,
+  "peak_guidance_m_s": 2.25,
+  "acceleration_guidance_m_s2": 90
+}

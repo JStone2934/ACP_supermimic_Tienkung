@@ -1,0 +1,475 @@
+{
+  "audit_sha256": "9a9d923999f018001bedf38f086dba7680a529b7f9ce5a202a352f4cb93407d5",
+  "sources": 5,
+  "frames": 1799,
+  "checked_slots": 50,
+  "accepted_slots": 50,
+  "new_original_slots": 10,
+  "lost_original_slots": 0,
+  "rows": [
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s_motion.npz",
+      "frames": 269,
+      "original_parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_free_arm_pilot_20261110",
+      "original_quality_sha256": "bb8aa516a91890e064812fff0b299f45d074939c5104015f21a26f54faab1ddb",
+      "quality_sha256": "5bd50624fa1ad2cc0392fface6cd4041fddaa60d13c617835fa429cf2547fb28",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "root_before": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 269,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.20732163102702433,
+          "added_velocity_p95_m_s": 0.42578545957503033,
+          "added_velocity_max_m_s": 0.9942293919728216,
+          "added_acceleration_max_m_s2": 24.37746359886015
+        },
+        "worst_velocity_frame": 190,
+        "worst_acceleration_frame": 186,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "motion_sha256": "f9999e0e0765fe85ce2151823ba0c8cd3fdaf2dacdf57dd740d68c1eb6b848f4",
+        "source_frames": [
+          0,
+          269
+        ]
+      },
+      "root_after": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 269,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.24974262866148042,
+          "added_velocity_p95_m_s": 0.5310719448764174,
+          "added_velocity_max_m_s": 0.6608616422191967,
+          "added_acceleration_max_m_s2": 22.063701168059204
+        },
+        "worst_velocity_frame": 190,
+        "worst_acceleration_frame": 186,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "motion_sha256": "db209fc5f0fe40293a25bbe8572660b3c9a98948dba3692fdf080132fd23823c",
+        "source_frames": [
+          0,
+          269
+        ]
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s_motion.npz",
+      "frames": 260,
+      "original_parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_free_arm_pilot_20261110",
+      "original_quality_sha256": "d63c35166e357724a6cffd6e58b67895d7399f7afd0754b380024d8ec59fa664",
+      "quality_sha256": "f72b5d527ecc0a2983aa46de341f1157b1fb83501e4a0d9f31680e10427414a7",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "root_before": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 260,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.2353238570814074,
+          "added_velocity_p95_m_s": 0.5422064582964995,
+          "added_velocity_max_m_s": 1.2271178440512829,
+          "added_acceleration_max_m_s2": 17.8584421387274
+        },
+        "worst_velocity_frame": 142,
+        "worst_acceleration_frame": 141,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "motion_sha256": "011cb4a2f0187b4ce7603e5dd97b913893c8baf8b23bb4bffe0f5b7a96df05a5",
+        "source_frames": [
+          0,
+          260
+        ]
+      },
+      "root_after": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 260,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.2742075422344915,
+          "added_velocity_p95_m_s": 0.5886240877294242,
+          "added_velocity_max_m_s": 0.9471367213971832,
+          "added_acceleration_max_m_s2": 12.639350614177898
+        },
+        "worst_velocity_frame": 141,
+        "worst_acceleration_frame": 138,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "motion_sha256": "f901e72e46d5ccca3191eeee787f44bb249c4c1ccdbcc72ab1b8c99f14e372ca",
+        "source_frames": [
+          0,
+          260
+        ]
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-step/forward_walk1.2s_step0s_motion.npz",
+      "frames": 413,
+      "original_parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_free_arm_pilot_20261110",
+      "original_quality_sha256": "64e26271dba7c01b8272d3b950e49dab6f69385b12d88174ece61c4978284a2e",
+      "quality_sha256": "3926ca371f8fbcff9d2fe09e706334cdc77e94959856d5922d5ed17221bdb2fe",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "root_before": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 413,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.10269445214635592,
+          "added_velocity_p95_m_s": 0.21174163348670338,
+          "added_velocity_max_m_s": 0.33569406630050974,
+          "added_acceleration_max_m_s2": 7.944295570868702
+        },
+        "worst_velocity_frame": 223,
+        "worst_acceleration_frame": 276,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "motion_sha256": "7a148eddec2f5f25c4543eda8786c6a47eb00fb277933fd5eb06b2f80ace794e",
+        "source_frames": [
+          0,
+          413
+        ]
+      },
+      "root_after": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 413,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.19713113645649752,
+          "added_velocity_p95_m_s": 0.40433870555564894,
+          "added_velocity_max_m_s": 0.5208891000496677,
+          "added_acceleration_max_m_s2": 13.981582777221279
+        },
+        "worst_velocity_frame": 206,
+        "worst_acceleration_frame": 185,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "motion_sha256": "fa80fc3d3c52c927720d8856d282b6f420d7adfaed07b197e67b3147addd99df",
+        "source_frames": [
+          0,
+          413
+        ]
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-step/run_forward_0.9s_step1.0s_motion.npz",
+      "frames": 455,
+      "original_parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v27_free_arm_pilot_20261110",
+      "original_quality_sha256": "5ab241e2fcd103d81466b79c9616525a4f46de300f9d555d2fe276f93e2aa90b",
+      "quality_sha256": "5d1a1fe7017cff294d3daa0133a70f473330f962ba57c232e582880281ca7624",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "root_before": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 455,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.1679960082740207,
+          "added_velocity_p95_m_s": 0.3489385526069806,
+          "added_velocity_max_m_s": 0.5296020414684803,
+          "added_acceleration_max_m_s2": 14.076089074978626
+        },
+        "worst_velocity_frame": 339,
+        "worst_acceleration_frame": 338,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "motion_sha256": "c5a2e950d61b434e319169fe8daf19f49ea68d35e217f51eb51cd45a2a5b9f5e",
+        "source_frames": [
+          0,
+          455
+        ]
+      },
+      "root_after": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 455,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.32327878559678075,
+          "added_velocity_p95_m_s": 0.6760239808591565,
+          "added_velocity_max_m_s": 0.8681698063544394,
+          "added_acceleration_max_m_s2": 20.121158453093212
+        },
+        "worst_velocity_frame": 140,
+        "worst_acceleration_frame": 143,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "motion_sha256": "cb6f8de80bd798e57240fe92b17ebabba0a4a34c763f46cd14aaf3a209917ae5",
+        "source_frames": [
+          0,
+          455
+        ]
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s_motion.npz",
+      "frames": 402,
+      "original_parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "original_quality_sha256": "b5a3104d9eb9cac517970f32461c0dd2cea59d73cb7d42216307c5a0093edbe1",
+      "quality_sha256": "b7c0cad675a6fd48d19970eea7016694396e055dffdda73a560004851a98f390",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "root_before": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 402,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.4872362408415369,
+          "added_velocity_p95_m_s": 1.0075456766958168,
+          "added_velocity_max_m_s": 2.669742206301007,
+          "added_acceleration_max_m_s2": 92.40709000142601
+        },
+        "worst_velocity_frame": 301,
+        "worst_acceleration_frame": 305,
+        "passed": false,
+        "rejection_reasons": [
+          "added_velocity_p95_m_s",
+          "added_velocity_max_m_s"
+        ],
+        "source_sha256": "06f6f46091b67dc2f43f4c9248d1a2ba7ab885a4222c7f94e76c13f34dbeeed4",
+        "motion_sha256": "5863be416b115889f8f13f7ec8fb1dcb5819a981c2d9f59c8c4c1fc403b6b778",
+        "source_frames": [
+          0,
+          402
+        ]
+      },
+      "root_after": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 402,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.3897800309372756,
+          "added_velocity_p95_m_s": 0.9293014538711301,
+          "added_velocity_max_m_s": 0.9857650589546119,
+          "added_acceleration_max_m_s2": 53.70637236398596
+        },
+        "worst_velocity_frame": 304,
+        "worst_acceleration_frame": 305,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "06f6f46091b67dc2f43f4c9248d1a2ba7ab885a4222c7f94e76c13f34dbeeed4",
+        "motion_sha256": "89a50a13eb9437429cabe91c7aebd35a81192d82ff85aee4f57fe6ce484b48c8",
+        "source_frames": [
+          0,
+          402
+        ]
+      },
+      "rejection_reasons": []
+    }
+  ],
+  "scope": "Same original files, full frames, timing and terrain numbering; four controls compared with promoted v27 and cfg0026 with original full-run failure"
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+    "key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s__terrain_02",
+    "start": 0,
+    "end": 398,
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+    "key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 398,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s__terrain_05",
+    "start": 0,
+    "end": 260,
+    "solve_variant": 5
+  },
+  {
+    "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+    "key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s__terrain_04",
+    "start": 0,
+    "end": 407,
+    "solve_variant": 4
+  },
+  {
+    "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+    "key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s__terrain_06",
+    "start": 0,
+    "end": 407,
+    "solve_variant": 6
+  },
+  {
+    "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+    "key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 407,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+    "key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s__terrain_01",
+    "start": 0,
+    "end": 395,
+    "solve_variant": 1
+  },
+  {
+    "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+    "key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 395,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s__terrain_01",
+    "start": 0,
+    "end": 280,
+    "solve_variant": 1
+  },
+  {
+    "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s__terrain_02",
+    "start": 0,
+    "end": 280,
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 280,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+    "key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s__terrain_01",
+    "start": 0,
+    "end": 250,
+    "solve_variant": 1
+  },
+  {
+    "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+    "key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s__terrain_04",
+    "start": 0,
+    "end": 250,
+    "solve_variant": 4
+  },
+  {
+    "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+    "key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s__terrain_05",
+    "start": 0,
+    "end": 250,
+    "solve_variant": 5
+  },
+  {
+    "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s__terrain_01",
+    "start": 0,
+    "end": 413,
+    "solve_variant": 1
+  },
+  {
+    "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 413,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s",
+    "key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 327,
+    "solve_variant": 9
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v26_support_terrain_20261110",
+  "identity": "67bf323a6547a9b456073fcb9943542773eda9fc0f1f7e836b46e17fa3ff2465",
+  "verified": true,
+  "sources": 7,
+  "unique_source_files": 2,
+  "frames": 5089,
+  "checked_variants": 70,
+  "accepted_variants": 27,
+  "statuses": {
+    "accepted": 7
+  },
+  "checked_output_hashes": 63,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 101.64000000000001,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

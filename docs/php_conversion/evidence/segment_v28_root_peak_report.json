@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v28_root_peak_pilot_20261110",
+  "identity": "e6c1c26ff0b51ef9a1b9536f5b5facb19e4d4ae6be22ce0c2d012dc72ae3a78b",
+  "verified": true,
+  "sources": 5,
+  "unique_source_files": 5,
+  "frames": 1799,
+  "checked_variants": 50,
+  "accepted_variants": 40,
+  "statuses": {
+    "accepted": 4,
+    "rejected": 1
+  },
+  "checked_output_hashes": 41,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 35.879999999999995,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

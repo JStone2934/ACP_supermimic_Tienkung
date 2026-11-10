@@ -1,0 +1,21 @@
+./home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v28/frozen_runner/tools/test_php_collision_pairs.py:22: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertEqual(float(value),0.)
+.........................................................usage: python -m unittest [-h] [--polish-seeds POLISH_SEEDS] [--source SOURCE]
+                          [--contacts CONTACTS] --out OUT [--scan] [--resume]
+                          [--retry-failed] [--devices DEVICES]
+                          [--workers-per-gpu WORKERS_PER_GPU]
+                          [--cpu-workers CPU_WORKERS]
+                          [--max-attempts MAX_ATTEMPTS]
+                          [--iterations ITERATIONS]
+                          [--window-frames WINDOW_FRAMES] [--overlap OVERLAP]
+                          [--no-graph] [--collision-rounds COLLISION_ROUNDS]
+                          [--collision-iterations COLLISION_ITERATIONS]
+                          [--only ONLY [ONLY ...]] [--selections SELECTIONS]
+                          [--solve-variant SOLVE_VARIANT]
+python -m unittest: error: native seed refinement requires --workers-per-gpu 0 and positive --cpu-workers
+........................
+----------------------------------------------------------------------
+Ran 82 tests in 85.194s
+
+OK

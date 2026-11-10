@@ -1,0 +1,31 @@
+{
+  "time": "2026-11-10T17:30:55.657461+08:00",
+  "version": "php-segment-v29",
+  "scope": "Source-relative root correction objective: upper five percent velocity tail and isolated velocity/acceleration peaks; every independent acceptance gate unchanged",
+  "changed": {
+    "supermimic/acp/php_conversion.py": {
+      "before": "6edf725e789ff004d30714dd67d17ddbc8a04d78c9486c5aef6d79a38403be04",
+      "after": "94be133b820a3da14a9c76a716c020c792a730ddf03247a67f185fd4a1aeb784"
+    },
+    "tools/test_php_root_temporal.py": {
+      "before": "0d599a7d2ab45a51f3e367229355ab79d15ed894dd6b11966d525fd64319dbc9",
+      "after": "637b439887d75987ac7551072d24837323bd418dda37b6498139e4b5f9351a86"
+    }
+  },
+  "runtime_code_files": 50,
+  "evidence": {
+    "segment_v29_root_tail_report.json": "9a9d923999f018001bedf38f086dba7680a529b7f9ce5a202a352f4cb93407d5",
+    "segment_v29_root_tail_comparison.json": "65359cdcb091965b18c0de2ba79647cc87cd77dd2ab8f763fbeb2e4c31d39f17",
+    "segment_v29_preview_summary.json": "3767bb31572e263efcac9f4f3f496f95f7e04782cbead69904276a0ec341b110",
+    "segment_v29_preview_manifest.json": "8f39b3c3d6fe42b7aca520169f6aab25a3e2db656f765fa49aeac3f7808d7091",
+    "segment_v29_full_tests.txt": "47094f0f89c1088072c3a14583594209d176c6ae05595f325039ea6d50e61fa3",
+    "segment_v29_root_tests_corrected.txt": "378835dfcd1a3745d724bbc79aa32b8ce02046db20c8d9d4d5c73615d1fe5954"
+  },
+  "accepted_pilot_slots": 50,
+  "checked_pilot_slots": 50,
+  "new_slots_vs_baseline": 10,
+  "lost_slots_vs_baseline": 0,
+  "four_full_preview_frames": 1397,
+  "tests_passed": 83,
+  "all_library_complete": false
+}

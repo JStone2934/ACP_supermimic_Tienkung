@@ -1,0 +1,279 @@
+{
+  "scope": "Five complete sources/50 original variants; four controls exact unchanged; corrected free-arm source modifies left arm in215:243 plus existing collision stage leg corrections at224/225; root, torso and opposite arm exact",
+  "accepted_variants": 50,
+  "new_original_slots": 10,
+  "lost_original_slots": 0,
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "accepted_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "changed_frames": [],
+      "root_exact": true,
+      "quality_sha256": "bb8aa516a91890e064812fff0b299f45d074939c5104015f21a26f54faab1ddb"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "accepted_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "changed_frames": [],
+      "root_exact": true,
+      "quality_sha256": "d63c35166e357724a6cffd6e58b67895d7399f7afd0754b380024d8ec59fa664"
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "accepted_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "changed_frames": [],
+      "root_exact": true,
+      "quality_sha256": "64e26271dba7c01b8272d3b950e49dab6f69385b12d88174ece61c4978284a2e"
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "accepted_before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "changed_frames": [],
+      "root_exact": true,
+      "quality_sha256": "5ab241e2fcd103d81466b79c9616525a4f46de300f9d555d2fe276f93e2aa90b"
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.0s_step0s",
+      "accepted_before": [],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "changed_frames": [
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        241,
+        242
+      ],
+      "root_exact": true,
+      "quality_sha256": "54d5d10906d8211f076b00dcc70c5121f6f8081c7dbc1c69698eb6140b86d766",
+      "left_elbow_before": {
+        "start": 215,
+        "end": 243,
+        "rmse_m": 0.017428829360452307,
+        "p95_m": 0.027809774586843576,
+        "reference_rms_amplitude_m": 0.029291524306266147,
+        "actual_rms_amplitude_m": 0.038479875257774035,
+        "dynamic": true,
+        "amplitude_ratio": 1.3136863365469267,
+        "correlation": 0.9107246834909676,
+        "best_lag_frames": -2
+      },
+      "left_elbow_after": {
+        "start": 215,
+        "end": 243,
+        "rmse_m": 0.006104446308134926,
+        "p95_m": 0.008085461954592215,
+        "reference_rms_amplitude_m": 0.029291524306266147,
+        "actual_rms_amplitude_m": 0.03283727252027487,
+        "dynamic": true,
+        "amplitude_ratio": 1.1210503139725714,
+        "correlation": 0.9880120960700959,
+        "best_lag_frames": 0
+      },
+      "torso_and_other_arm_exact": true,
+      "non_left_arm_changed_frames": [
+        224,
+        225
+      ],
+      "collision_frames": [
+        224,
+        225
+      ],
+      "collision_rows": [
+        {
+          "frame": 224,
+          "before_m": 0.00203494866692544,
+          "after_m": 0.001500075737394413,
+          "applied": true,
+          "optimizer_success": true,
+          "nfev": 32,
+          "seconds": 0.8374462479259819,
+          "support_displacement_m": [
+            2.3494203820847244e-06,
+            0.0
+          ],
+          "torso_change_deg": 0.0,
+          "free_arm_displacement_m": [
+            0.0,
+            0.0
+          ],
+          "root_displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_joint_change_rad": 0.05227913229605272
+        },
+        {
+          "frame": 225,
+          "before_m": 0.0021920116025700986,
+          "after_m": 0.0015000749009831396,
+          "applied": true,
+          "optimizer_success": true,
+          "nfev": 39,
+          "seconds": 1.0637655381578952,
+          "support_displacement_m": [
+            2.2392065860969146e-06,
+            0.0
+          ],
+          "torso_change_deg": 0.0,
+          "free_arm_displacement_m": [
+            0.0,
+            0.0
+          ],
+          "root_displacement_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_joint_change_rad": 0.05651169140285371
+        }
+      ]
+    }
+  ]
+}

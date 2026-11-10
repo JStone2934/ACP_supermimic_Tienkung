@@ -480,3 +480,46 @@ v25新增地形扩大57求解（17完整来源、32586重复求解帧、570变�
 - 57地形专项仍v25，guardaa524df334eff026f014 running child3493687，16:44:35为11accepted/2checking/2solving/42pending、73检查通过（非新增73），剩求解约27分钟/CPU20分钟并行。旧全库guard2b6364f43d92423090ee、child2923075为231accepted/25rejected/40checking，2205本批槽位，剩CPU6.5分钟。实际运行3批，预约32+32+17=81；新支撑17排队，不改上限。
 - 最新strict实时快照16:43:13为2454/2960、缺506、234源全通过，缓存live_coverage_1642.json实际时点16:43。仍是provisional，不能代替最终独立全资产/全槽位audit --require-root-continuity --require-all；不把每批检查通过数相加。
 - 下一步：收齐三条单窗及全库终态，分别独立audit并对30目标原编号比较；57地形和7支撑继续监控guard，完成后按规划回执/原source+variant去重。处理短自由臂幅度与新cfg0026根速度问题，不盲重复相同算法、不弱化门槛。主v26正式，v27尚未创建。所有原2960通过才完成。
+
+
+### 2026-11-10 17:23 v27正式推广、旧批审计完成、最后27原槽位
+
+主源码v27已17:08:55推广，segment_v27_promotion.json绑定50runtime文件、80全测试、5源2002帧50/50独立审计（45输出hash）、四完整录像1397帧40/40。新自由臂阶段仅处理真实违反原验收的free phase，原生MuJoCo固定根/腰/其他肢体，7同侧臂关节±0.25rad及原速度边界，支持臂不改，最终全部原标准重验。highleft45_run1.0_step0s的左肘[215,243)幅度比1.313686→1.121050，corr0.910725→0.988012，lag-2→0，RMSE17.429→6.104mm，新增10槽位。四对照轨迹完全不变。注意整个pipeline原有collision prepass仍改左腿224/225两帧，支撑点变化2.349/2.239微米；不得声称整段非左臂关节全都不变。最初比较脚本错误地要求所有非左臂角度不变，assert失败，首次promotion在缺比较文件时退出且复制未发生；修正比较假设、没有放宽质量门槛，然后推广成功。root/torso/rightarm保持，腿改动与原碰撞阶段回执完全一致。root_guard旧v24 12、v25 16、v26 20种子兼容均验证，根篡改/profile篡改拒绝。
+
+v25三完整单窗专项已独立审计30/30、新增30/丢失0，segment_v25_full_window_report/comparison.json；不再运行。v21全库已完成271accepted/25rejected/0failed，本批2593/2960，独立full_report verified296源181236帧2564输出hash。57地形专项57accepted、467/570重复检查通过，独立513hash，规划目标57/57、新增57；7支撑专项7accepted、27/70重复检查通过，独立63hash，目标7/7、新增7。比较绑定规划回执和原source/variant，证据segment_v25_terrain_expand_comparison、segment_v26_support_terrain_comparison。verification脚本首次直接调用缺PYTHONPATH导致import失败，使用PYTHONPATH=.正常完成；不是转换程序异常。所有旧guardjob completed，无需重启。
+
+17:20:28实时strict去重2933/2960，缺27，remaining_20261110_1717.json（文件名不是精确时间）及remaining_20261110_1721_reasons.json列出全部。cfg0026的10槽位为root速度P95/max；其他8源17槽位全部terrain_penetration：cfg0007 v2/9、cfg0035 v5、cfg0043 v4/6/9、cfg0063 v1/9、cfg0075 v1/2/9、cfg0077 v1/4/5、cfg0083 v1/9、cfg0099 v9。这17不在此前57规划内，不能误认为重复重试失败。当前正在以正式冻结v27规划terrain_remaining专项。
+
+隔离v28（尚未推广）：source-relative root correction新增速度/加速度峰值目标（guidance0.9m/s尾、2.25m/s峰、90m/s²峰），原验收0.5RMS/1P95/2.5max/100acc全部不变。完整5源1799帧50槽位（四对照+402帧cfg0026），10针对性测试及82全测试通过。scan5/1799/50及50源码hash/snapshot核验后17:20标准入口提交，guard15882ae863a878b02eb0 running child3747888，GPU2 CPU2预约32GiB。冻结.cache/php_conversion/segment_v28/frozen_runner，输出php_segment_v28_root_peak_pilot_20261110，pilot.log；segment_v28_root_peak_plan/selections/launch.json。submitter session64169，无需重复启动。应收全质量结果、独立audit、逐源comparison、四完整新录像后才考虑推广；正式主仍v27。
+
+当前PHP_OVERNIGHT_OWNER=1，php-codex.service active，同一个原goal active未创建新目标。继续遵守AGENTS和OPERATIONS，正常python -m tools.convert_php经共享队列，无新agent、无guard改动/limit放宽。最终必须全2960原source/variant independent asset/hash/source-contact/label/root覆盖audit --require-root-continuity --require-all才可完成。现在provisional不能替代最终索引；视频均是运动学参考，PD/策略未运行。
+
+
+17:26续记：v28已完成4accepted/1rejected/0failed，40/50，独立audit verified41hash。cfg0026根max2.66974→1.73899、RMS0.48724→0.41005、acc92.407→74.615，但P95 1.00755→1.07776仍拒绝，故不推广v28。改成隔离v29 upper5% mean squared excessive speed（0.9m/s guidance），peak/acc原目标不变、独立门槛不变。11针对性测试通过，83全测试运行中；初版旧测试把全部cost都要求对静止前缀不变，加入top5%后该断言不再适用，保留失败日志并将测试改为验证不被稀释的峰值项下界，另新增真实upper5%情形测试；未放宽验收。v29完整5源1799帧50槽位，guard ebb44688d98581c97101，GPU2 CPU2预约32GiB，实际child3761115，submitter15198，frozen_runner/plan/selections/launch均v29，log.cache/php_conversion/segment_v29/pilot.log。主仍v27，不改已有冻结任务。
+
+17地形专项已正常启动：segment_v27_terrain_remaining_plan/selections/launch.json，8源5810重复帧17求解/170检查，guard2eee2b74dffd9ec56a98 child3755503，GPU2 CPU2预约32GiB，submitter53587，log.cache/php_conversion/segment_v27/terrain_remaining.log。与v29合计64GiB预约，不改96GiB共享限制。规划使用全部已提交root合格回执加旧严格索引，17原目标之前未做过专项。
+
+segment_v21_final_rejections.json已统计完整296源原批367拒绝槽位（后续大部分已修复），程序failed0；原因可重叠，包括terrain272/self200、rootP95 10/max20/acc30、arm10、jointvelocity10及少量支撑。当前缺27不可与历史367混用。strict_parent_plan_20261110_1725.json给出12个已终态>=21来源批的贪心组合暂覆盖2933；后续可加入v27剩余地形和成功根部版本，再一次性严格audit --require-root-continuity --require-all。不能用旧仅failed-task assembler混合算法版本，它不支持该用途；应使用原variant asset index并明确非直接MotionLib目录。
+
+
+### 2026-11-10 17:34 v29正式推广，2960候选全部补齐，最终独立审计中
+
+v29小批5完整源1799帧50/50，独立45hash verified，comparison新增10/丢失0；cfg0026 root附加速度RMS0.389780、P950.929301、max0.985765m/s、acc53.7064m/s²，四原门槛全过。83全测试128.604s通过，四完整新录像1397帧50fps1920x64040/40、哈希/源与目标帧/terrain对应/root独立核验通过。17:30:55 segment_v29_promotion.json绑定全部证据，复制前主50runtime等于v27、复制后等于冻结v29；只改php_conversion.py与test_php_root_temporal.py，其他改动保留，git diff --check通过，无commit。v28作为未通过实验保存未推广。posture_v3_v29_comparison.json和results/php_segment_v29_diagnostics_20261110/torso_lean_comparison.png已生成并查看，源G1与v29曲线几乎重合，原v3额外前倾保留作对比。最新四录像results/php_segment_v29_previews_20261110/comparison/all_comparisons.mp4。
+
+v27剩余17地形专项已全部终态，17accepted无异常，完整audit正在执行session75120，log.cache/php_conversion/segment_v27/terrain_audit.log；完成后执行PYTHONPATH=. python .cache/php_conversion/segment_v27/verify_terrain_remaining.py，核对17目标与规划回执、不可用重复170检查作为新增。17:33:13 live_coverage.py严格实时去重2960/2960、296源全部覆盖，仅provisional，原goal还active未完成。
+
+最终全资产覆盖audit已17:32启动session31635，通过bash .cache/php_conversion/final_coverage.sh，实际命令python -m tools.audit_php_variant_coverage加14个已全终态父批、--require-root-continuity --require-all。all_original_variants_final_plan_20261110.json记录原计划hash/父批/完整命令，最终输出evidence/all_original_variants_final_20261110.json与.index.json；日志.cache/php_conversion/final_coverage.log。优先v29、v27自由臂、v26速度修复，再v21full与原地形专项。不要因审计日志暂空重复启动。预计10–20分钟，审计不通过不得complete。全部原source/terrain/labels哈希、源零接触回执复算、全帧原fps、导出槽位映射、root导数重算均走原工具。
+
+额外最后难例cfg0026完整同步402帧录像正在生成session3711，results/php_segment_v29_root_preview_20261110/comparison，log.cache/php_conversion/segment_v29/root_render.log；质量早已10/10，录像需收齐ffprobe/哈希再称verified。所有视频均运动学参考，PD/策略没有通过声明。当前无新转换待启动，guard全部终态，后台owner1正常，不能提前markcomplete。
+
+
+17:37审计等待：最后17地形independent audit与comparison均终态verified，149/170重复检查通过，目标17/17、新增17，153输出hash。最终全库audit实际PID3786699，session31635，17:37已约4分44秒CPU103%/RSS1.8GB、日志暂空正常，不重复启动。cfg0026完整402帧录像也已ffprobe/源目标hash/原variant/root核验，segment_v29_root_preview_summary.json；已查看其frame300截图，源目标相同相位姿态、模型尺度差异保留。主v29、实时2960/2960/296source，尚等最终独立all_original_variants_final_20261110.json输出才可complete。
+
+
+### 2026-11-10 17:47:44 全部原始变体验收完成
+
+独立最终报告evidence/all_original_variants_final_20261110.json确认296来源、2960/2960原槽位、missing=0、fully_accepted_sources=296，require_root_continuity=true、snapshot_of_running_parents=false。完整资产索引同名.index.json，交付摘要evidence/delivery_summary_20261110.json绑定报告/索引/库存/推广/录像证据hash。原181236帧、50Hz、2510唯一motion-terrain组合和2960含别名原槽位全部保留；按原source+variant计数，不重复累计专项检查数。所有原碰撞/支撑/关节/摆臂/躯干/根连续性门槛保持，全部输入与输出身份、源零接触复算回执、导出标签及地形映射独立验证。
+
+主算法v29：83测试，5完整源50/50，四完整对照1397帧40/40；最后cfg0026根速度难例完整402帧10/10也有核验后的同步视频。v28未通过实验保留未推广，v27最后17地形专项17/17目标通过。既有失败尝试与全部难例保留，无新goal、无guard修改、无删除数据、无弱化门槛。最终索引选用391份动作资产，来自14个全终态不可变父批；source_variant/export_slot对应必须保留，索引不是直接可加载MotionLib的数据目录。运动学/几何验收完成，PD/策略/实机未验证，不作相应通过声明。
+
+本记录写入后即可将同一个原goal标记complete；后台php-codex.service保持可连接，无需停止服务或重启任何转换。

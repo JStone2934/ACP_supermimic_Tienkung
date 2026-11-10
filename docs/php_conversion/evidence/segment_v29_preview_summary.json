@@ -1,0 +1,226 @@
+{
+  "verified": true,
+  "scope": "Four complete synchronized G1/TienKung kinematic previews, all 40 original terrain variants accepted with independent root continuity screening; no physics/policy playback",
+  "total_frames": 1397,
+  "accepted_variants": 40,
+  "clips": [
+    {
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 269,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.24974262866148042,
+          "added_velocity_p95_m_s": 0.5310719448764174,
+          "added_velocity_max_m_s": 0.6608616422191967,
+          "added_acceleration_max_m_s2": 22.063701168059204
+        },
+        "worst_velocity_frame": 190,
+        "worst_acceleration_frame": 186,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "motion_sha256": "db209fc5f0fe40293a25bbe8572660b3c9a98948dba3692fdf080132fd23823c",
+        "source_frames": [
+          0,
+          269
+        ]
+      },
+      "name": "01_straight",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.17383278768571325,
+        "angular_p95_deg": 0.1977586502138491,
+        "angular_max_deg": 1.511943265720707,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v29_previews_20261110/comparison/01_straight_comparison.mp4",
+      "video_sha256": "e3ea3a4405405633c39160e8eab14f0137b270c7c3d100524a5898bc61af5ecb"
+    },
+    {
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 260,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.2742075422344915,
+          "added_velocity_p95_m_s": 0.5886240877294242,
+          "added_velocity_max_m_s": 0.9471367213971832,
+          "added_acceleration_max_m_s2": 12.639350614177898
+        },
+        "worst_velocity_frame": 141,
+        "worst_acceleration_frame": 138,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "motion_sha256": "f901e72e46d5ccca3191eeee787f44bb249c4c1ccdbcc72ab1b8c99f14e372ca",
+        "source_frames": [
+          0,
+          260
+        ]
+      },
+      "name": "02_turn",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "frames": 260,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.057808052940786385,
+        "angular_p95_deg": 0.11796665207289261,
+        "angular_max_deg": 0.12142185661595191,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v29_previews_20261110/comparison/02_turn_comparison.mp4",
+      "video_sha256": "7eb9c5d52b30cdc04281f3a6965f17263ab006135c2d4aa8bed11e64af37fdc2"
+    },
+    {
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 413,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.19713113645649752,
+          "added_velocity_p95_m_s": 0.40433870555564894,
+          "added_velocity_max_m_s": 0.5208891000496677,
+          "added_acceleration_max_m_s2": 13.981582777221279
+        },
+        "worst_velocity_frame": 206,
+        "worst_acceleration_frame": 185,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "motion_sha256": "fa80fc3d3c52c927720d8856d282b6f420d7adfaed07b197e67b3147addd99df",
+        "source_frames": [
+          0,
+          413
+        ]
+      },
+      "name": "03_low_step",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "frames": 413,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.04872621940123371,
+        "angular_p95_deg": 0.10784914355840705,
+        "angular_max_deg": 0.11024236278129235,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v29_previews_20261110/comparison/03_low_step_comparison.mp4",
+      "video_sha256": "f43d396bf0247643cb5bc4552e45ef55c3558eca80addb1fac329f7263f9885b"
+    },
+    {
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 455,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.32327878559678075,
+          "added_velocity_p95_m_s": 0.6760239808591565,
+          "added_velocity_max_m_s": 0.8681698063544394,
+          "added_acceleration_max_m_s2": 20.121158453093212
+        },
+        "worst_velocity_frame": 140,
+        "worst_acceleration_frame": 143,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "motion_sha256": "cb6f8de80bd798e57240fe92b17ebabba0a4a34c763f46cd14aaf3a209917ae5",
+        "source_frames": [
+          0,
+          455
+        ]
+      },
+      "name": "04_high_step",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "frames": 455,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.09296823417732017,
+        "angular_p95_deg": 0.24268649506133533,
+        "angular_max_deg": 0.25680328937492664,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v29_previews_20261110/comparison/04_high_step_comparison.mp4",
+      "video_sha256": "53e0ee6221a5660753764fbc286a936bd2f1a44b5e0e9d119bd1960f54f748b9"
+    }
+  ],
+  "overview": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v29_previews_20261110/comparison/all_comparisons.mp4",
+  "overview_sha256": "877f8d4e325f806de86237e0f280bd8a4d09e2afa85bb26ad39c5655efcd5e16"
+}
