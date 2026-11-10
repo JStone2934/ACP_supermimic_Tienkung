@@ -1,0 +1,351 @@
+{
+  "purpose": "Diagnose motion fidelity of the four comparison previews; no solver or motion changes",
+  "comparison_manifest_sha256": "ebeb751f16adca67bc08c9fce06ced5fcaa3d8899a2218bff5c7474b27a351e1",
+  "calibration": {
+    "source_neutral_root_to_sole_m": 0.7564873695373535,
+    "target_neutral_root_to_sole_m": 0.9920036792755127,
+    "body_displacement_scale": 1.3113288062987678
+  },
+  "clips": [
+    {
+      "name": "01_straight",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "arm_mode": "neutral",
+      "hand_elbow_support_frames": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "robots": {
+        "g1": {
+          "arm_joints": 14,
+          "constant_arm_joints": 0,
+          "joint_range_deg": {
+            "left_shoulder_pitch_joint": 120.60659926968222,
+            "left_shoulder_roll_joint": 51.764627649852294,
+            "left_shoulder_yaw_joint": 46.67106818422012,
+            "left_elbow_joint": 103.95086195971514,
+            "left_wrist_roll_joint": 69.97442536187195,
+            "left_wrist_pitch_joint": 27.552678314639724,
+            "left_wrist_yaw_joint": 41.27057965408143,
+            "right_shoulder_pitch_joint": 51.200794466650684,
+            "right_shoulder_roll_joint": 31.610947908124107,
+            "right_shoulder_yaw_joint": 58.97613496872604,
+            "right_elbow_joint": 83.86061525202592,
+            "right_wrist_roll_joint": 71.24807925778009,
+            "right_wrist_pitch_joint": 36.10400770737763,
+            "right_wrist_yaw_joint": 35.873983157830885
+          },
+          "joint_first_frame_deg": {
+            "left_shoulder_pitch_joint": 14.583102745948375,
+            "left_shoulder_roll_joint": 16.44278737957172,
+            "left_shoulder_yaw_joint": -5.031707300220952,
+            "left_elbow_joint": 46.280941759372446,
+            "left_wrist_roll_joint": 0.25031333299158265,
+            "left_wrist_pitch_joint": 0.3309010274612706,
+            "left_wrist_yaw_joint": -0.05390167513993203,
+            "right_shoulder_pitch_joint": 14.583102745948375,
+            "right_shoulder_roll_joint": -16.44278737957172,
+            "right_shoulder_yaw_joint": 5.031707300220952,
+            "right_elbow_joint": 46.280941759372446,
+            "right_wrist_roll_joint": -0.25031333299158265,
+            "right_wrist_pitch_joint": 0.3309010274612706,
+            "right_wrist_yaw_joint": 0.05390167513993203
+          }
+        },
+        "tienkung3_29dof": {
+          "arm_joints": 14,
+          "constant_arm_joints": 14,
+          "joint_range_deg": {
+            "shoulder_pitch_l_joint": 0.0,
+            "shoulder_roll_l_joint": 0.0,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": 0.0,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 0.0,
+            "shoulder_roll_r_joint": 0.0,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": 0.0,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          },
+          "joint_first_frame_deg": {
+            "shoulder_pitch_l_joint": 11.459155082702637,
+            "shoulder_roll_l_joint": 5.729577541351318,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": -28.64788818359375,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 11.459155082702637,
+            "shoulder_roll_r_joint": -5.729577541351318,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": -28.64788818359375,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "02_turn",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "arm_mode": "neutral",
+      "hand_elbow_support_frames": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "robots": {
+        "g1": {
+          "arm_joints": 14,
+          "constant_arm_joints": 0,
+          "joint_range_deg": {
+            "left_shoulder_pitch_joint": 51.265584787343776,
+            "left_shoulder_roll_joint": 29.150098678534242,
+            "left_shoulder_yaw_joint": 68.86355864614517,
+            "left_elbow_joint": 100.47874554042292,
+            "left_wrist_roll_joint": 70.40491677731158,
+            "left_wrist_pitch_joint": 33.6989256383396,
+            "left_wrist_yaw_joint": 35.03191560204305,
+            "right_shoulder_pitch_joint": 62.408534691768295,
+            "right_shoulder_roll_joint": 21.970666941859076,
+            "right_shoulder_yaw_joint": 40.026395489801374,
+            "right_elbow_joint": 89.26584937625559,
+            "right_wrist_roll_joint": 78.14030141979431,
+            "right_wrist_pitch_joint": 25.542562499806554,
+            "right_wrist_yaw_joint": 27.511110637124673
+          },
+          "joint_first_frame_deg": {
+            "left_shoulder_pitch_joint": 14.583102745948375,
+            "left_shoulder_roll_joint": 16.44278737957172,
+            "left_shoulder_yaw_joint": -5.031707300220952,
+            "left_elbow_joint": 46.280941759372446,
+            "left_wrist_roll_joint": 0.25031333299158265,
+            "left_wrist_pitch_joint": 0.3309010274612706,
+            "left_wrist_yaw_joint": -0.05390167513993203,
+            "right_shoulder_pitch_joint": 14.583102745948375,
+            "right_shoulder_roll_joint": -16.44278737957172,
+            "right_shoulder_yaw_joint": 5.031707300220952,
+            "right_elbow_joint": 46.280941759372446,
+            "right_wrist_roll_joint": -0.25031333299158265,
+            "right_wrist_pitch_joint": 0.3309010274612706,
+            "right_wrist_yaw_joint": 0.05390167513993203
+          }
+        },
+        "tienkung3_29dof": {
+          "arm_joints": 14,
+          "constant_arm_joints": 14,
+          "joint_range_deg": {
+            "shoulder_pitch_l_joint": 0.0,
+            "shoulder_roll_l_joint": 0.0,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": 0.0,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 0.0,
+            "shoulder_roll_r_joint": 0.0,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": 0.0,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          },
+          "joint_first_frame_deg": {
+            "shoulder_pitch_l_joint": 11.459155082702637,
+            "shoulder_roll_l_joint": 5.729577541351318,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": -28.64788818359375,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 11.459155082702637,
+            "shoulder_roll_r_joint": -5.729577541351318,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": -28.64788818359375,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "03_low_step",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "arm_mode": "clearance",
+      "hand_elbow_support_frames": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "robots": {
+        "g1": {
+          "arm_joints": 14,
+          "constant_arm_joints": 0,
+          "joint_range_deg": {
+            "left_shoulder_pitch_joint": 66.30868967483511,
+            "left_shoulder_roll_joint": 63.38101574513424,
+            "left_shoulder_yaw_joint": 25.829426709687386,
+            "left_elbow_joint": 78.3913557882902,
+            "left_wrist_roll_joint": 68.73879499567113,
+            "left_wrist_pitch_joint": 30.181376081348922,
+            "left_wrist_yaw_joint": 20.936100749598186,
+            "right_shoulder_pitch_joint": 69.06145142451524,
+            "right_shoulder_roll_joint": 58.76580804441537,
+            "right_shoulder_yaw_joint": 29.9970408015945,
+            "right_elbow_joint": 66.14334338819039,
+            "right_wrist_roll_joint": 64.58905835028736,
+            "right_wrist_pitch_joint": 29.88989647785816,
+            "right_wrist_yaw_joint": 16.900888167204474
+          },
+          "joint_first_frame_deg": {
+            "left_shoulder_pitch_joint": 14.583102745948375,
+            "left_shoulder_roll_joint": 16.44278737957172,
+            "left_shoulder_yaw_joint": -5.031707300220952,
+            "left_elbow_joint": 46.280941759372446,
+            "left_wrist_roll_joint": 0.25031333299158265,
+            "left_wrist_pitch_joint": 0.3309010274612706,
+            "left_wrist_yaw_joint": -0.05390167513993203,
+            "right_shoulder_pitch_joint": 14.583102745948375,
+            "right_shoulder_roll_joint": -16.44278737957172,
+            "right_shoulder_yaw_joint": 5.031707300220952,
+            "right_elbow_joint": 46.280941759372446,
+            "right_wrist_roll_joint": -0.25031333299158265,
+            "right_wrist_pitch_joint": 0.3309010274612706,
+            "right_wrist_yaw_joint": 0.05390167513993203
+          }
+        },
+        "tienkung3_29dof": {
+          "arm_joints": 14,
+          "constant_arm_joints": 14,
+          "joint_range_deg": {
+            "shoulder_pitch_l_joint": 0.0,
+            "shoulder_roll_l_joint": 0.0,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": 0.0,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 0.0,
+            "shoulder_roll_r_joint": 0.0,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": 0.0,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          },
+          "joint_first_frame_deg": {
+            "shoulder_pitch_l_joint": 11.459155082702637,
+            "shoulder_roll_l_joint": 28.64788818359375,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": -28.64788818359375,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 11.459155082702637,
+            "shoulder_roll_r_joint": -28.64788818359375,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": -28.64788818359375,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "04_high_step",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "arm_mode": "clearance",
+      "hand_elbow_support_frames": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "robots": {
+        "g1": {
+          "arm_joints": 14,
+          "constant_arm_joints": 0,
+          "joint_range_deg": {
+            "left_shoulder_pitch_joint": 119.12100580444778,
+            "left_shoulder_roll_joint": 58.94015716071641,
+            "left_shoulder_yaw_joint": 67.53246320616276,
+            "left_elbow_joint": 112.98937423179808,
+            "left_wrist_roll_joint": 76.95125202325826,
+            "left_wrist_pitch_joint": 34.876679916360644,
+            "left_wrist_yaw_joint": 45.83956639746976,
+            "right_shoulder_pitch_joint": 84.7757086290986,
+            "right_shoulder_roll_joint": 58.88061904205165,
+            "right_shoulder_yaw_joint": 51.92366668368533,
+            "right_elbow_joint": 100.16861055587474,
+            "right_wrist_roll_joint": 74.21919076268344,
+            "right_wrist_pitch_joint": 36.79232514362755,
+            "right_wrist_yaw_joint": 31.087400674751112
+          },
+          "joint_first_frame_deg": {
+            "left_shoulder_pitch_joint": 14.583102745948375,
+            "left_shoulder_roll_joint": 16.44278737957172,
+            "left_shoulder_yaw_joint": -5.031707300220952,
+            "left_elbow_joint": 46.280941759372446,
+            "left_wrist_roll_joint": 0.25031333299158265,
+            "left_wrist_pitch_joint": 0.3309010274612706,
+            "left_wrist_yaw_joint": -0.05390167513993203,
+            "right_shoulder_pitch_joint": 14.583102745948375,
+            "right_shoulder_roll_joint": -16.44278737957172,
+            "right_shoulder_yaw_joint": 5.031707300220952,
+            "right_elbow_joint": 46.280941759372446,
+            "right_wrist_roll_joint": -0.25031333299158265,
+            "right_wrist_pitch_joint": 0.3309010274612706,
+            "right_wrist_yaw_joint": 0.05390167513993203
+          }
+        },
+        "tienkung3_29dof": {
+          "arm_joints": 14,
+          "constant_arm_joints": 14,
+          "joint_range_deg": {
+            "shoulder_pitch_l_joint": 0.0,
+            "shoulder_roll_l_joint": 0.0,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": 0.0,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 0.0,
+            "shoulder_roll_r_joint": 0.0,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": 0.0,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          },
+          "joint_first_frame_deg": {
+            "shoulder_pitch_l_joint": 11.459155082702637,
+            "shoulder_roll_l_joint": 28.64788818359375,
+            "shoulder_yaw_l_joint": 0.0,
+            "elbow_pitch_l_joint": -28.64788818359375,
+            "elbow_yaw_l_joint": 0.0,
+            "wrist_pitch_l_joint": 0.0,
+            "wrist_roll_l_joint": 0.0,
+            "shoulder_pitch_r_joint": 11.459155082702637,
+            "shoulder_roll_r_joint": -28.64788818359375,
+            "shoulder_yaw_r_joint": 0.0,
+            "elbow_pitch_r_joint": -28.64788818359375,
+            "elbow_yaw_r_joint": 0.0,
+            "wrist_pitch_r_joint": 0.0,
+            "wrist_roll_r_joint": 0.0
+          }
+        }
+      }
+    }
+  ]
+}

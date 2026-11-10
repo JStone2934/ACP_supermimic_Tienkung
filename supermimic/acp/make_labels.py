@@ -77,15 +77,47 @@ def geom_distance(m: mujoco.MjModel, d: mujoco.MjData, g: int, tg: int, max_dist
     sets strict_reference=True to disable that approximation in the independent oracle.
     """
     dist = mujoco.mj_geomDistance(m, d, g, tg, max_dist, fromto)
-    inconsistent_zero = abs(dist) < 1e-10 and np.linalg.norm(fromto[:3] - fromto[3:]) > 1e-5
+    def bounded_witness(witness):
+        return all(m.geom_type[k] == mujoco.mjtGeom.mjGEOM_PLANE or
+                   np.linalg.norm(point-d.geom_xpos[k]) <= m.geom_rbound[k]+1e-5
+                   for k, point in ((g, witness[:3]), (tg, witness[3:])))
+
+    def separated_along_witness(witness, gap):
+        # A negative native result is impossible when a separating plane exists.
+        # Mesh vertices and box support intervals certify this without trusting
+        # the native distance sign or using a sampled-surface approximation.
+        axis = (witness[3:]-witness[:3])/gap
+        intervals = []
+        for k in (g, tg):
+            kind = m.geom_type[k]
+            if kind == mujoco.mjtGeom.mjGEOM_PLANE:
+                return False
+            center = float(d.geom_xpos[k] @ axis)
+            local_axis = d.geom_xmat[k].reshape(3, 3).T @ axis
+            if kind == mujoco.mjtGeom.mjGEOM_MESH:
+                mesh = m.geom_dataid[k]
+                a, n = m.mesh_vertadr[mesh], m.mesh_vertnum[mesh]
+                projection = m.mesh_vert[a:a+n] @ local_axis + center
+                intervals.append((float(projection.min()), float(projection.max())))
+            else:
+                radius = (float(np.abs(local_axis) @ m.geom_size[k])
+                          if kind == mujoco.mjtGeom.mjGEOM_BOX else m.geom_rbound[k])
+                intervals.append((center-radius, center+radius))
+        return max(intervals[1][0]-intervals[0][1], intervals[0][0]-intervals[1][1]) > 1e-7
+
+    inconsistent_zero = abs(dist) < 1e-10 and (
+        np.linalg.norm(fromto[:3] - fromto[3:]) > 1e-5 or not bounded_witness(fromto))
     if inconsistent_zero:
         # MuJoCo 3.11 native GJK has an early-exit bug (upstream issue #3383).
         # Use bounded translations ONLY in this offline query; libccd is not a reliable oracle.
         original = d.geom_xpos[g].copy()
         try:
             recovered = None
+            # Keep independent valid witnesses across perturbation scales. Some
+            # thin convex features yield only one valid query per scale, even
+            # though those queries agree well inside the translation bound.
+            candidates = []
             for eps in (1e-7, 1e-6, 1e-5):
-                candidates = []
                 for axis in range(3):
                     for sign in (-1, 1):
                         shift = np.zeros(3); shift[axis] = sign * eps
@@ -93,7 +125,23 @@ def geom_distance(m: mujoco.MjModel, d: mujoco.MjData, g: int, tg: int, max_dist
                         witness = np.zeros(6)
                         value = mujoco.mj_geomDistance(m, d, g, tg, max_dist, witness)
                         gap = np.linalg.norm(witness[:3] - witness[3:])
-                        if abs(value) > 1e-10 and value < max_dist and abs(abs(value) - gap) < 1e-5:
+                        # Native CCD legitimately rounds sub-tolerance separation
+                        # to zero. Keep those consistent witnesses: rejecting all
+                        # zeros makes a near-touching pair impossible to recover.
+                        # A failed native query can also leave both witnesses
+                        # at the world origin. Coincidence alone is not evidence
+                        # of touching: each witness must belong to its geom's
+                        # enclosing sphere (planes have no finite bound).
+                        near_touch = (abs(value) <= 1e-10 and bounded_witness(witness) and
+                                      gap <= min(m.opt.ccd_tolerance, 1e-6))
+                        # Distance and its own witness separation should agree
+                        # much more closely than separate perturbed queries.
+                        # A loose 10-micron check admitted a spurious negative
+                        # distance and poisoned otherwise consistent retries.
+                        nonzero = abs(value) > 1e-10 and abs(abs(value) - gap) < 1e-7
+                        if nonzero and value < 0 and separated_along_witness(witness, gap):
+                            nonzero = False
+                        if value < max_dist and np.isfinite(witness).all() and (near_touch or nonzero):
                             witness[:3] -= shift
                             candidates.append((value, witness))
                 if len(candidates) >= 2:

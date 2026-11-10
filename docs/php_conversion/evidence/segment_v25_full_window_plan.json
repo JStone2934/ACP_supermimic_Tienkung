@@ -1,0 +1,139 @@
+{
+  "time": "2026-11-10T16:37:19.461157+08:00",
+  "scope": "All three committed root discontinuity failures peak exactly at first unfixed frame512; solve entire original clips in one1024-frame window, no resampling/cropping/threshold changes; all original variants assessed",
+  "window_frames": 1024,
+  "overlap": 48,
+  "targets": [
+    {
+      "source_key": "motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s",
+      "frames": 740,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7a573ee5d33faf37e670645b",
+      "quality_sha256": "f1b33abcc0b7b0d3eeda4611ac4264bfccd9e9279ef7532a7a1b70f6983e2bf5",
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 740,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.25570296811828,
+          "added_velocity_p95_m_s": 0.4589897357082821,
+          "added_velocity_max_m_s": 2.5268561274560652,
+          "added_acceleration_max_m_s2": 107.95590440397685
+        },
+        "worst_velocity_frame": 513,
+        "worst_acceleration_frame": 512,
+        "passed": false,
+        "rejection_reasons": [
+          "added_velocity_max_m_s",
+          "added_acceleration_max_m_s2"
+        ],
+        "source_sha256": "51ac4869ae0d2a566d79ae0683ef5a4dd2b4b60cb37fe58882b1e2528766fad1",
+        "motion_sha256": "aaaba211fafd5b7621e99a30a54d499a7d1c81c64c361095b63817e3ee57ce84",
+        "source_frames": [
+          0,
+          740
+        ]
+      },
+      "baseline_reasons": [
+        "joint_velocity",
+        "root_continuity:added_velocity_max_m_s",
+        "root_continuity:added_acceleration_max_m_s2"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.9s_step1.2s",
+      "frames": 789,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d9216fe327d359b4dbf19479",
+      "quality_sha256": "ee7bd68b00bf1acb106e5ece9638f3e90e1a70a070fa57b7a27e71863badbef9",
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 789,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.2415780262802979,
+          "added_velocity_p95_m_s": 0.4541864735205243,
+          "added_velocity_max_m_s": 1.841567489949696,
+          "added_acceleration_max_m_s2": 103.92224052837364
+        },
+        "worst_velocity_frame": 512,
+        "worst_acceleration_frame": 512,
+        "passed": false,
+        "rejection_reasons": [
+          "added_acceleration_max_m_s2"
+        ],
+        "source_sha256": "98c74c6538a1d89e095485a3819788114ed67a1457c04aa8fe3c6b02f10e5790",
+        "motion_sha256": "1dce4aff48eece4cfe025fc0b5761cf19ab024faf1d42f1b4d236accd8fde00e",
+        "source_frames": [
+          0,
+          789
+        ]
+      },
+      "baseline_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "root_continuity:added_acceleration_max_m_s2"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.9s_step1.2s",
+      "frames": 818,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "561b1d1334b5cf3b20ba5952",
+      "quality_sha256": "0f8de5d016173d0f37caab156ae2c635bc9adb0344afa02d248f571b4c53476f",
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 818,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.22541888801470913,
+          "added_velocity_p95_m_s": 0.43310210798495696,
+          "added_velocity_max_m_s": 1.791735689377366,
+          "added_acceleration_max_m_s2": 101.25858628373895
+        },
+        "worst_velocity_frame": 512,
+        "worst_acceleration_frame": 512,
+        "passed": false,
+        "rejection_reasons": [
+          "added_acceleration_max_m_s2"
+        ],
+        "source_sha256": "17b3c1f768ebd0d650d895c565d38015dd576224bebcbc225b5526c02ffe5386",
+        "motion_sha256": "fd398871ed0540b22ba4ad01857872642b1332bae8c3aff50ffc61fc74fb0369",
+        "source_frames": [
+          0,
+          818
+        ]
+      },
+      "baseline_reasons": [
+        "root_continuity:added_acceleration_max_m_s2"
+      ]
+    }
+  ],
+  "sources": 3,
+  "frames": 2347,
+  "slots": 30
+}

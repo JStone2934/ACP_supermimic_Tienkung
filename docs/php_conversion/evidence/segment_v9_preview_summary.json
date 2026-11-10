@@ -1,0 +1,51 @@
+{
+  "verified": true,
+  "frames": 1397,
+  "accepted_variants": 40,
+  "clips": [
+    {
+      "name": "01_straight",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "torso": {
+        "angular_rmse_deg": 0.36907378826169746,
+        "angular_p95_deg": 0.8606238746660598,
+        "angular_max_deg": 1.7561209990136772,
+        "gated": true
+      }
+    },
+    {
+      "name": "02_turn",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "frames": 260,
+      "torso": {
+        "angular_rmse_deg": 0.1515723950026476,
+        "angular_p95_deg": 0.39125739965083917,
+        "angular_max_deg": 0.3945180243143867,
+        "gated": true
+      }
+    },
+    {
+      "name": "03_low_step",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "frames": 413,
+      "torso": {
+        "angular_rmse_deg": 0.16763959814615814,
+        "angular_p95_deg": 0.4366021716601091,
+        "angular_max_deg": 0.44058915460464015,
+        "gated": true
+      }
+    },
+    {
+      "name": "04_high_step",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "frames": 455,
+      "torso": {
+        "angular_rmse_deg": 0.23142842187026919,
+        "angular_p95_deg": 0.5817866643813785,
+        "angular_max_deg": 0.5946810495082234,
+        "gated": true
+      }
+    }
+  ]
+}

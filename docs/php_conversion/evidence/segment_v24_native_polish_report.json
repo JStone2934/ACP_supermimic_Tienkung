@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v24_native_polish_pilot_20261110",
+  "identity": "7485f9173a088b656bf672490273471f73f320aac694e22ff4fc933e795e0ba2",
+  "verified": true,
+  "sources": 12,
+  "unique_source_files": 12,
+  "frames": 8253,
+  "checked_variants": 120,
+  "accepted_variants": 119,
+  "statuses": {
+    "accepted": 12
+  },
+  "checked_output_hashes": 108,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 164.82,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

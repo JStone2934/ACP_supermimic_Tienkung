@@ -1,0 +1,5082 @@
+{
+  "all_original_variants_pass": false,
+  "expected_sources": 296,
+  "expected_variants": 2960,
+  "accepted_variants": 522,
+  "missing_variants": 2438,
+  "fully_accepted_sources": 41,
+  "fidelity_policy": {
+    "version": "arm-fidelity-v1",
+    "reference": "segment-directions-v1",
+    "rmse_max_m": 0.05,
+    "p95_max_m": 0.1,
+    "dynamic_rms_min_m": 0.025,
+    "amplitude_ratio_min": 0.7,
+    "amplitude_ratio_max": 1.3,
+    "correlation_min": 0.85,
+    "max_lag_frames": 2,
+    "lag_search_frames": 10,
+    "min_phase_frames": 8,
+    "fps": 50,
+    "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+  },
+  "posture_policy": {
+    "version": "torso-attitude-v1",
+    "reference": "neutral-calibrated-source-orientation",
+    "angular_rmse_max_deg": 3.0,
+    "angular_p95_max_deg": 5.0,
+    "angular_max_deg": 10.0,
+    "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+    "fps": 50
+  },
+  "sources": [
+    {
+      "source_key": "motions-high-climb-76/run_forward_0.6s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_1.0s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_1.0s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_1.2s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_1.5s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_forward_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_0.6s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.0s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.0s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.2s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.5s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_0.6s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.2s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.5s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_0.6s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.0s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.0s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.5s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_1.0s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_1.0s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_1.2s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_1.5s_step0.8s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.6s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.6s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-high-step/run_forward_1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_0.6s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_0.6s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_0.9s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_0.9s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_0.9s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_45_1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_0.6s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_0.6s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_0.9s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_0.9s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_0.9s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_left_90_1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_0.6s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_0.6s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_0.9s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_0.9s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_0.9s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_45_1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_0.6s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_0.6s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_0.6s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_0.9s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_0.9s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_0.9s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_right_90_1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0001_stand_2.0s_run_left_45_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0002_stand_2.0s_forward_1.2s_forward_1.6s_left_45_1.0s_right_45_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0004_stand_2.0s_run_right_45_2.2s_right_45_0.8s_run_right_45_1.2s_run_left_45_1.2s_right_45_1.3s_run_left_90_1.9s_run_right_90_2.9s_right_90_2.8s_forward_2.0s_left_90_0.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0005_stand_2.0s_run_left_45_1.2s_run_forward_1.5s_right_90_2.6s_left_90_1.2s_right_45_0.9s_run_forward_1.2s_left_45_2.4s_left_45_0.5s_run_left_45_2.3s_left_45_2.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0008_stand_2.0s_right_90_1.3s_forward_2.3s_run_left_90_2.7s_run_right_45_1.2s_left_45_2.4s_run_left_45_2.4s_left_45_1.8s_run_right_45_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0010_stand_2.0s_left_45_1.2s_forward_2.8s_right_45_2.1s_right_90_2.5s_left_45_2.7s_right_45_2.5s_left_45_1.3s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0014_stand_2.0s_forward_1.3s_right_45_0.6s_forward_2.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0015_stand_2.0s_run_forward_1.8s_run_left_45_2.1s_right_90_2.2s_left_45_2.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0016_stand_2.0s_right_45_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": [
+        4,
+        5
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0018_stand_2.0s_run_right_45_1.2s_run_right_45_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0019_stand_2.0s_right_90_0.8s_run_right_90_1.2s_run_left_45_1.9s_run_right_90_2.1s_run_left_45_2.3s_run_forward_1.3s_right_45_2.1s_left_90_2.1s_run_right_45_1.2s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0020_stand_2.0s_left_45_2.9s_forward_2.7s_left_45_2.5s_left_90_1.9s_left_90_1.0s_run_left_45_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0022_stand_2.0s_left_45_1.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": [
+        2,
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0024_stand_2.0s_run_right_45_2.7s_left_90_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0025_stand_2.0s_run_right_45_1.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0028_stand_2.0s_left_90_0.6s_run_right_45_1.9s_run_right_45_2.3s_forward_1.8s_run_right_90_2.5s_run_forward_1.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": [
+        4
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0031_stand_2.0s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0032_stand_2.0s_left_45_2.6s_run_right_45_1.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0033_stand_2.0s_left_90_1.7s_left_90_0.9s_run_left_90_1.5s_run_right_45_2.1s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0034_stand_2.0s_left_90_1.4s_right_90_1.8s_run_right_45_2.1s_run_right_90_1.2s_run_left_45_1.2s_right_45_2.9s_run_right_45_1.5s_right_45_1.6s_right_90_2.9s_run_left_45_2.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0036_stand_2.0s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0037_stand_2.0s_run_right_45_1.2s_run_left_90_1.2s_left_45_2.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0038_stand_2.0s_right_45_2.5s_right_45_0.8s_left_45_2.1s_run_forward_2.3s_forward_1.2s_run_right_90_2.4s_run_right_45_3.0s_right_45_1.4s_run_right_90_1.4s_right_45_2.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0039_stand_2.0s_forward_2.4s_left_45_0.8s_forward_1.8s_right_45_1.3s_left_45_1.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0040_stand_2.0s_forward_2.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9
+      ],
+      "missing_variants": [
+        4,
+        8
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0044_stand_2.0s_right_45_0.7s_left_45_1.4s_left_45_2.5s_run_left_45_3.0s_run_forward_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0046_stand_2.0s_forward_0.8s_run_left_45_2.4s_run_forward_2.9s_left_45_1.2s_right_45_1.1s_right_45_0.5s_right_45_0.6s_run_right_45_1.8s_run_left_90_1.2s_left_90_2.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "missing_variants": [
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0048_stand_2.0s_forward_2.9s_run_right_45_2.2s_forward_1.3s_left_45_2.2s_right_45_2.8s_left_90_2.9s_run_left_45_2.0s_run_left_90_2.8s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0050_stand_2.0s_run_left_45_2.6s_run_right_45_1.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        2,
+        4,
+        7,
+        8
+      ],
+      "missing_variants": [
+        1,
+        3,
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0052_stand_2.0s_run_forward_2.4s_forward_2.3s_forward_0.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0053_stand_2.0s_run_right_90_1.4s_run_left_90_1.5s_run_right_45_2.8s_run_right_45_1.8s_left_90_1.5s_forward_2.7s_run_right_45_1.2s_left_45_1.7s_left_90_1.6s_left_45_1.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "missing_variants": [
+        7
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0054_stand_2.0s_run_right_90_2.1s_left_45_0.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0055_stand_2.0s_right_45_0.8s_run_left_45_1.2s_left_45_1.0s_run_right_90_2.7s_right_45_2.2s_run_right_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0056_stand_2.0s_run_right_90_1.2s_forward_0.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0057_stand_2.0s_run_right_90_1.2s_left_45_1.0s_run_left_45_1.8s_run_right_90_1.2s_run_right_90_2.1s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0058_stand_2.0s_run_right_45_2.7s_run_forward_1.2s_right_90_2.5s_right_45_1.0s_run_forward_1.4s_right_45_2.0s_right_90_1.7s_run_left_45_1.2s_left_90_2.3s_right_90_1.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "missing_variants": [
+        7
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0061_stand_2.0s_run_right_45_1.2s_right_90_2.1s_left_90_1.4s_run_forward_2.0s_left_45_0.8s_right_45_1.1s_run_forward_1.2s_right_90_0.9s_left_90_0.7s_run_left_90_1.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "missing_variants": [
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0064_stand_2.0s_left_90_1.3s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0065_stand_2.0s_right_90_0.7s_right_90_1.3s_run_right_90_1.2s_right_45_2.4s_run_forward_1.7s_right_45_1.4s_right_90_2.6s_run_right_45_1.2s_run_left_90_2.8s_right_90_0.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": [
+        1
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0066_stand_2.0s_forward_1.9s_left_45_0.8s_run_left_45_1.2s_right_90_0.9s_forward_2.2s_forward_1.4s_run_forward_1.5s_left_90_1.6s_right_90_1.7s_left_90_2.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0067_stand_2.0s_run_left_90_1.2s_run_right_45_1.5s_run_left_45_2.8s_run_right_45_1.2s_forward_2.1s_left_45_0.8s_left_45_2.1s_left_90_2.7s_run_right_45_1.2s_forward_1.1s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0068_stand_2.0s_run_forward_1.2s_run_right_90_2.4s_run_right_45_1.4s_left_90_0.8s_run_left_45_1.2s_left_90_2.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0069_stand_2.0s_forward_1.1s_right_90_2.3s_run_forward_2.2s_forward_1.1s_run_forward_1.2s_right_45_2.0s_right_45_1.7s_left_45_0.9s_run_forward_1.8s_run_right_45_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        8
+      ],
+      "missing_variants": [
+        2,
+        4,
+        7,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0070_stand_2.0s_run_left_45_2.8s_run_right_90_2.2s_left_90_2.3s_right_45_1.9s_left_90_1.6s_left_90_2.8s_run_left_45_1.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0071_stand_2.0s_forward_3.0s_left_90_0.8s_run_forward_2.7s_run_left_45_2.0s_right_45_0.6s_right_90_2.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0072_stand_2.0s_left_90_1.3s_left_45_1.8s_run_left_45_1.4s_forward_2.3s_run_left_90_1.2s_right_45_0.9s_right_45_1.7s_run_left_90_2.8s_run_forward_2.0s_right_90_0.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0073_stand_2.0s_right_45_0.9s_right_45_0.9s_forward_0.7s_right_45_1.8s_run_left_45_1.2s_run_forward_1.2s_right_90_1.0s_left_45_0.6s_right_90_1.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0074_stand_2.0s_run_forward_2.4s_run_right_45_1.8s_run_left_45_1.5s_run_right_45_1.2s_run_forward_2.7s_forward_1.4s_left_45_2.1s_right_90_0.6s_left_90_2.3s_run_right_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0076_stand_2.0s_left_45_2.5s_run_right_90_2.1s_run_left_45_1.2s_run_forward_2.3s_run_forward_2.6s_run_left_45_2.2s_run_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0078_stand_2.0s_run_left_45_1.2s_run_right_90_1.6s_right_45_2.5s_right_90_1.1s_forward_2.0s_run_left_45_2.1s_forward_1.9s_run_right_45_1.2s_run_right_45_2.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0079_stand_2.0s_right_45_2.7s_run_forward_2.7s_run_left_45_1.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0080_stand_2.0s_left_45_1.2s_run_forward_2.1s_run_right_90_1.2s_run_forward_3.0s_left_45_0.9s_right_90_0.5s_run_right_45_1.2s_right_90_1.2s_run_left_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0082_stand_2.0s_run_left_45_1.2s_left_90_0.7s_run_right_90_1.2s_run_right_90_1.2s_right_90_2.3s_run_left_45_1.9s_run_right_45_2.2s_forward_2.3s_right_90_0.6s_right_90_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0085_stand_2.0s_run_right_45_2.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0086_stand_2.0s_run_left_90_2.9s_left_90_1.0s_left_45_2.7s_right_90_2.5s_run_right_45_2.2s_run_right_90_1.2s_run_forward_1.2s_left_45_2.9s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0088_stand_2.0s_right_45_2.2s_left_90_2.8s_forward_2.9s_forward_2.7s_right_45_1.3s_run_left_90_1.2s_run_right_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "missing_variants": [
+        3,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0090_stand_2.0s_run_left_45_2.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": [
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0092_stand_2.0s_forward_1.4s_run_right_45_1.2s_right_45_0.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0094_stand_2.0s_run_right_45_1.5s_run_right_45_2.9s_run_right_90_2.0s_run_forward_3.0s_run_left_90_2.9s_run_right_90_2.0s_run_right_45_1.2s_run_left_45_1.2s_run_right_45_2.4s_run_left_90_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "missing_variants": [
+        4,
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0096_stand_2.0s_right_90_2.7s_run_left_90_2.7s_left_45_2.1s_right_90_0.7s_right_45_1.4s_right_90_2.3s_run_forward_1.2s_run_forward_2.2s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0098_stand_2.0s_run_left_45_1.2s_run_forward_2.7s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.9s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.9s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.2s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.2s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.6s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.6s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.9s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.9s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.2s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.2s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk1.2s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk1.2s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk1.5s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk1.5s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.6s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.6s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.9s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.9s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.2s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.2s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step0.7s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step1.2s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk0.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk0.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk0.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk0.8s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk0.8s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk0.8s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "missing_variants": []
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk0.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk0.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk0.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk0.8s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk0.8s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk0.8s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_45_walk1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk0.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk0.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk0.8s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk0.8s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/left_90_walk1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.8s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.8s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk0.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk0.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk0.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk0.8s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk0.8s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk0.8s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk1.2s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk1.2s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk1.2s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk1.5s_step0.5s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk1.5s_step0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_90_walk1.5s_step1.0s",
+      "expected_variants": 10,
+      "accepted_variants": [],
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "index": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v11_committed_coverage_20261109_2025.index.json",
+  "snapshot_of_running_parents": true
+}

@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "scope": "CUDA graph and parameterization smoke only, not full-motion quality acceptance",
+  "frames": 24,
+  "metrics": [
+    {
+      "case": "free",
+      "torso_matrix_max_error": 1.0239578773774127e-07,
+      "max_joint_speed_ratio": 0.550752733295624
+    },
+    {
+      "case": "fixed_prefix",
+      "torso_matrix_max_error": 1.1263145027751165e-07,
+      "max_joint_speed_ratio": 0.550752733295624
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "run": "php_segment_v11_full_20261109",
+    "pid": 2840841,
+    "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v11/resume_20261110_1350.log",
+    "command": [
+      "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+      "-m",
+      "tools.convert_php",
+      "--source",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour",
+      "--contacts",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour_contacts",
+      "--out",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "--selections",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v11_full_selections.json",
+      "--devices",
+      "0,1",
+      "--workers-per-gpu",
+      "1",
+      "--cpu-workers",
+      "2",
+      "--resume"
+    ]
+  },
+  {
+    "run": "php_segment_v18_terrain_retry_20261109",
+    "pid": 2840842,
+    "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/terrain_retry_v18/resume_20261110_1350.log",
+    "command": [
+      "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+      "-m",
+      "tools.convert_php",
+      "--source",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour",
+      "--contacts",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour_contacts",
+      "--out",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_terrain_retry_20261109",
+      "--selections",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v18_terrain_retry_selections.json",
+      "--devices",
+      "0",
+      "--workers-per-gpu",
+      "1",
+      "--cpu-workers",
+      "1",
+      "--resume"
+    ]
+  },
+  {
+    "run": "php_segment_v19_transition_pilot_20261109",
+    "pid": 2840843,
+    "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v19/resume_20261110_1350.log",
+    "command": [
+      "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+      "-m",
+      "tools.convert_php",
+      "--source",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour",
+      "--contacts",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour_contacts",
+      "--out",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v19_transition_pilot_20261109",
+      "--selections",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v19_transition_pilot_selections.json",
+      "--devices",
+      "1",
+      "--workers-per-gpu",
+      "1",
+      "--cpu-workers",
+      "1",
+      "--collision-rounds",
+      "12",
+      "--resume"
+    ]
+  },
+  {
+    "run": "php_segment_v20_root_pilot_20261109",
+    "pid": 2840844,
+    "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v20/resume_20261110_1350.log",
+    "command": [
+      "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+      "-m",
+      "tools.convert_php",
+      "--out",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109",
+      "--selections",
+      "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v20_root_pilot_selections.json",
+      "--devices",
+      "0",
+      "--workers-per-gpu",
+      "1",
+      "--cpu-workers",
+      "1",
+      "--collision-rounds",
+      "12",
+      "--resume"
+    ]
+  }
+]

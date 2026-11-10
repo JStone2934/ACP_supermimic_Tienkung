@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v26_native_velocity_pilot_20261110",
+  "identity": "36c566c3fcbf7015cc570d77ca51914bbf2e81186684b6c3d0c8e55ea491a8c5",
+  "verified": true,
+  "sources": 20,
+  "unique_source_files": 20,
+  "frames": 14114,
+  "checked_variants": 200,
+  "accepted_variants": 188,
+  "statuses": {
+    "accepted": 20
+  },
+  "checked_output_hashes": 180,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 281.88,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

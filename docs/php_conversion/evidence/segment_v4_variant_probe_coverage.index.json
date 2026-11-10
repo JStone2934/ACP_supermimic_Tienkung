@@ -1,0 +1,247 @@
+{
+  "kind": "accepted_variant_asset_index",
+  "directly_loadable_by_motionlib": false,
+  "preference": "first parent with a passing variant; never replace an earlier passing variant",
+  "parents": [
+    {
+      "root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "plan_sha256": "1b023c0b0c9bb1a9b5d2a21f3ae1ab427e8f37e93794444b1a26bfed0ecb7c83",
+      "manifest_sha256": "1da1997aa0aed173f26bb3df2d81c4acb526bb7e78fc49fc9e9bf8c16ba5afc1",
+      "status": "completed"
+    }
+  ],
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "collision_policy": {
+    "version": "serial-ankle-adjacency-v1",
+    "excluded_pairs": [
+      [
+        "ankle_roll_l_link",
+        "knee_pitch_l_link"
+      ],
+      [
+        "ankle_roll_r_link",
+        "knee_pitch_r_link"
+      ]
+    ],
+    "reason": "Shank and foot are adjacent physical assemblies across the two serial ankle hinges; the intervening ankle_pitch link is the universal-joint bearing. Original convex hulls overlap at this articulation. Exclude only these two self pairs, retain all terrain collisions and report raw penetration separately. No collision mesh is changed."
+  },
+  "fidelity_policy": {
+    "version": "arm-fidelity-v1",
+    "reference": "segment-directions-v1",
+    "rmse_max_m": 0.05,
+    "p95_max_m": 0.1,
+    "dynamic_rms_min_m": 0.025,
+    "amplitude_ratio_min": 0.7,
+    "amplitude_ratio_max": 1.3,
+    "correlation_min": 0.85,
+    "max_lag_frames": 2,
+    "lag_search_frames": 10,
+    "min_phase_frames": 8,
+    "fps": 50,
+    "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+  },
+  "source_identities": {
+    "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s": {
+      "source_hash": "b0394f84eca3ce86dd9fe7f262eb0a0fae17899bc717e560aea41c5140624ae5",
+      "terrain_hash": "1e69ce37100227bb62bbb8b7a97327664c831ff5102bb40671bd0ecb79714426",
+      "labels_hash": "e450718d6ba44bb22d8d3c4f7286fad8dc862df53f8bb6acd1c18e374773c77c",
+      "source_frames": [
+        0,
+        1243
+      ],
+      "variants": 10
+    }
+  },
+  "accepted_sources": 1,
+  "accepted_variants": 10,
+  "entries": [
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 0,
+      "export_slot": 0,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 1,
+      "export_slot": 1,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 2,
+      "export_slot": 2,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 3,
+      "export_slot": 3,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 4,
+      "export_slot": 4,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 5,
+      "export_slot": 5,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_06",
+      "source_variant": 6,
+      "export_slot": 5,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "6e934c074dd9cdaf430432a8",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_06_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_06_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_06.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/6e934c074dd9cdaf430432a8.json",
+      "motion_sha256": "b7ccaa745cf0427a8a4cd5c9e5b35269302d1cf01cfa0001c5bc437c1f2a3da6",
+      "labels_sha256": "891703243017bf8fb5cb3ceab695a674bcf85d6c6788967ff136ab6c64fd0257",
+      "quality_sha256": "c7aa69f8860a3a6fb22efdf986a4c321bbfdd8f605da9e83e66cc72369afb683"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 7,
+      "export_slot": 6,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 8,
+      "export_slot": 7,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01",
+      "source_variant": 9,
+      "export_slot": 8,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109",
+      "task_id": "f4a1b4eeff381090299a5121",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/accepted_contacts/motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s__terrain_01.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109/quality/f4a1b4eeff381090299a5121.json",
+      "motion_sha256": "63cd26cc254c245c93a09eeb6ef5d013dea7e9885f07cb32edc26f81e94522c1",
+      "labels_sha256": "e27c846e96aa43b8fa9652ce711da5bc03be897aac54a841761b4d283e156640",
+      "quality_sha256": "93209d30d70dba6ac785a9a00cddeb570eac16086fca7bec7065708cbd85a16c"
+    }
+  ],
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

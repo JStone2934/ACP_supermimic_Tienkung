@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "scope": "Three complete same-source single-window solves versus original512-window failures; all30 original variants now pass",
+  "plan_sha256": "9677158def1b907b1fd2be9a17867d316ff1dccee95297deb7121f97b2e78afa",
+  "audit_sha256": "b77579704b43ceb333dcd803624a54141562d1a7d34faf1806b687d16e0c7a9b",
+  "new_original_slots": 30,
+  "lost_original_slots": 0,
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s",
+      "frames": 740,
+      "accepted_before": [],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_original_slots": 10,
+      "root_metrics_before": {
+        "added_velocity_rmse_m_s": 0.25570296811828,
+        "added_velocity_p95_m_s": 0.4589897357082821,
+        "added_velocity_max_m_s": 2.5268561274560652,
+        "added_acceleration_max_m_s2": 107.95590440397685
+      },
+      "root_metrics_after": {
+        "added_velocity_rmse_m_s": 0.2404534072408274,
+        "added_velocity_p95_m_s": 0.5036862071031359,
+        "added_velocity_max_m_s": 1.343411422851946,
+        "added_acceleration_max_m_s2": 54.241556638506076
+      },
+      "joint_velocity_ratio_before": 1.1174052878357459,
+      "joint_velocity_ratio_after": 0.8923515963950672,
+      "quality_sha256": "ab0f8f7c0c2da310fb7a48a30eb0cfaea54d94bdcfbe163dbd7234cfa26f71a2"
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.9s_step1.2s",
+      "frames": 789,
+      "accepted_before": [],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_original_slots": 10,
+      "root_metrics_before": {
+        "added_velocity_rmse_m_s": 0.2415780262802979,
+        "added_velocity_p95_m_s": 0.4541864735205243,
+        "added_velocity_max_m_s": 1.841567489949696,
+        "added_acceleration_max_m_s2": 103.92224052837364
+      },
+      "root_metrics_after": {
+        "added_velocity_rmse_m_s": 0.2994253960901225,
+        "added_velocity_p95_m_s": 0.450365261372972,
+        "added_velocity_max_m_s": 2.115825626754984,
+        "added_acceleration_max_m_s2": 57.435069953793736
+      },
+      "joint_velocity_ratio_before": 0.8447139596736992,
+      "joint_velocity_ratio_after": 0.8447954034204441,
+      "quality_sha256": "f9c7dae42ac1b504d1689d5fc9fa93b04883b7a59a07c453bca031c8a6655be5"
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.9s_step1.2s",
+      "frames": 818,
+      "accepted_before": [],
+      "accepted_after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_original_slots": 10,
+      "root_metrics_before": {
+        "added_velocity_rmse_m_s": 0.22541888801470913,
+        "added_velocity_p95_m_s": 0.43310210798495696,
+        "added_velocity_max_m_s": 1.791735689377366,
+        "added_acceleration_max_m_s2": 101.25858628373895
+      },
+      "root_metrics_after": {
+        "added_velocity_rmse_m_s": 0.24459663896826708,
+        "added_velocity_p95_m_s": 0.44784626041445874,
+        "added_velocity_max_m_s": 1.734174989379644,
+        "added_acceleration_max_m_s2": 34.78003281192912
+      },
+      "joint_velocity_ratio_before": 0.8113980679490587,
+      "joint_velocity_ratio_after": 0.8102873509195971,
+      "quality_sha256": "ce8314250ef3ce35379758b96ff8c0038dd99d791a2315be4602fff94f6278cf"
+    }
+  ]
+}

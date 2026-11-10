@@ -10,9 +10,15 @@ import mujoco
 import numpy as np
 
 from supermimic.acp.make_labels import PER_VARIANT, geom_distance, variant_labels
+from supermimic.acp.source_contacts import SOURCE_CONTACT_POLICY, verify_source_receipts, source_validation_required
 from supermimic.acp.motion import load_php_npz
+from supermimic.acp.root_continuity import POLICY as ROOT_POLICY, required as root_required, score_root_files
 from supermimic.acp.php_conversion import COLLISION_POLICY, STRUCTURAL_PAIRS, atomic_json, atomic_npz, digest
 from supermimic.acp.robots import CONTACT_NAMES, get_robot, sha256
+from supermimic.acp.retarget_fidelity import (POLICY as FIDELITY_POLICY, POSTURE_POLICY, free_arm_mask,
+                                            native_arm_trajectories, score_arm_trajectories,
+                                            native_posture, posture_required)
+from supermimic.acp.contact_intent import POLICY as CONTACT_INTENT_POLICY, PATCH_POLICY
 from supermimic.acp.terrain import load_terrain, terrain_path
 from tools.check_php_pilot import longest, scene
 
@@ -117,18 +123,57 @@ def evaluate_task(task, root):
     robot_metadata = robot.metadata()
     with np.load(intent_path) as z:
         intent = {k: z[k] for k in ('contact', 'offsets', 'normals', 'anchors', 'surfaces')}
+        intent_policy = json.loads(str(z['contact_intent_policy'].item())) if 'contact_intent_policy' in z else None
+        patch_policy = json.loads(str(z['contact_patch_policy'].item())) if 'contact_patch_policy' in z else None
+        source_validation_policy = json.loads(str(z['source_contact_validation_policy'].item())) if 'source_contact_validation_policy' in z else None
+        source_receipts = json.loads(str(z['source_contact_validation'].item())) if 'source_contact_validation' in z else None
+    with np.load(path) as z:
+        version = str(z['data_version'].item()) if 'data_version' in z else ''
+        fidelity_required = version.startswith('php-segment-')
+    if (version in ('php-segment-v5', 'php-segment-v6', 'php-segment-v7', 'php-segment-v8') or posture_required(version)) and intent_policy != CONTACT_INTENT_POLICY:
+        raise ValueError('missing or changed contact intent classification policy')
+    if (version in ('php-segment-v6', 'php-segment-v7', 'php-segment-v8') or posture_required(version)) and patch_policy != PATCH_POLICY:
+        raise ValueError('missing or changed contact patch policy')
+    if source_validation_required(version):
+        if source_validation_policy != SOURCE_CONTACT_POLICY:
+            raise ValueError('missing or changed source contact validation policy')
+        verify_source_receipts(record, source_receipts)
+    trajectories = native_arm_trajectories(record, path) if fidelity_required else None
+    posture = native_posture(record, path) if posture_required(version) else None
+    root_continuity = score_root_files(record, path) if root_required(version) else None
     reports, labels = {}, {}
     terrains = load_terrain(str(path))
     for v in record['unique_variants']:
         reports[v] = assess_variant(robot, path, intent, v)
+        if fidelity_required:
+            fidelity = score_arm_trajectories(*trajectories, free_arm_mask(intent['contact'][v]))
+            reports[v].update(fidelity=fidelity, fidelity_pass=fidelity['passed'],
+                              quality_pass=reports[v]['geometry_pass'] and fidelity['passed'],
+                              geometry_rejection_reasons=list(reports[v]['rejection_reasons']))
+            reports[v]['rejection_reasons'] += ['fidelity:'+r for r in fidelity['rejection_reasons']]
+        if posture is not None:
+            reports[v].update(posture=posture, posture_pass=posture['passed'],
+                              quality_pass=reports[v]['quality_pass'] and posture['passed'])
+            reports[v]['rejection_reasons'] += ['posture:'+r for r in posture['rejection_reasons']]
+        if root_continuity is not None:
+            reports[v].update(root_continuity_pass=root_continuity['passed'],
+                              quality_pass=reports[v]['quality_pass'] and root_continuity['passed'])
+            reports[v]['rejection_reasons'] += ['root_continuity:'+r for r in root_continuity['rejection_reasons']]
         labels[v] = variant_labels((str(path), terrains[v], .005, .1, robot))
     variants = [dict(reports[alias], variant=v, computed_variant=alias)
                 for v, alias in enumerate(record['variant_aliases'])]
-    accepted = [v for v, report in enumerate(variants) if report['geometry_pass']]
+    accepted = [v for v, report in enumerate(variants) if report.get('quality_pass', report['geometry_pass'])]
     report_path = root/'quality'/(task['id']+'.json')
     report = dict(task_id=task['id'], source=record, motion_hash=sha256(path), terrain_hash=sha256(terrain_path(str(path))),
                   intent_hash=sha256(intent_path), robot_metadata=robot_metadata,
-                  collision_policy=COLLISION_POLICY, variants=variants, accepted_variants=accepted)
+                  collision_policy=COLLISION_POLICY, variants=variants, accepted_variants=accepted,
+                  fidelity_policy=FIDELITY_POLICY if fidelity_required else None,
+                  posture_policy=POSTURE_POLICY if posture is not None else None,
+                  contact_intent_policy=intent_policy, contact_patch_policy=patch_policy,
+                  source_contact_validation_policy=source_validation_policy,
+                  source_contact_validation_verified=source_validation_required(version),
+                  root_continuity_policy=ROOT_POLICY if root_continuity is not None else None,
+                  root_continuity=root_continuity)
     atomic_json(report_path, report)
     rows = [labels[alias] for alias in record['variant_aliases']]
     arrays = {k: np.stack([r[k] for r in rows]) for k in PER_VARIANT}
@@ -138,7 +183,7 @@ def evaluate_task(task, root):
                   link_names=np.array([robot.contact_bodies[n][0] for n in CONTACT_NAMES]),
                   robot_metadata=json.dumps(robot_metadata), motion_hash=sha256(path),
                   terrain_hash=sha256(terrain_path(str(path))), quality_hash=sha256(report_path),
-                  quality_pass=np.array([r['geometry_pass'] for r in variants]), source_motion=record['key']+'.npz')
+                  quality_pass=np.array([r.get('quality_pass', r['geometry_pass']) for r in variants]), source_motion=record['key']+'.npz')
     label_path = root/'candidate_contacts'/(record['key']+'.npz')
     atomic_npz(label_path, **arrays)
     exported = {}

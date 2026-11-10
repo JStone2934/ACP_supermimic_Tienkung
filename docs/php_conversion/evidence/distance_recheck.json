@@ -1,0 +1,12 @@
+{
+  "source": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+  "original_task_id": "587df43786a93293754771d2",
+  "assessment_directory": "data/tienkung3_29dof/motions/php_full_v2_20261109_distance_recheck",
+  "motion_changed": false,
+  "status": "rejected",
+  "variants_checked": 10,
+  "accepted_variants": [],
+  "assessment_seconds": 43.38894829014316,
+  "fix": "Accept consistent native zero distances within min(ccd_tolerance, 1 micrometre) in bounded translation retries; no geometry or acceptance threshold changes.",
+  "verified_candidate_and_label_hashes": true
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "Necessary distance bound on fixed target anchor pairs, without joint limits; not proof of whole-motion infeasibility or acceptance",
+  "method": "Triangle/reverse triangle bounds for the two serial ankle hinges; target morphology and stored material contact offsets",
+  "rows": [
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "side": "l",
+      "simultaneous_frames": 11,
+      "frames_over_2cm": 0,
+      "max_anchor_distance_gap_m": 0.0199530794940323,
+      "bad_frames": [],
+      "worst_frame": 488
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "side": "r",
+      "simultaneous_frames": 7,
+      "frames_over_2cm": 0,
+      "max_anchor_distance_gap_m": 0.0,
+      "bad_frames": [],
+      "worst_frame": 292
+    }
+  ]
+}

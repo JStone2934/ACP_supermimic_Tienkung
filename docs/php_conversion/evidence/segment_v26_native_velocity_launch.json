@@ -1,0 +1,34 @@
+{
+  "time": "2026-11-10T16:31:13.924622+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v26/frozen_runner",
+  "job_id": "f5a4788c96313f7b4a2b",
+  "unit": "php-job@f5a4788c96313f7b4a2b.service",
+  "pid": 3488271,
+  "resources": {
+    "gpu_workers": 0,
+    "cpu_workers": 4,
+    "reserve_gib": 26
+  },
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--polish-seeds",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v26_native_velocity_seeds.json",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+    "--workers-per-gpu",
+    "0",
+    "--cpu-workers",
+    "4",
+    "--resume"
+  ],
+  "sources": 20,
+  "frames": 14114,
+  "slots": 200,
+  "code_files": 50,
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v26/pilot.log",
+  "promoted": false,
+  "scope": "Fixed root and velocity-bounded native repair; all original variants and quality criteria unchanged; managed shared memory queue"
+}

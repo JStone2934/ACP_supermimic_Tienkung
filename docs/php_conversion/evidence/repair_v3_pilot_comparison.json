@@ -1,0 +1,440 @@
+{
+  "base": "data/tienkung3_29dof/motions/php_full_v2_20261109",
+  "new": ".cache/php_conversion/repair_v3/pilot",
+  "categories": {
+    "motions-locomotion": {
+      "sources": 4,
+      "before_sources": 1,
+      "after_sources": 4,
+      "before_variants": 10,
+      "after_variants": 38,
+      "gained": 28,
+      "lost": 0
+    },
+    "motions-high-step": {
+      "sources": 3,
+      "before_sources": 1,
+      "after_sources": 3,
+      "before_variants": 10,
+      "after_variants": 30,
+      "gained": 20,
+      "lost": 0
+    },
+    "motions-low-step": {
+      "sources": 3,
+      "before_sources": 1,
+      "after_sources": 3,
+      "before_variants": 10,
+      "after_variants": 28,
+      "gained": 18,
+      "lost": 0
+    },
+    "motions-low-climb-76": {
+      "sources": 1,
+      "before_sources": false,
+      "after_sources": false,
+      "before_variants": 0,
+      "after_variants": 0,
+      "gained": 0,
+      "lost": 0
+    },
+    "motions-high-climb-76": {
+      "sources": 1,
+      "before_sources": false,
+      "after_sources": false,
+      "before_variants": 0,
+      "after_variants": 0,
+      "gained": 0,
+      "lost": 0
+    }
+  },
+  "total": {
+    "sources": 12,
+    "before_sources": 3,
+    "after_sources": 10,
+    "before_variants": 30,
+    "after_variants": 96,
+    "gained": 66
+  },
+  "details": [
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "before": [],
+      "after": [],
+      "gained": [],
+      "lost": [],
+      "before_reasons": {
+        "right_foot:support_slip": 10,
+        "left_knee:support_distance": 10,
+        "left_knee:support_slip": 10,
+        "left_hand:support_slip": 10
+      },
+      "after_reasons": {
+        "terrain_penetration": 10,
+        "left_foot:support_slip": 10,
+        "right_foot:support_slip": 10,
+        "left_knee:support_distance": 10,
+        "left_knee:support_slip": 10,
+        "left_hand:support_distance": 10,
+        "left_hand:support_slip": 10
+      }
+    },
+    {
+      "key": "motions-high-step/run_forward_0.6s_step0s",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [],
+      "lost": [],
+      "before_reasons": {},
+      "after_reasons": {}
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "self_collision": 10
+      },
+      "after_reasons": {}
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.9s_step0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "self_collision": 10
+      },
+      "after_reasons": {}
+    },
+    {
+      "key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "self_collision": 10
+      },
+      "after_reasons": {}
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [],
+      "lost": [],
+      "before_reasons": {},
+      "after_reasons": {}
+    },
+    {
+      "key": "motions-locomotion/cfg0036_stand_2.0s_run_left_90_1.2s_stand_2.0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "terrain_penetration": 10,
+        "self_collision": 10
+      },
+      "after_reasons": {}
+    },
+    {
+      "key": "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "self_collision": 10,
+        "terrain_penetration": 4
+      },
+      "after_reasons": {
+        "terrain_penetration": 2
+      }
+    },
+    {
+      "key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "before": [],
+      "after": [],
+      "gained": [],
+      "lost": [],
+      "before_reasons": {
+        "terrain_penetration": 10,
+        "left_knee:support_slip": 10,
+        "right_knee:support_distance": 10,
+        "right_knee:support_slip": 10,
+        "left_knee:support_distance": 1,
+        "right_hand:support_slip": 4
+      },
+      "after_reasons": {
+        "terrain_penetration": 10,
+        "self_collision": 10,
+        "left_foot:support_slip": 10,
+        "right_foot:support_slip": 10,
+        "left_knee:support_slip": 10,
+        "right_knee:support_distance": 10,
+        "right_knee:support_slip": 10,
+        "left_hand:support_slip": 10,
+        "right_hand:support_slip": 10,
+        "left_knee:support_distance": 1,
+        "right_hand:support_distance": 4
+      }
+    },
+    {
+      "key": "motions-low-step/right_45_walk0.8s_step0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "self_collision": 10,
+        "right_knee:support_distance": 1,
+        "right_knee:support_slip": 1
+      },
+      "after_reasons": {
+        "right_knee:support_distance": 1,
+        "right_knee:support_slip": 1
+      }
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0s",
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "gained": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "lost": [],
+      "before_reasons": {
+        "self_collision": 10,
+        "left_knee:support_distance": 1
+      },
+      "after_reasons": {
+        "left_knee:support_distance": 1,
+        "left_knee:support_slip": 1
+      }
+    },
+    {
+      "key": "motions-low-step/right_90_walk1.2s_step0s",
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gained": [],
+      "lost": [],
+      "before_reasons": {},
+      "after_reasons": {}
+    }
+  ]
+}

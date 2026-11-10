@@ -1,0 +1,124 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+    "posture": {
+      "policy": {
+        "version": "torso-attitude-v1",
+        "reference": "neutral-calibrated-source-orientation",
+        "angular_rmse_max_deg": 3.0,
+        "angular_p95_max_deg": 5.0,
+        "angular_max_deg": 10.0,
+        "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+        "fps": 50
+      },
+      "passed": false,
+      "rejection_reasons": [
+        "torso:max"
+      ],
+      "bodies": {
+        "pelvis": {
+          "angular_rmse_deg": 5.248021668965424,
+          "angular_p95_deg": 11.834991596696259,
+          "angular_max_deg": 18.628839303863987,
+          "gated": false
+        },
+        "torso": {
+          "angular_rmse_deg": 1.0055172927247105,
+          "angular_p95_deg": 0.8259022627259331,
+          "angular_max_deg": 11.004511721832474,
+          "gated": true
+        }
+      }
+    }
+  },
+  {
+    "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+    "posture": {
+      "policy": {
+        "version": "torso-attitude-v1",
+        "reference": "neutral-calibrated-source-orientation",
+        "angular_rmse_max_deg": 3.0,
+        "angular_p95_max_deg": 5.0,
+        "angular_max_deg": 10.0,
+        "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+        "fps": 50
+      },
+      "passed": true,
+      "rejection_reasons": [],
+      "bodies": {
+        "pelvis": {
+          "angular_rmse_deg": 4.393151530833206,
+          "angular_p95_deg": 10.01037933037986,
+          "angular_max_deg": 20.560780250801905,
+          "gated": false
+        },
+        "torso": {
+          "angular_rmse_deg": 0.23565829849345885,
+          "angular_p95_deg": 0.5199236805287202,
+          "angular_max_deg": 1.8241317773124541,
+          "gated": true
+        }
+      }
+    }
+  },
+  {
+    "source_key": "motions-low-step/forward_walk1.2s_step0s",
+    "posture": {
+      "policy": {
+        "version": "torso-attitude-v1",
+        "reference": "neutral-calibrated-source-orientation",
+        "angular_rmse_max_deg": 3.0,
+        "angular_p95_max_deg": 5.0,
+        "angular_max_deg": 10.0,
+        "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+        "fps": 50
+      },
+      "passed": true,
+      "rejection_reasons": [],
+      "bodies": {
+        "pelvis": {
+          "angular_rmse_deg": 4.8340724340261545,
+          "angular_p95_deg": 12.16808377519574,
+          "angular_max_deg": 22.782824537827306,
+          "gated": false
+        },
+        "torso": {
+          "angular_rmse_deg": 0.2931679971957369,
+          "angular_p95_deg": 0.752463966619874,
+          "angular_max_deg": 1.8550330806455553,
+          "gated": true
+        }
+      }
+    }
+  },
+  {
+    "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+    "posture": {
+      "policy": {
+        "version": "torso-attitude-v1",
+        "reference": "neutral-calibrated-source-orientation",
+        "angular_rmse_max_deg": 3.0,
+        "angular_p95_max_deg": 5.0,
+        "angular_max_deg": 10.0,
+        "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+        "fps": 50
+      },
+      "passed": true,
+      "rejection_reasons": [],
+      "bodies": {
+        "pelvis": {
+          "angular_rmse_deg": 5.375106813770553,
+          "angular_p95_deg": 11.92439453309675,
+          "angular_max_deg": 18.642406021166728,
+          "gated": false
+        },
+        "torso": {
+          "angular_rmse_deg": 0.38408425430096144,
+          "angular_p95_deg": 0.8454458716397438,
+          "angular_max_deg": 3.6767074314246555,
+          "gated": true
+        }
+      }
+    }
+  }
+]

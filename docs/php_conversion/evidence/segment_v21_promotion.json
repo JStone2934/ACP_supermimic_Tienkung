@@ -1,0 +1,17 @@
+{
+  "version": "php-segment-v21",
+  "status": "promoted after four full previews, root screening, and 65 tests; full original inventory launched",
+  "solver": "Identical v20 root temporal and contact transition objective; default 12 collision rounds",
+  "gate": "root-continuity-v1",
+  "preview": "docs/php_conversion/evidence/segment_v20_preview_summary.json",
+  "preview_frames": 1397,
+  "preview_variants": 40,
+  "small_batch": "docs/php_conversion/evidence/segment_v20_root_pilot_report.json",
+  "small_batch_accepted": 69,
+  "small_batch_slots": 80,
+  "root_screen": "docs/php_conversion/evidence/segment_v20_root_continuity.json",
+  "tests": "docs/php_conversion/evidence/segment_v21_tests.txt",
+  "tests_passed": 65,
+  "limitations": "Linear-root continuity screen is not dynamics or learned-policy feasibility; 11 original small-batch terrain slots still fail geometry/contact",
+  "full_launch": "docs/php_conversion/evidence/segment_v21_full_launch.json"
+}

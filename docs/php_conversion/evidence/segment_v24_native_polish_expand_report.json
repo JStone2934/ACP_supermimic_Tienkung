@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v24_native_polish_expand_20261110",
+  "identity": "76bc5f7cd2bca43069d8f0835bc475d7a5fbe64f212e890e170fc17fc05a3350",
+  "verified": true,
+  "sources": 11,
+  "unique_source_files": 11,
+  "frames": 8905,
+  "checked_variants": 110,
+  "accepted_variants": 69,
+  "statuses": {
+    "rejected": 4,
+    "accepted": 7
+  },
+  "checked_output_hashes": 83,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 177.88,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

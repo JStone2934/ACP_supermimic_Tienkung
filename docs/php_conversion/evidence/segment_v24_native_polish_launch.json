@@ -1,0 +1,25 @@
+{
+  "time": "2026-11-10T15:05:53.872438+08:00",
+  "pid": 3115781,
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v24/frozen_runner",
+  "code_files": 50,
+  "sources": 12,
+  "frames": 8253,
+  "slots": 120,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.polish_php_conversion",
+    "--resume",
+    "--seeds",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v24_native_polish_seeds.json",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+    "--workers",
+    "2"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v24/pilot.log",
+  "promoted": false,
+  "scope": "CPU native-pose refinement of hash-bound committed seeds, all original frames and terrain variants; independent source receipt replay, all quality gates and labels regenerated"
+}

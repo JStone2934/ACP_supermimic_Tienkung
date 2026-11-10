@@ -1,0 +1,56 @@
+{
+  "time": "2026-11-10T15:15:17.614180+08:00",
+  "version": "php-segment-v24",
+  "scope": "Promote per-pair GPU collision guidance plus exact-root-rotation native pose polish; complete seed-repair pipeline with independent provenance/source/geometry/arms/torso/root checks; existing frozen v21 jobs unchanged",
+  "changed": {
+    "supermimic/acp/php_conversion.py": {
+      "before": "95b83e2c029478d0c6589f2416cc6fce901d0093e2dbe8f20f32e3c635102622",
+      "after": "010598ea72f4cef708eb9e3a474de0410a37f3f63c647730519dff62cf183e0c"
+    },
+    "supermimic/acp/collision_objective.py": {
+      "before": null,
+      "after": "9e6a4379146bcd47b3b3acaea0a7c7e85d48a252d98af4b665fc8179befbe5bb"
+    },
+    "supermimic/acp/native_pose_polish.py": {
+      "before": null,
+      "after": "1e4c696d23a69000df03769a0d8f682eec82bf9aa6711b63a4d9da9a5b0d1527"
+    },
+    "tools/convert_php.py": {
+      "before": "cf05f7a9dc219f0d9ce888d002af25f367b799a3e254d75089d1b370d92c97c7",
+      "after": "4e1b9ad1edecf671fa8496ee1563957f68ee2112425ad4526bf1eab31f9c1665"
+    },
+    "tools/polish_php_conversion.py": {
+      "before": null,
+      "after": "3d1e1fa0ad8a386eb78d601c9242ce49031c80b10ba8d97accb4b323360714db"
+    },
+    "tools/audit_php_conversion.py": {
+      "before": "443f249d63f1cbb5b966c8c6fe25520dfa7dd5245aed1019548548ac226750c2",
+      "after": "3fd418d90cdb0aafcd85392406e0ec91ffc1b17e2183611ac62bee5cfba0ecb7"
+    },
+    "tools/test_php_collision_pairs.py": {
+      "before": null,
+      "after": "2a6d31c840907457659cd5a08690e2fcf48b06f0882c449b7014e3236e69b575"
+    },
+    "tools/test_php_native_polish.py": {
+      "before": null,
+      "after": "8c3fb18d8d3152d8140d0a00883d439f2aabe19f4d61eaecee7406addf5fce31"
+    }
+  },
+  "runtime_code_files": 50,
+  "evidence": {
+    "segment_v24_native_polish_report.json": "43101644256dc67f3aebf9429c47a798b4010bcccde24bc0cca2e55c4d8a0a86",
+    "segment_v24_native_polish_comparison.json": "cf1191e17e1becd718c8221fe17e1a82005b61054030a998da7187e5ff61248b",
+    "segment_v24_preview_summary.json": "113ed509fedbafc64148d5318a381bc25c6f099784fefde29c6caaba5285bb38",
+    "segment_v24_preview_manifest.json": "9df159c85a2d36eb00c3b3347da3059abb91b9b705f9f90e60c578e1ebec9b28",
+    "segment_v24_tests.txt": "074cc234bd668100a4f725b86460f6999e7da01b31914fcf2780fc9cd8319c8c",
+    "segment_v24_geometry_gate_tests.txt": "dcae64b830660a8904fdd7b8a68ec925cb56ae86fdb7b5e9990cc6836abc06e0",
+    "segment_v24_solve_integration_smoke.json": "c3bafee1c3ea6e65a6211ef48065dab71bd2296d5263bcb82f97e3f1305f2ded",
+    "segment_v24_high_climb_preview.json": "153d6fc18bb858d2628c38dccfbfbdeeebbea389bc8a502aab5e53e937e4d04b"
+  },
+  "accepted_pilot_slots": 119,
+  "checked_pilot_slots": 120,
+  "new_slots_vs_seeds": 50,
+  "lost_slots_vs_seeds": 0,
+  "four_full_preview_frames": 1397,
+  "all_library_complete": false
+}

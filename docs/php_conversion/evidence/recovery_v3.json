@@ -1,0 +1,56 @@
+{
+  "run_id": "recovery_v3",
+  "identity": "d0a13ae51bc1614331902c8d9abb2946324e915b3f9955257d690f880606aca0",
+  "verified": true,
+  "sources": 1,
+  "unique_source_files": 1,
+  "frames": 800,
+  "checked_variants": 10,
+  "accepted_variants": 0,
+  "statuses": {
+    "rejected": 1
+  },
+  "checked_output_hashes": 5,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 15.98,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run",
+  "interruption_checkpoint": [
+    ".cache/php_conversion/recovery_v3/checkpoints/6f27e37dcc9084c758163a80.npz",
+    512,
+    800
+  ],
+  "interrupted_controller_pid": 1173515,
+  "commands": [
+    [
+      "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+      "-m",
+      "tools.convert_php",
+      "--out",
+      ".cache/php_conversion/recovery_v3",
+      "--devices",
+      "1",
+      "--cpu-workers",
+      "2",
+      "--selections",
+      ".cache/php_conversion/recovery_selections.json"
+    ],
+    [
+      "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+      "-m",
+      "tools.convert_php",
+      "--out",
+      ".cache/php_conversion/recovery_v3",
+      "--devices",
+      "1",
+      "--cpu-workers",
+      "2",
+      "--selections",
+      ".cache/php_conversion/recovery_selections.json",
+      "--resume"
+    ]
+  ],
+  "single_gpu_vs_dual_gpu_max_abs": 0.0
+}

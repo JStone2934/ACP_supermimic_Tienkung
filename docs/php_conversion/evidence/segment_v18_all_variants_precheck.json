@@ -1,0 +1,379 @@
+{
+  "scope": "Original source contact revalidation across all pilot terrains; not converted motion quality",
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 1,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 2,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 3,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 4,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 5,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 6,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 7,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 8,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 9,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 1,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 2,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 3,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 4,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 5,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        },
+        {
+          "variant": 6,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 7,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 8,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 9,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 7,
+          "changed_queries": 7,
+          "original_zero_now_separated": 7
+        },
+        {
+          "variant": 1,
+          "zero_queries": 4,
+          "changed_queries": 4,
+          "original_zero_now_separated": 4
+        },
+        {
+          "variant": 2,
+          "zero_queries": 8,
+          "changed_queries": 8,
+          "original_zero_now_separated": 8
+        },
+        {
+          "variant": 3,
+          "zero_queries": 4,
+          "changed_queries": 4,
+          "original_zero_now_separated": 4
+        },
+        {
+          "variant": 4,
+          "zero_queries": 5,
+          "changed_queries": 5,
+          "original_zero_now_separated": 4
+        },
+        {
+          "variant": 5,
+          "zero_queries": 3,
+          "changed_queries": 3,
+          "original_zero_now_separated": 2
+        },
+        {
+          "variant": 6,
+          "zero_queries": 8,
+          "changed_queries": 8,
+          "original_zero_now_separated": 8
+        },
+        {
+          "variant": 7,
+          "zero_queries": 7,
+          "changed_queries": 7,
+          "original_zero_now_separated": 6
+        },
+        {
+          "variant": 8,
+          "zero_queries": 10,
+          "changed_queries": 10,
+          "original_zero_now_separated": 10
+        },
+        {
+          "variant": 9,
+          "zero_queries": 7,
+          "changed_queries": 7,
+          "original_zero_now_separated": 7
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 2,
+          "changed_queries": 2,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 1,
+          "zero_queries": 3,
+          "changed_queries": 3,
+          "original_zero_now_separated": 3
+        },
+        {
+          "variant": 2,
+          "zero_queries": 2,
+          "changed_queries": 2,
+          "original_zero_now_separated": 2
+        },
+        {
+          "variant": 3,
+          "zero_queries": 2,
+          "changed_queries": 2,
+          "original_zero_now_separated": 2
+        },
+        {
+          "variant": 4,
+          "zero_queries": 3,
+          "changed_queries": 3,
+          "original_zero_now_separated": 2
+        },
+        {
+          "variant": 5,
+          "zero_queries": 3,
+          "changed_queries": 3,
+          "original_zero_now_separated": 3
+        },
+        {
+          "variant": 6,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 7,
+          "zero_queries": 4,
+          "changed_queries": 4,
+          "original_zero_now_separated": 4
+        },
+        {
+          "variant": 8,
+          "zero_queries": 6,
+          "changed_queries": 6,
+          "original_zero_now_separated": 6
+        },
+        {
+          "variant": 9,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 6,
+          "changed_queries": 6,
+          "original_zero_now_separated": 5
+        },
+        {
+          "variant": 1,
+          "zero_queries": 2,
+          "changed_queries": 2,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 2,
+          "zero_queries": 4,
+          "changed_queries": 4,
+          "original_zero_now_separated": 3
+        },
+        {
+          "variant": 3,
+          "zero_queries": 5,
+          "changed_queries": 5,
+          "original_zero_now_separated": 5
+        },
+        {
+          "variant": 4,
+          "zero_queries": 8,
+          "changed_queries": 8,
+          "original_zero_now_separated": 8
+        },
+        {
+          "variant": 5,
+          "zero_queries": 1,
+          "changed_queries": 1,
+          "original_zero_now_separated": 1
+        },
+        {
+          "variant": 6,
+          "zero_queries": 3,
+          "changed_queries": 3,
+          "original_zero_now_separated": 3
+        },
+        {
+          "variant": 7,
+          "zero_queries": 4,
+          "changed_queries": 4,
+          "original_zero_now_separated": 4
+        },
+        {
+          "variant": 8,
+          "zero_queries": 3,
+          "changed_queries": 3,
+          "original_zero_now_separated": 3
+        },
+        {
+          "variant": 9,
+          "zero_queries": 4,
+          "changed_queries": 4,
+          "original_zero_now_separated": 3
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "variants": [
+        {
+          "variant": 0,
+          "zero_queries": 0,
+          "changed_queries": 0,
+          "original_zero_now_separated": 0
+        }
+      ],
+      "receipts_verified": true,
+      "original_inputs_unchanged": true
+    }
+  ]
+}

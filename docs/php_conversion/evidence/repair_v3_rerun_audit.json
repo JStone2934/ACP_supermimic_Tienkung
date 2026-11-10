@@ -1,0 +1,21 @@
+{
+  "run_id": "php_repair_v3_20261109",
+  "identity": "2ddd43c17a50597c4aceccc9d889ed7dd0c1c405450d57471aadbef9b74bc9b5",
+  "verified": true,
+  "sources": 146,
+  "unique_source_files": 146,
+  "frames": 91668,
+  "checked_variants": 1460,
+  "accepted_variants": 1093,
+  "statuses": {
+    "accepted": 133,
+    "rejected": 13
+  },
+  "checked_output_hashes": 1262,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 1830.4399999999996,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

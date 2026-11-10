@@ -1,0 +1,161 @@
+{
+  "scope": "Planning only; completed non-climb tasks at snapshot time, not full-library coverage audit",
+  "sources": 16,
+  "missing_slots": 38,
+  "terrain_specific_solves": 38,
+  "reason_counts": {
+    "terrain_penetration": 38
+  },
+  "evidence": [
+    {
+      "source_key": "motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/736abcb32f99e90c5d1943fe.json",
+      "quality_hash": "f5d73440b7d26df25d9c726bde98307597f4dc54854d20d92aa4dc205e79d893",
+      "missing_variants": [
+        1
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/9c0c4e750c8d77a41fce2d43.json",
+      "quality_hash": "dc6279bc713c4e74bf1ba279025614025ad04d15fcf51da1b7f5cbb0f745c1d2",
+      "missing_variants": [
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/21cea91b9f813057632ff0dd.json",
+      "quality_hash": "cf4ad8260fec6908318b1b5c2a9ca9b9a4d079ea6bd5c1bb676559b605af4879",
+      "missing_variants": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/4645f49d74e3579bbc969b60.json",
+      "quality_hash": "357df6555147c274c3bfa09a50cb113322c736560f4a84f8df44376a186472e9",
+      "missing_variants": [
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/e53ea60bf06da41e280fecc7.json",
+      "quality_hash": "bf3fc98a8ec7d0fac63865efce762af32836973716cb611329f6fb0fd4d0fb6d",
+      "missing_variants": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/26037b822cb354ddb20b172c.json",
+      "quality_hash": "b69e624f95c148f1f27774512fbefc40e60747ba4fbd07e87f31357a3f4c64d0",
+      "missing_variants": [
+        3,
+        4,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/d056a766eaaa5f3ea05d9d38.json",
+      "quality_hash": "6f5f86520f86cc096899e1d97fddcd6bd029688d0d2686c2b9effe7500987922",
+      "missing_variants": [
+        1,
+        4,
+        8
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/6de583ac837990ed8ee5b279.json",
+      "quality_hash": "06cf00b2082702e2db64e50c4fcb277ddaed48d2cccbe9065f9f96559c0e8659",
+      "missing_variants": [
+        6,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/ddc51a3e3ac5eb4ca1c4fc74.json",
+      "quality_hash": "99586ef8bbe2295e7933be762d3b86b9efc98c973134e403e1dfc3fd516de3bc",
+      "missing_variants": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/16799f52a91ab2c0501739ae.json",
+      "quality_hash": "d494536c4a3b7f413f48ec191fa2736548c70d759f86c6865188066e414e4fa7",
+      "missing_variants": [
+        1,
+        3,
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0053_stand_2.0s_run_right_90_1.4s_run_left_90_1.5s_run_right_45_2.8s_run_right_45_1.8s_left_90_1.5s_forward_2.7s_run_right_45_1.2s_left_45_1.7s_left_90_1.6s_left_45_1.7s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/234790130922c91cbe3a33e4.json",
+      "quality_hash": "2fcf5af227f4a021e1269066ea1477fb3b7ca9f62923e9b62905322feab16d94",
+      "missing_variants": [
+        7
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0065_stand_2.0s_right_90_0.7s_right_90_1.3s_run_right_90_1.2s_right_45_2.4s_run_forward_1.7s_right_45_1.4s_right_90_2.6s_run_right_45_1.2s_run_left_90_2.8s_right_90_0.7s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/392b79361bbed99f3436da6b.json",
+      "quality_hash": "5e02a238e8fbffc238d712b7aab8a97d1cbeb0f59c033372f74cc0b39d7c403a",
+      "missing_variants": [
+        1
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0069_stand_2.0s_forward_1.1s_right_90_2.3s_run_forward_2.2s_forward_1.1s_run_forward_1.2s_right_45_2.0s_right_45_1.7s_left_45_0.9s_run_forward_1.8s_run_right_45_1.2s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/8eefc5bce5ddd1f81c3c7450.json",
+      "quality_hash": "95e340b0ac4e6e7747fc004a19e9869eca496134b2f78e061f948d93904b0931",
+      "missing_variants": [
+        2,
+        4,
+        7,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/999bc3372a0b68cfc1463588.json",
+      "quality_hash": "a02b58e7205dd9331b12756beae1ae31be728b5cddf4144ced94e3ec5d7760d5",
+      "missing_variants": [
+        6
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/6ee55373a22ea011ac0c35fe.json",
+      "quality_hash": "432aacac52c1f3406b3e92e648e1c491682778c7ed4a365789c2da25e550e115",
+      "missing_variants": [
+        4,
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109/quality/8ad5375956772fc84cfd2239.json",
+      "quality_hash": "25e726b49fd9b58dee8814e3522a36e6e384e90d71677418e8090026289186cb",
+      "missing_variants": [
+        1,
+        6
+      ]
+    }
+  ]
+}

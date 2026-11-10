@@ -1,0 +1,422 @@
+[
+  {
+    "name": "01_straight",
+    "score": {
+      "policy": {
+        "version": "arm-fidelity-v1",
+        "reference": "segment-directions-v1",
+        "rmse_max_m": 0.05,
+        "p95_max_m": 0.1,
+        "dynamic_rms_min_m": 0.025,
+        "amplitude_ratio_min": 0.7,
+        "amplitude_ratio_max": 1.3,
+        "correlation_min": 0.85,
+        "max_lag_frames": 2,
+        "lag_search_frames": 10,
+        "min_phase_frames": 8,
+        "fps": 50,
+        "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+      },
+      "passed": false,
+      "rejection_reasons": [
+        "left_elbow:amplitude",
+        "left_elbow:timing",
+        "left_elbow:trajectory",
+        "left_hand:amplitude",
+        "left_hand:timing",
+        "left_hand:trajectory",
+        "right_elbow:amplitude",
+        "right_elbow:timing",
+        "right_elbow:trajectory",
+        "right_hand:amplitude",
+        "right_hand:timing",
+        "right_hand:trajectory"
+      ],
+      "points": {
+        "left_elbow": {
+          "free_frames": 269,
+          "phases": [
+            {
+              "start": 0,
+              "end": 269,
+              "rmse_m": 0.09492065907415172,
+              "p95_m": 0.2035789603815212,
+              "reference_rms_amplitude_m": 0.08645781631429235,
+              "actual_rms_amplitude_m": 6.669211761584392e-16,
+              "dynamic": true,
+              "amplitude_ratio": 7.713833226298943e-15,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "left_hand": {
+          "free_frames": 269,
+          "phases": [
+            {
+              "start": 0,
+              "end": 269,
+              "rmse_m": 0.228695413186348,
+              "p95_m": 0.5423885756665295,
+              "reference_rms_amplitude_m": 0.19110202263153236,
+              "actual_rms_amplitude_m": 1.7986627977383604e-15,
+              "dynamic": true,
+              "amplitude_ratio": 9.41205526226375e-15,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_elbow": {
+          "free_frames": 269,
+          "phases": [
+            {
+              "start": 0,
+              "end": 269,
+              "rmse_m": 0.059674234702374526,
+              "p95_m": 0.12015873913713264,
+              "reference_rms_amplitude_m": 0.049233771239350625,
+              "actual_rms_amplitude_m": 6.631056757402688e-16,
+              "dynamic": true,
+              "amplitude_ratio": 1.3468512751472396e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_hand": {
+          "free_frames": 269,
+          "phases": [
+            {
+              "start": 0,
+              "end": 269,
+              "rmse_m": 0.21399245995442512,
+              "p95_m": 0.40827338396782303,
+              "reference_rms_amplitude_m": 0.1477953682081846,
+              "actual_rms_amplitude_m": 1.839862819517281e-15,
+              "dynamic": true,
+              "amplitude_ratio": 1.2448717722504334e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "02_turn",
+    "score": {
+      "policy": {
+        "version": "arm-fidelity-v1",
+        "reference": "segment-directions-v1",
+        "rmse_max_m": 0.05,
+        "p95_max_m": 0.1,
+        "dynamic_rms_min_m": 0.025,
+        "amplitude_ratio_min": 0.7,
+        "amplitude_ratio_max": 1.3,
+        "correlation_min": 0.85,
+        "max_lag_frames": 2,
+        "lag_search_frames": 10,
+        "min_phase_frames": 8,
+        "fps": 50,
+        "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+      },
+      "passed": false,
+      "rejection_reasons": [
+        "left_elbow:amplitude",
+        "left_elbow:timing",
+        "left_elbow:trajectory",
+        "left_hand:amplitude",
+        "left_hand:timing",
+        "left_hand:trajectory",
+        "right_elbow:amplitude",
+        "right_elbow:timing",
+        "right_elbow:trajectory",
+        "right_hand:amplitude",
+        "right_hand:timing",
+        "right_hand:trajectory"
+      ],
+      "points": {
+        "left_elbow": {
+          "free_frames": 260,
+          "phases": [
+            {
+              "start": 0,
+              "end": 260,
+              "rmse_m": 0.057407441027592286,
+              "p95_m": 0.11279539827256273,
+              "reference_rms_amplitude_m": 0.047842512405809466,
+              "actual_rms_amplitude_m": 6.923622206927206e-16,
+              "dynamic": true,
+              "amplitude_ratio": 1.4471694438201115e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "left_hand": {
+          "free_frames": 260,
+          "phases": [
+            {
+              "start": 0,
+              "end": 260,
+              "rmse_m": 0.20425985297416052,
+              "p95_m": 0.4511064521382288,
+              "reference_rms_amplitude_m": 0.16381625349245002,
+              "actual_rms_amplitude_m": 1.625775927608252e-15,
+              "dynamic": true,
+              "amplitude_ratio": 9.924387189597038e-15,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_elbow": {
+          "free_frames": 260,
+          "phases": [
+            {
+              "start": 0,
+              "end": 260,
+              "rmse_m": 0.06111905386376641,
+              "p95_m": 0.1325909803613966,
+              "reference_rms_amplitude_m": 0.051322555007326284,
+              "actual_rms_amplitude_m": 6.842710741244442e-16,
+              "dynamic": true,
+              "amplitude_ratio": 1.3332755433293699e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_hand": {
+          "free_frames": 260,
+          "phases": [
+            {
+              "start": 0,
+              "end": 260,
+              "rmse_m": 0.1924076706062635,
+              "p95_m": 0.4228979340286828,
+              "reference_rms_amplitude_m": 0.14252579587888492,
+              "actual_rms_amplitude_m": 1.6593969802273508e-15,
+              "dynamic": true,
+              "amplitude_ratio": 1.1642783469439226e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "03_low_step",
+    "score": {
+      "policy": {
+        "version": "arm-fidelity-v1",
+        "reference": "segment-directions-v1",
+        "rmse_max_m": 0.05,
+        "p95_max_m": 0.1,
+        "dynamic_rms_min_m": 0.025,
+        "amplitude_ratio_min": 0.7,
+        "amplitude_ratio_max": 1.3,
+        "correlation_min": 0.85,
+        "max_lag_frames": 2,
+        "lag_search_frames": 10,
+        "min_phase_frames": 8,
+        "fps": 50,
+        "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+      },
+      "passed": false,
+      "rejection_reasons": [
+        "left_elbow:amplitude",
+        "left_elbow:timing",
+        "left_elbow:trajectory",
+        "left_hand:amplitude",
+        "left_hand:timing",
+        "left_hand:trajectory",
+        "right_elbow:amplitude",
+        "right_elbow:timing",
+        "right_elbow:trajectory",
+        "right_hand:amplitude",
+        "right_hand:timing",
+        "right_hand:trajectory"
+      ],
+      "points": {
+        "left_elbow": {
+          "free_frames": 413,
+          "phases": [
+            {
+              "start": 0,
+              "end": 413,
+              "rmse_m": 0.1006781824011677,
+              "p95_m": 0.15678305838567472,
+              "reference_rms_amplitude_m": 0.07105479256312065,
+              "actual_rms_amplitude_m": 2.418247890045967e-15,
+              "dynamic": true,
+              "amplitude_ratio": 3.403356484219901e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "left_hand": {
+          "free_frames": 413,
+          "phases": [
+            {
+              "start": 0,
+              "end": 413,
+              "rmse_m": 0.22825445406929956,
+              "p95_m": 0.38830690081574387,
+              "reference_rms_amplitude_m": 0.13919885288396142,
+              "actual_rms_amplitude_m": 2.2325169256918354e-15,
+              "dynamic": true,
+              "amplitude_ratio": 1.6038328473532036e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_elbow": {
+          "free_frames": 413,
+          "phases": [
+            {
+              "start": 0,
+              "end": 413,
+              "rmse_m": 0.09695842849239264,
+              "p95_m": 0.1530030226035161,
+              "reference_rms_amplitude_m": 0.06136613168086918,
+              "actual_rms_amplitude_m": 2.4294888907380908e-15,
+              "dynamic": true,
+              "amplitude_ratio": 3.95900609048082e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_hand": {
+          "free_frames": 413,
+          "phases": [
+            {
+              "start": 0,
+              "end": 413,
+              "rmse_m": 0.21859582563299684,
+              "p95_m": 0.34395862574979413,
+              "reference_rms_amplitude_m": 0.1195018647761311,
+              "actual_rms_amplitude_m": 2.2970697875186626e-15,
+              "dynamic": true,
+              "amplitude_ratio": 1.9222041361629626e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "04_high_step",
+    "score": {
+      "policy": {
+        "version": "arm-fidelity-v1",
+        "reference": "segment-directions-v1",
+        "rmse_max_m": 0.05,
+        "p95_max_m": 0.1,
+        "dynamic_rms_min_m": 0.025,
+        "amplitude_ratio_min": 0.7,
+        "amplitude_ratio_max": 1.3,
+        "correlation_min": 0.85,
+        "max_lag_frames": 2,
+        "lag_search_frames": 10,
+        "min_phase_frames": 8,
+        "fps": 50,
+        "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+      },
+      "passed": false,
+      "rejection_reasons": [
+        "left_elbow:amplitude",
+        "left_elbow:timing",
+        "left_elbow:trajectory",
+        "left_hand:amplitude",
+        "left_hand:timing",
+        "left_hand:trajectory",
+        "right_elbow:amplitude",
+        "right_elbow:timing",
+        "right_elbow:trajectory",
+        "right_hand:amplitude",
+        "right_hand:timing",
+        "right_hand:trajectory"
+      ],
+      "points": {
+        "left_elbow": {
+          "free_frames": 455,
+          "phases": [
+            {
+              "start": 0,
+              "end": 455,
+              "rmse_m": 0.12236988474307234,
+              "p95_m": 0.19462963960211332,
+              "reference_rms_amplitude_m": 0.10288540125068074,
+              "actual_rms_amplitude_m": 2.520870168699287e-15,
+              "dynamic": true,
+              "amplitude_ratio": 2.450172850623555e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "left_hand": {
+          "free_frames": 455,
+          "phases": [
+            {
+              "start": 0,
+              "end": 455,
+              "rmse_m": 0.36253752459136007,
+              "p95_m": 0.6188651445591117,
+              "reference_rms_amplitude_m": 0.22465360594115605,
+              "actual_rms_amplitude_m": 2.937668750703389e-15,
+              "dynamic": true,
+              "amplitude_ratio": 1.3076437114803572e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_elbow": {
+          "free_frames": 455,
+          "phases": [
+            {
+              "start": 0,
+              "end": 455,
+              "rmse_m": 0.10152111533312583,
+              "p95_m": 0.16425147007519603,
+              "reference_rms_amplitude_m": 0.08188193767188728,
+              "actual_rms_amplitude_m": 2.5789014495142785e-15,
+              "dynamic": true,
+              "amplitude_ratio": 3.14953642138796e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        },
+        "right_hand": {
+          "free_frames": 455,
+          "phases": [
+            {
+              "start": 0,
+              "end": 455,
+              "rmse_m": 0.3247026961066629,
+              "p95_m": 0.5412981159684932,
+              "reference_rms_amplitude_m": 0.1804947103035189,
+              "actual_rms_amplitude_m": 2.9770887870951986e-15,
+              "dynamic": true,
+              "amplitude_ratio": 1.649405005880196e-14,
+              "correlation": 0.0,
+              "best_lag_frames": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+]

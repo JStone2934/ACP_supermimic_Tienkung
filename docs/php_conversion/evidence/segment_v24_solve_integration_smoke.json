@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "scope": "Fresh GPU solve entry including CPU native polish;8 frames only, not quality acceptance",
+  "frames": 8,
+  "root_quaternions_exact": true,
+  "polished_frames": [],
+  "cuda_graph": true
+}

@@ -1,0 +1,62 @@
+{
+  "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+  "hand_release_frame": 351,
+  "collision_frame": 350,
+  "frames": [
+    {
+      "from_frame": 346,
+      "to_frame": 347,
+      "source_displacement_m": 0.008372454893145871,
+      "target_displacement_m": 0.06022584065794945
+    },
+    {
+      "from_frame": 347,
+      "to_frame": 348,
+      "source_displacement_m": 0.005631230239222006,
+      "target_displacement_m": 0.11477058380842209
+    },
+    {
+      "from_frame": 348,
+      "to_frame": 349,
+      "source_displacement_m": 0.004847240439917324,
+      "target_displacement_m": 0.021164704114198685
+    },
+    {
+      "from_frame": 349,
+      "to_frame": 350,
+      "source_displacement_m": 0.00562196402145238,
+      "target_displacement_m": 0.19199655950069427
+    },
+    {
+      "from_frame": 350,
+      "to_frame": 351,
+      "source_displacement_m": 0.00720598962320294,
+      "target_displacement_m": 0.2367699295282364
+    },
+    {
+      "from_frame": 351,
+      "to_frame": 352,
+      "source_displacement_m": 0.007471084920292281,
+      "target_displacement_m": 0.15648464858531952
+    },
+    {
+      "from_frame": 352,
+      "to_frame": 353,
+      "source_displacement_m": 0.005801283577655454,
+      "target_displacement_m": 0.09181606769561768
+    },
+    {
+      "from_frame": 353,
+      "to_frame": 354,
+      "source_displacement_m": 0.003553053831811426,
+      "target_displacement_m": 0.044053733348846436
+    },
+    {
+      "from_frame": 354,
+      "to_frame": 355,
+      "source_displacement_m": 0.0033383145144338312,
+      "target_displacement_m": 0.026723982766270638
+    }
+  ],
+  "scope": "Root displacement diagnostic near hand release, not a new acceptance threshold"
+}

@@ -1,0 +1,116 @@
+{
+  "plan_sha256": "8ecbfeb8634bb8602ca4f5d192c85900d04d7f428e59ce65d65c45012233b4fd",
+  "audit_sha256": "d64bb6790fe4c561dd9c40a443c0d0e871fea19a0672bde92998e471a8b81be2",
+  "targeted_passed": 4,
+  "checked_variants": 40,
+  "new_original_slots": 5,
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "target": 2,
+      "target_pass": true,
+      "accepted": [
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "baseline": [
+        0,
+        1,
+        3,
+        7,
+        8
+      ],
+      "new": [
+        2
+      ],
+      "quality_sha256": "55ce676fec8a1921f12141a5c3525c59b94ad595bcc7b5df22fdfb9686b0d07f"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "target": 2,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "baseline": [
+        0,
+        1,
+        3,
+        6,
+        8,
+        9
+      ],
+      "new": [
+        2,
+        7
+      ],
+      "quality_sha256": "719a4332ab031c8a3ca59978eedaebe92971c5a4a85af96ee462e3af11262b2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "target": 1,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "baseline": [
+        0,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        1
+      ],
+      "quality_sha256": "aae4d26bcfe2c2513943770ac436f16e81f49d620cd47f3ed004e045b306371f"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "target": 4,
+      "target_pass": true,
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9
+      ],
+      "baseline": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        4
+      ],
+      "quality_sha256": "a1f5e65d8cd720fdf1f535e6d54b2c9b1948e74da3cd0e806a44f9c59f6f3abf"
+    }
+  ]
+}

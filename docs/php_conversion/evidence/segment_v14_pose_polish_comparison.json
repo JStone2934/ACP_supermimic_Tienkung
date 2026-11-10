@@ -1,0 +1,291 @@
+{
+  "verified": true,
+  "passed": 50,
+  "total": 80,
+  "new_passing_slots": 0,
+  "lost_passing_slots": 0,
+  "promoted": false,
+  "reason": "All three climbing torso gates pass, but collision/contact gates remain; keep production v11",
+  "clips": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v14_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_torso": {
+        "angular_rmse_deg": 0.33432022139830836,
+        "angular_p95_deg": 0.43832022190592823,
+        "angular_max_deg": 2.5551312902218855,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.10913642635595663,
+        "angular_p95_deg": 0.1452040998530958,
+        "angular_max_deg": 0.6995602626816957,
+        "gated": true
+      },
+      "v13_self_max_m": 0.001240372194095816,
+      "v14_self_max_m": 0.0012403723362617533,
+      "v14_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v14_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_torso": {
+        "angular_rmse_deg": 0.12007932789237467,
+        "angular_p95_deg": 0.29639079316933675,
+        "angular_max_deg": 0.30530270287056727,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.03769483537535522,
+        "angular_p95_deg": 0.08491849429851092,
+        "angular_max_deg": 0.08699743225400107,
+        "gated": true
+      },
+      "v13_self_max_m": 0.001240373492216161,
+      "v14_self_max_m": 0.0012403733819735525,
+      "v14_reasons": []
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v14_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_torso": {
+        "angular_rmse_deg": 0.09235066053458992,
+        "angular_p95_deg": 0.21459350376363534,
+        "angular_max_deg": 0.219808215697166,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.028517006784110094,
+        "angular_p95_deg": 0.06141459993925781,
+        "angular_max_deg": 0.0636679583555309,
+        "gated": true
+      },
+      "v13_self_max_m": 0.0012403726001086167,
+      "v14_self_max_m": 0.0012403725007549958,
+      "v14_reasons": []
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v14_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_torso": {
+        "angular_rmse_deg": 0.16877078527455427,
+        "angular_p95_deg": 0.4075333943634826,
+        "angular_max_deg": 0.4956363868272391,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.0490843761104286,
+        "angular_p95_deg": 0.10762364052980707,
+        "angular_max_deg": 0.11521120109564975,
+        "gated": true
+      },
+      "v13_self_max_m": 0.001240373302724807,
+      "v14_self_max_m": 0.001240373337014059,
+      "v14_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "v13_accepted": [],
+      "v14_accepted": [],
+      "v13_torso": {
+        "angular_rmse_deg": 3.0214576295318114,
+        "angular_p95_deg": 9.139672576630359,
+        "angular_max_deg": 10.552326389673143,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.9043676772547184,
+        "angular_p95_deg": 2.8347521977867296,
+        "angular_max_deg": 3.1924963112452645,
+        "gated": true
+      },
+      "v13_self_max_m": 0.005105322828229157,
+      "v14_self_max_m": 0.01805036655835051,
+      "v14_reasons": [
+        "self_collision",
+        "left_knee:support_distance",
+        "left_hand:support_slip",
+        "right_hand:support_slip"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "v13_accepted": [],
+      "v14_accepted": [],
+      "v13_torso": {
+        "angular_rmse_deg": 3.1500665712597553,
+        "angular_p95_deg": 9.305561665928577,
+        "angular_max_deg": 10.895939593853358,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 1.0088554715878113,
+        "angular_p95_deg": 2.981060479877218,
+        "angular_max_deg": 3.6310343564377887,
+        "gated": true
+      },
+      "v13_self_max_m": 0.003695194978829729,
+      "v14_self_max_m": 0.006077997763807618,
+      "v14_reasons": [
+        "self_collision"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "v13_accepted": [],
+      "v14_accepted": [],
+      "v13_torso": {
+        "angular_rmse_deg": 2.2658477021884993,
+        "angular_p95_deg": 6.831006033615299,
+        "angular_max_deg": 7.828078691952731,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.9326265376917715,
+        "angular_p95_deg": 3.0307905692921775,
+        "angular_max_deg": 3.3325499902717928,
+        "gated": true
+      },
+      "v13_self_max_m": 0.008315894687651999,
+      "v14_self_max_m": 0.006800806433418885,
+      "v14_reasons": [
+        "terrain_penetration",
+        "self_collision"
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v14_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_torso": {
+        "angular_rmse_deg": 0.3339254458371189,
+        "angular_p95_deg": 0.4254343482395468,
+        "angular_max_deg": 4.829431821560578,
+        "gated": true
+      },
+      "v14_torso": {
+        "angular_rmse_deg": 0.10403569333022772,
+        "angular_p95_deg": 0.1473267062343608,
+        "angular_max_deg": 1.492600324488894,
+        "gated": true
+      },
+      "v13_self_max_m": 0.0012403728015754603,
+      "v14_self_max_m": 0.0012403730220096152,
+      "v14_reasons": []
+    }
+  ]
+}

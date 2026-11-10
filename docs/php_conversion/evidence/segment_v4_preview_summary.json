@@ -1,0 +1,52 @@
+{
+  "verified_frames": 1397,
+  "verified_videos": 4,
+  "accepted_variants": 40,
+  "expected_variants": 40,
+  "clips": [
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "accepted_variants": 10,
+      "max_arm_rmse_m": 0.0026118548218340377,
+      "max_arm_p95_m": 0.006857575839351449,
+      "amplitude_ratio_range": [
+        0.9917882732310412,
+        1.0082567942272944
+      ],
+      "max_abs_lag_frames": 0
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "accepted_variants": 10,
+      "max_arm_rmse_m": 0.0013650767434617728,
+      "max_arm_p95_m": 0.0029788288154985634,
+      "amplitude_ratio_range": [
+        0.9969441345036989,
+        0.999983012339293
+      ],
+      "max_abs_lag_frames": 0
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "accepted_variants": 10,
+      "max_arm_rmse_m": 0.006885387802552772,
+      "max_arm_p95_m": 0.013028767882736792,
+      "amplitude_ratio_range": [
+        0.9839396772918546,
+        0.9974969401691417
+      ],
+      "max_abs_lag_frames": 0
+    },
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "accepted_variants": 10,
+      "max_arm_rmse_m": 0.007814933963334447,
+      "max_arm_p95_m": 0.012624290520879647,
+      "amplitude_ratio_range": [
+        0.9727195646784605,
+        0.9992539503636894
+      ],
+      "max_abs_lag_frames": 0
+    }
+  ]
+}

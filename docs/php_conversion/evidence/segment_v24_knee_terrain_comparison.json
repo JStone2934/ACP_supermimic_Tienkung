@@ -1,0 +1,33 @@
+{
+  "source_key": "motions-low-climb-76/right_90_walk0.9s_step0.7s",
+  "target_variant": 6,
+  "verified": true,
+  "accepted_before": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9
+  ],
+  "accepted_after": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "new_original_slots": 1,
+  "lost_original_slots": 0,
+  "plan_sha256": "4a25b1884df175b283fe7d036df7bcf91316f592f8a7621a7a2ca0afc7a7e535",
+  "audit_sha256": "1c56fc6a9f13509a5c44cc2fa62abd21debe30f4006878231110f20ef7534c8a",
+  "quality_sha256": "c78fd4106a0420f748e8611c3522f191ba4229f9813c2e7a0904a16a9c176aa7"
+}

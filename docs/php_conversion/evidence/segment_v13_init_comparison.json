@@ -1,0 +1,340 @@
+{
+  "verified": true,
+  "v11_passed": 50,
+  "v13_passed": 50,
+  "new_passing_slots": 0,
+  "lost_passing_slots": 0,
+  "promoted": false,
+  "reason": "Initialization materially reduces climbing errors but all three climbing sources remain rejected; proceed to targeted pose/collision refinement",
+  "clips": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "v11_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v11_torso": {
+        "angular_rmse_deg": 0.3734463927267683,
+        "angular_p95_deg": 0.7478993838828443,
+        "angular_max_deg": 2.0100566641368056,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 0.33432022139830836,
+        "angular_p95_deg": 0.43832022190592823,
+        "angular_max_deg": 2.5551312902218855,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403720899257264,
+      "v13_self_max_m": 0.001240372194095816,
+      "v11_reasons": [],
+      "v13_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "v11_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v11_torso": {
+        "angular_rmse_deg": 0.13747302274829207,
+        "angular_p95_deg": 0.3879667071416797,
+        "angular_max_deg": 0.3963838209610071,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 0.12007932789237467,
+        "angular_p95_deg": 0.29639079316933675,
+        "angular_max_deg": 0.30530270287056727,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403735187391772,
+      "v13_self_max_m": 0.001240373492216161,
+      "v11_reasons": [],
+      "v13_reasons": []
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "v11_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v11_torso": {
+        "angular_rmse_deg": 0.16662417534863572,
+        "angular_p95_deg": 0.41235384734446184,
+        "angular_max_deg": 0.4159924255190924,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 0.09235066053458992,
+        "angular_p95_deg": 0.21459350376363534,
+        "angular_max_deg": 0.219808215697166,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403729395311187,
+      "v13_self_max_m": 0.0012403726001086167,
+      "v11_reasons": [],
+      "v13_reasons": []
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "v11_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v11_torso": {
+        "angular_rmse_deg": 0.21415209321256753,
+        "angular_p95_deg": 0.5363549180294349,
+        "angular_max_deg": 0.5475464191599835,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 0.16877078527455427,
+        "angular_p95_deg": 0.4075333943634826,
+        "angular_max_deg": 0.4956363868272391,
+        "gated": true
+      },
+      "v11_self_max_m": 0.001240370407232612,
+      "v13_self_max_m": 0.001240373302724807,
+      "v11_reasons": [],
+      "v13_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "v11_accepted": [],
+      "v13_accepted": [],
+      "v11_torso": {
+        "angular_rmse_deg": 12.297885374124327,
+        "angular_p95_deg": 35.66783116924227,
+        "angular_max_deg": 35.69070548007697,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 3.0214576295318114,
+        "angular_p95_deg": 9.139672576630359,
+        "angular_max_deg": 10.552326389673143,
+        "gated": true
+      },
+      "v11_self_max_m": 0.05520094640998524,
+      "v13_self_max_m": 0.005105322828229157,
+      "v11_reasons": [
+        "joint_velocity",
+        "terrain_penetration",
+        "self_collision",
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_knee:support_slip",
+        "right_knee:support_slip",
+        "left_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "v13_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "left_knee:support_distance",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "v11_accepted": [],
+      "v13_accepted": [],
+      "v11_torso": {
+        "angular_rmse_deg": 14.176251318280741,
+        "angular_p95_deg": 35.75334608323818,
+        "angular_max_deg": 54.70138192760838,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 3.1500665712597553,
+        "angular_p95_deg": 9.305561665928577,
+        "angular_max_deg": 10.895939593853358,
+        "gated": true
+      },
+      "v11_self_max_m": 0.043204823415897764,
+      "v13_self_max_m": 0.003695194978829729,
+      "v11_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "left_knee:support_slip",
+        "right_knee:support_distance",
+        "right_knee:support_slip",
+        "left_hand:support_slip",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "v13_reasons": [
+        "self_collision",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "v11_accepted": [],
+      "v13_accepted": [],
+      "v11_torso": {
+        "angular_rmse_deg": 10.938537404442657,
+        "angular_p95_deg": 29.248352136843817,
+        "angular_max_deg": 37.155056693636325,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 2.2658477021884993,
+        "angular_p95_deg": 6.831006033615299,
+        "angular_max_deg": 7.828078691952731,
+        "gated": true
+      },
+      "v11_self_max_m": 0.006144244589935506,
+      "v13_self_max_m": 0.008315894687651999,
+      "v11_reasons": [
+        "self_collision",
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "v13_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "posture:torso:p95"
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "v11_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v13_accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v11_torso": {
+        "angular_rmse_deg": 0.44023542668755905,
+        "angular_p95_deg": 0.9233351211523155,
+        "angular_max_deg": 4.550288809826273,
+        "gated": true
+      },
+      "v13_torso": {
+        "angular_rmse_deg": 0.3339254458371189,
+        "angular_p95_deg": 0.4254343482395468,
+        "angular_max_deg": 4.829431821560578,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403731748517931,
+      "v13_self_max_m": 0.0012403728015754603,
+      "v11_reasons": [],
+      "v13_reasons": []
+    }
+  ]
+}

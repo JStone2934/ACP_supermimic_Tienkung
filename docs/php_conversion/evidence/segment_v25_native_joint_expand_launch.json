@@ -1,0 +1,24 @@
+{
+  "time": "2026-11-10T15:49:47.443206+08:00",
+  "pid": 3322147,
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_expand_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/frozen_runner",
+  "sources": 4,
+  "frames": 2654,
+  "slots": 40,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.polish_php_conversion",
+    "--seeds",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v25_native_joint_expand_seeds.json",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_expand_20261110",
+    "--workers",
+    "2",
+    "--resume"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/expand.log",
+  "code_files": 50,
+  "scope": "Missing geometry-only v21 sources; complete root fixed; all original variants reassessed"
+}

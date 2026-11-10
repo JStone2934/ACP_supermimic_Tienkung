@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v18_step_repair_20261110",
+  "identity": "77e0f8d9aab57e2880cd50672c0904e169ec328c2120943e5c6134d14495ba86",
+  "verified": true,
+  "sources": 1,
+  "unique_source_files": 1,
+  "frames": 465,
+  "checked_variants": 10,
+  "accepted_variants": 10,
+  "statuses": {
+    "accepted": 1
+  },
+  "checked_output_hashes": 9,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 9.28,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

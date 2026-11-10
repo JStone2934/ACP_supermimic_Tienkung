@@ -1,0 +1,18 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+    "free_foot_frames": 89,
+    "world_reference_difference_rmse_m": 0.12258578418917947,
+    "world_reference_difference_p95_m": 0.18864377486009368,
+    "world_reference_difference_max_m": 0.2008020251364264,
+    "support_intent_unchanged": true
+  },
+  {
+    "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+    "free_foot_frames": 602,
+    "world_reference_difference_rmse_m": 0.13276430200270584,
+    "world_reference_difference_p95_m": 0.21983998202593627,
+    "world_reference_difference_max_m": 0.24173446039051108,
+    "support_intent_unchanged": true
+  }
+]

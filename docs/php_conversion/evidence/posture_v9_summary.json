@@ -1,0 +1,239 @@
+{
+  "frames": 1397,
+  "fps": 50,
+  "video_duration_s": 27.94,
+  "geometric_and_arm_accepted_variants": 40,
+  "expected_variants": 40,
+  "independent_audit_verified": true,
+  "posture_scope": "diagnostic; not yet integrated into acceptance or full-library conversion",
+  "clips": [
+    {
+      "name": "01_straight",
+      "torso": {
+        "source_mean_deg": 8.904343589951592,
+        "target_mean_deg": 8.93330803359588,
+        "added_forward_mean_deg": 0.028964443644288997,
+        "error_rmse_deg": 0.27647526226649344,
+        "error_abs_p95_deg": 0.40820742849990094,
+        "added_forward_max_deg": 2.945906938701711,
+        "error_abs_max_deg": 2.945906938701711,
+        "first_second": {
+          "source_mean_deg": 2.9518893725612414,
+          "target_mean_deg": 2.9704938434607815,
+          "added_forward_mean_deg": 0.018604470899539934,
+          "error_rmse_deg": 0.01995077111370602,
+          "error_abs_p95_deg": 0.030422548046342965,
+          "added_forward_max_deg": 0.03467849308262316,
+          "error_abs_max_deg": 0.03467849308262316
+        },
+        "last_second": {
+          "source_mean_deg": 4.060822273362522,
+          "target_mean_deg": 4.080354572051483,
+          "added_forward_mean_deg": 0.01953229868896301,
+          "error_rmse_deg": 0.03861289694858305,
+          "error_abs_p95_deg": 0.08598555317721264,
+          "added_forward_max_deg": 0.10444625203626856,
+          "error_abs_max_deg": 0.10444625203626856
+        }
+      },
+      "pelvis": {
+        "source_mean_deg": 5.233553626409408,
+        "target_mean_deg": 3.97421512114673,
+        "added_forward_mean_deg": -1.2593385052626782,
+        "error_rmse_deg": 2.6389867369514755,
+        "error_abs_p95_deg": 5.737896338750738,
+        "added_forward_max_deg": 4.206269082521089,
+        "error_abs_max_deg": 10.961855730972303,
+        "first_second": {
+          "source_mean_deg": 2.5909033628380467,
+          "target_mean_deg": 2.021691816696094,
+          "added_forward_mean_deg": -0.569211546141953,
+          "error_rmse_deg": 0.5696689454763713,
+          "error_abs_p95_deg": 0.6081548867433028,
+          "added_forward_max_deg": -0.5165553829548912,
+          "error_abs_max_deg": 0.623472941569986
+        },
+        "last_second": {
+          "source_mean_deg": 2.5988227225553984,
+          "target_mean_deg": 1.839166435788467,
+          "added_forward_mean_deg": -0.7596562867669309,
+          "error_rmse_deg": 0.7847994218077573,
+          "error_abs_p95_deg": 1.0848474851435725,
+          "added_forward_max_deg": -0.32425593240998296,
+          "error_abs_max_deg": 1.2720690554587577
+        }
+      }
+    },
+    {
+      "name": "02_turn",
+      "torso": {
+        "source_mean_deg": 6.340072213289923,
+        "target_mean_deg": 6.356529734797456,
+        "added_forward_mean_deg": 0.016457521507531353,
+        "error_rmse_deg": 0.08400551830178878,
+        "error_abs_p95_deg": 0.1580269686446996,
+        "added_forward_max_deg": 0.4215972552813696,
+        "error_abs_max_deg": 0.5220590083415573,
+        "first_second": {
+          "source_mean_deg": 2.9518893725612414,
+          "target_mean_deg": 2.970488305998387,
+          "added_forward_mean_deg": 0.018598933437144183,
+          "error_rmse_deg": 0.01932657705226807,
+          "error_abs_p95_deg": 0.025365728770341885,
+          "added_forward_max_deg": 0.03449045550826213,
+          "error_abs_max_deg": 0.03449045550826213
+        },
+        "last_second": {
+          "source_mean_deg": 3.341336630706098,
+          "target_mean_deg": 3.3606106121380113,
+          "added_forward_mean_deg": 0.01927398143191283,
+          "error_rmse_deg": 0.042090872516017244,
+          "error_abs_p95_deg": 0.08826886670804152,
+          "added_forward_max_deg": 0.13986590302096147,
+          "error_abs_max_deg": 0.13986590302096147
+        }
+      },
+      "pelvis": {
+        "source_mean_deg": 4.390015420563633,
+        "target_mean_deg": 3.9679498302919423,
+        "added_forward_mean_deg": -0.42206559027169027,
+        "error_rmse_deg": 1.606975538367528,
+        "error_abs_p95_deg": 3.642930409259608,
+        "added_forward_max_deg": 4.034671014795151,
+        "error_abs_max_deg": 7.608173434671073,
+        "first_second": {
+          "source_mean_deg": 2.5909033628380467,
+          "target_mean_deg": 2.033602677342426,
+          "added_forward_mean_deg": -0.5573006854956202,
+          "error_rmse_deg": 0.5576058123180833,
+          "error_abs_p95_deg": 0.5899434082993352,
+          "added_forward_max_deg": -0.5035731232909768,
+          "error_abs_max_deg": 0.6031906798577893
+        },
+        "last_second": {
+          "source_mean_deg": 2.970871377538648,
+          "target_mean_deg": 2.2232760969339593,
+          "added_forward_mean_deg": -0.747595280604687,
+          "error_rmse_deg": 0.7943458213608134,
+          "error_abs_p95_deg": 1.2891537039088645,
+          "added_forward_max_deg": -0.19381912942546364,
+          "error_abs_max_deg": 1.388076537302652
+        }
+      }
+    },
+    {
+      "name": "03_low_step",
+      "torso": {
+        "source_mean_deg": 7.616554591197376,
+        "target_mean_deg": 7.6377283642142695,
+        "added_forward_mean_deg": 0.02117377301689255,
+        "error_rmse_deg": 0.13430956885071457,
+        "error_abs_p95_deg": 0.27724432538291766,
+        "added_forward_max_deg": 0.8895545811560908,
+        "error_abs_max_deg": 0.8895545811560908,
+        "first_second": {
+          "source_mean_deg": 2.951889357089867,
+          "target_mean_deg": 2.9710488817944793,
+          "added_forward_mean_deg": 0.019159524704612636,
+          "error_rmse_deg": 0.01988888226217633,
+          "error_abs_p95_deg": 0.028121891806796383,
+          "added_forward_max_deg": 0.0299699984082622,
+          "error_abs_max_deg": 0.0299699984082622
+        },
+        "last_second": {
+          "source_mean_deg": 2.951889362305951,
+          "target_mean_deg": 2.9709980942386585,
+          "added_forward_mean_deg": 0.019108731932707883,
+          "error_rmse_deg": 0.01989906855780203,
+          "error_abs_p95_deg": 0.02867648011106922,
+          "added_forward_max_deg": 0.02985150880184051,
+          "error_abs_max_deg": 0.02985150880184051
+        }
+      },
+      "pelvis": {
+        "source_mean_deg": 1.8272095055007969,
+        "target_mean_deg": 0.9914727703810485,
+        "added_forward_mean_deg": -0.8357367351197486,
+        "error_rmse_deg": 2.2519558142277747,
+        "error_abs_p95_deg": 4.620367011977525,
+        "added_forward_max_deg": 5.559466836032868,
+        "error_abs_max_deg": 10.917130934984385,
+        "first_second": {
+          "source_mean_deg": 2.590903350034716,
+          "target_mean_deg": 1.9568625286310124,
+          "added_forward_mean_deg": -0.6340408214037041,
+          "error_rmse_deg": 0.6342271290651841,
+          "error_abs_p95_deg": 0.6564201040512458,
+          "added_forward_max_deg": -0.5968893808984603,
+          "error_abs_max_deg": 0.6618638333483489
+        },
+        "last_second": {
+          "source_mean_deg": 2.590903352582757,
+          "target_mean_deg": 1.9421294909848796,
+          "added_forward_mean_deg": -0.6487738615978771,
+          "error_rmse_deg": 0.6489693755060308,
+          "error_abs_p95_deg": 0.6752618733952843,
+          "added_forward_max_deg": -0.6166383483025868,
+          "error_abs_max_deg": 0.6783100564231006
+        }
+      }
+    },
+    {
+      "name": "04_high_step",
+      "torso": {
+        "source_mean_deg": 12.034852270069315,
+        "target_mean_deg": 12.062511882016716,
+        "added_forward_mean_deg": 0.02765961194740036,
+        "error_rmse_deg": 0.21018265217796483,
+        "error_abs_p95_deg": 0.3273998615335003,
+        "added_forward_max_deg": 3.140317577509734,
+        "error_abs_max_deg": 3.140317577509734,
+        "first_second": {
+          "source_mean_deg": 2.95188934535157,
+          "target_mean_deg": 2.9708419430761044,
+          "added_forward_mean_deg": 0.018952597724533574,
+          "error_rmse_deg": 0.02025063324523254,
+          "error_abs_p95_deg": 0.0327337077952464,
+          "added_forward_max_deg": 0.038180460105621705,
+          "error_abs_max_deg": 0.038180460105621705
+        },
+        "last_second": {
+          "source_mean_deg": 2.9518674978325077,
+          "target_mean_deg": 2.971070835070134,
+          "added_forward_mean_deg": 0.019203337237624966,
+          "error_rmse_deg": 0.03188927559075303,
+          "error_abs_p95_deg": 0.05493958239576807,
+          "added_forward_max_deg": 0.11542945089246359,
+          "error_abs_max_deg": 0.11542945089246359
+        }
+      },
+      "pelvis": {
+        "source_mean_deg": 5.7772128075717415,
+        "target_mean_deg": 4.378906528475442,
+        "added_forward_mean_deg": -1.3983062790962992,
+        "error_rmse_deg": 3.2677903892323377,
+        "error_abs_p95_deg": 7.072821917753312,
+        "added_forward_max_deg": 6.088452444451065,
+        "error_abs_max_deg": 13.018465788414801,
+        "first_second": {
+          "source_mean_deg": 2.5909033457669386,
+          "target_mean_deg": 2.0253800250044525,
+          "added_forward_mean_deg": -0.5655233207624883,
+          "error_rmse_deg": 0.5660902313592934,
+          "error_abs_p95_deg": 0.600865803974466,
+          "added_forward_max_deg": -0.5065331804826769,
+          "error_abs_max_deg": 0.6083997852568643
+        },
+        "last_second": {
+          "source_mean_deg": 2.5908814155385316,
+          "target_mean_deg": 1.965517629411445,
+          "added_forward_mean_deg": -0.6253637861270874,
+          "error_rmse_deg": 0.630955362583902,
+          "error_abs_p95_deg": 0.7176007274742076,
+          "added_forward_max_deg": -0.41625775036851564,
+          "error_abs_max_deg": 0.9831013272593054
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v19_transition_pilot_20261109",
+  "identity": "dceec6b77d8e2f0e53959193a873a9f7a2a7b23e74ef572fdbb17b789aa7f834",
+  "verified": true,
+  "sources": 20,
+  "unique_source_files": 20,
+  "frames": 13601,
+  "checked_variants": 200,
+  "accepted_variants": 139,
+  "statuses": {
+    "accepted": 14,
+    "rejected": 6
+  },
+  "checked_output_hashes": 156,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 271.62,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

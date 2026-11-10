@@ -1,0 +1,26 @@
+{
+  "time": "2026-11-10T15:38:57.946358+08:00",
+  "pid": 3273562,
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_knee_terrain_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v24/frozen_runner",
+  "frames": 770,
+  "target_variant": 6,
+  "code_files": 50,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--resume",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_knee_terrain_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v24_knee_terrain_selections.json",
+    "--devices",
+    "1",
+    "--cpu-workers",
+    "1",
+    "--collision-rounds",
+    "12"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v24/knee.log"
+}

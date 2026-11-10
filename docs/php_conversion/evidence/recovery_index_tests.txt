@@ -1,0 +1,5 @@
+PASS: immutable assessment-only recovery contributes ten original slots
+PASS: rejected parent_hash
+PASS: rejected motion_changed
+PASS: rejected candidate_hash
+PASS: all recovery guards

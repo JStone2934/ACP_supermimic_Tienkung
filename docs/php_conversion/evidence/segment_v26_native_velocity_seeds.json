@@ -1,0 +1,82 @@
+[
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "65424eb2df25f76208a9ca67"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "dbd5fd7377591f00dbac116e"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "ae3119b7c5eec72ea138962a"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "988990cf92cb1973039622fe"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "035549ff83459055f188933a"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "b475d55f1dc84f351246c175"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "dc9725f978c70d45f930cd17"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "task_id": "da048932b917f7354f26940f"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "c047682ad2ce75d09945ca21"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "5d0b9024b383886112925d9e"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "729ab16ba34f8d9eea8bd29c"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "f92a6eb3d7083e6df0ed135c"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "353a6d02a02dace3b005c5b7"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "3986414b675c02ed5c88553d"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "37bc74c2171828380b320950"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "e2516e9039a71a46f85ffd34"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "c65b7f36c1a3d60d38b1ccc9"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "9f324fb53048e03566350ee9"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "aa096389f13f959149c16381"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "9905088ee0b7f96235304c66"
+  }
+]

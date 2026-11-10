@@ -1,0 +1,287 @@
+{
+  "verified": true,
+  "scope": "geometry, arms and posture for all eight complete pilot sources, with isolated assessment-only recovery",
+  "current_goal_compatible": true,
+  "posture_policy": {
+    "version": "torso-attitude-v1",
+    "reference": "neutral-calibrated-source-orientation",
+    "angular_rmse_max_deg": 3.0,
+    "angular_p95_max_deg": 5.0,
+    "angular_max_deg": 10.0,
+    "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+    "fps": 50
+  },
+  "sources": 8,
+  "frames": 4871,
+  "checked_variants": 80,
+  "accepted_variants": 50,
+  "rejected_variants": 30,
+  "original_failed_tasks": 1,
+  "recovered_program_errors": 1,
+  "checked_output_hashes": 60,
+  "categories": {
+    "motions-locomotion": {
+      "sources": 3,
+      "frames": 1671,
+      "checked_variants": 30,
+      "accepted_variants": 30,
+      "accepted": 3
+    },
+    "motions-low-step": {
+      "sources": 1,
+      "frames": 413,
+      "checked_variants": 10,
+      "accepted_variants": 10,
+      "accepted": 1
+    },
+    "motions-high-step": {
+      "sources": 1,
+      "frames": 455,
+      "checked_variants": 10,
+      "accepted_variants": 10,
+      "accepted": 1
+    },
+    "motions-low-climb-76": {
+      "sources": 2,
+      "frames": 1764,
+      "checked_variants": 20,
+      "accepted_variants": 0,
+      "rejected": 2
+    },
+    "motions-high-climb-76": {
+      "sources": 1,
+      "frames": 568,
+      "checked_variants": 10,
+      "accepted_variants": 0,
+      "rejected": 1
+    }
+  },
+  "rejected_variant_reason_counts": {
+    "self_collision": 30,
+    "posture:torso:p95": 30,
+    "terrain_penetration": 20,
+    "posture:torso:rmse": 20,
+    "posture:torso:max": 20,
+    "left_knee:support_distance": 8,
+    "left_knee:support_slip": 2,
+    "right_knee:support_distance": 1,
+    "right_knee:support_slip": 1
+  },
+  "clips": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "source_frames": [
+        0,
+        269
+      ],
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/fb70b42431137e98c663798a.json",
+      "quality_sha256": "12a2e247ba52c23f11d70c92f3a6d455e5665a578932b6fbd79f9390312665c9",
+      "torso": {
+        "angular_rmse_deg": 0.33432022139830836,
+        "angular_p95_deg": 0.43832022190592823,
+        "angular_max_deg": 2.5551312902218855,
+        "gated": true
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "source_frames": [
+        0,
+        260
+      ],
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/d5eed324d3fd96de8e87b1f7.json",
+      "quality_sha256": "925a936dba1c414042ae03485164c897db0d8f4af40f60203f6b5c9d162db7b4",
+      "torso": {
+        "angular_rmse_deg": 0.12007932789237467,
+        "angular_p95_deg": 0.29639079316933675,
+        "angular_max_deg": 0.30530270287056727,
+        "gated": true
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "source_frames": [
+        0,
+        413
+      ],
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/b5861a05558a4cd7d73673cb.json",
+      "quality_sha256": "85ee4ee21efae6c7958d1d15cb3fcd9a8057fabb23302b776c22ddb2179a67a0",
+      "torso": {
+        "angular_rmse_deg": 0.09235066053458992,
+        "angular_p95_deg": 0.21459350376363534,
+        "angular_max_deg": 0.219808215697166,
+        "gated": true
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "source_frames": [
+        0,
+        455
+      ],
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/489acf375307aed4fae857bf.json",
+      "quality_sha256": "ebb480f656f691d0050ef15ffe59ea2df2ef8619b7c094516ea3913344068b4e",
+      "torso": {
+        "angular_rmse_deg": 0.16877078527455427,
+        "angular_p95_deg": 0.4075333943634826,
+        "angular_max_deg": 0.4956363868272391,
+        "gated": true
+      },
+      "rejection_reasons": []
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "source_frames": [
+        0,
+        894
+      ],
+      "accepted_variants": [],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109_distance_recheck",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109_distance_recheck/quality/82e9f94c7aa5d09db9ab5913.json",
+      "quality_sha256": "8a82d9d196058404ea14cb2d3dd66411cfa8d3864f203efbd7162fcac836778a",
+      "torso": {
+        "angular_rmse_deg": 3.0214576295318114,
+        "angular_p95_deg": 9.139672576630359,
+        "angular_max_deg": 10.552326389673143,
+        "gated": true
+      },
+      "rejection_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "left_knee:support_distance",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "source_frames": [
+        0,
+        870
+      ],
+      "accepted_variants": [],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/e31746079e2db43b4db16d56.json",
+      "quality_sha256": "f9b2fe482c99c2f1cd1a345391cd4432b079ee69f66136c6eabc51431cf42e8c",
+      "torso": {
+        "angular_rmse_deg": 3.1500665712597553,
+        "angular_p95_deg": 9.305561665928577,
+        "angular_max_deg": 10.895939593853358,
+        "gated": true
+      },
+      "rejection_reasons": [
+        "self_collision",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "source_frames": [
+        0,
+        568
+      ],
+      "accepted_variants": [],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/21c5fee6f51249d044448f88.json",
+      "quality_sha256": "7f868af6f0cc1866e4e562976e7ab11622b6312283c708342aad64d84973cbcc",
+      "torso": {
+        "angular_rmse_deg": 2.2658477021884993,
+        "angular_p95_deg": 6.831006033615299,
+        "angular_max_deg": 7.828078691952731,
+        "gated": true
+      },
+      "rejection_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "posture:torso:p95"
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "source_frames": [
+        0,
+        1142
+      ],
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v13_init_pilot_20261109/quality/e42631bac0d49edfca6ffb35.json",
+      "quality_sha256": "2670a45acd50e4a57287cebf833dc188a704639b66409ff6d5965972f6298df4",
+      "torso": {
+        "angular_rmse_deg": 0.3339254458371189,
+        "angular_p95_deg": 0.4254343482395468,
+        "angular_max_deg": 4.829431821560578,
+        "gated": true
+      },
+      "rejection_reasons": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "clips": [
+    {
+      "name": "01_high_climb",
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "source_variant": 0,
+      "export_slot": 0,
+      "frames": 568,
+      "quality_path": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110/quality/def36e26545b62521276d118.json",
+      "quality_sha256": "bcdeab046723e0df862f50e3b9a63aecebadaf02adb3d90a194ebfc84a2497db",
+      "motion_sha256": "ebb92bc6821101a009b1ab1599ac8b151af09e075a6f28d3f67119d6d78df2c0",
+      "motion_kind": "accepted"
+    }
+  ]
+}

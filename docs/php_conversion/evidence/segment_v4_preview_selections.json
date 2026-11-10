@@ -1,0 +1,14 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s"
+  },
+  {
+    "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s"
+  },
+  {
+    "source_key": "motions-low-step/forward_walk1.2s_step0s"
+  },
+  {
+    "source_key": "motions-high-step/run_forward_0.9s_step1.0s"
+  }
+]

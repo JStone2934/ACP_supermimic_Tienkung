@@ -1,0 +1,3621 @@
+{
+  "scope": "Planning from committed full-length outputs; accepted slots and in-flight terrain solves excluded; v18 retry not yet launched, not final coverage audit",
+  "source_count": 11,
+  "missing_slots": 27,
+  "terrain_specific_solves": 27,
+  "frames": 14470,
+  "sources": [
+    {
+      "source_key": "motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s",
+      "missing_variants": [
+        5
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s",
+      "missing_variants": [
+        2
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s",
+      "missing_variants": [
+        1
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0033_stand_2.0s_left_90_1.7s_left_90_0.9s_run_left_90_1.5s_run_right_45_2.1s_stand_2.0s",
+      "missing_variants": [
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0039_stand_2.0s_forward_2.4s_left_45_0.8s_forward_1.8s_right_45_1.3s_left_45_1.5s_stand_2.0s",
+      "missing_variants": [
+        1
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+      "missing_variants": [
+        2,
+        4,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0057_stand_2.0s_run_right_90_1.2s_left_45_1.0s_run_left_45_1.8s_run_right_90_1.2s_run_right_90_2.1s_stand_2.0s",
+      "missing_variants": [
+        8
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s",
+      "missing_variants": [
+        3,
+        8
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s",
+      "missing_variants": [
+        3,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+      "missing_variants": [
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+      "missing_variants": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "accepted_receipts": [
+    {
+      "run": "php_segment_v10_peak_pilot_20261109",
+      "task_id": "481592ede36f8de7acf34375",
+      "quality_hash": "cd9144c59986161409c809ae721f9737ef8275947b3822b441713c8686bf5abf",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v10_peak_pilot_20261109",
+      "task_id": "99482158ef6f27e4660a1835",
+      "quality_hash": "e5c41ef0caa9ce023290e243b0520f47772b5d6f6a92e77c774126b870d10f0e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v10_peak_pilot_20261109",
+      "task_id": "209987cf0ebc1f88554e9c3c",
+      "quality_hash": "080cc34099612dbf078aec3a6dc62d43690b34e4f5c0fe678f7e8d538ba9a43b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "b17e97cf5a1367f46beaa4a8",
+      "quality_hash": "b6bcb87917478272f09639f0e3d515842354aee07eb1d82c5b3f61538313ecbf",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "092d6b874bfd361355cadebd",
+      "quality_hash": "6b0c3749a7454d02fd5eba5c64a3809a1b2905ec9746ae368663f4a1bfefd2ff",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "de4af55697330702ff408f46",
+      "quality_hash": "c3e78aeb57e219a372e05e9e01dcb53536f10cf61f963dc050e9d13eaa2c0398",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6d8e2f907bb357770f77760f",
+      "quality_hash": "8e78f25aac776f86da7062684be3df9095dbd2e4fd77f4bb75dbedc17edd572a",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "8785012fa822763051ba7ef3",
+      "quality_hash": "6cffcce38f4f845a4c4d2fe5c62ce350821e74be28142ebc2e31c655dcbdbe40",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "8a01c9eae2cba5dbff149e79",
+      "quality_hash": "c9cdb7cee96d47cfc72ee431b28e10c875d6205a319ff027dccb4e78b65e5a6a",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "aef942cc78faa68709f2e487",
+      "quality_hash": "4907ef1e700d6a442f5f966bf4e1ee38524a89dfdaac6203666ba7607dc21830",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "5d5d4005cfd099d7a5bb7804",
+      "quality_hash": "9749c528ea724a9975d3f2d1730dc2a223d24094f2afdb284860e1066aaad017",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "e7745fbefd4680517558da03",
+      "quality_hash": "97d89ac4aea8df79670cb0301eabf89f0653f942bd0f4e09fc32f7015ae03688",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "289b1ae1313cf15557a635fe",
+      "quality_hash": "623f882e7bc6896c4814e1c5aa417a652e1df23422990defde2f54d967198d9e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "ab1afd396d31cbbc2ad1e078",
+      "quality_hash": "fef1f30384afb6b68ab46e9e5f35a443b30f2a40c600bee08ff31e3f7d0aea2f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "82d25ad74445b7d327efb750",
+      "quality_hash": "228e412cdfb6197b5f483a6aa72b552f9346ed632d2bb70f2971ba096fec59b7",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "8879adb13221c623a42e09cd",
+      "quality_hash": "d9276278805824fb9a67c7e655f4796e85241db5a9c3f8b1066166c1bf149844",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "44b12d925175e6e6dd641a84",
+      "quality_hash": "6e8a9ea41c395f54b9846e0620f99dfce1a49a209b234ec002fd59b5f0bc0e62",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "c0209dae0590fa4c00439731",
+      "quality_hash": "7021ee707181a24c2986f08e8a40e65ffebf5294c0f83750d49ea87af7b76a09",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "a851226baf7b2a621ed063b6",
+      "quality_hash": "9102466eb105a7012a52dafc7cb7102890d28422d87510a6bebea8b9953d6755",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "00c93d2c944fe8a1880d6453",
+      "quality_hash": "4b648fd3be95cf12f564cdfcbddac3edae3d9aeab804508baa9b64d0f1cd91b5",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6672287705836022b0d5e0e3",
+      "quality_hash": "e30d50d8679810ea819d4664772d6ede2aacc5c616f9390ff8c0fa84814a7a00",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6207322f64307202450a279a",
+      "quality_hash": "3a7ac7dc9320be882d5d6a91007d77876e7c9f7ede60837fb5d86a7456b6e525",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "64260da5365ddb4a502ad0ae",
+      "quality_hash": "c8cffb396ce1945d40bf269bda0ea77ef8b6ba280dcea0b29aab38cd75ea82a4",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "32243a07b03ca99f04e9d848",
+      "quality_hash": "f9fc373bc45a3a41551b6dbd14570af4c8c2346682624fb61ed8ab763132dbd1",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "11e94d446093b1f845e30fe3",
+      "quality_hash": "7d7ca4ba348023133c19f63df9940ed665129f524faea4eec2a5e82550c893fc",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "ea424926358780f688540760",
+      "quality_hash": "375e06dc34663fc8f7d9a6a717d4573244b1629dec1833cf70fced1154b91006",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6aa13f00f937f0c764d5648f",
+      "quality_hash": "61ace1d1a79d3fe4478098ac0714be3b748f8081083254d3613a29be7b552fbe",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "1136270b17013ba9315cf5e7",
+      "quality_hash": "d2a5469c8f761a34c5213d07a9bfbdfb00153ae94d5be537ef08a30cd5a3824f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "7e61a8ecf0d084eaad9be0aa",
+      "quality_hash": "a798188fde34ac3ffe8f5e681f4f0bad18504cb30e0ae109ccd13d36d58e7228",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "8519691128abb4c8f807c137",
+      "quality_hash": "cfe9c0f7f4aa89afc0b72e07d46cd9da613b68945b028d635d0795c4323a76ab",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6daa46a590beb6926d5f7251",
+      "quality_hash": "d311cea29a6bd43bce4a4c3e294345d680fee3395148e82a9b5cfcc9a48a6a1e",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "1560c4ebad43196eaf735cc8",
+      "quality_hash": "36df209d16a5261cc587c04da92218603113889d4ee237cffe2a24d17c7905a2",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "736abcb32f99e90c5d1943fe",
+      "quality_hash": "f5d73440b7d26df25d9c726bde98307597f4dc54854d20d92aa4dc205e79d893",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "7f68b4f4db1df8a659110243",
+      "quality_hash": "f46e31832703e21840bf592c1d6baf2b0f98d8d077787a10c00dbd68db29e644",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "9c0c4e750c8d77a41fce2d43",
+      "quality_hash": "dc6279bc713c4e74bf1ba279025614025ad04d15fcf51da1b7f5cbb0f745c1d2",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "bf50d25693be9bbe9f9d35f3",
+      "quality_hash": "9fd7657da68065a72ff10b208755cfd2934149676e44670322fe0006c72acd58",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "21cea91b9f813057632ff0dd",
+      "quality_hash": "cf4ad8260fec6908318b1b5c2a9ca9b9a4d079ea6bd5c1bb676559b605af4879",
+      "accepted": [
+        0,
+        1,
+        3,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "01ef48b6efbcec27333431a5",
+      "quality_hash": "645c7f044004eba30121a9f9b8ff553f3a858c60be8d2f7388fcb2fb1e95cf7b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "c7aed40e458f356d81bb5351",
+      "quality_hash": "423bc3cfa9b0d7583c8d9518053fef0e071d548c19b24564b46e3e0b665d56c4",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "4645f49d74e3579bbc969b60",
+      "quality_hash": "357df6555147c274c3bfa09a50cb113322c736560f4a84f8df44376a186472e9",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "e53ea60bf06da41e280fecc7",
+      "quality_hash": "bf3fc98a8ec7d0fac63865efce762af32836973716cb611329f6fb0fd4d0fb6d",
+      "accepted": [
+        0,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "388f31a797ebed7975e784aa",
+      "quality_hash": "e8f32e2999e2d9f2d4c2abab8b08866444933f0f42b7a1b973415fdd89debc0b",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "de1102d77c733d45766c8b8a",
+      "quality_hash": "402b12466a770551de5c6d25334a5ae7a6b06bbb98b6c952c4375e07911fb9e0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "26037b822cb354ddb20b172c",
+      "quality_hash": "b69e624f95c148f1f27774512fbefc40e60747ba4fbd07e87f31357a3f4c64d0",
+      "accepted": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "566b9290e5f3302d43e4e6c5",
+      "quality_hash": "15b5e53e98796f284f437a59aa239d852cde2bb4882e8c5bc18481af7a0d8e99",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "794b0ce9707eb42e243c0518",
+      "quality_hash": "1ccfaa34d2182a8dc53581b7cf7cfd730a0ecb0fa5e6ed0344f603cb7fd7c3b1",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "bf90e965cb2e06c14c9b563d",
+      "quality_hash": "a305bc79fa71ae5b2e5d5d85e86fc4d6bcbff9f8d08d0731a706d0cdeddbe7ba",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "03d6762553914031d22c6180",
+      "quality_hash": "d14179f377897ea841c090022541b1827dbc2de3d63628fb6c90c92fda316750",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "d056a766eaaa5f3ea05d9d38",
+      "quality_hash": "6f5f86520f86cc096899e1d97fddcd6bd029688d0d2686c2b9effe7500987922",
+      "accepted": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "be8c6e183a5a47e97dff4b35",
+      "quality_hash": "7a40bda0e2967696314d81592324ed57f69ee53e9efba0485ad3f756d6ff4c2e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "f78f4cb793fc8c5b3a026439",
+      "quality_hash": "3d0631386c8bf0385e756f6e1f2d6b42165c60ed5393bb3eb3aecacb55ff68a0",
+      "accepted": [
+        0,
+        1,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "fcefcecbcea4635821e8b82e",
+      "quality_hash": "643b637f2db987b93bc843776c8b097c60a3483f423d98fc2025b5fb01acb815",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6de583ac837990ed8ee5b279",
+      "quality_hash": "06cf00b2082702e2db64e50c4fcb277ddaed48d2cccbe9065f9f96559c0e8659",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "a23e7709d3d315c5cdaa7dab",
+      "quality_hash": "c5eeaf4b4e67b7272488f43a4a6254026ade9ed2a7ec6444bad2ebe0b0b32e9f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "ddc51a3e3ac5eb4ca1c4fc74",
+      "quality_hash": "99586ef8bbe2295e7933be762d3b86b9efc98c973134e403e1dfc3fd516de3bc",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "16799f52a91ab2c0501739ae",
+      "quality_hash": "d494536c4a3b7f413f48ec191fa2736548c70d759f86c6865188066e414e4fa7",
+      "accepted": [
+        0,
+        2,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "9385b2a09b6527c275d34b30",
+      "quality_hash": "b1c8d4f28517eae611e1474e65bd38d64e06acfb776f44465f902b9fba4d26e0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "234790130922c91cbe3a33e4",
+      "quality_hash": "2fcf5af227f4a021e1269066ea1477fb3b7ca9f62923e9b62905322feab16d94",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "5d9b2061009b02504965003f",
+      "quality_hash": "ae40bdb1658278bee9377f7d10a09ac10c6d24fddae78bfda0ca7a220781b7aa",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "2f9f0e7a93260287b0cd6c4d",
+      "quality_hash": "7a843edc47f0274d963e85289bbf504c5ebdc213f9617c9f022a9997c17f0414",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "4bca2b1ffa46a2b038cbf279",
+      "quality_hash": "b49e2067194eeff3f9e6e3c21646d188151438b863cfab16bdc4a6a08e411b36",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "2ab08a42e30300d7181295db",
+      "quality_hash": "c49fe80773d4033ecae806841d5d4076d423305c81d2444032f578ff8192698f",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "a210bac06ec45fcc2f55cbb6",
+      "quality_hash": "f6b8fe8b5d130d2a167b521d45f16d91a1f574b23b3ce87ceb41251741eeafe3",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "bff24795583b235e54caa923",
+      "quality_hash": "cda3114c51dc0659760c4a73c80b12ad2a002f3a720e68b156146579d40ceb03",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "392b79361bbed99f3436da6b",
+      "quality_hash": "5e02a238e8fbffc238d712b7aab8a97d1cbeb0f59c033372f74cc0b39d7c403a",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "b37cbf81d7e51e9ad0f13d3e",
+      "quality_hash": "f05a443115a589c5e716836e66d9cd857b3fe08abfa576e4d77fe428747cb520",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "642925e506c1c892f6db3d39",
+      "quality_hash": "0b2d7d3058c63efad02529134915df2cb617150d1745d68ce45ee2193e37a499",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "ab417f7e284e252e4f5a9431",
+      "quality_hash": "09ea3201e3c7580892b18c3e76986f87e51278615ac7ccf18aa37ead745e3ace",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "8eefc5bce5ddd1f81c3c7450",
+      "quality_hash": "95e340b0ac4e6e7747fc004a19e9869eca496134b2f78e061f948d93904b0931",
+      "accepted": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "0f1a011e89c15f56a9d81eaf",
+      "quality_hash": "b9d6e1f4012791c1c414bc12249fee20936a160f091d28967ab174c9495fb570",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "1c9d56069706457c7e29d580",
+      "quality_hash": "882d9cc7184e1fe1413d4bab789e0f55490624c7c0828e30acce71d24d45587c",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "409fa62a8a24318c8d994f73",
+      "quality_hash": "182878b161093028b262805937032b96d4f3f4df0b28d9012d6b8db59ca8076f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "5651d3ba1fc06f9cb7d5690e",
+      "quality_hash": "0f93b2e210b03bcb6445462809717ff2bdb2047164394a8f1cd1921dbf773b09",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "071aab13965c5f07769db4d3",
+      "quality_hash": "7688c2e6516460d83672f879a19cfe80c3fbb42fd9ab1dc7c9eb3b370e2ec7b0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "e7835c3ba3f6aea9f740743e",
+      "quality_hash": "88ba1adf04598cc65da8b89f2cd723130f1a2e058b5462b1ad08a137dd26faf6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "e51b20acd6aa58b24c824c3c",
+      "quality_hash": "c527d43b6d9f79c84b1058975b0a4b22990306356caadc6f35b272765a098ac5",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "289e21e21aea15461f89eedb",
+      "quality_hash": "017f2f9384e722c2717a680ae2d53d7311a44027dd2cf5efd4ba00b1118822f0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "51289a26b6b257658fcddaa3",
+      "quality_hash": "4182ebabace40b97afd9f06965798bc93f8285796bba1ae68674ed381fd712d0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "d92f1cb5593c41b0e6876697",
+      "quality_hash": "2b4e43f6326918b9222eeb3aa1f40dd67e49c37fd7f61880b7501c430917c8a5",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "1ea5c832d13a2ea6f585c04f",
+      "quality_hash": "39ecc19f6b963c97da3f1325846ab1ec5d2ee0a3e7071e2b00a8629735f5ff49",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "f8f6df0624a8f75bcc2376ed",
+      "quality_hash": "d3b8da6cd728c477a31520d637c536b02193f37d306e1dba1b87d664c130d14e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "a8555aa150b5288f5794f2fe",
+      "quality_hash": "f2f5f5b1494336227d71c147124de274e799067ea5d23cde166e95a73abb0119",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "4767635b110b1604990d3798",
+      "quality_hash": "ef1648375e7b219eecab7e24503e038cddaef2b99fb1e95440ad4847d4e7ab34",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "77e6d5ac97eb742758dd2024",
+      "quality_hash": "cf11b968c41364802cec7a66ab3e3beea523822595f3b2410d591751c784ed3f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "04db90ae2d827955cda689d4",
+      "quality_hash": "e5d538b6b3b905de5e12296b01ea06219a9cbe1b1e3ad74f07d40e005a0cbd88",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "999bc3372a0b68cfc1463588",
+      "quality_hash": "a02b58e7205dd9331b12756beae1ae31be728b5cddf4144ced94e3ec5d7760d5",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "ab657be9e401a8c1cb123a9c",
+      "quality_hash": "50852d46edd2ab2c6ac4d2fb3db2866a149ec9bdcb68df2b006984a486860b9d",
+      "accepted": [
+        0,
+        1,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "e934f1f889ee894ba326a5a2",
+      "quality_hash": "5262b7a5fa46225de95116f77f91c33ea93f3442788cdbe972e98d426201a58f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "6ee55373a22ea011ac0c35fe",
+      "quality_hash": "432aacac52c1f3406b3e92e648e1c491682778c7ed4a365789c2da25e550e115",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "0403cf5205f707395225ae28",
+      "quality_hash": "dc9e8a480ea8ad209e9c395f770c7a7088b4d7fa6109a0c7765a67c8e206019d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "8ad5375956772fc84cfd2239",
+      "quality_hash": "25e726b49fd9b58dee8814e3522a36e6e384e90d71677418e8090026289186cb",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "f28c9a2b585e227604f341c9",
+      "quality_hash": "29dfb9a4a2744ff1bafc765981fe6f9d4191d67110c1307223a78824d93fc01f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "f68d7dc519e14471aeeaac47",
+      "quality_hash": "a3d494a7c75286894052fb8914b0509ce0b01e42be18c6d13058841eef39a630",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "cfd928b7770d627c036048aa",
+      "quality_hash": "766670402ca596d76fc915c140fe3a2b9678952e2b8565e2ca877119e0dfc0a9",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "e6b917cea2b6c116194f0eb5",
+      "quality_hash": "3efbb0247f2d746274aa13a77369f59e9e285070bfd39db647023c375636d0f0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "c444664f078387ba8d001f93",
+      "quality_hash": "b6f6a794d179c96f9dbab8c1ce2255e6b894a8236d5e1e0dcca5dd1089309952",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "94bb74e638856913f3b089b2",
+      "quality_hash": "7b92af361bd279580a4cb6c6344ee2eaf3ed0eef92042da3d13594c4e8ed2ec6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "439422213c31c473d9f84fa1",
+      "quality_hash": "728d72b56c30b75aaa07c34b81120de0bd672ecae41fa82f5a2176c6f87e3f66",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "0a2f8d6235acc7e11bec5120",
+      "quality_hash": "90fa61684928cac0aab8cad90b65da10bb8a9abf50b3b0535caa45ddfb216478",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "82ca8e0ba2f63deb7b857e0b",
+      "quality_hash": "f7ef0d2550ee856d0df235d0407a8c24f304921bc22639dfebd65104911ffba9",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "71f8bd2f371630fc881c4d47",
+      "quality_hash": "e999a9121319e35312f3ece4d5fd778e1181471572e264e8cbb42938ef4b8860",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "ba35cf0df68b889685ea0ab4",
+      "quality_hash": "acf895fa9694d22cb62109925fcadb9787e584982ccfc08e2adb2ea727f3f12f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "a1975e90c75e28944678b995",
+      "quality_hash": "204a7fa2771d39f5eae14eefffbd538676ccdbe05c433c61a0de7c234e12f706",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "854052bd86ffaf6eff5d0176",
+      "quality_hash": "2e9c40abde8953ba4623afe3899eaeda84289981875a6068beda8658347edc35",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "92c36dc3111bcc10ae969a09",
+      "quality_hash": "1ef2b2eaa64c9767a57843eae61d2fbdf22f0478740bd5d6f575f36610e97756",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "fce3c6a8388071936205935e",
+      "quality_hash": "790038435efc8a33f7d293f05c3832062f3fe0992592f97b2af07b5f8474996d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "7e4f15c4905fe205130f8476",
+      "quality_hash": "ef233fe6acf3e5711ec96ca5fba7761049ed1111d957612fb287d9410bb2672f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "07939238cd9db6acce89b7de",
+      "quality_hash": "b1510e44bd350f7f8af30a07648c8c72a3394156673898e35bfc742acb7745eb",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "981b9530f9bf4a43c9da0244",
+      "quality_hash": "26201b56b161cfdfe1b6bf60ce0923e3b122a1471c5b8a8c5d96c913e5e237f7",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "256103cd0b9921578c142b23",
+      "quality_hash": "ae1ec96c4c6606be2071324364473f0cff7d4517aa3bc1b3bc719526cd592c9e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "1729fdf77f16b6cba4351e17",
+      "quality_hash": "bd86b68f3fdabdf6647aa529f8067da216672d877b1bbac34b5ce49a9ea5a2a6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "fc0f94028f27c3791e2c3c23",
+      "quality_hash": "c92497c2d68cc60c9b047ab36693390a0c6a32714657465e6507c001f0018b70",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "d0dce7876ad16d42ba522171",
+      "quality_hash": "f3bd90c75dded93a9b531d93b1a8b93a526125b35901a18bcbd037a501647c04",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "9dd327511522a3a949d81bce",
+      "quality_hash": "01432d486555f2d3df8ab5f73e15a8038dd11fbf4c54fe078573610cabe50fab",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "cb576c3adad96e5c088b97ac",
+      "quality_hash": "099d0d6503c8d1e5ecad339d7484724eee6a6d852af18aa603601b2a652e51f8",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "d433df3cabe4ec510d83e2f4",
+      "quality_hash": "764fa929bee60604bba4294960990c4923d2dbaee14f680b58bbbfc999439184",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "697bc6110f53d5a37a656b1c",
+      "quality_hash": "b2191e0359538ab3ee4e3bde840019d0b54d7243fde56a35a526d502d99e2f04",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "d06a020dbde1cc8090ccf220",
+      "quality_hash": "c630f2684a13446ad9a91cd32dff75a4791509bc2aa7032f675a8f068c8bef96",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "17a48f1e56b3c30bbd2a2ef5",
+      "quality_hash": "38cb08953be7c5de1f02834f59f8296ded109358e570b0890340ae770427f764",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "c67ece48145b79d6494766ec",
+      "quality_hash": "6fbbd105142db820a792956f93ccbff0a44a4bd4d7519877bfa3646e80e28ada",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "450ca99e39d4a2521bc97aa6",
+      "quality_hash": "860a4cc3cac8a655f3e6701406ce03bae24fd924e6f479f35f6f203d6017e7e6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "c54d3df7ca55fc675b85fc11",
+      "quality_hash": "6967923bd434c5e6f8e7552e45cc60b25b5f148c37e50cab703d773d0ba00e74",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "96d18d3f46b78131e5111c3e",
+      "quality_hash": "bf9b3a08c6e51d92d83c68f68132f110128c13458e5c9be36d6abe45df539602",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "caeb1d6e435049abf305469b",
+      "quality_hash": "a699ec0cf4e60a40082786e2385780724dcc487535bf33561212c9b69515da00",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "b58dbc43a28f68f52530ad91",
+      "quality_hash": "61623ffd69833f4127d9226d1e1e27b6b661bced8060b9de9d5d08f1820d242d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "c91757622243e26525a84e29",
+      "quality_hash": "caa872253b3d93ea221c6ee57e62226e368308b3275508eb860566d814824b65",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_full_20261109",
+      "task_id": "129323389b69b2d1e5164c6b",
+      "quality_hash": "47c08a692aa021f2ae69c587da7749ec0e39791dacb394a06f167e6be14ab55d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "467e210a55a8e6feb1aceb90",
+      "quality_hash": "86f15fb7b7622e5c084a4b41cb333789dc89341af94d460138eab2d23da608ab",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "b10f17ee792eeda5568157d4",
+      "quality_hash": "8d6e0de641e768b686bbda8cd79a2942979c8be1f5904b56365da65bbca01f4c",
+      "accepted": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "522054fcf1614d71804a8536",
+      "quality_hash": "430bd69bb2218ab33ff0050b4fec9507b3ebd39035940db297ccc27341cea021",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "58a938ebe01ddb7f959b5d74",
+      "quality_hash": "7084ccf930b049f443b0839a1db7eaf5de752ee9f9b20414d92fd87cbbb3da13",
+      "accepted": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "255a5f141a3a3fda3442de9b",
+      "quality_hash": "a5be7358ce27370204287e9fab6f8446f594cc9b78546182910775621fa09669",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "f52bfe67f2e5a823a3a1b29a",
+      "quality_hash": "7ae502e098f3e3d75a479bdf56a2afa86a96b1d4faed9af4ca99511c147b8632",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "9879909b4ce9dfeb4ac174e1",
+      "quality_hash": "c7bb72e47e1c21a2187d785e54ea1b69fc3f1a35a89bf49259613933bcd5f243",
+      "accepted": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "6c6a26983b9227b646427cdb",
+      "quality_hash": "f5875cfde66b308c704ceb26dc0974f18b9aab1ac094e79731d43fe47e4b2f82",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "1f75dd475f6ee337c28dcb33",
+      "quality_hash": "8f347fe8db33cbbe48d9038ebdd78e23d80165cf8bddc7bde9b8c0e21e3c3f4e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "cd1854b28a525bf593d99be5",
+      "quality_hash": "c4361c65422a565651de1790d20c8923a5dd0bbf4d346ed0c7856f99bf0ec45b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "6f81baaef7cd3063eec5fabc",
+      "quality_hash": "b61c2b6e670872125557cbff387a8663aa77241b0d6f2b88324266871791cc6f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "6204fd547a4e727619ba8a06",
+      "quality_hash": "df451707b2f86bf3e12a1f9107f0a06eb4b83eeb71b461a93b4ea3c51f6e6607",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "53d209aad6e3ea9dde9648b8",
+      "quality_hash": "5422e40aa01bb0a1acf4473cfb8cd4191219717b2333da0984737942c093d546",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "6f22a8d853431e9f5c2fec65",
+      "quality_hash": "542531d2855bd8cb3b323678265340b37b50170130966302e06037060ba45d87",
+      "accepted": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "72ea734f0e15c427e2af7173",
+      "quality_hash": "62c5c7caf9d242732fa102d340e11ab8aba231951af90cd93fb59eb89f6410af",
+      "accepted": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "dab239434297637cc95b307a",
+      "quality_hash": "84f0ed261a7c14eddd23504fb8a9c8c06895c35d53f5a16bf42353cf2402739d",
+      "accepted": [
+        0,
+        2,
+        4,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "b2d895741e6887544d3b102c",
+      "quality_hash": "4881870428767a373b797c19c9f2df2e988078f451d475fe63cfb14c9c79141d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "f4781b778765c7f809dbb6c7",
+      "quality_hash": "bcdc16cfa1dbbdb4c33b639f667a877f3e132cb2e175eb4ae5e2b989cdebeeaa",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "0a9cb86d441600ac577a5d9f",
+      "quality_hash": "6245c25d410bbe04802722a45443afbc931c4af41f85bd3f8dabdcdb417bd6ea",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "430f677873585183f8d678cc",
+      "quality_hash": "3330600be688aef4ab5e7b36317964519b2648dc72eaddd5bccae38409707437",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "9175ec8ded901d73dbac81a8",
+      "quality_hash": "957fff914f4fa319dd45d07cb086f19551780bb34aaff75edc5a867b57f375a6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "e6266f787526f72ba3fd1794",
+      "quality_hash": "73c662c3656208049bb8474ac5047dc31b06f8341b3c6c1c9739a6ea8215b4d7",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "d41a05cd68f87a3f75da8b9f",
+      "quality_hash": "856251e5f989141700ad7b57a76458eac0f9f2d558dec909c740e7acc5cd54f9",
+      "accepted": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "d1862bbc81f438b05b3dc072",
+      "quality_hash": "2a2d86ae0a51c5938fbc7f39c44b9a5441b36dfd9596297e2e946d7d6c6e2505",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "e9dca5fff81c50f087bbbc9a",
+      "quality_hash": "c45947b1952331b0d995759aee97b3fa555616f1a064edfdb1d10034ee119e31",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "6d7b8f49cf0b0e15fdeeb18f",
+      "quality_hash": "998e55ed9b955418e8ce94a866665d6918cb4c257b6c5ca2bd238a21b6edb5af",
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "e38946fdd17e834658cc00c8",
+      "quality_hash": "da5ad51dccb68ab6a5e497d5e19cee191142103d5dcd58e1e40646407f13d419",
+      "accepted": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "58c544aee62960dd5c9090b3",
+      "quality_hash": "115edc954607ec533c309cdb29d53b9040f20d17e847a79cd1c7ef70b32ce93b",
+      "accepted": [
+        1,
+        2,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "69b3e5a1e773bb09c80549e0",
+      "quality_hash": "eccb114a939f11506ce80636c9230acdc532119a0648316616c60aa57d8cda13",
+      "accepted": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "c1e89d734316ca13a57997ff",
+      "quality_hash": "5f3fda79e3851abddc927158889f9c6fd7180e4e34930ef86a0b76af2e05e05d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_expand_20261109",
+      "task_id": "6e80243dc32f6617f5978d68",
+      "quality_hash": "47f32ad2736bd4e1505a92d1689a4b910f77a8c58c54ddc3339ee58f07c4b9a2",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "f4fb115b941d0d60a916766a",
+      "quality_hash": "2b865fa9c393d914759aac074470f0002fb36134ee914850ba84d0843fd71c29",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "2f17bf651cdbe4a3c7ee558b",
+      "quality_hash": "6708f054bc2536ed761e958be598a01c829c0d922d50dadd75c7acbf1059fe6a",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "830f233d4a362acc1c3e0288",
+      "quality_hash": "38ba6c3e177b1db95c1df4f209c42ddbbde74366b062104d77e36dfcfdf3bbdc",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "4f464286801f4095b9547970",
+      "quality_hash": "7131e02c4b1b010001cfaad576f130116d7d6165b9bf137c5684061dc912c663",
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "51985c5ec29700f1586b26fe",
+      "quality_hash": "01710947fa860d1792c824de6def4a2bd500d285210c323e52181e5b0f424304",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "ca3203c7d0ab7536e18b85c7",
+      "quality_hash": "25b3ea362d15546b858aa09d232b7760d89d4fa5ee47b4979e4b293e46215c0c",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "148d1865363c62a56dee15aa",
+      "quality_hash": "ff4cf9253b276e3942fed115d9ee5ac44b7a7e9f9a3173662b9dc5eb6c31b3fd",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_terrain_retry_pilot_20261109",
+      "task_id": "dc5dedfa85f17bc3519478a6",
+      "quality_hash": "4e8278a075fcbef21e888c7f65acb0d30f673a010b2c258f23308cbd3580384a",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "task_id": "7e61a8ecf0d084eaad9be0aa",
+      "quality_hash": "a798188fde34ac3ffe8f5e681f4f0bad18504cb30e0ae109ccd13d36d58e7228",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "task_id": "7f68b4f4db1df8a659110243",
+      "quality_hash": "f46e31832703e21840bf592c1d6baf2b0f98d8d077787a10c00dbd68db29e644",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "task_id": "c444664f078387ba8d001f93",
+      "quality_hash": "b6f6a794d179c96f9dbab8c1ce2255e6b894a8236d5e1e0dcca5dd1089309952",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "task_id": "092d6b874bfd361355cadebd",
+      "quality_hash": "6b0c3749a7454d02fd5eba5c64a3809a1b2905ec9746ae368663f4a1bfefd2ff",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "task_id": "bff24795583b235e54caa923",
+      "quality_hash": "cda3114c51dc0659760c4a73c80b12ad2a002f3a720e68b156146579d40ceb03",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v12_swing_pilot_20261109",
+      "task_id": "520f9a18a0781f7a9e5a5ab7",
+      "quality_hash": "85e3acc77275bd5a91c8e4e1b4057dce2a92d9f736e878ce87e4672da2180689",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v12_swing_pilot_20261109",
+      "task_id": "ea27e7320e16ba42a30111aa",
+      "quality_hash": "20d07afaddc33e34f732d4fa1b7cd9e55639ffc866ba4d8518b99380b76456dd",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v12_swing_pilot_20261109",
+      "task_id": "64809996a05b16316fb38693",
+      "quality_hash": "f89b332545e3e3f2b5fda7d7e5ceb9ec46903eadea35ae9fded962ce15637cd3",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v12_swing_pilot_20261109",
+      "task_id": "be29899a5baab62e2d5ba6d4",
+      "quality_hash": "3b26e2f511dabf4b4fb2c09b1a48f75b07fc87b2c319178bc6ac93e6b41c6ca6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v13_init_pilot_20261109",
+      "task_id": "fb70b42431137e98c663798a",
+      "quality_hash": "12a2e247ba52c23f11d70c92f3a6d455e5665a578932b6fbd79f9390312665c9",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v13_init_pilot_20261109",
+      "task_id": "d5eed324d3fd96de8e87b1f7",
+      "quality_hash": "925a936dba1c414042ae03485164c897db0d8f4af40f60203f6b5c9d162db7b4",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v13_init_pilot_20261109",
+      "task_id": "b5861a05558a4cd7d73673cb",
+      "quality_hash": "85ee4ee21efae6c7958d1d15cb3fcd9a8057fabb23302b776c22ddb2179a67a0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v13_init_pilot_20261109",
+      "task_id": "489acf375307aed4fae857bf",
+      "quality_hash": "ebb480f656f691d0050ef15ffe59ea2df2ef8619b7c094516ea3913344068b4e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v13_init_pilot_20261109",
+      "task_id": "e42631bac0d49edfca6ffb35",
+      "quality_hash": "2670a45acd50e4a57287cebf833dc188a704639b66409ff6d5965972f6298df4",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v14_pose_polish_pilot_20261109",
+      "task_id": "1bdd7793920f0c5bdde52e84",
+      "quality_hash": "c868898ca080ff879f965a758e3f94aa9e78f9058eda90cd35b514613809ad49",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v14_pose_polish_pilot_20261109",
+      "task_id": "d7b4397930daee7291fa9909",
+      "quality_hash": "dfe09baec47a80d8118805ccf657cac2c891b90249262615afb75b7162f846ad",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v14_pose_polish_pilot_20261109",
+      "task_id": "3cefc1e2319e94d4e3ce8543",
+      "quality_hash": "d3ab34ff5f0ce1f11a3f33ad4c4f2fcdcd0ea2edca6d7dbd5b8c91820ea68c0c",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v14_pose_polish_pilot_20261109",
+      "task_id": "029133305f7f5a23c88e28c2",
+      "quality_hash": "32b9fb5e4728bad79d7559779969f4fb1fb3e488de78b131094df6f24788e0cd",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v14_pose_polish_pilot_20261109",
+      "task_id": "8be60c8e57339376cb8ccda5",
+      "quality_hash": "16f56099aaa26c8fd274f5196fbd5ae2ef198680951162df06bd0339e1e6a87b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v15_collision_peak_pilot_20261109",
+      "task_id": "1569e9ea905f0b62c6b8f09a",
+      "quality_hash": "96dd8a865e4ec10dc378528b05de8e9ac96e5b801c34ce041e4d7b41721c8819",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v15_collision_peak_pilot_20261109",
+      "task_id": "b415c9b6d482a917403d7766",
+      "quality_hash": "2af3ca5681b126b9b8356e37f6d1a1efc03fc6b5bad0cecdf350433a0cc34c67",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v15_collision_peak_pilot_20261109",
+      "task_id": "769f070464161111c0f065f1",
+      "quality_hash": "26afba797cf1caae8697978212df7016dfb452e33489f460d111396e6670cb7e",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v15_collision_peak_pilot_20261109",
+      "task_id": "e3533f98e4810fcca4090927",
+      "quality_hash": "fa015ab6ee2f1f5c7ddcdf62699cf6c9832a7b5d7f852dd9823505184196535d",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v15_collision_peak_pilot_20261109",
+      "task_id": "0484f2efe30b68266c4cb6a2",
+      "quality_hash": "62f18e7ecfbd2a8770137894e45df61d81b1bd21cff9e17261d749aef559e812",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v16_constrained_pilot_20261109",
+      "task_id": "ddfc311ac359b8f7b7d3da24",
+      "quality_hash": "4aafd065ace11e59ea82d618b1c903a09fb97bb28c5dc7c6c8c8a4d220081ae9",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v16_constrained_pilot_20261109",
+      "task_id": "917c19b825076c0be6780c3e",
+      "quality_hash": "a626548c5e38fe45e1b05873ea93219ff43c0c455969f7295e86ed30df04d85f",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v16_constrained_pilot_20261109",
+      "task_id": "bf9c39e15cb38705b9807448",
+      "quality_hash": "57e9139004d1d42b3f11805351b5912abc47b7a0bcaba43d2ccba610cd7b62de",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v16_constrained_pilot_20261109",
+      "task_id": "27ca44d9e06b925c3d629663",
+      "quality_hash": "4dc91afd06ab7c047dfe1d1f0123d43c2833fe77b016a5a0fae0e4980bb0d7a8",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v16_constrained_pilot_20261109",
+      "task_id": "838b05938c91cf690d134e39",
+      "quality_hash": "be6b921382fad3904e349a1fb80593c3f1a332a418ae40f177a59a84ea21911b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v17_velocity_pilot_20261109",
+      "task_id": "7f2f75406e8db70243e4df94",
+      "quality_hash": "17338cc1f482c8ef7f8c5a85de4160f3b027f0132f68e54779a850d6db5d5b84",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v17_velocity_pilot_20261109",
+      "task_id": "3588a224e139ea9a1705dfc2",
+      "quality_hash": "4fe1ab08b984fc0c82775bbade27f8c2b2fa6fe20a7d5d8189eac8163ce4d107",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v17_velocity_pilot_20261109",
+      "task_id": "7d3e4da6e7479348e4111f56",
+      "quality_hash": "2a229a8f4064d3e00c0f9ff709bac8aa7c77dbddfd6dde034f66aae044d6a1e6",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v17_velocity_pilot_20261109",
+      "task_id": "9aefc1b505b826c99052fa0e",
+      "quality_hash": "1a20b624a411ff7139e2f616625d5997e362c152aacad39c2586f5e373c9b569",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v17_velocity_pilot_20261109",
+      "task_id": "6a80c0f7ef3dac1e12685bb0",
+      "quality_hash": "1b49cb576712f092c331f08153807c4f7f3903fe9516fcaf7f5736c0dd426899",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "task_id": "5b50af99d1db4a6005add1f7",
+      "quality_hash": "0c55c48524fae031c9f20ad944962384aef349d502139381e000f839ee8cbc9b",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "task_id": "7b7dd3f74545e60fa95c2ba5",
+      "quality_hash": "61972a2ead48676c8f14176e5162dae95177fe5a2b409b312e3375d18532dd01",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "task_id": "d1be867981ae4c6763c48315",
+      "quality_hash": "9fa21c100d79c7c955010766a1f4075a1a4d60771c0ae390d7021b544a31e7d2",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "task_id": "6b0ffa1041085554b7db9c54",
+      "quality_hash": "be39a69d086fbb8e92447d369ed33eac45d08f7f5dced4be7518a016c24fe1ea",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "task_id": "7d2c6349769272a9515cf2df",
+      "quality_hash": "70d46cd69411bd927499e8700a2839aee32fd2534d9d085aa8427ad19e89bb57",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "task_id": "567d744ebb3e8f94f4bd99cc",
+      "quality_hash": "48b454dbd72f3522d3aa3e3713eb86845b78247331f6c392412504b766d4300c",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "task_id": "0b456899d2d2a5278ad202ad",
+      "quality_hash": "0d5478074fc3bc5bbcfff3452241b14b435142d7390dc41a858e2cdf9c63a7b1",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "b8f74f30085794435116dbb1",
+      "quality_hash": "81bd5d37abf40390d736a876916935f448d44eed6e521614739b6c2e98237c3a",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "a44f3a8555020ab70de780ff",
+      "quality_hash": "a823731d7c83f9f18bb6ef698da328e37ee0700aaf7b85dc27e7ef99f13c0d9c",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "b00b66f4acc7babf1741c9a4",
+      "quality_hash": "f260963a32ee918a0b4e2a5d67e0e2145d6174e4f216de136db3377e1e9d7026",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "2e8c5d3151124b9a8fce7299",
+      "quality_hash": "4e7aad59ea382dc494cf3dcb5480da5b465e556053c4624a2ad5d6b901817939",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "115d9f1e19d4e153268d602a",
+      "quality_hash": "f81deab63e537a7c8e6f7b3d0ba209ad42ed75d6be94c1af1c0b36d89248a4ac",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "5b175f141193c8a1fcaa700d",
+      "quality_hash": "bf110ec5d7e8cfc80f5606a7bb0f33b235176e8a759517997f663a14b5f7a822",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "b0a568cf5fbbaddcf3e46722",
+      "quality_hash": "91964136e0b4442363eb07095352089bceac7d82db0b07827000db75fa77d557",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "9de802028e7d88a4cbc84ae0",
+      "quality_hash": "2e89b622ba11552321599dcb70e43ec6aa1e132e26fde602443c10811df77719",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "run": "php_segment_v9_pilot_20261109",
+      "task_id": "0c08cc886e3f56b08fcc2d7b",
+      "quality_hash": "72756e1fa6dabb6350010577a6464060b012973602535630b9c6651bce09d4c0",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "scope": "Identical full source motions and original variants; low climb solves variant2, high climb variant0; targeted profile24 vs baseline12 collision rounds",
+  "new_original_slots": 1,
+  "lost_original_slots": 0,
+  "rows": {
+    "motions-low-climb-76/left_45_walk1.5s_step1.2s": {
+      "v20": {
+        "frames": 870,
+        "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+        "accepted": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "solve_variant": 0,
+        "terrain_mm": 1.9734221591238827,
+        "self_mm": 1.866818726414547,
+        "reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/b9277fe963cd0cfbe7e7e8ae.json",
+        "report_sha256": "a1b9fca8040ccf08f80bbd702707c92343d79a941ffff78a9c38a9099171d935"
+      },
+      "v21_targeted": {
+        "frames": 870,
+        "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "solve_variant": 2,
+        "terrain_mm": 1.8098364268601672,
+        "self_mm": 1.4362975016186321,
+        "reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_climb_targeted_20261110/quality/34a7da28ab4bb6e9102ae3a3.json",
+        "report_sha256": "fb38574e7701996b3d30ff25d1e9f96d2263fb4723ebb910553dd280f094fd14"
+      }
+    },
+    "motions-high-climb-76/run_right_90_0.6s_step0s": {
+      "v20": {
+        "frames": 568,
+        "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+        "accepted": [],
+        "solve_variant": 0,
+        "terrain_mm": 6.777870753254492,
+        "self_mm": 7.023589909122891,
+        "reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/0c6bf4f401143c7691113bc7.json",
+        "report_sha256": "228e1a6b233d8429b9cf50a90c0e779dd9d1e55cdada8ff8aaf5dde26bd36345"
+      },
+      "v21_targeted": {
+        "frames": 568,
+        "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+        "accepted": [],
+        "solve_variant": 0,
+        "terrain_mm": 6.794224359307119,
+        "self_mm": 6.763839668327801,
+        "reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_climb_targeted_20261110/quality/6701ac9d3ce49bc86b439a28.json",
+        "report_sha256": "c51e14dd1acd6c757778bbe7c4409a2598f07eee991f0187e00d19a75c692b42"
+      }
+    }
+  }
+}

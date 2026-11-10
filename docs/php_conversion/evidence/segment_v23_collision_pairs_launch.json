@@ -1,0 +1,29 @@
+{
+  "time": "2026-11-10T14:45:39.777479+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+  "pid": 3037823,
+  "code_files": 48,
+  "sources": 8,
+  "frames": 4871,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--resume",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v23_collision_pairs_selections.json",
+    "--devices",
+    "1",
+    "--cpu-workers",
+    "1",
+    "--iterations",
+    "1000",
+    "--collision-rounds",
+    "12"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v23/pilot.log",
+  "promoted": false,
+  "scope": "Isolated per-frame/body-pair max then sum collision loss; same full eight sources, all original variants and fixed acceptance gates"
+}

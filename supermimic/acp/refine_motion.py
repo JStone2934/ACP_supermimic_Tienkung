@@ -24,6 +24,7 @@ import argparse
 import glob
 import json
 import os
+from pathlib import Path
 import shutil
 import time
 
@@ -172,12 +173,33 @@ def write_clip(model: mujoco.MjModel, src_path: str, out_path: str, pos, quat, q
     robot = get_robot(robot)
     src = dict(np.load(src_path))
     if robot.robot_id != "g1":
+        from .php_conversion import atomic_json, atomic_npz
+        if Path(out_path).exists():
+            raise ValueError('refusing to overwrite an existing refined target motion')
+        if len(pos) != len(src['joint_pos']):
+            raise ValueError('refinement must preserve frame timing to retain contact intent')
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
-        np.savez_compressed(out_path, fps=src["fps"], joint_names=np.array(robot.joint_names),
-                            joint_pos=np.concatenate((pos, quat, q), -1), robot_metadata=json.dumps(robot.metadata()),
-                            source="refined target-model motion", data_version="refine-v1")
+        atomic_npz(out_path, fps=src["fps"], joint_names=np.array(robot.joint_names),
+                   joint_pos=np.concatenate((pos, quat, q), -1), robot_metadata=json.dumps(robot.metadata()),
+                   source=src.get('source', src_path), source_frames=src.get('source_frames', [0, len(pos)]),
+                   parent_motion_hash=sha256(src_path), parent_task_id=src.get('task_id', ''),
+                   data_version='refine-v2', quality_status='requires_new_quality_and_labels')
         shutil.copy(src_path.replace("_motion.npz", "_terrain.npy"), out_path.replace("_motion.npz", "_terrain.npy"))
-        return
+        original_intent = Path(src_path.replace('_motion.npz', '_intent.npz'))
+        new_intent = Path(out_path.replace('_motion.npz', '_intent.npz'))
+        if original_intent.exists():
+            # World anchors and original timing remain the desired constraints, not new labels.
+            shutil.copyfile(original_intent, new_intent)
+        lineage = dict(parent_motion=src_path, parent_motion_hash=sha256(src_path),
+                       parent_terrain_hash=sha256(src_path.replace('_motion.npz', '_terrain.npy')),
+                       source_frames=np.asarray(src.get('source_frames', [0, len(pos)])).tolist(),
+                       motion_hash=sha256(out_path), terrain_hash=sha256(out_path.replace('_motion.npz', '_terrain.npy')),
+                       parent_intent_hash=sha256(original_intent) if original_intent.exists() else None,
+                       intent_hash=sha256(new_intent) if new_intent.exists() else None,
+                       quality_status='requires_new_quality_and_labels',
+                       intent_status='preserved_original_constraints' if original_intent.exists() else 'missing')
+        atomic_json(out_path.replace('_motion.npz', '_provenance.json'), lineage)
+        return lineage
     fps = float(np.asarray(src["fps"]).reshape(-1)[0])
     jp = np.concatenate((pos, quat, q), -1).astype(np.float64)
     names = [str(n) for n in src["body_names"]]
@@ -234,14 +256,17 @@ def main():
         rel = os.path.relpath(f, args.motion_dir)[: -len("_motion.npz")]
         lab = np.load(os.path.join(cdir, rel + ".npz"))
         robot.validate_metadata(json.loads(str(lab["robot_metadata"].item())) if "robot_metadata" in lab else None, legacy=True)
-        if robot.robot_id != "g1" and str(lab["motion_hash"].item()) != sha256(f):
+        if robot.robot_id != "g1" and (str(lab["motion_hash"].item()) != sha256(f) or
+                                       str(lab['terrain_hash'].item()) != sha256(f.replace('_motion.npz', '_terrain.npy'))):
             raise ValueError("stale refinement labels")
         pos, quat, q, fps = load_php_npz(f, robot)
         boxes = load_terrain(f)[0]
         boxes = boxes[boxes[:, 5] > 0]
         c = contact_segments(lab["contact_dist"][0], lab["contact_surface"][0], lab["body_pos_w"], fps)
         pn, qt, qn, st = rf.refine(pos, quat, q, boxes, c)
-        write_clip(model, f, os.path.join(args.out, rel + "_motion.npz"), pn, qt, qn, robot)
+        lineage = write_clip(model, f, os.path.join(args.out, rel + "_motion.npz"), pn, qt, qn, robot)
+        if lineage is not None:
+            st['provenance'] = lineage
         report[rel] = st
         print(f"{i + 1}/{len(files)} {rel}: " + " ".join(f"{k} {v:.4f}" if isinstance(v, float) else f"{k} {v}" for k, v in st.items()) + f" ({time.time() - t0:.0f} s)", flush=True)
     with open(os.path.join(args.out, f"refine_{args.clips or 'all'}.json"), "w") as fh:

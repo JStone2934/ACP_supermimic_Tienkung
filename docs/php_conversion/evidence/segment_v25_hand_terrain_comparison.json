@@ -1,0 +1,162 @@
+{
+  "scope": "Unique original missing slots versus bound planning snapshot",
+  "plan_sha256": "b501e487cc06b67826610724585586a24da7bd4a554d6148dbddeb039ab74453",
+  "audit_sha256": "6c111dea1d2c82d1a16c59ebc89d8dcffddde2e019144d10bbfd8f7c3b3291f8",
+  "checked_variants": 40,
+  "accepted_checks": 16,
+  "missing_before": 4,
+  "new_original_slots": 4,
+  "remaining_original_slots": 0,
+  "targets": [
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "variant": 3,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "variant": 3,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "variant": 4,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "variant": 5,
+      "passed": true
+    }
+  ],
+  "rows": [
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "solve_variant": 3,
+      "accepted": [
+        3
+      ],
+      "quality_sha256": "b0fe644a74ecff74afe8b36436935d11384a8394deeadec7fb47390e2c9c47f3",
+      "status": "accepted",
+      "missing_reasons": {
+        "0": [
+          "left_hand:support_slip"
+        ],
+        "1": [
+          "left_hand:support_slip"
+        ],
+        "2": [
+          "left_hand:support_slip"
+        ],
+        "4": [
+          "left_hand:support_slip"
+        ],
+        "5": [
+          "left_hand:support_slip"
+        ],
+        "6": [
+          "left_hand:support_slip"
+        ],
+        "7": [
+          "left_hand:support_slip"
+        ],
+        "8": [
+          "left_hand:support_slip"
+        ],
+        "9": [
+          "left_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "solve_variant": 3,
+      "accepted": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "quality_sha256": "f46197bc738016d2f797318ebf5ec678c890f762a75817fe8dc14abac3a8dde7",
+      "status": "accepted",
+      "missing_reasons": {
+        "0": [
+          "right_hand:support_slip"
+        ],
+        "2": [
+          "right_hand:support_slip"
+        ],
+        "6": [
+          "right_hand:support_slip"
+        ],
+        "8": [
+          "right_hand:support_slip"
+        ],
+        "9": [
+          "right_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "solve_variant": 4,
+      "accepted": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "quality_sha256": "4cd9702e0786b19e4532410c0bbdd82b4c56fb6506d95af943cdb56875437398",
+      "status": "accepted",
+      "missing_reasons": {
+        "0": [
+          "right_hand:support_slip"
+        ],
+        "2": [
+          "right_hand:support_slip"
+        ],
+        "6": [
+          "right_hand:support_slip"
+        ],
+        "8": [
+          "right_hand:support_slip"
+        ],
+        "9": [
+          "right_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "solve_variant": 5,
+      "accepted": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "quality_sha256": "cde6db7f920a795a4fc747ab705952944a74ce1735d861b81d6689b29a21a891",
+      "status": "accepted",
+      "missing_reasons": {
+        "0": [
+          "right_hand:support_slip"
+        ],
+        "2": [
+          "right_hand:support_slip"
+        ],
+        "6": [
+          "right_hand:support_slip"
+        ],
+        "8": [
+          "right_hand:support_slip"
+        ],
+        "9": [
+          "right_hand:support_slip"
+        ]
+      }
+    }
+  ]
+}

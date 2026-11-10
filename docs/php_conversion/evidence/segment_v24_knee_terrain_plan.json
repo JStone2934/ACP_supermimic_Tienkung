@@ -1,0 +1,20 @@
+{
+  "scope": "One missing original terrain variant; complete source and all10 original variants assessed; baseline9/10",
+  "source_key": "motions-low-climb-76/right_90_walk0.9s_step0.7s",
+  "target_variant": 6,
+  "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+  "parent_task": "5c0412ba22caef0b50b3b3aa",
+  "parent_quality_sha256": "3de288e339a73493cb4c11240bde9b287f43cc763114cdec51c575fa786455b8",
+  "accepted_before": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9
+  ],
+  "selections_sha256": "732cc5b3b578f36519cd6d4bf425809ead93caa31e979a2fb916705a16989e50"
+}

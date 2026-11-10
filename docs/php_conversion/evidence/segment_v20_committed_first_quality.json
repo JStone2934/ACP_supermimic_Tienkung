@@ -1,0 +1,56 @@
+[
+  {
+    "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+    "accepted": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "quality_hash": "94f1c79d64473732f278dcd75f2c9f38d29bd71627b9c604fee805f2f7581347",
+    "variant0": {
+      "terrain_mm": 2.1225327389994275,
+      "self_mm": 1.9395507145770754,
+      "torso": {
+        "angular_rmse_deg": 0.8832621441543654,
+        "angular_p95_deg": 2.5251439393042974,
+        "angular_max_deg": 2.553617782860716,
+        "gated": true
+      },
+      "reasons": []
+    }
+  },
+  {
+    "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+    "accepted": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "quality_hash": "457201c0abd2c016b31c10a92ed0a188542a7291ac7b92fd8dcc6490cd33a30e",
+    "variant0": {
+      "terrain_mm": 0.500029078880776,
+      "self_mm": 1.240373472421756,
+      "torso": {
+        "angular_rmse_deg": 0.20358561498769737,
+        "angular_p95_deg": 0.24773413765113292,
+        "angular_max_deg": 2.6153671859274477,
+        "gated": true
+      },
+      "reasons": []
+    }
+  }
+]

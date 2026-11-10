@@ -1,0 +1,326 @@
+{
+  "scope": "Same complete eight sources and original terrain variants, unchanged gates",
+  "new_original_slots": 0,
+  "lost_original_slots": 0,
+  "promoted": false,
+  "decision": "High-climb self collision drops from7.024mm to1.240mm; terrain7.284mm still rejects. Use only as isolated seed for native-pose refinement pilot, not standalone promotion.",
+  "rows": {
+    "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s": {
+      "v20": {
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "frames": 269,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000297974051549,
+        "self_mm": 1.240371866521599,
+        "reasons": [],
+        "quality_sha256": "ef9be31acf312336515e785b56a5e95b3d30fcd890a75ae48a87bb5ee6edb0d6"
+      },
+      "v23": {
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "frames": 269,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000296059419971,
+        "self_mm": 1.2403718665207564,
+        "reasons": [],
+        "quality_sha256": "3da7a9b5fc786a162eb5898c7d175dfef2f02b44a9e4fb53586b5a72ab93b594"
+      }
+    },
+    "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s": {
+      "v20": {
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "frames": 260,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000284084624579,
+        "self_mm": 1.2403734124121277,
+        "reasons": [],
+        "quality_sha256": "c13e5ad3ffb6b5a84bcb57bb8ba4dde7b0c30035829e42108d47ef38f68b0b2a"
+      },
+      "v23": {
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "frames": 260,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000295728129212,
+        "self_mm": 1.2403734093936927,
+        "reasons": [],
+        "quality_sha256": "cccc0507c5c2f455e1abef6a851607872f9e1cb8d4fad44adb1900d4e3339b40"
+      }
+    },
+    "motions-low-step/forward_walk1.2s_step0s": {
+      "v20": {
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "frames": 413,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000278736690609,
+        "self_mm": 1.2403730486064195,
+        "reasons": [],
+        "quality_sha256": "42d17cb9fe6cab54c57419352f0663dc666d7745fd7a538f630a4f58f192aa0e"
+      },
+      "v23": {
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "frames": 413,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000339611838798,
+        "self_mm": 1.2403729980796068,
+        "reasons": [],
+        "quality_sha256": "eae3b5f2064e37ddb42f1acadbf43a922743af6bd73e4152d8ec8bdffe6a8e19"
+      }
+    },
+    "motions-high-step/run_forward_0.9s_step1.0s": {
+      "v20": {
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "frames": 455,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000571410807547,
+        "self_mm": 1.2403731408276144,
+        "reasons": [],
+        "quality_sha256": "ff095861aa9029446f0fed77efa020cd87aafe92d4d512862711951a56e89ee8"
+      },
+      "v23": {
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "frames": 455,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000283928380672,
+        "self_mm": 1.240373140882564,
+        "reasons": [],
+        "quality_sha256": "02d404e88327d9312e2291deb839295aca5530662acdf5c022120987f50f79c9"
+      }
+    },
+    "motions-low-climb-76/forward_walk1.5s_step1.2s": {
+      "v20": {
+        "source_sha256": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+        "frames": 894,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 2.1225327389994275,
+        "self_mm": 1.9395507145770754,
+        "reasons": [],
+        "quality_sha256": "94f1c79d64473732f278dcd75f2c9f38d29bd71627b9c604fee805f2f7581347"
+      },
+      "v23": {
+        "source_sha256": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+        "frames": 894,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 1.7172368173923314,
+        "self_mm": 1.9256480939542286,
+        "reasons": [],
+        "quality_sha256": "6092f35197ffb378ff656de9ed7c1fb9fb20dc23a22d16e61ea2f2050212874d"
+      }
+    },
+    "motions-low-climb-76/left_45_walk1.5s_step1.2s": {
+      "v20": {
+        "source_sha256": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+        "frames": 870,
+        "accepted": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 1.9734221591238827,
+        "self_mm": 1.866818726414547,
+        "reasons": [],
+        "quality_sha256": "a1b9fca8040ccf08f80bbd702707c92343d79a941ffff78a9c38a9099171d935"
+      },
+      "v23": {
+        "source_sha256": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+        "frames": 870,
+        "accepted": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 1.8035729232235287,
+        "self_mm": 2.0431690959471513,
+        "reasons": [],
+        "quality_sha256": "2a6295a8356d6dc98e6bcef56839ecc48d174f35ecfa1094154cb81075fee255"
+      }
+    },
+    "motions-high-climb-76/run_right_90_0.6s_step0s": {
+      "v20": {
+        "source_sha256": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+        "frames": 568,
+        "accepted": [],
+        "terrain_mm": 6.777870753254492,
+        "self_mm": 7.023589909122891,
+        "reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "quality_sha256": "228e1a6b233d8429b9cf50a90c0e779dd9d1e55cdada8ff8aaf5dde26bd36345"
+      },
+      "v23": {
+        "source_sha256": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+        "frames": 568,
+        "accepted": [],
+        "terrain_mm": 7.283700545334648,
+        "self_mm": 1.2403724720327192,
+        "reasons": [
+          "terrain_penetration"
+        ],
+        "quality_sha256": "5ad8a58d775e647c72ffe7a1c1526904630b982a84747916ed000fc5f8bd0c29"
+      }
+    },
+    "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s": {
+      "v20": {
+        "source_sha256": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+        "frames": 1142,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.500029078880776,
+        "self_mm": 1.240373472421756,
+        "reasons": [],
+        "quality_sha256": "457201c0abd2c016b31c10a92ed0a188542a7291ac7b92fd8dcc6490cd33a30e"
+      },
+      "v23": {
+        "source_sha256": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+        "frames": 1142,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000279994386916,
+        "self_mm": 1.240373472316163,
+        "reasons": [],
+        "quality_sha256": "f9b906a66c32877a140915d16a38bd27b6fa4ea5332bc54c996cb508ce457e1f"
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s",
+    "key": "motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s__terrain_05",
+    "start": 0,
+    "end": 568,
+    "solve_variant": 5
+  },
+  {
+    "source_key": "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s",
+    "key": "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s__terrain_02",
+    "start": 0,
+    "end": 560,
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s",
+    "key": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__terrain_01",
+    "start": 0,
+    "end": 591,
+    "solve_variant": 1
+  },
+  {
+    "source_key": "motions-locomotion/cfg0033_stand_2.0s_left_90_1.7s_left_90_0.9s_run_left_90_1.5s_run_right_45_2.1s_stand_2.0s",
+    "key": "motions-locomotion/cfg0033_stand_2.0s_left_90_1.7s_left_90_0.9s_run_left_90_1.5s_run_right_45_2.1s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 510,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0039_stand_2.0s_forward_2.4s_left_45_0.8s_forward_1.8s_right_45_1.3s_left_45_1.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0039_stand_2.0s_forward_2.4s_left_45_0.8s_forward_1.8s_right_45_1.3s_left_45_1.5s_stand_2.0s__terrain_01",
+    "start": 0,
+    "end": 581,
+    "solve_variant": 1
+  },
+  {
+    "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+    "key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s__terrain_02",
+    "start": 0,
+    "end": 516,
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+    "key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s__terrain_04",
+    "start": 0,
+    "end": 516,
+    "solve_variant": 4
+  },
+  {
+    "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+    "key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s__terrain_05",
+    "start": 0,
+    "end": 516,
+    "solve_variant": 5
+  },
+  {
+    "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+    "key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s__terrain_07",
+    "start": 0,
+    "end": 516,
+    "solve_variant": 7
+  },
+  {
+    "source_key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s",
+    "key": "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s__terrain_08",
+    "start": 0,
+    "end": 516,
+    "solve_variant": 8
+  },
+  {
+    "source_key": "motions-locomotion/cfg0057_stand_2.0s_run_right_90_1.2s_left_45_1.0s_run_left_45_1.8s_run_right_90_1.2s_run_right_90_2.1s_stand_2.0s",
+    "key": "motions-locomotion/cfg0057_stand_2.0s_run_right_90_1.2s_left_45_1.0s_run_left_45_1.8s_run_right_90_1.2s_run_right_90_2.1s_stand_2.0s__terrain_08",
+    "start": 0,
+    "end": 560,
+    "solve_variant": 8
+  },
+  {
+    "source_key": "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s",
+    "key": "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s__terrain_03",
+    "start": 0,
+    "end": 499,
+    "solve_variant": 3
+  },
+  {
+    "source_key": "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s",
+    "key": "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s__terrain_08",
+    "start": 0,
+    "end": 499,
+    "solve_variant": 8
+  },
+  {
+    "source_key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s__terrain_03",
+    "start": 0,
+    "end": 711,
+    "solve_variant": 3
+  },
+  {
+    "source_key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s",
+    "key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s__terrain_09",
+    "start": 0,
+    "end": 711,
+    "solve_variant": 9
+  },
+  {
+    "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s__terrain_02",
+    "start": 0,
+    "end": 595,
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s__terrain_03",
+    "start": 0,
+    "end": 595,
+    "solve_variant": 3
+  },
+  {
+    "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s__terrain_04",
+    "start": 0,
+    "end": 595,
+    "solve_variant": 4
+  },
+  {
+    "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+    "key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s__terrain_06",
+    "start": 0,
+    "end": 595,
+    "solve_variant": 6
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_02",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_03",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 3
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_04",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 4
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_05",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 5
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_06",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 6
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_07",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 7
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_08",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 8
+  },
+  {
+    "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+    "key": "motions-low-step/right_45_walk0.8s_step0.5s__terrain_09",
+    "start": 0,
+    "end": 465,
+    "solve_variant": 9
+  }
+]

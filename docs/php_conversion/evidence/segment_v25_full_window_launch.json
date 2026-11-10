@@ -1,0 +1,39 @@
+{
+  "time": "2026-11-10T16:40:12.225338+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_full_window_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/frozen_runner",
+  "job_id": "81b1bb8b4c3b9fc323f1",
+  "unit": "php-job@81b1bb8b4c3b9fc323f1.service",
+  "pid": 3541722,
+  "resources": {
+    "gpu_workers": 1,
+    "cpu_workers": 1,
+    "reserve_gib": 17
+  },
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_full_window_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v25_full_window_selections.json",
+    "--devices",
+    "1",
+    "--cpu-workers",
+    "1",
+    "--window-frames",
+    "1024",
+    "--overlap",
+    "48",
+    "--collision-rounds",
+    "12",
+    "--resume"
+  ],
+  "sources": 3,
+  "frames": 2347,
+  "slots": 30,
+  "code_files": 50,
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/full_window.log",
+  "scope": "Full-original-motion1024-frame single-window re-solve of three512-seam root failures; no crops, altered timing or relaxed quality criteria"
+}

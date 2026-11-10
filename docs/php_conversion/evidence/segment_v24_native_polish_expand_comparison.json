@@ -1,0 +1,458 @@
+{
+  "scope": "All11 complete seed sources lacked every original variant at planning; per-original-variant union delta, all gates unchanged",
+  "new_original_slots": 69,
+  "remaining_original_slots": 41,
+  "rows": [
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "353a6d02a02dace3b005c5b7",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "d11a2bfda16791a4f1928f36c7ccd4a184945978bc547a4de9072628a8651d38",
+        "motion_sha256": "b61dd825131a14bce78361aeb9db7fe2f394509c0798cece7a1f08534f975390",
+        "intent_sha256": "41187b1796b15121d07e5cb1762c1f52b87fe853fa8f4db72840203c6dd7ea50",
+        "terrain_sha256": "8727d2812506c87c72b46fe226bb487875d67eff762375a713cd20d10784ca8e"
+      },
+      "accepted": [],
+      "variant_reasons": {
+        "0": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "1": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "2": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "3": [
+          "left_hand:support_slip",
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "4": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "5": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "6": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "7": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "8": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "9": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ]
+      },
+      "root": {
+        "added_velocity_rmse_m_s": 0.2594985429585891,
+        "added_velocity_p95_m_s": 0.4932607241807722,
+        "added_velocity_max_m_s": 1.9438517941820213,
+        "added_acceleration_max_m_s2": 171.54775877673663
+      },
+      "quality_sha256": "2d6ccdb16fd71e2da1ec6f13bed4acc17f4f3c1f76deaf593c14a71ab1baa43f"
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.9s_step0.7s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "fbbcf91f87747da564288da0",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "c93af33884c69f51cb58c6ff06ad059c27e8bcf24ca61ada36bfe6cc5c5c8649",
+        "motion_sha256": "86eca31bb8a59ea97f179ded05bc94012cece8afbaf3fbfcedbeab193ff92ddb",
+        "intent_sha256": "3ef91c9d228877bc8f772316183cc31418a64c2546d0d98bb24193a2bec0838e",
+        "terrain_sha256": "48ec8c5354f584b650a3dac0038efedbe5806fc9ce7cd7937889ab3669a7caf3"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {},
+      "root": {
+        "added_velocity_rmse_m_s": 0.2269227102531196,
+        "added_velocity_p95_m_s": 0.48087240241351187,
+        "added_velocity_max_m_s": 1.1056042977154033,
+        "added_acceleration_max_m_s2": 41.73629403748729
+      },
+      "quality_sha256": "ade5f80665e46b01395829f05b0704404f61b094761b755c9c2cdb406cad80ce"
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk0.6s_step0.7s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "1b1332cf3973bb2e837ed1d1",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "f82e23b0a74a97cc556ecbfdc1550fb4e608423c426d9f62b8318f30e34b383b",
+        "motion_sha256": "fac2b5f96e462abe691f16b1f54684ea161ce20a94e9ad2cc297c4cc0d67c830",
+        "intent_sha256": "7b4364e33df99b2704b35d161d6cec59847225e5a73ab32c149d9c82a0554170",
+        "terrain_sha256": "6b7017fcb5874d7e50740c12e4f866a40fb586161529daa739ff7fec508dbf92"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {},
+      "root": {
+        "added_velocity_rmse_m_s": 0.2805227300764527,
+        "added_velocity_p95_m_s": 0.5379664837998088,
+        "added_velocity_max_m_s": 1.7409080449412673,
+        "added_acceleration_max_m_s2": 76.50954238799231
+      },
+      "quality_sha256": "369362f499eb4c0d2a42fd10a774c205302c957abbe5cbddcdd93a0c25d70cbe"
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "3986414b675c02ed5c88553d",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "784ad0a9d57ae8fe82feea36466da3280435a1de912163b8d7c78a8a64902f48",
+        "motion_sha256": "3c6bc360c89d1e5cff0742b56fb6fe8792197db095ddded1eeab63dc471c07d9",
+        "intent_sha256": "7a7a8ae67eeb293346e32d4f42a6944e8e1052cd359b2c8d3184c7ec84bbfffb",
+        "terrain_sha256": "a037719f65752ddfd52113159e7d7842a318cf28f7e38fe5941354b9a5e5a116"
+      },
+      "accepted": [],
+      "variant_reasons": {
+        "0": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "1": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "2": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "3": [
+          "right_hand:support_slip",
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "4": [
+          "right_hand:support_slip",
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "5": [
+          "right_hand:support_slip",
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "6": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "7": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "8": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "9": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ]
+      },
+      "root": {
+        "added_velocity_rmse_m_s": 0.2703103911762571,
+        "added_velocity_p95_m_s": 0.6034498645490275,
+        "added_velocity_max_m_s": 1.719110739245141,
+        "added_acceleration_max_m_s2": 135.19394233884628
+      },
+      "quality_sha256": "b7f170b8745f6db6345fb9c4d1bb1653a85518459e3d85a287b61687d1dcb08e"
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step1.2s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "fef1ff175c8ce59057e5eb1c",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "12f6c25955a0e76b1f46d7dd3eaa0d204153f6d96831d440109414a6aa2fd359",
+        "motion_sha256": "0d87fa086404603afe676a589821801e0d4c9654e6d9694e346b6752e9468ce2",
+        "intent_sha256": "dcaff67d58c6ac890817e90cba4b88e2a3fa5264353259cd6661b1eea1dc4bb5",
+        "terrain_sha256": "a86dff93c7766e26fd85e034b96f58e0293287206994d1218ceb6eb6e381b65f"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {},
+      "root": {
+        "added_velocity_rmse_m_s": 0.24649692572860937,
+        "added_velocity_p95_m_s": 0.5435257592988193,
+        "added_velocity_max_m_s": 1.385568353240134,
+        "added_acceleration_max_m_s2": 85.36839284308076
+      },
+      "quality_sha256": "959728dd836774c69070bafa5e65f19f950d103624949962f9ee3f30896cc1d9"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.6s_step1.2s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "37bc74c2171828380b320950",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "1a6eb161225bfe98802a407cf7d6aaa4d399a6245111a70c5a8f1f35cda3fcfb",
+        "motion_sha256": "51fa94076772ff7a837cd6526cefa5fc4d64e821c72ef5f86670044a683ceab8",
+        "intent_sha256": "dbce0aad89b622fbe8a5770a7345d46ad446b917081f8516b02e05377f127ebb",
+        "terrain_sha256": "9a7bf7c8342cf01d2d87ec852001209532fab348926c5bf156951f9900d601ac"
+      },
+      "accepted": [],
+      "variant_reasons": {
+        "0": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "1": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "2": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "3": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "4": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "5": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "6": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "7": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "8": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "9": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ]
+      },
+      "root": {
+        "added_velocity_rmse_m_s": 0.2721603930921362,
+        "added_velocity_p95_m_s": 0.5197319020008406,
+        "added_velocity_max_m_s": 2.063846181375578,
+        "added_acceleration_max_m_s2": 182.35683799324224
+      },
+      "quality_sha256": "160ea093772ab19b6de07e3d441abcd56155fde577423ce68536331a2d36c5fe"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step0.7s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "e2516e9039a71a46f85ffd34",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "8b477134a06651aa076cddd5c77c228c90049327871ff57eca1b3a5834b06a71",
+        "motion_sha256": "35f92f6bff5e7bc4b24268713e55259a2969632ad1463a6a8d447f7de2dcf4de",
+        "intent_sha256": "7b6df2e78dd0069803b9dab7672f416325f2825bf5959f424526ead5bb97fa08",
+        "terrain_sha256": "17a829d2e4fd8a77181d4de2993005fdee63705beb0bc78697cf6e0b352134c6"
+      },
+      "accepted": [],
+      "variant_reasons": {
+        "0": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "1": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "2": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "3": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "4": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "5": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "6": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "7": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "8": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ],
+        "9": [
+          "root_continuity:added_acceleration_max_m_s2"
+        ]
+      },
+      "root": {
+        "added_velocity_rmse_m_s": 0.3095911630933692,
+        "added_velocity_p95_m_s": 0.46950285535696296,
+        "added_velocity_max_m_s": 2.2436012572309467,
+        "added_acceleration_max_m_s2": 108.60689244694697
+      },
+      "quality_sha256": "0fd2448c85398044d3bd5603b617320c23d25954305636fc0f3d9b04a10d1073"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step1.2s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "12cf34b8d324238a1074f3af",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "d951bb23699506dff96f4f38be5fb9e01c3fdb14a9879503f5535d5a0ad43cdc",
+        "motion_sha256": "d5952ff31b16b63d68d7fbca1cadee6900a4570a0c28730f55908c7e6097ff17",
+        "intent_sha256": "b3ffa25abd6e5eed1e8d5cdff66f7c615e6fc39d71455bb94906286654c8d932",
+        "terrain_sha256": "6ed3feeb1521107087f5619d1a6b4a2b81cea34769157fb5a215307a3e2e02b9"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {},
+      "root": {
+        "added_velocity_rmse_m_s": 0.2380572151888995,
+        "added_velocity_p95_m_s": 0.4629553671589726,
+        "added_velocity_max_m_s": 1.4448922608554569,
+        "added_acceleration_max_m_s2": 59.78664564145021
+      },
+      "quality_sha256": "0bbdd89112f63fd75c3c5ee61dcd9604f5268e616c7ba0d15c55cf887ae0edef"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step0.7s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "ef927a4385e0321040e6edfe",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "3193ae9fe7cb458ea93bbfc137e53480ec35f9efc921d371ce6aa218dc080c6a",
+        "motion_sha256": "90b0c541b4e3959656b7cf179f02c355fa959288795146330540edcdb7ef7ae6",
+        "intent_sha256": "ad603c1a3ea7bb2c67734cfeeecc8b3b16fead480d566bbe496cc792e264491a",
+        "terrain_sha256": "f60f525ea07af67bc26675e403297c9ebcba308f97a5406a09ef1bb487b18094"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {
+        "6": [
+          "left_knee:support_distance",
+          "left_knee:support_slip"
+        ]
+      },
+      "root": {
+        "added_velocity_rmse_m_s": 0.2492161020246758,
+        "added_velocity_p95_m_s": 0.5269887410149682,
+        "added_velocity_max_m_s": 1.5701312566011378,
+        "added_acceleration_max_m_s2": 60.97463384191768
+      },
+      "quality_sha256": "3de288e339a73493cb4c11240bde9b287f43cc763114cdec51c575fa786455b8"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step1.2s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "3e3c647fa9500a22261db9b5",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "8be9b8e6714ae3ca6d2c7027263ae8b24782333f4397584d27e9faff01890ef9",
+        "motion_sha256": "4e8518a0577c4203cf6ad795403ff3219fe64b0d1cbb01ab3959eec15b0b4b58",
+        "intent_sha256": "4ae8eadf35cf16b252bc5a942879069ed294aaf6996502ba48ae74536bc40fe4",
+        "terrain_sha256": "2337441b7b4571208859511eef64e0fda695ed32c1bad75533bdbdfce28d950a"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {},
+      "root": {
+        "added_velocity_rmse_m_s": 0.2503938030449775,
+        "added_velocity_p95_m_s": 0.5284488437466384,
+        "added_velocity_max_m_s": 1.506000216384157,
+        "added_acceleration_max_m_s2": 75.5736848039697
+      },
+      "quality_sha256": "95c602415988a7c150b98714c995d50197477d63bce392cdb3f5a5187bf1ab11"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step1.2s",
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "170f731aab72ba45d7340e63",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "5d79519bcabd8d4cd14727ca4e67f9eaaee672c941d24c99c5763758936c6e4c",
+        "motion_sha256": "4cf41b6c46869b3c7c8d345ff3ca4ce688b2d04c993ac9eb8d085173ee57c83f",
+        "intent_sha256": "b85f0ede1700226b4c76dac0fd89a517885d61c7c7ac7c0a26d90549be751b0d",
+        "terrain_sha256": "874000592e0eb96bbe1b0d6b5e9a91879c088ba057ee8b35c2ce429374af3000"
+      },
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "variant_reasons": {},
+      "root": {
+        "added_velocity_rmse_m_s": 0.238936691534174,
+        "added_velocity_p95_m_s": 0.4638108262355369,
+        "added_velocity_max_m_s": 1.589459507382033,
+        "added_acceleration_max_m_s2": 63.064353050122506
+      },
+      "quality_sha256": "118362b4b7dffdc93c7e813c52f5259cb42bad1c7e0f4149d72dfb9990cd219d"
+    }
+  ]
+}

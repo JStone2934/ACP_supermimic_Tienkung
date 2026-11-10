@@ -1,0 +1,45 @@
+{
+  "scope": "Four missing original hand-support terrain slots in two full sources; all original variants assessed per solve",
+  "targets": [
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "missing_variants": [
+        3
+      ],
+      "quality_sha256": "9646921ad69c455c4a5fe88ca4db20c4dd1beec643012ebe42cd31ee9ca1d9a8",
+      "accepted_before": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "missing_variants": [
+        3,
+        4,
+        5
+      ],
+      "quality_sha256": "550139548ef2f42743d1f305cc0fc9e7e338d65173099d4becfecc1f6f4d4acc",
+      "accepted_before": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  ],
+  "comparison": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v25_native_joint_comparison.json",
+  "comparison_sha256": "56560c79efc26032933ccf653c7faaee8cd4df1609e6be9696d1cfd3f7f1f1f3",
+  "solves": 4,
+  "frames": 3170
+}

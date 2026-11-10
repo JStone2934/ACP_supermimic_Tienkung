@@ -1,0 +1,2790 @@
+{
+  "run": ".cache/php_conversion/representative_v3",
+  "plan_identity": "13e822621249e86ee5ef42d1da3f79195d565ef76f761b6b66d99a98b3ea2136",
+  "summary": {
+    "run_id": "representative_v3",
+    "identity": "13e822621249e86ee5ef42d1da3f79195d565ef76f761b6b66d99a98b3ea2136",
+    "counts": {
+      "pending": 0,
+      "solving": 0,
+      "solved": 0,
+      "checking": 0,
+      "accepted": 7,
+      "rejected": 3,
+      "failed": 0
+    },
+    "sources": 10,
+    "converted_sources": 10,
+    "checked_variants": 100,
+    "accepted_variants": 68,
+    "converted_frames": 3062,
+    "expected_variants": 100,
+    "all_terminal": true,
+    "accepted": [
+      {
+        "task_id": "e0ce6cffa51e62c85dc41e5d",
+        "key": "standing/stand",
+        "family": "php_locomotion",
+        "source_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "files": {
+          "accepted/standing/stand_motion.npz": "9edb61263b0bc406f07a76815564c501f1825cf639816289553a4575a98b73c9",
+          "accepted/standing/stand_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/standing/stand_intent.npz": "56a61e507ca6d79fa06cc7eef63dd6075cc8f25642f779ba902748fffba516f2",
+          "accepted_contacts/standing/stand.npz": "57e56571f16b863fb86685aa37c04dad7b765b154d5186d08cf5b8f1d747bda3"
+        }
+      },
+      {
+        "task_id": "b6c085a9a7941626603ec4c9",
+        "key": "walking/forward_a",
+        "family": "php_locomotion",
+        "source_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "files": {
+          "accepted/walking/forward_a_motion.npz": "391e61220e107c84291617354a3edbbb24d9789a0eb18de127ab05493fa638b6",
+          "accepted/walking/forward_a_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/walking/forward_a_intent.npz": "e31f5cbde4d29adbf3982b76225ec4a8ec44dc52d3ed2971b8d9248ec76f0ac3",
+          "accepted_contacts/walking/forward_a.npz": "1680af41a9407f70a43df19e1ef81b27ade0c6ce436706b98e8f678a13860dc3"
+        }
+      },
+      {
+        "task_id": "e4b497f940139559ca1b234b",
+        "key": "walking/forward_b",
+        "family": "php_locomotion",
+        "source_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "files": {
+          "accepted/walking/forward_b_motion.npz": "04950a38ea0f5fd512a4f05f6a15c16eaa92f7042397c671202a05425c25cbc7",
+          "accepted/walking/forward_b_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/walking/forward_b_intent.npz": "5b4f53bb73d74f094846022f4f384e5df2873a9edb7b30c73603d401ebc95f85",
+          "accepted_contacts/walking/forward_b.npz": "b546e68aeffccdf48ac01bfb59f89370bfbeb502b91cd0efeaa13909f3b45e03"
+        }
+      },
+      {
+        "task_id": "c530817b6dd6c8bd299e3e6f",
+        "key": "turning/left45",
+        "family": "php_locomotion",
+        "source_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "files": {
+          "accepted/turning/left45_motion.npz": "63391821cbdc9d655268d58aa3c5c8473863b7c2540eb31c28ea8adc67584ae6",
+          "accepted/turning/left45_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/turning/left45_intent.npz": "bf82e5ffa8eb07db3de22cf439939712f8146b0fb738b7c76c5f94177db5283c",
+          "accepted_contacts/turning/left45.npz": "bbb5499bb617582ea88361cb7ed509ac2ce259c0946282fab433e4da881955dc"
+        }
+      },
+      {
+        "task_id": "0073c44fc277dbfb7c0a6951",
+        "key": "turning/right45",
+        "family": "php_locomotion",
+        "source_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "files": {
+          "accepted/turning/right45_motion.npz": "1c8eff7f8b0a898cfec1b81b5885ec1abd4990721d9dbe2d65c3706e64af3c7f",
+          "accepted/turning/right45_terrain.npy": "6704684b7d37014144a9512663d446a4aa5339db1f57e7d1f044d205d286924f",
+          "accepted/turning/right45_intent.npz": "128aabde1e8864329072c01bf63607e72978d9a5ba91f0c6def29d1fbdf96fd0",
+          "accepted_contacts/turning/right45.npz": "1d2aef21df170d3ac3e89bdd97d631e3e35ad673e095c8b6ec7e2d1d7d41d876"
+        }
+      },
+      {
+        "task_id": "3a685e6df1a1e0a0889a54e3",
+        "key": "low_step/forward_a",
+        "family": "php_forward_walk",
+        "source_variants": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "files": {
+          "accepted/low_step/forward_a_motion.npz": "b49c827a0cfe8d743fe5e0164f242ad774629c87e207458dba77d602ac28e9bf",
+          "accepted/low_step/forward_a_terrain.npy": "b9dbbe3943a0dfbb8c013cb5442166ff6508e8b0793a791fcacd700dd74ce74e",
+          "accepted/low_step/forward_a_intent.npz": "1c7109c0f2317abc7c687d33651e726c9571887caf8b38aa7b2783925d00da53",
+          "accepted_contacts/low_step/forward_a.npz": "fbc524fd748ce6011e9b022b1233921614aec661955aebb8c0940ec9b1a001ae"
+        }
+      },
+      {
+        "task_id": "3baceada3945ed712f6b3cef",
+        "key": "low_step/forward_b",
+        "family": "php_forward_walk",
+        "source_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "files": {
+          "accepted/low_step/forward_b_motion.npz": "0aff9ebe94822d0684414c205ec5132242e079d854cd348dca90fac3db4a7f96",
+          "accepted/low_step/forward_b_terrain.npy": "abaf7c58b83c89e065f998a59d2a8039df6fb5c420741b7112219def4dfcc569",
+          "accepted/low_step/forward_b_intent.npz": "f7fb729dab208cecac1a2791dd700429bd19a5dc7f7e627fd6f0d583a2e636eb",
+          "accepted_contacts/low_step/forward_b.npz": "de807fd0b96dbc2c1468d9070c934623cd75456097b5bfa37356797132ea1097"
+        }
+      }
+    ],
+    "status": "completed",
+    "robot_metadata": {
+      "robot_id": "tienkung3_29dof",
+      "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+      "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+      "joint_order": [
+        "hip_pitch_l_joint",
+        "hip_roll_l_joint",
+        "hip_yaw_l_joint",
+        "knee_pitch_l_joint",
+        "ankle_pitch_l_joint",
+        "ankle_roll_l_joint",
+        "hip_pitch_r_joint",
+        "hip_roll_r_joint",
+        "hip_yaw_r_joint",
+        "knee_pitch_r_joint",
+        "ankle_pitch_r_joint",
+        "ankle_roll_r_joint",
+        "waist_yaw_joint",
+        "waist_roll_joint",
+        "waist_pitch_joint",
+        "shoulder_pitch_l_joint",
+        "shoulder_roll_l_joint",
+        "shoulder_yaw_l_joint",
+        "elbow_pitch_l_joint",
+        "elbow_yaw_l_joint",
+        "wrist_pitch_l_joint",
+        "wrist_roll_l_joint",
+        "shoulder_pitch_r_joint",
+        "shoulder_roll_r_joint",
+        "shoulder_yaw_r_joint",
+        "elbow_pitch_r_joint",
+        "elbow_yaw_r_joint",
+        "wrist_pitch_r_joint",
+        "wrist_roll_r_joint"
+      ],
+      "control_dt": 0.02
+    },
+    "collision_policy": {
+      "version": "serial-ankle-adjacency-v1",
+      "excluded_pairs": [
+        [
+          "ankle_roll_l_link",
+          "knee_pitch_l_link"
+        ],
+        [
+          "ankle_roll_r_link",
+          "knee_pitch_r_link"
+        ]
+      ],
+      "reason": "Shank and foot are adjacent physical assemblies across the two serial ankle hinges; the intervening ankle_pitch link is the universal-joint bearing. Original convex hulls overlap at this articulation. Exclude only these two self pairs, retain all terrain collisions and report raw penetration separately. No collision mesh is changed."
+    },
+    "pd_status": "not_run",
+    "learned_tracking_status": "not_run"
+  },
+  "clips": [
+    {
+      "key": "standing/stand",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s_motion.npz",
+      "source_frames": [
+        0,
+        100
+      ],
+      "state": {
+        "task_id": "e0ce6cffa51e62c85dc41e5d",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:1",
+        "worker_pid": 1164478,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 4.057575022103265,
+            "loss": 0.0015326159773394465,
+            "contact_mse": 5.107065881304607e-10,
+            "penetration_mse": 1.1088929253999513e-12,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 0.0,
+            "foot_mse": 5.107065326193094e-10,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 122605568,
+            "start": 0,
+            "end": 100,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 4.10243944497779,
+        "candidate_files": {
+          "candidates/standing/stand_motion.npz": "9edb61263b0bc406f07a76815564c501f1825cf639816289553a4575a98b73c9",
+          "candidates/standing/stand_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "candidates/standing/stand_intent.npz": "56a61e507ca6d79fa06cc7eef63dd6075cc8f25642f779ba902748fffba516f2"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "quality_path": "quality/e0ce6cffa51e62c85dc41e5d.json",
+        "quality_hash": "4be3409d66cb3054ef212d286fdd84508a1c24e789e07fef459a6d2aa641db07",
+        "labels_path": "candidate_contacts/standing/stand.npz",
+        "labels_hash": "372bf5fb432b2aacd9864b548785625d53d287a4a618501bec28bb17f7e02da6",
+        "exported": {
+          "accepted/standing/stand_motion.npz": "9edb61263b0bc406f07a76815564c501f1825cf639816289553a4575a98b73c9",
+          "accepted/standing/stand_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/standing/stand_intent.npz": "56a61e507ca6d79fa06cc7eef63dd6075cc8f25642f779ba902748fffba516f2",
+          "accepted_contacts/standing/stand.npz": "57e56571f16b863fb86685aa37c04dad7b765b154d5186d08cf5b8f1d747bda3"
+        },
+        "assessment_seconds": 9.260128397960216
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 2,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        },
+        {
+          "variant": 9,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 6.699734636879395e-05,
+          "self_penetration_policy_max_m": 0.0012403695933634392,
+          "joint_velocity_max_ratio": 3.7271902761514926e-05
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 100,
+        "duration_s": 1.98,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 3.7271902761514926e-05,
+        "terrain_penetration_max_m": 6.699734636879395e-05,
+        "terrain_penetration_over_2mm_longest_frames": 0,
+        "self_penetration_raw_max_m": 0.03405396617088569,
+        "self_penetration_policy_max_m": 0.0012403695933634392,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403695933634392,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.03404744081016982,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03405396617088569
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 1.5517958457701708e-06,
+          "ankle_roll_r_link / world": 6.699734636879395e-05
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 100,
+            "distance_p95_m": 1.5219611847553867e-06,
+            "slip_p95_m_s": 1.1655772646829249e-05,
+            "anchor_error_p95_m": 2.129036803662684e-05
+          },
+          "right_foot": {
+            "frames": 100,
+            "distance_p95_m": 6.695004364746984e-05,
+            "slip_p95_m_s": 1.0631655955635116e-05,
+            "anchor_error_p95_m": 2.4036743050314215e-05
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "walking/forward_a",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0002_stand_2.0s_forward_1.2s_forward_1.6s_left_45_1.0s_right_45_2.0s_stand_2.0s_motion.npz",
+      "source_frames": [
+        100,
+        240
+      ],
+      "state": {
+        "task_id": "b6c085a9a7941626603ec4c9",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:1",
+        "worker_pid": 1164478,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 4.124251219909638,
+            "loss": 0.012697863392531872,
+            "contact_mse": 3.0074630785748013e-07,
+            "penetration_mse": 2.5625215283042735e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 8.565033567720093e-06,
+            "foot_mse": 4.269587861926993e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 109835264,
+            "start": 0,
+            "end": 140,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 4.152480170829222,
+        "candidate_files": {
+          "candidates/walking/forward_a_motion.npz": "391e61220e107c84291617354a3edbbb24d9789a0eb18de127ab05493fa638b6",
+          "candidates/walking/forward_a_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "candidates/walking/forward_a_intent.npz": "e31f5cbde4d29adbf3982b76225ec4a8ec44dc52d3ed2971b8d9248ec76f0ac3"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "quality_path": "quality/b6c085a9a7941626603ec4c9.json",
+        "quality_hash": "7823469c724c5d7c2b219bda8892779b782cc3e1eeb29831ebd94ce3026feaa3",
+        "labels_path": "candidate_contacts/walking/forward_a.npz",
+        "labels_hash": "13d771f931cac7f1d9281ec1b8ac595af1f0010effafc37c4856be6704cf55f6",
+        "exported": {
+          "accepted/walking/forward_a_motion.npz": "391e61220e107c84291617354a3edbbb24d9789a0eb18de127ab05493fa638b6",
+          "accepted/walking/forward_a_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/walking/forward_a_intent.npz": "e31f5cbde4d29adbf3982b76225ec4a8ec44dc52d3ed2971b8d9248ec76f0ac3",
+          "accepted_contacts/walking/forward_a.npz": "1680af41a9407f70a43df19e1ef81b27ade0c6ce436706b98e8f678a13860dc3"
+        },
+        "assessment_seconds": 7.1421433601062745
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 2,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        },
+        {
+          "variant": 9,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007240900775434267,
+          "self_penetration_policy_max_m": 0.0012402273346147688,
+          "joint_velocity_max_ratio": 0.8062746556502173
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 140,
+        "duration_s": 2.78,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8062746556502173,
+        "terrain_penetration_max_m": 0.0007240900775434267,
+        "terrain_penetration_over_2mm_longest_frames": 0,
+        "self_penetration_raw_max_m": 0.034302278998579794,
+        "self_penetration_policy_max_m": 0.0012402273346147688,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012402273346147688,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.034302278998579794,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.034134186746248144
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.0005007528108584014,
+          "ankle_roll_r_link / world": 0.0007240900775434267
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 99,
+            "distance_p95_m": 0.002664453318205687,
+            "slip_p95_m_s": 0.007991041096344057,
+            "anchor_error_p95_m": 0.0006636450128084405
+          },
+          "right_foot": {
+            "frames": 82,
+            "distance_p95_m": 0.0025129628304459916,
+            "slip_p95_m_s": 0.008429464853635755,
+            "anchor_error_p95_m": 0.0005837028912135949
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "walking/forward_b",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0014_stand_2.0s_forward_1.3s_right_45_0.6s_forward_2.2s_stand_2.0s_motion.npz",
+      "source_frames": [
+        100,
+        160
+      ],
+      "state": {
+        "task_id": "e4b497f940139559ca1b234b",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:0",
+        "worker_pid": 1164477,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 3.7385072209872305,
+            "loss": 0.01096730399876833,
+            "contact_mse": 2.06743393960096e-07,
+            "penetration_mse": 1.2112107983242026e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 0.0,
+            "foot_mse": 3.3499652545287972e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 135423488,
+            "start": 0,
+            "end": 60,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 3.7808532901108265,
+        "candidate_files": {
+          "candidates/walking/forward_b_motion.npz": "04950a38ea0f5fd512a4f05f6a15c16eaa92f7042397c671202a05425c25cbc7",
+          "candidates/walking/forward_b_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "candidates/walking/forward_b_intent.npz": "5b4f53bb73d74f094846022f4f384e5df2873a9edb7b30c73603d401ebc95f85"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "quality_path": "quality/e4b497f940139559ca1b234b.json",
+        "quality_hash": "0998ff11dfb2db6181bee57a6c1113a80c49c64e707bc51578a42a5fe1d60657",
+        "labels_path": "candidate_contacts/walking/forward_b.npz",
+        "labels_hash": "f4e0a41baa09a59ca12121efa019f1e10063072a67acbb13e60cdc6e5841604a",
+        "exported": {
+          "accepted/walking/forward_b_motion.npz": "04950a38ea0f5fd512a4f05f6a15c16eaa92f7042397c671202a05425c25cbc7",
+          "accepted/walking/forward_b_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/walking/forward_b_intent.npz": "5b4f53bb73d74f094846022f4f384e5df2873a9edb7b30c73603d401ebc95f85",
+          "accepted_contacts/walking/forward_b.npz": "b546e68aeffccdf48ac01bfb59f89370bfbeb502b91cd0efeaa13909f3b45e03"
+        },
+        "assessment_seconds": 8.11619115411304
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 2,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        },
+        {
+          "variant": 9,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0007445453869306812,
+          "self_penetration_policy_max_m": 0.0012402319075447818,
+          "joint_velocity_max_ratio": 0.718193317297726
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 60,
+        "duration_s": 1.18,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.718193317297726,
+        "terrain_penetration_max_m": 0.0007445453869306812,
+        "terrain_penetration_over_2mm_longest_frames": 0,
+        "self_penetration_raw_max_m": 0.03427862705816168,
+        "self_penetration_policy_max_m": 0.0012402319075447818,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012402319075447818,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.03427862705816168,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03413418526243813
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.0002880876262834342,
+          "ankle_roll_r_link / world": 0.0007445453869306812
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 40,
+            "distance_p95_m": 0.0026888255211658827,
+            "slip_p95_m_s": 0.005881878778827354,
+            "anchor_error_p95_m": 0.0006470824942978804
+          },
+          "right_foot": {
+            "frames": 48,
+            "distance_p95_m": 0.0026087828493188614,
+            "slip_p95_m_s": 0.008403801098118032,
+            "anchor_error_p95_m": 0.0005551475640881715
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "turning/left45",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s_motion.npz",
+      "source_frames": [
+        100,
+        170
+      ],
+      "state": {
+        "task_id": "c530817b6dd6c8bd299e3e6f",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:1",
+        "worker_pid": 1164478,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 3.728236404946074,
+            "loss": 0.02345721237361431,
+            "contact_mse": 1.3952187316590425e-07,
+            "penetration_mse": 5.402032154933067e-10,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 1.75018485037981e-07,
+            "foot_mse": 1.6527222896911553e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 135511040,
+            "start": 0,
+            "end": 70,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 3.7754464158788323,
+        "candidate_files": {
+          "candidates/turning/left45_motion.npz": "63391821cbdc9d655268d58aa3c5c8473863b7c2540eb31c28ea8adc67584ae6",
+          "candidates/turning/left45_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "candidates/turning/left45_intent.npz": "bf82e5ffa8eb07db3de22cf439939712f8146b0fb738b7c76c5f94177db5283c"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "quality_path": "quality/c530817b6dd6c8bd299e3e6f.json",
+        "quality_hash": "34cbc6d808c671929a4982870459fd0a6246bd59f7dc32aac37355d129874728",
+        "labels_path": "candidate_contacts/turning/left45.npz",
+        "labels_hash": "233ee8e98e04cb4b3ba0751f2080ba3f76e8da2d68b43be2cd569040abbc3dc6",
+        "exported": {
+          "accepted/turning/left45_motion.npz": "63391821cbdc9d655268d58aa3c5c8473863b7c2540eb31c28ea8adc67584ae6",
+          "accepted/turning/left45_terrain.npy": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+          "accepted/turning/left45_intent.npz": "bf82e5ffa8eb07db3de22cf439939712f8146b0fb738b7c76c5f94177db5283c",
+          "accepted_contacts/turning/left45.npz": "bbb5499bb617582ea88361cb7ed509ac2ce259c0946282fab433e4da881955dc"
+        },
+        "assessment_seconds": 8.812410788144916
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 2,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        },
+        {
+          "variant": 9,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0010699927267868517,
+          "self_penetration_policy_max_m": 0.0012401684044353002,
+          "joint_velocity_max_ratio": 0.7642904778373614
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 70,
+        "duration_s": 1.38,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.7642904778373614,
+        "terrain_penetration_max_m": 0.0010699927267868517,
+        "terrain_penetration_over_2mm_longest_frames": 0,
+        "self_penetration_raw_max_m": 0.034871520851814046,
+        "self_penetration_policy_max_m": 0.0012401684044353002,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012401684044353002,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.034871520851814046,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03444366863450421
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_r_link / world": 0.0010699927267868517,
+          "ankle_roll_l_link / world": 0.0002824926158818651
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 60,
+            "distance_p95_m": 0.0024713377654319944,
+            "slip_p95_m_s": 0.0047572774181672325,
+            "anchor_error_p95_m": 0.0004793872076743115
+          },
+          "right_foot": {
+            "frames": 50,
+            "distance_p95_m": 0.0013926444855556336,
+            "slip_p95_m_s": 0.007931291274101446,
+            "anchor_error_p95_m": 0.0003464666392314768
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "turning/right45",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s_motion.npz",
+      "source_frames": [
+        100,
+        200
+      ],
+      "state": {
+        "task_id": "0073c44fc277dbfb7c0a6951",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:0",
+        "worker_pid": 1164477,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 4.2563680140301585,
+            "loss": 0.02806239388883114,
+            "contact_mse": 2.606440432373347e-07,
+            "penetration_mse": 1.4932501901654405e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 4.309334144636523e-06,
+            "foot_mse": 3.501061200950062e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 167740416,
+            "start": 0,
+            "end": 100,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 4.610176941147074,
+        "candidate_files": {
+          "candidates/turning/right45_motion.npz": "1c8eff7f8b0a898cfec1b81b5885ec1abd4990721d9dbe2d65c3706e64af3c7f",
+          "candidates/turning/right45_terrain.npy": "6704684b7d37014144a9512663d446a4aa5339db1f57e7d1f044d205d286924f",
+          "candidates/turning/right45_intent.npz": "128aabde1e8864329072c01bf63607e72978d9a5ba91f0c6def29d1fbdf96fd0"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "quality_path": "quality/0073c44fc277dbfb7c0a6951.json",
+        "quality_hash": "9678e8cfdcbfec052b0d2bc93635557fdf7a54b7158f23bcd47b510989f6f36e",
+        "labels_path": "candidate_contacts/turning/right45.npz",
+        "labels_hash": "613d59fd77d81e7ccbd712dcc6b69a124b1a2f0190185c87b922353db0937fae",
+        "exported": {
+          "accepted/turning/right45_motion.npz": "1c8eff7f8b0a898cfec1b81b5885ec1abd4990721d9dbe2d65c3706e64af3c7f",
+          "accepted/turning/right45_terrain.npy": "6704684b7d37014144a9512663d446a4aa5339db1f57e7d1f044d205d286924f",
+          "accepted/turning/right45_intent.npz": "128aabde1e8864329072c01bf63607e72978d9a5ba91f0c6def29d1fbdf96fd0",
+          "accepted_contacts/turning/right45.npz": "1d2aef21df170d3ac3e89bdd97d631e3e35ad673e095c8b6ec7e2d1d7d41d876"
+        },
+        "assessment_seconds": 57.11901792790741
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 2,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        },
+        {
+          "variant": 9,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0004145954533238405,
+          "self_penetration_policy_max_m": 0.0012402423387489424,
+          "joint_velocity_max_ratio": 0.7642829899262713
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 100,
+        "duration_s": 1.98,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.7642829899262713,
+        "terrain_penetration_max_m": 0.0004145954533238405,
+        "terrain_penetration_over_2mm_longest_frames": 0,
+        "self_penetration_raw_max_m": 0.03490172415521466,
+        "self_penetration_policy_max_m": 0.0012402423387489424,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012402423387489424,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.03449708680436994,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03490172415521466
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_r_link / world": 0.0004145954533238405,
+          "ankle_roll_l_link / world": 0.0004075025050591097
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 72,
+            "distance_p95_m": 0.001924873127843803,
+            "slip_p95_m_s": 0.007668170358280489,
+            "anchor_error_p95_m": 0.0003614877334408851
+          },
+          "right_foot": {
+            "frames": 75,
+            "distance_p95_m": 0.002259808270812284,
+            "slip_p95_m_s": 0.011096553133533209,
+            "anchor_error_p95_m": 0.0006010871645499935
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "low_step/forward_a",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-step/forward_walk0.5s_step0s_motion.npz",
+      "source_frames": [
+        0,
+        363
+      ],
+      "state": {
+        "task_id": "3a685e6df1a1e0a0889a54e3",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:0",
+        "worker_pid": 1164477,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 4.682482960866764,
+            "loss": 0.014879980124533176,
+            "contact_mse": 1.1840215563552192e-07,
+            "penetration_mse": 1.3141807642114145e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 2.110792229359504e-05,
+            "foot_mse": 4.552965037873946e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 153624576,
+            "start": 0,
+            "end": 363,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 4.875186525052413,
+        "candidate_files": {
+          "candidates/low_step/forward_a_motion.npz": "b49c827a0cfe8d743fe5e0164f242ad774629c87e207458dba77d602ac28e9bf",
+          "candidates/low_step/forward_a_terrain.npy": "a87f6c918d40a91049e3bcef4cfabf863514b07dffc8fb24c973a11c677fd986",
+          "candidates/low_step/forward_a_intent.npz": "c94a479406554801630daf5925f69316024771c64fed0d078e5a6ca1d0d445c3"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "quality_path": "quality/3a685e6df1a1e0a0889a54e3.json",
+        "quality_hash": "c5eb5938bfd9eb535584fa1df6a01187e1fef2e096fae50c1e64e1ecc342e8dc",
+        "labels_path": "candidate_contacts/low_step/forward_a.npz",
+        "labels_hash": "915249b01a816e36562eb8c175c56e56f050e5a47f6d9604ea25f87210d2031e",
+        "exported": {
+          "accepted/low_step/forward_a_motion.npz": "b49c827a0cfe8d743fe5e0164f242ad774629c87e207458dba77d602ac28e9bf",
+          "accepted/low_step/forward_a_terrain.npy": "b9dbbe3943a0dfbb8c013cb5442166ff6508e8b0793a791fcacd700dd74ce74e",
+          "accepted/low_step/forward_a_intent.npz": "1c7109c0f2317abc7c687d33651e726c9571887caf8b38aa7b2783925d00da53",
+          "accepted_contacts/low_step/forward_a.npz": "fbc524fd748ce6011e9b022b1233921614aec661955aebb8c0940ec9b1a001ae"
+        },
+        "assessment_seconds": 60.99665783112869
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 2,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "left_knee:support_distance"
+          ],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        },
+        {
+          "variant": 9,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.002242100377064571,
+          "self_penetration_policy_max_m": 0.0012403705475102248,
+          "joint_velocity_max_ratio": 0.8173206259510837
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 363,
+        "duration_s": 7.24,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8173206259510837,
+        "terrain_penetration_max_m": 0.002242100377064571,
+        "terrain_penetration_over_2mm_longest_frames": 1,
+        "self_penetration_raw_max_m": 0.036123889657439116,
+        "self_penetration_policy_max_m": 0.0012403705475102248,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403705475102248,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.036123889657439116,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03547231506310193
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.002242100377064571,
+          "ankle_roll_r_link / world": 0.0020794169165918724
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 242,
+            "distance_p95_m": 0.0020308541771843066,
+            "slip_p95_m_s": 0.006342734213240027,
+            "anchor_error_p95_m": 0.00044734094540606654
+          },
+          "right_foot": {
+            "frames": 252,
+            "distance_p95_m": 0.0017755187046171886,
+            "slip_p95_m_s": 0.005045576322690459,
+            "anchor_error_p95_m": 0.00027645904828357766
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "low_step/forward_b",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-step/forward_walk0.8s_step0s_motion.npz",
+      "source_frames": [
+        0,
+        387
+      ],
+      "state": {
+        "task_id": "3baceada3945ed712f6b3cef",
+        "status": "accepted",
+        "attempts": 1,
+        "device": "cuda:1",
+        "worker_pid": 1164478,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 4.746641302946955,
+            "loss": 0.015085168182849884,
+            "contact_mse": 1.5654504181839002e-07,
+            "penetration_mse": 1.8324993744656126e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 8.568064913561102e-06,
+            "foot_mse": 5.665835942636477e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 137714688,
+            "start": 0,
+            "end": 387,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 4.892415676033124,
+        "candidate_files": {
+          "candidates/low_step/forward_b_motion.npz": "0aff9ebe94822d0684414c205ec5132242e079d854cd348dca90fac3db4a7f96",
+          "candidates/low_step/forward_b_terrain.npy": "34f7e1f0312f0cc7783e1b97c76e25533655805df174901266aac9d8d8aa6587",
+          "candidates/low_step/forward_b_intent.npz": "9f4464044f7650a9e414ff229d0ebdd6fd244965a885d29b2d0937842ef65d6e"
+        },
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "quality_path": "quality/3baceada3945ed712f6b3cef.json",
+        "quality_hash": "f043c5d61caebd56127d499dd4a978f4ef0b12117e4899bb10fa3a01f83d2844",
+        "labels_path": "candidate_contacts/low_step/forward_b.npz",
+        "labels_hash": "db44635b4f8ae95f495c842bc3ef3b73ee20a76608b39cd10ce7efc62463d01d",
+        "exported": {
+          "accepted/low_step/forward_b_motion.npz": "0aff9ebe94822d0684414c205ec5132242e079d854cd348dca90fac3db4a7f96",
+          "accepted/low_step/forward_b_terrain.npy": "abaf7c58b83c89e065f998a59d2a8039df6fb5c420741b7112219def4dfcc569",
+          "accepted/low_step/forward_b_intent.npz": "f7fb729dab208cecac1a2791dd700429bd19a5dc7f7e627fd6f0d583a2e636eb",
+          "accepted_contacts/low_step/forward_b.npz": "de807fd0b96dbc2c1468d9070c934623cd75456097b5bfa37356797132ea1097"
+        },
+        "assessment_seconds": 62.00850859005004
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 1,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 2,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 3,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 4,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 5,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 6,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 7,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 8,
+          "geometry_pass": true,
+          "rejection_reasons": [],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        },
+        {
+          "variant": 9,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "right_knee:support_distance",
+            "right_knee:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.0042960299857307815,
+          "self_penetration_policy_max_m": 0.0012403710677449838,
+          "joint_velocity_max_ratio": 0.8118375734626533
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 387,
+        "duration_s": 7.72,
+        "geometry_pass": true,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8118375734626533,
+        "terrain_penetration_max_m": 0.0042960299857307815,
+        "terrain_penetration_over_2mm_longest_frames": 1,
+        "self_penetration_raw_max_m": 0.036112395882842256,
+        "self_penetration_policy_max_m": 0.0012403710677449838,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403710677449838,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.036112395882842256,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03568121060675577
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.0042960299857307815,
+          "ankle_roll_r_link / world": 0.0022720972575167586
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 278,
+            "distance_p95_m": 0.0021885772895343355,
+            "slip_p95_m_s": 0.006108769667295444,
+            "anchor_error_p95_m": 0.000514180544184194
+          },
+          "right_foot": {
+            "frames": 269,
+            "distance_p95_m": 0.0019570907876454244,
+            "slip_p95_m_s": 0.005825997389258276,
+            "anchor_error_p95_m": 0.00035402722069163405
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "representative/high-step",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-step/run_forward_0.6s_step0.5s_motion.npz",
+      "source_frames": [
+        0,
+        407
+      ],
+      "state": {
+        "task_id": "053ba6205dd05e80fb95af71",
+        "status": "rejected",
+        "attempts": 1,
+        "device": "cuda:0",
+        "worker_pid": 1164477,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 5.615549639100209,
+            "loss": 0.037883512675762177,
+            "contact_mse": 5.277859713714861e-07,
+            "penetration_mse": 5.690175441941392e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 0.00040378046105615795,
+            "foot_mse": 1.737875209073536e-05,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 224793600,
+            "start": 0,
+            "end": 407,
+            "fixed_frames": 0
+          }
+        ],
+        "solve_seconds": 5.76943223294802,
+        "candidate_files": {
+          "candidates/representative/high-step_motion.npz": "a9486a31efcaa0a182420bacd62acf5d04ce6538ce8530b486dcefb66f9a36e5",
+          "candidates/representative/high-step_terrain.npy": "21f656fe1786f081f86a97a79215f99c95f19d78a1bea654c972256ef7788703",
+          "candidates/representative/high-step_intent.npz": "2d3d928218dfb24454c8f951452b862a0cfbb0e860c588045279e62fe678c859"
+        },
+        "accepted_variants": [],
+        "quality_path": "quality/053ba6205dd05e80fb95af71.json",
+        "quality_hash": "076c49ec9f885de23f3e3b34b3568375a03077b5e935068ff05db6b292484ec9",
+        "labels_path": "candidate_contacts/representative/high-step.npz",
+        "labels_hash": "5bffcac7bba92fb7f00668a25e2d7793762ee17daaae07c33ce40264be12ea28",
+        "exported": {},
+        "assessment_seconds": 62.047193608945236
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 1,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 2,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 3,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 4,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 5,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.005487193883107921,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 6,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 7,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.005487193883107921,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 8,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.005487193883107921,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        },
+        {
+          "variant": 9,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "terrain_penetration"
+          ],
+          "terrain_penetration_max_m": 0.0054871938831079214,
+          "self_penetration_policy_max_m": 0.0012403702016369784,
+          "joint_velocity_max_ratio": 0.8623946336990876
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 407,
+        "duration_s": 8.12,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "terrain_penetration"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8623946336990876,
+        "terrain_penetration_max_m": 0.0054871938831079214,
+        "terrain_penetration_over_2mm_longest_frames": 5,
+        "self_penetration_raw_max_m": 0.03640780287601975,
+        "self_penetration_policy_max_m": 0.0012403702016369784,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403702016369784,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.03640780287601975,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03605943822530481
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.0054871938831079214,
+          "ankle_roll_r_link / world": 0.003676129743949187
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 236,
+            "distance_p95_m": 0.0018778603308319975,
+            "slip_p95_m_s": 0.018974752826246645,
+            "anchor_error_p95_m": 0.0011902900498742413
+          },
+          "right_foot": {
+            "frames": 268,
+            "distance_p95_m": 0.0016793695522328762,
+            "slip_p95_m_s": 0.016066799604561595,
+            "anchor_error_p95_m": 0.0005677439097756685
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "representative/low-climb-76",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-climb-76/forward_walk0.6s_step0.7s_motion.npz",
+      "source_frames": [
+        0,
+        800
+      ],
+      "state": {
+        "task_id": "6f27e37dcc9084c758163a80",
+        "status": "rejected",
+        "attempts": 1,
+        "device": "cuda:1",
+        "worker_pid": 1164478,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 6.71336763817817,
+            "loss": 1.5771223306655884,
+            "contact_mse": 0.0010922321816906333,
+            "penetration_mse": 6.221069725143025e-06,
+            "self_overlap_mse": 1.0490583957079025e-09,
+            "speed_loss": 0.0386868380010128,
+            "foot_mse": 0.0032183751463890076,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 154011648,
+            "start": 0,
+            "end": 512,
+            "fixed_frames": 0
+          },
+          {
+            "iterations": 1000,
+            "seconds": 6.024624879006296,
+            "loss": 0.3776860535144806,
+            "contact_mse": 0.0002691689587663859,
+            "penetration_mse": 8.106148925435264e-07,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 0.04255241900682449,
+            "foot_mse": 0.00023631271324120462,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 154011648,
+            "start": 464,
+            "end": 800,
+            "fixed_frames": 48
+          }
+        ],
+        "solve_seconds": 13.357222958933562,
+        "candidate_files": {
+          "candidates/representative/low-climb-76_motion.npz": "cd6bcf7d752547d145783913e65e8d48cd4fa198e5f786299aec0d89eddea62d",
+          "candidates/representative/low-climb-76_terrain.npy": "8727d2812506c87c72b46fe226bb487875d67eff762375a713cd20d10784ca8e",
+          "candidates/representative/low-climb-76_intent.npz": "e3e78f7b45ef91c1ccec130806df68bd774403f2621bcf85b6eb83d6b321a1be"
+        },
+        "accepted_variants": [],
+        "quality_path": "quality/6f27e37dcc9084c758163a80.json",
+        "quality_hash": "4b87134c574ee3d58b234798d51638043e342adb78e968f6005cdd56d3b9a411",
+        "labels_path": "candidate_contacts/representative/low-climb-76.npz",
+        "labels_hash": "b29bfb10ac7f9c3bbb1b60b267a3a0a481715a19837c89ceac3a932e75a6d182",
+        "exported": {},
+        "assessment_seconds": 66.30653224582784
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239323,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 1,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239337,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 2,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239317,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 3,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239318,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 4,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.037265189622393384,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 5,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239325,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 6,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239327,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 7,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239328,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 8,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.037265189622393266,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        },
+        {
+          "variant": 9,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "right_knee:support_slip",
+            "left_hand:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_distance",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.03726518962239331,
+          "self_penetration_policy_max_m": 0.0663634678153893,
+          "joint_velocity_max_ratio": 1.6869739035798175
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 800,
+        "duration_s": 15.98,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "joint_velocity",
+          "terrain_penetration",
+          "self_collision",
+          "left_knee:support_distance",
+          "left_knee:support_slip",
+          "right_knee:support_distance",
+          "right_knee:support_slip",
+          "left_hand:support_distance",
+          "left_hand:support_slip",
+          "right_hand:support_distance",
+          "right_hand:support_slip"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 1.6869739035798175,
+        "terrain_penetration_max_m": 0.03726518962239323,
+        "terrain_penetration_over_2mm_longest_frames": 86,
+        "self_penetration_raw_max_m": 0.0663634678153893,
+        "self_penetration_policy_max_m": 0.0663634678153893,
+        "self_penetration_policy_over_2mm_longest_frames": 31,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403680638028295,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.03925590503329037,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03927961906752635,
+          "knee_pitch_l_link / knee_pitch_r_link": 0.0663634678153893,
+          "hip_yaw_l_link / knee_pitch_r_link": 0.00674993042307335,
+          "ankle_roll_l_link / knee_pitch_r_link": 0.0603854144144076,
+          "hip_yaw_l_link / hip_yaw_r_link": 0.013467349319450369,
+          "knee_pitch_l_link / right_tcp_link": 0.015681965595538937,
+          "hip_yaw_l_link / right_tcp_link": 0.0007214870606440801,
+          "ankle_roll_l_link / ankle_roll_r_link": 0.06593887853895579,
+          "ankle_roll_r_link / knee_pitch_l_link": 0.058855796885520256,
+          "ankle_pitch_r_link / ankle_roll_l_link": 0.03053387655723172,
+          "ankle_pitch_l_link / ankle_roll_r_link": 0.02380014143599861,
+          "waist_pitch_link / waist_yaw_link": 0.0061959346938571655
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.017460724637874313,
+          "ankle_roll_r_link / world": 0.007721911073562682,
+          "left_tcp_link / world": 0.02216191789800337,
+          "right_tcp_link / world": 0.012672829492324067,
+          "hip_yaw_l_link / world": 0.03726518962239323,
+          "hip_yaw_r_link / world": 0.020221566899692157,
+          "knee_pitch_r_link / world": 0.03512093946520369,
+          "ankle_pitch_r_link / world": 0.0008253864532045737,
+          "knee_pitch_l_link / world": 0.02546975613354782,
+          "head_yaw_link / world": 0.012617273558884978,
+          "head_pitch_link / world": 0.008529050933811622,
+          "camera_head_link / world": 0.00565047844583122,
+          "waist_pitch_link / world": 0.010361394293524118,
+          "ankle_pitch_l_link / world": 0.013316673273135236
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 528,
+            "distance_p95_m": 0.002921897885243053,
+            "slip_p95_m_s": 0.036273605152694705,
+            "anchor_error_p95_m": 0.030294462901297156
+          },
+          "right_foot": {
+            "frames": 529,
+            "distance_p95_m": 0.002731651767954668,
+            "slip_p95_m_s": 0.049368565871184905,
+            "anchor_error_p95_m": 0.004862605845978761
+          },
+          "left_knee": {
+            "frames": 62,
+            "distance_p95_m": 0.03416564178196688,
+            "slip_p95_m_s": 1.615647516138682,
+            "anchor_error_p95_m": 0.09747119191342192
+          },
+          "right_knee": {
+            "frames": 74,
+            "distance_p95_m": 0.03573485037618215,
+            "slip_p95_m_s": 1.625299833819049,
+            "anchor_error_p95_m": 0.0997930238930244
+          },
+          "left_hand": {
+            "frames": 174,
+            "distance_p95_m": 0.020203257621053315,
+            "slip_p95_m_s": 0.4063063647738562,
+            "anchor_error_p95_m": 0.053404365153810036
+          },
+          "right_hand": {
+            "frames": 196,
+            "distance_p95_m": 0.010063500892957655,
+            "slip_p95_m_s": 0.8082381701513136,
+            "anchor_error_p95_m": 0.0535376456865764
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    },
+    {
+      "key": "representative/high-climb-76",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_forward_0.6s_step0.8s_motion.npz",
+      "source_frames": [
+        0,
+        635
+      ],
+      "state": {
+        "task_id": "cde166ba5b27bb0b932b910e",
+        "status": "rejected",
+        "attempts": 1,
+        "device": "cuda:0",
+        "worker_pid": 1164477,
+        "windows": [
+          {
+            "iterations": 1000,
+            "seconds": 6.555827351985499,
+            "loss": 0.8069614171981812,
+            "contact_mse": 0.0006069320952519774,
+            "penetration_mse": 1.991348199226195e-06,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 0.051970046013593674,
+            "foot_mse": 0.0009493317338638008,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 289280000,
+            "start": 0,
+            "end": 512,
+            "fixed_frames": 0
+          },
+          {
+            "iterations": 1000,
+            "seconds": 4.757607111008838,
+            "loss": 0.0556219220161438,
+            "contact_mse": 4.978775791641965e-07,
+            "penetration_mse": 5.76635938998038e-09,
+            "self_overlap_mse": 0.0,
+            "speed_loss": 3.0061397410463542e-05,
+            "foot_mse": 7.89364639786072e-06,
+            "cuda_graph": true,
+            "peak_allocated_bytes": 289280000,
+            "start": 464,
+            "end": 635,
+            "fixed_frames": 48
+          }
+        ],
+        "solve_seconds": 11.905407151207328,
+        "candidate_files": {
+          "candidates/representative/high-climb-76_motion.npz": "00df03ce58f438d46342282919e5c8e05ab3293f558efdb584d2dc2726570e7a",
+          "candidates/representative/high-climb-76_terrain.npy": "bff58abcd6ab8130e56f7d73cb36b6e1be8424cdba8ef95ae8ce1b5674ab93fd",
+          "candidates/representative/high-climb-76_intent.npz": "1eb7954c18e4ff9d3fb33e06da292263957ef57ad3903e8a3ab983ab37b8298e"
+        },
+        "accepted_variants": [],
+        "quality_path": "quality/cde166ba5b27bb0b932b910e.json",
+        "quality_hash": "510c9cfb2d357887f77e8b8ab43f99ee775d27c3d7307c80518f9b3cd846a307",
+        "labels_path": "candidate_contacts/representative/high-climb-76.npz",
+        "labels_hash": "698c1985583f7d5cb894bd16d8798062c449a237ea59c5c17b52c6e6ea917617",
+        "exported": {},
+        "assessment_seconds": 63.035614751977846
+      },
+      "variant_results": [
+        {
+          "variant": 0,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.053244812535063586,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 1,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.05324481253506362,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 2,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.053244812535063704,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 3,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.05324481253506352,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 4,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.053244812535063545,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 5,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.0532448125350635,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 6,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.05324481253506356,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 7,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "right_knee:support_distance",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.053244812535063676,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 8,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.05324481253506364,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        },
+        {
+          "variant": 9,
+          "geometry_pass": false,
+          "rejection_reasons": [
+            "joint_velocity",
+            "terrain_penetration",
+            "self_collision",
+            "right_foot:support_slip",
+            "left_knee:support_distance",
+            "left_knee:support_slip",
+            "left_hand:support_slip",
+            "right_hand:support_slip"
+          ],
+          "terrain_penetration_max_m": 0.053244812535063656,
+          "self_penetration_policy_max_m": 0.06910955229135946,
+          "joint_velocity_max_ratio": 1.8300542527711698
+        }
+      ],
+      "variant_zero": {
+        "variant": 0,
+        "frames": 635,
+        "duration_s": 12.68,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "joint_velocity",
+          "terrain_penetration",
+          "self_collision",
+          "right_foot:support_slip",
+          "left_knee:support_distance",
+          "left_knee:support_slip",
+          "left_hand:support_slip",
+          "right_hand:support_slip"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 1.8300542527711698,
+        "terrain_penetration_max_m": 0.053244812535063586,
+        "terrain_penetration_over_2mm_longest_frames": 73,
+        "self_penetration_raw_max_m": 0.06910955229135946,
+        "self_penetration_policy_max_m": 0.06910955229135946,
+        "self_penetration_policy_over_2mm_longest_frames": 25,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403485545625624,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.0391909936249179,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03925906748283414,
+          "hip_pitch_l_link / wrist_pitch_l_link": 0.006740529536548611,
+          "waist_pitch_link / waist_yaw_link": 0.006195934693857172,
+          "knee_pitch_l_link / knee_pitch_r_link": 0.017565580378985486,
+          "ankle_roll_r_link / knee_pitch_l_link": 0.019368181270331963,
+          "ankle_pitch_l_link / ankle_roll_r_link": 0.016606521507295087,
+          "ankle_roll_l_link / knee_pitch_r_link": 0.055335906965814474,
+          "ankle_pitch_r_link / ankle_roll_l_link": 0.037929580841363185,
+          "ankle_roll_l_link / ankle_roll_r_link": 0.06910955229135946,
+          "ankle_pitch_r_link / knee_pitch_l_link": 0.007045912048901066,
+          "ankle_pitch_l_link / ankle_pitch_r_link": 0.0069940362136047,
+          "ankle_pitch_l_link / knee_pitch_r_link": 0.005916763850463979
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.013958390182417233,
+          "ankle_roll_r_link / world": 0.021002023680079474,
+          "left_tcp_link / world": 0.008382412464269075,
+          "right_tcp_link / world": 0.008590804258297946,
+          "hip_yaw_l_link / world": 0.053244812535063586,
+          "knee_pitch_l_link / world": 0.02725991259246994,
+          "hip_yaw_r_link / world": 0.03425639335444094,
+          "knee_pitch_r_link / world": 0.022143622248458377
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 385,
+            "distance_p95_m": 0.0025926881921356747,
+            "slip_p95_m_s": 0.029603495654798,
+            "anchor_error_p95_m": 0.001983151015567969
+          },
+          "right_foot": {
+            "frames": 408,
+            "distance_p95_m": 0.0058599373614544575,
+            "slip_p95_m_s": 0.23495262337681244,
+            "anchor_error_p95_m": 0.04295294744565892
+          },
+          "left_knee": {
+            "frames": 32,
+            "distance_p95_m": 0.02503815831004128,
+            "slip_p95_m_s": 1.313591687645782,
+            "anchor_error_p95_m": 0.0974343610865367
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 68,
+            "distance_p95_m": 0.008204361721236985,
+            "slip_p95_m_s": 0.631929655049036,
+            "anchor_error_p95_m": 0.04844643791290926
+          },
+          "right_hand": {
+            "frames": 106,
+            "distance_p95_m": 0.008578827842648825,
+            "slip_p95_m_s": 0.8529551391573813,
+            "anchor_error_p95_m": 0.05512874054699051
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run",
+        "computed_variant": 0
+      }
+    }
+  ]
+}

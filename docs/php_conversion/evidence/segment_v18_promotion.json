@@ -1,0 +1,20 @@
+{
+  "status": "promoted after four full preview verification and main-worktree regression",
+  "version": "php-segment-v18",
+  "scope": "validated source zero contacts, segment-direction initialization, source torso tracking; original quality gates remain",
+  "small_batch_sources": 8,
+  "small_batch_frames": 4871,
+  "small_batch_passed_slots": 50,
+  "small_batch_total_slots": 80,
+  "climb_accepted_slots": 0,
+  "preview_sources": 4,
+  "preview_frames": 1397,
+  "preview_passed_slots": 40,
+  "preview_summary": "docs/php_conversion/evidence/segment_v18_preview_summary.json",
+  "frozen_batch_audit": "docs/php_conversion/evidence/segment_v18_source_contact_pilot_report.json",
+  "default_collision_rounds": 12,
+  "default_matches_verified_batch": true,
+  "active_frozen_runners_unchanged": true,
+  "main_tests": "docs/php_conversion/evidence/segment_v18_main_tests.txt",
+  "main_tests_passed": 53
+}

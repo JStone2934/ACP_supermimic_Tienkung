@@ -1,0 +1,21 @@
+{
+  "run_id": "pilot",
+  "identity": "e8b199d3d4923931d5901b4171cfffda18fa6eb5618d82e5d738b17127860163",
+  "verified": true,
+  "sources": 12,
+  "unique_source_files": 12,
+  "frames": 4616,
+  "checked_variants": 120,
+  "accepted_variants": 96,
+  "statuses": {
+    "accepted": 10,
+    "rejected": 2
+  },
+  "checked_output_hashes": 100,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 92.08,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

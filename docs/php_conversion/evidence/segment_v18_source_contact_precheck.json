@@ -1,0 +1,941 @@
+{
+  "scope": "source contact preparation only, not target quality acceptance",
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "zero_queries": 0,
+      "changed": [],
+      "nonfoot_segments": []
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "zero_queries": 0,
+      "changed": [],
+      "nonfoot_segments": []
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "zero_queries": 0,
+      "changed": [],
+      "nonfoot_segments": []
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "zero_queries": 0,
+      "changed": [],
+      "nonfoot_segments": []
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "zero_queries": 7,
+      "changed": [
+        {
+          "frame": 327,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.07071921974420547,
+            "surface": 1,
+            "geom": 14,
+            "witness": [
+              2.395461297984188,
+              -0.11157709545036013,
+              0.8345190690711836,
+              2.39715466497342,
+              -0.11145752034773437,
+              0.7638202254804227
+            ]
+          }
+        },
+        {
+          "frame": 479,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 3
+          },
+          "validated": {
+            "distance": 0.03299492597579956,
+            "surface": 1,
+            "geom": 14,
+            "witness": [
+              2.774486942472443,
+              0.3688095050054475,
+              0.796815150735863,
+              2.774486942472443,
+              0.36880950500544746,
+              0.7638202254804227
+            ]
+          }
+        },
+        {
+          "frame": 484,
+          "body": "right_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.053972385823726654,
+            "surface": 1,
+            "geom": 29,
+            "witness": [
+              3.0693931820567015,
+              0.19843855176008487,
+              0.8177926124389013,
+              3.0693931820567015,
+              0.1984386517600849,
+              0.7638202254804229
+            ]
+          }
+        },
+        {
+          "frame": 488,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.031515009701251984,
+            "surface": 1,
+            "geom": 14,
+            "witness": [
+              2.7758154396411525,
+              0.36824954247351305,
+              0.7953352349362529,
+              2.7758154396411525,
+              0.36824944247351304,
+              0.7638202254804229
+            ]
+          }
+        },
+        {
+          "frame": 491,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.03274509683251381,
+            "surface": 1,
+            "geom": 14,
+            "witness": [
+              2.7763464771001845,
+              0.3671243999658946,
+              0.7965653237796368,
+              2.776346477100185,
+              0.36712429996589463,
+              0.7638202254804228
+            ]
+          }
+        },
+        {
+          "frame": 523,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 3
+          },
+          "validated": {
+            "distance": 0.042722396552562714,
+            "surface": 3,
+            "geom": 14,
+            "witness": [
+              3.5593913124928247,
+              0.42630432350892455,
+              0.8065426210576191,
+              3.559391412492825,
+              0.42630432350892455,
+              0.7638202254804228
+            ]
+          }
+        },
+        {
+          "frame": 566,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 3
+          },
+          "validated": {
+            "distance": 0.0737658143043518,
+            "surface": 3,
+            "geom": 14,
+            "witness": [
+              3.633351201889143,
+              0.5130382707282685,
+              0.80409030772231,
+              3.5718096359655753,
+              0.5073503740838521,
+              0.763820225480423
+            ]
+          }
+        }
+      ],
+      "nonfoot_segments": [
+        {
+          "body": "left_knee",
+          "start": 285,
+          "end": 305,
+          "surface": 1,
+          "anchor": [
+            2.392215975624222,
+            -0.04157653983873208,
+            0.7460708618164062
+          ],
+          "normal": [
+            -0.9975119890225056,
+            -0.070497033670677,
+            -0.0
+          ],
+          "local_point": [
+            0.06542123806585268,
+            -0.02047473736502814,
+            -0.0021878962347271548
+          ],
+          "morphology_shift_world": [
+            -0.0029499433003365993,
+            0.028452984988689423,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_knee",
+          "start": 356,
+          "end": 392,
+          "surface": 1,
+          "anchor": [
+            2.507355213165283,
+            -0.011139137670397758,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.0612285380878804,
+            0.03910786440072179,
+            -0.18723598380404968
+          ],
+          "morphology_shift_world": [
+            -0.004859539680182934,
+            0.028189869597554207,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_knee",
+          "start": 279,
+          "end": 346,
+          "surface": 1,
+          "anchor": [
+            2.4700379371643066,
+            -0.2703837454319,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.07074240083583835,
+            -0.012905847098444265,
+            -0.09108672913780244
+          ],
+          "morphology_shift_world": [
+            0.016499290242791176,
+            -0.02335544489324093,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_hand",
+          "start": 205,
+          "end": 379,
+          "surface": 1,
+          "anchor": [
+            2.5316829681396484,
+            0.35166612267494207,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.03148586295158866,
+            -0.03525733946854972,
+            -0.09592527903735547
+          ],
+          "morphology_shift_world": [
+            0.03686071187257767,
+            0.06251948326826096,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 210,
+          "end": 351,
+          "surface": 1,
+          "anchor": [
+            2.5857956409454346,
+            -0.18118754029273987,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.011436591468600234,
+            0.029657969388945042,
+            -0.10292664549007934
+          ],
+          "morphology_shift_world": [
+            -0.03431946039199829,
+            -0.06396112591028214,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 542,
+          "end": 597,
+          "surface": 3,
+          "anchor": [
+            3.4901716709136963,
+            0.03483439236879349,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.010630368230610176,
+            0.027539782741876514,
+            -0.10266358715581475
+          ],
+          "morphology_shift_world": [
+            0.012789604254066944,
+            -0.06636779010295868,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        }
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "zero_queries": 2,
+      "changed": [
+        {
+          "frame": 250,
+          "body": "left_elbow",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.01690676622092724,
+            "surface": 1,
+            "geom": 52,
+            "witness": [
+              1.4443782896565662,
+              1.213113646667894,
+              0.7807269913180795,
+              1.444378289656566,
+              1.213113546667894,
+              0.7638202254804229
+            ]
+          }
+        },
+        {
+          "frame": 314,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.0004793268453795463,
+            "surface": 1,
+            "geom": 14,
+            "witness": [
+              1.4468888666381365,
+              1.2497543959287536,
+              0.7642995523241429,
+              1.4468889666381366,
+              1.2497543959287536,
+              0.7638202254804229
+            ]
+          }
+        }
+      ],
+      "nonfoot_segments": [
+        {
+          "body": "left_knee",
+          "start": 279,
+          "end": 346,
+          "surface": 1,
+          "anchor": [
+            1.4303544759750366,
+            1.2859054803848267,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.07076703351931415,
+            0.012451255746397149,
+            -0.09126484536858859
+          ],
+          "morphology_shift_world": [
+            -0.02140270173549652,
+            0.01898016594350338,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_knee",
+          "start": 285,
+          "end": 305,
+          "surface": 1,
+          "anchor": [
+            1.6450530367218688,
+            1.1706542400415727,
+            0.7460035085678101
+          ],
+          "normal": [
+            -0.17884704736628906,
+            -0.9838768894777234,
+            0.0
+          ],
+          "local_point": [
+            0.06542123786041384,
+            0.02047473727259423,
+            -0.0021878945960943806
+          ],
+          "morphology_shift_world": [
+            0.02795613557100296,
+            -0.006009331904351711,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_knee",
+          "start": 357,
+          "end": 392,
+          "surface": 1,
+          "anchor": [
+            1.6877461671829224,
+            1.2819721698760986,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.06122853901292876,
+            -0.03910786512131396,
+            -0.18723598385770113
+          ],
+          "morphology_shift_world": [
+            0.027433624491095543,
+            -0.008068438619375229,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_hand",
+          "start": 210,
+          "end": 351,
+          "surface": 1,
+          "anchor": [
+            1.5273549556732178,
+            1.3812329769134521,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.011618120607313636,
+            -0.029372450250447043,
+            -0.10301610773774542
+          ],
+          "morphology_shift_world": [
+            -0.06748376786708832,
+            -0.026708437129855156,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 206,
+          "end": 379,
+          "surface": 1,
+          "anchor": [
+            2.0527379512786865,
+            1.262155532836914,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.031422602249157855,
+            0.035365957557540156,
+            -0.09574299222601007
+          ],
+          "morphology_shift_world": [
+            0.06616491079330444,
+            0.02985054813325405,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 542,
+          "end": 597,
+          "surface": 3,
+          "anchor": [
+            2.472670555114746,
+            2.2926642894744873,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.010324403524740518,
+            0.027036455445051514,
+            -0.10315503379411792
+          ],
+          "morphology_shift_world": [
+            0.06801006197929382,
+            -0.015290483832359314,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        }
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "zero_queries": 6,
+      "changed": [
+        {
+          "frame": 177,
+          "body": "right_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 2
+          },
+          "validated": {
+            "distance": 0.06828023493289948,
+            "surface": 1,
+            "geom": 28,
+            "witness": [
+              2.4730237950974963,
+              -0.5855069713715138,
+              0.7521874902315726,
+              2.52450460010003,
+              -0.6303613719566002,
+              0.7521873902315727
+            ]
+          }
+        },
+        {
+          "frame": 183,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 2
+          },
+          "validated": {
+            "distance": 0.003384252777323127,
+            "surface": 1,
+            "geom": 13,
+            "witness": [
+              2.7232772134542005,
+              -0.5024872863415788,
+              0.7672044783322034,
+              2.7232772134542005,
+              -0.5024872863415789,
+              0.763820225480423
+            ]
+          }
+        },
+        {
+          "frame": 188,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 2
+          },
+          "validated": {
+            "distance": 0.010333127342164516,
+            "surface": 1,
+            "geom": 13,
+            "witness": [
+              2.7373671375437842,
+              -0.5155223760455567,
+              0.7741533526738947,
+              2.7373671375437842,
+              -0.5155223760455568,
+              0.7638202254804228
+            ]
+          }
+        },
+        {
+          "frame": 208,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 2
+          },
+          "validated": {
+            "distance": 0.012073407880961895,
+            "surface": 2,
+            "geom": 13,
+            "witness": [
+              2.7640577000674567,
+              -0.49093477328630747,
+              0.7758936335503342,
+              2.764057700067457,
+              -0.49093467328630747,
+              0.7638202254804229
+            ]
+          }
+        },
+        {
+          "frame": 281,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 2
+          },
+          "validated": {
+            "distance": 0.038055840879678726,
+            "surface": 1,
+            "geom": 13,
+            "witness": [
+              2.88206874827641,
+              -0.8005411080077807,
+              0.8018760674975429,
+              2.88206874827641,
+              -0.8005411080077807,
+              0.7638202254804229
+            ]
+          }
+        },
+        {
+          "frame": 296,
+          "body": "left_knee",
+          "original": {
+            "distance": 0.0,
+            "surface": 1
+          },
+          "validated": {
+            "distance": 0.059981245547533035,
+            "surface": 1,
+            "geom": 13,
+            "witness": [
+              2.9081917399887907,
+              -0.8263385405946924,
+              0.8238014707625266,
+              2.9081917399887907,
+              -0.8263384405946925,
+              0.7638202254804229
+            ]
+          }
+        }
+      ],
+      "nonfoot_segments": [
+        {
+          "body": "left_knee",
+          "start": 167,
+          "end": 184,
+          "surface": 1,
+          "anchor": [
+            2.74238657951355,
+            -0.5076118111610413,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.06674351063766636,
+            -0.012726260173486397,
+            -0.001119305410052447
+          ],
+          "morphology_shift_world": [
+            0.02081759087741375,
+            0.019620148465037346,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_knee",
+          "start": 191,
+          "end": 206,
+          "surface": 1,
+          "anchor": [
+            2.7760844230651855,
+            -0.5184831023216248,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.06283280233349126,
+            0.021878918194478483,
+            0.002457436426111289
+          ],
+          "morphology_shift_world": [
+            0.01709667779505253,
+            -0.022935254499316216,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_hand",
+          "start": 147,
+          "end": 181,
+          "surface": 1,
+          "anchor": [
+            2.6421890258789062,
+            -0.6329398155212402,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.03267859546269433,
+            -0.027417480643413327,
+            -0.09932611515312628
+          ],
+          "morphology_shift_world": [
+            0.0333891361951828,
+            0.06444026529788971,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_hand",
+          "start": 209,
+          "end": 215,
+          "surface": 1,
+          "anchor": [
+            2.7553818225860596,
+            -1.011085033416748,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.0012999343175791704,
+            -0.025894931077038788,
+            -0.10376165942136392
+          ],
+          "morphology_shift_world": [
+            -0.01654459349811077,
+            -0.07066114991903305,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_hand",
+          "start": 181,
+          "end": 209,
+          "surface": 2,
+          "anchor": [
+            2.7382588386535645,
+            -0.8718316555023193,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.0005882098238271647,
+            -0.025605114913490212,
+            -0.1038439303614992
+          ],
+          "morphology_shift_world": [
+            -0.022222906351089478,
+            0.06183025240898132,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "left_hand",
+          "start": 325,
+          "end": 370,
+          "surface": 2,
+          "anchor": [
+            3.1710457801818848,
+            -0.9106165170669556,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            0.010353596749931837,
+            -0.026768242847812262,
+            -0.103259321214997
+          ],
+          "morphology_shift_world": [
+            0.06082762032747269,
+            0.03959040343761444,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 148,
+          "end": 192,
+          "surface": 1,
+          "anchor": [
+            2.3852758407592773,
+            -0.9798351526260376,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.03268796232926339,
+            0.031217848082733944,
+            -0.09750243441247529
+          ],
+          "morphology_shift_world": [
+            -0.030132364481687546,
+            -0.0645960196852684,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 201,
+          "end": 207,
+          "surface": 1,
+          "anchor": [
+            2.3593698429811663,
+            -0.8198917216989955,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.031111877640927904,
+            0.033264274453153844,
+            -0.0979717133254403
+          ],
+          "morphology_shift_world": [
+            0.00809863954782486,
+            0.07211725413799286,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        },
+        {
+          "body": "right_hand",
+          "start": 192,
+          "end": 201,
+          "surface": 2,
+          "anchor": [
+            2.3613369464874268,
+            -0.9410760402679443,
+            0.7638202254804229
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_point": [
+            -0.031198090228034322,
+            0.034343827994320265,
+            -0.09738569465997603
+          ],
+          "morphology_shift_world": [
+            0.03226413577795029,
+            -0.0641702264547348,
+            0.0
+          ],
+          "anchor_mapping": "neutral-mount-lateral-difference-v1"
+        }
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "zero_queries": 0,
+      "changed": [],
+      "nonfoot_segments": []
+    }
+  ]
+}

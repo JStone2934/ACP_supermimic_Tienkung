@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "scope": "Per-pair collision objective CUDA graph and exact fixed prefix smoke; not full quality acceptance",
+  "source_frames": [
+    340,
+    370
+  ],
+  "first_free_hand_weight": 0.09549150615930557,
+  "constant_free_arm_weights_unchanged": true,
+  "fixed_prefix_exact": true
+}

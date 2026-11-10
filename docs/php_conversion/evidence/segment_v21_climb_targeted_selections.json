@@ -1,0 +1,11 @@
+[
+  {
+    "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+    "key": "motions-low-climb-76/left_45_walk1.5s_step1.2s__terrain_02",
+    "solve_variant": 2
+  },
+  {
+    "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+    "solve_variant": 0
+  }
+]

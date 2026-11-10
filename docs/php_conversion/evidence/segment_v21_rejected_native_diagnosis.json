@@ -1,0 +1,1983 @@
+{
+  "time": "2026-11-10T14:49:11.542462+08:00",
+  "scope": "Fixed snapshot of committed rejected sources; every original frame on original solve terrain; existing structural exclusions unchanged",
+  "selected_sources": 6,
+  "completed_sources": 6,
+  "rows": [
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+      "source_sha256": "882f4cef0413252265d6f3ad1f05355dd68c866afb5f5d82061dd3563cd82931",
+      "frames": 837,
+      "solve_variant": 0,
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/candidates/motions-low-climb-76/forward_walk0.6s_step1.2s_motion.npz",
+      "candidate_sha256": "8a006fc0053a4941e15cd62d2766d229c468cc3daaa4cd1f516aa68d90f634f5",
+      "quality_sha256": "bb0fc89c52965e9bbf17962da596ebcaf0539d2160ebe9a91df571f97f09e1e0",
+      "reasons": [
+        "terrain_penetration",
+        "self_collision"
+      ],
+      "collision_frames": [
+        287,
+        303,
+        304,
+        305,
+        306
+      ],
+      "pair_contact_counts": {
+        "ankle_roll_r_link / hip_pitch_l_link": 1,
+        "elbow_pitch_l_link / hip_yaw_l_link": 1,
+        "elbow_pitch_l_link / knee_pitch_l_link": 3,
+        "hip_yaw_r_link / right_tcp_link": 1,
+        "hip_roll_l_link / pelvis": 2,
+        "hip_roll_r_link / pelvis": 4,
+        "right_tcp_link / world": 1,
+        "left_tcp_link / world": 3,
+        "knee_pitch_r_link / right_tcp_link": 1,
+        "hip_yaw_r_link / wrist_pitch_r_link": 1,
+        "elbow_yaw_l_link / knee_pitch_l_link": 2
+      },
+      "worst": [
+        {
+          "frame": 305,
+          "distance_m": -0.01400378370867368,
+          "bodies": [
+            "hip_pitch_l_link",
+            "ankle_roll_r_link"
+          ],
+          "normal": [
+            -0.3710670599713703,
+            -0.863244627247348,
+            -0.34222499986528043
+          ],
+          "geoms": [
+            7,
+            29
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 305,
+          "distance_m": -0.013677394995550065,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            -0.08985754463802227,
+            0.8974896783260731,
+            0.4317845515645367
+          ],
+          "geoms": [
+            11,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 305,
+          "distance_m": -0.011108251182573428,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            -0.7008438077411615,
+            0.6652195263019759,
+            0.2574896871283288
+          ],
+          "geoms": [
+            13,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 306,
+          "distance_m": -0.009464071174932745,
+          "bodies": [
+            "hip_yaw_r_link",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.9504987008636568,
+            -0.25535265373557364,
+            -0.17705152325439338
+          ],
+          "geoms": [
+            23,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand"
+          ]
+        },
+        {
+          "frame": 305,
+          "distance_m": -0.007850351568629677,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            -0.7925119985338228,
+            0.47678020932329224,
+            -0.38027012001676397
+          ],
+          "geoms": [
+            5,
+            9
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 305,
+          "distance_m": -0.00731143096841143,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            0.5589926709966447,
+            -0.768645852429274,
+            -0.31098351614725833
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 305,
+          "distance_m": -0.00731143096841143,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            0.5589926709966447,
+            -0.768645852429274,
+            -0.31098351614725833
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 304,
+          "distance_m": -0.005090570485563721,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            0.603667861486134,
+            -0.7402037584279756,
+            -0.29611401354521727
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 304,
+          "distance_m": -0.004747556917005362,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.32492423669073467,
+            0.8132725442298213,
+            0.48271317489053167
+          ],
+          "geoms": [
+            13,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 304,
+          "distance_m": -0.004747556917005362,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.32492423669073467,
+            0.8132725442298213,
+            0.48271317489053167
+          ],
+          "geoms": [
+            13,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 303,
+          "distance_m": -0.004517675605849258,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            1.228754697645536e-14,
+            1.0
+          ],
+          "geoms": [
+            1,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 303,
+          "distance_m": -0.004388315863883621,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            0.6343689809289174,
+            -0.7471840192558163,
+            -0.19822219200667418
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 303,
+          "distance_m": -0.004147073595127226,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 304,
+          "distance_m": -0.0038385615220635186,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            -0.8714053346946238,
+            0.28095578933847754,
+            -0.4021400093287707
+          ],
+          "geoms": [
+            5,
+            9
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 305,
+          "distance_m": -0.0033344491556690503,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            -1.664777258243057e-14,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 306,
+          "distance_m": -0.003279303910913768,
+          "bodies": [
+            "knee_pitch_r_link",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.5817256955672446,
+            -0.789838803428656,
+            0.19429328273307434
+          ],
+          "geoms": [
+            25,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand"
+          ]
+        },
+        {
+          "frame": 304,
+          "distance_m": -0.0024450901075927516,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 306,
+          "distance_m": -0.002339378800207566,
+          "bodies": [
+            "hip_yaw_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            0.9706765893515462,
+            0.08218568890818517,
+            0.22590367731300173
+          ],
+          "geoms": [
+            23,
+            77
+          ],
+          "active_source_contacts": [
+            "left_hand"
+          ]
+        },
+        {
+          "frame": 287,
+          "distance_m": -0.002036837035778958,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_yaw_l_link"
+          ],
+          "normal": [
+            0.19345373235333213,
+            0.9228472270259411,
+            0.33305952772604547
+          ],
+          "geoms": [
+            13,
+            59
+          ],
+          "active_source_contacts": [
+            "right_knee",
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 287,
+          "distance_m": -0.002036837035778958,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_yaw_l_link"
+          ],
+          "normal": [
+            0.19345373235333213,
+            0.9228472270259411,
+            0.33305952772604547
+          ],
+          "geoms": [
+            13,
+            59
+          ],
+          "active_source_contacts": [
+            "right_knee",
+            "left_hand",
+            "right_hand"
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step0.7s",
+      "source_sha256": "3cc238b82cf8aed00fa40b002da03fdd7c47af57b79ba37a462f311da316cdbf",
+      "frames": 838,
+      "solve_variant": 0,
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/candidates/motions-low-climb-76/left_90_walk0.9s_step0.7s_motion.npz",
+      "candidate_sha256": "62e671f8ba86bc439832349fe6a53215457a62d39b698e5e68100216162ba605",
+      "quality_sha256": "a88a8912176de6eb11772422ac9a231a491aac7c68d50231bf16b4ee5d1a92ca",
+      "reasons": [
+        "terrain_penetration",
+        "self_collision"
+      ],
+      "collision_frames": [
+        318,
+        319,
+        320
+      ],
+      "pair_contact_counts": {
+        "knee_pitch_r_link / wrist_pitch_r_link": 1,
+        "knee_pitch_r_link / wrist_roll_r_link": 1,
+        "knee_pitch_r_link / right_tcp_link": 1,
+        "ankle_roll_r_link / hip_roll_l_link": 1,
+        "ankle_roll_r_link / hip_pitch_l_link": 1,
+        "hip_roll_r_link / pelvis": 2,
+        "elbow_pitch_l_link / knee_pitch_l_link": 1,
+        "hip_roll_l_link / pelvis": 3,
+        "hip_yaw_r_link / wrist_pitch_r_link": 1,
+        "left_tcp_link / world": 2,
+        "ankle_roll_l_link / world": 1,
+        "right_tcp_link / world": 1,
+        "elbow_pitch_l_link / hip_yaw_l_link": 1
+      },
+      "worst": [
+        {
+          "frame": 320,
+          "distance_m": -0.01650727639518176,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            -0.5992421382060326,
+            0.7550036162297247,
+            0.2662299744174217
+          ],
+          "geoms": [
+            24,
+            76
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.015489020301422669,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_roll_r_link"
+          ],
+          "normal": [
+            -0.7999351405355379,
+            0.4842280547373172,
+            -0.3544389396520975
+          ],
+          "geoms": [
+            24,
+            78
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.010961061238425995,
+          "bodies": [
+            "knee_pitch_r_link",
+            "right_tcp_link"
+          ],
+          "normal": [
+            -0.7465150353205546,
+            0.2818462537731398,
+            -0.6027254692431688
+          ],
+          "geoms": [
+            24,
+            80
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.0098777019859394,
+          "bodies": [
+            "hip_roll_l_link",
+            "ankle_roll_r_link"
+          ],
+          "normal": [
+            0.7982181315534701,
+            -0.35370227937643417,
+            -0.48758846584307375
+          ],
+          "geoms": [
+            8,
+            28
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.007114164639121495,
+          "bodies": [
+            "hip_pitch_l_link",
+            "ankle_roll_r_link"
+          ],
+          "normal": [
+            0.49426788607169064,
+            -0.29066127706734535,
+            -0.8192772905505207
+          ],
+          "geoms": [
+            6,
+            28
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.005452418100015734,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            0.9251035349073709,
+            0.18892345165512595,
+            -0.32938029558035264
+          ],
+          "geoms": [
+            4,
+            20
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.004738291684623626,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            -0.629517248786772,
+            0.5630448075831425,
+            0.5354330753078257
+          ],
+          "geoms": [
+            12,
+            56
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.004711410288160158,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            -0.6739153092207145,
+            -0.6143500225547758,
+            -0.4103805621431107
+          ],
+          "geoms": [
+            4,
+            8
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.004711410288160158,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            -0.6739153092207145,
+            -0.6143500225547758,
+            -0.4103805621431107
+          ],
+          "geoms": [
+            4,
+            8
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.00419796328207584,
+          "bodies": [
+            "hip_yaw_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            -0.9669761476579032,
+            0.12349447115968458,
+            -0.22294897500027056
+          ],
+          "geoms": [
+            22,
+            76
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.0035576301308465528,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            -0.7149079304969044,
+            -0.46263204471894603,
+            -0.5242883196408256
+          ],
+          "geoms": [
+            4,
+            8
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.0025874004311878807,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            64
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.002537370190812238,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            8.750973970177479e-14,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            64
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.0023617039413953472,
+          "bodies": [
+            "world",
+            "ankle_roll_l_link"
+          ],
+          "normal": [
+            -0.4432118718146413,
+            -0.8964168877718459,
+            0.0
+          ],
+          "geoms": [
+            1,
+            16
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 318,
+          "distance_m": -0.0023223047763857307,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            9.561389494733602e-14,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            80
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 318,
+          "distance_m": -0.0023091478254692465,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            0.9650186165160693,
+            0.24116207937843198,
+            -0.10285874414595257
+          ],
+          "geoms": [
+            4,
+            20
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.0022785014278271713,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            -0.9422132126741878,
+            -0.13481477235287387,
+            0.3066907873047851
+          ],
+          "geoms": [
+            10,
+            56
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step1.2s",
+      "source_sha256": "d256885a100a885aa7625e2246a5b38547710c0410a8f38117486284d2f46c3a",
+      "frames": 852,
+      "solve_variant": 0,
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/candidates/motions-low-climb-76/right_90_walk0.9s_step1.2s_motion.npz",
+      "candidate_sha256": "4e8518a0577c4203cf6ad795403ff3219fe64b0d1cbb01ab3959eec15b0b4b58",
+      "quality_sha256": "8be9b8e6714ae3ca6d2c7027263ae8b24782333f4397584d27e9faff01890ef9",
+      "reasons": [
+        "self_collision"
+      ],
+      "collision_frames": [
+        291,
+        319,
+        320
+      ],
+      "pair_contact_counts": {
+        "hip_roll_r_link / pelvis": 2,
+        "elbow_pitch_l_link / hip_yaw_l_link": 3,
+        "hip_roll_l_link / pelvis": 2,
+        "elbow_pitch_l_link / knee_pitch_l_link": 1,
+        "right_tcp_link / world": 2,
+        "left_tcp_link / world": 2
+      },
+      "worst": [
+        {
+          "frame": 320,
+          "distance_m": -0.006590718998992174,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            -0.7957178845644977,
+            -0.5163689084799897,
+            -0.3165378311345815
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.006149991821448919,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.8591843715240061,
+            -0.16610700688579955,
+            0.4839531774793301
+          ],
+          "geoms": [
+            11,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.005013000810576907,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            0.4586779057641201,
+            0.7905052836036077,
+            -0.4058521594849789
+          ],
+          "geoms": [
+            5,
+            9
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.004804774915200531,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.5183741293290327,
+            -0.6635540390533845,
+            0.5394296055078057
+          ],
+          "geoms": [
+            13,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.004189787144582846,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.004189787144582846,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.00418885435059253,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            -0.8196585451023501,
+            -0.5418776715593773,
+            -0.18581834814163636
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.00403285839160461,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            -5.505886479606272e-14,
+            5.505886479606272e-14,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.0030794272024191717,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.8792644333395238,
+            -0.14062156716009475,
+            0.45510397835392
+          ],
+          "geoms": [
+            11,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 319,
+          "distance_m": -0.002530041904666829,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            0.46998449844167095,
+            0.7848382705313016,
+            -0.40391021320829074
+          ],
+          "geoms": [
+            5,
+            9
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 320,
+          "distance_m": -0.0022194809977520435,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            -1.0004348095339118e-13,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 291,
+          "distance_m": -0.0021742902794260454,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.5899733331194494,
+            -0.6117470168449248,
+            0.5269696894407331
+          ],
+          "geoms": [
+            11,
+            57
+          ],
+          "active_source_contacts": [
+            "right_knee",
+            "left_hand",
+            "right_hand"
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step0.7s",
+      "source_sha256": "aef0f0b4d7bf99132558ff1df1454c745d2babe7f7cd9d7eee540605b9065f70",
+      "frames": 850,
+      "solve_variant": 0,
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/candidates/motions-low-climb-76/right_90_walk1.2s_step0.7s_motion.npz",
+      "candidate_sha256": "53fc15db42c5caa1728f319642d1e5aac5fe9c912e06897681fabd14f5ae827e",
+      "quality_sha256": "fa323fba89d04d7599fe829413f560e5613e460cdd94d9afcd19fb544fc2b663",
+      "reasons": [
+        "terrain_penetration",
+        "self_collision"
+      ],
+      "collision_frames": [
+        333,
+        334,
+        335
+      ],
+      "pair_contact_counts": {
+        "knee_pitch_r_link / wrist_pitch_r_link": 1,
+        "knee_pitch_r_link / wrist_roll_r_link": 1,
+        "knee_pitch_r_link / right_tcp_link": 1,
+        "elbow_pitch_l_link / hip_yaw_l_link": 1,
+        "hip_roll_r_link / pelvis": 2,
+        "elbow_pitch_l_link / knee_pitch_l_link": 2,
+        "ankle_roll_r_link / hip_pitch_l_link": 1,
+        "right_tcp_link / world": 2,
+        "hip_roll_l_link / pelvis": 2,
+        "hip_yaw_r_link / wrist_pitch_r_link": 1,
+        "left_tcp_link / world": 2,
+        "ankle_roll_l_link / world": 1
+      },
+      "worst": [
+        {
+          "frame": 335,
+          "distance_m": -0.0183860139207575,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            0.5831179806521082,
+            -0.7642990315616178,
+            0.27535506349835065
+          ],
+          "geoms": [
+            24,
+            76
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.015275788599129647,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_roll_r_link"
+          ],
+          "normal": [
+            0.6548069584426226,
+            -0.753805295613808,
+            0.05482174276417328
+          ],
+          "geoms": [
+            24,
+            78
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.01305118817528464,
+          "bodies": [
+            "knee_pitch_r_link",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.7322115274453102,
+            -0.4750368724140751,
+            -0.4880637754671613
+          ],
+          "geoms": [
+            24,
+            80
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.012901562023971663,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.9400046699312558,
+            0.18415334446495166,
+            0.28719116669877537
+          ],
+          "geoms": [
+            10,
+            56
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.005032244430055915,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            -0.9263769452741937,
+            -0.20901285059658042,
+            -0.31327205995738794
+          ],
+          "geoms": [
+            4,
+            20
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.004418856849901372,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.4929402299173765,
+            -0.6822575364991001,
+            0.5399394258795915
+          ],
+          "geoms": [
+            12,
+            56
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.004413167205195273,
+          "bodies": [
+            "hip_pitch_l_link",
+            "ankle_roll_r_link"
+          ],
+          "normal": [
+            -0.7201952924451223,
+            0.24611304997207267,
+            -0.6486502195893631
+          ],
+          "geoms": [
+            6,
+            28
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.004326103724983209,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            80
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.004326103724983209,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            80
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.004173945143177512,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            0.7232128620462738,
+            0.4615747151798625,
+            -0.513723601246299
+          ],
+          "geoms": [
+            4,
+            8
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.004165473876436955,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            -0.9458328459469327,
+            -0.2768585233740221,
+            -0.16955702746592974
+          ],
+          "geoms": [
+            4,
+            20
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.003727570689077875,
+          "bodies": [
+            "hip_yaw_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            0.15851622540525112,
+            -0.9742209957373364,
+            -0.16051809165269915
+          ],
+          "geoms": [
+            22,
+            76
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.0035436251206319995,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            64
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.0032474225535177054,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            0.6539622364270713,
+            0.6347719710995029,
+            -0.4115798076117865
+          ],
+          "geoms": [
+            4,
+            8
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.0030063106614307555,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            7.385950087385727e-14,
+            1.0
+          ],
+          "geoms": [
+            1,
+            64
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.0027673711670840027,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.6579706051834195,
+            -0.5603119147045551,
+            0.503115534400082
+          ],
+          "geoms": [
+            12,
+            56
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.0022793986538741833,
+          "bodies": [
+            "world",
+            "ankle_roll_l_link"
+          ],
+          "normal": [
+            0.42420134689949157,
+            0.9055678976690027,
+            -4.8706838654050423e-14
+          ],
+          "geoms": [
+            1,
+            16
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step1.2s",
+      "source_sha256": "5ea90f2b420c78263a9a91f36ed6e8345648a4767ee74d6c957534e277e54a7c",
+      "frames": 865,
+      "solve_variant": 0,
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/candidates/motions-low-climb-76/right_90_walk1.2s_step1.2s_motion.npz",
+      "candidate_sha256": "4cf41b6c46869b3c7c8d345ff3ca4ce688b2d04c993ac9eb8d085173ee57c83f",
+      "quality_sha256": "5d79519bcabd8d4cd14727ca4e67f9eaaee672c941d24c99c5763758936c6e4c",
+      "reasons": [
+        "terrain_penetration",
+        "self_collision"
+      ],
+      "collision_frames": [
+        329,
+        333,
+        334,
+        335
+      ],
+      "pair_contact_counts": {
+        "elbow_pitch_l_link / hip_yaw_l_link": 2,
+        "knee_pitch_r_link / right_tcp_link": 1,
+        "knee_pitch_r_link / wrist_pitch_r_link": 2,
+        "knee_pitch_r_link / wrist_roll_r_link": 1,
+        "hip_roll_l_link / pelvis": 2,
+        "ankle_roll_l_link / knee_pitch_r_link": 1,
+        "right_tcp_link / world": 1,
+        "hip_roll_r_link / pelvis": 2,
+        "left_tcp_link / world": 2,
+        "elbow_pitch_l_link / knee_pitch_l_link": 2,
+        "ankle_roll_l_link / world": 1
+      },
+      "worst": [
+        {
+          "frame": 335,
+          "distance_m": -0.013760994782371095,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.9493498741502877,
+            0.1465282625072662,
+            0.27796453863296056
+          ],
+          "geoms": [
+            11,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.012748959917097217,
+          "bodies": [
+            "knee_pitch_r_link",
+            "right_tcp_link"
+          ],
+          "normal": [
+            0.6873170869099535,
+            -0.48190823830135404,
+            -0.5434700285194216
+          ],
+          "geoms": [
+            25,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.009791740730360972,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            0.5812077277356469,
+            -0.7780079599335276,
+            0.2385397063392951
+          ],
+          "geoms": [
+            25,
+            77
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.009791740730360972,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_pitch_r_link"
+          ],
+          "normal": [
+            0.5812077277356469,
+            -0.7780079599335276,
+            0.2385397063392951
+          ],
+          "geoms": [
+            25,
+            77
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.007976156147504519,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_roll_r_link"
+          ],
+          "normal": [
+            0.5977403733182629,
+            -0.789487555018835,
+            0.13934075705164473
+          ],
+          "geoms": [
+            25,
+            79
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.006255081121985426,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            0.7349651521145374,
+            0.43638031599389604,
+            -0.5190360729181764
+          ],
+          "geoms": [
+            5,
+            9
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 329,
+          "distance_m": -0.004710460474421353,
+          "bodies": [
+            "ankle_roll_l_link",
+            "knee_pitch_r_link"
+          ],
+          "normal": [
+            -0.8090144595524074,
+            -0.28544975059571887,
+            0.5138229696305611
+          ],
+          "geoms": [
+            17,
+            25
+          ],
+          "active_source_contacts": [
+            "left_foot",
+            "right_knee",
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.004612334636356685,
+          "bodies": [
+            "world",
+            "right_tcp_link"
+          ],
+          "normal": [
+            -2.4070738837417255e-14,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            81
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.004569931463090208,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            -0.9270182011361378,
+            -0.22157533837817406,
+            -0.30255846407746934
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.004466728064903697,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ],
+          "normal": [
+            -0.9479404473770469,
+            -0.26522671864102937,
+            -0.17624896012605776
+          ],
+          "geoms": [
+            5,
+            21
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.0037205184364588195,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.0036149912835993082,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.27927828082068873,
+            -0.7964307486063246,
+            0.5363783222094363
+          ],
+          "geoms": [
+            13,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.003079624328961456,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ],
+          "normal": [
+            0.6450441068973453,
+            0.6382959023067275,
+            -0.4201147953303322
+          ],
+          "geoms": [
+            5,
+            9
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 333,
+          "distance_m": -0.00246007202308035,
+          "bodies": [
+            "knee_pitch_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.6595652466456982,
+            -0.5579964299047901,
+            0.5036007045573985
+          ],
+          "geoms": [
+            13,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.002439084433214056,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "geoms": [
+            1,
+            65
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 335,
+          "distance_m": -0.002200199042544494,
+          "bodies": [
+            "world",
+            "ankle_roll_l_link"
+          ],
+          "normal": [
+            0.42420134689952127,
+            0.9055678976689889,
+            0.0
+          ],
+          "geoms": [
+            1,
+            17
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 334,
+          "distance_m": -0.0021105863851181073,
+          "bodies": [
+            "hip_yaw_l_link",
+            "elbow_pitch_l_link"
+          ],
+          "normal": [
+            0.7366215268886145,
+            -0.4478317567932867,
+            0.5067893484789562
+          ],
+          "geoms": [
+            11,
+            57
+          ],
+          "active_source_contacts": [
+            "left_hand",
+            "right_hand"
+          ]
+        }
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step1.2s",
+      "source_sha256": "a535718f9af152811ded4764aab8c0df531ed33a459bd5c52d74e77db3930496",
+      "frames": 857,
+      "solve_variant": 0,
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/candidates/motions-low-climb-76/right_90_walk1.5s_step1.2s_motion.npz",
+      "candidate_sha256": "aafeb047195fe16563e3da4281461911611b524479abe5990091a53dd89b9c93",
+      "quality_sha256": "7ea5f4b2534ed3bf61df15440d8cdfd1b08f8b806fab88210d7f80c479bd5d9c",
+      "reasons": [
+        "terrain_penetration"
+      ],
+      "collision_frames": [
+        306
+      ],
+      "pair_contact_counts": {
+        "knee_pitch_r_link / world": 1,
+        "knee_pitch_l_link / world": 1
+      },
+      "worst": [
+        {
+          "frame": 306,
+          "distance_m": -0.01833951519194771,
+          "bodies": [
+            "world",
+            "knee_pitch_r_link"
+          ],
+          "normal": [
+            0.40605216961996304,
+            0.7563156684745606,
+            0.5129407813449812
+          ],
+          "geoms": [
+            1,
+            25
+          ],
+          "active_source_contacts": [
+            "left_knee",
+            "left_hand",
+            "right_hand"
+          ]
+        },
+        {
+          "frame": 306,
+          "distance_m": -0.008672050313399886,
+          "bodies": [
+            "world",
+            "knee_pitch_l_link"
+          ],
+          "normal": [
+            0.06439068045061165,
+            0.11993454085977863,
+            0.9906914485246461
+          ],
+          "geoms": [
+            1,
+            13
+          ],
+          "active_source_contacts": [
+            "left_knee",
+            "left_hand",
+            "right_hand"
+          ]
+        }
+      ]
+    }
+  ]
+}

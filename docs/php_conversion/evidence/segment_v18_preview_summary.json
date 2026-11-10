@@ -1,0 +1,110 @@
+{
+  "verified": true,
+  "scope": "Four complete synchronized G1/TienKung kinematic previews, all 40 original terrain variants accepted; no physics/policy playback",
+  "total_frames": 1397,
+  "accepted_variants": 40,
+  "clips": [
+    {
+      "name": "01_straight",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.10913642635595663,
+        "angular_p95_deg": 0.1452040998530958,
+        "angular_max_deg": 0.6995602626816957,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v18_previews_20261109/comparison/01_straight_comparison.mp4",
+      "video_sha256": "e58c9cc5a6ec01c2ea3a5265f2db4a574dbb2017db28c622a6fd9b7f9179fde3"
+    },
+    {
+      "name": "02_turn",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "frames": 260,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.03769483537535522,
+        "angular_p95_deg": 0.08491849429851092,
+        "angular_max_deg": 0.08699743225400107,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v18_previews_20261109/comparison/02_turn_comparison.mp4",
+      "video_sha256": "dc478ba3565670b2a218159c37f180f6e223b4c33f1d0620e6953297cb50af1e"
+    },
+    {
+      "name": "03_low_step",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "frames": 413,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.028517006784110094,
+        "angular_p95_deg": 0.06141459993925781,
+        "angular_max_deg": 0.0636679583555309,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v18_previews_20261109/comparison/03_low_step_comparison.mp4",
+      "video_sha256": "af693d139d0c9b2a8bf2d1a2cf75dff6fac65dcd0d101886f5323370d21da7e1"
+    },
+    {
+      "name": "04_high_step",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "frames": 455,
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "torso": {
+        "angular_rmse_deg": 0.0490843761104286,
+        "angular_p95_deg": 0.10762364052980707,
+        "angular_max_deg": 0.11521120109564975,
+        "gated": true
+      },
+      "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v18_previews_20261109/comparison/04_high_step_comparison.mp4",
+      "video_sha256": "ef9800ec36a0f4343c7644de8a7e48b3591e48ea7a90bd84b416b9a9c41648be"
+    }
+  ],
+  "overview": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v18_previews_20261109/comparison/all_comparisons.mp4",
+  "overview_sha256": "8b0221c2d42474acc8fdacc4400bb67c7e11f282edbdea6c4a73986a069c7eb2"
+}

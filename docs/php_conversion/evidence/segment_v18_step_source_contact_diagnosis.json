@@ -1,0 +1,90 @@
+{
+  "source_key": "motions-low-step/right_45_walk0.8s_step0.5s",
+  "source_sha256": "fab5dde5ee662f823d16b32a431d0f99806dcbf90d06d016e3ee00391015a5d9",
+  "source_labels_sha256": "4e90a6724def85431bd81986ba7332daabd1ae0b7e8e7120896b6b16c56e56fe",
+  "scope": "Preparation only; no target quality or conversion claim",
+  "old_right_knee_frames": [
+    207,
+    208,
+    209,
+    210,
+    211,
+    212
+  ],
+  "validated_right_knee_frames": [],
+  "source_contact_validation": {
+    "policy": {
+      "version": "validated-source-zeros-v1",
+      "zero_tolerance_m": 1e-10,
+      "query_horizon_m": 0.1,
+      "method": "strict native geometry with bounded witness retries",
+      "scope": "all stored near-zero source body distances; original files unchanged"
+    },
+    "checked_count": 3,
+    "queries": [
+      {
+        "frame": 207,
+        "body": "right_knee",
+        "original": {
+          "distance": 0.0,
+          "surface": 1
+        },
+        "validated": {
+          "distance": 0.05436059832572937,
+          "surface": 2,
+          "geom": 28,
+          "witness": [
+            2.320801340733845,
+            -0.9383665863489505,
+            0.406707909191679,
+            2.320801340733845,
+            -0.9383665863489505,
+            0.3523473121788788
+          ]
+        }
+      },
+      {
+        "frame": 210,
+        "body": "right_knee",
+        "original": {
+          "distance": 0.0,
+          "surface": 1
+        },
+        "validated": {
+          "distance": 0.060634762048721313,
+          "surface": 1,
+          "geom": 28,
+          "witness": [
+            2.3205366275744543,
+            -0.9458249004043294,
+            0.4129820740748134,
+            2.320536627574455,
+            -0.9458248004043295,
+            0.3523473121788788
+          ]
+        }
+      },
+      {
+        "frame": 212,
+        "body": "right_knee",
+        "original": {
+          "distance": 0.0,
+          "surface": 1
+        },
+        "validated": {
+          "distance": 0.0802086740732193,
+          "surface": 2,
+          "geom": 28,
+          "witness": [
+            2.3353925982763872,
+            -0.9655055013193478,
+            0.4325559847419136,
+            2.3353925982763872,
+            -0.9655055013193478,
+            0.3523473121788788
+          ]
+        }
+      }
+    ]
+  }
+}

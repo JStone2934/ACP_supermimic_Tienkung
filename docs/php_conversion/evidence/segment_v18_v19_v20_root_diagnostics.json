@@ -1,0 +1,1346 @@
+{
+  "scope": "Full source frames, same 50Hz, original world-frame root; source-relative derivative diagnostics, not an independent acceptance gate",
+  "rows": [
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "candidate_hash": "f18ff56a03139cf327459468602daf3131f98d4c97f22d175da1c47f1e9a79eb",
+      "source_hash": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.240447810815635,
+        "p95": 3.268435727792302,
+        "max": 7.694511984491732,
+        "max_index": 128
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.8850146536286929,
+        "p95": 2.2041012789151004,
+        "max": 2.7225492187636346,
+        "max_index": 168
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.8877517806597673,
+        "p95": 1.5906413618741277,
+        "max": 6.928071661672534,
+        "max_index": 128
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 49.129910170152264,
+        "p95": 82.84859992531358,
+        "max": 374.3357846139395,
+        "max_index": 184
+      },
+      "max_step_m": 0.15389023968983465
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "frames": 260,
+      "candidate_hash": "d7b51fe65e9206a25dba20107921749016d6b6917c775adbab0d4d14422e13c3",
+      "source_hash": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.2556769895112978,
+        "p95": 2.3749331020790927,
+        "max": 10.426570687462863,
+        "max_index": 140
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.7883518123921746,
+        "p95": 1.8152228722043842,
+        "max": 2.060120104170734,
+        "max_index": 158
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.922675128745399,
+        "p95": 1.6451772149061228,
+        "max": 8.788967543163682,
+        "max_index": 140
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 42.69689486292529,
+        "p95": 68.31779069903925,
+        "max": 403.1856193701388,
+        "max_index": 139
+      },
+      "max_step_m": 0.20853141374925727
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "frames": 413,
+      "candidate_hash": "28978a4fb8672ac35939ee4209bc9ddd204eb9b7e72cf68e7de9055518a35cc9",
+      "source_hash": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.2198189090631617,
+        "p95": 2.448492831684564,
+        "max": 6.4423418511361135,
+        "max_index": 129
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.9015079261591307,
+        "p95": 1.6278583537498375,
+        "max": 2.3686581678183116,
+        "max_index": 186
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.839254543729387,
+        "p95": 1.5882014594451797,
+        "max": 5.3582552075359855,
+        "max_index": 222
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 39.73613955055235,
+        "p95": 82.59183067979401,
+        "max": 250.97975285473206,
+        "max_index": 129
+      },
+      "max_step_m": 0.12884683702272226
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "frames": 455,
+      "candidate_hash": "bf3fcd578a903116de47a710bcbaaa8413cfe271378eacfdbdf4e5d7ab519dda",
+      "source_hash": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.9205713346211746,
+        "p95": 4.360698152448235,
+        "max": 7.700585270065573,
+        "max_index": 78
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.5573287337120383,
+        "p95": 2.5810275621214136,
+        "max": 3.133853498663144,
+        "max_index": 170
+      },
+      "added_root_velocity_m_s": {
+        "rms": 1.1280020646958573,
+        "p95": 2.3585789802449337,
+        "max": 6.93130797277073,
+        "max_index": 78
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 47.51435507353287,
+        "p95": 95.687777389401,
+        "max": 306.41752280103793,
+        "max_index": 77
+      },
+      "max_step_m": 0.15401170540131146
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "frames": 894,
+      "candidate_hash": "c5924290da1e14df87b0ae138dabb8ee438a7a4eb808818bedadc44b5ac06be7",
+      "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.9834067172497547,
+        "p95": 3.164516531188295,
+        "max": 21.992765379906817,
+        "max_index": 391
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6018740624926321,
+        "p95": 0.971850678610806,
+        "max": 2.1421334126670524,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 1.9193240966207445,
+        "p95": 2.8744293412902384,
+        "max": 21.76855328569273,
+        "max_index": 391
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 112.7730199056378,
+        "p95": 129.32468573274022,
+        "max": 1515.496957287709,
+        "max_index": 375
+      },
+      "max_step_m": 0.43985530759813635
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "frames": 870,
+      "candidate_hash": "44db9e004cdb27c0d78b4800cf212bee6a1929dfbdb86bca659570d0f199f489",
+      "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 2.322799189906172,
+        "p95": 3.504653109046275,
+        "max": 28.49544905234892,
+        "max_index": 374
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6092155680768875,
+        "p95": 1.0357371200833716,
+        "max": 2.1506237305494,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 2.2608353642366983,
+        "p95": 3.091073138086061,
+        "max": 28.56867976691714,
+        "max_index": 374
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 151.00337196539473,
+        "p95": 163.71401189158706,
+        "max": 1690.2239943998206,
+        "max_index": 374
+      },
+      "max_step_m": 0.5699089810469784
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "frames": 568,
+      "candidate_hash": "cb50c9f2c20a0243a7cdb067e78f76df37cc92373e5cba2163c6ad61d642359b",
+      "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.7554515526710588,
+        "p95": 3.8418234062741288,
+        "max": 9.817307553618278,
+        "max_index": 207
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.013256270638557,
+        "p95": 2.0046173818095507,
+        "max": 2.5574186399268077,
+        "max_index": 356
+      },
+      "added_root_velocity_m_s": {
+        "rms": 1.5078395398817337,
+        "p95": 3.130304495938323,
+        "max": 9.81149614499166,
+        "max_index": 207
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 67.73182590527522,
+        "p95": 152.89881389640198,
+        "max": 670.4673373369172,
+        "max_index": 206
+      },
+      "max_step_m": 0.19634615107236555
+    },
+    {
+      "run": "php_segment_v11_width_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "frames": 1142,
+      "candidate_hash": "91157e3d3f646d95b47dae8a52b9e21346b036af4b458d5f5408d91a27620541",
+      "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.9323202172105745,
+        "p95": 4.305952525828284,
+        "max": 14.746396843133732,
+        "max_index": 1022
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.2685515682907913,
+        "p95": 2.2716254030502716,
+        "max": 2.6237994031045955,
+        "max_index": 154
+      },
+      "added_root_velocity_m_s": {
+        "rms": 1.4719226404357533,
+        "p95": 3.0086918251526535,
+        "max": 13.629927660805103,
+        "max_index": 1022
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 74.36570519134568,
+        "p95": 150.37912897336918,
+        "max": 745.7103913635032,
+        "max_index": 1022
+      },
+      "max_step_m": 0.29492793686267466
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "candidate_hash": "1870b8d24b667ec8e31dff99fdfd67d1170d0ba310f6cc1cf358d23cf395cb50",
+      "source_hash": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.0960109069695803,
+        "p95": 2.2061717335103386,
+        "max": 6.65283240949365,
+        "max_index": 184
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.8850146536286929,
+        "p95": 2.2041012789151004,
+        "max": 2.7225492187636346,
+        "max_index": 168
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6578790253496067,
+        "p95": 1.0983299172785332,
+        "max": 5.970596434094725,
+        "max_index": 184
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 41.6913504710199,
+        "p95": 57.2855335097746,
+        "max": 371.3397630401975,
+        "max_index": 184
+      },
+      "max_step_m": 0.133056648189873
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "frames": 260,
+      "candidate_hash": "162d55a275c38220d4baeb510bea63e2d87d86c1b8a2d1ae5a48b2bdb353e0c8",
+      "source_hash": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.0476365667230094,
+        "p95": 1.7443465888753287,
+        "max": 9.446402823136884,
+        "max_index": 140
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.7883518123921746,
+        "p95": 1.8152228722043842,
+        "max": 2.060120104170734,
+        "max_index": 158
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6870312610587949,
+        "p95": 1.0016283846399152,
+        "max": 7.873598519066885,
+        "max_index": 140
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 41.300516344350534,
+        "p95": 69.53544612641302,
+        "max": 392.3004449103234,
+        "max_index": 139
+      },
+      "max_step_m": 0.1889280564627377
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "frames": 413,
+      "candidate_hash": "5c272e9c7de90443991a97213e58c84e6167f1361a7bb5eba9aa53d3a9b53d31",
+      "source_hash": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 0.9821952438249287,
+        "p95": 1.8768500238044636,
+        "max": 3.6760184046464,
+        "max_index": 275
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.9015079261591307,
+        "p95": 1.6278583537498375,
+        "max": 2.3686581678183116,
+        "max_index": 186
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.4061376850467531,
+        "p95": 0.7660371304468754,
+        "max": 2.8236760062601425,
+        "max_index": 275
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 25.91025920665296,
+        "p95": 52.44212030710561,
+        "max": 178.56919379412503,
+        "max_index": 274
+      },
+      "max_step_m": 0.073520368092928
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "frames": 455,
+      "candidate_hash": "4bfd6391e70dda83a0615139c8e8f028792327b41252fa1343ee3fa8bd90a080",
+      "source_hash": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.6751961940794708,
+        "p95": 2.8334469490279615,
+        "max": 5.506438211091257,
+        "max_index": 197
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.5573287337120383,
+        "p95": 2.5810275621214136,
+        "max": 3.133853498663144,
+        "max_index": 170
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6318901216707111,
+        "p95": 1.2204670819845063,
+        "max": 3.0587913752624343,
+        "max_index": 197
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 41.21970859277648,
+        "p95": 101.88946713899898,
+        "max": 218.84333631627052,
+        "max_index": 336
+      },
+      "max_step_m": 0.11012876422182513
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "frames": 894,
+      "candidate_hash": "eee9e7060c9d4a29f1c4cb5a11de68231bbb0a730746fe6ba6d8654cc45ea43c",
+      "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.031510292883644,
+        "p95": 1.8427879674500494,
+        "max": 11.83849676540956,
+        "max_index": 350
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6018740624926321,
+        "p95": 0.971850678610806,
+        "max": 2.1421334126670524,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.8334935206790207,
+        "p95": 1.0877797559744844,
+        "max": 11.873337172000241,
+        "max_index": 350
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 49.441128740118465,
+        "p95": 64.55455401042019,
+        "max": 1005.3103865438221,
+        "max_index": 349
+      },
+      "max_step_m": 0.2367699353081912
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "frames": 870,
+      "candidate_hash": "db00e31c2d8ad0cc22565429055b6f35e0f42beef52fc0d42ac0ec3993f021c1",
+      "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.0592424467788908,
+        "p95": 2.041151329069122,
+        "max": 9.307596620794332,
+        "max_index": 715
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6092155680768875,
+        "p95": 1.0357371200833716,
+        "max": 2.1506237305494,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.859738442757902,
+        "p95": 1.3131934980770164,
+        "max": 8.44489378991496,
+        "max_index": 715
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 47.015880319222,
+        "p95": 75.53493454829692,
+        "max": 686.4057590635742,
+        "max_index": 349
+      },
+      "max_step_m": 0.18615193241588662
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "frames": 568,
+      "candidate_hash": "d21a433464b9de2f6360ba377d2c06d6449cec1290e4fd8d7450d7d4b9cd8731",
+      "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.2645117216140067,
+        "p95": 2.626149494662023,
+        "max": 6.325874016921574,
+        "max_index": 384
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.013256270638557,
+        "p95": 2.0046173818095507,
+        "max": 2.5574186399268077,
+        "max_index": 356
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.7544268598060798,
+        "p95": 1.513573309316685,
+        "max": 6.097620469020595,
+        "max_index": 384
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 42.025001792068885,
+        "p95": 97.12669884415656,
+        "max": 308.3194765146993,
+        "max_index": 384
+      },
+      "max_step_m": 0.1265174803384315
+    },
+    {
+      "run": "php_segment_v18_source_contact_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "frames": 1142,
+      "candidate_hash": "442e96fc4f9e05ee4552f9d279107f0da8a508c8b60c42ddc9fa7d5cadb5f70d",
+      "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.6021861274581939,
+        "p95": 2.665873434451204,
+        "max": 15.226390073531242,
+        "max_index": 1022
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.2685515682907913,
+        "p95": 2.2716254030502716,
+        "max": 2.6237994031045955,
+        "max_index": 154
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.9934168705186567,
+        "p95": 1.5912450706559589,
+        "max": 14.087266681497855,
+        "max_index": 1022
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 62.653072968304,
+        "p95": 114.09075168996945,
+        "max": 805.0106928497072,
+        "max_index": 1022
+      },
+      "max_step_m": 0.30452780147062486
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "frames": 894,
+      "candidate_hash": "761a84f384c04c8026abc12a14a5a4ebd1ad815a6b67ecfa4c7b97f667e16f30",
+      "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 0.8599736161549091,
+        "p95": 1.7340712093866535,
+        "max": 6.4669058468907155,
+        "max_index": 350
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6018740624926321,
+        "p95": 0.971850678610806,
+        "max": 2.1421334126670524,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6086616667087389,
+        "p95": 1.0369213314117292,
+        "max": 6.4594298726414685,
+        "max_index": 350
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 32.39899786717186,
+        "p95": 61.39400594531382,
+        "max": 371.0704552290993,
+        "max_index": 349
+      },
+      "max_step_m": 0.1293381169378143
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "frames": 870,
+      "candidate_hash": "60a00b70a69a6e5e065ddda659cef9be48678d7293ecab2657748720187dfbe5",
+      "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 0.9569853887177061,
+        "p95": 1.9180808886784626,
+        "max": 9.326018367184748,
+        "max_index": 715
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6092155680768875,
+        "p95": 1.0357371200833716,
+        "max": 2.1506237305494,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.7309777624656912,
+        "p95": 1.25372204014499,
+        "max": 8.461958830922713,
+        "max_index": 715
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 38.737241334712955,
+        "p95": 69.16187406872095,
+        "max": 446.5459140244124,
+        "max_index": 715
+      },
+      "max_step_m": 0.18652036734369495
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "frames": 1142,
+      "candidate_hash": "e0b3c3e5cc6843878c266dfa5f22c5f52b95fe6818a7154f84403ff07a328c49",
+      "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.6021861274581939,
+        "p95": 2.665873434451204,
+        "max": 15.226390073531242,
+        "max_index": 1022
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.2685515682907913,
+        "p95": 2.2716254030502716,
+        "max": 2.6237994031045955,
+        "max_index": 154
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.9934168705186567,
+        "p95": 1.5912450706559589,
+        "max": 14.087266681497855,
+        "max_index": 1022
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 62.653072968304,
+        "p95": 114.09075168996945,
+        "max": 805.0106928497072,
+        "max_index": 1022
+      },
+      "max_step_m": 0.30452780147062486
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_forward_0.6s_step0s",
+      "frames": 570,
+      "candidate_hash": "7dafb8bd90c0934e9f199253a381820fac6dd3cc0f6c9d9e2b715def650e6438",
+      "source_hash": "be1c3e810a031d9bdefc4af226314614b9ea04e2b4eb66bec6f6d84d29f76d11",
+      "status": "checking",
+      "accepted_variants": null,
+      "root_speed_m_s": {
+        "rms": 1.2758404101209995,
+        "p95": 2.574937970125354,
+        "max": 6.4419809418030125,
+        "max_index": 386
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.0435971619625262,
+        "p95": 2.1644864729523388,
+        "max": 2.630807541272573,
+        "max_index": 118
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.731106653897134,
+        "p95": 1.4134767937045392,
+        "max": 6.214258791442707,
+        "max_index": 386
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 39.73175886761639,
+        "p95": 86.59782146073691,
+        "max": 311.7029173198973,
+        "max_index": 386
+      },
+      "max_step_m": 0.12883961883606024
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_left_45_1.5s_step0.8s",
+      "frames": 681,
+      "candidate_hash": "203bf4c5930855377d5dc2254247440f0b1ae4574b8bf6aa0ef18c80d820e473",
+      "source_hash": "53caf9b46918eb907b1a48870ba6e28dc2fe12e4a3c94141e0c451e86b62a7d1",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.3995005681880428,
+        "p95": 2.6201055668642237,
+        "max": 6.205044484033229,
+        "max_index": 563
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.188686317053266,
+        "p95": 2.243376675580892,
+        "max": 2.7961562969058416,
+        "max_index": 366
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.7387982287201996,
+        "p95": 1.4775335899462683,
+        "max": 5.790997112687528,
+        "max_index": 497
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 41.17341494924973,
+        "p95": 81.64791880919115,
+        "max": 327.81962243767657,
+        "max_index": 563
+      },
+      "max_step_m": 0.12410088968066457
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_left_90_0.6s_step0.8s",
+      "frames": 640,
+      "candidate_hash": "a73ca209516812362830a58106c6040c53935e5e8d5e9c4913c75c18ab52c518",
+      "source_hash": "ecc0718273cec84da010a374374eba83ac5eeb6a3e5cbc6aa7bbf68e901ee447",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.3637711453153707,
+        "p95": 2.742616119571404,
+        "max": 7.450840326074222,
+        "max_index": 521
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.061866098305786,
+        "p95": 2.053945911604409,
+        "max": 2.5297389536141495,
+        "max_index": 428
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.8518855931441348,
+        "p95": 1.6126255579837618,
+        "max": 6.121001497177843,
+        "max_index": 456
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 47.07712875697005,
+        "p95": 100.42366360378256,
+        "max": 427.63211225491847,
+        "max_index": 521
+      },
+      "max_step_m": 0.14901680652148444
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0s",
+      "frames": 615,
+      "candidate_hash": "3aee70830f056f1e7c18040a56d4c5275b2e37e90a980fafd03f726a6fdd4746",
+      "source_hash": "d113883279ca9b9a26bee1f54481120766b0a7f60c2486a36814e163a1a87e3f",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.3504233448656873,
+        "p95": 2.6451933063574713,
+        "max": 7.077397588584064,
+        "max_index": 496
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.1036118497238814,
+        "p95": 2.193781135048915,
+        "max": 2.5303113401612998,
+        "max_index": 403
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.7724807033967404,
+        "p95": 1.4898820289860881,
+        "max": 6.116837369720585,
+        "max_index": 431
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 41.86293343611453,
+        "p95": 81.11179186386703,
+        "max": 350.37801264513223,
+        "max_index": 496
+      },
+      "max_step_m": 0.14154795177168128
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "frames": 635,
+      "candidate_hash": "c7b68c9fe054b0073064bb57c7d8301b22a5d33cf4fdf5f0a16f729a3bfd8903",
+      "source_hash": "ed37a063271498ec53f9420b5441a5657e9f74c7be95df34736b3b40662cc694",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.4012880514760007,
+        "p95": 2.7414464587736402,
+        "max": 6.474706009803895,
+        "max_index": 451
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.144861872293539,
+        "p95": 2.1123433273078414,
+        "max": 4.126802779340085,
+        "max_index": 498
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.8110556512317326,
+        "p95": 1.6614821569172509,
+        "max": 6.245492054638978,
+        "max_index": 451
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 45.07716698345515,
+        "p95": 100.6906243216867,
+        "max": 320.4248989344457,
+        "max_index": 327
+      },
+      "max_step_m": 0.1294941201960779
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step0.7s",
+      "frames": 833,
+      "candidate_hash": "578b3304e05ea33506a69515c92e7cea58c627c08c909eceda0c698988b637bd",
+      "source_hash": "1ddbff2661f327dfc2113564d7048d6aedce48067215a665278e6397c6ab9e01",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 0.908461914145328,
+        "p95": 1.835286263701334,
+        "max": 7.914941303599284,
+        "max_index": 350
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.5796171034250348,
+        "p95": 0.974857605661487,
+        "max": 2.127340884607552,
+        "max_index": 555
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6935774457423411,
+        "p95": 1.0716484839817602,
+        "max": 7.871152699584569,
+        "max_index": 350
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 35.53987520815997,
+        "p95": 61.80069605452974,
+        "max": 374.81852738096813,
+        "max_index": 349
+      },
+      "max_step_m": 0.15829882607198567
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step0.7s",
+      "frames": 814,
+      "candidate_hash": "79ea1fd546f0519ca2a2160fb8f6c52fcdc56109e803cb3cf7155fd075529104",
+      "source_hash": "e0fe2c9e1e7073e55f4e89057c95df118bab98c9a77c1324435c4de916da1642",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 0.8841317314432753,
+        "p95": 1.979371116424188,
+        "max": 6.400459206335949,
+        "max_index": 350
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.5798270031340614,
+        "p95": 1.0528747974474861,
+        "max": 2.125608084306815,
+        "max_index": 556
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6647153551873414,
+        "p95": 1.1665713493931396,
+        "max": 6.388175845140719,
+        "max_index": 350
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 34.09959213506002,
+        "p95": 68.20362017748998,
+        "max": 361.3418153699191,
+        "max_index": 349
+      },
+      "max_step_m": 0.12800918412671897
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/left_90_walk1.2s_step1.2s",
+      "frames": 861,
+      "candidate_hash": "0c518b7eb5ac3cab79216425b56f87596cc0ef26d7c33bbd3b49fbe342023d4f",
+      "source_hash": "cfa1ce26146898b45dc00c12ac3ba17eaf813345a5ffdd9ac9b6a5c2e381f65a",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.0177242513617806,
+        "p95": 1.8952940487399264,
+        "max": 9.179295590556729,
+        "max_index": 353
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.5906956895819175,
+        "p95": 0.9866482150301598,
+        "max": 2.1170872467776998,
+        "max_index": 584
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.8269591355340458,
+        "p95": 1.1965851576604771,
+        "max": 9.190838566638089,
+        "max_index": 353
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 46.55645868468564,
+        "p95": 77.44690712117522,
+        "max": 831.9711809656591,
+        "max_index": 353
+      },
+      "max_step_m": 0.18358591181113457
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/right_45_walk0.9s_step1.2s",
+      "frames": 818,
+      "candidate_hash": "7cc5308afc413792cd9bfbdd4b70a38c8f8a7c6493436832912c5a7c7eaf93db",
+      "source_hash": "c51cee2bb24abb0c293516a8b79bb701d34803eaeadc8b6e0431e00712c20b5a",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 0.8689513585121702,
+        "p95": 1.7997956912315014,
+        "max": 7.648814836492182,
+        "max_index": 336
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.5657990423754633,
+        "p95": 0.9664194753305286,
+        "max": 2.153033154080185,
+        "max_index": 567
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6609825843507808,
+        "p95": 1.0993030083107376,
+        "max": 7.671784865055865,
+        "max_index": 336
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 33.343392390613204,
+        "p95": 57.53437634383166,
+        "max": 447.1945984377695,
+        "max_index": 334
+      },
+      "max_step_m": 0.15297629672984364
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step0.7s",
+      "frames": 835,
+      "candidate_hash": "7f6f94141340d14ae042bbf8892ace54c7a1187d259a688406b17830768f3c80",
+      "source_hash": "bd3c7c4ef5db52c762fb8d47a8d2c0bdfe74cf72e124e7c5de37ba6e8a7d8274",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 0.9005560657870206,
+        "p95": 1.9122632671227362,
+        "max": 7.193659388273744,
+        "max_index": 350
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.5972011565022564,
+        "p95": 1.0349821624980255,
+        "max": 2.13982944090035,
+        "max_index": 554
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6837276366888512,
+        "p95": 1.2063198870042635,
+        "max": 7.308023205722268,
+        "max_index": 350
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 34.015770716110616,
+        "p95": 65.4683869851408,
+        "max": 364.0792231389314,
+        "max_index": 349
+      },
+      "max_step_m": 0.1438731877654749
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-high-climb-76/run_left_45_1.0s_step0s",
+      "frames": 605,
+      "candidate_hash": "ace506d9ab5451e20c2c26281016adbccaf434d83d90b494330a4b42876120e3",
+      "source_hash": "b8464660b6951c6f15bf60fc50601a675d472be4a5dd6beef1285f97ca587c1c",
+      "status": "rejected",
+      "accepted_variants": [],
+      "root_speed_m_s": {
+        "rms": 1.2930469807242073,
+        "p95": 2.6665243979178372,
+        "max": 5.621679038907493,
+        "max_index": 484
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.0561296093581367,
+        "p95": 2.0617003705701777,
+        "max": 2.8514241182843008,
+        "max_index": 480
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.7404472505333808,
+        "p95": 1.622904310818081,
+        "max": 5.407237005752968,
+        "max_index": 497
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 38.87410953791574,
+        "p95": 83.42608834428272,
+        "max": 319.46154282150235,
+        "max_index": 497
+      },
+      "max_step_m": 0.11243358077814986
+    },
+    {
+      "run": "php_segment_v19_transition_pilot_20261109",
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step1.2s",
+      "frames": 823,
+      "candidate_hash": "f0550a487b50aa62bbcbbee7c70f94068f36ae35ba79bed1a2db836e2fda9ae6",
+      "source_hash": "5efe1c16c3ed09622063a65a62d2648c59a5decd10f38fdc08964a3c497f5f5c",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 0.8697433649105567,
+        "p95": 1.8369369378968103,
+        "max": 6.1336627256977385,
+        "max_index": 305
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.5889899066542076,
+        "p95": 0.989618369713626,
+        "max": 2.1285912130608238,
+        "max_index": 535
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.6391652261944336,
+        "p95": 1.1613379146734295,
+        "max": 6.11005039199837,
+        "max_index": 305
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 33.03791250945968,
+        "p95": 72.08673946040709,
+        "max": 340.3166496487065,
+        "max_index": 304
+      },
+      "max_step_m": 0.12267325451395478
+    },
+    {
+      "run": "php_segment_v20_root_pilot_20261109",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "frames": 894,
+      "candidate_hash": "b1e3960a0bdef90167d8bd7bfb62d06e59424aab693259e6e90fb8ac2dee9d9f",
+      "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "status": "checking",
+      "accepted_variants": null,
+      "root_speed_m_s": {
+        "rms": 0.6502727691537693,
+        "p95": 1.0275987183578859,
+        "max": 2.55528960315502,
+        "max_index": 580
+      },
+      "source_root_speed_m_s": {
+        "rms": 0.6018740624926321,
+        "p95": 0.971850678610806,
+        "max": 2.1421334126670524,
+        "max_index": 580
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.21827833037743583,
+        "p95": 0.4427015734754055,
+        "max": 1.3129395284619276,
+        "max_index": 351
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 3.0145315749197494,
+        "p95": 5.593461596879473,
+        "max": 30.126390490616327,
+        "max_index": 541
+      },
+      "max_step_m": 0.0511057920631004
+    },
+    {
+      "run": "php_segment_v20_root_pilot_20261109",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "frames": 1142,
+      "candidate_hash": "32822f95ff1edf755520a3f1a724aa1cee3a4d4245419bed1eb9553958101f69",
+      "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "status": "accepted",
+      "accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "root_speed_m_s": {
+        "rms": 1.3027481456426488,
+        "p95": 2.360681285743937,
+        "max": 3.5235678806787085,
+        "max_index": 166
+      },
+      "source_root_speed_m_s": {
+        "rms": 1.2685515682907913,
+        "p95": 2.2716254030502716,
+        "max": 2.6237994031045955,
+        "max_index": 154
+      },
+      "added_root_velocity_m_s": {
+        "rms": 0.33484711961718727,
+        "p95": 0.712523976310799,
+        "max": 2.0843732221114344,
+        "max_index": 1020
+      },
+      "added_root_acceleration_m_s2": {
+        "rms": 5.538926510310499,
+        "p95": 9.38139220367432,
+        "max": 60.54750817273747,
+        "max_index": 169
+      },
+      "max_step_m": 0.07047135761357418
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v27_free_arm_pilot_20261110",
+  "identity": "feb24c7242228292169669c97afd5da9bca6d187aaa84874a2d8da36201104ca",
+  "verified": true,
+  "sources": 5,
+  "unique_source_files": 5,
+  "frames": 2002,
+  "checked_variants": 50,
+  "accepted_variants": 50,
+  "statuses": {
+    "accepted": 5
+  },
+  "checked_output_hashes": 45,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 39.94,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

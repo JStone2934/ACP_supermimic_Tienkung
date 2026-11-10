@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v25_native_joint_expand_20261110",
+  "identity": "740d699182cff929ba65f4c81c718152938338a6b6c4f90f2f0e84d2ff7ea7d5",
+  "verified": true,
+  "sources": 4,
+  "unique_source_files": 4,
+  "frames": 2654,
+  "checked_variants": 40,
+  "accepted_variants": 13,
+  "statuses": {
+    "rejected": 2,
+    "accepted": 2
+  },
+  "checked_output_hashes": 28,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 53.0,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

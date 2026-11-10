@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "original_preserved": 910,
+  "added": 66,
+  "total": 976,
+  "parent_counts": {
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_full_v2_20261109": 910,
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/repair_v3/pilot": 66
+  }
+}

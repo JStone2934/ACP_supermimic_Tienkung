@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v25_native_joint_pilot_20261110",
+  "identity": "0d51b8774873e823104ef2e72b4e41ae081fb0a23d27d22799fbbc9c1886055d",
+  "verified": true,
+  "sources": 16,
+  "unique_source_files": 16,
+  "frames": 11460,
+  "checked_variants": 160,
+  "accepted_variants": 155,
+  "statuses": {
+    "accepted": 16
+  },
+  "checked_output_hashes": 144,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 228.88,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

@@ -1,0 +1,583 @@
+{
+  "scope": "Same eight complete sources and all original variants; v22 peak penalty vs v20/v21 baseline objective, both12 collision rounds",
+  "new_original_slots": 0,
+  "lost_original_slots": 0,
+  "promoted": false,
+  "decision": "No additional pass; high climb remains terrain+self rejected. Keep v21 main. No new preview generation needed because not promoting.",
+  "rows": {
+    "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s": {
+      "v20": {
+        "source_hash": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "frames": 269,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000297974051549,
+        "self_mm": 1.240371866521599,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/d4e286147fdf19fe7539b55a.json",
+        "quality_sha256": "ef9be31acf312336515e785b56a5e95b3d30fcd890a75ae48a87bb5ee6edb0d6"
+      },
+      "v22": {
+        "source_hash": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "frames": 269,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000230343729789,
+        "self_mm": 1.2403718665206653,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 269,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.20693781421640906,
+            "added_velocity_p95_m_s": 0.4257698733005047,
+            "added_velocity_max_m_s": 0.9942521600703035,
+            "added_acceleration_max_m_s2": 24.097406640346275
+          },
+          "worst_velocity_frame": 190,
+          "worst_acceleration_frame": 186,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+          "motion_sha256": "5f366eeaa029c34f4016bf4de3a69668186c6c7cd504d179d1b1010ae713b7a5",
+          "source_frames": [
+            0,
+            269
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/ef05657ed398c66f98004b7c.json",
+        "quality_sha256": "342d1b14a28e9234ba2f2272b93cf676ad9b3abf7e4b7f66b6c0e6d1d7b3e43a"
+      }
+    },
+    "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s": {
+      "v20": {
+        "source_hash": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "frames": 260,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000284084624579,
+        "self_mm": 1.2403734124121277,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/2e518559608e90f69da0324c.json",
+        "quality_sha256": "c13e5ad3ffb6b5a84bcb57bb8ba4dde7b0c30035829e42108d47ef38f68b0b2a"
+      },
+      "v22": {
+        "source_hash": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "frames": 260,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000174479588213,
+        "self_mm": 1.2403734097041705,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 260,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.2356061889523753,
+            "added_velocity_p95_m_s": 0.5490876223161144,
+            "added_velocity_max_m_s": 1.2223333360386766,
+            "added_acceleration_max_m_s2": 17.407651225731744
+          },
+          "worst_velocity_frame": 142,
+          "worst_acceleration_frame": 141,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+          "motion_sha256": "06836cb4e3ddb1461842cfe748cdb079fdff763c94856581b33b8fa4bf399dc3",
+          "source_frames": [
+            0,
+            260
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/8e2732e5324240246d2698ee.json",
+        "quality_sha256": "32fec9352757eaeda039635670965d9717a1315d70ba0729abe3b827f72cc576"
+      }
+    },
+    "motions-low-step/forward_walk1.2s_step0s": {
+      "v20": {
+        "source_hash": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "frames": 413,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000278736690609,
+        "self_mm": 1.2403730486064195,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/66872c118c57ade052722c12.json",
+        "quality_sha256": "42d17cb9fe6cab54c57419352f0663dc666d7745fd7a538f630a4f58f192aa0e"
+      },
+      "v22": {
+        "source_hash": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "frames": 413,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000300261289146,
+        "self_mm": 1.2403730544113512,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 413,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.10291106334085794,
+            "added_velocity_p95_m_s": 0.211422651808565,
+            "added_velocity_max_m_s": 0.3463398673762688,
+            "added_acceleration_max_m_s2": 8.048230338541812
+          },
+          "worst_velocity_frame": 223,
+          "worst_acceleration_frame": 276,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+          "motion_sha256": "d58768f5a48b5109ae945c94654c596c2b2d62c85f55425d8ee3fd7d2c499717",
+          "source_frames": [
+            0,
+            413
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/587c96786d49cd81861ec721.json",
+        "quality_sha256": "2bc52dfa58895b2fc2811556c04ec258053125e4d70159d578f0560951e3b188"
+      }
+    },
+    "motions-high-step/run_forward_0.9s_step1.0s": {
+      "v20": {
+        "source_hash": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "frames": 455,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000571410807547,
+        "self_mm": 1.2403731408276144,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/60c5bf04eef98a33f8fe7f13.json",
+        "quality_sha256": "ff095861aa9029446f0fed77efa020cd87aafe92d4d512862711951a56e89ee8"
+      },
+      "v22": {
+        "source_hash": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "frames": 455,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000589705246861,
+        "self_mm": 1.2403731416691302,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 455,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.16797247220170036,
+            "added_velocity_p95_m_s": 0.34715619212662296,
+            "added_velocity_max_m_s": 0.5437066658935495,
+            "added_acceleration_max_m_s2": 14.445041650881993
+          },
+          "worst_velocity_frame": 339,
+          "worst_acceleration_frame": 338,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+          "motion_sha256": "99854320303db324b5342964b798c260c76861bfed0b764160e73985ac00bc63",
+          "source_frames": [
+            0,
+            455
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/65f323323cd75eff3c084bb5.json",
+        "quality_sha256": "e93482158f9b5793718013c40cc1c067f99381bdc57f435bca49b958a9c8c33a"
+      }
+    },
+    "motions-low-climb-76/forward_walk1.5s_step1.2s": {
+      "v20": {
+        "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+        "frames": 894,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 2.1225327389994275,
+        "self_mm": 1.9395507145770754,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/139920557544a38d2e1bd61d.json",
+        "quality_sha256": "94f1c79d64473732f278dcd75f2c9f38d29bd71627b9c604fee805f2f7581347"
+      },
+      "v22": {
+        "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+        "frames": 894,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 2.162441868754361,
+        "self_mm": 2.0103711010281184,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 894,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.21764573443884286,
+            "added_velocity_p95_m_s": 0.44157366419274957,
+            "added_velocity_max_m_s": 1.277438202957747,
+            "added_acceleration_max_m_s2": 27.108579650114926
+          },
+          "worst_velocity_frame": 352,
+          "worst_acceleration_frame": 543,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+          "motion_sha256": "c0f70857eee48380fb562902eea8d513e4747b05ac59dc44d04507dbb7598ab4",
+          "source_frames": [
+            0,
+            894
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/64cb6f8bf9e709c55f57283a.json",
+        "quality_sha256": "6131c79db97ab7e81e7a686f93af2926f0ab23f14736d730f4106b839123b381"
+      }
+    },
+    "motions-low-climb-76/left_45_walk1.5s_step1.2s": {
+      "v20": {
+        "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+        "frames": 870,
+        "accepted": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 1.9734221591238827,
+        "self_mm": 1.866818726414547,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/b9277fe963cd0cfbe7e7e8ae.json",
+        "quality_sha256": "a1b9fca8040ccf08f80bbd702707c92343d79a941ffff78a9c38a9099171d935"
+      },
+      "v22": {
+        "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+        "frames": 870,
+        "accepted": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 1.8703124524275248,
+        "self_mm": 2.1567257375527724,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 870,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.258376694639843,
+            "added_velocity_p95_m_s": 0.5049772722937572,
+            "added_velocity_max_m_s": 1.1854272625149964,
+            "added_acceleration_max_m_s2": 26.756163253364992
+          },
+          "worst_velocity_frame": 353,
+          "worst_acceleration_frame": 543,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+          "motion_sha256": "8e1ec09f574d866e693c1fdcfcc4d9ab182298304ab531c79abc354446ac314c",
+          "source_frames": [
+            0,
+            870
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/4eb3e5e0e5e00c581a88cbcd.json",
+        "quality_sha256": "3f2aefde3eb7f25dbe9e4d2a5d0c590e8e58ba7bc6f45eaf9e405c9575f66e63"
+      }
+    },
+    "motions-high-climb-76/run_right_90_0.6s_step0s": {
+      "v20": {
+        "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+        "frames": 568,
+        "accepted": [],
+        "terrain_mm": 6.777870753254492,
+        "self_mm": 7.023589909122891,
+        "reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/0c6bf4f401143c7691113bc7.json",
+        "quality_sha256": "228e1a6b233d8429b9cf50a90c0e779dd9d1e55cdada8ff8aaf5dde26bd36345"
+      },
+      "v22": {
+        "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+        "frames": 568,
+        "accepted": [],
+        "terrain_mm": 6.789306970886514,
+        "self_mm": 6.7756619435576875,
+        "reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 568,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.23767951807654522,
+            "added_velocity_p95_m_s": 0.5096967644610508,
+            "added_velocity_max_m_s": 0.9646389486294206,
+            "added_acceleration_max_m_s2": 33.533460335265964
+          },
+          "worst_velocity_frame": 201,
+          "worst_acceleration_frame": 205,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+          "motion_sha256": "6663db7e0fc40e1f73607e25f392fb2816c5e71f26e6b8aeab209d8f956fce57",
+          "source_frames": [
+            0,
+            568
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/f10ee548acc0e9d18c755ea5.json",
+        "quality_sha256": "1d1d3217b2a2c0d5d9297136a86c6ed9efd344b87ba9e7a17ff82413ac256813"
+      }
+    },
+    "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s": {
+      "v20": {
+        "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+        "frames": 1142,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.500029078880776,
+        "self_mm": 1.240373472421756,
+        "reasons": [],
+        "root": null,
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/quality/92055328aca268d4f3ff2659.json",
+        "quality_sha256": "457201c0abd2c016b31c10a92ed0a188542a7291ac7b92fd8dcc6490cd33a30e"
+      },
+      "v22": {
+        "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+        "frames": 1142,
+        "accepted": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "terrain_mm": 0.5000295374201214,
+        "self_mm": 1.2403710505758667,
+        "reasons": [],
+        "root": {
+          "policy": {
+            "version": "root-continuity-v1",
+            "fps": 50,
+            "added_velocity_rmse_max_m_s": 0.5,
+            "added_velocity_p95_max_m_s": 1.0,
+            "added_velocity_max_m_s": 2.5,
+            "added_acceleration_max_m_s2": 100.0,
+            "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+          },
+          "frames": 1142,
+          "fps": 50.0,
+          "metrics": {
+            "added_velocity_rmse_m_s": 0.3383916347795631,
+            "added_velocity_p95_m_s": 0.6719188505372319,
+            "added_velocity_max_m_s": 2.0133531303374785,
+            "added_acceleration_max_m_s2": 62.23286681900281
+          },
+          "worst_velocity_frame": 1021,
+          "worst_acceleration_frame": 171,
+          "passed": true,
+          "rejection_reasons": [],
+          "source_sha256": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+          "motion_sha256": "94b44331ec354e5b3b34b76422afac40bde46dfca9e958d1abbbe4f402b6e35e",
+          "source_frames": [
+            0,
+            1142
+          ]
+        },
+        "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110/quality/81b80ddfa8b54019bf0ad401.json",
+        "quality_sha256": "843993e65731ac60f75a8484fb829d611c6b17bc0220c89a940d05de8da1f82e"
+      }
+    }
+  }
+}

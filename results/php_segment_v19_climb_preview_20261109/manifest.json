@@ -1,0 +1,16 @@
+{
+  "purpose": "First independently indexed passing full climb; rest of the expanded pilot still running",
+  "clips": [
+    {
+      "name": "01_low_climb",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v19_transition_pilot_20261109",
+      "source_variant": 0,
+      "export_slot": 0,
+      "frames": 894,
+      "quality_path": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v19_transition_pilot_20261109/quality/567d744ebb3e8f94f4bd99cc.json",
+      "quality_sha256": "48b454dbd72f3522d3aa3e3713eb86845b78247331f6c392412504b766d4300c",
+      "motion_sha256": "761a84f384c04c8026abc12a14a5a4ebd1ad815a6b67ecfa4c7b97f667e16f30"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "promote": false,
+  "reason": "No new passing slots; cfg0062 loses all 10 slots due to self collision; all three climbs still fail posture and contact gates",
+  "v11_passed": 50,
+  "v12_passed": 40,
+  "clips": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "v11_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v12_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 0.3734463927267683,
+        "angular_p95_deg": 0.7478993838828443,
+        "angular_max_deg": 2.0100566641368056,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 0.4619743094060057,
+        "angular_p95_deg": 0.7920702776300192,
+        "angular_max_deg": 2.490585474259489,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403720899257264,
+      "v12_self_max_m": 0.001240372055152964
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "v11_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v12_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 0.13747302274829207,
+        "angular_p95_deg": 0.3879667071416797,
+        "angular_max_deg": 0.3963838209610071,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 0.13035741210957807,
+        "angular_p95_deg": 0.29726432248064494,
+        "angular_max_deg": 0.3007994875901699,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403735187391772,
+      "v12_self_max_m": 0.0012403734873804755
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "v11_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v12_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 0.16662417534863572,
+        "angular_p95_deg": 0.41235384734446184,
+        "angular_max_deg": 0.4159924255190924,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 0.1517554533560256,
+        "angular_p95_deg": 0.3879094633918142,
+        "angular_max_deg": 0.39092157327793176,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403729395311187,
+      "v12_self_max_m": 0.0012403731413736995
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "v11_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v12_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 0.21415209321256753,
+        "angular_p95_deg": 0.5363549180294349,
+        "angular_max_deg": 0.5475464191599835,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 0.19543722669319566,
+        "angular_p95_deg": 0.45026552863203473,
+        "angular_max_deg": 0.4592833410550065,
+        "gated": true
+      },
+      "v11_self_max_m": 0.001240370407232612,
+      "v12_self_max_m": 0.0012403721583521543
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "v11_passed": [],
+      "v12_passed": [],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 12.297885374124327,
+        "angular_p95_deg": 35.66783116924227,
+        "angular_max_deg": 35.69070548007697,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 10.943719733327407,
+        "angular_p95_deg": 30.851508524577007,
+        "angular_max_deg": 30.86910718404167,
+        "gated": true
+      },
+      "v11_self_max_m": 0.05520094640998524,
+      "v12_self_max_m": 0.02151485834523415
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "v11_passed": [],
+      "v12_passed": [],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 14.176251318280741,
+        "angular_p95_deg": 35.75334608323818,
+        "angular_max_deg": 54.70138192760838,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 12.399588901117205,
+        "angular_p95_deg": 31.786244749102288,
+        "angular_max_deg": 44.99318927391623,
+        "gated": true
+      },
+      "v11_self_max_m": 0.043204823415897764,
+      "v12_self_max_m": 0.007363903238769101
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "v11_passed": [],
+      "v12_passed": [],
+      "new_slots": [],
+      "lost_slots": [],
+      "v11_torso": {
+        "angular_rmse_deg": 10.938537404442657,
+        "angular_p95_deg": 29.248352136843817,
+        "angular_max_deg": 37.155056693636325,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 11.047978731196547,
+        "angular_p95_deg": 29.24154741340409,
+        "angular_max_deg": 42.624768269197645,
+        "gated": true
+      },
+      "v11_self_max_m": 0.006144244589935506,
+      "v12_self_max_m": 0.0032810310085764605
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "v11_passed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v12_passed": [],
+      "new_slots": [],
+      "lost_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "v11_torso": {
+        "angular_rmse_deg": 0.44023542668755905,
+        "angular_p95_deg": 0.9233351211523155,
+        "angular_max_deg": 4.550288809826273,
+        "gated": true
+      },
+      "v12_torso": {
+        "angular_rmse_deg": 0.501619314816526,
+        "angular_p95_deg": 1.0506136418753163,
+        "angular_max_deg": 2.711265523454554,
+        "gated": true
+      },
+      "v11_self_max_m": 0.0012403731748517931,
+      "v12_self_max_m": 0.0065514304836057835
+    }
+  ]
+}

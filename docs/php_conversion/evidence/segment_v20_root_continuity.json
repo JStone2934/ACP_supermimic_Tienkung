@@ -1,0 +1,253 @@
+{
+  "policy": {
+    "version": "root-continuity-v1",
+    "fps": 50,
+    "added_velocity_rmse_max_m_s": 0.5,
+    "added_velocity_p95_max_m_s": 1.0,
+    "added_velocity_max_m_s": 2.5,
+    "added_acceleration_max_m_s2": 100.0,
+    "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+  },
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 269,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.2069704963947941,
+        "added_velocity_p95_m_s": 0.4260638713200595,
+        "added_velocity_max_m_s": 0.9933379461079079,
+        "added_acceleration_max_m_s2": 24.144774784592133
+      },
+      "worst_velocity_frame": 190,
+      "worst_acceleration_frame": 186,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+      "motion_sha256": "ab5f8be5d4e4b1496a63421a3a46137a4aed6a04ee0bf07939e206fe5574ff78",
+      "source_frames": [
+        0,
+        269
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 260,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.2356187685999903,
+        "added_velocity_p95_m_s": 0.5379623377492987,
+        "added_velocity_max_m_s": 1.226229487470412,
+        "added_acceleration_max_m_s2": 17.86151545634451
+      },
+      "worst_velocity_frame": 142,
+      "worst_acceleration_frame": 141,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+      "motion_sha256": "5ba5618ccd432eabb1670380af0155d4621ba0d7768de7d5b305462451a90ce5",
+      "source_frames": [
+        0,
+        260
+      ]
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 413,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.10261691485921519,
+        "added_velocity_p95_m_s": 0.21174552892078372,
+        "added_velocity_max_m_s": 0.33480411645631764,
+        "added_acceleration_max_m_s2": 7.919461779933152
+      },
+      "worst_velocity_frame": 223,
+      "worst_acceleration_frame": 276,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+      "motion_sha256": "5adbcc8444b9475b91e2e05b0a31098737cdcf51cacb5a06eb72450d5838ee34",
+      "source_frames": [
+        0,
+        413
+      ]
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 455,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.1682522510119985,
+        "added_velocity_p95_m_s": 0.34536406623634214,
+        "added_velocity_max_m_s": 0.5313354476309469,
+        "added_acceleration_max_m_s2": 14.282901229976805
+      },
+      "worst_velocity_frame": 339,
+      "worst_acceleration_frame": 338,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+      "motion_sha256": "7fefbe55c976b3bc9eae6cfec198dbaf28e3b8ecfe78936175d33b8715366d89",
+      "source_frames": [
+        0,
+        455
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 894,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.21827833037743583,
+        "added_velocity_p95_m_s": 0.4427015734754055,
+        "added_velocity_max_m_s": 1.3129395284619276,
+        "added_acceleration_max_m_s2": 30.126390490616327
+      },
+      "worst_velocity_frame": 352,
+      "worst_acceleration_frame": 543,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "motion_sha256": "b1e3960a0bdef90167d8bd7bfb62d06e59424aab693259e6e90fb8ac2dee9d9f",
+      "source_frames": [
+        0,
+        894
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 870,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.25030676087630316,
+        "added_velocity_p95_m_s": 0.5071786414964174,
+        "added_velocity_max_m_s": 1.179774220799835,
+        "added_acceleration_max_m_s2": 31.1657015768517
+      },
+      "worst_velocity_frame": 353,
+      "worst_acceleration_frame": 543,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "motion_sha256": "c57570beaed4a465dfb4c091084f3095bd20e7fb5a6e64d5c7d97adeb8c8daa9",
+      "source_frames": [
+        0,
+        870
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 568,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.24064979814783596,
+        "added_velocity_p95_m_s": 0.5105132469375699,
+        "added_velocity_max_m_s": 1.0303311884425586,
+        "added_acceleration_max_m_s2": 27.430612209842554
+      },
+      "worst_velocity_frame": 201,
+      "worst_acceleration_frame": 205,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+      "motion_sha256": "ff29db2b4dc9a8e2a1ae7f5149ae94563a0843e7f5c3bd5699a05c6867083c03",
+      "source_frames": [
+        0,
+        568
+      ]
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 1142,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.33484711961718727,
+        "added_velocity_p95_m_s": 0.712523976310799,
+        "added_velocity_max_m_s": 2.0843732221114344,
+        "added_acceleration_max_m_s2": 60.54750817273747
+      },
+      "worst_velocity_frame": 1021,
+      "worst_acceleration_frame": 171,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "motion_sha256": "32822f95ff1edf755520a3f1a724aa1cee3a4d4245419bed1eb9553958101f69",
+      "source_frames": [
+        0,
+        1142
+      ]
+    }
+  ]
+}

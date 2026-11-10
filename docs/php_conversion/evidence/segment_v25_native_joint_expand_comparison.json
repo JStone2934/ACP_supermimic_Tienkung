@@ -1,0 +1,347 @@
+{
+  "scope": "Unique original missing slots versus bound planning snapshot",
+  "plan_sha256": "1e3d4e8d31b61d93df4509b01a69ce64986688072626a59bb78e93aa81f0ded3",
+  "audit_sha256": "c54b427c1f635fdb4e0dbe4a1b9d0644c5be8da2ccb6024f3db7d3dbce3a09c3",
+  "checked_variants": 40,
+  "accepted_checks": 13,
+  "missing_before": 40,
+  "new_original_slots": 13,
+  "remaining_original_slots": 27,
+  "targets": [
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 0,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 1,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 2,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 3,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 4,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 5,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 6,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 7,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 8,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "variant": 9,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 0,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 1,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 2,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 3,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 4,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 5,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 6,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 7,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 8,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "variant": 9,
+      "passed": true
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 0,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 1,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 2,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 3,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 4,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 5,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 6,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 7,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 8,
+      "passed": false
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "variant": 9,
+      "passed": false
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 0,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 1,
+      "passed": false
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 2,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 3,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 4,
+      "passed": false
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 5,
+      "passed": true
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 6,
+      "passed": false
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 7,
+      "passed": false
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 8,
+      "passed": false
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "variant": 9,
+      "passed": false
+    }
+  ],
+  "rows": [
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "solve_variant": 0,
+      "accepted": [],
+      "quality_sha256": "999436e6cb2f320a17a9f9cd370419887fecc3a8f0fcf0b9ce7d7e57b1d258fc",
+      "status": "rejected",
+      "missing_reasons": {
+        "0": [
+          "joint_velocity"
+        ],
+        "1": [
+          "joint_velocity"
+        ],
+        "2": [
+          "joint_velocity"
+        ],
+        "3": [
+          "joint_velocity"
+        ],
+        "4": [
+          "joint_velocity"
+        ],
+        "5": [
+          "joint_velocity"
+        ],
+        "6": [
+          "joint_velocity"
+        ],
+        "7": [
+          "joint_velocity"
+        ],
+        "8": [
+          "joint_velocity"
+        ],
+        "9": [
+          "joint_velocity"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "solve_variant": 0,
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "0562eb684694d7ae7a868aecc93a1393c3b306c724163733a9f2504a1470364d",
+      "status": "accepted",
+      "missing_reasons": {
+        "3": [
+          "right_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "solve_variant": 0,
+      "accepted": [],
+      "quality_sha256": "7cd9ef616f0c621a0dcd4cc92befb5180d251ea16f81fb3bc0729d498c72afef",
+      "status": "rejected",
+      "missing_reasons": {
+        "0": [
+          "joint_velocity"
+        ],
+        "1": [
+          "joint_velocity"
+        ],
+        "2": [
+          "joint_velocity"
+        ],
+        "3": [
+          "joint_velocity"
+        ],
+        "4": [
+          "joint_velocity"
+        ],
+        "5": [
+          "joint_velocity"
+        ],
+        "6": [
+          "joint_velocity"
+        ],
+        "7": [
+          "joint_velocity"
+        ],
+        "8": [
+          "joint_velocity"
+        ],
+        "9": [
+          "joint_velocity"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "solve_variant": 0,
+      "accepted": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "quality_sha256": "8544ddb3ca0beedcf87baf58d7a876c2faac52e4a362de9fe78f4d61735c1de0",
+      "status": "accepted",
+      "missing_reasons": {
+        "1": [
+          "right_hand:support_distance",
+          "right_hand:support_slip"
+        ],
+        "4": [
+          "right_hand:support_slip"
+        ],
+        "6": [
+          "right_hand:support_slip"
+        ],
+        "7": [
+          "right_hand:support_slip"
+        ],
+        "8": [
+          "right_hand:support_slip"
+        ],
+        "9": [
+          "right_hand:support_slip"
+        ]
+      }
+    }
+  ]
+}

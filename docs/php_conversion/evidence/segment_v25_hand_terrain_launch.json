@@ -1,0 +1,28 @@
+{
+  "time": "2026-11-10T15:50:13.248061+08:00",
+  "pid": 3324092,
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_hand_terrain_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/frozen_runner",
+  "solves": 4,
+  "frames": 3170,
+  "checked_slots": 40,
+  "targeted_missing_slots": 4,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_hand_terrain_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v25_hand_terrain_selections.json",
+    "--devices",
+    "0,1",
+    "--cpu-workers",
+    "2",
+    "--collision-rounds",
+    "12",
+    "--resume"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/hand.log",
+  "code_files": 50
+}

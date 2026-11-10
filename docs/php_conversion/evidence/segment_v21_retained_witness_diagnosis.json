@@ -1,0 +1,1738 @@
+{
+  "scope": "First512 frames of unchanged high-climb source, same v21 objective; diagnostic-only optimizer trace, no export",
+  "source_record": {
+    "key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+    "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-climb-76/run_right_90_0.6s_step0s_motion.npz",
+    "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour_contacts/motions-high-climb-76/run_right_90_0.6s_step0s.npz",
+    "frames": 568,
+    "fps": 50.0,
+    "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+    "terrain_hash": "0afc652ba414df4431e733d9e3b5ee11ede298f15ea22ebe458bbf33298d7178",
+    "labels_hash": "fb6cc20509446ac2af8f916d14ddaf4979034e6dcb324acc1c35a57e3417c14c",
+    "variants": 10,
+    "unique_variants": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "variant_aliases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "label_variants": 10,
+    "family": "php_run_right",
+    "category": "motions-high-climb-76",
+    "source_frames": [
+      0,
+      568
+    ],
+    "solve_variant": 0
+  },
+  "rows": [
+    {
+      "round": 0,
+      "native": [
+        {
+          "frame": 327,
+          "gap_mm": -35.72705388069153,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_l_link"
+          ]
+        },
+        {
+          "frame": 326,
+          "gap_mm": -35.45016422867775,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_l_link"
+          ]
+        },
+        {
+          "frame": 99,
+          "gap_mm": -34.79380905628204,
+          "bodies": [
+            "hip_pitch_r_link",
+            "right_tcp_link"
+          ]
+        },
+        {
+          "frame": 328,
+          "gap_mm": -34.271709620952606,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_l_link"
+          ]
+        },
+        {
+          "frame": 325,
+          "gap_mm": -34.094907343387604,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_l_link"
+          ]
+        },
+        {
+          "frame": 329,
+          "gap_mm": -33.02006423473358,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_l_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -31.693119555711746,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_r_link"
+          ]
+        },
+        {
+          "frame": 206,
+          "gap_mm": -31.5701924264431,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_r_link"
+          ]
+        }
+      ],
+      "retained": []
+    },
+    {
+      "round": 1,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -21.242517977952957,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -17.461106181144714,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_r_link"
+          ]
+        },
+        {
+          "frame": 206,
+          "gap_mm": -16.294751316308975,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 205,
+          "gap_mm": -16.153208911418915,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 203,
+          "gap_mm": -16.103973612189293,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -15.777748078107834,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 327,
+          "gap_mm": -14.52450081706047,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ]
+        },
+        {
+          "frame": 326,
+          "gap_mm": -14.491463080048561,
+          "bodies": [
+            "pelvis",
+            "hip_roll_l_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -21.699333563447,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -21.695764735341072,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -18.86788383126259,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_r_link"
+          ]
+        },
+        {
+          "frame": 203,
+          "gap_mm": -16.893185675144196,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -16.66972227394581,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -16.661658883094788,
+          "bodies": [
+            "knee_pitch_r_link",
+            "shoulder_yaw_r_link"
+          ]
+        },
+        {
+          "frame": 205,
+          "gap_mm": -16.647081822156906,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 205,
+          "gap_mm": -16.621069982647896,
+          "bodies": [
+            "knee_pitch_r_link",
+            "shoulder_yaw_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -16.686685383319855,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -14.851080253720284,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 196,
+          "gap_mm": -13.724618591368198,
+          "bodies": [
+            "knee_pitch_l_link",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 196,
+          "gap_mm": -13.72440904378891,
+          "bodies": [
+            "knee_pitch_l_link",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.430978775024414,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.430978775024414,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -10.153338313102722,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -9.437215514481068,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -16.033554449677467,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -16.02924056351185,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -15.893546864390373,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -14.921789988875389,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -12.59177178144455,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.753789149224758,
+          "bodies": [
+            "pelvis",
+            "hip_yaw_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.430978775024414,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.430978775024414,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -13.00683245062828,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.911935172975063,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -10.175168514251709,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -10.175168514251709,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 211,
+          "gap_mm": -8.12086183577776,
+          "bodies": [
+            "knee_pitch_r_link",
+            "wrist_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.548471912741661,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.212026510387659,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.212026510387659,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -13.032909482717514,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -13.030455447733402,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -13.013811782002449,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -13.01188301295042,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -12.073809280991554,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.6957388818264,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.647794395685196,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -10.12808084487915,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -11.749070137739182,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -10.217975825071335,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.02646780014038,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.02646780014038,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.418157532811165,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.07485293969512,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 197,
+          "gap_mm": -6.9459048099815845,
+          "bodies": [
+            "hip_yaw_l_link",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.591639317572117,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -11.113638058304787,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.10911276191473,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.099761351943016,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -11.0870860517025,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -10.775101371109486,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -10.172033682465553,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.698482230305672,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.57552157342434,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -9.661108255386353,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.96685291081667,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.912576198577881,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.912576198577881,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.312658242881298,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.992156151682138,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.47965569421649,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -4.537779837846756,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -9.6836993470788,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.675167500972748,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.661401621997356,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -9.658433496952057,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.945993147790432,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.923768997192383,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.83724819868803,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.569533936679363,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -8.411566726863384,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.31371545791626,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.31371545791626,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.959973998367786,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.959973998367786,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.233310025185347,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.955549120903015,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.4352013394236565,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -8.49292241036892,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.490473963320255,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.423512801527977,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.420291356742382,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.416406810283661,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.31371545791626,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.31371545791626,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -8.31371545791626,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "native": [
+        {
+          "frame": 204,
+          "gap_mm": -7.5843497179448605,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.532656192779541,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.532656192779541,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.1671344339847565,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.157893851399422,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.921105086803436,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.398750305175781,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.398727487772703,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 204,
+          "gap_mm": -7.598945405334234,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.596057374030352,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.594223599880934,
+          "bodies": [
+            "knee_pitch_r_link",
+            "elbow_pitch_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.589508779346943,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.583362981677055,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.55988247692585,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.523059844970703,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -7.523059844970703,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "native": [
+        {
+          "frame": 213,
+          "gap_mm": -7.110056467354298,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.893761456012726,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.893761456012726,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -6.634354591369629,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -6.634354591369629,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -6.6293226554989815,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -6.388126872479916,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.377498455345631,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 213,
+          "gap_mm": -7.119939662516117,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.115589454770088,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.112766150385141,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.112175226211548,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.111059967428446,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.110730744898319,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.110356353223324,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.110354956239462,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "native": [
+        {
+          "frame": 213,
+          "gap_mm": -7.057276554405689,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.876744795590639,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.881905555725098,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.881905555725098,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.805526860058308,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.756594240665436,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.367049016058445,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -3.398715052753687,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 213,
+          "gap_mm": -7.071834057569504,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.065430749207735,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.062193937599659,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.0610251277685165,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.060140836983919,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.0593226701021194,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.059293799102306,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.058883085846901,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "native": [
+        {
+          "frame": 213,
+          "gap_mm": -7.013505324721336,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.876679137349129,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.367455072700977,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.36744762212038,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.27423620223999,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.27423620223999,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.2291774190962315,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -5.144154652953148,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 213,
+          "gap_mm": -7.025764323771,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.024986669421196,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.023210637271404,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.020892575383186,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.01995100826025,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.019412703812122,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.017172407358885,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -7.016542367637157,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "native": [
+        {
+          "frame": 213,
+          "gap_mm": -6.965374574065208,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.8623218685388565,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.3540123626589775,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.3540123626589775,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.772700369358063,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.746377468109131,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.746377468109131,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.604150075465441,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 213,
+          "gap_mm": -6.984829902648926,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.978847552090883,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.974472664296627,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.972997449338436,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.970422808080912,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.969648413360119,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.968825589865446,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.968512199819088,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "native": [
+        {
+          "frame": 213,
+          "gap_mm": -6.92309346050024,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.876923609524965,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -5.357355810701847,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.4555156491696835,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.439890384674072,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.439890384674072,
+          "bodies": [
+            "world",
+            "left_tcp_link"
+          ]
+        },
+        {
+          "frame": 204,
+          "gap_mm": -4.278989974409342,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 202,
+          "gap_mm": -3.103742841631174,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ],
+      "retained": [
+        {
+          "frame": 213,
+          "gap_mm": -6.94115599617362,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.939417216926813,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.937806960195303,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.937616504728794,
+          "bodies": [
+            "world",
+            "ankle_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.934275384992361,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.932892370969057,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.9297682493925095,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        },
+        {
+          "frame": 213,
+          "gap_mm": -6.92910049110651,
+          "bodies": [
+            "pelvis",
+            "hip_roll_r_link"
+          ]
+        }
+      ]
+    }
+  ]
+}

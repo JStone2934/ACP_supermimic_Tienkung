@@ -1,0 +1,1125 @@
+{
+  "scope": "12 additional complete sources, stratified over both climbing categories and all five directions plus two difficult controls; not acceptance evidence",
+  "sources": 12,
+  "frames": 8730,
+  "original_slots": 120,
+  "selection_basis": "All 80 v11 climb results with seven recovered assessment errors; existing three pilot climbs excluded",
+  "status": "prepared, not launched; await current pilot acceptance and review",
+  "rows": [
+    {
+      "source_key": "motions-high-climb-76/run_forward_0.6s_step0s",
+      "frames": 570,
+      "category": "motions-high-climb-76",
+      "task_id": "bedbbe2edf18e5d02c31bb61",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "69d449e5a0e0bdf65b930b0a8f01eb7e293824e497e74fc40d974fc4dfd57cdc",
+      "accepted": [],
+      "variant0_reasons": [
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_knee:support_slip",
+        "left_hand:support_distance",
+        "left_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 11.508729734149137,
+        "angular_p95_deg": 29.15903135956385,
+        "angular_max_deg": 42.080019149051026,
+        "gated": true
+      },
+      "self_mm": 3.7124727359336167,
+      "terrain_mm": 3.0003802529379175,
+      "speed_ratio": 0.9603581898065031,
+      "contacts": {
+        "left_foot": {
+          "frames": 356,
+          "distance_p95_m": 0.0019815618770584256,
+          "slip_p95_m_s": 0.048828094585876745,
+          "anchor_error_p95_m": 0.017014395861527348
+        },
+        "right_foot": {
+          "frames": 387,
+          "distance_p95_m": 0.0027320467632428627,
+          "slip_p95_m_s": 0.1595469885454311,
+          "anchor_error_p95_m": 0.03752254660516428
+        },
+        "left_knee": {
+          "frames": 32,
+          "distance_p95_m": 0.025117557871622696,
+          "slip_p95_m_s": 0.06947924113810304,
+          "anchor_error_p95_m": 0.04192719204714205
+        },
+        "right_knee": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "left_hand": {
+          "frames": 113,
+          "distance_p95_m": 0.021932213127996602,
+          "slip_p95_m_s": 0.11728521003199208,
+          "anchor_error_p95_m": 0.04693474162274648
+        },
+        "right_hand": {
+          "frames": 61,
+          "distance_p95_m": 0.006176962674079412,
+          "slip_p95_m_s": 0.026765422702041814,
+          "anchor_error_p95_m": 0.010899497066084857
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-high-climb-76",
+        "forward"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.5s_step0.8s",
+      "frames": 681,
+      "category": "motions-high-climb-76",
+      "task_id": "3b278f21d0e9ab643cd13a05",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "3798b1030a2ec58bd5b3b8ad5b5c99381f5457be5b865144674b9a86d389b870",
+      "accepted": [],
+      "variant0_reasons": [
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "right_knee:support_distance",
+        "right_knee:support_slip",
+        "right_hand:support_distance",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 10.400630128147874,
+        "angular_p95_deg": 28.081026886576446,
+        "angular_max_deg": 42.010946105289634,
+        "gated": true
+      },
+      "self_mm": 2.2627048483888927,
+      "terrain_mm": 2.134374651370119,
+      "speed_ratio": 0.9405460877540195,
+      "contacts": {
+        "left_foot": {
+          "frames": 443,
+          "distance_p95_m": 0.002680936086661148,
+          "slip_p95_m_s": 0.13564280603491288,
+          "anchor_error_p95_m": 0.032663048709337936
+        },
+        "right_foot": {
+          "frames": 398,
+          "distance_p95_m": 0.0017463360553852953,
+          "slip_p95_m_s": 0.07161349714306402,
+          "anchor_error_p95_m": 0.018734814276032172
+        },
+        "left_knee": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_knee": {
+          "frames": 32,
+          "distance_p95_m": 0.018143741410336527,
+          "slip_p95_m_s": 0.05475197493834502,
+          "anchor_error_p95_m": 0.028860400576117707
+        },
+        "left_hand": {
+          "frames": 62,
+          "distance_p95_m": 0.006254791725855891,
+          "slip_p95_m_s": 0.027328419814660256,
+          "anchor_error_p95_m": 0.012345372968297425
+        },
+        "right_hand": {
+          "frames": 108,
+          "distance_p95_m": 0.02136753258820479,
+          "slip_p95_m_s": 0.14406702552292786,
+          "anchor_error_p95_m": 0.056995607059713835
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-high-climb-76",
+        "left_45"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_0.6s_step0.8s",
+      "frames": 640,
+      "category": "motions-high-climb-76",
+      "task_id": "cb043e0aee7e99227645ae8b",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109_distance_recheck_cb043e0a_separated",
+      "quality_sha256": "fd32424b05f917f14e370ce4e7bcf5c99d438c4f80dfea7d2d115403c9440109",
+      "accepted": [],
+      "variant0_reasons": [
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_knee:support_slip",
+        "left_hand:support_slip",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 11.170439821221553,
+        "angular_p95_deg": 29.657681823529334,
+        "angular_max_deg": 42.94832108707702,
+        "gated": true
+      },
+      "self_mm": 3.32837324591933,
+      "terrain_mm": 2.082708257994716,
+      "speed_ratio": 0.9233104705193913,
+      "contacts": {
+        "left_foot": {
+          "frames": 397,
+          "distance_p95_m": 0.0017099729962620541,
+          "slip_p95_m_s": 0.06687301514120937,
+          "anchor_error_p95_m": 0.014097962090487847
+        },
+        "right_foot": {
+          "frames": 413,
+          "distance_p95_m": 0.002704664256088796,
+          "slip_p95_m_s": 0.2017682827259414,
+          "anchor_error_p95_m": 0.054224021212312054
+        },
+        "left_knee": {
+          "frames": 32,
+          "distance_p95_m": 0.01950218150997303,
+          "slip_p95_m_s": 0.05702258516069228,
+          "anchor_error_p95_m": 0.03222180787212732
+        },
+        "right_knee": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "left_hand": {
+          "frames": 68,
+          "distance_p95_m": 0.0030762957237056663,
+          "slip_p95_m_s": 0.05399909312435597,
+          "anchor_error_p95_m": 0.037080656070234225
+        },
+        "right_hand": {
+          "frames": 106,
+          "distance_p95_m": 0.009943368595235591,
+          "slip_p95_m_s": 0.11762647695130321,
+          "anchor_error_p95_m": 0.0480518148389211
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-high-climb-76",
+        "left_90"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0s",
+      "frames": 615,
+      "category": "motions-high-climb-76",
+      "task_id": "5cbc38e45b9b8e61999313a7",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "926a5366feb4dc799faab5e33ab98cca08e11f80cb9e68b50768313436156af1",
+      "accepted": [],
+      "variant0_reasons": [
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 11.048063888371338,
+        "angular_p95_deg": 29.85441300297999,
+        "angular_max_deg": 39.64706090027594,
+        "gated": true
+      },
+      "self_mm": 1.240371200743974,
+      "terrain_mm": 3.786159491461105,
+      "speed_ratio": 0.9387696371695119,
+      "contacts": {
+        "left_foot": {
+          "frames": 374,
+          "distance_p95_m": 0.001070322915720029,
+          "slip_p95_m_s": 0.049923407618294204,
+          "anchor_error_p95_m": 0.015645395024562882
+        },
+        "right_foot": {
+          "frames": 404,
+          "distance_p95_m": 0.002561728070218931,
+          "slip_p95_m_s": 0.14323133572602822,
+          "anchor_error_p95_m": 0.038461577259672655
+        },
+        "left_knee": {
+          "frames": 32,
+          "distance_p95_m": 0.02116187691336106,
+          "slip_p95_m_s": 0.04971832094954271,
+          "anchor_error_p95_m": 0.03330143336848701
+        },
+        "right_knee": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "left_hand": {
+          "frames": 114,
+          "distance_p95_m": 0.005522923077994455,
+          "slip_p95_m_s": 0.09325617812626552,
+          "anchor_error_p95_m": 0.04733524907184762
+        },
+        "right_hand": {
+          "frames": 61,
+          "distance_p95_m": 0.005925009168114559,
+          "slip_p95_m_s": 0.02633429405035766,
+          "anchor_error_p95_m": 0.01134575495258965
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-high-climb-76",
+        "right_45"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "frames": 635,
+      "category": "motions-high-climb-76",
+      "task_id": "de2744ab1f89c4b4feeeccfb",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "1f0c274c8c04756a8f59603d91d67833ce7ccf110defe176dad95293da381c77",
+      "accepted": [],
+      "variant0_reasons": [
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_knee:support_slip",
+        "left_hand:support_slip",
+        "right_hand:support_distance",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 11.080107830379047,
+        "angular_p95_deg": 29.500592644178674,
+        "angular_max_deg": 41.69373333514985,
+        "gated": true
+      },
+      "self_mm": 1.2403715046289239,
+      "terrain_mm": 2.4219621174790213,
+      "speed_ratio": 0.9587487566779264,
+      "contacts": {
+        "left_foot": {
+          "frames": 386,
+          "distance_p95_m": 0.0014763887059399943,
+          "slip_p95_m_s": 0.03635520294905371,
+          "anchor_error_p95_m": 0.01201231514788189
+        },
+        "right_foot": {
+          "frames": 409,
+          "distance_p95_m": 0.0027572716542628335,
+          "slip_p95_m_s": 0.16665726440430453,
+          "anchor_error_p95_m": 0.05251221420734944
+        },
+        "left_knee": {
+          "frames": 32,
+          "distance_p95_m": 0.01879325559046072,
+          "slip_p95_m_s": 0.050809551269296434,
+          "anchor_error_p95_m": 0.027882392395468237
+        },
+        "right_knee": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "left_hand": {
+          "frames": 68,
+          "distance_p95_m": 0.0023966656760072962,
+          "slip_p95_m_s": 0.05484121468203925,
+          "anchor_error_p95_m": 0.037157799544166384
+        },
+        "right_hand": {
+          "frames": 106,
+          "distance_p95_m": 0.026689473397413514,
+          "slip_p95_m_s": 0.12760643728837315,
+          "anchor_error_p95_m": 0.0518779743176016
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-high-climb-76",
+        "right_90"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step0.7s",
+      "frames": 833,
+      "category": "motions-low-climb-76",
+      "task_id": "faecd2c3e6c637e0659b7884",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "ecc787f2da84a98cbc4e6f0c53cc91346f62e144837eed5278b815f7c951140b",
+      "accepted": [],
+      "variant0_reasons": [
+        "joint_velocity",
+        "terrain_penetration",
+        "self_collision",
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_knee:support_slip",
+        "right_knee:support_slip",
+        "left_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 14.885452442435218,
+        "angular_p95_deg": 35.60419284655022,
+        "angular_max_deg": 47.77758424824948,
+        "gated": true
+      },
+      "self_mm": 51.46491675761558,
+      "terrain_mm": 33.421262552753895,
+      "speed_ratio": 1.0964096299844435,
+      "contacts": {
+        "left_foot": {
+          "frames": 550,
+          "distance_p95_m": 0.0024323731005736495,
+          "slip_p95_m_s": 0.02851481003758608,
+          "anchor_error_p95_m": 0.0214317163555882
+        },
+        "right_foot": {
+          "frames": 542,
+          "distance_p95_m": 0.002424104147675582,
+          "slip_p95_m_s": 0.23010296859846005,
+          "anchor_error_p95_m": 0.04825261364807131
+        },
+        "left_knee": {
+          "frames": 55,
+          "distance_p95_m": 0.026352411622550174,
+          "slip_p95_m_s": 0.25012765135801807,
+          "anchor_error_p95_m": 0.06187925732929301
+        },
+        "right_knee": {
+          "frames": 66,
+          "distance_p95_m": 0.0012273342020656416,
+          "slip_p95_m_s": 0.06812007187081141,
+          "anchor_error_p95_m": 0.043826668974632804
+        },
+        "left_hand": {
+          "frames": 174,
+          "distance_p95_m": 0.0018568335740941095,
+          "slip_p95_m_s": 0.09553294582160558,
+          "anchor_error_p95_m": 0.04501975465752574
+        },
+        "right_hand": {
+          "frames": 195,
+          "distance_p95_m": 0.002607304957644163,
+          "slip_p95_m_s": 0.04538787871634755,
+          "anchor_error_p95_m": 0.048865423057126885
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-low-climb-76",
+        "forward"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step0.7s",
+      "frames": 814,
+      "category": "motions-low-climb-76",
+      "task_id": "55b9ac7274c78d63cf769f80",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "e2f312fc460b096b092a681628ab667910ad1c89e264d9e2005eee56bd57281a",
+      "accepted": [],
+      "variant0_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "left_foot:support_slip",
+        "left_knee:support_slip",
+        "right_knee:support_distance",
+        "right_knee:support_slip",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 15.528323101414108,
+        "angular_p95_deg": 35.26372683712248,
+        "angular_max_deg": 52.760650577981174,
+        "gated": true
+      },
+      "self_mm": 41.72337863484895,
+      "terrain_mm": 36.640337480691436,
+      "speed_ratio": 0.9366756742213623,
+      "contacts": {
+        "left_foot": {
+          "frames": 561,
+          "distance_p95_m": 0.003142671971895751,
+          "slip_p95_m_s": 0.21541741884234034,
+          "anchor_error_p95_m": 0.07688465172283436
+        },
+        "right_foot": {
+          "frames": 542,
+          "distance_p95_m": 0.0022483527902431885,
+          "slip_p95_m_s": 0.04354921883511538,
+          "anchor_error_p95_m": 0.03595115666896402
+        },
+        "left_knee": {
+          "frames": 67,
+          "distance_p95_m": 0.00184426505940512,
+          "slip_p95_m_s": 0.07090211047175793,
+          "anchor_error_p95_m": 0.04474631079846852
+        },
+        "right_knee": {
+          "frames": 56,
+          "distance_p95_m": 0.031488570567116236,
+          "slip_p95_m_s": 0.23299294756421804,
+          "anchor_error_p95_m": 0.06118321088861171
+        },
+        "left_hand": {
+          "frames": 141,
+          "distance_p95_m": 0.0011479430706867744,
+          "slip_p95_m_s": 0.047257058052337646,
+          "anchor_error_p95_m": 0.05005032070091938
+        },
+        "right_hand": {
+          "frames": 229,
+          "distance_p95_m": 0.003170384706314987,
+          "slip_p95_m_s": 0.08814766325074694,
+          "anchor_error_p95_m": 0.04037134201954789
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-low-climb-76",
+        "left_45"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk1.2s_step1.2s",
+      "frames": 861,
+      "category": "motions-low-climb-76",
+      "task_id": "097f6cec7d8cc49c221e69c5",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "347e19ea7b160b2e41f662e9234bc6ce2cd507b3d74d34dce171cdfc9897b6ae",
+      "accepted": [],
+      "variant0_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "left_foot:support_slip",
+        "left_knee:support_slip",
+        "right_knee:support_distance",
+        "right_knee:support_slip",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 13.288318883150097,
+        "angular_p95_deg": 36.21499830637345,
+        "angular_max_deg": 40.192359193384675,
+        "gated": true
+      },
+      "self_mm": 50.543174785543584,
+      "terrain_mm": 40.641036274459445,
+      "speed_ratio": 0.8703049566611463,
+      "contacts": {
+        "left_foot": {
+          "frames": 581,
+          "distance_p95_m": 0.0024635400955335114,
+          "slip_p95_m_s": 0.17747324638002054,
+          "anchor_error_p95_m": 0.04368831450287531
+        },
+        "right_foot": {
+          "frames": 578,
+          "distance_p95_m": 0.0019683971363260518,
+          "slip_p95_m_s": 0.027567698196301005,
+          "anchor_error_p95_m": 0.024357179125427144
+        },
+        "left_knee": {
+          "frames": 67,
+          "distance_p95_m": 0.0021161730238122884,
+          "slip_p95_m_s": 0.06994939370337036,
+          "anchor_error_p95_m": 0.044667721397502025
+        },
+        "right_knee": {
+          "frames": 57,
+          "distance_p95_m": 0.014845221816385153,
+          "slip_p95_m_s": 0.13084813444875784,
+          "anchor_error_p95_m": 0.05501915690013667
+        },
+        "left_hand": {
+          "frames": 141,
+          "distance_p95_m": 0.001342625879489523,
+          "slip_p95_m_s": 0.04545628268861783,
+          "anchor_error_p95_m": 0.048920429954731115
+        },
+        "right_hand": {
+          "frames": 230,
+          "distance_p95_m": 0.0016051712846086971,
+          "slip_p95_m_s": 0.08129689829598116,
+          "anchor_error_p95_m": 0.04430160314630167
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-low-climb-76",
+        "left_90"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.9s_step1.2s",
+      "frames": 818,
+      "category": "motions-low-climb-76",
+      "task_id": "1ffbf85df0a470d5a1ad6061",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "f3d3a98c809846d5233c81983c9e4f348e66c378f6f5cac738df5813fec5f778",
+      "accepted": [],
+      "variant0_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "right_foot:support_slip",
+        "left_knee:support_slip",
+        "right_knee:support_slip",
+        "left_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 13.602436999171292,
+        "angular_p95_deg": 36.09790448153051,
+        "angular_max_deg": 40.933739282001994,
+        "gated": true
+      },
+      "self_mm": 49.734213326231135,
+      "terrain_mm": 25.84534322367335,
+      "speed_ratio": 0.8991555045900613,
+      "contacts": {
+        "left_foot": {
+          "frames": 556,
+          "distance_p95_m": 0.0022780085600669353,
+          "slip_p95_m_s": 0.03572231035488237,
+          "anchor_error_p95_m": 0.022165919142055603
+        },
+        "right_foot": {
+          "frames": 555,
+          "distance_p95_m": 0.0026603329249137715,
+          "slip_p95_m_s": 0.1635010382357956,
+          "anchor_error_p95_m": 0.022044273681358657
+        },
+        "left_knee": {
+          "frames": 54,
+          "distance_p95_m": 0.006744521991861934,
+          "slip_p95_m_s": 0.13889933100759666,
+          "anchor_error_p95_m": 0.0593919404578972
+        },
+        "right_knee": {
+          "frames": 67,
+          "distance_p95_m": 0.0018010112274833494,
+          "slip_p95_m_s": 0.06478884416201952,
+          "anchor_error_p95_m": 0.04264564264058241
+        },
+        "left_hand": {
+          "frames": 174,
+          "distance_p95_m": 0.0014328067024663822,
+          "slip_p95_m_s": 0.10126666473152159,
+          "anchor_error_p95_m": 0.050078615041712154
+        },
+        "right_hand": {
+          "frames": 195,
+          "distance_p95_m": 0.0012196375821472815,
+          "slip_p95_m_s": 0.04753110424294849,
+          "anchor_error_p95_m": 0.05053945520343752
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-low-climb-76",
+        "right_45"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step0.7s",
+      "frames": 835,
+      "category": "motions-low-climb-76",
+      "task_id": "2d4920bf8f7b3e3487f87cd5",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "3d388c7eb84e9bffd2040a144b80b5fa68e79aaf332a21cf2bbcfe51067e778a",
+      "accepted": [],
+      "variant0_reasons": [
+        "terrain_penetration",
+        "self_collision",
+        "left_foot:support_slip",
+        "left_knee:support_slip",
+        "right_knee:support_slip",
+        "left_hand:support_slip",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 15.536694954658094,
+        "angular_p95_deg": 36.396796060649095,
+        "angular_max_deg": 52.59606414423543,
+        "gated": true
+      },
+      "self_mm": 41.568194374908664,
+      "terrain_mm": 29.52029261113214,
+      "speed_ratio": 0.8671151965160229,
+      "contacts": {
+        "left_foot": {
+          "frames": 554,
+          "distance_p95_m": 0.0038747668705503323,
+          "slip_p95_m_s": 0.21595243577577788,
+          "anchor_error_p95_m": 0.09654743952374234
+        },
+        "right_foot": {
+          "frames": 561,
+          "distance_p95_m": 0.0020934335616585864,
+          "slip_p95_m_s": 0.02845318499758158,
+          "anchor_error_p95_m": 0.041754857440027625
+        },
+        "left_knee": {
+          "frames": 66,
+          "distance_p95_m": 0.001066438144166154,
+          "slip_p95_m_s": 0.06581364113508635,
+          "anchor_error_p95_m": 0.04785648002633953
+        },
+        "right_knee": {
+          "frames": 54,
+          "distance_p95_m": 0.009465150948893086,
+          "slip_p95_m_s": 0.17859110462705083,
+          "anchor_error_p95_m": 0.05308334755692459
+        },
+        "left_hand": {
+          "frames": 141,
+          "distance_p95_m": 0.0009580086401963506,
+          "slip_p95_m_s": 0.051890128125563685,
+          "anchor_error_p95_m": 0.05161683415965653
+        },
+        "right_hand": {
+          "frames": 228,
+          "distance_p95_m": 0.0033571528082065264,
+          "slip_p95_m_s": 0.06863774947874403,
+          "anchor_error_p95_m": 0.041669152515426106
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "fewest other baseline failures within category/direction",
+      "stratum": [
+        "motions-low-climb-76",
+        "right_90"
+      ]
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_45_1.0s_step0s",
+      "frames": 605,
+      "category": "motions-high-climb-76",
+      "task_id": "ab7c1040f643f78fd4978f38",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "0ef5ad9431176ca5bcad6f597e2e0258d16c173770f20696aee0acfb29c325f1",
+      "accepted": [],
+      "variant0_reasons": [
+        "self_collision",
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "left_knee:support_distance",
+        "left_knee:support_slip",
+        "left_hand:support_slip",
+        "fidelity:left_elbow:amplitude",
+        "fidelity:left_elbow:timing",
+        "fidelity:left_elbow:trajectory",
+        "fidelity:left_hand:timing",
+        "fidelity:left_hand:trajectory",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": false,
+      "torso": {
+        "angular_rmse_deg": 11.24939278084206,
+        "angular_p95_deg": 29.033746429082484,
+        "angular_max_deg": 41.01469616618155,
+        "gated": true
+      },
+      "self_mm": 7.00210074396143,
+      "terrain_mm": 3.59920310314954,
+      "speed_ratio": 0.9995774919924617,
+      "contacts": {
+        "left_foot": {
+          "frames": 372,
+          "distance_p95_m": 0.0015153947852407314,
+          "slip_p95_m_s": 0.08353773170524123,
+          "anchor_error_p95_m": 0.026404188664318994
+        },
+        "right_foot": {
+          "frames": 407,
+          "distance_p95_m": 0.002341109778066919,
+          "slip_p95_m_s": 0.12217568734627225,
+          "anchor_error_p95_m": 0.023990561991180163
+        },
+        "left_knee": {
+          "frames": 32,
+          "distance_p95_m": 0.02552861022143912,
+          "slip_p95_m_s": 0.08456117030740246,
+          "anchor_error_p95_m": 0.05083844537752305
+        },
+        "right_knee": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "left_hand": {
+          "frames": 85,
+          "distance_p95_m": 0.004410574032897491,
+          "slip_p95_m_s": 0.08392338274000297,
+          "anchor_error_p95_m": 0.04362084192326914
+        },
+        "right_hand": {
+          "frames": 61,
+          "distance_p95_m": 0.006588521353646515,
+          "slip_p95_m_s": 0.026575756192399554,
+          "anchor_error_p95_m": 0.009761166540244828
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "hard additional control with most non-posture failures",
+      "stratum": [
+        "motions-high-climb-76",
+        "hard_control"
+      ]
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step1.2s",
+      "frames": 823,
+      "category": "motions-low-climb-76",
+      "task_id": "98ca80f8886c39f34988800f",
+      "assessment_root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109",
+      "quality_sha256": "dbbf01b2f88272f9bd711cca1456cd3b9971351db525ba8d3fb7f34a12977b89",
+      "accepted": [],
+      "variant0_reasons": [
+        "joint_velocity",
+        "terrain_penetration",
+        "self_collision",
+        "left_foot:support_slip",
+        "right_foot:support_slip",
+        "left_knee:support_slip",
+        "right_knee:support_distance",
+        "right_knee:support_slip",
+        "left_hand:support_slip",
+        "right_hand:support_distance",
+        "right_hand:support_slip",
+        "posture:torso:rmse",
+        "posture:torso:p95",
+        "posture:torso:max"
+      ],
+      "variant0_geometry_pass": false,
+      "variant0_arm_pass": true,
+      "torso": {
+        "angular_rmse_deg": 13.583360681104095,
+        "angular_p95_deg": 38.000022715487894,
+        "angular_max_deg": 38.01545681822393,
+        "gated": true
+      },
+      "self_mm": 48.66088306252366,
+      "terrain_mm": 37.49613451926362,
+      "speed_ratio": 1.0032325329844463,
+      "contacts": {
+        "left_foot": {
+          "frames": 578,
+          "distance_p95_m": 0.002235747216871818,
+          "slip_p95_m_s": 0.14355199843807534,
+          "anchor_error_p95_m": 0.03417388264559717
+        },
+        "right_foot": {
+          "frames": 544,
+          "distance_p95_m": 0.0016817888863075547,
+          "slip_p95_m_s": 0.09923463042724226,
+          "anchor_error_p95_m": 0.04595328401557988
+        },
+        "left_knee": {
+          "frames": 67,
+          "distance_p95_m": 0.0016333619819582032,
+          "slip_p95_m_s": 0.0658005936069233,
+          "anchor_error_p95_m": 0.04720378121196565
+        },
+        "right_knee": {
+          "frames": 59,
+          "distance_p95_m": 0.03607723512636892,
+          "slip_p95_m_s": 0.27476958500023085,
+          "anchor_error_p95_m": 0.08561217952761042
+        },
+        "left_hand": {
+          "frames": 141,
+          "distance_p95_m": 0.0012717863361636494,
+          "slip_p95_m_s": 0.053410817583266074,
+          "anchor_error_p95_m": 0.051389063654572895
+        },
+        "right_hand": {
+          "frames": 227,
+          "distance_p95_m": 0.032084067065880656,
+          "slip_p95_m_s": 0.15485898195716127,
+          "anchor_error_p95_m": 0.06564296712263262
+        },
+        "left_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "right_elbow": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        },
+        "pelvis": {
+          "frames": 0,
+          "distance_p95_m": null,
+          "slip_p95_m_s": null,
+          "anchor_error_p95_m": null
+        }
+      },
+      "selection_reason": "hard additional control with most non-posture failures",
+      "stratum": [
+        "motions-low-climb-76",
+        "hard_control"
+      ]
+    }
+  ]
+}

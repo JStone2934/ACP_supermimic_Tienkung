@@ -1,0 +1,38 @@
+[
+  {
+    "source_key": "motions-high-climb-76/run_forward_0.6s_step0s"
+  },
+  {
+    "source_key": "motions-high-climb-76/run_left_45_1.5s_step0.8s"
+  },
+  {
+    "source_key": "motions-high-climb-76/run_left_90_0.6s_step0.8s"
+  },
+  {
+    "source_key": "motions-high-climb-76/run_right_45_1.2s_step0s"
+  },
+  {
+    "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s"
+  },
+  {
+    "source_key": "motions-low-climb-76/forward_walk1.5s_step0.7s"
+  },
+  {
+    "source_key": "motions-low-climb-76/left_45_walk1.5s_step0.7s"
+  },
+  {
+    "source_key": "motions-low-climb-76/left_90_walk1.2s_step1.2s"
+  },
+  {
+    "source_key": "motions-low-climb-76/right_45_walk0.9s_step1.2s"
+  },
+  {
+    "source_key": "motions-low-climb-76/right_90_walk1.5s_step0.7s"
+  },
+  {
+    "source_key": "motions-high-climb-76/run_left_45_1.0s_step0s"
+  },
+  {
+    "source_key": "motions-low-climb-76/left_90_walk0.6s_step1.2s"
+  }
+]

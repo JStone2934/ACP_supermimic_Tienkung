@@ -1,0 +1,4 @@
+rejected tampered source
+rejected tampered motion_hash
+rejected tampered variant
+PASS: explicit running opt-in and source/candidate/variant binding guards

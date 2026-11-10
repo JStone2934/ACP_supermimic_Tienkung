@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v21_climb_targeted_20261110",
+  "identity": "d1ac38e8df05726caebfe14127c5081224dcbc1035e4a403e3c8054d69c1f2f1",
+  "verified": true,
+  "sources": 2,
+  "unique_source_files": 2,
+  "frames": 1438,
+  "checked_variants": 20,
+  "accepted_variants": 10,
+  "statuses": {
+    "accepted": 1,
+    "rejected": 1
+  },
+  "checked_output_hashes": 14,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 28.72,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

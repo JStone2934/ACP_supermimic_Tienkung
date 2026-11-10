@@ -1,0 +1,37 @@
+{
+  "time": "2026-11-10T16:44:35.584463+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_support_terrain_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v26/frozen_runner",
+  "job_id": "c67e3d2c554f207435d9",
+  "unit": "php-job@c67e3d2c554f207435d9.service",
+  "status_at_submission": "queued",
+  "resources": {
+    "gpu_workers": 1,
+    "cpu_workers": 1,
+    "reserve_gib": 17
+  },
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_support_terrain_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v26_support_terrain_selections.json",
+    "--devices",
+    "0",
+    "--cpu-workers",
+    "1",
+    "--collision-rounds",
+    "12",
+    "--resume"
+  ],
+  "solves": 7,
+  "sources": 2,
+  "frames": 5089,
+  "checked_slots": 70,
+  "targeted_missing_slots": 7,
+  "code_files": 50,
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v26/support.log",
+  "scope": "Seven original support variants; promoted v26, full original timing and all gates; queued normally when reservations exceed shared budget"
+}

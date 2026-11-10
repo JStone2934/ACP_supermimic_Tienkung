@@ -1,0 +1,585 @@
+{
+  "scope": "Identical full source motions and original terrain indices; per-variant quality reports",
+  "v18_new_vs_v14": 0,
+  "v18_lost_vs_v14": 0,
+  "rows": {
+    "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s": {
+      "v14": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.10913642635595663,
+          "angular_p95_deg": 0.1452040998530958,
+          "angular_max_deg": 0.6995602626816957,
+          "gated": true
+        },
+        "speed_ratio": 0.8515483766313892,
+        "terrain_mm": 0.5000255340942977,
+        "self_mm": 1.2403723362617534,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/1bdd7793920f0c5bdde52e84.json",
+        "report_sha256": "c868898ca080ff879f965a758e3f94aa9e78f9058eda90cd35b514613809ad49"
+      },
+      "v15": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.13757840733667245,
+          "angular_p95_deg": 0.15366712703623167,
+          "angular_max_deg": 0.958133639004872,
+          "gated": true
+        },
+        "speed_ratio": 0.8515487729864839,
+        "terrain_mm": 0.5000284662945442,
+        "self_mm": 1.2403723362615868,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/1569e9ea905f0b62c6b8f09a.json",
+        "report_sha256": "96dd8a865e4ec10dc378528b05de8e9ac96e5b801c34ce041e4d7b41721c8819"
+      },
+      "v18": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.10913642635595663,
+          "angular_p95_deg": 0.1452040998530958,
+          "angular_max_deg": 0.6995602626816957,
+          "gated": true
+        },
+        "speed_ratio": 0.8515483766313892,
+        "terrain_mm": 0.5000255340942977,
+        "self_mm": 1.2403723362617534,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/5b50af99d1db4a6005add1f7.json",
+        "report_sha256": "0c55c48524fae031c9f20ad944962384aef349d502139381e000f839ee8cbc9b"
+      }
+    },
+    "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s": {
+      "v14": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.03769483537535522,
+          "angular_p95_deg": 0.08491849429851092,
+          "angular_max_deg": 0.08699743225400107,
+          "gated": true
+        },
+        "speed_ratio": 0.855603105977207,
+        "terrain_mm": 0.5000289477319342,
+        "self_mm": 1.2403733819735525,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/d7b4397930daee7291fa9909.json",
+        "report_sha256": "dfe09baec47a80d8118805ccf657cac2c891b90249262615afb75b7162f846ad"
+      },
+      "v15": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.037900001244874505,
+          "angular_p95_deg": 0.08513933048142446,
+          "angular_max_deg": 0.08836286434498881,
+          "gated": true
+        },
+        "speed_ratio": 0.8927028034334743,
+        "terrain_mm": 0.500016075553722,
+        "self_mm": 1.240373381973862,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/b415c9b6d482a917403d7766.json",
+        "report_sha256": "2af3ca5681b126b9b8356e37f6d1a1efc03fc6b5bad0cecdf350433a0cc34c67"
+      },
+      "v18": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.03769483537535522,
+          "angular_p95_deg": 0.08491849429851092,
+          "angular_max_deg": 0.08699743225400107,
+          "gated": true
+        },
+        "speed_ratio": 0.855603105977207,
+        "terrain_mm": 0.5000289477319342,
+        "self_mm": 1.2403733819735525,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/7b7dd3f74545e60fa95c2ba5.json",
+        "report_sha256": "61972a2ead48676c8f14176e5162dae95177fe5a2b409b312e3375d18532dd01"
+      }
+    },
+    "motions-low-step/forward_walk1.2s_step0s": {
+      "v14": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.028517006784110094,
+          "angular_p95_deg": 0.06141459993925781,
+          "angular_max_deg": 0.0636679583555309,
+          "gated": true
+        },
+        "speed_ratio": 0.8035350434613502,
+        "terrain_mm": 0.5000294173830195,
+        "self_mm": 1.240372500754996,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/3cefc1e2319e94d4e3ce8543.json",
+        "report_sha256": "d3ab34ff5f0ce1f11a3f33ad4c4f2fcdcd0ea2edca6d7dbd5b8c91820ea68c0c"
+      },
+      "v15": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.02708350438176789,
+          "angular_p95_deg": 0.0626065862902391,
+          "angular_max_deg": 0.06595470668736529,
+          "gated": true
+        },
+        "speed_ratio": 0.8035251345839819,
+        "terrain_mm": 0.5000452429055855,
+        "self_mm": 1.240372617938855,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/769f070464161111c0f065f1.json",
+        "report_sha256": "26afba797cf1caae8697978212df7016dfb452e33489f460d111396e6670cb7e"
+      },
+      "v18": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.028517006784110094,
+          "angular_p95_deg": 0.06141459993925781,
+          "angular_max_deg": 0.0636679583555309,
+          "gated": true
+        },
+        "speed_ratio": 0.8035350434613502,
+        "terrain_mm": 0.5000294173830195,
+        "self_mm": 1.240372500754996,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/d1be867981ae4c6763c48315.json",
+        "report_sha256": "9fa21c100d79c7c955010766a1f4075a1a4d60771c0ae390d7021b544a31e7d2"
+      }
+    },
+    "motions-high-step/run_forward_0.9s_step1.0s": {
+      "v14": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.0490843761104286,
+          "angular_p95_deg": 0.10762364052980707,
+          "angular_max_deg": 0.11521120109564975,
+          "gated": true
+        },
+        "speed_ratio": 0.8517794516516194,
+        "terrain_mm": 0.5000210743157929,
+        "self_mm": 1.2403733370140588,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/029133305f7f5a23c88e28c2.json",
+        "report_sha256": "32b9fb5e4728bad79d7559779969f4fb1fb3e488de78b131094df6f24788e0cd"
+      },
+      "v15": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.06514554289826101,
+          "angular_p95_deg": 0.14467868044967652,
+          "angular_max_deg": 0.2792007268541043,
+          "gated": true
+        },
+        "speed_ratio": 0.8517774698761458,
+        "terrain_mm": 0.5000358316148423,
+        "self_mm": 1.2403733370140257,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/e3533f98e4810fcca4090927.json",
+        "report_sha256": "fa015ab6ee2f1f5c7ddcdf62699cf6c9832a7b5d7f852dd9823505184196535d"
+      },
+      "v18": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.0490843761104286,
+          "angular_p95_deg": 0.10762364052980707,
+          "angular_max_deg": 0.11521120109564975,
+          "gated": true
+        },
+        "speed_ratio": 0.8517794516516194,
+        "terrain_mm": 0.5000210743157929,
+        "self_mm": 1.2403733370140588,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/6b0ffa1041085554b7db9c54.json",
+        "report_sha256": "be39a69d086fbb8e92447d369ed33eac45d08f7f5dced4be7518a016c24fe1ea"
+      }
+    },
+    "motions-low-climb-76/forward_walk1.5s_step1.2s": {
+      "v14": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 0.9043676772547184,
+          "angular_p95_deg": 2.8347521977867296,
+          "angular_max_deg": 3.1924963112452645,
+          "gated": true
+        },
+        "speed_ratio": 0.9538041596403148,
+        "terrain_mm": 3.321348331745466,
+        "self_mm": 18.05036655835051,
+        "variant0_reasons": [
+          "self_collision",
+          "left_knee:support_distance",
+          "left_hand:support_slip",
+          "right_hand:support_slip"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/854a50357f6e60ee7021c09a.json",
+        "report_sha256": "d41e3cb9e32ec793769c32b155f6c24e3899660bebfa021e24f0700333da0e50"
+      },
+      "v15": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 1.945074970011934,
+          "angular_p95_deg": 2.9840069266147946,
+          "angular_max_deg": 40.41590342864668,
+          "gated": true
+        },
+        "speed_ratio": 1.0143482591303858,
+        "terrain_mm": 7.238573767153519,
+        "self_mm": 13.870339701438837,
+        "variant0_reasons": [
+          "joint_velocity",
+          "terrain_penetration",
+          "self_collision",
+          "left_foot:support_slip",
+          "left_knee:support_distance",
+          "left_hand:support_slip",
+          "right_hand:support_slip",
+          "posture:torso:max"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/c41449f5b2401b77d5ed1690.json",
+        "report_sha256": "be8b1cac424d169589f1b8655195bd68144591a13a75d2986b5311c6b02a185f"
+      },
+      "v18": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 0.9275093110169982,
+          "angular_p95_deg": 2.781372244373911,
+          "angular_max_deg": 3.160010888038588,
+          "gated": true
+        },
+        "speed_ratio": 0.9440939222335961,
+        "terrain_mm": 3.263649716678474,
+        "self_mm": 16.764698401858627,
+        "variant0_reasons": [
+          "self_collision",
+          "left_hand:support_slip",
+          "right_hand:support_slip"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/f795755164fee1b6e20d15fb.json",
+        "report_sha256": "8673f3c0b93818d7dd22bfb7a9cc31e20865ad4b5d73f543a544a58028f9c2ed"
+      }
+    },
+    "motions-low-climb-76/left_45_walk1.5s_step1.2s": {
+      "v14": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 1.0088554715878113,
+          "angular_p95_deg": 2.981060479877218,
+          "angular_max_deg": 3.6310343564377887,
+          "gated": true
+        },
+        "speed_ratio": 0.8892340674928462,
+        "terrain_mm": 4.192306325244034,
+        "self_mm": 6.077997763807618,
+        "variant0_reasons": [
+          "self_collision"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/f5ffba9eb55a51065aa33fef.json",
+        "report_sha256": "de751d3ae3edf24468d2c963aed8e14a60fcac79763fc772e4dedea5d5bea2d2"
+      },
+      "v15": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 1.549256070704585,
+          "angular_p95_deg": 3.4962776451176736,
+          "angular_max_deg": 15.738742730052099,
+          "gated": true
+        },
+        "speed_ratio": 1.3749305379034547,
+        "terrain_mm": 1.7576485951853462,
+        "self_mm": 2.1613105837020123,
+        "variant0_reasons": [
+          "joint_velocity",
+          "left_hand:support_slip",
+          "right_hand:support_slip",
+          "posture:torso:max"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/de65733dbda09e074ca25961.json",
+        "report_sha256": "c867489defb40bc08ae0ebb3e26e0ee1475644166542b54a151ef286e5176ac9"
+      },
+      "v18": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 0.929195530513882,
+          "angular_p95_deg": 2.9871983701589913,
+          "angular_max_deg": 3.310414979877309,
+          "gated": true
+        },
+        "speed_ratio": 0.9114509604044988,
+        "terrain_mm": 4.28735401917768,
+        "self_mm": 12.756273190397303,
+        "variant0_reasons": [
+          "self_collision"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/2fe28b787b000100ab771064.json",
+        "report_sha256": "018faf6e7653817322304eb42a23c6886a3f181a693999f1edf4c742d1c865ab"
+      }
+    },
+    "motions-high-climb-76/run_right_90_0.6s_step0s": {
+      "v14": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 0.9326265376917715,
+          "angular_p95_deg": 3.0307905692921775,
+          "angular_max_deg": 3.3325499902717928,
+          "gated": true
+        },
+        "speed_ratio": 0.8240266018591254,
+        "terrain_mm": 6.737098049981775,
+        "self_mm": 6.800806433418885,
+        "variant0_reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/98cc1d7e1dc644abfeff144b.json",
+        "report_sha256": "80b97ef478459428d3f4f9d61c71fbfc7bda76ad098930f0101f09630d0321e7"
+      },
+      "v15": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 0.9712201737009496,
+          "angular_p95_deg": 3.037386005692109,
+          "angular_max_deg": 3.5343786597980116,
+          "gated": true
+        },
+        "speed_ratio": 0.8239746793417151,
+        "terrain_mm": 5.838111326792621,
+        "self_mm": 5.85479969815898,
+        "variant0_reasons": [
+          "terrain_penetration",
+          "self_collision",
+          "right_foot:support_slip"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/e16c8694304fdcbe60db8ddf.json",
+        "report_sha256": "fb879c2e78f24c19aae2c5745929f4a4fcf2dfb866b1cc43d2c7cee7608d6e51"
+      },
+      "v18": {
+        "accepted_variants": [],
+        "torso": {
+          "angular_rmse_deg": 0.8685959594131127,
+          "angular_p95_deg": 2.6884499668159343,
+          "angular_max_deg": 3.215450045044543,
+          "gated": true
+        },
+        "speed_ratio": 0.8239130461244839,
+        "terrain_mm": 8.439765890956965,
+        "self_mm": 8.427237628503057,
+        "variant0_reasons": [
+          "terrain_penetration",
+          "self_collision"
+        ],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/295c7dac059ab1cbe3c88ce4.json",
+        "report_sha256": "dc8eaee8e45c317016951c1249cb5d560e2ef4fcc1da47acc2dafd56d061a01b"
+      }
+    },
+    "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s": {
+      "v14": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.10403569333022772,
+          "angular_p95_deg": 0.1473267062343608,
+          "angular_max_deg": 1.492600324488894,
+          "gated": true
+        },
+        "speed_ratio": 0.857637734164976,
+        "terrain_mm": 0.5000254601403541,
+        "self_mm": 1.2403730220096152,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v14_pose_polish_pilot_20261109/quality/8be60c8e57339376cb8ccda5.json",
+        "report_sha256": "16f56099aaa26c8fd274f5196fbd5ae2ef198680951162df06bd0339e1e6a87b"
+      },
+      "v15": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.10753119147643049,
+          "angular_p95_deg": 0.14959517378930437,
+          "angular_max_deg": 1.5024507498242103,
+          "gated": true
+        },
+        "speed_ratio": 0.872325882038151,
+        "terrain_mm": 0.5000278849746215,
+        "self_mm": 1.3312756490950006,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v15_collision_peak_pilot_20261109/quality/0484f2efe30b68266c4cb6a2.json",
+        "report_sha256": "62f18e7ecfbd2a8770137894e45df61d81b1bd21cff9e17261d749aef559e812"
+      },
+      "v18": {
+        "accepted_variants": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "torso": {
+          "angular_rmse_deg": 0.10403569333022772,
+          "angular_p95_deg": 0.1473267062343608,
+          "angular_max_deg": 1.492600324488894,
+          "gated": true
+        },
+        "speed_ratio": 0.857637734164976,
+        "terrain_mm": 0.5000254601403541,
+        "self_mm": 1.2403730220096152,
+        "variant0_reasons": [],
+        "report": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v18_source_contact_pilot_20261109/quality/7d2c6349769272a9515cf2df.json",
+        "report_sha256": "70d46cd69411bd927499e8700a2839aee32fd2534d9d085aa8427ad19e89bb57"
+      }
+    }
+  }
+}

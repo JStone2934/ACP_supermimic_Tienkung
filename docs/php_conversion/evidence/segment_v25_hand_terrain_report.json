@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v25_hand_terrain_20261110",
+  "identity": "71e49f6604a674d9c43f667a6fbbc63b394daf129b0b6e79145f20dafb5476c2",
+  "verified": true,
+  "sources": 4,
+  "unique_source_files": 2,
+  "frames": 3170,
+  "checked_variants": 40,
+  "accepted_variants": 16,
+  "statuses": {
+    "accepted": 4
+  },
+  "checked_output_hashes": 36,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 63.32,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

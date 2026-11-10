@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "motion_changed": false,
+  "source_key": "motions-high-climb-76/run_right_90_1.0s_step0.8s",
+  "frames": 666,
+  "checked_variants": 10,
+  "accepted_variants": [],
+  "result": {
+    "status": "rejected",
+    "accepted_variants": [],
+    "quality_path": "quality/16d9fc4181e8d2b949afe9c0.json",
+    "quality_hash": "d94440eb04a905fddca23a7209b846f471b6676c3a4f1cedeed287f30b04c158",
+    "labels_path": "candidate_contacts/motions-high-climb-76/run_right_90_1.0s_step0.8s.npz",
+    "labels_hash": "16f8fab909c0fb2fffc72af1e60e7e04869592015e3f447f87ef03ede95cd697",
+    "exported": {},
+    "assessment_seconds": 79.53332281298935
+  },
+  "rejection_reasons": [
+    "joint_velocity",
+    "left_knee:support_distance",
+    "left_knee:support_slip",
+    "right_foot:support_slip",
+    "right_hand:support_distance",
+    "right_hand:support_slip",
+    "right_knee:support_distance",
+    "right_knee:support_slip",
+    "self_collision",
+    "terrain_penetration"
+  ],
+  "provenance": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v4_full_20261109_distance_recheck/provenance.json"
+}

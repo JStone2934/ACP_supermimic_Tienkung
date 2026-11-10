@@ -1,0 +1,39 @@
+{
+  "time": "2026-11-10T16:32:01.785163+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_terrain_expand_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/frozen_runner",
+  "job_id": "aa524df334eff026f014",
+  "unit": "php-job@aa524df334eff026f014.service",
+  "pid": 3493687,
+  "resources": {
+    "gpu_workers": 2,
+    "cpu_workers": 2,
+    "reserve_gib": 32
+  },
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_terrain_expand_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v25_terrain_expand_selections.json",
+    "--devices",
+    "0,1",
+    "--workers-per-gpu",
+    "1",
+    "--cpu-workers",
+    "2",
+    "--collision-rounds",
+    "12",
+    "--resume"
+  ],
+  "solves": 57,
+  "sources": 17,
+  "frames": 32586,
+  "checked_slots": 570,
+  "targeted_missing_slots": 57,
+  "code_files": 50,
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/terrain_expand.log",
+  "scope": "Promoted v25 full terrain-specific re-solves; accepted union and live native repairs excluded; managed memory queue"
+}

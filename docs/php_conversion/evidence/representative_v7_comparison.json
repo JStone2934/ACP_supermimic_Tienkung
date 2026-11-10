@@ -1,0 +1,1518 @@
+{
+  "baseline": "representative_v3",
+  "current": "representative_v7",
+  "audit": {
+    "run_id": "representative_v7",
+    "identity": "b0a929b58d937e9e92ad4d4b62f76cc9f46db572466f749cb3d02bc54499cb73",
+    "verified": true,
+    "sources": 10,
+    "unique_source_files": 9,
+    "frames": 3062,
+    "checked_variants": 100,
+    "accepted_variants": 78,
+    "statuses": {
+      "accepted": 8,
+      "rejected": 2
+    },
+    "checked_output_hashes": 82,
+    "inventory": null,
+    "full_library": false,
+    "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+    "motion_time_s": 61.04,
+    "pd_status": "not_run",
+    "learned_tracking_status": "not_run"
+  },
+  "comparison": [
+    {
+      "key": "standing/stand",
+      "before_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 6.699734636879395e-05,
+        "self_penetration_policy_max_m": 0.0012403695933634392,
+        "joint_velocity_max_ratio": 3.7271902761514926e-05,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 100,
+            "distance_p95_m": 1.5219611847553867e-06,
+            "slip_p95_m_s": 1.1655772646829249e-05,
+            "anchor_error_p95_m": 2.129036803662684e-05
+          },
+          "right_foot": {
+            "frames": 100,
+            "distance_p95_m": 6.695004364746984e-05,
+            "slip_p95_m_s": 1.0631655955635116e-05,
+            "anchor_error_p95_m": 2.4036743050314215e-05
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 6.699734636879395e-05,
+        "self_penetration_policy_max_m": 0.0012403695933634392,
+        "joint_velocity_max_ratio": 3.7271902761514926e-05,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 100,
+            "distance_p95_m": 1.5219611847553867e-06,
+            "slip_p95_m_s": 1.1655772646829249e-05,
+            "anchor_error_p95_m": 2.129036803662684e-05
+          },
+          "right_foot": {
+            "frames": 100,
+            "distance_p95_m": 6.695004364746984e-05,
+            "slip_p95_m_s": 1.0631655955635116e-05,
+            "anchor_error_p95_m": 2.4036743050314215e-05
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "walking/forward_a",
+      "before_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.0007240900775434267,
+        "self_penetration_policy_max_m": 0.0012402273346147688,
+        "joint_velocity_max_ratio": 0.8062746556502173,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 99,
+            "distance_p95_m": 0.002664453318205687,
+            "slip_p95_m_s": 0.007991041096344057,
+            "anchor_error_p95_m": 0.0006636450128084405
+          },
+          "right_foot": {
+            "frames": 82,
+            "distance_p95_m": 0.0025129628304459916,
+            "slip_p95_m_s": 0.008429464853635755,
+            "anchor_error_p95_m": 0.0005837028912135949
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0007240900775434267,
+        "self_penetration_policy_max_m": 0.0012402273346147688,
+        "joint_velocity_max_ratio": 0.8062746556502173,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 99,
+            "distance_p95_m": 0.002664453318205687,
+            "slip_p95_m_s": 0.007991041096344057,
+            "anchor_error_p95_m": 0.0006636450128084405
+          },
+          "right_foot": {
+            "frames": 82,
+            "distance_p95_m": 0.0025129628304459916,
+            "slip_p95_m_s": 0.008429464853635755,
+            "anchor_error_p95_m": 0.0005837028912135949
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "walking/forward_b",
+      "before_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.0007445453869306812,
+        "self_penetration_policy_max_m": 0.0012402319075447818,
+        "joint_velocity_max_ratio": 0.718193317297726,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 40,
+            "distance_p95_m": 0.0026888255211658827,
+            "slip_p95_m_s": 0.005881878778827354,
+            "anchor_error_p95_m": 0.0006470824942978804
+          },
+          "right_foot": {
+            "frames": 48,
+            "distance_p95_m": 0.0026087828493188614,
+            "slip_p95_m_s": 0.008403801098118032,
+            "anchor_error_p95_m": 0.0005551475640881715
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0007445453869306812,
+        "self_penetration_policy_max_m": 0.0012402319075447818,
+        "joint_velocity_max_ratio": 0.718193317297726,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 40,
+            "distance_p95_m": 0.0026888255211658827,
+            "slip_p95_m_s": 0.005881878778827354,
+            "anchor_error_p95_m": 0.0006470824942978804
+          },
+          "right_foot": {
+            "frames": 48,
+            "distance_p95_m": 0.0026087828493188614,
+            "slip_p95_m_s": 0.008403801098118032,
+            "anchor_error_p95_m": 0.0005551475640881715
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "turning/left45",
+      "before_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.0010699927267868517,
+        "self_penetration_policy_max_m": 0.0012401684044353002,
+        "joint_velocity_max_ratio": 0.7642904778373614,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 60,
+            "distance_p95_m": 0.0024713377654319944,
+            "slip_p95_m_s": 0.0047572774181672325,
+            "anchor_error_p95_m": 0.0004793872076743115
+          },
+          "right_foot": {
+            "frames": 50,
+            "distance_p95_m": 0.0013926444855556336,
+            "slip_p95_m_s": 0.007931291274101446,
+            "anchor_error_p95_m": 0.0003464666392314768
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0010699927267868517,
+        "self_penetration_policy_max_m": 0.0012401684044353002,
+        "joint_velocity_max_ratio": 0.7642904778373614,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 60,
+            "distance_p95_m": 0.0024713377654319944,
+            "slip_p95_m_s": 0.0047572774181672325,
+            "anchor_error_p95_m": 0.0004793872076743115
+          },
+          "right_foot": {
+            "frames": 50,
+            "distance_p95_m": 0.0013926444855556336,
+            "slip_p95_m_s": 0.007931291274101446,
+            "anchor_error_p95_m": 0.0003464666392314768
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "turning/right45",
+      "before_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.0004145954533238405,
+        "self_penetration_policy_max_m": 0.0012402423387489424,
+        "joint_velocity_max_ratio": 0.7642829899262713,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 72,
+            "distance_p95_m": 0.001924873127843803,
+            "slip_p95_m_s": 0.007668170358280489,
+            "anchor_error_p95_m": 0.0003614877334408851
+          },
+          "right_foot": {
+            "frames": 75,
+            "distance_p95_m": 0.002259808270812284,
+            "slip_p95_m_s": 0.011096553133533209,
+            "anchor_error_p95_m": 0.0006010871645499935
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0004145954533238405,
+        "self_penetration_policy_max_m": 0.0012402423387489424,
+        "joint_velocity_max_ratio": 0.7642829899262713,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 72,
+            "distance_p95_m": 0.001924873127843803,
+            "slip_p95_m_s": 0.007668170358280489,
+            "anchor_error_p95_m": 0.0003614877334408851
+          },
+          "right_foot": {
+            "frames": 75,
+            "distance_p95_m": 0.002259808270812284,
+            "slip_p95_m_s": 0.011096553133533209,
+            "anchor_error_p95_m": 0.0006010871645499935
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "low_step/forward_a",
+      "before_accepted_variants": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.002242100377064571,
+        "self_penetration_policy_max_m": 0.0012403705475102248,
+        "joint_velocity_max_ratio": 0.8173206259510837,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 242,
+            "distance_p95_m": 0.0020308541771843066,
+            "slip_p95_m_s": 0.006342734213240027,
+            "anchor_error_p95_m": 0.00044734094540606654
+          },
+          "right_foot": {
+            "frames": 252,
+            "distance_p95_m": 0.0017755187046171886,
+            "slip_p95_m_s": 0.005045576322690459,
+            "anchor_error_p95_m": 0.00027645904828357766
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0005000130393335717,
+        "self_penetration_policy_max_m": 0.0012403705475102248,
+        "joint_velocity_max_ratio": 0.8173206259510837,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 242,
+            "distance_p95_m": 0.0020308541771843066,
+            "slip_p95_m_s": 0.006342734213240027,
+            "anchor_error_p95_m": 0.0005045429094112176
+          },
+          "right_foot": {
+            "frames": 252,
+            "distance_p95_m": 0.0020220485943999284,
+            "slip_p95_m_s": 0.005045576322690459,
+            "anchor_error_p95_m": 0.000737604855979886
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "low_step/forward_b",
+      "before_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.0042960299857307815,
+        "self_penetration_policy_max_m": 0.0012403710677449838,
+        "joint_velocity_max_ratio": 0.8118375734626533,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 278,
+            "distance_p95_m": 0.0021885772895343355,
+            "slip_p95_m_s": 0.006108769667295444,
+            "anchor_error_p95_m": 0.000514180544184194
+          },
+          "right_foot": {
+            "frames": 269,
+            "distance_p95_m": 0.0019570907876454244,
+            "slip_p95_m_s": 0.005825997389258276,
+            "anchor_error_p95_m": 0.00035402722069163405
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0005000511683443953,
+        "self_penetration_policy_max_m": 0.0012403710677449838,
+        "joint_velocity_max_ratio": 0.8118375734626533,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 278,
+            "distance_p95_m": 0.00220343354222641,
+            "slip_p95_m_s": 0.006108769667295444,
+            "anchor_error_p95_m": 0.0005193740605677547
+          },
+          "right_foot": {
+            "frames": 269,
+            "distance_p95_m": 0.002161776861962339,
+            "slip_p95_m_s": 0.005825997389258276,
+            "anchor_error_p95_m": 0.0011358445725599695
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "representative/high-step",
+      "before_accepted_variants": [],
+      "after_accepted_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "before": {
+        "terrain_penetration_max_m": 0.0054871938831079214,
+        "self_penetration_policy_max_m": 0.0012403702016369784,
+        "joint_velocity_max_ratio": 0.8623946336990876,
+        "rejection_reasons": [
+          "terrain_penetration"
+        ],
+        "contacts": {
+          "left_foot": {
+            "frames": 236,
+            "distance_p95_m": 0.0018778603308319975,
+            "slip_p95_m_s": 0.018974752826246645,
+            "anchor_error_p95_m": 0.0011902900498742413
+          },
+          "right_foot": {
+            "frames": 268,
+            "distance_p95_m": 0.0016793695522328762,
+            "slip_p95_m_s": 0.016066799604561595,
+            "anchor_error_p95_m": 0.0005677439097756685
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0005000524824098629,
+        "self_penetration_policy_max_m": 0.0012403702016369784,
+        "joint_velocity_max_ratio": 0.8623946336990876,
+        "rejection_reasons": [],
+        "contacts": {
+          "left_foot": {
+            "frames": 236,
+            "distance_p95_m": 0.0019329992370889035,
+            "slip_p95_m_s": 0.018974752826246645,
+            "anchor_error_p95_m": 0.0019460047432831736
+          },
+          "right_foot": {
+            "frames": 268,
+            "distance_p95_m": 0.00192109558736499,
+            "slip_p95_m_s": 0.016066799604561595,
+            "anchor_error_p95_m": 0.0021877159164871893
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "representative/low-climb-76",
+      "before_accepted_variants": [],
+      "after_accepted_variants": [],
+      "before": {
+        "terrain_penetration_max_m": 0.03726518962239323,
+        "self_penetration_policy_max_m": 0.0663634678153893,
+        "joint_velocity_max_ratio": 1.6869739035798175,
+        "rejection_reasons": [
+          "joint_velocity",
+          "terrain_penetration",
+          "self_collision",
+          "left_knee:support_distance",
+          "left_knee:support_slip",
+          "right_knee:support_distance",
+          "right_knee:support_slip",
+          "left_hand:support_distance",
+          "left_hand:support_slip",
+          "right_hand:support_distance",
+          "right_hand:support_slip"
+        ],
+        "contacts": {
+          "left_foot": {
+            "frames": 528,
+            "distance_p95_m": 0.002921897885243053,
+            "slip_p95_m_s": 0.036273605152694705,
+            "anchor_error_p95_m": 0.030294462901297156
+          },
+          "right_foot": {
+            "frames": 529,
+            "distance_p95_m": 0.002731651767954668,
+            "slip_p95_m_s": 0.049368565871184905,
+            "anchor_error_p95_m": 0.004862605845978761
+          },
+          "left_knee": {
+            "frames": 62,
+            "distance_p95_m": 0.03416564178196688,
+            "slip_p95_m_s": 1.615647516138682,
+            "anchor_error_p95_m": 0.09747119191342192
+          },
+          "right_knee": {
+            "frames": 74,
+            "distance_p95_m": 0.03573485037618215,
+            "slip_p95_m_s": 1.625299833819049,
+            "anchor_error_p95_m": 0.0997930238930244
+          },
+          "left_hand": {
+            "frames": 174,
+            "distance_p95_m": 0.020203257621053315,
+            "slip_p95_m_s": 0.4063063647738562,
+            "anchor_error_p95_m": 0.053404365153810036
+          },
+          "right_hand": {
+            "frames": 196,
+            "distance_p95_m": 0.010063500892957655,
+            "slip_p95_m_s": 0.8082381701513136,
+            "anchor_error_p95_m": 0.0535376456865764
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.004016504949127198,
+        "self_penetration_policy_max_m": 0.004061910162015605,
+        "joint_velocity_max_ratio": 0.9909348418195852,
+        "rejection_reasons": [
+          "terrain_penetration",
+          "self_collision",
+          "left_knee:support_distance",
+          "left_knee:support_slip",
+          "right_knee:support_distance",
+          "right_knee:support_slip",
+          "left_hand:support_slip",
+          "right_hand:support_slip"
+        ],
+        "contacts": {
+          "left_foot": {
+            "frames": 528,
+            "distance_p95_m": 0.002494886485690498,
+            "slip_p95_m_s": 0.04670653209347222,
+            "anchor_error_p95_m": 0.0402305758247955
+          },
+          "right_foot": {
+            "frames": 529,
+            "distance_p95_m": 0.0020827067179682627,
+            "slip_p95_m_s": 0.048665957740822205,
+            "anchor_error_p95_m": 0.008132287838924692
+          },
+          "left_knee": {
+            "frames": 62,
+            "distance_p95_m": 0.036461560451532045,
+            "slip_p95_m_s": 0.32275080002286605,
+            "anchor_error_p95_m": 0.10572327302946542
+          },
+          "right_knee": {
+            "frames": 74,
+            "distance_p95_m": 0.02381117357931633,
+            "slip_p95_m_s": 0.19273594329007687,
+            "anchor_error_p95_m": 0.09333315256199794
+          },
+          "left_hand": {
+            "frames": 174,
+            "distance_p95_m": 0.0015665230311414703,
+            "slip_p95_m_s": 0.050624255436346216,
+            "anchor_error_p95_m": 0.04441197595453792
+          },
+          "right_hand": {
+            "frames": 196,
+            "distance_p95_m": 0.00188438293593457,
+            "slip_p95_m_s": 0.11099921785764588,
+            "anchor_error_p95_m": 0.04116947369031317
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    },
+    {
+      "key": "representative/high-climb-76",
+      "before_accepted_variants": [],
+      "after_accepted_variants": [],
+      "before": {
+        "terrain_penetration_max_m": 0.053244812535063586,
+        "self_penetration_policy_max_m": 0.06910955229135946,
+        "joint_velocity_max_ratio": 1.8300542527711698,
+        "rejection_reasons": [
+          "joint_velocity",
+          "terrain_penetration",
+          "self_collision",
+          "right_foot:support_slip",
+          "left_knee:support_distance",
+          "left_knee:support_slip",
+          "left_hand:support_slip",
+          "right_hand:support_slip"
+        ],
+        "contacts": {
+          "left_foot": {
+            "frames": 385,
+            "distance_p95_m": 0.0025926881921356747,
+            "slip_p95_m_s": 0.029603495654798,
+            "anchor_error_p95_m": 0.001983151015567969
+          },
+          "right_foot": {
+            "frames": 408,
+            "distance_p95_m": 0.0058599373614544575,
+            "slip_p95_m_s": 0.23495262337681244,
+            "anchor_error_p95_m": 0.04295294744565892
+          },
+          "left_knee": {
+            "frames": 32,
+            "distance_p95_m": 0.02503815831004128,
+            "slip_p95_m_s": 1.313591687645782,
+            "anchor_error_p95_m": 0.0974343610865367
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 68,
+            "distance_p95_m": 0.008204361721236985,
+            "slip_p95_m_s": 0.631929655049036,
+            "anchor_error_p95_m": 0.04844643791290926
+          },
+          "right_hand": {
+            "frames": 106,
+            "distance_p95_m": 0.008578827842648825,
+            "slip_p95_m_s": 0.8529551391573813,
+            "anchor_error_p95_m": 0.05512874054699051
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      },
+      "after": {
+        "terrain_penetration_max_m": 0.0044919984518476674,
+        "self_penetration_policy_max_m": 0.0044683295786289035,
+        "joint_velocity_max_ratio": 0.9885733146533444,
+        "rejection_reasons": [
+          "terrain_penetration",
+          "self_collision",
+          "right_foot:support_slip",
+          "left_knee:support_distance",
+          "left_knee:support_slip",
+          "left_hand:support_slip",
+          "right_hand:support_slip"
+        ],
+        "contacts": {
+          "left_foot": {
+            "frames": 385,
+            "distance_p95_m": 0.0023154406524835023,
+            "slip_p95_m_s": 0.02569703159133322,
+            "anchor_error_p95_m": 0.003006727546909546
+          },
+          "right_foot": {
+            "frames": 408,
+            "distance_p95_m": 0.0019441711185125433,
+            "slip_p95_m_s": 0.14623579399385256,
+            "anchor_error_p95_m": 0.04128121380385044
+          },
+          "left_knee": {
+            "frames": 32,
+            "distance_p95_m": 0.04582359953501241,
+            "slip_p95_m_s": 0.2264302107643785,
+            "anchor_error_p95_m": 0.10808522147705671
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 68,
+            "distance_p95_m": 0.0012648570906306053,
+            "slip_p95_m_s": 0.0693033428160993,
+            "anchor_error_p95_m": 0.03605581297628964
+          },
+          "right_hand": {
+            "frames": 106,
+            "distance_p95_m": 0.009629663027138108,
+            "slip_p95_m_s": 0.12972456649614644,
+            "anchor_error_p95_m": 0.046438789270493844
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+  "frames": 894,
+  "accepted_variants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "independent_asset_index": "docs/php_conversion/evidence/segment_v20_climb_result.index.json",
+  "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v20_climb_preview_20261110/comparison/01_low_climb_comparison.mp4",
+  "video_sha256": "26e8e633ba04477a07a1683b3cf973cd61c898f3afbb04b6dcd2901f85e4e266",
+  "limitation": "Kinematic reference only. Maximum root step over the complete clip is 0.051106m per 20ms versus v19 0.129338m. Added velocity RMS is 0.218278m/s and added acceleration maximum is 30.1264m/s2. Independent root continuity acceptance is still pending; no dynamics/policy execution claim."
+}

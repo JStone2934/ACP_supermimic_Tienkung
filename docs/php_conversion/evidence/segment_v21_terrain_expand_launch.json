@@ -1,0 +1,27 @@
+{
+  "time": "2026-11-10T14:39:28.178299+08:00",
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+  "pid": 3014829,
+  "code_files": 47,
+  "sources": 37,
+  "frames": 40762,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.convert_php",
+    "--resume",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+    "--selections",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v21_terrain_expand_selections.json",
+    "--devices",
+    "0",
+    "--cpu-workers",
+    "1",
+    "--iterations",
+    "1000",
+    "--collision-rounds",
+    "12"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/terrain_retry_v21/expand.log"
+}

@@ -1,6 +1,73 @@
 # PHP 转换工具链使用手册
 
-更新日期：2026-11-08。返回[文档入口](README.md)。先阅读以下通用入口；后续编号章节保留历史 pilot 的复现方式。
+更新日期：2026-11-09。返回[文档入口](README.md)。先阅读以下通用入口；后续编号章节保留历史 pilot 的复现方式。
+
+## v4 摆臂与全部原始地形验收
+
+新版 `php-segment-v4` 的导出同时要求几何及自由摆臂保真通过；旧版 `geometry_pass` 不等于新版 `quality_pass`。小批 `php_segment_v4_preview_a_20261109` 已通过 40/40，首轮全库 `php_segment_v4_full_20261109` 仍在运行。不要对活跃控制器再次启动转换。
+
+复现新版四条视频（新建输出目录）：
+
+```bash
+python -m tools.render_php_comparison results/php_success_previews_v3_20261109 \
+  --run data/tienkung3_29dof/motions/php_segment_v4_preview_a_20261109 \
+  --out results/php_segment_v4_previews_20261109/comparison
+```
+
+检查完成批次的原始变体覆盖；可以追加多个相同保真政策的专用变体修正批次：
+
+```bash
+python -m tools.audit_php_variant_coverage \
+  data/tienkung3_29dof/motions/php_segment_v4_full_20261109 \
+  data/tienkung3_29dof/motions/php_segment_v4_variant_probe_a_20261109 \
+  --out .cache/php_conversion/segment_v4/coverage.json
+python -m tools.plan_php_variant_retries \
+  .cache/php_conversion/segment_v4/coverage.json \
+  --out .cache/php_conversion/segment_v4/missing_selections.json
+```
+
+上述全库覆盖命令需等对应批次终态后运行。它检查原始 296 条/2960 槽位；即使输入只有通过的四条小批，也会明确报告剩余 2920，而不会把小批当全库。最终验收增加 `--require-all`，仍有任一缺失槽位时返回非零状态。每个修正 selection 保留完整源帧区间，使用独立输出键及 `solve_variant`；新的转换批次通过现有 `--selections` 接口执行。相同原始几何的别名只需求解一次，但所有原编号均逐槽位计入覆盖；多次重试不重复计数。
+
+冻结求解代码位于 `.cache/php_conversion/segment_v4/frozen_runner`，原资产通过 `data` 符号链接引用；继续运行旧版本时从该目录执行，使用绝对输入/输出路径及原配置。新的算法改动另建源码快照和输出目录，不能使正在运行的求解与验收使用不同版本。
+
+## v3 分类别修复重跑
+
+原 v2 全量批次已结束且保持不可变。近接触距离异常的原候选复验保存在 `data/tienkung3_29dof/motions/php_full_v2_20261109_distance_recheck/`：`provenance.json` 绑定父任务、候选哈希和验收代码，`result.json` 为复验结果。这是 assessment-only 目录，不是可恢复的求解批次。
+
+两轮小批证据见 [12 条对照](evidence/repair_v3_pilot_comparison.json)和 [6 条长轨迹对照](evidence/repair_v3_long_comparison.json)。新批次 `data/tienkung3_29dof/motions/php_repair_v3_20261109` 仅重跑 [146 条行走/台阶](evidence/repair_v3_rerun_selections.json)，不含未验证改善的攀爬。恢复必须携带原 selections：
+
+```bash
+python -m tools.convert_php \
+  --out data/tienkung3_29dof/motions/php_repair_v3_20261109 \
+  --selections docs/php_conversion/evidence/repair_v3_rerun_selections.json \
+  --devices 0,1 --workers-per-gpu 2 --cpu-workers 6 --resume
+```
+
+恢复前检查控制器是否仍在运行。源码、模型及求解配置需与该批次一致。此批次是子集，不可用 296 条全库 inventory 声称完整覆盖；新旧候选分别保留，不用 v3 候选直接覆盖 v2 已通过变体。原 `deliver_php_conversion` 只支持同代码的失败任务重试，不能用它合并此次算法变更。
+
+## 2026-11-09 批次、审计和交付
+
+本轮原始批次为 `data/tienkung3_29dof/motions/php_full_v2_20261109`；最终汇总交付目录为同级 `php_full_v2_20261109_delivery`，采用 `php-fullbody-v2`。实际启动参数为两张 5090、每卡 4 个 worker、12 个 CPU worker、512 帧窗口、48 帧重叠和 1000 次初始迭代。多身体接触窗口另执行最多 8 轮、每轮 400 次的原生碰撞点修正；仅足部接触的有地形轨迹执行最大 8 mm 的平滑根高修正。原始地形、采样率、帧数和验收门槛不变。
+
+检查完成批次及生成详细报告：
+
+```bash
+python -m tools.audit_php_conversion \
+  data/tienkung3_29dof/motions/php_full_v2_20261109_delivery \
+  --inventory docs/php_conversion/evidence/source_inventory.json \
+  --out docs/php_conversion/evidence/full_v2_audit.json
+
+python -m tools.report_php_conversion \
+  data/tienkung3_29dof/motions/php_full_v2_20261109_delivery \
+  --inventory docs/php_conversion/evidence/source_inventory.json \
+  --out data/tienkung3_29dof/motions/php_full_v2_20261109_delivery/delivery_report.json
+```
+
+审计检查全部源文件的完整帧区间、全部原始地形槽位、候选/导出/标签/质量哈希、变体映射及来源分组。`delivery_report.json` 按类别汇总，并列出每个动作及变体的拒绝原因和接触指标。求解源码另冻结在批次的 `source_snapshot/`，与 `plan.json` 的源码哈希对应。恢复任务必须使用原源码和配置。
+
+训练或下游数据消费者只能从 `accepted/` 配合 `accepted_contacts/` 取数据，并读取同批次 quality、collision policy 和 splits。全库处理完成不等于全库合格；`development` 划分及 PD/学习跟踪未运行的状态仍适用。
+
+原始批次若发生程序错误，使用新的 run ID 与求解配置单独重试，不能覆盖原错误或放宽检查。`tools.deliver_php_conversion` 只允许用完整、同输入同模型的重试替换 failed 任务；不能替换已接受或已拒绝的结果。交付目录保存各父批次 plan/manifest、逐任务来源和全部尝试记录，属于只读汇总，不是可传给 `convert_php --resume` 的求解目录。
 
 ## 通用全量入口
 
@@ -33,7 +100,7 @@ python -m tools.convert_php \
 
 `geometry_pass` 使用有依据的踝部相邻组件排除，`strict_raw_geometry_pass` 仍包含原始两对重叠；两种结果同时保存。读取 `accepted` 时必须同时保留 collision policy 与 quality 报告，不能将其描述为未排除任何碰撞对的严格通过。动力学和学习策略跟踪本轮未运行。
 
-## 1. 环境与输入
+## 1. 历史 pilot：环境与输入
 
 所有命令从仓库根目录执行。已有本地环境时：
 
@@ -65,7 +132,7 @@ python -m tools.prepare_tienkung3
 
 [下载脚本](../../tools/download_acp_data.sh)还会生成 G1 MJCF；[天工资产工具](../../tools/prepare_tienkung3.py)固定模型上游提交，生成无损 OBJ、固定头部的 URDF/MJCF 和 manifests。本链路不使用旧 Isaac Lab 的 `tools/setup.sh`。下载源和版本见资产清单；几何修改后应更新派生模型与清单，并重新质检、标注。
 
-## 2. 当前命令与能力边界
+## 2. 历史 pilot：命令与能力边界
 
 | 模块 | 主要参数与实际行为 |
 |---|---|
@@ -235,3 +302,69 @@ done
 | CUDA OOM | 保存任务配置与日志，定位显存峰值后缩小负载；训练 OOM 与离线重定向是不同运行链路 |
 
 复现结束后按 [taskmemory 模板](taskmemory.md#追加记录模板)记录命令、版本和结果，并更新[资产清单](asset_list.md)。
+
+## v3 已完成结果核验与索引复现
+
+146 条重跑已完成且独立审计通过。以下命令只读取既有候选/标签并生成报告或索引，不重新求解：
+
+```bash
+python -m tools.report_php_conversion \
+  data/tienkung3_29dof/motions/php_repair_v3_20261109 \
+  --out data/tienkung3_29dof/motions/php_repair_v3_20261109/delivery_report.json
+
+python -m tools.index_php_conversion_variants \
+  data/tienkung3_29dof/motions/php_full_v2_20261109 \
+  data/tienkung3_29dof/motions/php_repair_v3_20261109 \
+  --out data/tienkung3_29dof/motions/php_repair_v3_20261109/accepted_variant_index.json
+```
+
+父批次顺序决定优先级：上例保留旧版 910 个通过项，再加入新版 904 个新增通过项。索引中的 `source_variant` 是原始变体编号，`export_slot` 是对应父批次已筛选 terrain/labels 中的槽位，不可混用。它不是直接可加载的合并训练数据目录。
+
+
+## 运行中结果的覆盖快照
+
+`index_php_conversion_variants` 和 `audit_php_variant_coverage` 默认拒绝仍在运行的父批次。显式传入 `--allow-running` 后，只收集已提交 `accepted` 状态、完成哈希与标签核验的结果；等待、求解、验收、拒绝和异常项均不能填补覆盖。快照会标记 `snapshot_of_running_parents: true`，它是核验期间已提交结果的覆盖下限，不是全库结束证明。
+
+核验绑定原始 source/terrain/labels、完整帧区间、50 Hz、候选/报告、导出轨迹和地形编号；重复重跑不能增加原始槽位总数。`--require-all` 在未覆盖全部 2960 槽位时仍返回非零退出码，即使已生成有效快照。运行中 manifest 以一次读取的原始字节计算身份哈希，避免状态刷新造成读取内容与哈希不一致。
+
+
+覆盖索引也接受只做验收的独立恢复目录（包含 `provenance.json`、`result.json` 和 `source_snapshot`，不需要伪造 `plan.json`）。工具会核验原父计划、原任务、父候选及恢复副本一致、验收代码快照，以及新报告、导出轨迹、地形编号和标签。恢复结果填补同一个原始 source/variant 槽位，不增加分母；原批次的历史failed标记保持不变。这类目录不能用 `convert_php --resume` 恢复求解。
+
+
+## v21 根部连续性准入（2026-11-10）
+
+正式导出要求几何、自由臂、躯干姿态及root-continuity-v1同时通过。根检查对原50Hz全段计算target-source根位置修正的速度RMSE/P95/最大值和加速度最大值，阈值分别0.5/1/2.5m/s及100m/s²；这些是工程连续性筛查，不是动力学可执行性证明。常量体型/高度平移允许，原源动作/帧/地形不改。
+
+旧quality_pass并未包含根连续性。最终覆盖核验必须显式增加`--require-root-continuity --require-all`：
+
+```bash
+python -m tools.audit_php_variant_coverage <run1> <run2> --require-root-continuity --require-all --out <coverage.json>
+```
+
+运行中只看已提交结果时另加`--allow-running`，仍不表示全库完成。index工具也支持`--require-root-continuity`，会从原源与候选重新计算并排除跳变轨迹，保留原source/variant编号和全部原始分母。>=21的质量报告和plan必须声明根策略；独立audit重算评分与哈希绑定，不能只接受报告里的布尔值。
+
+
+### 14:46 当前结果解释
+
+正式版本仍v21；v22虽保持69/80但没有改善，未推广，v23为隔离运行中试验。地形小批29/40是重复检查数，实际补5原始source/variant槽位；扩展37组合仍完整时间与原全部地形。clearance probe与512帧witness trace只供诊断，无正式导出，不能直接并入训练覆盖。最新四条原版/修正版录像及前倾曲线链接见README当前状态，旧v3目录仍保留，不表示已被修复覆盖。
+
+
+### 原生碰撞修复入口（v25正式；历史直接入口）
+
+`tools.polish_php_conversion`用于复用已核验的完整候选。种子JSON为`[{"parent":"/absolute/path/to/run","task_id":"原task id"}]`；只使用已提交accepted/rejected任务。
+
+```bash
+python -m tools.polish_php_conversion --seeds seeds.json --out new_run --workers 2 --scan
+python -m tools.polish_php_conversion --seeds seeds.json --out new_run --workers 2 --resume
+python -m tools.audit_php_conversion new_run --out audit.json
+```
+
+该入口绑定父plan/motion/terrain/intent/quality与原始源文件，重算全部原始变体、接触标签、根连续性和其余门槛，不把局部优化器的收敛状态当作验收结论。v24允许受限根平移并精确保留根旋转，扩大样本已出现根加速度拒绝；拒绝样本不得导出为合格。v25隔离试验固定整个根位姿，必须从原根已合格的种子重新开始，不能固定一个已发生跳变的v24输出。
+
+运行中的v21全库/地形与v25隔离任务必须使用它们各自冻结runner；不能因为主源码升级而以主入口直接resume旧任务。所有最终覆盖仍须独立audit/index及--require-root-continuity --require-all。
+
+
+后台唯一执行与队列（2026-11-10）：先读取根AGENTS.md和php-guard/OPERATIONS.txt，并检查guard.py status。正常转换保持python -m tools.convert_php，经启动钩子登记。隔离v26正在验证统一入口 `python -m tools.convert_php --polish-seeds <seeds.json> --out <run> --workers-per-gpu 0 --cpu-workers 4 --scan`，实际提交加--resume去掉--scan；只在相应冻结runner内使用。CPU修复也明确登记worker预约，不直接启动绕过队列的polish控制器。排队不是失败，不重复启动同输出，取消使用guard cancel。正式主版本目前v25，旧冻结批次只能使用各自原入口/代码身份恢复。
+
+
+2026-11-10 16:45：上述统一入口已随v26正式推广，可在主源码的新输出目录使用；CPU修复命令明确 `--polish-seeds <seeds.json> --workers-per-gpu 0 --cpu-workers 4`，实际运行去掉--scan并加--resume。旧直接tools.polish_php_conversion命令仅作为历史复现记录，当前新批次统一走受保护convert入口。不要用主v26恢复任何v21/v25冻结批次。新source/variant专项也先查guard和已提交质量回执，队列queued不代表失败。

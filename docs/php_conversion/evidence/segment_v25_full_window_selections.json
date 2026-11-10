@@ -1,0 +1,23 @@
+[
+  {
+    "source_key": "motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s",
+    "key": "motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s",
+    "start": 0,
+    "end": 740,
+    "solve_variant": 0
+  },
+  {
+    "source_key": "motions-low-climb-76/forward_walk0.9s_step1.2s",
+    "key": "motions-low-climb-76/forward_walk0.9s_step1.2s",
+    "start": 0,
+    "end": 789,
+    "solve_variant": 0
+  },
+  {
+    "source_key": "motions-low-climb-76/left_45_walk0.9s_step1.2s",
+    "key": "motions-low-climb-76/left_45_walk0.9s_step1.2s",
+    "start": 0,
+    "end": 818,
+    "solve_variant": 0
+  }
+]

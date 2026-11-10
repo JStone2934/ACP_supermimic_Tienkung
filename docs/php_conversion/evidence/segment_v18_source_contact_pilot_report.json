@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v18_source_contact_pilot_20261109",
+  "identity": "4ddfcaae5ed7e48dabc196403b3c65850e0323b993d87b76e09a714f4d959213",
+  "verified": true,
+  "sources": 8,
+  "unique_source_files": 8,
+  "frames": 4871,
+  "checked_variants": 80,
+  "accepted_variants": 50,
+  "statuses": {
+    "accepted": 5,
+    "rejected": 3
+  },
+  "checked_output_hashes": 60,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 97.25999999999999,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

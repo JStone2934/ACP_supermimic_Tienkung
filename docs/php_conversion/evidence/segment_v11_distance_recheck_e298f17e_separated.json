@@ -1,0 +1,47 @@
+{
+  "verified": true,
+  "motion_changed": false,
+  "source_key": "motions-high-step/run_right_90_1.5s_step1.0s",
+  "frames": 486,
+  "checked_variants": 10,
+  "accepted_variants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "result": {
+    "status": "accepted",
+    "accepted_variants": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "quality_path": "quality/e298f17ec7dcca7f43c68ad7.json",
+    "quality_hash": "f05baed70f394e83d11f110c5de263586a19969914ea4623b8fa0ec4d7b5219e",
+    "labels_path": "candidate_contacts/motions-high-step/run_right_90_1.5s_step1.0s.npz",
+    "labels_hash": "fb41b3da5d526f64e9a80c5b574f3fdae92ed5134bb512d72443740d8047eba3",
+    "exported": {
+      "accepted/motions-high-step/run_right_90_1.5s_step1.0s_motion.npz": "504c69aebaf4b1f2118e097e65ee68e73d9a1fd29fe01956b50420cb4bd8cd1c",
+      "accepted/motions-high-step/run_right_90_1.5s_step1.0s_terrain.npy": "22b6e47e923d9bffc2ea208784891f3372cdb8933769d23c9f7711f2433dd158",
+      "accepted/motions-high-step/run_right_90_1.5s_step1.0s_intent.npz": "6dafb36d1f537ccfc7e111fa6509ace6b335c40597a587543ea60f5fd828b29e",
+      "accepted_contacts/motions-high-step/run_right_90_1.5s_step1.0s.npz": "bb22d7af125828009063acc0a81d88a24a315cac9680b66a9f2b7b7851ec58a7"
+    },
+    "assessment_seconds": 69.37575189280324
+  },
+  "rejection_reasons": [],
+  "provenance": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v11_full_20261109_distance_recheck_e298f17e_separated/provenance.json"
+}

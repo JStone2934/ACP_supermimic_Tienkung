@@ -1,0 +1,30 @@
+[
+  {
+    "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+    "key": "motions-low-climb-76/forward_walk0.6s_step0.7s__terrain_03",
+    "start": 0,
+    "end": 800,
+    "solve_variant": 3
+  },
+  {
+    "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+    "key": "motions-low-climb-76/left_90_walk0.6s_step0.7s__terrain_03",
+    "start": 0,
+    "end": 790,
+    "solve_variant": 3
+  },
+  {
+    "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+    "key": "motions-low-climb-76/left_90_walk0.6s_step0.7s__terrain_04",
+    "start": 0,
+    "end": 790,
+    "solve_variant": 4
+  },
+  {
+    "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+    "key": "motions-low-climb-76/left_90_walk0.6s_step0.7s__terrain_05",
+    "start": 0,
+    "end": 790,
+    "solve_variant": 5
+  }
+]

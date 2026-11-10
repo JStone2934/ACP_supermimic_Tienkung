@@ -1,0 +1,21 @@
+{
+  "run_id": "php_segment_v22_collision_peak_pilot_20261110",
+  "identity": "17d8c2fe56175a9f164377115c121bd9d3b8944f0b651a3f7ff11c7e0843b896",
+  "verified": true,
+  "sources": 8,
+  "unique_source_files": 8,
+  "frames": 4871,
+  "checked_variants": 80,
+  "accepted_variants": 69,
+  "statuses": {
+    "accepted": 7,
+    "rejected": 1
+  },
+  "checked_output_hashes": 68,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 97.25999999999999,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

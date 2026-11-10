@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+  "frames": 894,
+  "accepted_variants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "independent_asset_index": "docs/php_conversion/evidence/segment_v19_first_climb.index.json",
+  "video": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v19_climb_preview_20261109/comparison/01_low_climb_comparison.mp4",
+  "video_sha256": "ca49c6cd6f24f1d06263be2243c9600a55f187c2c6fea92b277561082ce8d072",
+  "limitation": "Kinematic reference only. Root displacement at hand release remains 0.129m per 20ms versus 0.237m before transition weighting; root dynamics/smoothness are not independently gated and still need improvement."
+}

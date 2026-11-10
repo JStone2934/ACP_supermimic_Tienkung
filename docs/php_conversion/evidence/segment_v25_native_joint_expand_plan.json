@@ -1,0 +1,3480 @@
+{
+  "time": "2026-11-10T15:49:01.861690+08:00",
+  "scope": "Committed v21 geometry-only solve-terrain failures; exclude root-approved union and confirmed-live native repair tasks; complete original clips and all variants rechecked, later full-run failures not yet included",
+  "baseline_index": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/strict_root_coverage_20261110_1406.index.json",
+  "baseline_index_sha256": "d55b50ffa55d40308279fc627fa1fdddd69f32870b6e575bfc53b8a1ed9a8327",
+  "accepted_receipts": [
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_climb_targeted_20261110",
+      "task_id": "34a7da28ab4bb6e9102ae3a3",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "fb38574e7701996b3d30ff25d1e9f96d2263fb4723ebb910553dd280f094fd14"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "2d1c21a13a07d435278a4928",
+      "source_key": "motions-high-climb-76/run_forward_0.6s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7e56629549d26628f8326c0d2c1de8e2491a1a01eac5f7de482af87153b8caf3"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4682472beb568331da636da9",
+      "source_key": "motions-high-climb-76/run_forward_1.0s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d6dfec242941c04b55910f6702fe541d03fea8dda0dce6dc5c76fbb40e013d2b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "61b3dfb647195aa3abb91601",
+      "source_key": "motions-high-climb-76/run_forward_1.2s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "3788e427b1be3aa5da7d7a3bed1929ea8451856d1f115d3f88aa4e6141ca7da8"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "ce73200d6822e564460305f2",
+      "source_key": "motions-high-climb-76/run_forward_1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "ef77cb8f74539b054c546e752bc2d5648784376b18a728fabd297d0f80e4b1ac"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4d5d21fbebbdc3c5ffdea3d2",
+      "source_key": "motions-high-climb-76/run_forward_1.5s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "514c6cdd0624c23e28ab9919d7f865d0d38ab340cc050c4fc6d7efc3d9a2bee2"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "55c6247dece25582eee12629",
+      "source_key": "motions-high-climb-76/run_forward_1.5s_step0s",
+      "accepted": [
+        0,
+        9
+      ],
+      "quality_sha256": "ba10f655a1a483953ab593d4602b0411f0d9cedcaa36a3dc80d4434e083c0f17"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c635e6600ccbeda67a965e88",
+      "source_key": "motions-high-climb-76/run_left_45_0.6s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "fbbf02916e5172faac744267a9ea6162dd05d633cc8702b312a73bacc8ed96dd"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "23c1d469bf01d0296e4bd078",
+      "source_key": "motions-high-climb-76/run_left_45_1.0s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e9200f705d5f9efc2cde5e436bb0620aac0dbfdf9a56aef121773ed243148125"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c7bdd9632786601729e9c2ec",
+      "source_key": "motions-high-climb-76/run_left_45_1.2s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "c86d3c5794f42322a1184abd91699ac365e97dd8fea182dc45e7c2bcaa563409"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "3766f59234c046a6cb0f4b47",
+      "source_key": "motions-high-climb-76/run_left_45_1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d96805194f8bfe37e649fa099cc327e6f34c5aa5f8885bde66b3a1772f24bc7e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "285f84cd89371b8bb2c71757",
+      "source_key": "motions-high-climb-76/run_left_45_1.5s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        7,
+        9
+      ],
+      "quality_sha256": "f155e4955ccb4d2624c1a60ef679d24a89333c187582a187720f9a2d3395d73f"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c5aefe6350a564c147780981",
+      "source_key": "motions-high-climb-76/run_left_45_1.5s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "05d7e2eeb50450471d4ef662ac7a6d6826e01d8e051cf3b981b4be861a1624ef"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "36f37861da0692007e491afc",
+      "source_key": "motions-high-climb-76/run_left_90_0.6s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "55980cc4cbfca3bea0ece9a31d953ba8094a7c94712d4a3f9289e46c571fc4e4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "1a901c8e78c52751d63481cb",
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "298c438acc75d982ace70b13803e20488cea7c69fa569b36067954be246e1931"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "2105200a21224f20176ca55a",
+      "source_key": "motions-high-climb-76/run_left_90_1.2s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "fa074114b19ff2a0c067fa1056f94f4e3b0c440bae61c123f32f0dac05ab6a10"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "def838e684bf5281c8452675",
+      "source_key": "motions-high-climb-76/run_left_90_1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "160bf6b17a8a39b1e5d3bbf912f7feb26efb7859a046a10eb35cf38ae2ccbf26"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "742603a2562b5555f58e291d",
+      "source_key": "motions-high-climb-76/run_left_90_1.5s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "8227f984bea23fb77054b55df3728bbc2cd5c23cee8beba6a9f6839ebcec804c"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7a553b7ccc0941131591d83a",
+      "source_key": "motions-high-climb-76/run_left_90_1.5s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "dc37ab1ad6467ef883378be5908f72d00dfb1fc4ba98602843afe43068a0d398"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "3f396112359516803a8cb70d",
+      "source_key": "motions-high-climb-76/run_right_45_0.6s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "07939d5cefef3956cfc92105431b06c269a8c37958e1494ea97e8d90b98650b0"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7731146780b2b8a40bb07d51",
+      "source_key": "motions-high-climb-76/run_right_45_1.0s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7121d5daa17ef4dbb5a82b2f3bfa4dcd77d3a4f8e283084ddbb83fba3e16c1c4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7a0767f68214f12e0f29528c",
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "bfedf93241bca896f47fdc8761febb596175a8d53e53c2d44dcb78706ae27317"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "9474c88b7958d04de938d885",
+      "source_key": "motions-high-climb-76/run_right_45_1.5s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "980ed3ace2e9dd09988f671a7c44465c19db89afee41b30c0b51761041c5eb16"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "30a9b14bee2e50464496543f",
+      "source_key": "motions-high-climb-76/run_right_45_1.5s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "83d9a7eec4193ab7f6c0426a6e5600e130abfce60a28f962e10370a32e3d62f8"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "fc29dfebcb1211e1e83c6736",
+      "source_key": "motions-high-climb-76/run_right_90_1.0s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7095bb9e8bce9c6d64445c920d5a446df67db2b092cb0e8f2461b27d81f86dd2"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "ca4be9680290d67b160ce9c7",
+      "source_key": "motions-high-climb-76/run_right_90_1.0s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "60647c4fc7e5894e7c027d7550e56ab7a9fc36c5cb4e57f3bcad1d2f84d4fc03"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c19b88fb9586c137ca64b5ae",
+      "source_key": "motions-high-climb-76/run_right_90_1.2s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "1f662e6916dc20f5edf7b27e14a5b25f0746172b9bec8eaa6f397532e67ecf1c"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "1871e61da07c7101b68444e6",
+      "source_key": "motions-high-climb-76/run_right_90_1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "ccdaa2e206bcc3245dc0b74e9de8c4701d9383a2e7e05822f617f87249d3f499"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "e35a03d3b70e5abc6976a61b",
+      "source_key": "motions-high-climb-76/run_right_90_1.5s_step0.8s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "6f1a5353f2ee069831cde2e23216c0b74ab80a0ecede567acb0f81f58f52f918"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "8458de6c930e2fb815dc3849",
+      "source_key": "motions-high-climb-76/run_right_90_1.5s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "ae0e3ce3ae507fd1f944105a0e5882d5e5667387599b08074bcf3a05c50539e4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4c37699d48017b7665e56b7b",
+      "source_key": "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "c0535a9a80aaa1c4370f4e44c505fd17c1a801b004fa552db9697122f6d9097c"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "8dbcebbff90964d35b301418",
+      "source_key": "motions-locomotion/cfg0004_stand_2.0s_run_right_45_2.2s_right_45_0.8s_run_right_45_1.2s_run_left_45_1.2s_right_45_1.3s_run_left_90_1.9s_run_right_90_2.9s_right_90_2.8s_forward_2.0s_left_90_0.7s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7ec32df2e2c23ff1444feeb3566f0abd3e48a5dc6090f3b527ff79af2612e1ae"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d7d048d59112dcce4695ca8e",
+      "source_key": "motions-locomotion/cfg0005_stand_2.0s_run_left_45_1.2s_run_forward_1.5s_right_90_2.6s_left_90_1.2s_right_45_0.9s_run_forward_1.2s_left_45_2.4s_left_45_0.5s_run_left_45_2.3s_left_45_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "509709cddd46f48c6e1b772cb46aa087307816ac059f43358eec1f90583e8ba9"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "48bf47ef183689b11533335b",
+      "source_key": "motions-locomotion/cfg0008_stand_2.0s_right_90_1.3s_forward_2.3s_run_left_90_2.7s_run_right_45_1.2s_left_45_2.4s_run_left_45_2.4s_left_45_1.8s_run_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "300e73b69ffb949b9aadfdb32009e4fd0cd5b7dd5214094c6c940219727cec91"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0550d0b846178de8e6241280",
+      "source_key": "motions-locomotion/cfg0010_stand_2.0s_left_45_1.2s_forward_2.8s_right_45_2.1s_right_90_2.5s_left_45_2.7s_right_45_2.5s_left_45_1.3s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "97a44efcbb5b09d7dc19efbd3a85a231a3670c8a29be4cd368620fe2d3aa4f3e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "17e0e91f8f6083019f2b1d9c",
+      "source_key": "motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "11dd2605a2faa815013583a99dfb46dbd754cf03d5d2e71747477936fa0db108"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "9095d779011d38a4e736baba",
+      "source_key": "motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b1391f492f26b94b40c43a6b0cc50ec007e1a66fdab37428e331b650dd0d0dcb"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c617f11051623bc5cc95e5da",
+      "source_key": "motions-locomotion/cfg0015_stand_2.0s_run_forward_1.8s_run_left_45_2.1s_right_90_2.2s_left_45_2.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9aa3b62dc7a1cfd413700a2d5e38ae31e9d2b48a278cf56924216d1f23e688fd"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "52077a2d66da75e1dea14b72",
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        3,
+        6,
+        8,
+        9
+      ],
+      "quality_sha256": "043fe1c3123ae9aaa5e80252b09c1a6251c491e0fb91501335214e8b800d4b0c"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "6480bc11a08249748c448e75",
+      "source_key": "motions-locomotion/cfg0019_stand_2.0s_right_90_0.8s_run_right_90_1.2s_run_left_45_1.9s_run_right_90_2.1s_run_left_45_2.3s_run_forward_1.3s_right_45_2.1s_left_90_2.1s_run_right_45_1.2s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "1195c05eb3c2f0123a40aee84715d26776abc08c8d86298a5ec3d944c5746e3a"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "04a9c077930b9575ffc01155",
+      "source_key": "motions-locomotion/cfg0020_stand_2.0s_left_45_2.9s_forward_2.7s_left_45_2.5s_left_90_1.9s_left_90_1.0s_run_left_45_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "f7061d16eda3d08b1f8c9cff0686cc03ea00105a254724e8ae98c371ffa66586"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d58502440d584a62caf35124",
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "accepted": [
+        0,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "1a531fa89e5e1c9c9444cf693eb1f30aeb0816bd377e3868a0459e96c8fde3d8"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "a360a1dd368e4aac11a34ae7",
+      "source_key": "motions-locomotion/cfg0028_stand_2.0s_left_90_0.6s_run_right_45_1.9s_run_right_45_2.3s_forward_1.8s_run_right_90_2.5s_run_forward_1.6s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e5c168fc069035431492fe87c7b7692d33d67e07e1a21a14900692e5f80eec30"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "bea5b8fb96aead5cd611e5c9",
+      "source_key": "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "6d644c90d50ef458a13473b09a5592612d5336ad02d3d5a1269698b28ceea51e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4b524daf47d6b8c46570f1a2",
+      "source_key": "motions-locomotion/cfg0034_stand_2.0s_left_90_1.4s_right_90_1.8s_run_right_45_2.1s_run_right_90_1.2s_run_left_45_1.2s_right_45_2.9s_run_right_45_1.5s_right_45_1.6s_right_90_2.9s_run_left_45_2.9s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "cd056d998ae288c403c769e3cf01fbed4265a167256871378a98ad9915a83d31"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "48ba29105b67d4c229685c36",
+      "source_key": "motions-locomotion/cfg0038_stand_2.0s_right_45_2.5s_right_45_0.8s_left_45_2.1s_run_forward_2.3s_forward_1.2s_run_right_90_2.4s_run_right_45_3.0s_right_45_1.4s_run_right_90_1.4s_right_45_2.6s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "fbbd4c7e5e8db24a1d4f9bf02f93e1911692b910c3506631ee1f3d0d520dfaa2"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "50539994f1f7524c2409c82a",
+      "source_key": "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9
+      ],
+      "quality_sha256": "b8ff0dd7d1da2660090fbcafdeb4da21649f37d949c32389b41c6d9fad97b64b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "a9e3061085d4910414078479",
+      "source_key": "motions-locomotion/cfg0044_stand_2.0s_right_45_0.7s_left_45_1.4s_left_45_2.5s_run_left_45_3.0s_run_forward_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "fc482cf5f15963223950d8e6f0713a09ea9cc03f66d118fc8aeacfeade3fdd35"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7b1bd52f13afc910a8a84f66",
+      "source_key": "motions-locomotion/cfg0046_stand_2.0s_forward_0.8s_run_left_45_2.4s_run_forward_2.9s_left_45_1.2s_right_45_1.1s_right_45_0.5s_right_45_0.6s_run_right_45_1.8s_run_left_90_1.2s_left_90_2.9s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "0304b9a84d77a8a9657397b297d790c31f758bac0a0b4de250651b6e700158d4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "83d9ddca21d3448c88b49e3a",
+      "source_key": "motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "quality_sha256": "d3a20a640e278a022cc84716e0bd28c86581b5fb5f7649cb5ac7ef2795081a31"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4be620372bc24bff4ed79476",
+      "source_key": "motions-locomotion/cfg0048_stand_2.0s_forward_2.9s_run_right_45_2.2s_forward_1.3s_left_45_2.2s_right_45_2.8s_left_90_2.9s_run_left_45_2.0s_run_left_90_2.8s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "89db210bcde4e0995b4cb48f9bf65cfab830450f897a3fe8afa3442b7c858276"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "540ab6f9b648d2638d007b7b",
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        4,
+        7,
+        8
+      ],
+      "quality_sha256": "c85b05f40dc2635d5d0d5311fda27970ed36779c477c26fd62c3aa9f80334025"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b12658b5420b5a2068cbdd57",
+      "source_key": "motions-locomotion/cfg0053_stand_2.0s_run_right_90_1.4s_run_left_90_1.5s_run_right_45_2.8s_run_right_45_1.8s_left_90_1.5s_forward_2.7s_run_right_45_1.2s_left_45_1.7s_left_90_1.6s_left_45_1.7s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "5e6a20c5bed0f683d2d6e58d65c22cd23202418c41236d71606ab83794c803ad"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "2bea1f19229569eb3fa0cadc",
+      "source_key": "motions-locomotion/cfg0055_stand_2.0s_right_45_0.8s_run_left_45_1.2s_left_45_1.0s_run_right_90_2.7s_right_45_2.2s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e47d7865acee715b899652611d486a41e73353fcc6572227bd021080a91fae26"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "80699a15f94b3e4fd1769790",
+      "source_key": "motions-locomotion/cfg0058_stand_2.0s_run_right_45_2.7s_run_forward_1.2s_right_90_2.5s_right_45_1.0s_run_forward_1.4s_right_45_2.0s_right_90_1.7s_run_left_45_1.2s_left_90_2.3s_right_90_1.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e24e6f034d2501ed2223cc4720e7048b568a0bb6436ce0ab72e9ab1ed01bf1fb"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "6ed6a4c251a65e49f6e92856",
+      "source_key": "motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9
+      ],
+      "quality_sha256": "a99e9dde0c65d256f4c8be783b913843ad1599a8962ffe8e65d639671f092088"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "6d6ee2e0a95b9459bf2e869e",
+      "source_key": "motions-locomotion/cfg0061_stand_2.0s_run_right_45_1.2s_right_90_2.1s_left_90_1.4s_run_forward_2.0s_left_45_0.8s_right_45_1.1s_run_forward_1.2s_right_90_0.9s_left_90_0.7s_run_left_90_1.5s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "330376e0b822b7f3e5e74ff6f6683e236730f464dea3ab45fabf7b19c11325c0"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7e08bf3baff95194a4820409",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "167ee27ade1a4c3c2158575e02c3a72de7c6bf2a47deacc4e9b226692f2dd389"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "1d3778a9f0946669ad91ca88",
+      "source_key": "motions-locomotion/cfg0065_stand_2.0s_right_90_0.7s_right_90_1.3s_run_right_90_1.2s_right_45_2.4s_run_forward_1.7s_right_45_1.4s_right_90_2.6s_run_right_45_1.2s_run_left_90_2.8s_right_90_0.7s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e89326292007fc45e83176fae2169feac2d820f097ce2aabecb596ed389affa6"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "bd1a2ffbcf4ed1f0ade7bdf4",
+      "source_key": "motions-locomotion/cfg0066_stand_2.0s_forward_1.9s_left_45_0.8s_run_left_45_1.2s_right_90_0.9s_forward_2.2s_forward_1.4s_run_forward_1.5s_left_90_1.6s_right_90_1.7s_left_90_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7fb13348101516782ae136669389d6e49baf3bc5a698f1095fbfe35dff73b2e0"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "8f867310ab23176c85bd5fe3",
+      "source_key": "motions-locomotion/cfg0067_stand_2.0s_run_left_90_1.2s_run_right_45_1.5s_run_left_45_2.8s_run_right_45_1.2s_forward_2.1s_left_45_0.8s_left_45_2.1s_left_90_2.7s_run_right_45_1.2s_forward_1.1s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "cebfc9b56e0c501c2c4c0cebe508b2b2a9b9e5d8e02561cebc714f3dececaf66"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "927ab88d5a97804c8d801ba2",
+      "source_key": "motions-locomotion/cfg0068_stand_2.0s_run_forward_1.2s_run_right_90_2.4s_run_right_45_1.4s_left_90_0.8s_run_left_45_1.2s_left_90_2.5s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d803bb206cd4b530e5efed76ad9283242603ccacb95c2b4f94d4662ca49ae5ba"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "43875ec28ced4398037703e4",
+      "source_key": "motions-locomotion/cfg0069_stand_2.0s_forward_1.1s_right_90_2.3s_run_forward_2.2s_forward_1.1s_run_forward_1.2s_right_45_2.0s_right_45_1.7s_left_45_0.9s_run_forward_1.8s_run_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "a5f29d9c43e2117aaec9c51c7d3196b505dbd97e5d7bba0a3d43b8489ea21403"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c8a630039eb3118b3757b8ee",
+      "source_key": "motions-locomotion/cfg0070_stand_2.0s_run_left_45_2.8s_run_right_90_2.2s_left_90_2.3s_right_45_1.9s_left_90_1.6s_left_90_2.8s_run_left_45_1.6s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "57c78f87afac9f6f05091d0b6ddee8b80ed9cfb6b894600004ee62f55149efc5"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4f70090c6b3acb2c047b561f",
+      "source_key": "motions-locomotion/cfg0071_stand_2.0s_forward_3.0s_left_90_0.8s_run_forward_2.7s_run_left_45_2.0s_right_45_0.6s_right_90_2.5s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "29b7a05ee0e50d0b5e1fac6daf2d7b67f07c81554edc5ff32e74d6d298febc09"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "99e55f7d80ffce82925a85eb",
+      "source_key": "motions-locomotion/cfg0072_stand_2.0s_left_90_1.3s_left_45_1.8s_run_left_45_1.4s_forward_2.3s_run_left_90_1.2s_right_45_0.9s_right_45_1.7s_run_left_90_2.8s_run_forward_2.0s_right_90_0.5s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "c80cb4d508a29b60f38811f8c0cef1fec8a1b0c48d3bb88a45052dd930ef6014"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4e640642a0e71171f7451ed7",
+      "source_key": "motions-locomotion/cfg0073_stand_2.0s_right_45_0.9s_right_45_0.9s_forward_0.7s_right_45_1.8s_run_left_45_1.2s_run_forward_1.2s_right_90_1.0s_left_45_0.6s_right_90_1.9s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "5c5239fe4bba534ec1725008fb8e337002adef755309d71821e878a0a875cec2"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "ac6e97581a2ffef98c426ebf",
+      "source_key": "motions-locomotion/cfg0074_stand_2.0s_run_forward_2.4s_run_right_45_1.8s_run_left_45_1.5s_run_right_45_1.2s_run_forward_2.7s_forward_1.4s_left_45_2.1s_right_90_0.6s_left_90_2.3s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e76e05518432c8c3095fea86d39d9654f47faa312221d238706977b092c5fee4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "1efbb7995c547b4b0e1d48d9",
+      "source_key": "motions-locomotion/cfg0076_stand_2.0s_left_45_2.5s_run_right_90_2.1s_run_left_45_1.2s_run_forward_2.3s_run_forward_2.6s_run_left_45_2.2s_run_right_90_1.2s_run_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "488d900843191578851079f3bbade7fcd72ed50868fc68a5f0b72c1030f17fe4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "8c966eb6b349888dac46bf75",
+      "source_key": "motions-locomotion/cfg0078_stand_2.0s_run_left_45_1.2s_run_right_90_1.6s_right_45_2.5s_right_90_1.1s_forward_2.0s_run_left_45_2.1s_forward_1.9s_run_right_45_1.2s_run_right_45_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "dc8e99b3e3321b3ad99217df1ee6041bc8a42c36b8c8e92be93c3e4264f04edb"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d32b8b3f4ea7e2bbba26c0c9",
+      "source_key": "motions-locomotion/cfg0080_stand_2.0s_left_45_1.2s_run_forward_2.1s_run_right_90_1.2s_run_forward_3.0s_left_45_0.9s_right_90_0.5s_run_right_45_1.2s_right_90_1.2s_run_left_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b08f25b0c54e955f9443cca608fd3e25e97faee8131c397fdb1b6e564b9e3a0e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "dd7a41e29c46aa5bc70fcded",
+      "source_key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "a5b6c90934f49c8d0962d324adf154ff7cb9accc768400ad95ea93dac2399dd3"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d1263e4d54d8c575bde6e4c4",
+      "source_key": "motions-locomotion/cfg0082_stand_2.0s_run_left_45_1.2s_left_90_0.7s_run_right_90_1.2s_run_right_90_1.2s_right_90_2.3s_run_left_45_1.9s_run_right_45_2.2s_forward_2.3s_right_90_0.6s_right_90_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "289b690b6d98edc6cfa3364e1ba2d388e6b4f62c820ed68df783448a10fc21d4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "18d0127dca1f59e8867bb641",
+      "source_key": "motions-locomotion/cfg0086_stand_2.0s_run_left_90_2.9s_left_90_1.0s_left_45_2.7s_right_90_2.5s_run_right_45_2.2s_run_right_90_1.2s_run_forward_1.2s_left_45_2.9s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "621f09466d550060c84023a838705a5168555de801de3bb2468b8c4dfe2e05bf"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "125678ba30925094d9626872",
+      "source_key": "motions-locomotion/cfg0088_stand_2.0s_right_45_2.2s_left_90_2.8s_forward_2.9s_forward_2.7s_right_45_1.3s_run_left_90_1.2s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "77ebb95495dd6e5dc39e141a22c82dbc27d540b4ac6d8981c4ceb75851a1a244"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c44546f39cdf118bf23f255d",
+      "source_key": "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "b86497955aab964cf5ca6d4dd83c5df619f8235def767e1e0c24bfb56277ca30"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "cb3daab60f0187be49ac84e5",
+      "source_key": "motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "dcee0a369e36493dafdec75a955dfd8f63ee70d4fd5ca77db3f2df5c5e20045b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "588e351d9d3447a57a3a63fa",
+      "source_key": "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "8d81147a99fdf25c6b82fe792523aa0af34240eceabafcb0f0899c1357c179e7"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "165f5cbbb5f59b7af714aaec",
+      "source_key": "motions-locomotion/cfg0094_stand_2.0s_run_right_45_1.5s_run_right_45_2.9s_run_right_90_2.0s_run_forward_3.0s_run_left_90_2.9s_run_right_90_2.0s_run_right_45_1.2s_run_left_45_1.2s_run_right_45_2.4s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "2c228083d4fe3a97cfe6a6f1e0d45a61b320ab17a7d69da894097ae8a6170f38"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "7dedeb864d92eea40d906706",
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        3,
+        7,
+        8
+      ],
+      "quality_sha256": "7842ff482fafdca281b1ef982946921a39b331c9f94714eae0a6d150ab6e0628"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b57940a1f755fbe59fe66b30",
+      "source_key": "motions-locomotion/cfg0096_stand_2.0s_right_90_2.7s_run_left_90_2.7s_left_45_2.1s_right_90_0.7s_right_45_1.4s_right_90_2.3s_run_forward_1.2s_run_forward_2.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b79a6135684f4437474168365552a00d06d5b917f70e0f1c3768c48462eb4cfd"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9
+      ],
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "3b44b0024eded4f813f525d1",
+      "source_key": "motions-low-climb-76/forward_walk1.2s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "bc40c7a67eb1e4520c81927747f784c7af35377385b676b1628e2dc7f9c17e54"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "2bbd2d0a55f79ccc56c796ca",
+      "source_key": "motions-low-climb-76/forward_walk1.2s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d69554467cb800b66bbaba03a5e2b652ac95236cc7f23e751b0435089a978f6e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "22a982c3d527264f57503aab",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7f9f8d91d277a5ee065b2c88afda7b9396d24cf6c4aaebcaeb3602234f7c14c8"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "8fe23d030c312e727966815c",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "3cccf58f0bdc3420ad184c83ec3b9b449b92e5f78695cc1e4af07bee71f93459"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c46a962858767529715a5981",
+      "source_key": "motions-low-climb-76/left_45_walk0.6s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "4194c2f9ca3acdf18d3defc500942803afa9bdd470e14bfee42bdd337d4a6982"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "1beb26b69afb0e4c12b1f91c",
+      "source_key": "motions-low-climb-76/left_45_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "bddaed8d3db65923c4238b0acc28af3d7446d7484cbf17cacc71f81005951b81"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b74b52e8ebbec9562a8a97ed",
+      "source_key": "motions-low-climb-76/left_45_walk1.2s_step0.7s",
+      "accepted": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "e31449bf2ebdd655c45b934fa79a403f3c88701c03b5f7f71271fd7f57404313"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "12f0d3fa4a4d8a3ff39d2a7f",
+      "source_key": "motions-low-climb-76/left_45_walk1.2s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "97f6183f619c5642a64f67a402dde802221cc36a0707b88fcfdcf133bb2258e0"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "11672af2182297236db192fd",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "57875d5c9c8e828cf5f84c0781bd9311a92e77a6fd42837f174711c036f85da2"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "4c4c94bb0f74de38367c1684",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "ebf84c8ed845f78fddc084e44bdfd2b3ab460135e53a5c9f04f9523d4af068ee"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "704d94d7cb26d6edb68798a6",
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "ce5db5a369c30ba5425e49977003e73405e2d36d30aa79ca914593935e3f0a89"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "a3f2dff6cfd87ab4c668d02b",
+      "source_key": "motions-low-climb-76/left_90_walk1.2s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7c2173a4f6266ce2f3a24306806eb7d69184f6dad1f0b95c2a0eec23c53f648c"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "c72b8d0b31335bc83fa57733",
+      "source_key": "motions-low-climb-76/left_90_walk1.2s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "25cae0a57217b0ece0da5213a2ee9503bd4fd8b1f34f6da02085b53c33b54733"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "70cb898e947207342eb31a81",
+      "source_key": "motions-low-climb-76/left_90_walk1.5s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b2c924d90ecd85ea1d1e57004972cd14326da70c1b9e73fc4d6eb8ba0476ac00"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0ed9b35536aeb2f70ee8f5d3",
+      "source_key": "motions-low-climb-76/left_90_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7ef2c8804a98a56977c89663e581818ea7e701e4321460446da80d1aa9a2b31a"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "dac05770d73c8ac0b784d526",
+      "source_key": "motions-low-climb-76/right_45_walk0.6s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b0381fc2c3179c9bdff6314910eac76f23476b2b35db3d36234c2b36b536e5e3"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "70a0eb9cfd98f966092ac31a",
+      "source_key": "motions-low-climb-76/right_45_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "4c97eea9ca212a640c2612461d05849d25e28a3d4da423e4ab04a23e4d1d7a6a"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "22e2dd9e3b74432df6e30287",
+      "source_key": "motions-low-climb-76/right_45_walk0.9s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e5e439f6344262b2c0b24afbe9cd35cf7e949183724ba25ea81c566b06c44739"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "f48bb502565ac8eea46bfc39",
+      "source_key": "motions-low-climb-76/right_45_walk1.2s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "610baefd42f344065b883380d996ae9122388f9fe240dd1d5c4ce86153eb36b6"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "f0fa5ef99f8acd7d97ea9747",
+      "source_key": "motions-low-climb-76/right_45_walk1.2s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "0be5515ecb8dbd76294be2412d20f2337d2c516693a9d0578d5701d4b7f31242"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "342fe009f0cdc2c49c3271af",
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "20cca69e1aabf9f6ea6f351e5ede91a0fcca7de8fd08cc2e76ceba27155a2d28"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "26bbdf70534f3e88b6f94a79",
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "44a96fdbaf8d9de8f8e1c787df2cc69df8513e7acc32181235d6e46fcc2a009e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "e2b60f9bd88c1f02affa884c",
+      "source_key": "motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "44ecbdf730c84bde8f0a759300b0784f4c982c1d1e16fae7eea0a0ee3af5d496"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "4c42b5ed0dc8018f55b38b9b",
+      "source_key": "motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e0916e4b64f5d92f11d62b62a3b9058f41b4fbd0101d50b81b329e3446101ebc"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "67b3191331a393a6593d6f98",
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        9
+      ],
+      "quality_sha256": "9a97132f3ae1c44e82d86913c143fdcb0dda7a297f832983810b593b02b47052"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "422d9d155274a9cac1aaca20",
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        8,
+        9
+      ],
+      "quality_sha256": "63df4d7aed41c69fe948a03134af1cd22f78ed995c89c4244a59fd7bf70301a1"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "526f3b12da58c57605568c7e",
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7d09331bedfb2a50242c6f033e4ce0c977116a54d015c34b67d47d3ad38f8ea4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "315074a5d24502f3d8c6dac0",
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "6836d0d66f320586ebf6037d6b20e3f48c3eaa37ce35aadebd67d5c401b5a467"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "b2f18e28f251d0f4910763d4",
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "accepted": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "17fd46ac4c0e6b1a32871bcef936a7e0cd0ca0bfe026ba0bfdc49b3f8b95ad64"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "9c1b46d0bd8a66a335e075f3",
+      "source_key": "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "2588208701b2fa652de43a5d8ae3251d7f9130efe7673a810907dfedce012c44"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "ea19e3168682aae3d0523cdf",
+      "source_key": "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "65a27dcf915369fb33d52a39cd849ec74e23c58c30dd36ea1207d6a274e9de95"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "47aaf13eab8e13887095d5de",
+      "source_key": "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9
+      ],
+      "quality_sha256": "85bd2fe98fb075f24cf2a965d79f6e0ebc56b52e6480a41c2689e13350afa1c3"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "b1dcb2d3cbc2122ef99b6d2f",
+      "source_key": "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "quality_sha256": "b09b87a93185a589c730f9a39bcc778b867830da0fc202fcadabd8d77435ba3a"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "e9bf5f8728fef40c3411e998",
+      "source_key": "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "564d254e1ca6e118440f49ef146799c912c93a9c71caf4be10aa8d0025ad1888"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "de62efc04208ec1588fbe551",
+      "source_key": "motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "a1cafe8aa3349317c717bab395e41015725b7eebe64c212ba9b646cf4028d6b3"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "330a52d4f238a746755d088f",
+      "source_key": "motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9ab7ed124b0a5b528d4c89818e3e2c9f829f226f54cf926dbfa61f874cdca225"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "afe5a6f18a2ae841d3e0f5a2",
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "b37aeb6d770984121ea533fc85c503d1e95654332c87e2e3db64a9c6288c6931"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "59168f202e203768e99c8d60",
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7e01e327e17209e2c74c98319f88fb18209fa63f7d48787673d0113e224074c4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "aaa98e83c2c2585a6bc2ffe5",
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "quality_sha256": "eaea8b05c529c4676283b8fbcd531b29b71eeedd7c904234ca326794925b8216"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "04979887f5b5daa0746dae15",
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "quality_sha256": "a28735f7618332f033557ea1f9579676f7d028577a77f22c5da411958ab16225"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "c291eed3f46a157d4e9753d5",
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8
+      ],
+      "quality_sha256": "d948415c79cb508b33eb1498ee3e8b8eaf293eecc67a552303d30a016afffe06"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "6be4adf637aa4ae0e2fa8a00",
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "cbb9db6c66ea116e7f65df9a154fdc4dfccac96bafae8e143aa542800351ab84"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "ab59d56a0943cb4e447f4b10",
+      "source_key": "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        4,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d271cab8218d849466670991dcef0e5f0ceff8cddac22574f76abc8c1e0f4782"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "be7a9b710a8470bf1c49023f",
+      "source_key": "motions-locomotion/cfg0053_stand_2.0s_run_right_90_1.4s_run_left_90_1.5s_run_right_45_2.8s_run_right_45_1.8s_left_90_1.5s_forward_2.7s_run_right_45_1.2s_left_45_1.7s_left_90_1.6s_left_45_1.7s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d54600087cebd84e54d5d032363f5a1ae5b3a0a219dfb12830969ffbe018d154"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "95664fac7b0f322d562bebde",
+      "source_key": "motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9
+      ],
+      "quality_sha256": "60da5c926ae8fb35466011034952ded19c5d7c1efe35a16dc0bda31ad8743860"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "fb4adc4bbbebdaac717a623a",
+      "source_key": "motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "quality_sha256": "244a174c17d38b8d94986e1ae68d6aaf96b7c0ccdc60973198dc68372051079b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "1cef2309e8151e4e4a294e38",
+      "source_key": "motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "quality_sha256": "65dd61aef61d38d803e2748cc903c7feb5216d5a2f4e35aeca490c278f291ae9"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "dabc753b6f229a51be4a9748",
+      "source_key": "motions-locomotion/cfg0065_stand_2.0s_right_90_0.7s_right_90_1.3s_run_right_90_1.2s_right_45_2.4s_run_forward_1.7s_right_45_1.4s_right_90_2.6s_run_right_45_1.2s_run_left_90_2.8s_right_90_0.7s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e9328f061896907b173ca6f0ac9795505d48f71a609b30047fdb0428de626c87"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "84808ba082f4426abf7535b6",
+      "source_key": "motions-locomotion/cfg0067_stand_2.0s_run_left_90_1.2s_run_right_45_1.5s_run_left_45_2.8s_run_right_45_1.2s_forward_2.1s_left_45_0.8s_left_45_2.1s_left_90_2.7s_run_right_45_1.2s_forward_1.1s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "67ca3d8fed99d59da333aadf5794123e4d285f5a6f42c81cbe593137d9514a14"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "6d042c7dbfdd37e85cab0e72",
+      "source_key": "motions-locomotion/cfg0069_stand_2.0s_forward_1.1s_right_90_2.3s_run_forward_2.2s_forward_1.1s_run_forward_1.2s_right_45_2.0s_right_45_1.7s_left_45_0.9s_run_forward_1.8s_run_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "4c9fd513082a13de5060857d8cfa7ade4acf83cfa896ac22441f84f0c38f8cf4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "25d5e3de93d5ca8f05e2783e",
+      "source_key": "motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "42395fe6c1a070f21a637d760bad1bb654a2cd535a9acaa29d103fe4953ca45b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "a88ac8ea5549016fc753c8ba",
+      "source_key": "motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "2480ae9ea678cccd822c97498b953ec9dd84ebd25c16bc00f2013d3f46845518"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "d24e505dafe3980c170d0f80",
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        1,
+        3,
+        4,
+        7,
+        8
+      ],
+      "quality_sha256": "abb87e35644276c0e1b93e9ff0b1cb73602af661918156450c1b20c8e5297c19"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "bfd17fc9cd076572ee1e737b",
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        1,
+        3,
+        5,
+        7,
+        8
+      ],
+      "quality_sha256": "192f856fc002300ac0d5401b405bfd921d9c5555e228ea0397f3a6c638798be7"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "b64944b049c12d05947f419f",
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        1,
+        3,
+        6,
+        7,
+        8
+      ],
+      "quality_sha256": "99ecac1e2b63458f171f23dcc82636c50b027d149bed23932b42e3346edb363e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "8f18b15b7d95f7156625c86c",
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        1,
+        3,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "67e1438f6fd2e56d806a355d77461c930ec8ed1ffde2774c1079c392eb48c092"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "dc28a4892554406942d55548",
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9
+      ],
+      "quality_sha256": "a563314c44f0a6ff03a8e61ebd4e4bbc959f6c67e0ea483070436f5abe5eb06f"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "5d4e37a3cfab3ff534870cbe",
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "quality_sha256": "54bab85a3211dfa713ecaeb1773cd3d7760d919f1cc2d4d6b6cd1acdabddf3c2"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_expand_20261110",
+      "task_id": "7d6868caac2c7c90051f262a",
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "accepted": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e5fc021f358b8bf629a66d4df1ddb77fca0a46c8ba42d1d0f76ce15f74f825a4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_pilot_20261110",
+      "task_id": "b81b675123a50739c249a847",
+      "source_key": "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s",
+      "accepted": [
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "quality_sha256": "55ce676fec8a1921f12141a5c3525c59b94ad595bcc7b5df22fdfb9686b0d07f"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_pilot_20261110",
+      "task_id": "04785b89d69b7a44d6ef21f6",
+      "source_key": "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "719a4332ab031c8a3ca59978eedaebe92971c5a4a85af96ee462e3af11262b2b"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_pilot_20261110",
+      "task_id": "b11f3882742f2c2f51c367b9",
+      "source_key": "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "aae4d26bcfe2c2513943770ac436f16e81f49d620cd47f3ed004e045b306371f"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_terrain_pilot_20261110",
+      "task_id": "4d7f9bba7b5cecf9be4fa0b9",
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "a1f5e65d8cd720fdf1f535e6d54b2c9b1948e74da3cd0e806a44f9c59f6f3abf"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "ef05657ed398c66f98004b7c",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "342d1b14a28e9234ba2f2272b93cf676ad9b3abf7e4b7f66b6c0e6d1d7b3e43a"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "8e2732e5324240246d2698ee",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "32fec9352757eaeda039635670965d9717a1315d70ba0729abe3b827f72cc576"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "587c96786d49cd81861ec721",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "2bc52dfa58895b2fc2811556c04ec258053125e4d70159d578f0560951e3b188"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "65f323323cd75eff3c084bb5",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "e93482158f9b5793718013c40cc1c067f99381bdc57f435bca49b958a9c8c33a"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "64cb6f8bf9e709c55f57283a",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "6131c79db97ab7e81e7a686f93af2926f0ab23f14736d730f4106b839123b381"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "4eb3e5e0e5e00c581a88cbcd",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "3f2aefde3eb7f25dbe9e4d2a5d0c590e8e58ba7bc6f45eaf9e405c9575f66e63"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v22_collision_peak_pilot_20261110",
+      "task_id": "81b80ddfa8b54019bf0ad401",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "843993e65731ac60f75a8484fb829d611c6b17bc0220c89a940d05de8da1f82e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "65424eb2df25f76208a9ca67",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "3da7a9b5fc786a162eb5898c7d175dfef2f02b44a9e4fb53586b5a72ab93b594"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "dbd5fd7377591f00dbac116e",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "cccc0507c5c2f455e1abef6a851607872f9e1cb8d4fad44adb1900d4e3339b40"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "ae3119b7c5eec72ea138962a",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "eae3b5f2064e37ddb42f1acadbf43a922743af6bd73e4152d8ec8bdffe6a8e19"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "988990cf92cb1973039622fe",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "02d404e88327d9312e2291deb839295aca5530662acdf5c022120987f50f79c9"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "035549ff83459055f188933a",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "6092f35197ffb378ff656de9ed7c1fb9fb20dc23a22d16e61ea2f2050212874d"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "b475d55f1dc84f351246c175",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "2a6295a8356d6dc98e6bcef56839ecc48d174f35ecfa1094154cb81075fee255"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+      "task_id": "da048932b917f7354f26940f",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "f9b906a66c32877a140915d16a38bd27b6fa4ea5332bc54c996cb508ce457e1f"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_knee_terrain_20261110",
+      "task_id": "844572a068b9bdcfa3139d63",
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "c78fd4106a0420f748e8611c3522f191ba4229f9813c2e7a0904a16a9c176aa7"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "0edf8b22896bc6b1c9bd5e6f",
+      "source_key": "motions-low-climb-76/forward_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "ade5f80665e46b01395829f05b0704404f61b094761b755c9c2cdb406cad80ce"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "4ed396b1503beaaa6afd666b",
+      "source_key": "motions-low-climb-76/left_45_walk0.6s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "369362f499eb4c0d2a42fd10a774c205302c957abbe5cbddcdd93a0c25d70cbe"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "1eb126559ad128e80c2257e8",
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "959728dd836774c69070bafa5e65f19f950d103624949962f9ee3f30896cc1d9"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "f632bfce9c8d685f5a27a5b5",
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "0bbdd89112f63fd75c3c5ee61dcd9604f5268e616c7ba0d15c55cf887ae0edef"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "5c0412ba22caef0b50b3b3aa",
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "3de288e339a73493cb4c11240bde9b287f43cc763114cdec51c575fa786455b8"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "79a5683d9292d19cbd08f84d",
+      "source_key": "motions-low-climb-76/right_90_walk0.9s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "95c602415988a7c150b98714c995d50197477d63bce392cdb3f5a5187bf1ab11"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_expand_20261110",
+      "task_id": "e17c8f8eb6a87b4d0d864f66",
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "118362b4b7dffdc93c7e813c52f5259cb42bad1c7e0f4149d72dfb9990cd219d"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "e00217c60f9c81dd6320ce6f",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "798b797436285d190ef007219ecf60d378b590cab8edb4d79677a8f4442043c4"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "364aef1ce82256510bfdac1f",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "852352340c54323c0abd10a57b2d477293051a18bc21c759f14f9148e55918f9"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "62c0b3637da69faf7988b899",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "2f5066833bf3e2723711d7975d4b39dc1eb89c80ce77926c027d0efc93ecd6ad"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "8ef87b45730d8a1e6dbe52e8",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "d13c86e00157284bfc918aec1e0ff54b26b8da5c573969ee3ed8a870e3ce7210"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "941b2c9481e90c44050f250b",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "a99ea5b9a9d701bbf920b70e89452dc680b4a8c6b5d5a53f9fdfd985957191b0"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "b3a2325013b6117cb5a8a40d",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "806080c8c5746ac9916970780aedd3b309bdb068927c0eef1db05320c2e268a0"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "def36e26545b62521276d118",
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "bcdeab046723e0df862f50e3b9a63aecebadaf02adb3d90a194ebfc84a2497db"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "8e11bfe91c3e1537b73154e3",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "30894cb84aae7cddb54fa3501d5008192b2f7fd727a3e9702d69a272fa540c94"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "6a919119000e71e8dabaf4b3",
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "3c1691084420387f556c81b9827573cd84fb0bd5b9a0f08caa1b752b12a20ac7"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "2bd05ead449c3babb99046f3",
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "8b2ca78997ca0176583b39fecf51060487b4f46c33737a9ea73dd999e31c6f47"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "f6a96292813addc019ec4a09",
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "4c858a11086188d2066980c2ea9ead04f5df64f61e0e34ad5df44b7bad53cf13"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v24_native_polish_pilot_20261110",
+      "task_id": "f5d5225a7429f885304d8007",
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "30e3fd650e308a7b3b10af3e583a0be4b07985e71c1ea4476057a464fee2ed29"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "dbb425ba225f4dfd19d6ccc4",
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "038315cffaa18204c3a9673d75f37d6828c5d4df28b4f8af97f0dd34ee115581"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "854c6edb24c9c3e57b933cae",
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "a9376d067981169d9f7e5565492126b723a051a181270ef7b18e8153c38c0898"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "fea353084a83d3eb89a91e8b",
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "1746b28ba2ef9c5949bb14474b53c18c04aa25f1cc6d2508203d4389e23790cd"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "fae6b4a66eac0ac7e3cdf896",
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "5678b8a67982c12da7a17a1983308836aadb82d139cbdd25ef02815fc0873a7d"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "6c35fd44ad3299dbe8df9207",
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9c516f647f2ab31ecee60c711a3e1fd72de217fa7abd0af3b08005c2a03a37e3"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "8b19f2cee4c5828ee91f6cf9",
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "00b37fe5cae260ae0b691e5b8dd7523dd4e83c3f56254cea08c1ebe2d5611815"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "815e563aa7342ad0ea6d02fd",
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "149040faebcf2d79ee50b906e768052c8f5551e9e75363ff3a31d8317acf495e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "a55e509d7167962c62f37f25",
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "04537ec75fe37ad11f05119da20b1ca05c9d50a878a3dd897311374c7437a12e"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "0530b8bb2b805877315579ec",
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "0dee36ec3945066bef32301ddb1e314d7392f1d70d175448dcba186195c018c1"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "b6837129cb81dbd6cb44f333",
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "7e904b426282beea8e7be823aca1e90b52f3af5190544292a752c348e1fb0026"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "9852bdf0905e062820069371",
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "5f0fbfd53924d2a391d73e45ee9a4b285e1c8dadd773f972f645b35f8660bb54"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "8fa8dc8c7d70843177f5de40",
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "838d746b828fb798c857dee4130545b1a64cee87312dda4826e710e8e264a838"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "d60e545f9ca588f9c5d593fb",
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9646921ad69c455c4a5fe88ca4db20c4dd1beec643012ebe42cd31ee9ca1d9a8"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "709f8622c83158ca03fbd7e0",
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "550139548ef2f42743d1f305cc0fc9e7e338d65173099d4becfecc1f6f4d4acc"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "f6b377d97cee6f74a6a14b79",
+      "source_key": "motions-low-climb-76/right_45_walk0.6s_step1.2s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "9bf24a5e021241aea88056de2cef969c5d37eb614fa88838b26dfc5531e6f185"
+    },
+    {
+      "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+      "task_id": "b98a8605f3079ced77cf2aa3",
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step0.7s",
+      "accepted": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quality_sha256": "cfbe2c296332aac05ea38c7f5263924e8d3942408b4a73b22164b1eb879e2888"
+    }
+  ],
+  "inflight_receipts": [],
+  "targets": [
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "frames": 605,
+      "solve_variant": 0,
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reasons": [
+        "self_collision",
+        "terrain_penetration"
+      ],
+      "seed_quality_sha256": "b12a931ada7082f99ede27718bd41070f02ec4e5a4eb666df31f1862e3f1e3d4"
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "frames": 679,
+      "solve_variant": 0,
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reasons": [
+        "self_collision",
+        "terrain_penetration"
+      ],
+      "seed_quality_sha256": "e70080830b952fecefe372a096d21ade9743f883509ca0a74d95f20d149ae555"
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "frames": 635,
+      "solve_variant": 0,
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reasons": [
+        "self_collision",
+        "terrain_penetration"
+      ],
+      "seed_quality_sha256": "b5d92c33d31e7d048f24c263e135dca2e793ec7781544315a776a93e7487c233"
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "frames": 735,
+      "solve_variant": 0,
+      "missing_variants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reasons": [
+        "self_collision"
+      ],
+      "seed_quality_sha256": "677686caf648b6323abe34e66f0d253e3e2010867779192d11f8a849ddaa5292"
+    }
+  ],
+  "sources": 4,
+  "frames": 2654,
+  "missing_original_slots": 40
+}

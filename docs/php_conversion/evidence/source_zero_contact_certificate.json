@@ -1,0 +1,46 @@
+{
+  "scope": "Analytic separating-plane certificate using every source mesh vertex and exact box interval; independent of native distance query",
+  "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+  "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+  "labels_hash": "43721116d377c1f0131f5429b8c487b9a4282dcb4e7d558c6f56793e6513d8ed",
+  "rows": [
+    {
+      "frame": 488,
+      "geom": 14,
+      "terrain_geom": 1,
+      "projected_mesh_interval": [
+        0.4134251194558301,
+        0.7420285328193983
+      ],
+      "box_interval": [
+        -0.38191011,
+        0.38191011
+      ],
+      "axis_world": [
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "separation_lower_bound_m": 0.03151500945583008
+    },
+    {
+      "frame": 491,
+      "geom": 14,
+      "terrain_geom": 1,
+      "projected_mesh_interval": [
+        0.41465520829921393,
+        0.7374591262729202
+      ],
+      "box_interval": [
+        -0.38191011,
+        0.38191011
+      ],
+      "axis_world": [
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "separation_lower_bound_m": 0.032745098299213904
+    }
+  ]
+}

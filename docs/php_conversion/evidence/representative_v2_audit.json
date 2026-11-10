@@ -1,0 +1,21 @@
+{
+  "run_id": "representative_v2",
+  "identity": "d0ddfff21ac566077c58f916288c3172dfdff86152aa85e5efde3c25c0a91ebc",
+  "verified": true,
+  "sources": 10,
+  "unique_source_files": 9,
+  "frames": 3062,
+  "checked_variants": 100,
+  "accepted_variants": 10,
+  "statuses": {
+    "accepted": 1,
+    "rejected": 9
+  },
+  "checked_output_hashes": 54,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 61.04,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+    "task_id": "ff0978c1036385f5fa575643"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+    "task_id": "34451be3af922e392f54c566"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+    "task_id": "04a0e1459ba59f24df83b11e"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v26_native_velocity_pilot_20261110",
+    "task_id": "ecc6adea9ef4b47fae886752"
+  },
+  {
+    "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+    "task_id": "e04798fc0ca1ac072b03512d"
+  }
+]

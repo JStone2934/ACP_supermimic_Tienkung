@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v21_terrain_pilot_20261110",
+  "identity": "94bf534e01789ffd6423736177e3eb63d70251f361edd8628178667c62c0f5b6",
+  "verified": true,
+  "sources": 4,
+  "unique_source_files": 4,
+  "frames": 4871,
+  "checked_variants": 40,
+  "accepted_variants": 29,
+  "statuses": {
+    "accepted": 4
+  },
+  "checked_output_hashes": 36,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 97.34,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

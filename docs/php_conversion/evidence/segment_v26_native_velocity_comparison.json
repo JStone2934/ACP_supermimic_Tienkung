@@ -1,0 +1,901 @@
+{
+  "scope": "20 complete sources/all200 original variants versus identical v25 source records and original seeds; complete root metrics preserved",
+  "accepted_variants": 188,
+  "new_vs_v25": 20,
+  "lost_vs_v25": 0,
+  "new_vs_seed": 119,
+  "lost_vs_seed": 0,
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "6514c775f9d7881af52c5e5b69c0dfac8ef5101870c0b62af9dae4999c520ec1",
+      "prior_quality_sha256": "038315cffaa18204c3a9673d75f37d6828c5d4df28b4f8af97f0dd34ee115581",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "frames": 260,
+      "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "31e9b21faef27b1fe8101bdb403d082306fe7ff1ca933dffa4fd0a0902e134b8",
+      "prior_quality_sha256": "a9376d067981169d9f7e5565492126b723a051a181270ef7b18e8153c38c0898",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "frames": 413,
+      "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "8dbd1e9a0fff5c7128d29dec351c398ab3f92b943664e49e981d1a51feaee725",
+      "prior_quality_sha256": "1746b28ba2ef9c5949bb14474b53c18c04aa25f1cc6d2508203d4389e23790cd",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "frames": 455,
+      "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "80f82772cf340eeee4d5cb50af4889f921d11e871dc250d03718d39d7aa7efb7",
+      "prior_quality_sha256": "5678b8a67982c12da7a17a1983308836aadb82d139cbdd25ef02815fc0873a7d",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "frames": 894,
+      "source_sha256": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "7dfd561c3cfb9de323600b6dd2dff9f9d89431393054d879e0be0eff908bc35b",
+      "prior_quality_sha256": "9c516f647f2ab31ecee60c711a3e1fd72de217fa7abd0af3b08005c2a03a37e3",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "frames": 870,
+      "source_sha256": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "prior_v25": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "2ef35baeca43007589e6fa95f5cbf20fe59442604d08bd87cfb1dddb576917e7",
+      "prior_quality_sha256": "00b37fe5cae260ae0b691e5b8dd7523dd4e83c3f56254cea08c1ebe2d5611815",
+      "variant_reasons": {
+        "2": [
+          "right_knee:support_distance",
+          "right_knee:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "frames": 568,
+      "source_sha256": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "b8fa8355b4f7b3358199a916c4bcc709f9af7891e33550e9bfdd47812cac0161",
+      "prior_quality_sha256": "149040faebcf2d79ee50b906e768052c8f5551e9e75363ff3a31d8317acf495e",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "frames": 1142,
+      "source_sha256": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "60825e348ff6b8da20f08e0adcbb0b17ed1dd45c7e1266b85f15c88bf7f90d7c",
+      "prior_quality_sha256": "04537ec75fe37ad11f05119da20b1ca05c9d50a878a3dd897311374c7437a12e",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+      "frames": 837,
+      "source_sha256": "882f4cef0413252265d6f3ad1f05355dd68c866afb5f5d82061dd3563cd82931",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "e7dbc0a5dd32e73f1e4afc34cda077918f0229c0703542bcdf39ebcf5595435e",
+      "prior_quality_sha256": "0dee36ec3945066bef32301ddb1e314d7392f1d70d175448dcba186195c018c1",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step0.7s",
+      "frames": 838,
+      "source_sha256": "3cc238b82cf8aed00fa40b002da03fdd7c47af57b79ba37a462f311da316cdbf",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "2bea2af470bc2d012efbb36c8487ddf23660fbd65b859698fccf91bc5187f3d3",
+      "prior_quality_sha256": "7e904b426282beea8e7be823aca1e90b52f3af5190544292a752c348e1fb0026",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step0.7s",
+      "frames": 850,
+      "source_sha256": "aef0f0b4d7bf99132558ff1df1454c745d2babe7f7cd9d7eee540605b9065f70",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "d50190bc97298696ef4cec4d905f0d687854f0ef0cc83e08b4c707699d32cae5",
+      "prior_quality_sha256": "5f0fbfd53924d2a391d73e45ee9a4b285e1c8dadd773f972f645b35f8660bb54",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step1.2s",
+      "frames": 857,
+      "source_sha256": "a535718f9af152811ded4764aab8c0df531ed33a459bd5c52d74e77db3930496",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "2c1e39093ed10ccd7951bdb1fcb36812621a5871c939f6e9974e70a1b140636f",
+      "prior_quality_sha256": "838d746b828fb798c857dee4130545b1a64cee87312dda4826e710e8e264a838",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "frames": 800,
+      "source_sha256": "75f1a79e2c45fef570ad6ac170825449fc4aaf8dce888cfd4b83532ad85dded9",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "9c28b8dd4871537bf6400b76c93bbf1b6677f9c3715e1cd0bf63715ef8271ed0",
+      "prior_quality_sha256": "9646921ad69c455c4a5fe88ca4db20c4dd1beec643012ebe42cd31ee9ca1d9a8",
+      "variant_reasons": {
+        "3": [
+          "left_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.6s_step0.7s",
+      "frames": 790,
+      "source_sha256": "f12494ff4dd20704d8314b51bb9973df2e819385a97a2c9fecc8881238e32e89",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "cf7c0e615c3ff32ca37ad2775de2ee91977e2649d02294a350b9a402c485184f",
+      "prior_quality_sha256": "550139548ef2f42743d1f305cc0fc9e7e338d65173099d4becfecc1f6f4d4acc",
+      "variant_reasons": {
+        "3": [
+          "right_hand:support_slip"
+        ],
+        "4": [
+          "right_hand:support_slip"
+        ],
+        "5": [
+          "right_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk0.6s_step1.2s",
+      "frames": 795,
+      "source_sha256": "dbd274ecdb1c7e541f53c2eb6450efc0ee0ede421df81df0985601eec48b10da",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "f9ca1f84ecd23cb5113a250d48ceb3bd0a5bf5bc9b4be7f3ea759e27c3edfc01",
+      "prior_quality_sha256": "9bf24a5e021241aea88056de2cef969c5d37eb614fa88838b26dfc5531e6f185",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/right_45_walk1.5s_step0.7s",
+      "frames": 822,
+      "source_sha256": "8b8ca04c571a145b10083f0755ff6833ffbc895b91ecfc9a2503cae95e0daa0f",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "5a5231906c83e808c1516c81e5aaa65d019a83d73fb5b457b85998e1aa190f6c",
+      "prior_quality_sha256": "cfbe2c296332aac05ea38c7f5263924e8d3942408b4a73b22164b1eb879e2888",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-high-climb-76/run_left_90_1.0s_step0s",
+      "frames": 605,
+      "source_sha256": "de89a5a9b4a6dfe9848ee421a23b5fe1ced76c8af920bf4798f2aeb11955ba9b",
+      "prior_v25": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "c27a801babc787953008c97fd3f1ac45d3113f723b8d40cfcca29bb227be5980",
+      "prior_quality_sha256": "999436e6cb2f320a17a9f9cd370419887fecc3a8f0fcf0b9ce7d7e57b1d258fc",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_45_1.2s_step0.8s",
+      "frames": 679,
+      "source_sha256": "7099634c6be1ddc32310578a423fa8e15313f89a22377f6ab3a84877d2089ccc",
+      "prior_v25": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "61deb2cf023f249a5899c1a5eb4d90696ad7e73bf298d7cb34d927e09a8bf751",
+      "prior_quality_sha256": "0562eb684694d7ae7a868aecc93a1393c3b306c724163733a9f2504a1470364d",
+      "variant_reasons": {
+        "3": [
+          "right_hand:support_slip"
+        ]
+      }
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0.8s",
+      "frames": 635,
+      "source_sha256": "ed37a063271498ec53f9420b5441a5657e9f74c7be95df34736b3b40662cc694",
+      "prior_v25": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new_vs_v25": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "ba31229454cde213be42a243520a4275cb22d3308f0f67c43dc9bebf54cf62a2",
+      "prior_quality_sha256": "7cd9ef616f0c621a0dcd4cc92befb5180d251ea16f81fb3bc0729d498c72afef",
+      "variant_reasons": {}
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk0.6s_step0.7s",
+      "frames": 735,
+      "source_sha256": "a990e4da834e151fe2def681ea7b9498212eec9e2bb13ae097f942de92528202",
+      "prior_v25": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "after": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "new_vs_v25": [],
+      "lost_vs_v25": [],
+      "new_vs_seed": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "lost_vs_seed": [],
+      "root_metrics_exactly_preserved": true,
+      "quality_sha256": "9bb6cb39d1a5f57dbcdf87cdf5ad4a214862a2b316cf0b37000d4d7352be954c",
+      "prior_quality_sha256": "8544ddb3ca0beedcf87baf58d7a876c2faac52e4a362de9fe78f4d61735c1de0",
+      "variant_reasons": {
+        "1": [
+          "right_hand:support_distance",
+          "right_hand:support_slip"
+        ],
+        "4": [
+          "right_hand:support_slip"
+        ],
+        "6": [
+          "right_hand:support_slip"
+        ],
+        "7": [
+          "right_hand:support_slip"
+        ],
+        "8": [
+          "right_hand:support_slip"
+        ],
+        "9": [
+          "right_hand:support_slip"
+        ]
+      }
+    }
+  ]
+}

@@ -28,7 +28,11 @@ import torch
 from supermimic.acp.php_conversion import (COLLISION_POLICY, VERSION, FullBodyRetargeter, SolverConfig,
                                          atomic_json, atomic_npz, digest, discover)
 from supermimic.acp.robots import ROOT, get_robot, sha256
+from supermimic.acp.source_contacts import SOURCE_CONTACT_POLICY
+from supermimic.acp.root_continuity import POLICY as ROOT_POLICY
 from supermimic.acp.terrain import terrain_path
+from supermimic.acp.retarget_fidelity import POLICY as FIDELITY_POLICY, POSTURE_POLICY
+from supermimic.acp.contact_intent import POLICY as CONTACT_INTENT_POLICY, PATCH_POLICY
 from tools.check_php_conversion import collision_evidence, evaluate_task
 
 TERMINAL = ('accepted', 'rejected', 'failed')
@@ -36,7 +40,7 @@ TERMINAL = ('accepted', 'rejected', 'failed')
 
 def source_fingerprint():
     paths = sorted((ROOT/'supermimic').rglob('*.py')) + [ROOT/'tools'/n for n in
-                  ('convert_php.py', 'check_php_conversion.py', 'check_php_pilot.py', 'retarget_php_pilot.py')]
+                  ('convert_php.py', 'check_php_conversion.py', 'check_php_pilot.py', 'retarget_php_pilot.py', 'polish_php_conversion.py')]
     return {str(p.relative_to(ROOT)): sha256(p) for p in paths}
 
 
@@ -106,6 +110,12 @@ def gpu_worker(device, config, tasks, events, root):
                 atomic_npz(dest.with_name(dest.name.replace('_motion.npz', '_intent.npz')),
                            **intents, body_names=np.array(list(solver.dst.contact_bodies)),
                            segments=json.dumps({str(v): p['segments'] for v, p in variants.items()}),
+                           incidental_segments=json.dumps({str(v): p['incidental_segments'] for v, p in variants.items()}),
+                           contact_aliases=json.dumps({str(v): p['contact_aliases'] for v, p in variants.items()}),
+                           source_contact_validation=json.dumps({str(v): p['source_contact_validation'] for v, p in variants.items()}),
+                           source_contact_validation_policy=json.dumps(SOURCE_CONTACT_POLICY),
+                           contact_patch_policy=json.dumps(PATCH_POLICY),
+                           contact_intent_policy=json.dumps(CONTACT_INTENT_POLICY),
                            source_variants=np.arange(record['variants']), task_id=task['id'])
                 events.put(('solved', task['id'], dict(device=device, worker_pid=os.getpid(), windows=stats,
                             solve_seconds=time.monotonic()-started, candidate_files=output_hashes(root, task))))
@@ -143,14 +153,16 @@ def aggregate(root, plan, states):
                    expected_variants=sum(t['record']['variants'] for t in plan['tasks']),
                    all_terminal=all(states[t['id']]['status'] in TERMINAL for t in plan['tasks']),
                    accepted=accepted, status='running', robot_metadata=plan['robot_metadata'],
-                   collision_policy=COLLISION_POLICY, pd_status='not_run', learned_tracking_status='not_run')
+                   collision_policy=COLLISION_POLICY, fidelity_policy=plan.get('fidelity_policy'),
+                   posture_policy=plan.get('posture_policy'), pd_status='not_run', learned_tracking_status='not_run')
     if summary['all_terminal']:
         summary['status'] = 'completed_with_failures' if counts['failed'] else 'completed'
     atomic_json(Path(root)/'manifest.json', summary)
     if accepted:
         atomic_json(Path(root)/'accepted'/'manifest.json', dict(run_id=plan['run_id'], parent='../manifest.json',
                     robot_metadata=plan['robot_metadata'], collision_policy=COLLISION_POLICY, clips=accepted,
-                    split_manifest='../splits.json', policy='all exported variants pass independent full-body geometry'))
+                    split_manifest='../splits.json', policy='all exported variants pass every declared independent quality gate',
+                    fidelity_policy=plan.get('fidelity_policy'), posture_policy=plan.get('posture_policy')))
     return summary
 
 
@@ -259,20 +271,25 @@ def execute(root, plan, args):
             if proc.is_alive() or proc.exitcode:
                 raise RuntimeError(f'GPU worker {proc.pid} did not exit cleanly')
     finally:
+        interrupted = sys.exc_info()[1]
         for proc in workers:
             if proc.is_alive():
                 proc.terminate()
                 proc.join(timeout=10)
         pool.shutdown(wait=True, cancel_futures=True)
-        aggregate(root, plan, states)
+        summary = aggregate(root, plan, states)
+        if interrupted is not None:
+            summary.update(status='interrupted', interruption_reason=str(interrupted))
+            atomic_json(root/'manifest.json', summary)
     for state in states.values():
         if state['status'] in ('accepted', 'rejected'):
             verify_task(root, state)
     return aggregate(root, plan, states)
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--polish-seeds', type=Path, help='Refine committed candidates with CPU workers through the normal protected controller entry')
     ap.add_argument('--source', default='data/php_parkour')
     ap.add_argument('--contacts', default='data/php_parkour_contacts')
     ap.add_argument('--out', required=True, type=Path)
@@ -287,10 +304,22 @@ def main():
     ap.add_argument('--window-frames', type=int, default=512)
     ap.add_argument('--overlap', type=int, default=48)
     ap.add_argument('--no-graph', action='store_true')
+    ap.add_argument('--collision-rounds', type=int, default=12)
+    ap.add_argument('--collision-iterations', type=int, default=400)
     ap.add_argument('--only', nargs='+')
     ap.add_argument('--selections', type=Path, help='JSON list: source_key, key, start, end, solve_variant (optional)')
     ap.add_argument('--solve-variant', type=int, default=0)
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
+    if args.polish_seeds is not None:
+        if args.workers_per_gpu != 0 or args.cpu_workers < 1:
+            ap.error('native seed refinement requires --workers-per-gpu 0 and positive --cpu-workers')
+        if args.selections or args.only or args.retry_failed:
+            ap.error('native seed refinement uses --polish-seeds, not selection or retry flags')
+        from tools.polish_php_conversion import main as polish_main
+        forwarded=['--seeds',str(args.polish_seeds),'--out',str(args.out),'--workers',str(args.cpu_workers)]
+        if args.scan:forwarded.append('--scan')
+        if args.resume:forwarded.append('--resume')
+        return polish_main(forwarded)
     if min(args.workers_per_gpu, args.cpu_workers, args.max_attempts) < 1:
         ap.error('worker and attempt counts must be positive')
     os.environ['OPENBLAS_NUM_THREADS'] = '1'
@@ -327,11 +356,14 @@ def main():
             raise ValueError('output keys must be category/name without path traversal')
         if not 0 <= record.get('solve_variant', args.solve_variant) < record['variants']:
             raise ValueError('solve variant out of range')
-    config = SolverConfig(iterations=args.iterations, window_frames=args.window_frames, overlap=args.overlap, graph=not args.no_graph)
+    config = SolverConfig(iterations=args.iterations, window_frames=args.window_frames, overlap=args.overlap, graph=not args.no_graph,
+                          collision_rounds=args.collision_rounds, collision_iterations=args.collision_iterations)
     metadata = get_robot('tienkung3_29dof').metadata()
     identity = dict(version=VERSION, solver=asdict(config), code=source_fingerprint(), robot_metadata=metadata,
                     source_robot_files={str(p.relative_to(ROOT)): sha256(p) for p in sorted((ROOT/'data/g1_description').rglob('*')) if p.is_file()},
-                    collision_policy=COLLISION_POLICY)
+                    collision_policy=COLLISION_POLICY, fidelity_policy=FIDELITY_POLICY, posture_policy=POSTURE_POLICY,
+                    contact_intent_policy=CONTACT_INTENT_POLICY, contact_patch_policy=PATCH_POLICY,
+                    source_contact_validation_policy=SOURCE_CONTACT_POLICY, root_continuity_policy=ROOT_POLICY)
     tasks = []
     for record in records:
         variant = record.get('solve_variant', args.solve_variant)

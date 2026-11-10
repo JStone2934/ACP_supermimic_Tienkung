@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v24_knee_terrain_20261110",
+  "identity": "d84541cb54b3d025a30dbfc2453353a0a774e0a49ca491072d63f4e9e410611d",
+  "verified": true,
+  "sources": 1,
+  "unique_source_files": 1,
+  "frames": 770,
+  "checked_variants": 10,
+  "accepted_variants": 10,
+  "statuses": {
+    "accepted": 1
+  },
+  "checked_output_hashes": 9,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 15.38,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

@@ -1,0 +1,8 @@
+..../home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v24/frozen_runner/tools/test_php_collision_pairs.py:22: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertEqual(float(value),0.)
+..............................................................
+----------------------------------------------------------------------
+Ran 66 tests in 72.739s
+
+OK

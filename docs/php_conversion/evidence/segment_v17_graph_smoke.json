@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "scope": "CUDA graph and speed projection smoke only; soft torso remains independently checked on full sequences",
+  "frames": 24,
+  "metrics": [
+    {
+      "case": "free",
+      "max_joint_speed_ratio": 0.5504788813713547,
+      "cuda_graph": true
+    },
+    {
+      "case": "fixed_prefix",
+      "max_joint_speed_ratio": 0.5504788813713547,
+      "cuda_graph": true
+    }
+  ]
+}

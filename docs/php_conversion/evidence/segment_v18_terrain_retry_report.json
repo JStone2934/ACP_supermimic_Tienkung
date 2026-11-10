@@ -1,0 +1,20 @@
+{
+  "run_id": "php_segment_v18_terrain_retry_20261109",
+  "identity": "085d3af1405854d166a1a83198286a19db7963732dc81374b9fea10de514d395",
+  "verified": true,
+  "sources": 27,
+  "unique_source_files": 11,
+  "frames": 14470,
+  "checked_variants": 270,
+  "accepted_variants": 232,
+  "statuses": {
+    "accepted": 27
+  },
+  "checked_output_hashes": 243,
+  "inventory": null,
+  "full_library": false,
+  "split_status": "development_only: primitive source family provenance is insufficient for independent evaluation",
+  "motion_time_s": 288.8599999999999,
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

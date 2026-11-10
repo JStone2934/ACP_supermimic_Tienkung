@@ -1,0 +1,530 @@
+[
+  {
+    "manifest": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_success_previews_v3_20261109/comparison/manifest.json",
+    "manifest_sha256": "ebeb751f16adca67bc08c9fce06ced5fcaa3d8899a2218bff5c7474b27a351e1",
+    "method": "Native MuJoCo FK; neutral-calibrated body up axis projected into source root heading/up plane; positive is forward; unchanged source frame timing",
+    "acceptance_status": "diagnostic_only",
+    "clips": [
+      {
+        "name": "01_straight",
+        "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+        "frames": 269,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_repair_v3_20261109/accepted/motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s_motion.npz",
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "target_sha256": "3557b9681fcafa30b8889133636f21a6eb4ad9fa1da91b3a0c50f99af9fad2ad",
+        "pelvis": {
+          "source_mean_deg": 5.233553626409408,
+          "target_mean_deg": 3.6715967631120043,
+          "added_forward_mean_deg": -1.5619568632974044,
+          "error_rmse_deg": 3.050031442663311,
+          "error_abs_p95_deg": 7.191880453980017,
+          "added_forward_max_deg": 6.506302057785774,
+          "error_abs_max_deg": 11.846323796030902,
+          "first_second": {
+            "source_mean_deg": 2.5909033628380467,
+            "target_mean_deg": 1.708970990122149,
+            "added_forward_mean_deg": -0.8819323727159007,
+            "error_rmse_deg": 0.8833630543519936,
+            "error_abs_p95_deg": 0.9719550463770347,
+            "added_forward_max_deg": -0.7658453057539703,
+            "error_abs_max_deg": 1.0209816596887151
+          },
+          "last_second": {
+            "source_mean_deg": 2.5988227225553984,
+            "target_mean_deg": 1.6848731545390276,
+            "added_forward_mean_deg": -0.9139495680163708,
+            "error_rmse_deg": 0.9294658930025196,
+            "error_abs_p95_deg": 1.202435605995005,
+            "added_forward_max_deg": -0.5718254732370838,
+            "error_abs_max_deg": 1.4175339138695051
+          }
+        },
+        "torso": {
+          "source_mean_deg": 8.904343589951592,
+          "target_mean_deg": 10.488105290574257,
+          "added_forward_mean_deg": 1.5837617006226643,
+          "error_rmse_deg": 14.059716223307305,
+          "error_abs_p95_deg": 31.686990594391823,
+          "added_forward_max_deg": 11.122209347016963,
+          "error_abs_max_deg": 42.41458233625457,
+          "first_second": {
+            "source_mean_deg": 2.9518893725612414,
+            "target_mean_deg": 13.561845655693688,
+            "added_forward_mean_deg": 10.609956283132444,
+            "error_rmse_deg": 10.610084109771739,
+            "error_abs_p95_deg": 10.71378601319552,
+            "added_forward_max_deg": 10.72325623355809,
+            "error_abs_max_deg": 10.72325623355809
+          },
+          "last_second": {
+            "source_mean_deg": 4.060822273362522,
+            "target_mean_deg": 12.262318824583025,
+            "added_forward_mean_deg": 8.201496551220504,
+            "error_rmse_deg": 9.284295621205493,
+            "error_abs_p95_deg": 10.996640096313273,
+            "added_forward_max_deg": 11.122209347016963,
+            "error_abs_max_deg": 11.122209347016963
+          }
+        }
+      },
+      {
+        "name": "02_turn",
+        "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+        "frames": 260,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_repair_v3_20261109/accepted/motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s_motion.npz",
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "target_sha256": "c5bef6a6742cbf65068ed73c02ec152912914e03566185f0e9286886ebdaca94",
+        "pelvis": {
+          "source_mean_deg": 4.390015420563633,
+          "target_mean_deg": 3.8754690473677122,
+          "added_forward_mean_deg": -0.5145463731959203,
+          "error_rmse_deg": 1.7336610806096662,
+          "error_abs_p95_deg": 3.8366147653371514,
+          "added_forward_max_deg": 4.295830264861763,
+          "error_abs_max_deg": 7.65638786941642,
+          "first_second": {
+            "source_mean_deg": 2.5909033628380467,
+            "target_mean_deg": 1.8592679436661923,
+            "added_forward_mean_deg": -0.7316354191718557,
+            "error_rmse_deg": 0.7318487363179771,
+            "error_abs_p95_deg": 0.7685990372399146,
+            "added_forward_max_deg": -0.7000678013802712,
+            "error_abs_max_deg": 0.7752097529325397
+          },
+          "last_second": {
+            "source_mean_deg": 2.970871377538648,
+            "target_mean_deg": 2.159188920252026,
+            "added_forward_mean_deg": -0.8116824572866205,
+            "error_rmse_deg": 0.8522745698529064,
+            "error_abs_p95_deg": 1.313531913637355,
+            "added_forward_max_deg": -0.15198612368465092,
+            "error_abs_max_deg": 1.3886888178338381
+          }
+        },
+        "torso": {
+          "source_mean_deg": 6.340072213289923,
+          "target_mean_deg": 9.08461355133435,
+          "added_forward_mean_deg": 2.744541338044427,
+          "error_rmse_deg": 13.331677381439784,
+          "error_abs_p95_deg": 30.801390478511973,
+          "added_forward_max_deg": 11.519249334707325,
+          "error_abs_max_deg": 35.22053330995578,
+          "first_second": {
+            "source_mean_deg": 2.9518893725612414,
+            "target_mean_deg": 13.751622791423157,
+            "added_forward_mean_deg": 10.799733418861917,
+            "error_rmse_deg": 10.79973967802038,
+            "error_abs_p95_deg": 10.81503631482642,
+            "added_forward_max_deg": 10.83124878717095,
+            "error_abs_max_deg": 10.83124878717095
+          },
+          "last_second": {
+            "source_mean_deg": 3.341336630706098,
+            "target_mean_deg": 12.344815344987408,
+            "added_forward_mean_deg": 9.003478714281307,
+            "error_rmse_deg": 9.613523444882544,
+            "error_abs_p95_deg": 11.172953842677734,
+            "added_forward_max_deg": 11.519249334707325,
+            "error_abs_max_deg": 11.519249334707325
+          }
+        }
+      },
+      {
+        "name": "03_low_step",
+        "source_key": "motions-low-step/forward_walk1.2s_step0s",
+        "frames": 413,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-step/forward_walk1.2s_step0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_full_v2_20261109/accepted/motions-low-step/forward_walk1.2s_step0s_motion.npz",
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "target_sha256": "e7becf6780bb88aaa045aaa6d38c9c04389cb2d946d6d9664c7acb3601051d22",
+        "pelvis": {
+          "source_mean_deg": 1.8272095055007969,
+          "target_mean_deg": 0.34746041367662456,
+          "added_forward_mean_deg": -1.4797490918241725,
+          "error_rmse_deg": 3.399205158537725,
+          "error_abs_p95_deg": 6.440379976083814,
+          "added_forward_max_deg": 6.574848189334176,
+          "error_abs_max_deg": 19.97240016291846,
+          "first_second": {
+            "source_mean_deg": 2.590903350034716,
+            "target_mean_deg": 1.6334745102010328,
+            "added_forward_mean_deg": -0.9574288398336824,
+            "error_rmse_deg": 0.9574288436773181,
+            "error_abs_p95_deg": 0.9574695064944236,
+            "added_forward_max_deg": -0.9570974288447758,
+            "error_abs_max_deg": 0.957477202049688
+          },
+          "last_second": {
+            "source_mean_deg": 2.590903352582757,
+            "target_mean_deg": 1.6227624054493797,
+            "added_forward_mean_deg": -0.9681409471333763,
+            "error_rmse_deg": 0.9681410009064637,
+            "error_abs_p95_deg": 0.9683890163616724,
+            "added_forward_max_deg": -0.9672541015418119,
+            "error_abs_max_deg": 0.968400328667343
+          }
+        },
+        "torso": {
+          "source_mean_deg": 7.616554591197376,
+          "target_mean_deg": 15.279725416516772,
+          "added_forward_mean_deg": 7.663170825319398,
+          "error_rmse_deg": 11.367955243601225,
+          "error_abs_p95_deg": 15.991374165134369,
+          "added_forward_max_deg": 17.028827409650972,
+          "error_abs_max_deg": 29.30855429320303,
+          "first_second": {
+            "source_mean_deg": 2.951889357089867,
+            "target_mean_deg": 14.901921691701917,
+            "added_forward_mean_deg": 11.950032334612052,
+            "error_rmse_deg": 11.950038870044736,
+            "error_abs_p95_deg": 11.95512373434821,
+            "added_forward_max_deg": 11.955516938176515,
+            "error_abs_max_deg": 11.955516938176515
+          },
+          "last_second": {
+            "source_mean_deg": 2.951889362305951,
+            "target_mean_deg": 14.910156135870631,
+            "added_forward_mean_deg": 11.95826677356468,
+            "error_rmse_deg": 11.958266774350943,
+            "error_abs_p95_deg": 11.958567887394478,
+            "added_forward_max_deg": 11.958696785495505,
+            "error_abs_max_deg": 11.958696785495505
+          }
+        }
+      },
+      {
+        "name": "04_high_step",
+        "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+        "frames": 455,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-step/run_forward_0.9s_step1.0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_repair_v3_20261109/accepted/motions-high-step/run_forward_0.9s_step1.0s_motion.npz",
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "target_sha256": "1a5bb415ca730ed2caf87669c1ddfd29ee63d3c534d81d2154ef8fd8fd9979cf",
+        "pelvis": {
+          "source_mean_deg": 5.7772128075717415,
+          "target_mean_deg": 4.0666806120409005,
+          "added_forward_mean_deg": -1.7105321955308421,
+          "error_rmse_deg": 3.7127684397555605,
+          "error_abs_p95_deg": 8.256572022041361,
+          "added_forward_max_deg": 6.245557984860454,
+          "error_abs_max_deg": 13.59893414362358,
+          "first_second": {
+            "source_mean_deg": 2.5909033457669386,
+            "target_mean_deg": 1.7638753816865544,
+            "added_forward_mean_deg": -0.8270279640803847,
+            "error_rmse_deg": 0.827359375975828,
+            "error_abs_p95_deg": 0.8614650388315909,
+            "added_forward_max_deg": -0.7643343359863763,
+            "error_abs_max_deg": 0.8816751252010988
+          },
+          "last_second": {
+            "source_mean_deg": 2.5908814155385316,
+            "target_mean_deg": 1.7577621598943225,
+            "added_forward_mean_deg": -0.8331192556442113,
+            "error_rmse_deg": 0.8380000559445515,
+            "error_abs_p95_deg": 0.9057773758641715,
+            "added_forward_max_deg": -0.39455068083907463,
+            "error_abs_max_deg": 1.0020443780990433
+          }
+        },
+        "torso": {
+          "source_mean_deg": 12.034852270069315,
+          "target_mean_deg": 7.405406215768364,
+          "added_forward_mean_deg": -4.629446054300952,
+          "error_rmse_deg": 16.199808711087673,
+          "error_abs_p95_deg": 26.85322321676365,
+          "added_forward_max_deg": 17.247734152112344,
+          "error_abs_max_deg": 36.86742341791634,
+          "first_second": {
+            "source_mean_deg": 2.95188934535157,
+            "target_mean_deg": 15.15785294604912,
+            "added_forward_mean_deg": 12.20596360069755,
+            "error_rmse_deg": 12.205998180795344,
+            "error_abs_p95_deg": 12.256159875534532,
+            "added_forward_max_deg": 12.269572006863683,
+            "error_abs_max_deg": 12.269572006863683
+          },
+          "last_second": {
+            "source_mean_deg": 2.9518674978325077,
+            "target_mean_deg": 15.216444235983777,
+            "added_forward_mean_deg": 12.26457673815127,
+            "error_rmse_deg": 12.264865509119089,
+            "error_abs_p95_deg": 12.38914221797599,
+            "added_forward_max_deg": 12.654449247190513,
+            "error_abs_max_deg": 12.654449247190513
+          }
+        }
+      }
+    ]
+  },
+  {
+    "manifest": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/php_segment_v20_previews_20261110/comparison/manifest.json",
+    "manifest_sha256": "d6c0cd7624272f15c71e5dd36485563e86d4ac85bbdca96332b27801ae824963",
+    "method": "Native MuJoCo FK; neutral-calibrated body up axis projected into source root heading/up plane; positive is forward; unchanged source frame timing",
+    "acceptance_status": "diagnostic_only",
+    "clips": [
+      {
+        "name": "01_straight",
+        "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+        "frames": 269,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/accepted/motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s_motion.npz",
+        "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+        "target_sha256": "ab5f8be5d4e4b1496a63421a3a46137a4aed6a04ee0bf07939e206fe5574ff78",
+        "pelvis": {
+          "source_mean_deg": 5.233553626409408,
+          "target_mean_deg": 5.005441371196766,
+          "added_forward_mean_deg": -0.22811225521264342,
+          "error_rmse_deg": 1.2578508996839093,
+          "error_abs_p95_deg": 2.6807214250133082,
+          "added_forward_max_deg": 5.9814931516191905,
+          "error_abs_max_deg": 9.556590010664308,
+          "first_second": {
+            "source_mean_deg": 2.5909033628380467,
+            "target_mean_deg": 2.4813261002216533,
+            "added_forward_mean_deg": -0.10957726261639379,
+            "error_rmse_deg": 0.18217127668464989,
+            "error_abs_p95_deg": 0.2874982108319727,
+            "added_forward_max_deg": 0.1359773210530193,
+            "error_abs_max_deg": 0.33729972107607864
+          },
+          "last_second": {
+            "source_mean_deg": 2.5988227225553984,
+            "target_mean_deg": 2.5482485552338954,
+            "added_forward_mean_deg": -0.05057416732150273,
+            "error_rmse_deg": 0.22895510637181699,
+            "error_abs_p95_deg": 0.4904985211182885,
+            "added_forward_max_deg": 0.5905305047545255,
+            "error_abs_max_deg": 0.5905305047545255
+          }
+        },
+        "torso": {
+          "source_mean_deg": 8.904343589951592,
+          "target_mean_deg": 8.90721020587599,
+          "added_forward_mean_deg": 0.002866615924395718,
+          "error_rmse_deg": 0.16282911251492735,
+          "error_abs_p95_deg": 0.0978405060590887,
+          "added_forward_max_deg": 1.5787279622296353,
+          "error_abs_max_deg": 1.6164219879809423,
+          "first_second": {
+            "source_mean_deg": 2.9518893725612414,
+            "target_mean_deg": 2.9560358873525194,
+            "added_forward_mean_deg": 0.004146514791277696,
+            "error_rmse_deg": 0.022150415980578573,
+            "error_abs_p95_deg": 0.037411006075214456,
+            "added_forward_max_deg": 0.04272830372704561,
+            "error_abs_max_deg": 0.04272830372704561
+          },
+          "last_second": {
+            "source_mean_deg": 4.060822273362522,
+            "target_mean_deg": 4.064525116228178,
+            "added_forward_mean_deg": 0.0037028428656560664,
+            "error_rmse_deg": 0.017143860229151316,
+            "error_abs_p95_deg": 0.0353783848136274,
+            "added_forward_max_deg": 0.04546075728478627,
+            "error_abs_max_deg": 0.062123643370995296
+          }
+        }
+      },
+      {
+        "name": "02_turn",
+        "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+        "frames": 260,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/accepted/motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s_motion.npz",
+        "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+        "target_sha256": "5ba5618ccd432eabb1670380af0155d4621ba0d7768de7d5b305462451a90ce5",
+        "pelvis": {
+          "source_mean_deg": 4.390015420563633,
+          "target_mean_deg": 4.6174647123907615,
+          "added_forward_mean_deg": 0.22744929182713,
+          "error_rmse_deg": 1.5454827166575014,
+          "error_abs_p95_deg": 3.6071953455263324,
+          "added_forward_max_deg": 7.855622515606171,
+          "error_abs_max_deg": 7.855622515606171,
+          "first_second": {
+            "source_mean_deg": 2.5909033628380467,
+            "target_mean_deg": 2.4744537741093313,
+            "added_forward_mean_deg": -0.11644958872871485,
+            "error_rmse_deg": 0.14452439410958476,
+            "error_abs_p95_deg": 0.2478200474359994,
+            "added_forward_max_deg": 0.07769570763792899,
+            "error_abs_max_deg": 0.26715330092824274
+          },
+          "last_second": {
+            "source_mean_deg": 2.970871377538648,
+            "target_mean_deg": 2.9112787393045947,
+            "added_forward_mean_deg": -0.05959263823405252,
+            "error_rmse_deg": 0.15687078486687905,
+            "error_abs_p95_deg": 0.3133971260225109,
+            "added_forward_max_deg": 0.3811335710713024,
+            "error_abs_max_deg": 0.3811335710713024
+          }
+        },
+        "torso": {
+          "source_mean_deg": 6.340072213289923,
+          "target_mean_deg": 6.3419734221674435,
+          "added_forward_mean_deg": 0.0019012088775198777,
+          "error_rmse_deg": 0.021252576165465806,
+          "error_abs_p95_deg": 0.05242995953754808,
+          "added_forward_max_deg": 0.09209755675937004,
+          "error_abs_max_deg": 0.0950086533048875,
+          "first_second": {
+            "source_mean_deg": 2.9518893725612414,
+            "target_mean_deg": 2.9558881104799464,
+            "added_forward_mean_deg": 0.003998737918705615,
+            "error_rmse_deg": 0.007673450398430241,
+            "error_abs_p95_deg": 0.013746040326836349,
+            "added_forward_max_deg": 0.020975774222449672,
+            "error_abs_max_deg": 0.020975774222449672
+          },
+          "last_second": {
+            "source_mean_deg": 3.341336630706098,
+            "target_mean_deg": 3.345568965170908,
+            "added_forward_mean_deg": 0.004232334464808787,
+            "error_rmse_deg": 0.013787348123021915,
+            "error_abs_p95_deg": 0.028993141722921195,
+            "added_forward_max_deg": 0.03561602898324168,
+            "error_abs_max_deg": 0.03561602898324168
+          }
+        }
+      },
+      {
+        "name": "03_low_step",
+        "source_key": "motions-low-step/forward_walk1.2s_step0s",
+        "frames": 413,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-low-step/forward_walk1.2s_step0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/accepted/motions-low-step/forward_walk1.2s_step0s_motion.npz",
+        "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+        "target_sha256": "5adbcc8444b9475b91e2e05b0a31098737cdcf51cacb5a06eb72450d5838ee34",
+        "pelvis": {
+          "source_mean_deg": 1.8272095055007969,
+          "target_mean_deg": 1.6462556283046896,
+          "added_forward_mean_deg": -0.18095387719610717,
+          "error_rmse_deg": 0.6553642057891563,
+          "error_abs_p95_deg": 1.489379145731334,
+          "added_forward_max_deg": 1.7170455820092911,
+          "error_abs_max_deg": 2.1983568196875467,
+          "first_second": {
+            "source_mean_deg": 2.590903350034716,
+            "target_mean_deg": 2.4689017142303364,
+            "added_forward_mean_deg": -0.12200163580438016,
+            "error_rmse_deg": 0.12953073009411487,
+            "error_abs_p95_deg": 0.19003911344895386,
+            "added_forward_max_deg": -0.0423592319276338,
+            "error_abs_max_deg": 0.2144384790275069
+          },
+          "last_second": {
+            "source_mean_deg": 2.590903352582757,
+            "target_mean_deg": 2.468100253038435,
+            "added_forward_mean_deg": -0.12280309954431914,
+            "error_rmse_deg": 0.13178925644563871,
+            "error_abs_p95_deg": 0.21014194727848262,
+            "added_forward_max_deg": -0.03737904882032694,
+            "error_abs_max_deg": 0.24204487860595236
+          }
+        },
+        "torso": {
+          "source_mean_deg": 7.616554591197376,
+          "target_mean_deg": 7.62013391179647,
+          "added_forward_mean_deg": 0.00357932059909287,
+          "error_rmse_deg": 0.015912343694042014,
+          "error_abs_p95_deg": 0.03944890959219832,
+          "added_forward_max_deg": 0.06339158717793225,
+          "error_abs_max_deg": 0.06339158717793225,
+          "first_second": {
+            "source_mean_deg": 2.951889357089867,
+            "target_mean_deg": 2.955837252633253,
+            "added_forward_mean_deg": 0.003947895543387858,
+            "error_rmse_deg": 0.006073927991727823,
+            "error_abs_p95_deg": 0.009287633635865688,
+            "added_forward_max_deg": 0.01800782326805006,
+            "error_abs_max_deg": 0.01800782326805006
+          },
+          "last_second": {
+            "source_mean_deg": 2.951889362305951,
+            "target_mean_deg": 2.955869604221307,
+            "added_forward_mean_deg": 0.003980241915356828,
+            "error_rmse_deg": 0.0057087005823907655,
+            "error_abs_p95_deg": 0.010674496209345817,
+            "added_forward_max_deg": 0.011726006791889176,
+            "error_abs_max_deg": 0.011726006791889176
+          }
+        }
+      },
+      {
+        "name": "04_high_step",
+        "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+        "frames": 455,
+        "fps": 50.0,
+        "source_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/php_parkour/motions-high-step/run_forward_0.9s_step1.0s_motion.npz",
+        "target_motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v20_root_pilot_20261109/accepted/motions-high-step/run_forward_0.9s_step1.0s_motion.npz",
+        "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+        "target_sha256": "7fefbe55c976b3bc9eae6cfec198dbaf28e3b8ecfe78936175d33b8715366d89",
+        "pelvis": {
+          "source_mean_deg": 5.7772128075717415,
+          "target_mean_deg": 5.4558120107549195,
+          "added_forward_mean_deg": -0.3214007968168223,
+          "error_rmse_deg": 1.1393403446726775,
+          "error_abs_p95_deg": 2.316225122466457,
+          "added_forward_max_deg": 5.987893287486628,
+          "error_abs_max_deg": 5.987893287486628,
+          "first_second": {
+            "source_mean_deg": 2.5909033457669386,
+            "target_mean_deg": 2.49059424010486,
+            "added_forward_mean_deg": -0.10030910566207922,
+            "error_rmse_deg": 0.10814327159977002,
+            "error_abs_p95_deg": 0.1505455788299713,
+            "added_forward_max_deg": -0.022870873889331733,
+            "error_abs_max_deg": 0.22696934671805025
+          },
+          "last_second": {
+            "source_mean_deg": 2.5908814155385316,
+            "target_mean_deg": 2.489017306183306,
+            "added_forward_mean_deg": -0.10186410935522644,
+            "error_rmse_deg": 0.1493376498514212,
+            "error_abs_p95_deg": 0.2544240414158877,
+            "added_forward_max_deg": 0.22432324768251988,
+            "error_abs_max_deg": 0.4578547762046128
+          }
+        },
+        "torso": {
+          "source_mean_deg": 12.034852270069315,
+          "target_mean_deg": 12.036701828659384,
+          "added_forward_mean_deg": 0.001849558590069509,
+          "error_rmse_deg": 0.028546030344795095,
+          "error_abs_p95_deg": 0.06055350409984321,
+          "added_forward_max_deg": 0.14782604972020863,
+          "error_abs_max_deg": 0.14782604972020863,
+          "first_second": {
+            "source_mean_deg": 2.95188934535157,
+            "target_mean_deg": 2.955957912533143,
+            "added_forward_mean_deg": 0.00406856718157087,
+            "error_rmse_deg": 0.005496151200800961,
+            "error_abs_p95_deg": 0.009774578274550548,
+            "added_forward_max_deg": 0.012864194837248988,
+            "error_abs_max_deg": 0.012864194837248988
+          },
+          "last_second": {
+            "source_mean_deg": 2.9518674978325077,
+            "target_mean_deg": 2.9560270200525753,
+            "added_forward_mean_deg": 0.004159522220068084,
+            "error_rmse_deg": 0.007393577685719524,
+            "error_abs_p95_deg": 0.015113495010758968,
+            "added_forward_max_deg": 0.022238168577672468,
+            "error_abs_max_deg": 0.022238168577672468
+          }
+        }
+      }
+    ]
+  }
+]

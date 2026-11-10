@@ -1,0 +1,25 @@
+{
+  "time": "2026-11-10T15:31:55.177431+08:00",
+  "pid": 3238894,
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/frozen_runner",
+  "sources": 16,
+  "frames": 11460,
+  "slots": 160,
+  "code_files": 50,
+  "promoted": false,
+  "command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "tools.polish_php_conversion",
+    "--resume",
+    "--seeds",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/php_conversion/evidence/segment_v25_native_joint_seeds.json",
+    "--out",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v25_native_joint_pilot_20261110",
+    "--workers",
+    "2"
+  ],
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v25/pilot.log",
+  "scope": "Complete original seeds with valid root continuity, never the v24 roots rejected for acceleration; fixed full root pose native joint refinement, all original terrain variants rechecked"
+}

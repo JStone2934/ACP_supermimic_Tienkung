@@ -1,0 +1,662 @@
+{
+  "scope": "12 complete seed motions, all120 original terrain slots checked; delta relative to each bound seed, global coverage still deduplicated separately",
+  "new_original_slots": 50,
+  "lost_original_slots": 0,
+  "accepted_variants": 119,
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "source_sha256": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+      "frames": 269,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "65424eb2df25f76208a9ca67",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "3da7a9b5fc786a162eb5898c7d175dfef2f02b44a9e4fb53586b5a72ab93b594",
+        "motion_sha256": "d92502153bb588ee801ec0cea3bf9c400cd6623973b46dd9472cbdd5980f669d",
+        "intent_sha256": "5e4c542432da76b7bc890ba44d24ead08e2c812838cb302ba6def09d064c1ae2",
+        "terrain_sha256": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492"
+      },
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "798b797436285d190ef007219ecf60d378b590cab8edb4d79677a8f4442043c4",
+      "polished_frames": [],
+      "before_terrain_mm": 0.5000296059419971,
+      "after_terrain_mm": 0.5000296059419971,
+      "before_self_mm": 1.2403718665207564,
+      "after_self_mm": 1.2403718665207564,
+      "root": {
+        "added_velocity_rmse_m_s": 0.20732163102702433,
+        "added_velocity_p95_m_s": 0.42578545957503033,
+        "added_velocity_max_m_s": 0.9942293919728216,
+        "added_acceleration_max_m_s2": 24.37746359886015
+      }
+    },
+    {
+      "source_key": "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s",
+      "source_sha256": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+      "frames": 260,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "dbd5fd7377591f00dbac116e",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "cccc0507c5c2f455e1abef6a851607872f9e1cb8d4fad44adb1900d4e3339b40",
+        "motion_sha256": "d854ed6fd1a4e759dcb46870774af115aff9ceb20f18220fff3196b1d4de362d",
+        "intent_sha256": "c3b2103fdc2b13a6f0588eda73c810d52f67fd00201d89a6b5de1af503e14927",
+        "terrain_sha256": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492"
+      },
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "852352340c54323c0abd10a57b2d477293051a18bc21c759f14f9148e55918f9",
+      "polished_frames": [],
+      "before_terrain_mm": 0.5000295728129212,
+      "after_terrain_mm": 0.5000295728129212,
+      "before_self_mm": 1.2403734093936927,
+      "after_self_mm": 1.2403734093936927,
+      "root": {
+        "added_velocity_rmse_m_s": 0.2353238570814074,
+        "added_velocity_p95_m_s": 0.5422064582964995,
+        "added_velocity_max_m_s": 1.2271178440512829,
+        "added_acceleration_max_m_s2": 17.8584421387274
+      }
+    },
+    {
+      "source_key": "motions-low-step/forward_walk1.2s_step0s",
+      "source_sha256": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+      "frames": 413,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "ae3119b7c5eec72ea138962a",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "eae3b5f2064e37ddb42f1acadbf43a922743af6bd73e4152d8ec8bdffe6a8e19",
+        "motion_sha256": "48f73b620124ff19e498448667943258d2ad1badbc9a7b828b01d16fba0ea452",
+        "intent_sha256": "59930103e491d454bd01525f9a884a9a3a29f628b148e79bfa57396a3ef34eec",
+        "terrain_sha256": "5277701031166849ddcb196fad6bb70b5713423165c49e9ff021093e91b5c88b"
+      },
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "2f5066833bf3e2723711d7975d4b39dc1eb89c80ce77926c027d0efc93ecd6ad",
+      "polished_frames": [],
+      "before_terrain_mm": 0.5000339611838798,
+      "after_terrain_mm": 0.5000339611838798,
+      "before_self_mm": 1.2403729980796068,
+      "after_self_mm": 1.2403729980796068,
+      "root": {
+        "added_velocity_rmse_m_s": 0.10269445214635592,
+        "added_velocity_p95_m_s": 0.21174163348670338,
+        "added_velocity_max_m_s": 0.33569406630050974,
+        "added_acceleration_max_m_s2": 7.944295570868702
+      }
+    },
+    {
+      "source_key": "motions-high-step/run_forward_0.9s_step1.0s",
+      "source_sha256": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+      "frames": 455,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "988990cf92cb1973039622fe",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "02d404e88327d9312e2291deb839295aca5530662acdf5c022120987f50f79c9",
+        "motion_sha256": "7ecba9491c652c4042c079c5beb6a1013e63e983aaf9032c350a857f54348d1d",
+        "intent_sha256": "bb8e750fb9c6f25b55f47c368e6c59291856a1cbfa33ef28599d700e910946eb",
+        "terrain_sha256": "fc59092d05f03bc0dc3cdcaecd2f65dda5128198c608374f7653fdddf2b879b6"
+      },
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "d13c86e00157284bfc918aec1e0ff54b26b8da5c573969ee3ed8a870e3ce7210",
+      "polished_frames": [],
+      "before_terrain_mm": 0.5000283928380672,
+      "after_terrain_mm": 0.5000283928380672,
+      "before_self_mm": 1.240373140882564,
+      "after_self_mm": 1.240373140882564,
+      "root": {
+        "added_velocity_rmse_m_s": 0.1679960082740207,
+        "added_velocity_p95_m_s": 0.3489385526069806,
+        "added_velocity_max_m_s": 0.5296020414684803,
+        "added_acceleration_max_m_s2": 14.076089074978626
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "source_sha256": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "frames": 894,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "035549ff83459055f188933a",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "6092f35197ffb378ff656de9ed7c1fb9fb20dc23a22d16e61ea2f2050212874d",
+        "motion_sha256": "62bca88ed473d8ac087491eae7eacb9473e6ad82bbad28ff7cd2b8260f3ae2db",
+        "intent_sha256": "a895a9794a6c2c0013c9622cf4de6c1aab557bbba42abc7f64eb88e701822981",
+        "terrain_sha256": "9ff38160580f7f8f3fb3e1f9d507240e334c0b2652ed4ab4aa2505bce0d51fc8"
+      },
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "a99ea5b9a9d701bbf920b70e89452dc680b4a8c6b5d5a53f9fdfd985957191b0",
+      "polished_frames": [],
+      "before_terrain_mm": 1.7172368173923314,
+      "after_terrain_mm": 1.7172368173923314,
+      "before_self_mm": 1.9256480939542286,
+      "after_self_mm": 1.9256480939542286,
+      "root": {
+        "added_velocity_rmse_m_s": 0.22237752304246047,
+        "added_velocity_p95_m_s": 0.4401122214083734,
+        "added_velocity_max_m_s": 1.3303129130179085,
+        "added_acceleration_max_m_s2": 33.369166574426124
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/left_45_walk1.5s_step1.2s",
+      "source_sha256": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "frames": 870,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "b475d55f1dc84f351246c175",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "2a6295a8356d6dc98e6bcef56839ecc48d174f35ecfa1094154cb81075fee255",
+        "motion_sha256": "232656828b09d0e777b330c4a032322bad62ad1e9c57db4846f0b2578c6eaa0b",
+        "intent_sha256": "cbadde2d50646968be38866ee09f74662c57f232a975b62a158c446560da3bcf",
+        "terrain_sha256": "b42c2e7bbd00bbd39e1645d398adcb54561fe3436a09d0fcc5df46e96e14ecfc"
+      },
+      "before": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "806080c8c5746ac9916970780aedd3b309bdb068927c0eef1db05320c2e268a0",
+      "polished_frames": [
+        288
+      ],
+      "before_terrain_mm": 1.8035729232235287,
+      "after_terrain_mm": 1.8035729232235287,
+      "before_self_mm": 2.0431690959471513,
+      "after_self_mm": 1.9599127532039955,
+      "root": {
+        "added_velocity_rmse_m_s": 0.25005546974239184,
+        "added_velocity_p95_m_s": 0.5043570322278192,
+        "added_velocity_max_m_s": 1.2335573863195286,
+        "added_acceleration_max_m_s2": 32.47352858880799
+      }
+    },
+    {
+      "source_key": "motions-high-climb-76/run_right_90_0.6s_step0s",
+      "source_sha256": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+      "frames": 568,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "dc9725f978c70d45f930cd17",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "5ad8a58d775e647c72ffe7a1c1526904630b982a84747916ed000fc5f8bd0c29",
+        "motion_sha256": "016af9b64f6bf69bd1a2e29df163a0da85a8e7ea4681780fae06ee934db5854d",
+        "intent_sha256": "1c735c03e75552b0a02b7de4ec79bf5d4bd980e3b7021759653b0f05522eeba2",
+        "terrain_sha256": "0afc652ba414df4431e733d9e3b5ee11ede298f15ea22ebe458bbf33298d7178"
+      },
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "quality_sha256": "bcdeab046723e0df862f50e3b9a63aecebadaf02adb3d90a194ebfc84a2497db",
+      "polished_frames": [
+        213
+      ],
+      "before_terrain_mm": 7.283700545334648,
+      "after_terrain_mm": 1.5600830343570629,
+      "before_self_mm": 1.2403724720327192,
+      "after_self_mm": 1.2403724720327192,
+      "root": {
+        "added_velocity_rmse_m_s": 0.24169968594169444,
+        "added_velocity_p95_m_s": 0.509996124383774,
+        "added_velocity_max_m_s": 0.9267205974212839,
+        "added_acceleration_max_m_s2": 25.65730635022609
+      }
+    },
+    {
+      "source_key": "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s",
+      "source_sha256": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "frames": 1142,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v23_collision_pairs_pilot_20261110",
+        "parent_task_id": "da048932b917f7354f26940f",
+        "parent_plan_sha256": "dbdd8110feca05a90bdd02d5fa1db123f7b7f5be03667150cc989153e9c210ab",
+        "parent_identity": "7f9c1f64a873f24e5f36017cdb9664f2dded767beee17dd7380689b978e0e369",
+        "quality_sha256": "f9b906a66c32877a140915d16a38bd27b6fa4ea5332bc54c996cb508ce457e1f",
+        "motion_sha256": "0a8c0ae02914d3bdd30f123cf104d2b203fefec3fe21f322ecaa5b385bd43d0a",
+        "intent_sha256": "2648e51e1c371192a9563e07ea696fb8ac471587d102c3efc1280bb775ce23b9",
+        "terrain_sha256": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492"
+      },
+      "before": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [],
+      "lost": [],
+      "quality_sha256": "30894cb84aae7cddb54fa3501d5008192b2f7fd727a3e9702d69a272fa540c94",
+      "polished_frames": [],
+      "before_terrain_mm": 0.5000279994386916,
+      "after_terrain_mm": 0.5000279994386916,
+      "before_self_mm": 1.240373472316163,
+      "after_self_mm": 1.240373472316163,
+      "root": {
+        "added_velocity_rmse_m_s": 0.3347089944839206,
+        "added_velocity_p95_m_s": 0.7003511689805794,
+        "added_velocity_max_m_s": 2.024480692321715,
+        "added_acceleration_max_m_s2": 61.078050390995536
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk0.6s_step1.2s",
+      "source_sha256": "882f4cef0413252265d6f3ad1f05355dd68c866afb5f5d82061dd3563cd82931",
+      "frames": 837,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "c047682ad2ce75d09945ca21",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "bb0fc89c52965e9bbf17962da596ebcaf0539d2160ebe9a91df571f97f09e1e0",
+        "motion_sha256": "8a006fc0053a4941e15cd62d2766d229c468cc3daaa4cd1f516aa68d90f634f5",
+        "intent_sha256": "7c15a63b6e788dc8552293634cb592505c9b801dff54a2f045dab4cf9aab3312",
+        "terrain_sha256": "db1a0e35f8c1d6a4f81cbd8b8bc0b6e3917f0540c195ed0c0262d2765b6de3fb"
+      },
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "quality_sha256": "3c1691084420387f556c81b9827573cd84fb0bd5b9a0f08caa1b752b12a20ac7",
+      "polished_frames": [
+        287,
+        303,
+        304,
+        305,
+        306
+      ],
+      "before_terrain_mm": 4.517675605849258,
+      "after_terrain_mm": 1.6840148355892202,
+      "before_self_mm": 14.00378370867368,
+      "after_self_mm": 1.706722784277956,
+      "root": {
+        "added_velocity_rmse_m_s": 0.24151194383470284,
+        "added_velocity_p95_m_s": 0.48016307854863893,
+        "added_velocity_max_m_s": 1.4021288472217817,
+        "added_acceleration_max_m_s2": 98.16799578526405
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/left_90_walk0.9s_step0.7s",
+      "source_sha256": "3cc238b82cf8aed00fa40b002da03fdd7c47af57b79ba37a462f311da316cdbf",
+      "frames": 838,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "5d0b9024b383886112925d9e",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "a88a8912176de6eb11772422ac9a231a491aac7c68d50231bf16b4ee5d1a92ca",
+        "motion_sha256": "62e671f8ba86bc439832349fe6a53215457a62d39b698e5e68100216162ba605",
+        "intent_sha256": "1358c87e2e892ad9960081d8aa165cd02722bfa07eaa514f4c81c0f9d1ba82dd",
+        "terrain_sha256": "156eec3ac5c4af469b548704dd6e38091b97d0ecf2f53eda1f10187395431f3e"
+      },
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "quality_sha256": "8b2ca78997ca0176583b39fecf51060487b4f46c33737a9ea73dd999e31c6f47",
+      "polished_frames": [
+        318,
+        319,
+        320
+      ],
+      "before_terrain_mm": 2.5874004311878807,
+      "after_terrain_mm": 1.807309826056036,
+      "before_self_mm": 16.50727639518176,
+      "after_self_mm": 1.9648522316446262,
+      "root": {
+        "added_velocity_rmse_m_s": 0.26210169964771624,
+        "added_velocity_p95_m_s": 0.5491993357389829,
+        "added_velocity_max_m_s": 1.7288679612409916,
+        "added_acceleration_max_m_s2": 74.8603745936845
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.2s_step0.7s",
+      "source_sha256": "aef0f0b4d7bf99132558ff1df1454c745d2babe7f7cd9d7eee540605b9065f70",
+      "frames": 850,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "729ab16ba34f8d9eea8bd29c",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "fa323fba89d04d7599fe829413f560e5613e460cdd94d9afcd19fb544fc2b663",
+        "motion_sha256": "53fc15db42c5caa1728f319642d1e5aac5fe9c912e06897681fabd14f5ae827e",
+        "intent_sha256": "1dd1b2a4fca661298ba59f14187d69272cc57d6a8e444c2a5c3abd705edee617",
+        "terrain_sha256": "394d228d8a66aa348649080ad1846e6ef5f91f21721c2ad88c0b64dea1ae11b4"
+      },
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "quality_sha256": "4c858a11086188d2066980c2ea9ead04f5df64f61e0e34ad5df44b7bad53cf13",
+      "polished_frames": [
+        333,
+        334,
+        335
+      ],
+      "before_terrain_mm": 4.326103724983209,
+      "after_terrain_mm": 1.8138500363641394,
+      "before_self_mm": 18.386013920757502,
+      "after_self_mm": 1.748879262414675,
+      "root": {
+        "added_velocity_rmse_m_s": 0.24430472537327325,
+        "added_velocity_p95_m_s": 0.48513242918172206,
+        "added_velocity_max_m_s": 1.5093978856482375,
+        "added_acceleration_max_m_s2": 51.9823571706173
+      }
+    },
+    {
+      "source_key": "motions-low-climb-76/right_90_walk1.5s_step1.2s",
+      "source_sha256": "a535718f9af152811ded4764aab8c0df531ed33a459bd5c52d74e77db3930496",
+      "frames": 857,
+      "seed": {
+        "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+        "parent_task_id": "f92a6eb3d7083e6df0ed135c",
+        "parent_plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+        "parent_identity": "2e5dc5cb9af81a7493ccac8bf7d01426c7aca07fa662b446bbd3afda55b97986",
+        "quality_sha256": "7ea5f4b2534ed3bf61df15440d8cdfd1b08f8b806fab88210d7f80c479bd5d9c",
+        "motion_sha256": "aafeb047195fe16563e3da4281461911611b524479abe5990091a53dd89b9c93",
+        "intent_sha256": "f88159959cd10c427178481bc881f8955f69a7b9598f7e23f49ba4d535cbdb78",
+        "terrain_sha256": "ab9d13c879f6b1a92a4ce4a5c30d250d888fccb4b14e7573038cb0f12f54b3fe"
+      },
+      "before": [],
+      "after": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "new": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost": [],
+      "quality_sha256": "30e3fd650e308a7b3b10af3e583a0be4b07985e71c1ea4476057a464fee2ed29",
+      "polished_frames": [
+        306
+      ],
+      "before_terrain_mm": 18.339515191947708,
+      "after_terrain_mm": 1.6074497616986874,
+      "before_self_mm": 1.8045890755228158,
+      "after_self_mm": 1.8045890755228158,
+      "root": {
+        "added_velocity_rmse_m_s": 0.23266292016273543,
+        "added_velocity_p95_m_s": 0.477720314842988,
+        "added_velocity_max_m_s": 1.2649942294048502,
+        "added_acceleration_max_m_s2": 36.091089518978684
+      }
+    }
+  ]
+}

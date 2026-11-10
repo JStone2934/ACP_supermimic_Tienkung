@@ -1,0 +1,12 @@
+{
+  "time": "2026-11-10T14:09:48.859264+08:00",
+  "pid": 2923075,
+  "run": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+  "frozen": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v21/frozen_runner",
+  "log": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/segment_v21/full.log",
+  "code_files": 47,
+  "sources": 296,
+  "frames": 181236,
+  "slots": 2960,
+  "reason": "Validated v20 objective plus mandatory independent root continuity in v21 exports; complete original inventory and consistent v21 gate provenance"
+}

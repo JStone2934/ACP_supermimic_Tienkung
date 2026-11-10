@@ -1,0 +1,42 @@
+--- v6/php_conversion.py
++++ v9_posture_probe/php_conversion.py
+@@ -28,7 +28,7 @@
+ from ..rotations import axis_angle_to_mat, mat_to_quat, quat_to_mat, so3_exp
+ from tools.retarget_php_pilot import link_cloud, runs, sole, support_height
+ 
+-VERSION = 'php-segment-v6'
++VERSION = 'php-segment-v9-posture-probe'
+ STRUCTURAL_PAIRS = {frozenset((f'knee_pitch_{s}_link', f'ankle_roll_{s}_link')) for s in ('l', 'r')}
+ COLLISION_POLICY = {
+     'version': 'serial-ankle-adjacency-v1',
+@@ -407,7 +407,10 @@
+         for b in range(2):
+             foot_target[:, b, 2] = np.maximum(foot_target[:, b, 2], support_height(foot_target[:, b, :2], boxes))
+             foot_target[mask[:, b], b] = anchors[mask[:, b], b]
++        torso_orientation = (Rs[:, self.st[7]] @ self.sn[1][:, self.st[7]].transpose(-1, -2)
++                             @ self.tn[1][:, self.tt[7]])
+         return dict(root=proot.cpu().numpy(), R=R0.cpu().numpy(), body_target=body_target,
++                    torso_orientation=torso_orientation.cpu().numpy(),
+                     arm_target_local=arm_target_local, arm_free=free_arm_mask(mask),
+                     orientations=orientations, contact=mask, anchors=anchors, normals=normal_targets,
+                     offsets=offsets, surfaces=surfaces, foot_target=foot_target, boxes=boxes, segments=segments,
+@@ -456,6 +459,7 @@
+         arm_target, arm_free = self.tensor(data['arm_target_local']), self.tensor(data['arm_free'])
+         arm_indices = torch.tensor([self.tt[i] for i in ARM_POINTS], device=device)
+         torso_index = self.tt[7]
++        torso_orientation = self.tensor(data['torso_orientation'])
+         arm_consecutive = arm_free[1:] * arm_free[:-1]
+         dp, dr = torch.zeros_like(root, requires_grad=True), torch.zeros_like(root, requires_grad=True)
+         q = default[None].repeat(len(root), 1).requires_grad_()
+@@ -519,6 +523,11 @@
+             loss = 900*contact_error + 100*foot_error + 2*body_error + rotation + 2*foot_rotation + 6000*penetration
+             loss = loss + 3000*self_overlap + .5*smooth + .5*speed + .01*dp.square().mean() + .01*dr.square().mean() + .0001*(q-default).square().mean()
+             loss = loss + 200*arm_error + .1*arm_velocity_error
++            # Explicitly preserve source torso and pelvis attitude. Torso-local
++            # arm tracking is invariant to a spurious whole-torso lean.
++            torso_error = (Rs[nfixed:, torso_index]-torso_orientation[nfixed:]).square().mean()
++            pelvis_error = (R[nfixed:]-R0[nfixed:]).square().mean()
++            loss = loss + 20*torso_error + 5*pelvis_error
+             # Sliding is a contact constraint even when no collision witnesses
+             # exist. Previously this term vanished as soon as geometry cleared.
+             delta = (positions[1:]-positions[:-1])*50

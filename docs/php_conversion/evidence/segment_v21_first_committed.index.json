@@ -1,0 +1,3525 @@
+{
+  "kind": "accepted_variant_asset_index",
+  "directly_loadable_by_motionlib": false,
+  "snapshot_of_running_parents": true,
+  "preference": "first parent with a passing variant; never replace an earlier passing variant",
+  "parents": [
+    {
+      "root": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "kind": "conversion_run",
+      "plan_sha256": "29ff8233c079ae23c8ec38bb1c0f6efc8c59cd918a76ae0eb158110e69b91dfc",
+      "manifest_sha256": "669c660dc1b9fe75ef30c5853d981ac8a32a474ba121660191f443034cc6c824",
+      "status": "running",
+      "all_terminal": false
+    }
+  ],
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "collision_policy": {
+    "version": "serial-ankle-adjacency-v1",
+    "excluded_pairs": [
+      [
+        "ankle_roll_l_link",
+        "knee_pitch_l_link"
+      ],
+      [
+        "ankle_roll_r_link",
+        "knee_pitch_r_link"
+      ]
+    ],
+    "reason": "Shank and foot are adjacent physical assemblies across the two serial ankle hinges; the intervening ankle_pitch link is the universal-joint bearing. Original convex hulls overlap at this articulation. Exclude only these two self pairs, retain all terrain collisions and report raw penetration separately. No collision mesh is changed."
+  },
+  "fidelity_policy": {
+    "version": "arm-fidelity-v1",
+    "reference": "segment-directions-v1",
+    "rmse_max_m": 0.05,
+    "p95_max_m": 0.1,
+    "dynamic_rms_min_m": 0.025,
+    "amplitude_ratio_min": 0.7,
+    "amplitude_ratio_max": 1.3,
+    "correlation_min": 0.85,
+    "max_lag_frames": 2,
+    "lag_search_frames": 10,
+    "min_phase_frames": 8,
+    "fps": 50,
+    "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+  },
+  "posture_policy": {
+    "version": "torso-attitude-v1",
+    "reference": "neutral-calibrated-source-orientation",
+    "angular_rmse_max_deg": 3.0,
+    "angular_p95_max_deg": 5.0,
+    "angular_max_deg": 10.0,
+    "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+    "fps": 50
+  },
+  "root_continuity_policy": {
+    "version": "root-continuity-v1",
+    "fps": 50,
+    "added_velocity_rmse_max_m_s": 0.5,
+    "added_velocity_p95_max_m_s": 1.0,
+    "added_velocity_max_m_s": 2.5,
+    "added_acceleration_max_m_s2": 100.0,
+    "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+  },
+  "root_continuity_reports": {
+    "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872": {
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 1264,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.2438099163640046,
+        "added_velocity_p95_m_s": 0.5075511349130248,
+        "added_velocity_max_m_s": 1.2778410218577172,
+        "added_acceleration_max_m_s2": 35.88231659492039
+      },
+      "worst_velocity_frame": 142,
+      "worst_acceleration_frame": 1055,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "source_frames": [
+        0,
+        1264
+      ]
+    },
+    "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252": {
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 1326,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.22599009373620035,
+        "added_velocity_p95_m_s": 0.46496906275849476,
+        "added_velocity_max_m_s": 1.3400929734377505,
+        "added_acceleration_max_m_s2": 32.09647544107605
+      },
+      "worst_velocity_frame": 160,
+      "worst_acceleration_frame": 693,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "source_frames": [
+        0,
+        1326
+      ]
+    },
+    "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532": {
+      "policy": {
+        "version": "root-continuity-v1",
+        "fps": 50,
+        "added_velocity_rmse_max_m_s": 0.5,
+        "added_velocity_p95_max_m_s": 1.0,
+        "added_velocity_max_m_s": 2.5,
+        "added_acceleration_max_m_s2": 100.0,
+        "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+      },
+      "frames": 1292,
+      "fps": 50.0,
+      "metrics": {
+        "added_velocity_rmse_m_s": 0.2411620051603612,
+        "added_velocity_p95_m_s": 0.5062946051778099,
+        "added_velocity_max_m_s": 1.2159756880923334,
+        "added_acceleration_max_m_s2": 37.56721147232929
+      },
+      "worst_velocity_frame": 744,
+      "worst_acceleration_frame": 741,
+      "passed": true,
+      "rejection_reasons": [],
+      "source_sha256": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "source_frames": [
+        0,
+        1292
+      ]
+    }
+  },
+  "source_identities": {
+    "motions-high-climb-76/run_forward_0.6s_step0.8s": {
+      "source_hash": "da4e8e3b08520271dcc3d31859b1c6e97c1e43d9644f9f40894d4c2853795d7c",
+      "terrain_hash": "bff58abcd6ab8130e56f7d73cb36b6e1be8424cdba8ef95ae8ce1b5674ab93fd",
+      "labels_hash": "8a9c4c36bbbf0f4e94808e4d4a24eae4433220be752f3306e650123cb488669b",
+      "source_frames": [
+        0,
+        635
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_0.6s_step0s": {
+      "source_hash": "be1c3e810a031d9bdefc4af226314614b9ea04e2b4eb66bec6f6d84d29f76d11",
+      "terrain_hash": "4a8fa1b93eb6dd9c414e4d8972015355014f7d2fd0445d4f12d655423da74346",
+      "labels_hash": "65546ed7c8109e48f467ecd6b6790b3970ce72a64cdbba93dc648680cc74c0b0",
+      "source_frames": [
+        0,
+        570
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_1.0s_step0.8s": {
+      "source_hash": "c043123688c633d4c9c2e2c9af0cb9718fac1c55c51cad1f1b11ad3839661d47",
+      "terrain_hash": "bd067b7984b6f077d7d81da3005f33cb1f808547ccb9b58b9ac9ab21f7a4efc3",
+      "labels_hash": "bdc876162e7ab8d3d15cb4e91062965ba266e6a627d4e5d1d8505105e4c144cb",
+      "source_frames": [
+        0,
+        658
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_1.0s_step0s": {
+      "source_hash": "28df4db89a2fb8b40fd3c7cfea9b536ba1323a75fe66286ff98d738e2d24add1",
+      "terrain_hash": "4bf9f63b5f769ad27bb8bbc70af2a46bc52e0586ffb74beee4a12b33abfa314f",
+      "labels_hash": "57c2efd61d2c651cbf34bc30891de5cdf06e6c3f35df3ffe8eef84a8471acc08",
+      "source_frames": [
+        0,
+        591
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_1.2s_step0.8s": {
+      "source_hash": "c57326263056206d52b31d7d105e53ae16a22937ab274b6ce8b2c0d9c1d08cc9",
+      "terrain_hash": "3e8b5776bc1a365aea26f23deab78ef57512c859d452a7a014be22987d517ed5",
+      "labels_hash": "0d117207a7477d622bad3f0f2c04a1fe9f08b6c488d388b60353ea74483fbcb2",
+      "source_frames": [
+        0,
+        665
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_1.2s_step0s": {
+      "source_hash": "97990df196e3c6ea56b41eab2ab6cd194eb0d330c2b746916fb98394fc1fa054",
+      "terrain_hash": "5374ae2f8040964179c6591a003359aa719ad9324beee918bd7a2689888507a6",
+      "labels_hash": "704bf1d398805caa1b14c3c5fd7216ac4775c3bec96ef7532477605801906c68",
+      "source_frames": [
+        0,
+        601
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_1.5s_step0.8s": {
+      "source_hash": "cfd65a51969a6dd957b9722632c30fb86da15a944cb21de416a42a5d2af885bc",
+      "terrain_hash": "771b692126758d78a60916679d60227d7f482d958b5df9cc8048558facb1692b",
+      "labels_hash": "d0a0b8ae75a1160df3f5d849b6493c8a71f158f40fc2f50bab2d4c50319f5401",
+      "source_frames": [
+        0,
+        680
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_forward_1.5s_step0s": {
+      "source_hash": "86d7e7edde26f42e6a8f65b68ea70f4aed3c139e7e2bb139fa633cccc16c77b5",
+      "terrain_hash": "d1a38e700cf276bcf4512ab2acece01f64ec733cce39c8147f792986154fa610",
+      "labels_hash": "5a369b8466786d77f844ae0f54b109f9aab78142e7690c4479063f91bf30535d",
+      "source_frames": [
+        0,
+        616
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_0.6s_step0.8s": {
+      "source_hash": "a83077d8419fbaa28873ad23eb5c1283fc95c3e0ba89c7c2c2779ccc75572a7b",
+      "terrain_hash": "db223d188c28b08406e79c7b2978c49dc737c30bf1f1aa3b931d27a0402ea0da",
+      "labels_hash": "fd5b3b13d4aa3488d6262c970c0aa5113bebf26e56b2feb680787190c0b41267",
+      "source_frames": [
+        0,
+        634
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_0.6s_step0s": {
+      "source_hash": "4b4e3a8e67785b6e46428332cada5426c405512637c29aaa08d5079f0fb1ba82",
+      "terrain_hash": "920aef83c69ba3d70f2f4c0598c18c21f2296fd21baef249d52552b0397206cd",
+      "labels_hash": "9066f06856431f1e5aa79c23cc755f25a5aab26badfdac005da1f9285c079af9",
+      "source_frames": [
+        0,
+        572
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_1.0s_step0.8s": {
+      "source_hash": "3de8a2b73f293bb1ad87768708df4a2eedfb4ee3a294b657d2ca65d5972bddb8",
+      "terrain_hash": "9f82a2e76a8147a51350b983dc5ffa8aba6e2d1d18297d0124f97fc379aec28f",
+      "labels_hash": "6f09b3ed8618f991ad3b52e9ccf1c459c76f1ef77f6d06168a4d520d2a712ca7",
+      "source_frames": [
+        0,
+        669
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_1.0s_step0s": {
+      "source_hash": "b8464660b6951c6f15bf60fc50601a675d472be4a5dd6beef1285f97ca587c1c",
+      "terrain_hash": "fe6dfa49cbb723a769e94e186f4236335c5734486b0e4902de8c9e4fb548729a",
+      "labels_hash": "c401d1f7d49e9405c5f96e1d0b0d909d2adda03f59df1c23369d155d2336f600",
+      "source_frames": [
+        0,
+        605
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_1.2s_step0.8s": {
+      "source_hash": "50e1cce03660a1a1ad7fe878e7251dda20fa42c71802a8a4e450056bf2f6d6c0",
+      "terrain_hash": "8bcb405878a6febf77c957ade1fcd71680e95b14e3444214fe279af2264cabc4",
+      "labels_hash": "62df2ef2c9bb00923a0bd15bea8ad35ea9bd74d178eeacf6ff360de9f6ba3111",
+      "source_frames": [
+        0,
+        664
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_1.2s_step0s": {
+      "source_hash": "a1b2c4c165d9d579da07193d13b10d8aff4fa34666db99a18d1bed623e222796",
+      "terrain_hash": "0340da48a5d307a0e4bdac8affe25c237e65d52441ac903e3445a7283a08e94f",
+      "labels_hash": "9c012b87d080c14dc9ff5d6ac479478d6a13d3b088e971cdc379fa0a3b9b86b0",
+      "source_frames": [
+        0,
+        601
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_1.5s_step0.8s": {
+      "source_hash": "53caf9b46918eb907b1a48870ba6e28dc2fe12e4a3c94141e0c451e86b62a7d1",
+      "terrain_hash": "e3c1172e6ac6f7809011bb7ff813ec057c6c8e883589ebe164d3a998158ab41a",
+      "labels_hash": "b2a7208b3d1e3fc681b2b48e9f91ccd7c598157fd7a058fcf924732b82d3c94e",
+      "source_frames": [
+        0,
+        681
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_45_1.5s_step0s": {
+      "source_hash": "dd100d5ab7b86589fefdcc4eeb8e3e38de52c584e5af9c0a27f2ca72b3275615",
+      "terrain_hash": "8147b033f3dcaf62287503b51ab6e60ece657a2410597a0bfba2061e06d8abbe",
+      "labels_hash": "077d3a51f8d3c3760fdbdf1d1d7cdeaacb5c5b4f4eb7effcae6e4c5607d33324",
+      "source_frames": [
+        0,
+        617
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_0.6s_step0.8s": {
+      "source_hash": "ecc0718273cec84da010a374374eba83ac5eeb6a3e5cbc6aa7bbf68e901ee447",
+      "terrain_hash": "2904667d0ecc3398afe9df86dce229697a8961836b920b4396d10e371a71d6db",
+      "labels_hash": "49dd0982f3c2d4b0a1e1a56b78fc9b2c95e4fe071323b9622c0c96a78cdda3d1",
+      "source_frames": [
+        0,
+        640
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_0.6s_step0s": {
+      "source_hash": "ab0142b925ed16ed44d7b06f0252cc909b9247132318cd6130ebed2e9536dc81",
+      "terrain_hash": "e7fa1a29135054fe94061143f318539357a44d879188ded4894fd9d4efbe46ca",
+      "labels_hash": "92339ee3af36bb3055e3954ec5c170aaf096ebb65f4d2c63b49e96d88032ea91",
+      "source_frames": [
+        0,
+        578
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_1.0s_step0.8s": {
+      "source_hash": "beeb3fad25db0fcf54865f3ccac79c8ab938cb2e8d416396076e9f77a417a24d",
+      "terrain_hash": "cc99b128c96f77e2e05c95a60534a6313df7cb20a948ba5b5b74d0f9ee81ec68",
+      "labels_hash": "447ef1fe0176b7b8d333781fe3f692ce31f9fc00adbb688a47465bc7000a3c92",
+      "source_frames": [
+        0,
+        667
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_1.0s_step0s": {
+      "source_hash": "de89a5a9b4a6dfe9848ee421a23b5fe1ced76c8af920bf4798f2aeb11955ba9b",
+      "terrain_hash": "c0c60d701fce35c53c3dd5d8fc05ef38285117dc90cb9de0ab71ee5fc2db322a",
+      "labels_hash": "3904783380bcf741782b065b78d1243a1d9e286678b20e63df7b14d3c2f7f6a8",
+      "source_frames": [
+        0,
+        605
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_1.2s_step0.8s": {
+      "source_hash": "2ddcc20868e6c44c0659488d70b0a07e51a28544385658148ac18459c6c39f33",
+      "terrain_hash": "c57c46f547b4ded548d657dd85b7e907bc570621c08ac8a146a57d06eedb35d0",
+      "labels_hash": "808749040ba2a1f0417c9bb9355f15be7057ce153b532baee1f53f7051111235",
+      "source_frames": [
+        0,
+        672
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_1.2s_step0s": {
+      "source_hash": "0ec8544313adddd728bb909e426fc66a54aaf717ddaaa860b3a3b262c02dd55c",
+      "terrain_hash": "08ec547f21e501970a45f55bbeb2d00f4d9dd07a7a7f53aa4b2cb5e8e34913f2",
+      "labels_hash": "19235883879cecafb8a3b7a656ab05b74fbbf3be66fd451fce9bcd8c56bdbf59",
+      "source_frames": [
+        0,
+        608
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_1.5s_step0.8s": {
+      "source_hash": "42e718480f3e3ce88aae0cd7c05012d608091bf51297412e22bf8d1fb994beff",
+      "terrain_hash": "405f3af734aea9a10da5963bc950226bae854b36862e00b19446a1e68c64930a",
+      "labels_hash": "6c3963a21c5ae606ce5642a8a224e84b6163fe718c1e8bdac9893cedb63b78fa",
+      "source_frames": [
+        0,
+        679
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_left_90_1.5s_step0s": {
+      "source_hash": "b63e9b7200901d439b714cf40897585503faed637531017f4227441ab6a3fa4e",
+      "terrain_hash": "85663acf10780dc4e7c3d98cb3cbeea928b6541a66b8706f408b6be6ac5f9426",
+      "labels_hash": "0c5aae54b47caadd1f552d219bd2d703e7938914161b5523277acd9ca076e4ca",
+      "source_frames": [
+        0,
+        616
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_0.6s_step0.8s": {
+      "source_hash": "4dd78054d2f4bac36747aa43bd78332b2fb98d73cca7ddc69e900c115b5e076b",
+      "terrain_hash": "d27d92061917cc1b5ab9dcd200384ca62791069a839c0a9151d0de46eca00e02",
+      "labels_hash": "9c78ea874cd8a196e0ba5212daa0c8bca6971c3556891436d851d3ed6b4bc21c",
+      "source_frames": [
+        0,
+        635
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_0.6s_step0s": {
+      "source_hash": "b0edb61712c47dbbc4a9ded8419cd59cf6838dea22e7df216eb70cca3baf2ad4",
+      "terrain_hash": "8957466d7c532d8de7a96eb7575c8b5cd3459391a1010af50e7df1e48b2a1ec7",
+      "labels_hash": "1a86ce472df8fd4baf2a11e6def2f0c4998f5daad19b54252c7e93c55de4483e",
+      "source_frames": [
+        0,
+        571
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_1.0s_step0.8s": {
+      "source_hash": "da599cc0e04b3f27d3774ab159d94721dc951c6ce8ffc0dcf4be3ad31ff5c088",
+      "terrain_hash": "2a4f591e75a7b4e5a9722a8fdb3be133fb51c64ea9f1a70f150bf9736cea71df",
+      "labels_hash": "47c4b8068626a133a06d4dbd0533120148390adc66edd9d63716c5d57af35bdb",
+      "source_frames": [
+        0,
+        655
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_1.0s_step0s": {
+      "source_hash": "d5b85601f29c65a366d548493e1937127fa251391c347d18c4abef49cb8f0dcd",
+      "terrain_hash": "52198608caa141c30dc764fd62091ee7e00c0d84b29696a697914cbdc3404da0",
+      "labels_hash": "bc576e348537bb8b6fe6df02826804616bff81230332a043d90da4b387fc7ed3",
+      "source_frames": [
+        0,
+        593
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_1.2s_step0.8s": {
+      "source_hash": "7099634c6be1ddc32310578a423fa8e15313f89a22377f6ab3a84877d2089ccc",
+      "terrain_hash": "7da78bada750742a5145537a1b933872cfd68c466f2861616478124794352e03",
+      "labels_hash": "616f906eef6048608f92a7dc2a1d4258b178b6786d53b8c354e20b112a0f7391",
+      "source_frames": [
+        0,
+        679
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_1.2s_step0s": {
+      "source_hash": "d113883279ca9b9a26bee1f54481120766b0a7f60c2486a36814e163a1a87e3f",
+      "terrain_hash": "265e3801bef13dabb6e06163484d2a0781074fedf120cb6d185aee0dd3391994",
+      "labels_hash": "d0e017c979cabc74d2c6e24d6e5ed0546f2a2824281604e6c56071e3b4281754",
+      "source_frames": [
+        0,
+        615
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_1.5s_step0.8s": {
+      "source_hash": "076deb873810dd0dadee9b2dd409681120a48d638a353e8837028e9e1e8dc1be",
+      "terrain_hash": "0e36cee754459882480cc931e39f2b13e4aee9be099f63bf8f2492530989dd82",
+      "labels_hash": "2653586460a8a6d053536c704fbd46b9cd08153355c338af69a3a4f61769b1c6",
+      "source_frames": [
+        0,
+        678
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_45_1.5s_step0s": {
+      "source_hash": "7469a24542f078884208daada74465cc2107acf1407ed5a4aee5f5eacb9be77f",
+      "terrain_hash": "5cc9916f79501cd2317e9ae5e35fcca43c64799139c002405810b3e9637aec6c",
+      "labels_hash": "6a91a47117befe8a082871f3ea5a16272bded35e2e4608dd01a019672eb2b6e2",
+      "source_frames": [
+        0,
+        613
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_0.6s_step0.8s": {
+      "source_hash": "ed37a063271498ec53f9420b5441a5657e9f74c7be95df34736b3b40662cc694",
+      "terrain_hash": "88e0dc69bc1bbcd6d1127511bfd66084afd3a7611ae333edfe925b1ebedb5331",
+      "labels_hash": "f81eab6437a95f1c9e12c23d9234ab6e6be1c462a6404828bcbdae3307b65506",
+      "source_frames": [
+        0,
+        635
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_0.6s_step0s": {
+      "source_hash": "670074232b1a6450a9197ba0f62ad9adf0edad682fabe4188df93c276a3690ad",
+      "terrain_hash": "0afc652ba414df4431e733d9e3b5ee11ede298f15ea22ebe458bbf33298d7178",
+      "labels_hash": "fb6cc20509446ac2af8f916d14ddaf4979034e6dcb324acc1c35a57e3417c14c",
+      "source_frames": [
+        0,
+        568
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_1.0s_step0.8s": {
+      "source_hash": "9880b41556581cf0430e922c0fd2c0d9a093cfba6411a78aaeb7542157cb45aa",
+      "terrain_hash": "8bd99bbafe37165c3fe6b54f1e7d8c498117e7fc403db74f1f843efe0ca0300b",
+      "labels_hash": "5bf04cee59c60d5c97008a7f9e010851af39b35bad3824b3c3eda94921fa4552",
+      "source_frames": [
+        0,
+        666
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_1.0s_step0s": {
+      "source_hash": "9b8fe89a9187c5effd47d83cba497e3ca918a8b76cbd66188e4a931bc0045b49",
+      "terrain_hash": "eae57907681b86e296eedfb3843758aefb0496aa7d28bb67fc301b1f20567a2b",
+      "labels_hash": "d5385272148e423de70837fdfb8e777c352b305124cc0509b4ae1edc0971bc22",
+      "source_frames": [
+        0,
+        601
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_1.2s_step0.8s": {
+      "source_hash": "c71f7ef19842ca21970ef13e2067282fe7660736c69a8a6c41dab4a618c6b9e9",
+      "terrain_hash": "6d0738f6b1a220ac0ca8ec55e20c9373854184cbe7a377ab39372467a477f95f",
+      "labels_hash": "ffcfc8436e44ccaa068165119e48b4e0a2afd9f708958b49382dbc1dd78670b5",
+      "source_frames": [
+        0,
+        663
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_1.2s_step0s": {
+      "source_hash": "601b52c7d36465d132234125183ba4844e3ef6e2d2fdc0992b8cbee50638da3b",
+      "terrain_hash": "b42102555fbf68847ae8caaa5106dcc0d4456e55792699d3fb6696988bdf25fd",
+      "labels_hash": "6c1cb00292a6634b0b9920abd56ff713f19272fcd56ca2529b10edd5139556cf",
+      "source_frames": [
+        0,
+        598
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_1.5s_step0.8s": {
+      "source_hash": "8c690b367c7fdfcfc06cbd3910eb1fc0717acf551f652d898df55c4c744b1071",
+      "terrain_hash": "a159f22c9cf5e0823225f40e232add5778d733f353e276967e04fb78b374fd93",
+      "labels_hash": "046ee62273bcfa8f8ee0a21d16e417896157b7b3553f36f7d0a4d6532e1e8b44",
+      "source_frames": [
+        0,
+        681
+      ],
+      "variants": 10
+    },
+    "motions-high-climb-76/run_right_90_1.5s_step0s": {
+      "source_hash": "f02fc46bd483055a69ee540ca385227d4bf99d82130e2f8bf956565b95e97196",
+      "terrain_hash": "b70347cdfcbd19ffc33a923a559b2931bc134e602acf40f77d73d78e06ee616e",
+      "labels_hash": "e1890b3904e90aa2b14c4ec7144d267609ba0e3f60251ba4988fce19afb9bd08",
+      "source_frames": [
+        0,
+        616
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_0.6s_step0.5s": {
+      "source_hash": "5af94effd9f8d09e74fec3386d0ba92ced5c81db9b2294e354b3e4b8dd93ac72",
+      "terrain_hash": "21f656fe1786f081f86a97a79215f99c95f19d78a1bea654c972256ef7788703",
+      "labels_hash": "b289fa98ee086e9f6cbff355625dd8f5c2f1dd28005839c58ec00942e75b2920",
+      "source_frames": [
+        0,
+        407
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_0.6s_step0s": {
+      "source_hash": "fa21c99af54071cdec74a52876657f91d05221127214ee09a23398554544bfc3",
+      "terrain_hash": "02cedc432b9e1dd8f4871dc49f42d4a969b9da8532264fc60bc54c0cb9455cfa",
+      "labels_hash": "bf8fe666160d591df60cf380229e719af532ab86cf6cb9881230936665d3daca",
+      "source_frames": [
+        0,
+        384
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_0.6s_step1.0s": {
+      "source_hash": "d3ea84b02dd95b8311ddd762ec631bfca9342846c973da1655e376f47eb75cdb",
+      "terrain_hash": "a35552ea1bb2fcbcc6be4800fb284c07b6960089acc845a38e0e3cb9c8d84297",
+      "labels_hash": "5c6a3369d6545d6f711768ec9815e6d0ca942f163227ff9a0a659a7fb24a2f7f",
+      "source_frames": [
+        0,
+        456
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_0.9s_step0.5s": {
+      "source_hash": "be78e08f2eac94092a9747044cd48a5ebe78ad872a6f313cbdcf6dee3c7f23cd",
+      "terrain_hash": "2710ce25d3446f78e0da9eba05e8996e3f77fb6a07965d820ca6eaa42e249ef0",
+      "labels_hash": "0447b93477f2a457aa71a64a86e2f80c48fdb6538949676808f64cc841895ca2",
+      "source_frames": [
+        0,
+        433
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_0.9s_step0s": {
+      "source_hash": "cf58738d53b99790a445212dfd645788a7358eb0fc4a6531dd5f7bcb956c598c",
+      "terrain_hash": "663e19f01679c5f3ba37bf35a7c0bc603b8f27357acc5ed82c81f09f3e63a71d",
+      "labels_hash": "f2e5a31100202ea003c38eee44ebbf73b7f1ed1b9d3b413a164d61cf80e78d90",
+      "source_frames": [
+        0,
+        414
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_0.9s_step1.0s": {
+      "source_hash": "09f79e13d6523691092c8f063c7da626cbe5a367484ce181a957c55ef16c64ab",
+      "terrain_hash": "fc59092d05f03bc0dc3cdcaecd2f65dda5128198c608374f7653fdddf2b879b6",
+      "labels_hash": "9ac309f7227054870b51490ebf6c124ee953d7445949c709124f981dbdaed02d",
+      "source_frames": [
+        0,
+        455
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_1.2s_step0.5s": {
+      "source_hash": "da5a8681f8a0e8506e38ffba913ace54af3b30052c30be5e9b146bf33100b919",
+      "terrain_hash": "bb7d7c6d54bbae08a6d925d50594f15ce60b53ac29c46baeb6dd28434957c317",
+      "labels_hash": "fb33726c722a63740b1590c0417d2ae30d9a0fdd49ebd3a0bb2faf4c534c3293",
+      "source_frames": [
+        0,
+        457
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_1.2s_step0s": {
+      "source_hash": "bffdc412a61460a8f07d0192f05325fe875fd5119a145fdefd1e5fb934d68240",
+      "terrain_hash": "c15b806bb1b6b26d5cf56b1477f1229cec98c90c4391420cb20e447dd9611a0a",
+      "labels_hash": "0430bf021adfc0d2ce6c7b96515fc251f198807ff811c4e1e80d15fea84ecf50",
+      "source_frames": [
+        0,
+        428
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_1.2s_step1.0s": {
+      "source_hash": "99f53af53578b58e0a2cb019f771d684d36da1bf219c0975f1d49276b98f3677",
+      "terrain_hash": "a060dc28dc89110c1e61da1439588834611a254fc72bfcb92a64ccf035a764b3",
+      "labels_hash": "21cae2e230c33e9b2f782fd75be7a40390b977ae2457ef4a0f2b7da42792efff",
+      "source_frames": [
+        0,
+        480
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_1.5s_step0.5s": {
+      "source_hash": "c84984442b796832d567261d63f9bee3a1cc7743824277d93e0eaea3806314f7",
+      "terrain_hash": "ab8f6bdc36cea6553f84655a8b4fe31c7369cf47b5dafec8b33b5beaf5c029c4",
+      "labels_hash": "335480a49ed921ceff0517d5d6549f9239fbe3aeef045ab3c335e3740e38ddb3",
+      "source_frames": [
+        0,
+        472
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_1.5s_step0s": {
+      "source_hash": "67541130de8619de05b3c2c672438067a2c53bd4c5ea97f0c35c01e44ccbdf80",
+      "terrain_hash": "89b2da8adc914e4affa4af83a42c3ff4876fed37417ebfa7a70b06700482087a",
+      "labels_hash": "675e15cf6564873a65b601955fb94c62a4ac18d47dd7657a9521635545bd59b2",
+      "source_frames": [
+        0,
+        449
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_forward_1.5s_step1.0s": {
+      "source_hash": "7b23a9308cdd67ebbee67b0d446de323bbcf33af8b03b25879bff2a4d1b1a6f9",
+      "terrain_hash": "947d39e8b736d8838a810ca84ce005ae7c5dce4be9dc0f4269861d7b74e38944",
+      "labels_hash": "ad33e937a72c49679eba85b02c1d19e0cecf96a6832fb67b3425e5ec0a62416c",
+      "source_frames": [
+        0,
+        487
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_0.6s_step0.5s": {
+      "source_hash": "83daf87653b4b218fee623c7770f5cfacacb7ad2e23f76ce7fa850dceadca743",
+      "terrain_hash": "61c045ba98b9228046b37a22ad2ed7cb129f098a5c9e0bbd193d87aae15faabf",
+      "labels_hash": "4dac82321c31a61081b2f61a6745359855f42c4a89568a12b7858d12410e4cdc",
+      "source_frames": [
+        0,
+        415
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_0.6s_step0s": {
+      "source_hash": "58a03a84dd4f5a14ae5c7fae53283d027dcd1c5737c94450ad76e07d64f70a02",
+      "terrain_hash": "1a17fb829d29992e90f242e151c2b02ee94e39151870552f3523543125a2ab9f",
+      "labels_hash": "06413bd63170cb5148b75eb0236c6bed8f58ec4b1b2096dcedcda15d3ac88cad",
+      "source_frames": [
+        0,
+        385
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_0.6s_step1.0s": {
+      "source_hash": "ecfc64e77ac8b822cb7ba800d4f91edf80ecfb0443b53abfebae90da777e3ae1",
+      "terrain_hash": "933f4e5b2c38bfbfa3addd695358f8a0fc5d8f5bd8b7f33344826f9cd709198c",
+      "labels_hash": "d936b3e4eca36f52ea2df1bb12adda8835afd423a7befa2c01509490d8ba9814",
+      "source_frames": [
+        0,
+        465
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_0.9s_step0.5s": {
+      "source_hash": "03fe6e9733b95c46f49f83f4e74d3f160536d5d901e2aa40bf213a14b4b254ef",
+      "terrain_hash": "111591832b84006c00b0fdcc5890b64057499dae99cc446b4cb5c8e5220cef06",
+      "labels_hash": "005127efd1ebdfea3642a1190ad750d77f40c8de412470c59453ad3c9ec87e8f",
+      "source_frames": [
+        0,
+        424
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_0.9s_step0s": {
+      "source_hash": "3071771ca7d42f7345fda693dce6c0beb332fec155cf1fcdcca17cfb2458f94e",
+      "terrain_hash": "f1957d8425053505ac5df5caeb7760122ac5720d9ff352cb7d6057b54c4707f5",
+      "labels_hash": "bafe8bc75b6be7ce3a81207c46494c580e2221daecab4316e267fd23ae610076",
+      "source_frames": [
+        0,
+        406
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_0.9s_step1.0s": {
+      "source_hash": "4561e04faef3ccb40ddc4e702ff747c3c0e9b61b07ec9e82b16c514699925432",
+      "terrain_hash": "81c0a836b619a2cce382c3730753cecbef4b8e2be3540b8dd4021d1e202c57b5",
+      "labels_hash": "b1f8056218a6cfee22ae2689d9d7e695343a312a206c9bd380055d854fb9ae80",
+      "source_frames": [
+        0,
+        467
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_1.2s_step0.5s": {
+      "source_hash": "6f71b4b8c33bb080bd1f9c6844ee1486ca3a7ef3c40110f414b603d79bf92044",
+      "terrain_hash": "6c661cd72288712aa7fcdee1d90ad37cb61575d468841a5057677861fdb6e7ec",
+      "labels_hash": "6a49dbdb2959003427dd9b99b1cc243ff93045da71f37301cc9de84aa49fc98f",
+      "source_frames": [
+        0,
+        441
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_1.2s_step0s": {
+      "source_hash": "70f8a5354b9508da1af296bab901ccb0b87068b72af8d52f891cff6923249d87",
+      "terrain_hash": "7d1e72653a529e6b298ccaab265699ba8565d7583fea2062577194040626e5a8",
+      "labels_hash": "cce6b117d26b6def0f35664c32d76e0201eca81da5b6fb54e228004e1222ad9c",
+      "source_frames": [
+        0,
+        425
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_1.2s_step1.0s": {
+      "source_hash": "cbad7dec1b37cc9e57192feaf7d47c03ed4c0023d1dac2e8ec9b4655376eec60",
+      "terrain_hash": "f3c9594f135c095404af1c1ae5a4928494702cbc8b6f54286898b9d70badd7ac",
+      "labels_hash": "bdab6ff88cb8b3b181051b64ddff2b64201cca1924097b5388f7dfad3375e686",
+      "source_frames": [
+        0,
+        477
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_1.5s_step0.5s": {
+      "source_hash": "88f77666038b6877262c00c57248d5a266efa83eb5ddb615b3a51e7740cb03fd",
+      "terrain_hash": "faa316dccdd9fcc3725f228db18b7b975f44cc52a1388a7ac253b48f8c6ffc05",
+      "labels_hash": "3ecfb3f0c6164dd54296df8183a61f4089e6ef579d5bd39eb1f140ae4b5fdeed",
+      "source_frames": [
+        0,
+        474
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_1.5s_step0s": {
+      "source_hash": "52afb715b5a77ce1d72e5f42dcf53ef3a0037e24d91dca0523bc6250758cc5de",
+      "terrain_hash": "cef60d8d88b580c402f437ee1ed027069fd9dabb3b16c02f6db4b1b117d4b13d",
+      "labels_hash": "d60ecc8757dc7fddabab2dd43dc91774c85eb07081bc84d924a96fb6b2b13d2d",
+      "source_frames": [
+        0,
+        425
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_45_1.5s_step1.0s": {
+      "source_hash": "d0b65ee36aaa4f8657248105a5dda167a191bd0ecdd6729919a8a15b0428124e",
+      "terrain_hash": "ae47d80117cfca45709818c0a08bd4379864ebf6e413a45a3a1cfb79790b3b62",
+      "labels_hash": "c4884e9c21349904e2740f24d9f75bb576382ec580c5a51690941d4ea59adc11",
+      "source_frames": [
+        0,
+        499
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_0.6s_step0.5s": {
+      "source_hash": "51cd46957c1c3619d5f358eb9fc2d598266b2547fe7eae26ba7bce63bc15637b",
+      "terrain_hash": "b305407b9b4ce0a74b2403e219e578e8bea831a3e1f84650b94a1a7ddb14c271",
+      "labels_hash": "7a15379a32aa441c95573be5766dc0b01aecc0eb2dbdca4d540881911d959439",
+      "source_frames": [
+        0,
+        411
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_0.6s_step0s": {
+      "source_hash": "6990c0154c508e2a95446930ddf80831602c3ab12c491f191734aace3b5b41ad",
+      "terrain_hash": "181ae728c88ee71ab09ef329672fcc2c3dc032cb8110823a41781bb523ea5986",
+      "labels_hash": "b9dfa2e981537dee2ea1eed80c0e6b19621d5dd21aa084b8e63606b205d55206",
+      "source_frames": [
+        0,
+        385
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_0.6s_step1.0s": {
+      "source_hash": "7a7ae4d398694598e80a519b6a5b8ced3b526c9d852be25d2d14e0e2589b94ad",
+      "terrain_hash": "bcf84bb9cf047b7fdefb326202e1f046ffb8536b1b141e9393a1859037da6267",
+      "labels_hash": "0931681a9dd4fb8c04b697b50f1a4c9aef2ad696b0aa2d1b5760a6bf93a0a63c",
+      "source_frames": [
+        0,
+        444
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_0.9s_step0.5s": {
+      "source_hash": "c273235e0e341b8d306aff605be32cae86906bb73212153887ec6ab34baffea3",
+      "terrain_hash": "f0ca14195d1e9be0aef3c5ef0503adf2d82ca65d11b8ce54646d48a4f4237a61",
+      "labels_hash": "a2a344c2beb3de08db0b33371b036c5dac44b2adad798bfc4a7f84ec7b6a6b21",
+      "source_frames": [
+        0,
+        431
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_0.9s_step0s": {
+      "source_hash": "ad3811c2f0ee9a46f85c293d810c8ccacf1fdbeb8e89add745007783990bd1db",
+      "terrain_hash": "b19051728984b84c0ce1e32ce50eba63230ed29f009faf9c5af341200e36c69d",
+      "labels_hash": "5b20402fdf4b1a62ed6359a1f640c6874d33460d38a10e5e8ffa8ac1b1f85d6a",
+      "source_frames": [
+        0,
+        399
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_0.9s_step1.0s": {
+      "source_hash": "41f7c559a46c14ebb40133ff20e344910beb30cef1c736eb90e937ff66f2c7c2",
+      "terrain_hash": "c387015e3718f8a537848ed3dbad6004cafdf506f8afd9f6b0b09fade0820b4b",
+      "labels_hash": "19360231aa398f8582523a3f4ca0cb6bf80a004c23873ab420bf1642bb62a51e",
+      "source_frames": [
+        0,
+        453
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_1.2s_step0.5s": {
+      "source_hash": "cff90abfd866d7e7e0f22bf431ff737bc259d3dc11263300acf1d1ece143bf18",
+      "terrain_hash": "f41649ce61fbc8ae6573d018b6b8e774d73987bcd0a8d4c0f0d292e5b420d275",
+      "labels_hash": "69b079676fd3d21ad8685bd10010758bb03deaceab14d4e4503d6a75b66cdc43",
+      "source_frames": [
+        0,
+        443
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_1.2s_step0s": {
+      "source_hash": "7b8d2072943c64b0a1d7c7764bd5e2a5a7c9aa4b568c0ea5db74903820b0745f",
+      "terrain_hash": "885ce26f3caa0aea058404a955370af50dfed0293305fd3b8b7b5d1669be9c53",
+      "labels_hash": "5834318587e2bdeba9445ab0933857585648259e7e2a9d4320239c7fa670b89b",
+      "source_frames": [
+        0,
+        420
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_1.2s_step1.0s": {
+      "source_hash": "2975301f1c7352c8dfb551894f048ecc9be9653d45b5c5c0e51d9aa7f09a0ec2",
+      "terrain_hash": "2ef0625a1b7b42774002c939ba04cc3c3e464e24e106843dd81ff30e3fb1f7f4",
+      "labels_hash": "7dffe01cd404fe551249b642e87f40d4474dc1b14bd54cb007be7b877c08f35b",
+      "source_frames": [
+        0,
+        486
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_1.5s_step0.5s": {
+      "source_hash": "7b91dba1633a501194f45f6d10a3243df031aecbe12c63e1fb80690d42066d8e",
+      "terrain_hash": "0eee2cda8c3612368fb8a2e4f6f812927102fae5fd13651b8c528b3f3377446b",
+      "labels_hash": "105c32771c907a1b8a8f79011e83035fa9a65ee024d3b3dcf86e5e8e1842773f",
+      "source_frames": [
+        0,
+        464
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_1.5s_step0s": {
+      "source_hash": "51394a7ba87bb06c06ccd76350d5cea451a7689c71c88ce574791877d5e11a06",
+      "terrain_hash": "4ca1e0a07e3f784cab44eaa441758639702d0765105492e6afbd40ff095071c7",
+      "labels_hash": "e368dc88aa6ade08797ebb9c883ad06edf90c6b7ff764fcd1034fd195a6f70d1",
+      "source_frames": [
+        0,
+        435
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_left_90_1.5s_step1.0s": {
+      "source_hash": "e4fde0e996913a7334dd02ca48ed7f278dc6b84305ca09cf4f992f78fc715fcf",
+      "terrain_hash": "2803ca23cedc3fdc08ad96b20c393c72d5596121568ccf7ac8a4a57ce882e601",
+      "labels_hash": "11a2eb778529a5fcc331269c6185d2893f0a6108c67ec6e432a6fb2e9caecc04",
+      "source_frames": [
+        0,
+        499
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_0.6s_step0.5s": {
+      "source_hash": "f59875903f4e2b9ce8187b5ee437b092bd4adae4c02627506e4dfba3fadc5666",
+      "terrain_hash": "ebbcddf948e60b2a616d7fd9c3849bdc850c4e51f476fd26d7f8f7052df730a7",
+      "labels_hash": "8aa6091f6446a31b2466eb6ab1bd43c11b900e746635297f7ae06d9de5d0b43d",
+      "source_frames": [
+        0,
+        424
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_0.6s_step0s": {
+      "source_hash": "5b09e681c5347460b600e428b33ed7fca60cf938394ddf15c4238a17d970c7ad",
+      "terrain_hash": "1479caf9cb1e82bff48efa77575f6fe5eac1c4a1a30c78b40baf0288421945b9",
+      "labels_hash": "145cd4eb16b1e0ed9ad695156f16ff9fd4dc7bcafdcb75b56ea95365fe1ccab3",
+      "source_frames": [
+        0,
+        399
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_0.6s_step1.0s": {
+      "source_hash": "18679b96bb638ca221e27635e53d543e977169c27397143f30ba620b9a2abd5a",
+      "terrain_hash": "276a738e482245df40fec5b77662e41f85ff045905d2a8533d54a59a313e7ddd",
+      "labels_hash": "23731ae5115f91db223bb5910a08b089fcea4e9ad384f1c43f3bf337d14aab62",
+      "source_frames": [
+        0,
+        446
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_0.9s_step0.5s": {
+      "source_hash": "f3af29f307369d1efecd404cb21e58aee8f61bc585152b8b8bd04201532d44bb",
+      "terrain_hash": "03414d46ef94a17a3506839cc3901aefafdf8a329a1b492f8f068680c3b2b723",
+      "labels_hash": "d09b3ab4b8a09b66174b1a9566561b46222c72d554561319a2c90f1db4280f61",
+      "source_frames": [
+        0,
+        431
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_0.9s_step0s": {
+      "source_hash": "7ac2101f30c8ed720e4e00d6ed3c4304b43493fa7c0cfbb640cdeee4a6b7ffbd",
+      "terrain_hash": "dff02c5b6683ff5cf4dc44a68e8ef3defcf28edfe3c1e2bf1185fa0254903c41",
+      "labels_hash": "fd061eb002a0c1c726a03d4444d494df6d53bbd0a19b23ad6b822cd57fdebe2e",
+      "source_frames": [
+        0,
+        397
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_0.9s_step1.0s": {
+      "source_hash": "932c93ffc08e464fdc8e747cb95b91c5e9da0731d37272524cf853ddc5d9c8d6",
+      "terrain_hash": "92d05cd01d4f6a9c77ecd1fd5be28471427e93c3eb83bf678e6fdee31375b0c2",
+      "labels_hash": "4132d468f8a781fe278b54965e2c46aabb69d4a1e2f0c75a90b2739c6b5236f8",
+      "source_frames": [
+        0,
+        470
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_1.2s_step0.5s": {
+      "source_hash": "5b377414571d3c25fa4096bded8f464329cc5fae2272653b9de0968f7bb914b6",
+      "terrain_hash": "84c634d892c4412ccd38cb996b9e2ce38b4ff3f24b8389252f6aefbc1d238d6e",
+      "labels_hash": "c76442ad82b5fed5bdb0fabf0cbe9356fa262a1af299e06579a0b0e35c825a54",
+      "source_frames": [
+        0,
+        450
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_1.2s_step0s": {
+      "source_hash": "ee1c74d19a388fa9dff9052edd3ab40b68e6ad729d7334d22ca65cdff349a989",
+      "terrain_hash": "cec76b86590a832a2a275b532fd6cdbb06ba08e44026b5893ac12083c8a0554c",
+      "labels_hash": "f71bb44eefed7039ef0893397d94c103f34d48f43bc2b9e466388032da9c997e",
+      "source_frames": [
+        0,
+        419
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_1.2s_step1.0s": {
+      "source_hash": "e18d83432b1394ef8c68cb4de7245171a52df7cdc1b4f771d596d7bcb965e48f",
+      "terrain_hash": "b0901d2341b3687085cb15a9ab415a8255e64f7f08e10337990a05fdd448861e",
+      "labels_hash": "1f5fbc7d8529be8516f305703b852e8b8ddd9e95da489d0b454944cb0290796a",
+      "source_frames": [
+        0,
+        467
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_1.5s_step0.5s": {
+      "source_hash": "29412456488ef1eefb9d4cbd52256a6502add1332d3c506d176d804ab6311dd4",
+      "terrain_hash": "ffbfe8f6dc92a1e8ef2c3c8c385387b8aa9816c60a8118375be1648fcf697e1c",
+      "labels_hash": "75dae4083a6d4aad9b886716d4e921cc7c277f3b486d62da41bb7de8807423ca",
+      "source_frames": [
+        0,
+        468
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_1.5s_step0s": {
+      "source_hash": "5566a6e01261fc42781012499651b6aa21f9ede17bf5735c6f8f227edbb3e00a",
+      "terrain_hash": "9d9d3c39f21d46660e90335c0e619a4634b861edd17ffa981020cdb175f45173",
+      "labels_hash": "7b3f21e6e6fcffa483a787023c433f0be2fe371478a012458ede3f78fc401c2b",
+      "source_frames": [
+        0,
+        445
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_45_1.5s_step1.0s": {
+      "source_hash": "09174d1489f72bfaeb3afef08cca2e84596584c4edcc743c8b165dd425cdec68",
+      "terrain_hash": "c9eb428394f3cff1e9786de24b2064ac9b66d45cccaeae2a2834e091d7241a16",
+      "labels_hash": "7a3cf6b1e78e23eeebad842ecb1ae401182e83c12a078b675c8c946c1729f74f",
+      "source_frames": [
+        0,
+        504
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_0.6s_step0.5s": {
+      "source_hash": "ecaf6a9e44333a7f8edc5e1e2720f5cf84c4ab73cc0ca898f50d47c65826a519",
+      "terrain_hash": "cd3f681b0a4b3591b9ffd2558a63fffe96f0220a02d97b6d1eba333f53a395db",
+      "labels_hash": "0c6ca5a3933096521e72c11feb43d597cd468602f1a3c65df750b291c4c4921b",
+      "source_frames": [
+        0,
+        414
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_0.6s_step0s": {
+      "source_hash": "72c9349b57377960b74ac9f8879c803a991f4fef8a4d5a505af6b841342990b8",
+      "terrain_hash": "c0bf979f130791acb0a03733345853e46d3cfb41b924a2065aee7d26a8538e1d",
+      "labels_hash": "e70e20863dbd674bdd5430eba8ef6118bb62d200718d8ea7b2f9f63c87b95fa6",
+      "source_frames": [
+        0,
+        402
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_0.6s_step1.0s": {
+      "source_hash": "e24c062e215445afdd6cc4a08a56f7867a8b991e680917127c2d2a673a9de4be",
+      "terrain_hash": "9534b83c4f1b9263ac3bd8ca32d8cfe4a15f2e0938704b888c0f470a7c34b3fe",
+      "labels_hash": "df8596ad93308ac65e6055850bba56a67000c62aa0f5a8d4133fec6ec773f8cf",
+      "source_frames": [
+        0,
+        437
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_0.9s_step0.5s": {
+      "source_hash": "a558cca0c56921c5f85efdd93032910e2d8977224cff40d45902bd666e272ed4",
+      "terrain_hash": "ee1f4b88cb568392ece17addf97a87e880f821fb32eaa6ce336e491096777781",
+      "labels_hash": "6bcb6cc35df63da807f8e24b1db03323304e84039a61933f6ec7c9abe2afd124",
+      "source_frames": [
+        0,
+        440
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_0.9s_step0s": {
+      "source_hash": "af161fcf6cbb430ccac0668967a629d618347d3d66eb8c412751296072224748",
+      "terrain_hash": "a9b44dcb3b881ca42b1c707076e2024765fa547f847935388b8ee6da6684b6d3",
+      "labels_hash": "df6ed5e5724265f89cef62fd7b421c0f79648708c6e72b39543042bc4a9e76d2",
+      "source_frames": [
+        0,
+        404
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_0.9s_step1.0s": {
+      "source_hash": "d9a48a5f804f8c0eb6fc6b028d91e8cdbb624724965d45e40b620d42cb37d792",
+      "terrain_hash": "bd1ee9810d40bba015a092fab836d1d47878d81a0a45a24f97b21107e297f131",
+      "labels_hash": "c9fc4ef96a88d202fd2b460bc39a171487c2371d2eafc1a2ed6c11a1e636ac8d",
+      "source_frames": [
+        0,
+        476
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_1.2s_step0.5s": {
+      "source_hash": "c8e884e4574f2181dd22a85f082cfa1b60717b6a0850ce42bdf21538ce9e3070",
+      "terrain_hash": "23e69d1e597899e0e739743178b635a56eb904d0782099e2ea0cab2609ebbec3",
+      "labels_hash": "3831df511bd705c24252c6b6bc901ae944674ebf0810a175008f06cc8d634fe8",
+      "source_frames": [
+        0,
+        444
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_1.2s_step0s": {
+      "source_hash": "a15de6075e316e2cb001c75ab2251aa9267bc51e9929a69bec772721c465c429",
+      "terrain_hash": "187e6ea181aab9d58f0259619e94177c3f3b35d406b9d75f2046c93a0be85646",
+      "labels_hash": "117c40a2c5ac904ba951baea6243bdc3498b030524a835f150e02119883afe7d",
+      "source_frames": [
+        0,
+        415
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_1.2s_step1.0s": {
+      "source_hash": "95881ddca5ce8ee278ba770467569b76675fd9a1985a15eda4d28a901ce91b33",
+      "terrain_hash": "97ef55d6a10bbc91111bff7554ed693cb7ce97e3fd46fb8f38c5792cdd92c4f0",
+      "labels_hash": "684cebcc161f41328314f9e9ea81a308f061b46e3eb24bb387baed8cf7b1d1f6",
+      "source_frames": [
+        0,
+        466
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_1.5s_step0.5s": {
+      "source_hash": "ca98759518067690e9cff1d0c859fbfc19747003206ab90488ff7549cb2c3f96",
+      "terrain_hash": "707c216d3ad3cdab5b3a6b9970ebedfed1645b5de58751e12ae757d5e5a5bb44",
+      "labels_hash": "3520bd76dcc8068f65b2028bd687b789be6a9a0271be4dc8f35e324a1f8ff74d",
+      "source_frames": [
+        0,
+        489
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_1.5s_step0s": {
+      "source_hash": "c1d1d136158b241cef6c24041f7f3fb33671aabf79215c7153318243f08de4bf",
+      "terrain_hash": "a63238da99f5f8a4036cc4125a2aee998297aa43d4f435a276b73b4ba8dcd59a",
+      "labels_hash": "c1b84130cb85cff121601d6585f2198354c3bf6f588bca832705c77e6ec91c7b",
+      "source_frames": [
+        0,
+        425
+      ],
+      "variants": 10
+    },
+    "motions-high-step/run_right_90_1.5s_step1.0s": {
+      "source_hash": "31d187da5756b2aa83ffd2775bb2ad812255fcf7fac8d7334d6aa33253765e0c",
+      "terrain_hash": "22b6e47e923d9bffc2ea208784891f3372cdb8933769d23c9f7711f2433dd158",
+      "labels_hash": "7e5dfd401101820a271801d61ab61cf1ffc2b441da8bfcda60a86a9cf58662ea",
+      "source_frames": [
+        0,
+        486
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s": {
+      "source_hash": "fef9f7ce29d01c8e1441ab7f99a142bf13a76a26cc7598361d927626d96c3ecc",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "6ebfbca3952516b35772673d6552de90fd462534e89d126fd4c3c44695be7efb",
+      "source_frames": [
+        0,
+        920
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0001_stand_2.0s_run_left_45_2.0s_stand_2.0s": {
+      "source_hash": "c6654d7f37fd8b56af9c3404751ec05bd750659e289c6bb666650e533f6809db",
+      "terrain_hash": "9fa8379526393959e8f4a8ee4baf772be6dbfc5405013d6fae0643296db0e466",
+      "labels_hash": "032f29b9b34d41df68f9a2f11698883dfc0db5451005852f01e712ca17e686d1",
+      "source_frames": [
+        0,
+        300
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0002_stand_2.0s_forward_1.2s_forward_1.6s_left_45_1.0s_right_45_2.0s_stand_2.0s": {
+      "source_hash": "26ce6eb495c7e9dbb4cd15748d2294a3a4c0d445653af8658eca29d6319a5e63",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "f129fe56c094e27bf292b9ba5ce9541c4152697b6f850e991beb2a48c96db860",
+      "source_frames": [
+        0,
+        490
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0003_stand_2.0s_right_45_2.0s_run_right_45_1.2s_run_right_90_2.9s_forward_1.3s_stand_2.0s": {
+      "source_hash": "3893af21e7729a349b2d6279e90c683ea37e41574312d702bb151b95f90fb7e6",
+      "terrain_hash": "6704684b7d37014144a9512663d446a4aa5339db1f57e7d1f044d205d286924f",
+      "labels_hash": "8edf241ef363ef9cd53963ae079b9ed8bd834f3f90be2e2ab19eafd2217e8c34",
+      "source_frames": [
+        0,
+        568
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0004_stand_2.0s_run_right_45_2.2s_right_45_0.8s_run_right_45_1.2s_run_left_45_1.2s_right_45_1.3s_run_left_90_1.9s_run_right_90_2.9s_right_90_2.8s_forward_2.0s_left_90_0.7s_stand_2.0s": {
+      "source_hash": "195e3e5db8ca4ceb2c4c1f5398ba230cca9c396465dc3e272be54af3ef4970af",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "5deb8fd545ff40fe1b420ef059be7e34566827e9f09c36bf65cf573f81cd3d81",
+      "source_frames": [
+        0,
+        1049
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0005_stand_2.0s_run_left_45_1.2s_run_forward_1.5s_right_90_2.6s_left_90_1.2s_right_45_0.9s_run_forward_1.2s_left_45_2.4s_left_45_0.5s_run_left_45_2.3s_left_45_2.4s_stand_2.0s": {
+      "source_hash": "af35cc1318deea6bf1f8ccf6d00380e53b87e18756ce9bbf4246033a89885170",
+      "terrain_hash": "449ddb8235087567376dbab0a8555d97444ad852db3c1231908ab42673235b12",
+      "labels_hash": "767acef91f8a65d636996bd93a008b6985422b256a4dfaadb72443218a1e3f47",
+      "source_frames": [
+        0,
+        1004
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s": {
+      "source_hash": "e33fe0fd5838b6fd7f5ef681ee9b3e4d603a54e811415628819e1b4045225636",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "9441d7e8b3ae27429168df65e14297eb62caed3b10c6d0e0a24b1fe9853795b6",
+      "source_frames": [
+        0,
+        269
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0007_stand_2.0s_run_forward_2.7s_run_right_90_1.3s_stand_2.0s": {
+      "source_hash": "0647fac82409756caacdd36cbec6370bf2a2c53b4670c5f13190890f5ad14435",
+      "terrain_hash": "a8dc2f4a0b1407076ba36eba6805852d9ea7b3f1ef31475b24614433bfc97fdd",
+      "labels_hash": "7320c5f773661ef5c5a4d7cef29f5b7fbac447340a3935e035f5ba4c18276760",
+      "source_frames": [
+        0,
+        398
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0008_stand_2.0s_right_90_1.3s_forward_2.3s_run_left_90_2.7s_run_right_45_1.2s_left_45_2.4s_run_left_45_2.4s_left_45_1.8s_run_right_45_1.2s_stand_2.0s": {
+      "source_hash": "f5e21f974948bdb14bbfec140b52a91b5138a35c2c1bb966a5d1f77128bd411f",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "d88151395892e58e705da89171c9bd6def30e5577175022e23ee7ec9fcddd2f5",
+      "source_frames": [
+        0,
+        965
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s": {
+      "source_hash": "31a240ca9536eb3fd5a504a7e9e611c52899336efc390ce4722488c90b3ed9dd",
+      "terrain_hash": "4618d410d86d0eb6617fa12b0d2e9a3ccc152fc81e8f13eb0f243a3c902e8357",
+      "labels_hash": "c84394750467e0ba3aafa17a9674f157771f42ba9c4e5bbac937fbc22ba11da5",
+      "source_frames": [
+        0,
+        560
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0010_stand_2.0s_left_45_1.2s_forward_2.8s_right_45_2.1s_right_90_2.5s_left_45_2.7s_right_45_2.5s_left_45_1.3s_stand_2.0s": {
+      "source_hash": "19fd75093df3ea187f0c40e57354d3259f9cbc31fb16350558a5b1efe415236c",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "0797f919736bf0a1cca149b2c32a79e71cb0fa557e2e3e1d39b37d26ca190065",
+      "source_frames": [
+        0,
+        956
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s": {
+      "source_hash": "fe92069d0b41f84ba1ead78297de1d3b10e52da166c0256149d56dc61a51c034",
+      "terrain_hash": "918033075fb3e283dba1426ea1a8f3f07d841cf174dc8ff3c028ba67dd3496ff",
+      "labels_hash": "d7e9ad9f335abf18ad8861e7c8d651a4d52418bbcf886242270070340172a613",
+      "source_frames": [
+        0,
+        1095
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0012_stand_2.0s_run_right_90_1.2s_stand_2.0s": {
+      "source_hash": "23f024e37883cecfb655bd9f6c2fa9e4793feaabdbf443b8a90b94bf6794b412",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "f54499e1645c426a02a29ec717e2bfcc5a3681d96b84f9520cc38e93ee7b8048",
+      "source_frames": [
+        0,
+        260
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s": {
+      "source_hash": "1069eac994f33521688fa09048965f8c87794a32e5bae0b176b8b72da086f4ac",
+      "terrain_hash": "a9792a3f41176145c7799102a6538a15ecaca6400dc7dd4f6acb70d4da51a53e",
+      "labels_hash": "56a57ed4d1edf662692e5d5356d8357d2bf3d0a2265e0f930caa536c47964d58",
+      "source_frames": [
+        0,
+        1086
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0014_stand_2.0s_forward_1.3s_right_45_0.6s_forward_2.2s_stand_2.0s": {
+      "source_hash": "82d417627d95a5b073e107f28368cce1e56a8656f599ff918481e281bcd8178c",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "433fd796eac8a89e3bf5a26a385388e67b7bf3f4f231e19ec06025b420b9b881",
+      "source_frames": [
+        0,
+        404
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0015_stand_2.0s_run_forward_1.8s_run_left_45_2.1s_right_90_2.2s_left_45_2.8s_stand_2.0s": {
+      "source_hash": "c64370b3fe48898d974fa29d1d00e7936facc38c4d109fcc7fdba79ff914982e",
+      "terrain_hash": "84a7457f4c99aa65ff9fab0845f20e630510dc80928ebc0c0f714b30773231ed",
+      "labels_hash": "e9d187bb3fbd23e3cc0a14e2e93b7361f85d04ef36b448eae6ac3e4edfe4d632",
+      "source_frames": [
+        0,
+        645
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0016_stand_2.0s_right_45_1.4s_stand_2.0s": {
+      "source_hash": "a041f1d4b0ad08e3038b5ec39adfa2e5d6fa511330214c33b7e59ab26cf6e6e5",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "976f1c3cbe71da28592d89a70b8b1324fd31be1c7b1212afdc324f73aea44012",
+      "source_frames": [
+        0,
+        267
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0017_stand_2.0s_run_right_90_2.8s_run_forward_1.2s_right_45_2.5s_run_left_90_1.8s_run_left_45_1.2s_run_left_90_2.8s_left_90_1.3s_right_90_2.3s_left_90_2.7s_right_45_2.1s_stand_2.0s": {
+      "source_hash": "620583406f4c682b6219a54b419318912e93e6b2077b9c0a046fc8b36a4a9106",
+      "terrain_hash": "6a8f62e0b25671d4730b2e6ecb4a0e75c253123f333d84c5088d15423e6905e4",
+      "labels_hash": "c0137fd5d80799a9c57f30ee8290473c84e1d70b016b392bec2cd937332eed73",
+      "source_frames": [
+        0,
+        1237
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0018_stand_2.0s_run_right_45_1.2s_run_right_45_2.0s_stand_2.0s": {
+      "source_hash": "683c3b21be79d91d1652073ede6d8a41363816cd824ee0a3920e2a296416094f",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "1cbf6ee97896936188737ee530ca470d7e578d2dc8ef9ed53b819086ef5e81cb",
+      "source_frames": [
+        0,
+        360
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0019_stand_2.0s_right_90_0.8s_run_right_90_1.2s_run_left_45_1.9s_run_right_90_2.1s_run_left_45_2.3s_run_forward_1.3s_right_45_2.1s_left_90_2.1s_run_right_45_1.2s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "a75b111b406407f1a3f0a981bdc7d335328997e44c96595e4c5ac50a55de83e2",
+      "terrain_hash": "d52bf39ef0ab24e223097a9660e4651b87079a1d08e522590d3c6d19d26225e3",
+      "labels_hash": "723ba324ec52e01496e67951549485c59ef991e0b004b4786c72e9d2311f13eb",
+      "source_frames": [
+        0,
+        1007
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0020_stand_2.0s_left_45_2.9s_forward_2.7s_left_45_2.5s_left_90_1.9s_left_90_1.0s_run_left_45_1.2s_stand_2.0s": {
+      "source_hash": "cd01948ee66e17b50aa73be1771949a637a816b09c0688b5cb59b2aae9889c4b",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "06c2c56b3e2b2bb17b3d34169c23a2f8163fbc00ffdb9d8c93b052fe3b3deb1c",
+      "source_frames": [
+        0,
+        811
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s": {
+      "source_hash": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2",
+      "terrain_hash": "a0ea658503a013906a4ccfddb42dba5f7e7f493bb3bdd1a8cdf978d8e02c5b82",
+      "labels_hash": "1ea575a050354a9652ec88cc3be78f82684c98528af31c865efb874c52bf700c",
+      "source_frames": [
+        0,
+        1264
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0022_stand_2.0s_left_45_1.9s_stand_2.0s": {
+      "source_hash": "d2f6257a63da9da7d05b220bb2e214bb202fe44d5e161f42397c2f3a5973133e",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "bd11867b6e5496bfb7c6667e6224b80cc5b5d66248c0fd5c4ca62bcae1e4ae16",
+      "source_frames": [
+        0,
+        295
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0023_stand_2.0s_run_right_45_2.0s_right_90_0.9s_run_forward_2.7s_left_45_2.2s_right_90_1.4s_run_left_45_2.5s_left_90_2.7s_run_left_90_1.8s_forward_2.5s_right_90_2.3s_stand_2.0s": {
+      "source_hash": "b0394f84eca3ce86dd9fe7f262eb0a0fae17899bc717e560aea41c5140624ae5",
+      "terrain_hash": "1e69ce37100227bb62bbb8b7a97327664c831ff5102bb40671bd0ecb79714426",
+      "labels_hash": "e450718d6ba44bb22d8d3c4f7286fad8dc862df53f8bb6acd1c18e374773c77c",
+      "source_frames": [
+        0,
+        1243
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0024_stand_2.0s_run_right_45_2.7s_left_90_1.4s_stand_2.0s": {
+      "source_hash": "df37fbd410e291c049e76251bda81e8e57f199b9c542ff3bf9b7731e225ed243",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "3d4d31e43ec1dc16fa910d08a3c7d2f297c956d2cc0c71e2d4e2d8666d90f9d4",
+      "source_frames": [
+        0,
+        407
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0025_stand_2.0s_run_right_45_1.9s_stand_2.0s": {
+      "source_hash": "d7252e86079e49b9ed76fa7e36849d912133e082689455a146ab46ee3458cef2",
+      "terrain_hash": "193ce163b5a9a0af2e59e64a65e2e368f04561f3b8d8010ff3bb6f30d5f7d7ee",
+      "labels_hash": "bcaeaa8a06380773707cf299547b67ed57cd6cfd84c61b5b86a6d13e4ff4cecc",
+      "source_frames": [
+        0,
+        296
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0026_stand_2.0s_left_45_1.7s_right_90_1.2s_run_right_45_1.2s_stand_2.0s": {
+      "source_hash": "06f6f46091b67dc2f43f4c9248d1a2ba7ab885a4222c7f94e76c13f34dbeeed4",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "a02c330bae7408e2909484c634d3805d69669f30b8e420bc6977375a849c3262",
+      "source_frames": [
+        0,
+        402
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s": {
+      "source_hash": "dce0650abb321ee5f7cd5efd0c8190508aa914c9e2d3133049ddd66b93dd45d6",
+      "terrain_hash": "f25d406ce1a5352432cd21b58bd60516f315e669dd612c41c9e0042cbc996aa3",
+      "labels_hash": "f3709e4449a429ccb1d1bce1f8093798ec5561c51b7aa71f0e879f39e9f70646",
+      "source_frames": [
+        0,
+        591
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0028_stand_2.0s_left_90_0.6s_run_right_45_1.9s_run_right_45_2.3s_forward_1.8s_run_right_90_2.5s_run_forward_1.6s_stand_2.0s": {
+      "source_hash": "a89892a1b4b72ae5035fc9af0e9f5629ecd3c5ed88f68e50a8fa55367d34c278",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "c047c6eb4931161548143c49c73a02921cb21f1ae15698222d0f2f0787a54469",
+      "source_frames": [
+        0,
+        730
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s": {
+      "source_hash": "76a4b7bc1bdd575c862fa40370e579a2415ee0fe1c95a1d508e6251101ae4fad",
+      "terrain_hash": "02825af8a6f79d899ca336dfbdeae41fd5f29060b28082271c239b79d3b24276",
+      "labels_hash": "5bead8533fbb191dfb0527413a5449ae997de5fabbff7fddf9460f8a98dcab97",
+      "source_frames": [
+        0,
+        1110
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s": {
+      "source_hash": "8dceb6646941ab5b16cc6a51143455b37dbf29aac597fec19de2e8ea2a27c3d3",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "e8b287bf0b6e5c1873903e16ab57d62b69b693f849e93050ab1fea99be8748d3",
+      "source_frames": [
+        0,
+        226
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0031_stand_2.0s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "72b4358599cf9c3723e6610e903f0f91a9bb3e8bf4564ddaf72e66ef6d249162",
+      "terrain_hash": "74184126072de8155df8ea19e21636f887a65c11f522a8c866fa061bf23fb90f",
+      "labels_hash": "8f3850bf3f5f842bba06c28c999bcbae2b7bb14e07c6bf5d2c758f61a26da1e1",
+      "source_frames": [
+        0,
+        260
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0032_stand_2.0s_left_45_2.6s_run_right_45_1.7s_stand_2.0s": {
+      "source_hash": "33e1f405a591c7f501b16fd968d9129da1cc1c534ff541046566e7e474c23df1",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "96d54602e7a5934fd782bae3f265d2af4987987be8e7d7bf7f897ff05f414166",
+      "source_frames": [
+        0,
+        415
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0033_stand_2.0s_left_90_1.7s_left_90_0.9s_run_left_90_1.5s_run_right_45_2.1s_stand_2.0s": {
+      "source_hash": "f323758b528d3a6fe8715bc6a90957ecdf5948990544f1fe549a368516325865",
+      "terrain_hash": "0652f2a9f28ba4b2e02955737de832f3a97dd23dcb7973fc3f2bb1eba3880eb7",
+      "labels_hash": "31dc8a36681283dd30ece86aae6e8cf564c060d7e5f1cf9bbcbef8e96a1e7bbd",
+      "source_frames": [
+        0,
+        510
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0034_stand_2.0s_left_90_1.4s_right_90_1.8s_run_right_45_2.1s_run_right_90_1.2s_run_left_45_1.2s_right_45_2.9s_run_right_45_1.5s_right_45_1.6s_right_90_2.9s_run_left_45_2.9s_stand_2.0s": {
+      "source_hash": "cc17935ec4e7b398f955f37f77211a2f06b1c64ca52c6133948aec2e5cd051dc",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "8a9efbe2048a7ca02ef56ab07a02592d69e3105daf77162a93bf91d72053115d",
+      "source_frames": [
+        0,
+        1170
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0035_stand_2.0s_run_forward_1.2s_stand_2.0s": {
+      "source_hash": "0c913d32fe45341bc01a9fc0bbf4ed061cbe0b8dd7e55a51c1b5f8e46cece34a",
+      "terrain_hash": "4dd475a10db6270edb4db0ad2ed3e92c8e5e396369cbd0ea34dfedb036cb90b3",
+      "labels_hash": "0184ae9e60fd14ac1d17083933385cf4d42568cad3294fd33892d2669fb4cc42",
+      "source_frames": [
+        0,
+        260
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0036_stand_2.0s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "72b4358599cf9c3723e6610e903f0f91a9bb3e8bf4564ddaf72e66ef6d249162",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "694810ac630ed8de50b85e58504349b40ef6782eb15b17b5ff457ff6a983a4df",
+      "source_frames": [
+        0,
+        260
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0037_stand_2.0s_run_right_45_1.2s_run_left_90_1.2s_left_45_2.6s_stand_2.0s": {
+      "source_hash": "dc137d1bfa224818ab320d35eda55d9b52548e16ab402296a84203249466ed00",
+      "terrain_hash": "d2e8fc24504c769858be30a3bed66ddeb8e4e43493054cadf78ab2ed8ae7d3df",
+      "labels_hash": "a8edb5009da6189cb1819bd21c8e70dd7bca7f3e1e750bad64612515bf4bce8c",
+      "source_frames": [
+        0,
+        450
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0038_stand_2.0s_right_45_2.5s_right_45_0.8s_left_45_2.1s_run_forward_2.3s_forward_1.2s_run_right_90_2.4s_run_right_45_3.0s_right_45_1.4s_run_right_90_1.4s_right_45_2.6s_stand_2.0s": {
+      "source_hash": "ece21345c5a88eb0d2fea911e3226bdd76828761d8632b23318326152378b14f",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "e30dcbcf202bef78351d7ecbdd0db96f8c72fa03167c07a951cd2f2b7042f743",
+      "source_frames": [
+        0,
+        1182
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0039_stand_2.0s_forward_2.4s_left_45_0.8s_forward_1.8s_right_45_1.3s_left_45_1.5s_stand_2.0s": {
+      "source_hash": "d8a8fed660c7469666d84489115d766e37cee2ba8d10e9a1bb1d4a51b7e58adb",
+      "terrain_hash": "717bdb483aa0451a84929e2296f2f6de05da00335dbf1f0958445e4973ced05c",
+      "labels_hash": "aca565bba210da47b8c1877950d5a7e5b4571b75dff4554e9e192fe9cddede06",
+      "source_frames": [
+        0,
+        581
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0040_stand_2.0s_forward_2.8s_stand_2.0s": {
+      "source_hash": "234ae735bbfa6cd7993129b4b96a8369149543ce13db2eadfef9a553ca42277f",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "254d03dc5f36b9c3dbc3eda28acb78b868208ef7eb9cccb08a764b4a369a3fce",
+      "source_frames": [
+        0,
+        337
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0041_stand_2.0s_run_forward_1.3s_left_45_2.9s_run_right_45_2.1s_right_45_1.2s_right_90_2.2s_run_left_90_2.5s_right_45_0.7s_run_right_45_1.2s_left_90_1.6s_run_right_90_1.4s_stand_2.0s": {
+      "source_hash": "a14810f56249bc247a0ab9b71e0b0ae62f4706282fd263353191c13ae383be2b",
+      "terrain_hash": "31322a30c2ce14e0dbb5ab696f418785bc4488a3b584601002ccb08e8a42da70",
+      "labels_hash": "17af3b6d0ec309e1f9615ba969a4044a9e938a3212793c19d3899fb4285ef7e2",
+      "source_frames": [
+        0,
+        1047
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s": {
+      "source_hash": "fdcbfcb6ab7ccde0160179c2713c4672a95f19728f2253de55c6f705dad53d1c",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "f4ce1f5187f00be42fc3e9d7b15b0c204c6144659fd91caf68b9d2042c5e72ba",
+      "source_frames": [
+        0,
+        361
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0043_stand_2.0s_right_45_0.7s_run_left_90_1.2s_run_left_45_2.3s_stand_2.0s": {
+      "source_hash": "7bad6ed7e3fefd4e213c72c8ba2cbaef05e3ec8d0ef72e3d624cab0397034b75",
+      "terrain_hash": "8ba4e7c6d349049e619d879c6a7904b4c2e4766581b3dd8fa00513f91939077a",
+      "labels_hash": "2b641e1c5826315702c70b5898de7cb4568b404cbd264f33c2955bdce63c6eca",
+      "source_frames": [
+        0,
+        407
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0044_stand_2.0s_right_45_0.7s_left_45_1.4s_left_45_2.5s_run_left_45_3.0s_run_forward_1.4s_stand_2.0s": {
+      "source_hash": "757b875b3d48063c4def4bef972df4378ea4820e98a45f3d7ef98646fb78a33d",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "d91af816d02a182e4006e117094f689402f1f80eae2080742c68992ef3ffb087",
+      "source_frames": [
+        0,
+        651
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0045_stand_2.0s_run_left_45_2.4s_run_left_45_1.6s_run_left_90_1.2s_forward_0.5s_left_45_0.6s_stand_2.0s": {
+      "source_hash": "7a25fa96078364d0f7e24662f34b061245903f9400da671cdb4a189e05fc4082",
+      "terrain_hash": "dbc377955b1341aa2b3cc20a379bd252a23f7dba34393c11ef45121aa867668a",
+      "labels_hash": "fd720aca7a64087c8ea5e57b696f628572e181ac0ec2f8cee6a38a8b85c75482",
+      "source_frames": [
+        0,
+        516
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0046_stand_2.0s_forward_0.8s_run_left_45_2.4s_run_forward_2.9s_left_45_1.2s_right_45_1.1s_right_45_0.5s_right_45_0.6s_run_right_45_1.8s_run_left_90_1.2s_left_90_2.9s_stand_2.0s": {
+      "source_hash": "83a0628769449688868e0da5f2f3cd9f295730b3488577bb0fca652e24a18370",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "d3529b7e9451973fe0cfc95e36fe4285ac841aef924dd7cfd2ce96b47718eac6",
+      "source_frames": [
+        0,
+        966
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0047_stand_2.0s_run_left_45_2.1s_left_90_1.6s_right_90_2.0s_run_left_90_1.2s_right_45_2.9s_left_45_1.6s_run_left_90_1.2s_run_right_45_1.7s_left_45_2.0s_stand_2.0s": {
+      "source_hash": "557656d347ae3fe4c6e21f3544ca99a4a15a037fc96f1b07b49915291d0ad20c",
+      "terrain_hash": "9a9d610883aa93fad2ad399563ea0bc47f43dfeefb78f749316db29af1825a4e",
+      "labels_hash": "dd2eb261f4ef3ff6d4d3edf427e735acb7b73a3cf90b125a7d6e511582b01492",
+      "source_frames": [
+        0,
+        1007
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0048_stand_2.0s_forward_2.9s_run_right_45_2.2s_forward_1.3s_left_45_2.2s_right_45_2.8s_left_90_2.9s_run_left_45_2.0s_run_left_90_2.8s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "03becab5af3b8380f40363cd41d4f97d9eddd7a5444fea6c022e34974bf9eb33",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "fa5d905dcb52a266fc386a3f72fc4e139402f8912ea75c5d7c3d35df477db98e",
+      "source_frames": [
+        0,
+        1215
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s": {
+      "source_hash": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516",
+      "terrain_hash": "d4f934283989bdf57bf49525c219076dea6a220536d1282e901451e51cd30ac9",
+      "labels_hash": "95ea47d27148e2459b105ee6e9eb68b96e1b828e2cf7bb2b6013070820bd7eb6",
+      "source_frames": [
+        0,
+        1326
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0050_stand_2.0s_run_left_45_2.6s_run_right_45_1.6s_stand_2.0s": {
+      "source_hash": "34e58256ecb0f6e5c2f33d3de29658554805952923015f265c1f231c22b372a9",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "f31eec40d31d29c1312e6597f2e46e9ebac5073b4d676e2616ffec7f5226240a",
+      "source_frames": [
+        0,
+        411
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0051_stand_2.0s_run_left_90_2.9s_left_90_1.1s_right_45_2.0s_right_90_0.8s_right_45_1.8s_forward_1.8s_run_right_90_1.9s_run_right_45_2.7s_forward_0.8s_stand_2.0s": {
+      "source_hash": "d14f3bb0e8e6de738dabec8c51bd64e804cab09c44f24b0533d48a988a769ba6",
+      "terrain_hash": "e6b43473ae2fefa00d1123c6120376a935468066ee0a5aa8b2ea0b05e0673179",
+      "labels_hash": "3ecf85047e7b9312c8e4982a5ab05888b05cb0cfc62335b3654b394ecb46e2fc",
+      "source_frames": [
+        0,
+        987
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0052_stand_2.0s_run_forward_2.4s_forward_2.3s_forward_0.8s_stand_2.0s": {
+      "source_hash": "fb69e3903434fb024544d3e08c3bc21b96cc6f5a436db1daff24453a3c3f3f08",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "234b4b87c4f5711f64ae04e6cb2fdaf9c28682dc5d8c969b7bdf245cedae912c",
+      "source_frames": [
+        0,
+        473
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0053_stand_2.0s_run_right_90_1.4s_run_left_90_1.5s_run_right_45_2.8s_run_right_45_1.8s_left_90_1.5s_forward_2.7s_run_right_45_1.2s_left_45_1.7s_left_90_1.6s_left_45_1.7s_stand_2.0s": {
+      "source_hash": "c46db78c115ee43927caf4d71d7193ed8f9fe2325bb3aab11c634a52a39b0395",
+      "terrain_hash": "9fd4dc2d092dfd50674525c5785ac21d196d943fcbcc2d1447ee37350bc40a47",
+      "labels_hash": "d820d4125a431989bb356d1e0728ef417f8c47ea6b0619f42d3bad415a11633e",
+      "source_frames": [
+        0,
+        1088
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0054_stand_2.0s_run_right_90_2.1s_left_45_0.7s_stand_2.0s": {
+      "source_hash": "d09febfbfb0b974dd966b60c6600c543783b7ed2ac9acbcdf11fbba3470552e8",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "2b4c8d7962df09eb6244c54f07ac5412ed9486e447e4c5c5dffc35856b81e523",
+      "source_frames": [
+        0,
+        338
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0055_stand_2.0s_right_45_0.8s_run_left_45_1.2s_left_45_1.0s_run_right_90_2.7s_right_45_2.2s_run_right_90_1.2s_stand_2.0s": {
+      "source_hash": "f0aa6ef7c78e8eceec87d78223116092dd0cf16196e32a540879b9262f7768eb",
+      "terrain_hash": "ac32720d59b35ff61cc3434b8d1419f978fbb854339603092809a1aa031ed354",
+      "labels_hash": "8f9391928317e5a3be57e99bd0acd4e103236f45c206e094464bcf260ffed88c",
+      "source_frames": [
+        0,
+        653
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0056_stand_2.0s_run_right_90_1.2s_forward_0.9s_stand_2.0s": {
+      "source_hash": "99c528de01976456187726a36bd43f32f2f4600cebc657c44221d5bfbade2e87",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "45820b6020c83253ec11464daaf09ba86d2b5f30a1b220130329c5229894a16d",
+      "source_frames": [
+        0,
+        306
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0057_stand_2.0s_run_right_90_1.2s_left_45_1.0s_run_left_45_1.8s_run_right_90_1.2s_run_right_90_2.1s_stand_2.0s": {
+      "source_hash": "901ca754f1da4186d1629b3c3b21629f9add3ef2cfdc8f768b5feddbbe0a1696",
+      "terrain_hash": "d43ec59e5cb4da8b458667ae468cbbdd0fac76acd48b8e47e3d166267b29fd8a",
+      "labels_hash": "413075fc8dad0026d0518e2af6c33814c4396c5b00e96526f6942dd78ef64a11",
+      "source_frames": [
+        0,
+        560
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0058_stand_2.0s_run_right_45_2.7s_run_forward_1.2s_right_90_2.5s_right_45_1.0s_run_forward_1.4s_right_45_2.0s_right_90_1.7s_run_left_45_1.2s_left_90_2.3s_right_90_1.8s_stand_2.0s": {
+      "source_hash": "cb37b3b040290be6a332c1351d53ae664dfed476eadb2d8f45bc7e85eee25265",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "1374b60e15f8980156b18dc96fcac109b20259ac6bfc137fbbb3a2a2835e8402",
+      "source_frames": [
+        0,
+        1084
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0059_stand_2.0s_run_left_90_1.2s_run_forward_1.8s_left_45_1.2s_forward_0.6s_run_left_90_1.2s_run_right_90_1.2s_run_right_90_2.0s_left_45_2.5s_left_45_0.7s_run_right_45_2.0s_stand_2.0s": {
+      "source_hash": "ed53885799faea8e55b02412c8b624a57f3bf3f3d9924dce182eeb1dffc3b82e",
+      "terrain_hash": "66e2f33c108b788be4da8a3d96a09245f1793142757bd7a6d1c22dd932394128",
+      "labels_hash": "6133d660fb1de0b0881d85503dfe833d9c121e5e87fe27d3653a7012c9e6d9de",
+      "source_frames": [
+        0,
+        913
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s": {
+      "source_hash": "c057fa3bdeef1d44970684b176d262e636e8c6280652455cc283e43e9fc9c761",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "fc28ca12a2c6d1ed81032cd0e7e582632cfb1f2d1389bbca3979fd6cc7e214ad",
+      "source_frames": [
+        0,
+        278
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0061_stand_2.0s_run_right_45_1.2s_right_90_2.1s_left_90_1.4s_run_forward_2.0s_left_45_0.8s_right_45_1.1s_run_forward_1.2s_right_90_0.9s_left_90_0.7s_run_left_90_1.5s_stand_2.0s": {
+      "source_hash": "4716e60017d4ca4c9be285582aabf0a3e16e36df5d7544b51ccde51671fb1721",
+      "terrain_hash": "e176c210987d885f40ce1ba736341ebcad95fdbc906930578ccd400e359b0b4d",
+      "labels_hash": "4abc52dc366835644f5a6b764e3c980bdeb00ed25d0647a9d3ce801a85efae7d",
+      "source_frames": [
+        0,
+        844
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0062_stand_2.0s_run_right_45_1.2s_right_90_2.9s_run_right_90_2.5s_run_right_45_1.2s_forward_2.8s_run_right_45_1.9s_right_90_2.4s_left_45_1.3s_left_90_1.8s_right_90_0.8s_stand_2.0s": {
+      "source_hash": "64e57e89b56af5fe07c2324e0c1d40171ceb2193982924c2d9b1a4a121b8600c",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "2b6bafdd3fc383c8a5f1fd86d814544860f95f9d4c460e273234315ca5a6db93",
+      "source_frames": [
+        0,
+        1142
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0063_stand_2.0s_left_45_1.2s_left_45_0.9s_run_right_45_1.8s_stand_2.0s": {
+      "source_hash": "eddbbf80806001aab9896208b68b50f5d3ba938931faeb30f380eea72b379108",
+      "terrain_hash": "741fb3d81880de85ffb45f412e861a8392df4f6044dba0c392d6c1e61bb5ab43",
+      "labels_hash": "96f706681ad8c847d08986fcaeaff3ef2b2d8dffd10dbf3b0b38bdaa75bb2a8c",
+      "source_frames": [
+        0,
+        395
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0064_stand_2.0s_left_90_1.3s_stand_2.0s": {
+      "source_hash": "ee2f3b80e8628bd2a64fca04e530feef9d18815b1f5bcabee76cd009400d9fc7",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "3db65997d40fd3a0bdb49d61ca3d7ea5f2f17326849fa635f0bd2688248b2c7a",
+      "source_frames": [
+        0,
+        266
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0065_stand_2.0s_right_90_0.7s_right_90_1.3s_run_right_90_1.2s_right_45_2.4s_run_forward_1.7s_right_45_1.4s_right_90_2.6s_run_right_45_1.2s_run_left_90_2.8s_right_90_0.7s_stand_2.0s": {
+      "source_hash": "9a78ead73a07789a6bdb21174ff65c6c35aa3fcfbed2a083976b2927c4118040",
+      "terrain_hash": "896c2788141f3bc1117b674fd467ea45fde05b50770237cb2e09965b26eae19e",
+      "labels_hash": "3b2ce8d11a248c1f77cca539b0010216d241d2801dc02bbd589177f4227e64c8",
+      "source_frames": [
+        0,
+        991
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0066_stand_2.0s_forward_1.9s_left_45_0.8s_run_left_45_1.2s_right_90_0.9s_forward_2.2s_forward_1.4s_run_forward_1.5s_left_90_1.6s_right_90_1.7s_left_90_2.4s_stand_2.0s": {
+      "source_hash": "a358a493346d42c0c324117a23077943e9754f87887793e5faa9a7c9df486204",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "63d2a225154ab2a438631d911914e92205fd7cadf46832ab3ec34e06fc0c8e73",
+      "source_frames": [
+        0,
+        973
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0067_stand_2.0s_run_left_90_1.2s_run_right_45_1.5s_run_left_45_2.8s_run_right_45_1.2s_forward_2.1s_left_45_0.8s_left_45_2.1s_left_90_2.7s_run_right_45_1.2s_forward_1.1s_stand_2.0s": {
+      "source_hash": "9a933f3e1080873f4a2dc46441c90181951b6c6f0f144815210dc120d0ad578e",
+      "terrain_hash": "4c3557f13d094183a81ee41e82018ce4d25bc6b432aa11feb5a88b739c4d942d",
+      "labels_hash": "a6823bc6ed08ca29af5c6e98e9e11f61c22422f2de196198743a26ddb4e9bc36",
+      "source_frames": [
+        0,
+        1030
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0068_stand_2.0s_run_forward_1.2s_run_right_90_2.4s_run_right_45_1.4s_left_90_0.8s_run_left_45_1.2s_left_90_2.5s_stand_2.0s": {
+      "source_hash": "c2af8b596178d0e43b4b65072fdff025fa469518a3c4271c6aad72ffa5ce1490",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "7181db7c07aa30f4a600ff8f29373c371807bfd6bb88f721e83299783a0dc5a0",
+      "source_frames": [
+        0,
+        670
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0069_stand_2.0s_forward_1.1s_right_90_2.3s_run_forward_2.2s_forward_1.1s_run_forward_1.2s_right_45_2.0s_right_45_1.7s_left_45_0.9s_run_forward_1.8s_run_right_45_1.2s_stand_2.0s": {
+      "source_hash": "8a79873f5f3cb6fcb892010de06756b18dd52a46ad144abda9719d66b95e32ac",
+      "terrain_hash": "04b1e41d3765b4a192c7ec762adce9575e3e944688d44961753433df08b1f6b7",
+      "labels_hash": "7abd3e86df59c101446d05e408049c51d9ef3f7627f2748d9de14d248362becb",
+      "source_frames": [
+        0,
+        967
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0070_stand_2.0s_run_left_45_2.8s_run_right_90_2.2s_left_90_2.3s_right_45_1.9s_left_90_1.6s_left_90_2.8s_run_left_45_1.6s_stand_2.0s": {
+      "source_hash": "b24f2ef7387456a79884e021b042b81fd17163e62110e6a209ad3e9cae034618",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "01b4671978494143b74af03229ee287e75b113dc230ccd8246fdda2ad0841eeb",
+      "source_frames": [
+        0,
+        962
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0071_stand_2.0s_forward_3.0s_left_90_0.8s_run_forward_2.7s_run_left_45_2.0s_right_45_0.6s_right_90_2.5s_stand_2.0s": {
+      "source_hash": "003645a647db77427963198b194398d3f39a9aeef085e07e5431fa248fc3e690",
+      "terrain_hash": "4553d3c93f3514f74150f1c109bcc84a673ad73efe3afbbce900940d0986c392",
+      "labels_hash": "516c6ebefb849d3b96b2c68289165e89636311371984b7cf4606b93a9e943853",
+      "source_frames": [
+        0,
+        775
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0072_stand_2.0s_left_90_1.3s_left_45_1.8s_run_left_45_1.4s_forward_2.3s_run_left_90_1.2s_right_45_0.9s_right_45_1.7s_run_left_90_2.8s_run_forward_2.0s_right_90_0.5s_stand_2.0s": {
+      "source_hash": "7ef3b29e473f41e92afa665944761e1547c9e7837d029c55338131754f517a15",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "80dca7650e39e0c2de5a98be39485e69da6a24a58e409f995627a7d2473ae4b7",
+      "source_frames": [
+        0,
+        994
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0073_stand_2.0s_right_45_0.9s_right_45_0.9s_forward_0.7s_right_45_1.8s_run_left_45_1.2s_run_forward_1.2s_right_90_1.0s_left_45_0.6s_right_90_1.9s_stand_2.0s": {
+      "source_hash": "a3608cdc0b4f69822d5eb9592614c15e400ddf814787b08b7f4141168939c790",
+      "terrain_hash": "f12d5e1b156959008fdf0034dc1d005e4885011d7d234a130cabcb740d5dcf7a",
+      "labels_hash": "8705498fd205efae10ea1b232d6a932161874160d4a4608abe27d252a1e78e61",
+      "source_frames": [
+        0,
+        706
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0074_stand_2.0s_run_forward_2.4s_run_right_45_1.8s_run_left_45_1.5s_run_right_45_1.2s_run_forward_2.7s_forward_1.4s_left_45_2.1s_right_90_0.6s_left_90_2.3s_run_right_90_1.2s_stand_2.0s": {
+      "source_hash": "da218bdc1fa34636f9bfe536ffb268e420cb8e3b1694e8c7b1dc858d75660c09",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "e0a6d2acb6f7308cc39836c45f983bcd49e8111672a7aa8d0e2f1ad7949600fc",
+      "source_frames": [
+        0,
+        1056
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0075_stand_2.0s_right_90_1.1s_forward_0.5s_stand_2.0s": {
+      "source_hash": "ec9810359260fb97953517a6cc353a863fcaa77531a592646110ca0e06754203",
+      "terrain_hash": "533efa8786a1f4a022dbfc4e1db7dee5cdc8a762e6f41c489e066d043ecdbe91",
+      "labels_hash": "6d206dbbfadae6b604ee5b683a14bb0f60c5c5ad89553db38231bb00239e63a9",
+      "source_frames": [
+        0,
+        280
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0076_stand_2.0s_left_45_2.5s_run_right_90_2.1s_run_left_45_1.2s_run_forward_2.3s_run_forward_2.6s_run_left_45_2.2s_run_right_90_1.2s_run_right_45_1.2s_stand_2.0s": {
+      "source_hash": "ef7ebd87a98432517f41fe89313f2449bc566f906f6b84f34681aa754c15244d",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "76a67c9155c6922ebbe7d30949557f19e95265d3428269efed087eb5bd1f2d72",
+      "source_frames": [
+        0,
+        962
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0077_stand_2.0s_left_45_1.0s_stand_2.0s": {
+      "source_hash": "5a5c5885c34bd8fc277dd67d907d476ef6b9ace6b0ba0a28812156678c5796fe",
+      "terrain_hash": "eb1d00d86aa1d7abcafade6a639fd0af123e294aad955f3dc43c5ddd0454d07c",
+      "labels_hash": "e8d407875701e222cc0c49b66ffb45367569d8e1169db02c0acf166fc9be74f6",
+      "source_frames": [
+        0,
+        250
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0078_stand_2.0s_run_left_45_1.2s_run_right_90_1.6s_right_45_2.5s_right_90_1.1s_forward_2.0s_run_left_45_2.1s_forward_1.9s_run_right_45_1.2s_run_right_45_2.4s_stand_2.0s": {
+      "source_hash": "d7db77ac32789c5e7a6789edc288090fd2fb251676bf1a980b37847cd2cf0914",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "6df16e55e2beded4d74b72051f3978b716ecc3b12fa4ba11ab8311ffed29f233",
+      "source_frames": [
+        0,
+        996
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0079_stand_2.0s_right_45_2.7s_run_forward_2.7s_run_left_45_1.6s_stand_2.0s": {
+      "source_hash": "ca38df1a01de83e0d65bdb254cb2b418effe7f92b561421b8db20bdcdca169a6",
+      "terrain_hash": "0560c5e65832407e3785ea6a729ec22f2e154c37b0ac95f2f368cb53e3d47cab",
+      "labels_hash": "6bb1c51c1c0d4ee42e803a6f9c570ec4e9c7b4de19e7f24c5e955cf6aded14d0",
+      "source_frames": [
+        0,
+        547
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0080_stand_2.0s_left_45_1.2s_run_forward_2.1s_run_right_90_1.2s_run_forward_3.0s_left_45_0.9s_right_90_0.5s_run_right_45_1.2s_right_90_1.2s_run_left_45_2.1s_run_forward_1.2s_stand_2.0s": {
+      "source_hash": "beb7cb942c718a7b7de2c59788bf748e8d97ea8c9bbf1eb60e3ea2b802993c1c",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "0e231447be280f91077d41646bffd3d60c3dc768b16f54b95e6e68374b63723f",
+      "source_frames": [
+        0,
+        927
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s": {
+      "source_hash": "db669c1b516641cdfb7994d8996ea343a98e963a205a8057354a3e1cfc140a28",
+      "terrain_hash": "2dbb41b742809c1b4f7289e295c543363635f20057bc4f5008a420f1bb95e654",
+      "labels_hash": "783a468c7afbf04d2c3206b277ea974b97c48b5b33683255d72584565fa20131",
+      "source_frames": [
+        0,
+        706
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0082_stand_2.0s_run_left_45_1.2s_left_90_0.7s_run_right_90_1.2s_run_right_90_1.2s_right_90_2.3s_run_left_45_1.9s_run_right_45_2.2s_forward_2.3s_right_90_0.6s_right_90_2.0s_stand_2.0s": {
+      "source_hash": "06c753a07e891ab1d263b341e77e65e5a67dc710b0e7ff221044b34030395cda",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "820e15851d7d0e50490233f2fe9a52a193201ea2a94a3a6ffb063060beafae6d",
+      "source_frames": [
+        0,
+        975
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0083_stand_2.0s_right_45_1.7s_run_left_45_1.3s_run_right_90_1.2s_stand_2.0s": {
+      "source_hash": "9b50d9a42786a157d538259389ad270d10a648f0e792e6d808a72deba351c947",
+      "terrain_hash": "4dbf3be9d9fc87097f01af177da1845f9b78eb3eddeeaab3aef6d6d4a32855c5",
+      "labels_hash": "dca3df35218107bfc11d2ce330b8961cec907e24c8d7413be83efd8f872e2f0f",
+      "source_frames": [
+        0,
+        413
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0084_stand_2.0s_run_right_90_2.3s_run_forward_2.2s_run_left_90_1.2s_run_left_90_2.5s_run_left_90_1.2s_right_45_1.4s_stand_2.0s": {
+      "source_hash": "51ac4869ae0d2a566d79ae0683ef5a4dd2b4b60cb37fe58882b1e2528766fad1",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "ec0bb0f527e9be7ee7696cd3786838b903a4d88cc15f4c4fcb2f7ebf2f0a1332",
+      "source_frames": [
+        0,
+        740
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0085_stand_2.0s_run_right_45_2.8s_stand_2.0s": {
+      "source_hash": "e720f53e47a4e0d3e4cc38e2061504731beb2ad46804c1f03926bf59d0f25af8",
+      "terrain_hash": "8b68cf528c0a420126809f517b0b1b658c9045f96b5344bae3e9b104a0169da2",
+      "labels_hash": "3fb5f780f587dfdc545fe0edd7d90a9dda9c674d0dedbebbcb80589772368ab4",
+      "source_frames": [
+        0,
+        339
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0086_stand_2.0s_run_left_90_2.9s_left_90_1.0s_left_45_2.7s_right_90_2.5s_run_right_45_2.2s_run_right_90_1.2s_run_forward_1.2s_left_45_2.9s_stand_2.0s": {
+      "source_hash": "a554f84e197e3948cd0e2c32114ac52fbf056949443f6c94e25cc2433e0800a1",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "fd82263b4f0b61c5d061f58b351a4c3aea20cd0fdf5a188eeec5f9b77124c670",
+      "source_frames": [
+        0,
+        1022
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0087_stand_2.0s_right_45_2.3s_right_90_1.0s_right_45_2.8s_stand_2.0s": {
+      "source_hash": "baca0eceba819a7122b48a4875da8fd4b374e07297e7ae92357ff48ad83823de",
+      "terrain_hash": "c5fbb911135473b19d7f022285ecd750998c86e7ff7ac9cf60953403c6d636a3",
+      "labels_hash": "5a11722f4cb986fb55fe824d6e994a42320059005a9b022f8b9a81adeb76899e",
+      "source_frames": [
+        0,
+        499
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0088_stand_2.0s_right_45_2.2s_left_90_2.8s_forward_2.9s_forward_2.7s_right_45_1.3s_run_left_90_1.2s_run_right_90_1.2s_stand_2.0s": {
+      "source_hash": "f4d39335893896c0af8df6d6dd1781403f3f4deb67498db77256016d49be36c5",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "8be292a92efc28bdf6fc4a9740a30aa63740440e1a9639cf33281b199d84f0df",
+      "source_frames": [
+        0,
+        910
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0089_stand_2.0s_left_45_0.7s_run_left_90_1.3s_run_left_45_1.2s_run_right_90_1.8s_right_45_1.3s_run_left_45_2.7s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "92c0fd3eeaf273825e9c1fda20ef62f907b81a86a75f76b43d112de733d11361",
+      "terrain_hash": "5b70a56d2b5be93fd432066b4601ef1056bef0295343b6a9df00e30b0b4e7760",
+      "labels_hash": "8c9e3f4b7556ab5db50a47315dd2c0fff534c738c8033b891fad10731278fbc1",
+      "source_frames": [
+        0,
+        711
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0090_stand_2.0s_run_left_45_2.7s_stand_2.0s": {
+      "source_hash": "96bc8bc4716046071b0c10d8c09eeb7ae417977e8a9d2e28dd107fce84e8299d",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "07a2dfe910986dc617daf1fec15e746553de736364df8038eb834f3f7ea07167",
+      "source_frames": [
+        0,
+        333
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0091_stand_2.0s_right_45_2.7s_left_90_2.8s_forward_3.0s_left_45_2.4s_run_left_45_1.7s_right_45_2.7s_left_90_2.4s_run_right_45_1.6s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "d3229e2173dbea2b6362ef7e06d043b9a338045f2a47e8b492adff00549532c0",
+      "terrain_hash": "7f9dff2d326fd891aa52ac733b1d9ba8bd3484636d160018b71302aada337e75",
+      "labels_hash": "06ee5a594b27f0c88f6331eba0e29f7a86c38cea188e0d3bcbdd12e1b92e8af0",
+      "source_frames": [
+        0,
+        1222
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0092_stand_2.0s_forward_1.4s_run_right_45_1.2s_right_45_0.6s_stand_2.0s": {
+      "source_hash": "b4625af9ae757bf8a32f77a6a20ef5a498f1315e140ca39134a78e559a48ae69",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "c26fee4cdc1788f139dbe20bb1c1cb75205aa2c0550382c8fd782f6524e46784",
+      "source_frames": [
+        0,
+        360
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s": {
+      "source_hash": "f05c89631fe9a5d33a4fc2f418bc2aab502ccd2fcc29b857cee619cd806f6047",
+      "terrain_hash": "bef70804482e1d5a40d15fe47b3c88b6cc0d7efc95cb44adafc46b65894c309e",
+      "labels_hash": "fec945812c99db2b9d4029eea83b2fbe795784d55976f5246db7417fab3bb98f",
+      "source_frames": [
+        0,
+        595
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0094_stand_2.0s_run_right_45_1.5s_run_right_45_2.9s_run_right_90_2.0s_run_forward_3.0s_run_left_90_2.9s_run_right_90_2.0s_run_right_45_1.2s_run_left_45_1.2s_run_right_45_2.4s_run_left_90_1.2s_stand_2.0s": {
+      "source_hash": "83f27aa3aeb1b3603300762066d61f341fcd52c547fa6c0b02b5dbed00a64d06",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "800a72cb46ab232c40ee98722ad349c25515bce2df423920b848efb12c381ebe",
+      "source_frames": [
+        0,
+        1214
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0095_stand_2.0s_left_90_2.7s_run_left_90_3.0s_run_left_90_1.5s_right_90_2.2s_right_45_2.5s_right_90_1.1s_run_right_45_2.0s_run_left_90_1.2s_right_45_1.2s_stand_2.0s": {
+      "source_hash": "a3ee1f74de4427f39fafe9e84096c439446680f1dea064ac81819946f1fa8540",
+      "terrain_hash": "11ccca899c77b2178d1749140743e9aa01909f3dca7d96ce53c8197ccaa94ffa",
+      "labels_hash": "3d9b5d359181ab6a2ebb3b6add5523e69e5d89b51b345f97190c4758d8019955",
+      "source_frames": [
+        0,
+        1065
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0096_stand_2.0s_right_90_2.7s_run_left_90_2.7s_left_45_2.1s_right_90_0.7s_right_45_1.4s_right_90_2.3s_run_forward_1.2s_run_forward_2.2s_stand_2.0s": {
+      "source_hash": "b4c7e58a53741442a9f498408e3fe01edd6aaf411a1a0fdc3339cd08a6216294",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "69b50f34528b032dacb130dc3ccc622f12a2420173bad423fff083f9899552ac",
+      "source_frames": [
+        0,
+        966
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s": {
+      "source_hash": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d",
+      "terrain_hash": "76ebecb9666b2090e0435dafeb2d5ecdc5f4877c717f1b98c7752fd131a18970",
+      "labels_hash": "05285959d9a12cccdbede879ffe5d68d5ac8221f529f4f2203c4f521d5b7537c",
+      "source_frames": [
+        0,
+        1292
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0098_stand_2.0s_run_left_45_1.2s_run_forward_2.7s_stand_2.0s": {
+      "source_hash": "3d289f8770de58237fa35a815c576b80cd6011f7339fa6615aead5f0247015c1",
+      "terrain_hash": "786cfc497279cf8f9e6108a1c9162192d99c11482dd43d35c75f65f7427a4492",
+      "labels_hash": "3d616a8c4951a78c79b8138227dce1630a83ad7a7cd29917c88fea898b7349ce",
+      "source_frames": [
+        0,
+        393
+      ],
+      "variants": 10
+    },
+    "motions-locomotion/cfg0099_stand_2.0s_run_right_45_2.6s_stand_2.0s": {
+      "source_hash": "52551287a01adfdc4a4836446b7fc010e92b2a64fc162d1c922256fef7c2769a",
+      "terrain_hash": "dec3cd8a183ce93defdc74caf64571dd52fd0b81dc2a90ff79b5210213bdf3b0",
+      "labels_hash": "fab28d49d249c50621616b8f9ca182bcbfbb49135c66e3a059541e4f1b4bfc24",
+      "source_frames": [
+        0,
+        327
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk0.6s_step0.7s": {
+      "source_hash": "75f1a79e2c45fef570ad6ac170825449fc4aaf8dce888cfd4b83532ad85dded9",
+      "terrain_hash": "8727d2812506c87c72b46fe226bb487875d67eff762375a713cd20d10784ca8e",
+      "labels_hash": "30f043fdf8113692ba616f206ca934f4d64577b97d0cda954e32fba25b3ec5db",
+      "source_frames": [
+        0,
+        800
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk0.6s_step1.2s": {
+      "source_hash": "882f4cef0413252265d6f3ad1f05355dd68c866afb5f5d82061dd3563cd82931",
+      "terrain_hash": "db1a0e35f8c1d6a4f81cbd8b8bc0b6e3917f0540c195ed0c0262d2765b6de3fb",
+      "labels_hash": "0e6b5e384eee4aa922b4e586a4064d26536a86237885ea8515a5ab716708eadb",
+      "source_frames": [
+        0,
+        837
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk0.9s_step0.7s": {
+      "source_hash": "0b309f4058fa4fd420d9c12ed9cd92c4ca08dbd06ee02796dac7a93ab115c286",
+      "terrain_hash": "48ec8c5354f584b650a3dac0038efedbe5806fc9ce7cd7937889ab3669a7caf3",
+      "labels_hash": "555c05f416c317e63944e3a88eb55ec58e352e7f01694731dc4125f1f27c48fe",
+      "source_frames": [
+        0,
+        753
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk0.9s_step1.2s": {
+      "source_hash": "98c74c6538a1d89e095485a3819788114ed67a1457c04aa8fe3c6b02f10e5790",
+      "terrain_hash": "1f5df7ae27ca1c10897c1d23f9ae1219444c39359b4add209abde0d348fc03cf",
+      "labels_hash": "b39599415a678182ffde1eba6694ccd41869cbcb371a83e85ea29dc876b6775b",
+      "source_frames": [
+        0,
+        789
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk1.2s_step0.7s": {
+      "source_hash": "c86a55d805c6c33992f48384f6d3952272f4a990de91fffba94472edf7b9604e",
+      "terrain_hash": "5930053bebdf37489b94de4f60abc640d1adb451079b82cfd8da0cbcdebccc44",
+      "labels_hash": "03e4831d6909d425165a1c3f148f3623924964a4be771ad28dbf6aeefe635fc0",
+      "source_frames": [
+        0,
+        801
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk1.2s_step1.2s": {
+      "source_hash": "602f54fd7c1356c622208c1ff35530a586ce2969751a548a3c2c9ba876fddc80",
+      "terrain_hash": "6ae8a0e0212464ac47c49d1483c31c35eae1d00cabdcd6a75f25d5d7b4e368e5",
+      "labels_hash": "506969a747e81707a4bb6bd6fa50eb63825252f8c39dd1fd080a8ee6fbba89de",
+      "source_frames": [
+        0,
+        800
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk1.5s_step0.7s": {
+      "source_hash": "1ddbff2661f327dfc2113564d7048d6aedce48067215a665278e6397c6ab9e01",
+      "terrain_hash": "70bd71ea5eb4b264d1629fd2edf79eb81eb1d31d3a44ad43f83565e52bb08327",
+      "labels_hash": "a84353ac5b7bf082ee7b930bd7e636dcc64bcf23b2a912d664d162fdf35b52a1",
+      "source_frames": [
+        0,
+        833
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/forward_walk1.5s_step1.2s": {
+      "source_hash": "6d92af0e6771b1dc4bd25b184a00ae2b1ba5b040a86ec37f56b6d2d3a303e7ea",
+      "terrain_hash": "9ff38160580f7f8f3fb3e1f9d507240e334c0b2652ed4ab4aa2505bce0d51fc8",
+      "labels_hash": "43721116d377c1f0131f5429b8c487b9a4282dcb4e7d558c6f56793e6513d8ed",
+      "source_frames": [
+        0,
+        894
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk0.6s_step0.7s": {
+      "source_hash": "2bc03f462b48f56bafa143e9a4161664c932ea4ba953dcfaf2be0b7986eeac9f",
+      "terrain_hash": "6b7017fcb5874d7e50740c12e4f866a40fb586161529daa739ff7fec508dbf92",
+      "labels_hash": "3da5b66ce39ed83a2073683041013055516dd582215514fa180932afab8efd53",
+      "source_frames": [
+        0,
+        820
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk0.6s_step1.2s": {
+      "source_hash": "8f1589a2845a9837a4184d2bd2cfbe247f1be5b600960376417ee6a9ce477037",
+      "terrain_hash": "80421576c023d349a6e2c5a25ed96560a4f3fe14ab90bbed57556137b4a4e39e",
+      "labels_hash": "708fa178a5f1ad3ebde2ec9f27e615e2ab33e13442276d52554c0794d97bad40",
+      "source_frames": [
+        0,
+        850
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk0.9s_step0.7s": {
+      "source_hash": "f7e279b9d0d8d149355eaac7e995b1d7506f6db73c8ce431f4454ea21b5e689c",
+      "terrain_hash": "9d05d99773cbccaabfeffc696629f083b265717f7e75efef736fb7db5167d691",
+      "labels_hash": "61277ce880be40d5229a084a7e83604d68af491adbfa5e5dbeb4a67c3b31ab81",
+      "source_frames": [
+        0,
+        813
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk0.9s_step1.2s": {
+      "source_hash": "17b3c1f768ebd0d650d895c565d38015dd576224bebcbc225b5526c02ffe5386",
+      "terrain_hash": "6bd43bc0242e40e7b2d66bd2618e525063ff8fd66df21b006288bb63f778aece",
+      "labels_hash": "4741c1db97f9e4cadaa7ded82b51804c987ce0711fba2e727114e55e5e23c93e",
+      "source_frames": [
+        0,
+        818
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk1.2s_step0.7s": {
+      "source_hash": "3dec62aaede136cceb537784a07056d61d4d2d019dffb2b898e52dbb919e8e94",
+      "terrain_hash": "edbf1d3129e2b04471a82f5a3b0fe06214cf484df7b72b5c333c5d7c4b571b8d",
+      "labels_hash": "b52ba0361c871dd8fae5d2ebdce4545e321b033b757019ccd19e2fcbabe09536",
+      "source_frames": [
+        0,
+        820
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk1.2s_step1.2s": {
+      "source_hash": "03393c24d044287623ab67df37d3f56bf6eb6cc6b919ff3a3262812ccd3493df",
+      "terrain_hash": "9a9dfb958dbdf7d53b85fa79cd43eff04523b007a3ac0b70d8e911c808555931",
+      "labels_hash": "2422f3d8699b5d9cdf4363de171c8553bc7b4c20dd36a3efaf2dda3a4c651053",
+      "source_frames": [
+        0,
+        783
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk1.5s_step0.7s": {
+      "source_hash": "e0fe2c9e1e7073e55f4e89057c95df118bab98c9a77c1324435c4de916da1642",
+      "terrain_hash": "5cfc3cc6041c7a4bd0fc5e7f58bc04184c74af54e74c08631535bf2d07099add",
+      "labels_hash": "dba6dde40ff5a968d9497c19b0d9d644fc9393761bc44ddd5c05a1e9c819043c",
+      "source_frames": [
+        0,
+        814
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_45_walk1.5s_step1.2s": {
+      "source_hash": "da9a2ed0320f8953c30f34e6659acf93f47ef8d144aa52c02d7d613dc2a6149e",
+      "terrain_hash": "b42c2e7bbd00bbd39e1645d398adcb54561fe3436a09d0fcc5df46e96e14ecfc",
+      "labels_hash": "605ebcd83794fdb6a7bc5c6e8f195ba6bd275d3ded0963654875c1bda1883c2e",
+      "source_frames": [
+        0,
+        870
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk0.6s_step0.7s": {
+      "source_hash": "f12494ff4dd20704d8314b51bb9973df2e819385a97a2c9fecc8881238e32e89",
+      "terrain_hash": "a037719f65752ddfd52113159e7d7842a318cf28f7e38fe5941354b9a5e5a116",
+      "labels_hash": "7f0406cec3d48adea21fbe1626655d7573df8228d902879a1b46cfd586858240",
+      "source_frames": [
+        0,
+        790
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk0.6s_step1.2s": {
+      "source_hash": "5efe1c16c3ed09622063a65a62d2648c59a5decd10f38fdc08964a3c497f5f5c",
+      "terrain_hash": "7746afe6eaffa4863db4c42289700b874b92bbc2a9403052645a158c74bfcb27",
+      "labels_hash": "31a780552b31e56421bb3da0733ff9550f461f63b486921d520ebd5819197ee9",
+      "source_frames": [
+        0,
+        823
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk0.9s_step0.7s": {
+      "source_hash": "3cc238b82cf8aed00fa40b002da03fdd7c47af57b79ba37a462f311da316cdbf",
+      "terrain_hash": "156eec3ac5c4af469b548704dd6e38091b97d0ecf2f53eda1f10187395431f3e",
+      "labels_hash": "71c8ab739933b47550ecf4d7444120b6cc45ef4a6774a81bcbddd86c0227d7ee",
+      "source_frames": [
+        0,
+        838
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk0.9s_step1.2s": {
+      "source_hash": "1780b6d88f4e4f2c5b507b1189343dcd28840fb0edb637113fcc358d50c97b5d",
+      "terrain_hash": "a86dff93c7766e26fd85e034b96f58e0293287206994d1218ceb6eb6e381b65f",
+      "labels_hash": "2227018a5aa29740e26d466cd017b83aa11882fb05b05fbc897b17744f9f7be1",
+      "source_frames": [
+        0,
+        817
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk1.2s_step0.7s": {
+      "source_hash": "ee2151037295345ae3887b4bf6ce065e9e6016a1f32a56a29ba44ee1ce18e875",
+      "terrain_hash": "d64efb2c3bfd57ed7097f54d000ee2875f616dbfd5aecda34d3627ec0fc058f2",
+      "labels_hash": "269ea28123c25543cb42bb201bc1b594f6c897f84d4ef9e1f8b6c1748063f93b",
+      "source_frames": [
+        0,
+        807
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk1.2s_step1.2s": {
+      "source_hash": "cfa1ce26146898b45dc00c12ac3ba17eaf813345a5ffdd9ac9b6a5c2e381f65a",
+      "terrain_hash": "dc8d152ce6a8e7b76d54ac696adc5dc6d2f4429c487bf7ab2014573d5b28245a",
+      "labels_hash": "acb073cc70da8528abfa874d5bbf4df256e4af324111cd1b5f8656e1a4d14e3f",
+      "source_frames": [
+        0,
+        861
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk1.5s_step0.7s": {
+      "source_hash": "89a77b0690fb78b696dff3640dfdac524ce1fbd93dc08887bf2438fe5977653e",
+      "terrain_hash": "81247b6dedfed4e7dc81650e5833d3b6bea0abcabd97d3b3ef6c1d885aa6b459",
+      "labels_hash": "f8a1b26216507b28c84c8e5464c7352900e04cb547c017077a785b8a27347c0e",
+      "source_frames": [
+        0,
+        847
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/left_90_walk1.5s_step1.2s": {
+      "source_hash": "c9e933b4779c8e497e2d5590c84a3d26b929d4995b49d1474e61b43fbff9a84d",
+      "terrain_hash": "56bc8eeae81c318aa9100520aa41e931108bc179611a208439fbce2c3cad2019",
+      "labels_hash": "e1a8043530790827c4bd25fc884ce7f254f177f604fd40d306fdb71e266890a7",
+      "source_frames": [
+        0,
+        819
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk0.6s_step0.7s": {
+      "source_hash": "afa8ee4a4a961277113a7aa6cf65996e23c4b2337a60dea5babe61e354e8f183",
+      "terrain_hash": "65360adefe0dafd7c332176c8a212e1d06c70ab98b92d6226bd7fdb34a150edf",
+      "labels_hash": "1536b7f736e09e837324cb4221a8d59e071db0b23d0c39277f6e90bd16fecb93",
+      "source_frames": [
+        0,
+        808
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk0.6s_step1.2s": {
+      "source_hash": "dbd274ecdb1c7e541f53c2eb6450efc0ee0ede421df81df0985601eec48b10da",
+      "terrain_hash": "9a7bf7c8342cf01d2d87ec852001209532fab348926c5bf156951f9900d601ac",
+      "labels_hash": "152605d8de79ec9c4605a8018436fe105942a164dfaf2825a4de025205b6a3f1",
+      "source_frames": [
+        0,
+        795
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk0.9s_step0.7s": {
+      "source_hash": "e0b92f695d092ec6257d6728d5ae305661cfd54383d0d7e7274998033039f8a1",
+      "terrain_hash": "fe201b8ddbdf1b55404d5ff2f3de38e93f8b9bef57cfde5f09fe74e96a30a6e8",
+      "labels_hash": "b7d14b497a679badb9dd49efa171cb39ffa806c6f57b5b244d7a3d0a651586ec",
+      "source_frames": [
+        0,
+        794
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk0.9s_step1.2s": {
+      "source_hash": "c51cee2bb24abb0c293516a8b79bb701d34803eaeadc8b6e0431e00712c20b5a",
+      "terrain_hash": "1abe20b9ed216458091cd1fc584ffa2e12e74ad338777fff9adb27659bcda1f8",
+      "labels_hash": "63cb5e087e537a8efdc215c3e6cb371bafc2c0214d29896e62d63a8d04fc3626",
+      "source_frames": [
+        0,
+        818
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk1.2s_step0.7s": {
+      "source_hash": "245ea139444d55efe7cdef890354e692dfa31a02795f81200a261dd22728de2d",
+      "terrain_hash": "dd09f3c09671c48bb3ddabdfa7bdb2064e36fced18821dd225232d6305eba8ee",
+      "labels_hash": "153366bff1f82ced8525921bda36d1129255f9a513d5c38390a82d8927424724",
+      "source_frames": [
+        0,
+        818
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk1.2s_step1.2s": {
+      "source_hash": "7da1957275c58991bdb081c485adf1d6146bd2f3839bc1d6f4b444c48a592423",
+      "terrain_hash": "5676a8c382b33cb0c1fb4bdf33500a9c638fac950a704d1f2be76ae42228cb82",
+      "labels_hash": "8f7d6b3cca57dd88b5fe63b567d2d3dee346d0ec63245a5080089785c3f9dd44",
+      "source_frames": [
+        0,
+        835
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk1.5s_step0.7s": {
+      "source_hash": "8b8ca04c571a145b10083f0755ff6833ffbc895b91ecfc9a2503cae95e0daa0f",
+      "terrain_hash": "17a829d2e4fd8a77181d4de2993005fdee63705beb0bc78697cf6e0b352134c6",
+      "labels_hash": "39bbfea6829d97ef717845604fd415371f49e0424d3b0e3e89b3fc6023377cd2",
+      "source_frames": [
+        0,
+        822
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_45_walk1.5s_step1.2s": {
+      "source_hash": "116ee7f6cebaead08c59f335c8f41c4efdc68f6df42c16f2a18be6bc071be8e0",
+      "terrain_hash": "6ed3feeb1521107087f5619d1a6b4a2b81cea34769157fb5a215307a3e2e02b9",
+      "labels_hash": "ba0d5cdae4387422286735f9147b5f209db5fe82253c93d68e88a9946eaa94fc",
+      "source_frames": [
+        0,
+        821
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk0.6s_step0.7s": {
+      "source_hash": "a990e4da834e151fe2def681ea7b9498212eec9e2bb13ae097f942de92528202",
+      "terrain_hash": "515736bf139ac966ced30a173c440277e98846cd33159ac535579be4c2acfe25",
+      "labels_hash": "585543ba21d52349e2eacc982df895ae09d07745c372f01aba6d32f30e9ac2e6",
+      "source_frames": [
+        0,
+        735
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk0.6s_step1.2s": {
+      "source_hash": "c7669e06811af66fc40a55eb3451a64cdca05c0ac50df7d95ed2c5cc1314a841",
+      "terrain_hash": "4e84e1862edc81aef56bd0eea1208756f5dbd2a0941fd053e7102d61aadce4bb",
+      "labels_hash": "a546b65d098c17abcb6d858d7341635ffcc3bd9847b300a2f5b2a19a99dc539c",
+      "source_frames": [
+        0,
+        842
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk0.9s_step0.7s": {
+      "source_hash": "b514d120c41462612537f1deb72e478b5207ca5f5c6dbf07486a897c966d2738",
+      "terrain_hash": "f60f525ea07af67bc26675e403297c9ebcba308f97a5406a09ef1bb487b18094",
+      "labels_hash": "905bdc9cec22eebe2be305f617160955a1cc65431c800beb778dbaa7c4fc5f86",
+      "source_frames": [
+        0,
+        770
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk0.9s_step1.2s": {
+      "source_hash": "d256885a100a885aa7625e2246a5b38547710c0410a8f38117486284d2f46c3a",
+      "terrain_hash": "2337441b7b4571208859511eef64e0fda695ed32c1bad75533bdbdfce28d950a",
+      "labels_hash": "975bde9bc6e347e6b54f5f652e48752084802916866221fc1f0e5f07c29adeed",
+      "source_frames": [
+        0,
+        852
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk1.2s_step0.7s": {
+      "source_hash": "aef0f0b4d7bf99132558ff1df1454c745d2babe7f7cd9d7eee540605b9065f70",
+      "terrain_hash": "394d228d8a66aa348649080ad1846e6ef5f91f21721c2ad88c0b64dea1ae11b4",
+      "labels_hash": "cf156c636b3f540cc0ee63b9e77a205ab1c50e62a0f3fe1f3b95b0e8e672a99b",
+      "source_frames": [
+        0,
+        850
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk1.2s_step1.2s": {
+      "source_hash": "5ea90f2b420c78263a9a91f36ed6e8345648a4767ee74d6c957534e277e54a7c",
+      "terrain_hash": "874000592e0eb96bbe1b0d6b5e9a91879c088ba057ee8b35c2ce429374af3000",
+      "labels_hash": "8301a449bb6a22d52ec64ca3ee2e9b2ef494c950964d72c10d1cef1c27da79e8",
+      "source_frames": [
+        0,
+        865
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk1.5s_step0.7s": {
+      "source_hash": "bd3c7c4ef5db52c762fb8d47a8d2c0bdfe74cf72e124e7c5de37ba6e8a7d8274",
+      "terrain_hash": "a8488b65d658a0e69c62764f4292249820bdd9c9f5e555457e8f2e35ac8e05cb",
+      "labels_hash": "85817d0b8b820ae78de7bdda014741c49fd20caae736e3e6fcbcacfe429c8d0a",
+      "source_frames": [
+        0,
+        835
+      ],
+      "variants": 10
+    },
+    "motions-low-climb-76/right_90_walk1.5s_step1.2s": {
+      "source_hash": "a535718f9af152811ded4764aab8c0df531ed33a459bd5c52d74e77db3930496",
+      "terrain_hash": "ab9d13c879f6b1a92a4ce4a5c30d250d888fccb4b14e7573038cb0f12f54b3fe",
+      "labels_hash": "24b6937efa8eccafa243f4208a1efc15d79e338bb931af5fabd9b0fd14f43452",
+      "source_frames": [
+        0,
+        857
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk0.5s_step0.5s": {
+      "source_hash": "12d526429c718a581779ab833406db018e89f7d1977ef86cb56dad895b4c4154",
+      "terrain_hash": "39ff22e79f8a2a83408b8bad52fa542189d85cee2ee11065aea1b45c3e521471",
+      "labels_hash": "c37435b1619d755d3fd34dcb61d30305dc00636b4e9abd61063f4ac3c051db2d",
+      "source_frames": [
+        0,
+        455
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk0.5s_step0s": {
+      "source_hash": "cd23725e7a21a321f397ecde52024e43da9b4dba7bff95a79a5797973d6924dd",
+      "terrain_hash": "a87f6c918d40a91049e3bcef4cfabf863514b07dffc8fb24c973a11c677fd986",
+      "labels_hash": "3ce6dc4cdf9ae35b6c8b70b35416c5a00644e5dbe822f91042f76a92c3ab5e92",
+      "source_frames": [
+        0,
+        363
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk0.5s_step1.0s": {
+      "source_hash": "2d38ad33d5e6162491cba0fddfe6607980b2812c6e0bf84f443f8a3b21fd820d",
+      "terrain_hash": "12b734f3fcc706e3419d654488c548e11de2f5f3b4c8f846450d2bd3c8128a7c",
+      "labels_hash": "6b6af3ecd70c68ac31f578501db995cc07b6b586ba8d842852a41ce5eeb548d5",
+      "source_frames": [
+        0,
+        480
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk0.8s_step0.5s": {
+      "source_hash": "8a39a2c286c804fd82e9e277c994a781ca2edd680cc38d9dfb687d26299efdf6",
+      "terrain_hash": "5de5b353422c9ba80cbfe4df87e2224daa9b03cf1c1b1e0204b0f4caa6b2ef7b",
+      "labels_hash": "205cefccec245d57452137533087e3fbc66113433cdce35965c90cac24620036",
+      "source_frames": [
+        0,
+        452
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk0.8s_step0s": {
+      "source_hash": "2ba8bea58ef9b5cc8d40a79a8cb80b96a73dd4fd4a260abc7dc29137a8a9da0e",
+      "terrain_hash": "34f7e1f0312f0cc7783e1b97c76e25533655805df174901266aac9d8d8aa6587",
+      "labels_hash": "4e759486b5fd2b5df916a889066582273b3d6b2c66de0b8e4af45efe48bf0491",
+      "source_frames": [
+        0,
+        387
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk0.8s_step1.0s": {
+      "source_hash": "d841189c2bad57bcbabbbc1185b8577200b20400f2c85055fb50556fb1a77046",
+      "terrain_hash": "1ec8b12baeb372de4a15cfcc25680c7a68e90cdb6ff0ef1e21d47f12c446969d",
+      "labels_hash": "e72b07687c693f4b2e442545f5653d3d7aaa633f0aa864d9ec89a2a212b7ddcb",
+      "source_frames": [
+        0,
+        477
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk1.2s_step0.5s": {
+      "source_hash": "8196da3b49adc16004b82bc27e68adf292d4dcbf51a46d470911c884725d3184",
+      "terrain_hash": "c9849a7aae386c5b0f9eaeb8d4d8fedfbe89c7d2a45c4dc725ecfedf4ee985c0",
+      "labels_hash": "ece9b20ab18038f915a73e1ead7014037e9c753547f8a3f13bfb584beb66eab9",
+      "source_frames": [
+        0,
+        489
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk1.2s_step0s": {
+      "source_hash": "5775f6195744e74935bb54f637778665e77f720693e332b9ebae046168ca7b1a",
+      "terrain_hash": "5277701031166849ddcb196fad6bb70b5713423165c49e9ff021093e91b5c88b",
+      "labels_hash": "d0be11a5843875a06463fa5af5c95887fcf027ba731d7b9c9a7adf837659ed8d",
+      "source_frames": [
+        0,
+        413
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk1.2s_step1.0s": {
+      "source_hash": "c5c143099c19b1555d0f1b2843e82ff163c9875965c89311c410391c79853dfd",
+      "terrain_hash": "4be351fba9857f32a28d6fbf5875db5f49b1e7c19d46bee4f683c63d2ec9d40f",
+      "labels_hash": "72f563011e1949a4ca14ebdffd96ca7370d7a21362e280053819ef4896f86b9e",
+      "source_frames": [
+        0,
+        505
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk1.5s_step0.5s": {
+      "source_hash": "f034f9664db6ad6046f8352ec68aae128fcb4d77ee337d34f4e183ef2831482d",
+      "terrain_hash": "dbeea11d5f63b65277710978d0b1cb54e636a061c94f8be6b670432cfced0651",
+      "labels_hash": "759719e367277bf790eeaa1b3d46b314e51346fc055133476bcaf73bef9acc25",
+      "source_frames": [
+        0,
+        504
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk1.5s_step0s": {
+      "source_hash": "161c894086f31a65e39d3e418b86961fc63d54699ec48a85a2a72c3d7019446d",
+      "terrain_hash": "f869507e3187e70ca54805ec7b3eba7d40d886076b78a89d7407ef540890e08c",
+      "labels_hash": "440e461ab4698212eda2065adb8e4439f3e105fd52dd0d4117c9cb58e0d06054",
+      "source_frames": [
+        0,
+        420
+      ],
+      "variants": 10
+    },
+    "motions-low-step/forward_walk1.5s_step1.0s": {
+      "source_hash": "770533a620d9dec3d0f5bf4f2d8967a8226cf14683af95ef888155196e8b3ba6",
+      "terrain_hash": "ec79713b9cc6db63ad7571707866aad8c135544ad1389881898137834a7fe1ee",
+      "labels_hash": "436fb7f0a6511b51907551f2d4da0c9caf19b1d4ea55e53e961dabd5d3d26728",
+      "source_frames": [
+        0,
+        530
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk0.5s_step0.5s": {
+      "source_hash": "5fa8435de770725f436ce3286af35efeb83547008ba5dd5d216bb29c85c3deb4",
+      "terrain_hash": "d20b572ab94ca26cb8c57f5dcb4e91ed586af94707fc42c23d99ad790ab237ab",
+      "labels_hash": "942b30d0df139bf14bd52060ccd1d762ffbe9130f882ca407e272fbf0de49585",
+      "source_frames": [
+        0,
+        459
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk0.5s_step0s": {
+      "source_hash": "3e284590fd3c18803f2f96a2d4ddc40c56f2181ed982ec858e50c7c4092fc550",
+      "terrain_hash": "263bf0a7c5cfcdda00f692cb3e085d55261b7bf80f08fdb94016926bea066af6",
+      "labels_hash": "fd47b0e00810ebda989ccf667db29ea3bdbc74299e9eb24128af42ea76e0d694",
+      "source_frames": [
+        0,
+        378
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk0.5s_step1.0s": {
+      "source_hash": "98808d8fa3be0b9b49cf3996ef1ca4ade36008a28b8243fba12b3af2b8f1b461",
+      "terrain_hash": "5772e4a4633debebc7189134ef2ab642dee9b8d2699413e43347cfb59034a846",
+      "labels_hash": "7e887c9488005dc3a77d123fcaa4574f504c35b4b433cc3d692a529df4c31c99",
+      "source_frames": [
+        0,
+        471
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk0.8s_step0.5s": {
+      "source_hash": "056e409e500e6d7b725589dc84612bb0806813219ffc4df914eec8a177ad8f0a",
+      "terrain_hash": "191c731d8f677e07c32f7913b88cab8d950893ed25fdee200f8cbf8fa9f55b9e",
+      "labels_hash": "6cfff8b1441e85d39001e7ec4fc7de4cd604245669aefc95898710a7ddcc2e59",
+      "source_frames": [
+        0,
+        444
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk0.8s_step0s": {
+      "source_hash": "73157c9344952abcb64e1981be5ff0069f9fefca0b1dee5ea193e484a2b7f5d3",
+      "terrain_hash": "5f69e5b2b4811591983095b952fb0eb866dbeb339dfb4441f87e6d51bb093e08",
+      "labels_hash": "752a6822f2da3c24f2a033c1062909a6cbc3d8c33030e902d231fb3d156293a5",
+      "source_frames": [
+        0,
+        391
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk0.8s_step1.0s": {
+      "source_hash": "37f25636b34febc811b6024ac5d45462082fe02303e881233747109ba168b93c",
+      "terrain_hash": "512a06b5b04193dcb70abc35c6b64014217d68e242007b86a7c0ef81db502d55",
+      "labels_hash": "bcd03fc3b3a1bc1620ac853610343a0edc573a2fa6c4101c7a1c9ee42dd721f4",
+      "source_frames": [
+        0,
+        473
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk1.2s_step0.5s": {
+      "source_hash": "aeb7c0bbef0600cd70352644f59887c8152e59495e5bd3c7dc512d89a7b9c128",
+      "terrain_hash": "d0e3758e25015040860d48b263ef194d7b5848f69290e69695dc27ce7ac7bc15",
+      "labels_hash": "959ab7a0914e3ef4d2a7169675cc6575a46cbfbd95dbdca5b149ecdc0abf3398",
+      "source_frames": [
+        0,
+        463
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk1.2s_step0s": {
+      "source_hash": "3ed7c9e4c5d0a0a90924699f6c3314801e01b3f1874aa4895a677a83c9493b6e",
+      "terrain_hash": "f0b5f785d32d8dc248886bf2c5954de806c77b4d8055d3f24547bb417f3ac970",
+      "labels_hash": "cc1afc20fd5f12cd7a813d873052a1cb0d916156dac531abadb404c621f5b523",
+      "source_frames": [
+        0,
+        392
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk1.2s_step1.0s": {
+      "source_hash": "d4e708247da68b34f6b5bae085485f6459e051ccf0e67fc3af6892eca1a00a03",
+      "terrain_hash": "9e2cebaf8afc97b78525c7d1dc89c8eb89a130e0b912c4278e41aa4722abafba",
+      "labels_hash": "7c79450101b979aa94967839200d1075b965fa085d2f3fafca26173965920790",
+      "source_frames": [
+        0,
+        491
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk1.5s_step0.5s": {
+      "source_hash": "9c9e128a9f95aa9ad3f770156079c60c377a7561a907199b082cd6ef5a80de3d",
+      "terrain_hash": "c7be9fcdca4dd938277ae861fa315ba8d1aff9f178dba5dba04522439c54e14e",
+      "labels_hash": "80e5cfd5160de24333d79a431d5b311a8f0e0d8304120714b38c1fa3ad5edb0f",
+      "source_frames": [
+        0,
+        505
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk1.5s_step0s": {
+      "source_hash": "38a3a14de7ba831f02ccb110e114fdcef4472df2595b24c09e3abd7a6212492b",
+      "terrain_hash": "d36fc9453b7ca1e59a7d5152901f7f720cc57f3d2cd6b155fd55f818d971ac3e",
+      "labels_hash": "f03f3e0ed4679ec37980007dd0153dcc8e3f8223ddcce442dec73df649a2f288",
+      "source_frames": [
+        0,
+        424
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_45_walk1.5s_step1.0s": {
+      "source_hash": "946484cd1d64ec836db82cef2b36d5ef0e1524217f1b30c5d4d8bbd466b03b8c",
+      "terrain_hash": "01724445683873450dd82f9e353f86330dd7d007f442e51cac31f8c85715dde9",
+      "labels_hash": "0b5ac8dd7d4edbae27c6e57938b1ac715f16e0c7e8964a5b4fda6f352d4e1108",
+      "source_frames": [
+        0,
+        514
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk0.5s_step0.5s": {
+      "source_hash": "22da243e288302488e6692b69fe08b123b83d37377ce92ce4827d0a9d6c35bdf",
+      "terrain_hash": "11b2c70dd52a3bd92b1e8797c23e8fd0dcb14de7c69e8ef30a20ae919447001f",
+      "labels_hash": "0528c2671aab053cf1c9374c570c3dbefb965d9d60a2004f040d5cabe549b181",
+      "source_frames": [
+        0,
+        455
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk0.5s_step1.0s": {
+      "source_hash": "85f6dd91c37fd1bcca251a87f3f41352ab3e21d11e6494ca9b875eac7ccf3e2f",
+      "terrain_hash": "1e0fd35abe69401de66b590072448b35ffbeb69cb12cd174a1f21c18a8c94778",
+      "labels_hash": "ff1f3cdc6b6eb58ae29fb4c4e7ba5256e7113dac803c231069fb70e8bc6b67fd",
+      "source_frames": [
+        0,
+        484
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk0.8s_step0.5s": {
+      "source_hash": "516e3231b56d70368200c0854a999ef955176d47384eedf58e102d2b0108e25a",
+      "terrain_hash": "9d825e45a68af60fa616d7014591d86338fa7c11a1d10f331ab6bf5726b1fcbb",
+      "labels_hash": "c118f180d597b39c6286a01cae7c7431283a18f3ce5fbd9f530e942ed62abdc3",
+      "source_frames": [
+        0,
+        459
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk0.8s_step1.0s": {
+      "source_hash": "9b2ce0b75d9659fa33f6a3d41ec0bac7ea28e64b23dacf41a9a0b4b0a1307c59",
+      "terrain_hash": "e5cb2f072c257df8f9ef17c37b9a6d98b77323f75172c833684763738c855483",
+      "labels_hash": "c6b9cb3af93217219d440f6feeaae0311ef770746ce164176c70d1563eff1233",
+      "source_frames": [
+        0,
+        480
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk1.2s_step0.5s": {
+      "source_hash": "b7bcd893ae3b19cdf4c3d2a7850f5d91d0e5183be19bf272f70fd40634051fe2",
+      "terrain_hash": "3d802440e0f0548d5607242d5202cbfc20bb573562fe2b2d1d24d32c2e0714b8",
+      "labels_hash": "4b519a8a55b91444567d2d411dc0d73464836733bd29f99c5103479764cd007e",
+      "source_frames": [
+        0,
+        478
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk1.2s_step1.0s": {
+      "source_hash": "528aa6dd49b6dcfd6f29b5192402c1b86708d1a9bf1149bfa32253615b9025f9",
+      "terrain_hash": "12af51d4bce666a0d45c86780647711811187f5b18949e51d224ffc968cbffd4",
+      "labels_hash": "256b69b35cafb575ff051e738afb57d95e8e6811f7d50fdfdaf1e10396944d65",
+      "source_frames": [
+        0,
+        500
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk1.5s_step0.5s": {
+      "source_hash": "f8fe1dbfd2ee71f4d1cd22b7e9a8ad58aa2473f0f4ab3b610d737d13ab5c1571",
+      "terrain_hash": "35eb3f1c91f99002f5c015ca456b11002344e267da293af1f61839baa2877f3c",
+      "labels_hash": "62df7665b65beaba561af582cbb4bc4e056f3531bc7e8e28b407db9cc37a3d2b",
+      "source_frames": [
+        0,
+        492
+      ],
+      "variants": 10
+    },
+    "motions-low-step/left_90_walk1.5s_step1.0s": {
+      "source_hash": "e97b9962ccaca0a3687026768281a9d648f0b31343d01749f0c2e23f46d25602",
+      "terrain_hash": "df8335a99e85a3ad8fdf71d98dce2972becb42aa3325e9c7842a0a16eb0b8e68",
+      "labels_hash": "e6753aba18a4f9fc7f65bf18d5eb0d52aa59aa896c042c1385ece0ad0f258929",
+      "source_frames": [
+        0,
+        538
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk0.5s_step0.5s": {
+      "source_hash": "c7ec7c5cd8f41c772026faaa0a6b208ab11f85d2bc4c83191c0e1e45ed3da6bf",
+      "terrain_hash": "a250623d72e12d76baee937e890e790291ed19a8b9bfa3c94716329a0c09753b",
+      "labels_hash": "2f13354f95f9cf400744af9882d5db4676445715fc8ce00aeb3354aba2972d7b",
+      "source_frames": [
+        0,
+        434
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk0.5s_step0s": {
+      "source_hash": "6975e32cd2cb7a367dd17d76b19c8b016b9d15a9e0d73089acb49f35c0d0c4a0",
+      "terrain_hash": "154808759a7ad2cd8088b901a38fe0b1d388a23e8235c4efcf5e34909372d309",
+      "labels_hash": "af2bf029c6551d2439c740b6aef9050418e042a6d322ebba79cd47969ec2eb5d",
+      "source_frames": [
+        0,
+        375
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk0.5s_step1.0s": {
+      "source_hash": "0cdff346c42c06a06513c26aecbd479af8049d43b0e4573b4127af7ce2aee73f",
+      "terrain_hash": "ba3173dd623b58549d055eeceede9bc8c3aec20ce10a1de7780cfbe75da560bb",
+      "labels_hash": "59d80d8d32b05474c850c23511a4ef406e79ccfab978979c161643fd73a69f57",
+      "source_frames": [
+        0,
+        465
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk0.8s_step0.5s": {
+      "source_hash": "fab5dde5ee662f823d16b32a431d0f99806dcbf90d06d016e3ee00391015a5d9",
+      "terrain_hash": "b617ad80fed54c86e6e722c69e2a655b5a046bedd064e85cbee64c8b0401b783",
+      "labels_hash": "4e90a6724def85431bd81986ba7332daabd1ae0b7e8e7120896b6b16c56e56fe",
+      "source_frames": [
+        0,
+        465
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk0.8s_step0s": {
+      "source_hash": "1f11acc7bce1d77bdf59478c9ab38a62021f50b8aeedfc84f1a3ea1f27961e5c",
+      "terrain_hash": "77a65f05af7e3abde18c2f34b4443c53f6b35027d323fd019bc46fa614d90f07",
+      "labels_hash": "dc83c20c50dbc9c6d5744f31461d2afd9b3df41ce56b8373fd9e584c07fad37f",
+      "source_frames": [
+        0,
+        375
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk0.8s_step1.0s": {
+      "source_hash": "44ec9e2a3b541e5cd4ee1e45eca4e9adee172dc29e5b01b3fe5653ec6f9a2fc7",
+      "terrain_hash": "5e962a1a7264d333bb1b23adfe5b2aaff211547638106aec7449b27408153dbc",
+      "labels_hash": "eef9c0b93d56a971e9e8ef9f76becce1e1912083c77110542f90aa4c9de40cdf",
+      "source_frames": [
+        0,
+        485
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk1.2s_step0.5s": {
+      "source_hash": "11bac3e6a158e52f0b3713b39a01625b970ac96615b7e3a99a72dabc944caa82",
+      "terrain_hash": "9cb3250e1bc012ea27092f131e9ac4e5c55343515837d17238a9032584b5206e",
+      "labels_hash": "b8c6cc0c846f5a0ef7d59a8f50c4cc1a55f738db541a33ced1ab7ade9906571e",
+      "source_frames": [
+        0,
+        489
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk1.2s_step0s": {
+      "source_hash": "06ac1647ebcef09304da6f183ce89a3595553abca892e24d9e287178d7216ccc",
+      "terrain_hash": "4926e751df0c44dd9270f3301b7c1060999376852c5ae72ea466a19268344bf3",
+      "labels_hash": "f56b6e3e1b7cc0e4f80678291637b882664f6ff465e7ba2462236d1f698ae1e4",
+      "source_frames": [
+        0,
+        409
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk1.2s_step1.0s": {
+      "source_hash": "574762d917939b0e32f556ec06383747d0bd067d40b2dda29f12d8eb3b3fb66e",
+      "terrain_hash": "b1ff3172a293958f09d4ef47a83800652c6b5ba65ab520eedd1fa2b8fc5b5688",
+      "labels_hash": "df5209730ca1ccacc03dd2fa7d2000ffd36ce240c75223ac1b4d185d7ec595cb",
+      "source_frames": [
+        0,
+        515
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk1.5s_step0.5s": {
+      "source_hash": "5909b28ec19556600db4700fe99ff08ea163e98a1091192e625466e808557aac",
+      "terrain_hash": "5bec8627543066a2691907567fa45cd0249377095a17ffd18c99b7e870acd146",
+      "labels_hash": "89557e6ac9d31a26bf82efc3bd3b13f1e1aa0a839990e3a8d66f52e2f957f60e",
+      "source_frames": [
+        0,
+        498
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk1.5s_step0s": {
+      "source_hash": "f5a9c4a4d1fe452e5c7ce6a08fb89444274dcf7c4e115928b1067862cb7d0a11",
+      "terrain_hash": "c818410b279da122a56bdef36872376c54837a379e5f85190f44d8fb15b952fe",
+      "labels_hash": "2d7fa2296859a3b4c96ec65a85df7666e1b2012d0e125f0d378a73575df2f940",
+      "source_frames": [
+        0,
+        419
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_45_walk1.5s_step1.0s": {
+      "source_hash": "cfe382ac71f400bffc7b2d74814fbd0bb51548f8126b4ab44bf1eb077425f9a9",
+      "terrain_hash": "903bbefb11df0814dde04144dd3b150ef27e9da2f772d38037ac0780ea5d31a5",
+      "labels_hash": "edcb41489f61c3d34968672982a5d54e35636c1124f5eece7d5993d19f361952",
+      "source_frames": [
+        0,
+        530
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk0.5s_step0.5s": {
+      "source_hash": "8bdcbcd982d2a7f7c8e8bf350b0700e3d36acedc4def45af14cb5a439e4741a1",
+      "terrain_hash": "0a6e3acf61aefa2d3d81941fdb1f2745b33745d2647274c7649cbe997d634146",
+      "labels_hash": "402583ac10ee334d3a34ba795755f38ce34a6df7080e9b06dc826ee6b6e7794c",
+      "source_frames": [
+        0,
+        456
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk0.5s_step0s": {
+      "source_hash": "733cbe29f4fa5e7ab5ae5c989a2a6e287068614dc69b2389e639548fe8fde6a0",
+      "terrain_hash": "112eaf78e85c2dcfc25864582787c1946784def5161198dbce00b32e8f939a23",
+      "labels_hash": "99c44ad8c8a2469801e839b87528b7a77a28d5992c9fdc08a3e7ea2026c93a86",
+      "source_frames": [
+        0,
+        362
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk0.5s_step1.0s": {
+      "source_hash": "9fd8f03727664164b7bd5c74f38234590918a54a9e8735b9bfbe301dbc9cd9e8",
+      "terrain_hash": "9cc1ecbe7fece49904ba87254dfb12f075795e1b398cbefd58988c68795eb666",
+      "labels_hash": "fafa515fafbe1faf050bd81986a8779054fa3ab9ab839dad55ded9052494b7e9",
+      "source_frames": [
+        0,
+        483
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk0.8s_step0.5s": {
+      "source_hash": "43108e60f44a654e048db25b3920d3632b711fdada9e085648e997a173853c36",
+      "terrain_hash": "b73dcdc1defed0ff21edf845b156d516641454d9255c25be59d99ceee610ca43",
+      "labels_hash": "e21d2218f7a19da4861cd9443bc11648ab1a12af01242b5dc36712eb9c387d24",
+      "source_frames": [
+        0,
+        447
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk0.8s_step0s": {
+      "source_hash": "0b7b4825a7027ebf7338fe69c5b9299a224b80ec2bac2d75e8359cce64bb03ef",
+      "terrain_hash": "70a97d8534632a02bdd6d21c44eef321693b8264a38d1d66b7dd48ebebe80c20",
+      "labels_hash": "459d15dcaf0822639f914a31a5c01a5961c9167a84043274c714121c379998c0",
+      "source_frames": [
+        0,
+        390
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk0.8s_step1.0s": {
+      "source_hash": "a03d3094bbe677d3e92b9c5113d2e70fc681f108ed634f51f8fbe561d59ce7a8",
+      "terrain_hash": "b07edf9f6a1bbb3dcc88d90c580d0ea9271596e3b831ea52161da8ffff45b473",
+      "labels_hash": "755db6488f479571abbc2755b9d978f3b5d3c768ca7330d544390ec0ac2c4f0a",
+      "source_frames": [
+        0,
+        492
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk1.2s_step0.5s": {
+      "source_hash": "4b708b039afeb94a998587e67cc2eead45a525a476a3c68bdd037aa0052eed6c",
+      "terrain_hash": "776dd501a98660f18c8a8f8ac4da04c926fa9a0713c564e7f8dcc67e82fb1bb9",
+      "labels_hash": "04841484ebdab34423b9ebc5330e380f5c30dec6232c6419e5b75d666101885d",
+      "source_frames": [
+        0,
+        485
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk1.2s_step0s": {
+      "source_hash": "018523d91215cf1637d49d5464f3d11a2ac555990b02f62d48bfd8c2980106ee",
+      "terrain_hash": "93418cb6daf87ba4ad4bf3594bb51869778cc98d31b2af67d77b7f30c7c9f3f1",
+      "labels_hash": "952f549ce46796ab0a9b5608a0863a4d48430445f482f4d89b591a57c7cda63d",
+      "source_frames": [
+        0,
+        400
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk1.2s_step1.0s": {
+      "source_hash": "976df52b1311cb22aeeb38d55289551a90651b32ac7d9848055185227b609be7",
+      "terrain_hash": "9aea760c0d4b30de2a7ace8efa3ae7d39385600d7d263bdd1060316cef125e12",
+      "labels_hash": "2b2ff281689df9c375370b2cc45d6d81e94fb9c13b6a1a6460fa1bb381b0e2ce",
+      "source_frames": [
+        0,
+        503
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk1.5s_step0.5s": {
+      "source_hash": "4da9b5c4f5c953cacecaf5990166c11e22d269f342cde87e30e5e62501823fe3",
+      "terrain_hash": "e70e64fd86c7a3cd86a4ce3d9d544c484c89922cccbb1bd6b757729358457b61",
+      "labels_hash": "7b75dfc9683a40f837f5abd7876262f867eb5905147c07249b1c8d9a0b4b5a28",
+      "source_frames": [
+        0,
+        485
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk1.5s_step0s": {
+      "source_hash": "24aa46ba768517a00d5817cfb23926ffb2485680f37802e40d6f7f3f0040b0e2",
+      "terrain_hash": "a6ae726ef98c3d16902c96972838af43934f4dc64aaf8bff5d5971b99d0be083",
+      "labels_hash": "716cdbfe5ea587191cbd039f761e251ff008d57197c152830c37344b8d66e602",
+      "source_frames": [
+        0,
+        417
+      ],
+      "variants": 10
+    },
+    "motions-low-step/right_90_walk1.5s_step1.0s": {
+      "source_hash": "b2318eca71163f4029af497ece2116d23808f44702d3340e821e6cafc0954ea5",
+      "terrain_hash": "254662e20856880a357074b2cbb03c7658980daf3ccfcabcd87e6134d8508a3c",
+      "labels_hash": "9751f10b3f9e451c557ec37f5f4016875745b8bab7226a9f856a8ac035cd6dac",
+      "source_frames": [
+        0,
+        531
+      ],
+      "variants": 10
+    }
+  },
+  "accepted_sources": 3,
+  "accepted_variants": 23,
+  "entries": [
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 0,
+      "export_slot": 0,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 1,
+      "export_slot": 1,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 2,
+      "export_slot": 2,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 3,
+      "export_slot": 3,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 4,
+      "export_slot": 4,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 5,
+      "export_slot": 5,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 7,
+      "export_slot": 6,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 8,
+      "export_slot": 7,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "source_variant": 9,
+      "export_slot": 8,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "b689c62319663ccea84dd9c8",
+      "root_continuity_key": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2:eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/b689c62319663ccea84dd9c8.json",
+      "motion_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "labels_sha256": "fda358345c59a105d7a91008b5f617bd61434e25af06510d8fcab2c7e8ee3a50",
+      "quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 0,
+      "export_slot": 0,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 1,
+      "export_slot": 1,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 2,
+      "export_slot": 2,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 3,
+      "export_slot": 3,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 7,
+      "export_slot": 4,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 8,
+      "export_slot": 5,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s",
+      "source_variant": 9,
+      "export_slot": 6,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "0cc26383c0c77b0b1bfb980e",
+      "root_continuity_key": "bdd082f4de7aab5004d8ab42a18d44c4cea4ec227867de8e2bfca94767870516:260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0049_stand_2.0s_right_45_1.4s_run_left_45_3.0s_forward_2.0s_left_90_2.9s_run_left_45_2.6s_forward_1.5s_run_left_45_1.2s_right_90_2.5s_run_left_90_3.0s_right_90_2.4s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/0cc26383c0c77b0b1bfb980e.json",
+      "motion_sha256": "260a3f21197d0cd7af3fe6461684461c11c937541cd6995a939d11e0ce7bf252",
+      "labels_sha256": "a92ea09bbd0f1c30d2073e4092247d8166f6bb230a67b1d8e223881417e1d04e",
+      "quality_sha256": "212e1a678d0d462b9331ae98db6d3b63641d25d3d049fc3c1b92a5bd4a468a2b"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 0,
+      "export_slot": 0,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 2,
+      "export_slot": 1,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 3,
+      "export_slot": 2,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 4,
+      "export_slot": 3,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 5,
+      "export_slot": 4,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 8,
+      "export_slot": 5,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    },
+    {
+      "source_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "output_key": "motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s",
+      "source_variant": 9,
+      "export_slot": 6,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "task_id": "d24350b8f41c2f367fa5b242",
+      "root_continuity_key": "7a1d7e3c5c52533120cee38b7122f0bf41b9ccaa03f6db20a1f96fce6d96595d:64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "motion": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_motion.npz",
+      "terrain": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s_terrain.npy",
+      "labels": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/accepted_contacts/motions-locomotion/cfg0097_stand_2.0s_run_right_45_2.6s_left_45_1.7s_left_90_2.6s_left_90_2.2s_right_45_1.2s_run_left_45_2.5s_left_90_2.6s_right_45_2.3s_left_45_2.2s_run_left_45_2.0s_stand_2.0s.npz",
+      "quality": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110/quality/d24350b8f41c2f367fa5b242.json",
+      "motion_sha256": "64cf65b604c44ed91b661278e98d6ce9c3deba051250a563adc971cc5119b532",
+      "labels_sha256": "a8c46876061b876d402d05b1d078adcae8898307eca84d5ac4abfeb18db9e196",
+      "quality_sha256": "09fd004266e61658615e606bb935fffd794da421b9c6d9ceb3c7f86fdba84bbd"
+    }
+  ],
+  "pd_status": "not_run",
+  "learned_tracking_status": "not_run"
+}

@@ -1,0 +1,204 @@
+{
+  "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+  "rows": [
+    {
+      "frame": 425,
+      "source_foot_up_angle_deg": 12.78430639608842,
+      "target_foot_up_angle_deg": 3.1316357564639987,
+      "source_local_foot_contact": [
+        -0.05064148391895228,
+        -0.025901489034286993,
+        -0.03487603602091761
+      ],
+      "source_knee_fraction": 0.9949014089691093,
+      "source_knee_distance": 0.04858025163412094,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 450,
+      "source_foot_up_angle_deg": 2.3666744253007956,
+      "target_foot_up_angle_deg": 0.12543961645304538,
+      "source_local_foot_contact": [
+        0.12005764305019662,
+        -0.03019822260007627,
+        -0.034995736472595775
+      ],
+      "source_knee_fraction": 0.9964081851943987,
+      "source_knee_distance": 0.02991543523967266,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 480,
+      "source_foot_up_angle_deg": 2.62022247702719,
+      "target_foot_up_angle_deg": 0.5262329270162445,
+      "source_local_foot_contact": [
+        -0.05022198563055267,
+        0.025054814694112956,
+        -0.034994780612456325
+      ],
+      "source_knee_fraction": 0.9984440309535756,
+      "source_knee_distance": 0.03279678523540497,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 487,
+      "source_foot_up_angle_deg": 1.928153289750893,
+      "target_foot_up_angle_deg": 2.8295919145923047,
+      "source_local_foot_contact": [
+        -0.05016533868946292,
+        0.025030773864997066,
+        -0.03499718745683745
+      ],
+      "source_knee_fraction": 0.9951817005741486,
+      "source_knee_distance": 0.031542375683784485,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 488,
+      "source_foot_up_angle_deg": 1.7858596950903436,
+      "target_foot_up_angle_deg": 1.417879354652902,
+      "source_local_foot_contact": [
+        -0.05015340507933828,
+        0.025027311754941255,
+        -0.03499755104482886
+      ],
+      "source_knee_fraction": 0.5782890482823194,
+      "source_knee_distance": 0.0,
+      "target_knee_active": true,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 489,
+      "source_foot_up_angle_deg": 1.4427777802951844,
+      "target_foot_up_angle_deg": 1.3918654930264687,
+      "source_local_foot_contact": [
+        -0.05012330104117545,
+        0.025025926174849302,
+        -0.034998419098911444
+      ],
+      "source_knee_fraction": 0.995648017314477,
+      "source_knee_distance": 0.03176117315888405,
+      "target_knee_active": true,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 490,
+      "source_foot_up_angle_deg": 0.9785217271907188,
+      "target_foot_up_angle_deg": 1.3153796717744528,
+      "source_local_foot_contact": [
+        -0.050080684520306666,
+        0.02502818185702751,
+        -0.03499926444167902
+      ],
+      "source_knee_fraction": 0.9958547050390406,
+      "source_knee_distance": 0.03217506408691406,
+      "target_knee_active": true,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 491,
+      "source_foot_up_angle_deg": 0.5477956538496733,
+      "target_foot_up_angle_deg": 1.4428643015593343,
+      "source_local_foot_contact": [
+        -0.050033724014711345,
+        0.025033869708894797,
+        -0.034999742404888054
+      ],
+      "source_knee_fraction": 0.5465093395497004,
+      "source_knee_distance": 0.0,
+      "target_knee_active": true,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 492,
+      "source_foot_up_angle_deg": 0.5941804452284114,
+      "target_foot_up_angle_deg": 1.7755600016833137,
+      "source_local_foot_contact": [
+        0.12002493726802604,
+        0.03004550765043347,
+        -0.034999713643325506
+      ],
+      "source_knee_fraction": 0.9962981513976328,
+      "source_knee_distance": 0.033632226288318634,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 500,
+      "source_foot_up_angle_deg": 35.57435243493148,
+      "target_foot_up_angle_deg": 1.4991914127407218,
+      "source_local_foot_contact": [
+        0.12289701695807803,
+        -0.030260598170474752,
+        -0.034066821344413925
+      ],
+      "source_knee_fraction": 0.9809809225437198,
+      "source_knee_distance": 0.07978888601064682,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    },
+    {
+      "frame": 502,
+      "source_foot_up_angle_deg": 52.240972939909426,
+      "target_foot_up_angle_deg": 6.340162629933982,
+      "source_local_foot_contact": [
+        0.1238937040990723,
+        -0.030682290249710413,
+        -0.03306162082014876
+      ],
+      "source_knee_fraction": null,
+      "source_knee_distance": 0.10000000149011612,
+      "target_knee_active": false,
+      "target_foot_offset": [
+        0.03415488308729194,
+        6.209917611723487e-05,
+        -0.05677120870934851
+      ]
+    }
+  ],
+  "scope": "Foot material patch and ankle attitude during simultaneous source foot/shank contact; diagnosis only"
+}

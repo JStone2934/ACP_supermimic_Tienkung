@@ -1,0 +1,1081 @@
+{
+  "scope": "Four complete accepted seeds; selected original terrain; all gates measured but no production plan, independent source receipt replay, labels or export yet, never count as delivered coverage",
+  "rows": [
+    {
+      "source_key": "motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s",
+      "variant": 1,
+      "frames": 1095,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "parent_task": "17e0e91f8f6083019f2b1d9c",
+      "parent_quality_sha256": "11dd2605a2faa815013583a99dfb46dbd754cf03d5d2e71747477936fa0db108",
+      "seed_sha256": "a84d797fd81676ff1a7f07e0e1e2a76cfe01209dd7e15463f28791cd669d9cf5",
+      "source_sha256": "fe92069d0b41f84ba1ead78297de1d3b10e52da166c0256149d56dc61a51c034",
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/clearance_v21_probe/candidates/motions-locomotion/cfg0011_stand_2.0s_run_left_45_1.2s_right_90_2.5s_run_left_90_1.2s_run_forward_1.5s_left_90_0.8s_run_forward_2.9s_run_forward_1.8s_right_45_1.4s_right_90_2.9s_left_45_1.7s_stand_2.0s__probe_01_motion.npz",
+      "candidate_sha256": "13aefce9645519e6056ba7d8f762fe1781aa0bc6d86373c1c679fc40036e8735",
+      "clearance": {
+        "max_lift_m": 2.974579967800553e-08,
+        "adjusted_frames": 356
+      },
+      "before_terrain_mm": 48.507297171078626,
+      "geometry": {
+        "variant": 1,
+        "frames": 1095,
+        "duration_s": 21.88,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "terrain_penetration"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8668621788165802,
+        "terrain_penetration_max_m": 0.04850729717107863,
+        "terrain_penetration_over_2mm_longest_frames": 5,
+        "self_penetration_raw_max_m": 0.038428423085128054,
+        "self_penetration_policy_max_m": 0.0012403729780910682,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403729780910682,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.038428423085128054,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03660881980721924
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_l_link / world": 0.0005000290450750747,
+          "ankle_roll_r_link / world": 0.000500029745799678,
+          "left_tcp_link / world": 0.04850729717107863
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 610,
+            "distance_p95_m": 0.0014486922327074817,
+            "slip_p95_m_s": 0.02721023887727722,
+            "anchor_error_p95_m": 0.007759597263620544
+          },
+          "right_foot": {
+            "frames": 675,
+            "distance_p95_m": 0.0018369238733555138,
+            "slip_p95_m_s": 0.02753294551714992,
+            "anchor_error_p95_m": 0.0076118188125995
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run"
+      },
+      "arms": {
+        "policy": {
+          "version": "arm-fidelity-v1",
+          "reference": "segment-directions-v1",
+          "rmse_max_m": 0.05,
+          "p95_max_m": 0.1,
+          "dynamic_rms_min_m": 0.025,
+          "amplitude_ratio_min": 0.7,
+          "amplitude_ratio_max": 1.3,
+          "correlation_min": 0.85,
+          "max_lag_frames": 2,
+          "lag_search_frames": 10,
+          "min_phase_frames": 8,
+          "fps": 50,
+          "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "points": {
+          "left_elbow": {
+            "free_frames": 1095,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1095,
+                "rmse_m": 0.001193249303932357,
+                "p95_m": 0.0009020500329098002,
+                "reference_rms_amplitude_m": 0.07819525303318785,
+                "actual_rms_amplitude_m": 0.07798843660629909,
+                "dynamic": true,
+                "amplitude_ratio": 0.9973551281073164,
+                "correlation": 0.9998888401164651,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "left_hand": {
+            "free_frames": 1095,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1095,
+                "rmse_m": 0.0009431419524733852,
+                "p95_m": 0.0008243537689131421,
+                "reference_rms_amplitude_m": 0.1926694012980613,
+                "actual_rms_amplitude_m": 0.19253799505262165,
+                "dynamic": true,
+                "amplitude_ratio": 0.9993179703442564,
+                "correlation": 0.9999889705894782,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_elbow": {
+            "free_frames": 1095,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1095,
+                "rmse_m": 0.0016168923775771377,
+                "p95_m": 0.0006890610894788032,
+                "reference_rms_amplitude_m": 0.0754598003069823,
+                "actual_rms_amplitude_m": 0.07521606823772235,
+                "dynamic": true,
+                "amplitude_ratio": 0.9967700408923904,
+                "correlation": 0.9997782283659148,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_hand": {
+            "free_frames": 1095,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1095,
+                "rmse_m": 0.0010309511085305162,
+                "p95_m": 0.0008203471676974191,
+                "reference_rms_amplitude_m": 0.1878753600526814,
+                "actual_rms_amplitude_m": 0.18770960599533434,
+                "dynamic": true,
+                "amplitude_ratio": 0.9991177445658622,
+                "correlation": 0.9999863392840616,
+                "best_lag_frames": 0
+              }
+            ]
+          }
+        }
+      },
+      "posture": {
+        "policy": {
+          "version": "torso-attitude-v1",
+          "reference": "neutral-calibrated-source-orientation",
+          "angular_rmse_max_deg": 3.0,
+          "angular_p95_max_deg": 5.0,
+          "angular_max_deg": 10.0,
+          "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+          "fps": 50
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "bodies": {
+          "pelvis": {
+            "angular_rmse_deg": 2.93020989682789,
+            "angular_p95_deg": 5.497861153166934,
+            "angular_max_deg": 23.588313155065848,
+            "gated": false
+          },
+          "torso": {
+            "angular_rmse_deg": 0.1626255418724709,
+            "angular_p95_deg": 0.26412545826631234,
+            "angular_max_deg": 1.3582245313594594,
+            "gated": true
+          }
+        }
+      },
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 1095,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.27246172703521987,
+          "added_velocity_p95_m_s": 0.5453335388724313,
+          "added_velocity_max_m_s": 1.3668990498871294,
+          "added_acceleration_max_m_s2": 44.12583815575296
+        },
+        "worst_velocity_frame": 434,
+        "worst_acceleration_frame": 348,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "fe92069d0b41f84ba1ead78297de1d3b10e52da166c0256149d56dc61a51c034",
+        "motion_sha256": "13aefce9645519e6056ba7d8f762fe1781aa0bc6d86373c1c679fc40036e8735",
+        "source_frames": [
+          0,
+          1095
+        ]
+      },
+      "all_gates_pass": false,
+      "seconds": 8.948110462864861,
+      "worst_native_terrain_contact": {
+        "frame": 802,
+        "distance_m": -0.04850729717107863,
+        "bodies": [
+          "world",
+          "left_tcp_link"
+        ],
+        "geoms": [
+          "box1",
+          ""
+        ],
+        "normal": [
+          -0.9985307147336211,
+          -0.0541886679441733,
+          -2.288775275830213e-15
+        ]
+      }
+    },
+    {
+      "source_key": "motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "variant": 6,
+      "frames": 1086,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "parent_task": "9095d779011d38a4e736baba",
+      "parent_quality_sha256": "b1391f492f26b94b40c43a6b0cc50ec007e1a66fdab37428e331b650dd0d0dcb",
+      "seed_sha256": "1ea903b93641140289b67b449f4d870a86c1386a4e4ba820321c93045c3d9838",
+      "source_sha256": "1069eac994f33521688fa09048965f8c87794a32e5bae0b176b8b72da086f4ac",
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/clearance_v21_probe/candidates/motions-locomotion/cfg0013_stand_2.0s_left_90_2.0s_run_right_45_1.2s_right_45_2.8s_left_90_0.9s_run_left_90_3.0s_run_left_45_2.2s_right_90_1.1s_run_right_45_1.4s_right_45_2.1s_run_forward_1.2s_stand_2.0s__probe_06_motion.npz",
+      "candidate_sha256": "3935f7742d3d7d706746febd500a2a481b178d94242e116533b4a85bb401c08b",
+      "clearance": {
+        "max_lift_m": 2.898224896923443e-08,
+        "adjusted_frames": 140
+      },
+      "before_terrain_mm": 28.046886301120775,
+      "geometry": {
+        "variant": 6,
+        "frames": 1086,
+        "duration_s": 21.7,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "terrain_penetration"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8639179806698235,
+        "terrain_penetration_max_m": 0.028046886301120774,
+        "terrain_penetration_over_2mm_longest_frames": 2,
+        "self_penetration_raw_max_m": 0.038628491485920596,
+        "self_penetration_policy_max_m": 0.001240371843291443,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.001240371843291443,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.038628491485920596,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03701295524106401,
+          "elbow_yaw_r_link / hip_pitch_r_link": 0.0002736773776374207
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_r_link / world": 0.028046886301120774,
+          "ankle_roll_l_link / world": 0.0005000185296894499
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 658,
+            "distance_p95_m": 0.001523173111530649,
+            "slip_p95_m_s": 0.027026225864761742,
+            "anchor_error_p95_m": 0.005102798009631106
+          },
+          "right_foot": {
+            "frames": 621,
+            "distance_p95_m": 0.0016947496774522355,
+            "slip_p95_m_s": 0.02663280762965618,
+            "anchor_error_p95_m": 0.003996414457996786
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run"
+      },
+      "arms": {
+        "policy": {
+          "version": "arm-fidelity-v1",
+          "reference": "segment-directions-v1",
+          "rmse_max_m": 0.05,
+          "p95_max_m": 0.1,
+          "dynamic_rms_min_m": 0.025,
+          "amplitude_ratio_min": 0.7,
+          "amplitude_ratio_max": 1.3,
+          "correlation_min": 0.85,
+          "max_lag_frames": 2,
+          "lag_search_frames": 10,
+          "min_phase_frames": 8,
+          "fps": 50,
+          "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "points": {
+          "left_elbow": {
+            "free_frames": 1086,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1086,
+                "rmse_m": 0.001098937885703444,
+                "p95_m": 0.0015145071890548072,
+                "reference_rms_amplitude_m": 0.08220205395624056,
+                "actual_rms_amplitude_m": 0.08196561650472527,
+                "dynamic": true,
+                "amplitude_ratio": 0.9971237038475808,
+                "correlation": 0.9999162891163852,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "left_hand": {
+            "free_frames": 1086,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1086,
+                "rmse_m": 0.0007518542934878644,
+                "p95_m": 0.0009272289572075795,
+                "reference_rms_amplitude_m": 0.18436448799719646,
+                "actual_rms_amplitude_m": 0.18423706884688187,
+                "dynamic": true,
+                "amplitude_ratio": 0.999308873678989,
+                "correlation": 0.999992716088931,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_elbow": {
+            "free_frames": 1086,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1086,
+                "rmse_m": 0.0017299489430395905,
+                "p95_m": 0.0018663055487074137,
+                "reference_rms_amplitude_m": 0.08428437818475992,
+                "actual_rms_amplitude_m": 0.08389923798551688,
+                "dynamic": true,
+                "amplitude_ratio": 0.9954304675725462,
+                "correlation": 0.999802200786328,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_hand": {
+            "free_frames": 1086,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1086,
+                "rmse_m": 0.0008587989049218468,
+                "p95_m": 0.0010802110501609249,
+                "reference_rms_amplitude_m": 0.19817478754554954,
+                "actual_rms_amplitude_m": 0.19798117062528164,
+                "dynamic": true,
+                "amplitude_ratio": 0.9990229992287823,
+                "correlation": 0.9999918473396127,
+                "best_lag_frames": 0
+              }
+            ]
+          }
+        }
+      },
+      "posture": {
+        "policy": {
+          "version": "torso-attitude-v1",
+          "reference": "neutral-calibrated-source-orientation",
+          "angular_rmse_max_deg": 3.0,
+          "angular_p95_max_deg": 5.0,
+          "angular_max_deg": 10.0,
+          "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+          "fps": 50
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "bodies": {
+          "pelvis": {
+            "angular_rmse_deg": 2.7327262166964648,
+            "angular_p95_deg": 5.14476726023636,
+            "angular_max_deg": 20.016131551858575,
+            "gated": false
+          },
+          "torso": {
+            "angular_rmse_deg": 0.11667280937305703,
+            "angular_p95_deg": 0.2720435667025537,
+            "angular_max_deg": 1.1413782421473,
+            "gated": true
+          }
+        }
+      },
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 1086,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.27524573406184805,
+          "added_velocity_p95_m_s": 0.5572688801859683,
+          "added_velocity_max_m_s": 1.8428976784810642,
+          "added_acceleration_max_m_s2": 64.27456892298106
+        },
+        "worst_velocity_frame": 991,
+        "worst_acceleration_frame": 994,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "1069eac994f33521688fa09048965f8c87794a32e5bae0b176b8b72da086f4ac",
+        "motion_sha256": "3935f7742d3d7d706746febd500a2a481b178d94242e116533b4a85bb401c08b",
+        "source_frames": [
+          0,
+          1086
+        ]
+      },
+      "all_gates_pass": false,
+      "seconds": 7.29584957100451,
+      "worst_native_terrain_contact": {
+        "frame": 580,
+        "distance_m": -0.028046886301120774,
+        "bodies": [
+          "world",
+          "ankle_roll_r_link"
+        ],
+        "geoms": [
+          "box2",
+          ""
+        ],
+        "normal": [
+          0.9834904559778199,
+          0.18096000386975042,
+          -9.896134393542204e-16
+        ]
+      }
+    },
+    {
+      "source_key": "motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s",
+      "variant": 6,
+      "frames": 1264,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "parent_task": "b689c62319663ccea84dd9c8",
+      "parent_quality_sha256": "997343071d7abe656009f6f64e1cf1c0c4804d6830cc2d8fb2aa775f60b2e900",
+      "seed_sha256": "eaf46c0ad041a8b012c4615ac9aef13beb4f4357e7f5ce89be23187163570872",
+      "source_sha256": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2",
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/clearance_v21_probe/candidates/motions-locomotion/cfg0021_stand_2.0s_run_right_90_2.1s_left_45_2.9s_run_left_45_2.8s_run_left_45_1.2s_run_right_90_1.6s_run_left_90_2.9s_run_right_45_1.2s_right_90_2.6s_run_right_45_1.2s_forward_2.8s_stand_2.0s__probe_06_motion.npz",
+      "candidate_sha256": "066bb6f6ea0f060ab8c8da5fe2c8312db97f0e2a7771caaf48186ace6cd72dca",
+      "clearance": {
+        "max_lift_m": 2.9419162550937267e-08,
+        "adjusted_frames": 374
+      },
+      "before_terrain_mm": 27.325723855193488,
+      "geometry": {
+        "variant": 6,
+        "frames": 1264,
+        "duration_s": 25.26,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "terrain_penetration"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.840619475139112,
+        "terrain_penetration_max_m": 0.02732572385519349,
+        "terrain_penetration_over_2mm_longest_frames": 4,
+        "self_penetration_raw_max_m": 0.03927521841466769,
+        "self_penetration_policy_max_m": 0.0012403735036079545,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403735036079545,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.03927521841466769,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.037559615311977074,
+          "hip_pitch_l_link / wrist_roll_l_link": 0.0005227364982930771
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_r_link / world": 0.000500029419162551,
+          "ankle_roll_l_link / world": 0.00050002807518712,
+          "left_tcp_link / world": 0.02732572385519349
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 693,
+            "distance_p95_m": 0.0017650253801228927,
+            "slip_p95_m_s": 0.026838002392053355,
+            "anchor_error_p95_m": 0.006042972824808743
+          },
+          "right_foot": {
+            "frames": 696,
+            "distance_p95_m": 0.0015804718727438103,
+            "slip_p95_m_s": 0.02701766806323644,
+            "anchor_error_p95_m": 0.0058427477912556865
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run"
+      },
+      "arms": {
+        "policy": {
+          "version": "arm-fidelity-v1",
+          "reference": "segment-directions-v1",
+          "rmse_max_m": 0.05,
+          "p95_max_m": 0.1,
+          "dynamic_rms_min_m": 0.025,
+          "amplitude_ratio_min": 0.7,
+          "amplitude_ratio_max": 1.3,
+          "correlation_min": 0.85,
+          "max_lag_frames": 2,
+          "lag_search_frames": 10,
+          "min_phase_frames": 8,
+          "fps": 50,
+          "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "points": {
+          "left_elbow": {
+            "free_frames": 1264,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1264,
+                "rmse_m": 0.002281349470834389,
+                "p95_m": 0.0023355063580979703,
+                "reference_rms_amplitude_m": 0.0875707980387444,
+                "actual_rms_amplitude_m": 0.08708823646670759,
+                "dynamic": true,
+                "amplitude_ratio": 0.994489469288343,
+                "correlation": 0.9996801645213088,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "left_hand": {
+            "free_frames": 1264,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1264,
+                "rmse_m": 0.0014188444907798944,
+                "p95_m": 0.0017287313312505923,
+                "reference_rms_amplitude_m": 0.1962296747026636,
+                "actual_rms_amplitude_m": 0.19596416482865414,
+                "dynamic": true,
+                "amplitude_ratio": 0.9986469433106294,
+                "correlation": 0.9999760426747017,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_elbow": {
+            "free_frames": 1264,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1264,
+                "rmse_m": 0.0016676360455969744,
+                "p95_m": 0.0027669898574799114,
+                "reference_rms_amplitude_m": 0.08643797283968246,
+                "actual_rms_amplitude_m": 0.08602386277838926,
+                "dynamic": true,
+                "amplitude_ratio": 0.9952091650499341,
+                "correlation": 0.9998285611375038,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_hand": {
+            "free_frames": 1264,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1264,
+                "rmse_m": 0.0008467064945802949,
+                "p95_m": 0.0012209164988491177,
+                "reference_rms_amplitude_m": 0.19791082400851925,
+                "actual_rms_amplitude_m": 0.19772244566871572,
+                "dynamic": true,
+                "amplitude_ratio": 0.9990481655526056,
+                "correlation": 0.9999920494376239,
+                "best_lag_frames": 0
+              }
+            ]
+          }
+        }
+      },
+      "posture": {
+        "policy": {
+          "version": "torso-attitude-v1",
+          "reference": "neutral-calibrated-source-orientation",
+          "angular_rmse_max_deg": 3.0,
+          "angular_p95_max_deg": 5.0,
+          "angular_max_deg": 10.0,
+          "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+          "fps": 50
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "bodies": {
+          "pelvis": {
+            "angular_rmse_deg": 2.6702395517369872,
+            "angular_p95_deg": 5.250731166546875,
+            "angular_max_deg": 19.16175641517788,
+            "gated": false
+          },
+          "torso": {
+            "angular_rmse_deg": 0.10728056496866781,
+            "angular_p95_deg": 0.2587545950795092,
+            "angular_max_deg": 0.6134565693890236,
+            "gated": true
+          }
+        }
+      },
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 1264,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.2438099163640046,
+          "added_velocity_p95_m_s": 0.5075511349130248,
+          "added_velocity_max_m_s": 1.2778410218577172,
+          "added_acceleration_max_m_s2": 35.88231659492039
+        },
+        "worst_velocity_frame": 142,
+        "worst_acceleration_frame": 1055,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "c40aa01aea190d071e198806adffd6ca550ce12864aae7b310cb9768a44349f2",
+        "motion_sha256": "066bb6f6ea0f060ab8c8da5fe2c8312db97f0e2a7771caaf48186ace6cd72dca",
+        "source_frames": [
+          0,
+          1264
+        ]
+      },
+      "all_gates_pass": false,
+      "seconds": 7.138979052891955,
+      "worst_native_terrain_contact": {
+        "frame": 121,
+        "distance_m": -0.02732572385519349,
+        "bodies": [
+          "world",
+          "left_tcp_link"
+        ],
+        "geoms": [
+          "box4",
+          ""
+        ],
+        "normal": [
+          -0.8409257546907721,
+          -0.541150510577007,
+          4.06292265305956e-15
+        ]
+      }
+    },
+    {
+      "source_key": "motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s",
+      "variant": 4,
+      "frames": 1110,
+      "parent": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/motions/php_segment_v21_full_20261110",
+      "parent_task": "bea5b8fb96aead5cd611e5c9",
+      "parent_quality_sha256": "6d644c90d50ef458a13473b09a5592612d5336ad02d3d5a1269698b28ceea51e",
+      "seed_sha256": "a6b5cdc59d0bacad545a629d4133b689fdfd79fa8c0182d49c2c3ee06a8db5dc",
+      "source_sha256": "76a4b7bc1bdd575c862fa40370e579a2415ee0fe1c95a1d508e6251101ae4fad",
+      "candidate": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/.cache/php_conversion/clearance_v21_probe/candidates/motions-locomotion/cfg0029_stand_2.0s_run_left_90_1.2s_forward_2.6s_left_45_1.5s_run_forward_1.2s_right_90_1.9s_right_45_2.2s_forward_2.9s_right_45_1.9s_run_right_90_1.5s_left_45_1.4s_stand_2.0s__probe_04_motion.npz",
+      "candidate_sha256": "9064027679c741521ea5ec7c619bb2fae23801922065aab88c283ae3219c5181",
+      "clearance": {
+        "max_lift_m": 2.7532199992508916e-08,
+        "adjusted_frames": 150
+      },
+      "before_terrain_mm": 33.01388320337957,
+      "geometry": {
+        "variant": 4,
+        "frames": 1110,
+        "duration_s": 22.18,
+        "geometry_pass": false,
+        "strict_raw_geometry_pass": false,
+        "rejection_reasons": [
+          "terrain_penetration"
+        ],
+        "collision_policy_hash": "3a34174e08b82dd68358da36c02ff3f4389a67a6bc2e09861fede3fe413ba65a",
+        "joint_limit_max_rad": 0.0,
+        "joint_velocity_max_ratio": 0.8515205429687814,
+        "terrain_penetration_max_m": 0.03301388320337957,
+        "terrain_penetration_over_2mm_longest_frames": 4,
+        "self_penetration_raw_max_m": 0.03923977025290115,
+        "self_penetration_policy_max_m": 0.0012403728333664572,
+        "self_penetration_policy_over_2mm_longest_frames": 0,
+        "self_pair_max_m": {
+          "pelvis / waist_roll_link": 0.0012403728333664572,
+          "ankle_roll_l_link / knee_pitch_l_link": 0.037293728552804314,
+          "ankle_roll_r_link / knee_pitch_r_link": 0.03923977025290115,
+          "hip_yaw_l_link / left_tcp_link": 0.0004945300141939052,
+          "hip_pitch_l_link / wrist_roll_l_link": 0.00032310047618175553,
+          "hip_pitch_l_link / wrist_pitch_l_link": 9.175992377186854e-05,
+          "hip_pitch_r_link / wrist_roll_r_link": 0.0007597968573462105
+        },
+        "terrain_pair_max_m": {
+          "ankle_roll_r_link / world": 0.0005000275321999925,
+          "ankle_roll_l_link / world": 0.0005000193826752292,
+          "right_tcp_link / world": 0.03301388320337957,
+          "knee_pitch_r_link / world": 0.020278544465842135,
+          "hip_yaw_r_link / world": 0.011223670691985549
+        },
+        "contacts": {
+          "left_foot": {
+            "frames": 709,
+            "distance_p95_m": 0.0017732101038219498,
+            "slip_p95_m_s": 0.026572756013881312,
+            "anchor_error_p95_m": 0.005252138603399463
+          },
+          "right_foot": {
+            "frames": 736,
+            "distance_p95_m": 0.0020664227991088286,
+            "slip_p95_m_s": 0.026561992555811983,
+            "anchor_error_p95_m": 0.004552293693140419
+          },
+          "left_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_knee": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_hand": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "left_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "right_elbow": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          },
+          "pelvis": {
+            "frames": 0,
+            "distance_p95_m": null,
+            "slip_p95_m_s": null,
+            "anchor_error_p95_m": null
+          }
+        },
+        "pd_status": "not_run",
+        "learned_tracking_status": "not_run"
+      },
+      "arms": {
+        "policy": {
+          "version": "arm-fidelity-v1",
+          "reference": "segment-directions-v1",
+          "rmse_max_m": 0.05,
+          "p95_max_m": 0.1,
+          "dynamic_rms_min_m": 0.025,
+          "amplitude_ratio_min": 0.7,
+          "amplitude_ratio_max": 1.3,
+          "correlation_min": 0.85,
+          "max_lag_frames": 2,
+          "lag_search_frames": 10,
+          "min_phase_frames": 8,
+          "fps": 50,
+          "scope": "free arm phases in torso coordinates; support phases use independent contact gates"
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "points": {
+          "left_elbow": {
+            "free_frames": 1110,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1110,
+                "rmse_m": 0.0016638497098783798,
+                "p95_m": 0.0009592428956635123,
+                "reference_rms_amplitude_m": 0.0693892302756375,
+                "actual_rms_amplitude_m": 0.06904719694678738,
+                "dynamic": true,
+                "amplitude_ratio": 0.9950708009370987,
+                "correlation": 0.9997266590438457,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "left_hand": {
+            "free_frames": 1110,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1110,
+                "rmse_m": 0.0013657693935962333,
+                "p95_m": 0.0007844580636758877,
+                "reference_rms_amplitude_m": 0.18377606217111875,
+                "actual_rms_amplitude_m": 0.1836363491829651,
+                "dynamic": true,
+                "amplitude_ratio": 0.9992397650352114,
+                "correlation": 0.9999737293106701,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_elbow": {
+            "free_frames": 1110,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1110,
+                "rmse_m": 0.002004501616652038,
+                "p95_m": 0.000876078557984094,
+                "reference_rms_amplitude_m": 0.0718176421757749,
+                "actual_rms_amplitude_m": 0.07141827975592996,
+                "dynamic": true,
+                "amplitude_ratio": 0.994439215661418,
+                "correlation": 0.9996279768737137,
+                "best_lag_frames": 0
+              }
+            ]
+          },
+          "right_hand": {
+            "free_frames": 1110,
+            "phases": [
+              {
+                "start": 0,
+                "end": 1110,
+                "rmse_m": 0.0009763477459594865,
+                "p95_m": 0.0008181167434555701,
+                "reference_rms_amplitude_m": 0.17937874546213659,
+                "actual_rms_amplitude_m": 0.17917442259792224,
+                "dynamic": true,
+                "amplitude_ratio": 0.9988609416144151,
+                "correlation": 0.9999869636612364,
+                "best_lag_frames": 0
+              }
+            ]
+          }
+        }
+      },
+      "posture": {
+        "policy": {
+          "version": "torso-attitude-v1",
+          "reference": "neutral-calibrated-source-orientation",
+          "angular_rmse_max_deg": 3.0,
+          "angular_p95_max_deg": 5.0,
+          "angular_max_deg": 10.0,
+          "scope": "torso full 3D attitude over every frame; pelvis measured separately, not gated",
+          "fps": 50
+        },
+        "passed": true,
+        "rejection_reasons": [],
+        "bodies": {
+          "pelvis": {
+            "angular_rmse_deg": 2.5489391069727194,
+            "angular_p95_deg": 4.9763890689585235,
+            "angular_max_deg": 20.818063269807773,
+            "gated": false
+          },
+          "torso": {
+            "angular_rmse_deg": 0.14460080184484952,
+            "angular_p95_deg": 0.28568601977223995,
+            "angular_max_deg": 1.2683992249761156,
+            "gated": true
+          }
+        }
+      },
+      "root_continuity": {
+        "policy": {
+          "version": "root-continuity-v1",
+          "fps": 50,
+          "added_velocity_rmse_max_m_s": 0.5,
+          "added_velocity_p95_max_m_s": 1.0,
+          "added_velocity_max_m_s": 2.5,
+          "added_acceleration_max_m_s2": 100.0,
+          "scope": "all frames, world linear root target-minus-source derivatives; constant offsets allowed; not dynamic feasibility"
+        },
+        "frames": 1110,
+        "fps": 50.0,
+        "metrics": {
+          "added_velocity_rmse_m_s": 0.26304928271532,
+          "added_velocity_p95_m_s": 0.5753739293883071,
+          "added_velocity_max_m_s": 1.3550402774403432,
+          "added_acceleration_max_m_s2": 42.55945293305506
+        },
+        "worst_velocity_frame": 444,
+        "worst_acceleration_frame": 441,
+        "passed": true,
+        "rejection_reasons": [],
+        "source_sha256": "76a4b7bc1bdd575c862fa40370e579a2415ee0fe1c95a1d508e6251101ae4fad",
+        "motion_sha256": "9064027679c741521ea5ec7c619bb2fae23801922065aab88c283ae3219c5181",
+        "source_frames": [
+          0,
+          1110
+        ]
+      },
+      "all_gates_pass": false,
+      "seconds": 7.282049739966169,
+      "worst_native_terrain_contact": {
+        "frame": 125,
+        "distance_m": -0.03301388320337957,
+        "bodies": [
+          "world",
+          "right_tcp_link"
+        ],
+        "geoms": [
+          "box10",
+          ""
+        ],
+        "normal": [
+          -0.8898203525765727,
+          0.4563110125128522,
+          3.3628974143565983e-15
+        ]
+      }
+    }
+  ],
+  "decision": "Rejected: all four failed terrain collision despite bounded clearance; no production reuse or coverage credited."
+}

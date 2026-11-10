@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "scope": "Initialization only, not quality acceptance",
+  "clips": [
+    {
+      "source_key": "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s",
+      "frames": 269,
+      "default": {
+        "bone_vector_rmse_m": 0.14254625141620636,
+        "torso_matrix_rmse": 0.05724407359957695
+      },
+      "initialized": {
+        "bone_vector_rmse_m": 0.0024005845189094543,
+        "torso_matrix_rmse": 1.3968153325549792e-05
+      },
+      "objective": 2.9395323508651927e-05
+    },
+    {
+      "source_key": "motions-low-climb-76/forward_walk1.5s_step1.2s",
+      "frames": 512,
+      "default": {
+        "bone_vector_rmse_m": 0.1879172921180725,
+        "torso_matrix_rmse": 0.16350291669368744
+      },
+      "initialized": {
+        "bone_vector_rmse_m": 0.002985636005178094,
+        "torso_matrix_rmse": 1.5449279089807533e-05
+      },
+      "objective": 3.8021011278033257e-05
+    }
+  ]
+}

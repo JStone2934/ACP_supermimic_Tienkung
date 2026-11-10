@@ -1,0 +1,48 @@
+{
+  "time": "2026-11-10T16:41:44.278530+08:00",
+  "version": "php-segment-v26",
+  "scope": "Velocity-bounded fixed-root native collision refinement; standard protected convert entry for CPU seed jobs; known v24/v25 seed policies remain auditable; all existing frozen jobs unchanged",
+  "changed": {
+    "supermimic/acp/native_pose_polish.py": {
+      "before": "9b257ac96ebaf53ffc92b1441a824056f9b522a55301931775bbdc7b1466ce6a",
+      "after": "954c5d7fca22a041d20e44629bfd8626ceafb9a8e04e805d3fb66fefe61c8e87"
+    },
+    "supermimic/acp/php_conversion.py": {
+      "before": "ce93e163cd4c792bfd56781a6fc9d22a454c80a66d53b5abcad80c6fbb02e55b",
+      "after": "f60b3c1be937f27b52e8f3ab1c805d350aaf503c1898fade918c9f8f49ff2a7d"
+    },
+    "tools/convert_php.py": {
+      "before": "4e1b9ad1edecf671fa8496ee1563957f68ee2112425ad4526bf1eab31f9c1665",
+      "after": "9e88657d387660ff4cfb2a648e477ad3d9ee7bb57a5933d095b3b9c92e41583f"
+    },
+    "tools/polish_php_conversion.py": {
+      "before": "bd4a701ad6a2bd5d00e8a5e903335f4adfa1e9318108d41e76e8dc23c3aa7161",
+      "after": "dfc6356efac84d92c4def6e1aaf0c8026642bb8fa958ca8e61049ca426e42761"
+    },
+    "tools/test_php_native_velocity.py": {
+      "before": null,
+      "after": "f0b417e3938f433be898a0092336f934b3446457ba8a19ffa58f2e1033f33dd7"
+    },
+    "tools/test_php_polish_entry.py": {
+      "before": null,
+      "after": "96a5f11d7bf536672ed35d5b86d9b61d200e6e5578168300fc28ef10d1dcb7ed"
+    }
+  },
+  "runtime_code_files": 50,
+  "evidence": {
+    "segment_v26_native_velocity_report.json": "0b35e5d74aa3d8b418b9fb6a015fa28f6fa88b233f78a18d70f317d9dc011a72",
+    "segment_v26_native_velocity_comparison.json": "b257312807fe4e55024a08581124cc66c88ee42109d88d7cb7efb1649238bcfd",
+    "segment_v26_preview_summary.json": "ea2243547e9d1b4ec8aec2e90fb23631a8c2ba3d892c740629e3dfe3373fea34",
+    "segment_v26_preview_manifest.json": "06aa7d3baa05386ab08a6a02f2c02ebb4841ddd508624d09596279f11ff87e34",
+    "segment_v26_root_guard.json": "8a43dede8970b519507c882c238a994bfca6068b4416aa210c45f2b2b8915b29",
+    "segment_v26_final_tests.txt": "4e69de574a750474d6c5a56610fd3ea07b55b08d807c6360be53763a4c55b4f5",
+    "segment_v25_native_velocity_probe.json": "70ac9b816bd109ef2807eb7cace8edef7121f5eaa14fea69cdd72e6724140bc4"
+  },
+  "accepted_pilot_slots": 188,
+  "checked_pilot_slots": 200,
+  "new_slots_vs_v25": 20,
+  "lost_slots_vs_v25": 0,
+  "four_full_preview_frames": 1397,
+  "tests_passed": 76,
+  "all_library_complete": false
+}
