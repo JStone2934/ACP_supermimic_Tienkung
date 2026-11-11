@@ -1,0 +1,21 @@
+.FF...............
+======================================================================
+FAIL: test_mutation_during_hashing_is_rejected (tools.test_robot_asset_cache.RobotAssetCacheTests.test_mutation_during_hashing_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/js/robot/locomotion/ACP_supermimic_Tienkung/tools/test_robot_asset_cache.py", line 48, in test_mutation_during_hashing_is_rejected
+    with self.assertRaisesRegex(ValueError, 'changed while hashing'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_same_size_rewrite_with_restored_mtime_rehashes (tools.test_robot_asset_cache.RobotAssetCacheTests.test_same_size_rewrite_with_restored_mtime_rehashes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/js/robot/locomotion/ACP_supermimic_Tienkung/tools/test_robot_asset_cache.py", line 30, in test_same_size_rewrite_with_restored_mtime_rehashes
+    self.assertNotEqual(robots.asset_sha256(p), first)
+AssertionError: '0682c5f2076f099c34cfdd15a9e063849ed437a49677e6fcc5b4198c76575be5' == '0682c5f2076f099c34cfdd15a9e063849ed437a49677e6fcc5b4198c76575be5'
+
+----------------------------------------------------------------------
+Ran 18 tests in 3.793s
+
+FAILED (failures=2)

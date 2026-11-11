@@ -1,0 +1,28 @@
+{
+  "profile_steps": 5,
+  "inclusive": true,
+  "profiling_overhead_present": true,
+  "clean_benchmark_seconds_per_iteration": 1.3002174580376595,
+  "rank_host_seconds": {
+    "0": {
+      "iteration/collect": 0.08462634477764368,
+      "wm_update/backward": 0.045857557514682415,
+      "wm_update/optimizer_and_sync": 0.05920665836893022,
+      "iteration/wm_update": 0.14452808266505598,
+      "policy_update/reward_forward": 0.2752938447985798,
+      "policy_update/backward": 0.7002462501171977,
+      "policy_update/optimizer_and_sync": 0.027105476567521693,
+      "iteration/policy_update": 1.2511869123671204
+    },
+    "1": {
+      "iteration/collect": 0.08457320244051517,
+      "wm_update/backward": 0.04899500929750502,
+      "wm_update/optimizer_and_sync": 0.055701710376888515,
+      "iteration/wm_update": 0.14453122150152922,
+      "policy_update/reward_forward": 0.2705509895924479,
+      "policy_update/backward": 0.6937012373004109,
+      "policy_update/optimizer_and_sync": 0.03870487012900412,
+      "iteration/policy_update": 1.2512699807528407
+    }
+  }
+}

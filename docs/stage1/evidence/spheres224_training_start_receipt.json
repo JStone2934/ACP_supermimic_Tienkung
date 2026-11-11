@@ -1,0 +1,258 @@
+{
+  "time": "2026-11-10T19:37:51.972475+08:00",
+  "started_at": "2026-11-10T19:37:03.985898+08:00",
+  "stage": "training",
+  "unit": "acp-stage1-php-all-20261110.service",
+  "run_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110",
+  "contact_geometry": "spheres224",
+  "controller_config_sha256": "cf435c8598b2c690dc4f247fbb4b392a7ae16765ddb99606584a12b480142183",
+  "source_snapshot_sha256": "d7e6246847859a8ff8b2e7e5bab64f77ee00c5e8a686c14501e140064873da21",
+  "dataset_manifest_sha256": "ff2e0a14fdee8451ab19efa9e960c48d983a009681e51831fb099952d6eb6e78",
+  "bootstrap_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110/train/ckpt_000500.pt",
+  "bootstrap_checkpoint_sha256": "da4523aea9f58f4d903581d09f15ddd95a15760d513de14f2df5f5a5640ca42e",
+  "start_iteration": 500,
+  "target_iteration": 60000,
+  "checks": {
+    "preflight": {
+      "passed": true
+    },
+    "smoke": {
+      "iteration": 3,
+      "data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 30,
+          "pi": 3,
+          "critic": 60
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 4756802048,
+            "torch_peak_reserved": 5721030656,
+            "device_used": 8620867584,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 4756797952,
+            "torch_peak_reserved": 5721030656,
+            "device_used": 7661355008,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          }
+        ],
+        "state_sha256": "4c306cedf260da4423c14dd9b66b03780be00066c232fb0b8289004d584d6b06"
+      },
+      "contact_geometry": "spheres224",
+      "geometry_transition": null,
+      "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/smoke/last.pt",
+      "checkpoint_sha256": "e7c0c0621c57a02c8eac31b7cdbf2867f7897f8cceedd2ea28f6ed9cd72068dd"
+    },
+    "resume_smoke": {
+      "iteration": 4,
+      "data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 40,
+          "pi": 4,
+          "critic": 80
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 4795793408,
+            "torch_peak_reserved": 5725224960,
+            "device_used": 8620343296,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 4795787264,
+            "torch_peak_reserved": 5725224960,
+            "device_used": 7661355008,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          }
+        ],
+        "state_sha256": "a7ff6d8e9d6347bd8b063c4439d8a1eeab2055bf8ae8d3c499eee62cd1519284"
+      },
+      "contact_geometry": "spheres224",
+      "geometry_transition": null,
+      "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/smoke/last.pt",
+      "checkpoint_sha256": "e160d6704bc180964d88c5e216a17e7a893297f5928b491ab0dbcb57bb5b0c38"
+    },
+    "migration_smoke": {
+      "iteration": 502,
+      "data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 5020,
+          "pi": 2,
+          "critic": 40
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 4823815168,
+            "torch_peak_reserved": 5725224960,
+            "device_used": 8620343296,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 4823815168,
+            "torch_peak_reserved": 5725224960,
+            "device_used": 7661355008,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          }
+        ],
+        "state_sha256": "b43fe141ee76ad506ab7938dce34e38585078724e34758a4830fe5288c616189"
+      },
+      "contact_geometry": "spheres224",
+      "geometry_transition": {
+        "previous": "legacy",
+        "current": "spheres224",
+        "source_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110/train/ckpt_000500.pt",
+        "source_sha256": "da4523aea9f58f4d903581d09f15ddd95a15760d513de14f2df5f5a5640ca42e",
+        "source_iteration": 500
+      },
+      "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/migration_smoke/last.pt",
+      "checkpoint_sha256": "5aad89a7b3151dd37b85835f0279be0cee4a7c126aa7c695876a5382421a6a69"
+    },
+    "migration_resume_smoke": {
+      "iteration": 503,
+      "data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 5030,
+          "pi": 3,
+          "critic": 60
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 4795793408,
+            "torch_peak_reserved": 5725224960,
+            "device_used": 8620343296,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 4795795456,
+            "torch_peak_reserved": 5725224960,
+            "device_used": 7661355008,
+            "warp_pool_used": 354701559,
+            "warp_pool_peak": 354702687
+          }
+        ],
+        "state_sha256": "1558452a64952f41994a16a385eed780c370f242ae0b537415148a3f55b5e48d"
+      },
+      "contact_geometry": "spheres224",
+      "geometry_transition": {
+        "previous": "legacy",
+        "current": "spheres224",
+        "source_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110/train/ckpt_000500.pt",
+        "source_sha256": "da4523aea9f58f4d903581d09f15ddd95a15760d513de14f2df5f5a5640ca42e",
+        "source_iteration": 500
+      },
+      "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/migration_smoke/last.pt",
+      "checkpoint_sha256": "40712dd9d614ebd30edd4bf26dd33f3db44db9ab99919a3014f7d54b2839bb74"
+    }
+  },
+  "training_command": [
+    "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+    "-m",
+    "torch.distributed.run",
+    "--nnodes=1",
+    "--nproc-per-node=2",
+    "--master-addr=127.0.0.1",
+    "--master-port=29561",
+    "--max-restarts=0",
+    "--module",
+    "supermimic.acp.train_stage1",
+    "--robot",
+    "tienkung3_29dof",
+    "--motion_dir",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/stage1/php_all_variants_20261110/motions",
+    "--contacts_dir",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/stage1/php_all_variants_20261110/contacts",
+    "--num_envs",
+    "512",
+    "--wm_batch",
+    "256",
+    "--pi_batch",
+    "256",
+    "--buffer_steps",
+    "1000",
+    "--horizon",
+    "32",
+    "--hist",
+    "10",
+    "--wm_window",
+    "8",
+    "--wm_batches",
+    "10",
+    "--critic_epochs",
+    "5",
+    "--critic_minibatches",
+    "4",
+    "--reward_chunk_size",
+    "64",
+    "--amp",
+    "bf16",
+    "--reward",
+    "paper",
+    "--seed",
+    "0",
+    "--verify_sync",
+    "--save_full_checkpoints",
+    "--contact_geometry",
+    "spheres224",
+    "--iterations",
+    "60000",
+    "--wm_only_iters",
+    "500",
+    "--ckpt_every",
+    "500",
+    "--log_every",
+    "25",
+    "--benchmark_warmup",
+    "25",
+    "--benchmark_steps",
+    "50",
+    "--log_dir",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train",
+    "--resume",
+    "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110/train/ckpt_000500.pt",
+    "--allow_contact_geometry_change"
+  ],
+  "regression_tests": "22 passed; docs/stage1/evidence/spheres224_regression.txt",
+  "state": "formal training active; validated 50-iteration throughput window",
+  "formal_throughput_evidence": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/stage1/evidence/spheres224_formal_throughput.json"
+}

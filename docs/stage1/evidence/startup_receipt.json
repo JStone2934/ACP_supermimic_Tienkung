@@ -1,0 +1,10 @@
+{
+  "dataset_manifest_sha256": "ff2e0a14fdee8451ab19efa9e960c48d983a009681e51831fb099952d6eb6e78",
+  "input_files": 8880,
+  "source_count": 296,
+  "pair_count": 2960,
+  "frames": 1812360,
+  "all_pairs_unique": true,
+  "code_snapshot": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110/source_snapshot.zip",
+  "code_snapshot_sha256": "cd57a032677dc091516a8db3926a234dbedb618ea8ddfe3fe80db43bc042178e"
+}

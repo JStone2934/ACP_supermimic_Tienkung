@@ -1,0 +1,18 @@
+{
+  "time": "2026-11-10T21:10:32.923201+08:00",
+  "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 /home/js/miniconda3/envs/acp_supermimic/bin/python -m unittest -v tools.test_stage2_alignment tools.test_contact_spheres224",
+  "tests_run": 13,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_seconds": 2.757,
+  "passed": true,
+  "source_hashes": {
+    "tools/test_stage2_alignment.py": "416bafdddcb2da1df4933f391d2cee0c61aac69cbe7447e52c0b1a888766a99c",
+    "tools/test_contact_spheres224.py": "e7df089054e40533f91b219920638e635e509a5ba93ae3a1c4653ddb3db1a9b9",
+    "tools/check_stage2_alignment.py": "7751fd5ebf54f0084fdc87dc683058b31dccdc5f0bfa961f46c82086db785a41",
+    "supermimic/acp/stage2_contracts.py": "2ec1ffdd8b4bda9f6b1fd640b381ca7366bbcfd728deed9af6a89903e182b14a",
+    "supermimic/acp/train_stage2.py": "8fc51bd26830bdecb5753d545da2f283883681041682e3b7b526c77e6b887419",
+    "supermimic/acp/train_planner_offline.py": "e2bb95b6e3d5f9850f4aa5e6442aecb22fc1a3e710c1632df2bb57de772095ef"
+  },
+  "note": "CPU unittest result recorded from completed test process; separate real-asset audit is stage2_alignment_cpu.json; no GPU training launched"
+}

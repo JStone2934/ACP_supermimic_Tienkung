@@ -1,0 +1,29 @@
+{
+  "time": "2026-11-10T19:40:57.859117+08:00",
+  "contact_geometry": "spheres224",
+  "iteration": 600,
+  "remaining_iterations": 59400,
+  "measured_iterations": 50,
+  "elapsed_seconds": 65.10361289605498,
+  "seconds_per_iteration": 1.3020722579210997,
+  "speedup_vs_dense": 33.4291493695564,
+  "remaining_hours": 21.484192255698144,
+  "estimated_finish": "2026-11-11T17:10:00.951238+08:00",
+  "benchmark_updates": {
+    "wm": 500,
+    "pi": 50,
+    "critic": 1000
+  },
+  "all_logged_values_finite": true,
+  "service_state": "active",
+  "memory_events": {
+    "low": "0",
+    "high": "0",
+    "max": "0",
+    "oom": "0",
+    "oom_kill": "0",
+    "oom_group_kill": "0"
+  },
+  "scope": "early formal 50-iteration window after 25 warmup actor updates; 60000 iteration budget only, evaluation extra; not a convergence guarantee",
+  "benchmark_path": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/benchmark_before_execution_tuning.json"
+}

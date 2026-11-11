@@ -1,0 +1,228 @@
+{
+  "time": "2026-11-10T18:43:52.085521+08:00",
+  "kind": "geometry_workload_inventory_not_profiler",
+  "robots": {
+    "tienkung3_29dof": {
+      "surface_samples": 353146,
+      "per_body_samples": {
+        "left_foot": 27240,
+        "right_foot": 27288,
+        "left_knee": 61822,
+        "right_knee": 62587,
+        "left_hand": 11875,
+        "right_hand": 12032,
+        "left_elbow": 29666,
+        "right_elbow": 29379,
+        "pelvis": 91257
+      },
+      "hulls": {
+        "left_foot": {
+          "vertices": [
+            804,
+            3
+          ],
+          "normals": [
+            1604,
+            3
+          ],
+          "lower": [
+            1604
+          ],
+          "upper": [
+            1604
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "right_foot": {
+          "vertices": [
+            805,
+            3
+          ],
+          "normals": [
+            1606,
+            3
+          ],
+          "lower": [
+            1606
+          ],
+          "upper": [
+            1606
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "left_knee": {
+          "vertices": [
+            978,
+            3
+          ],
+          "normals": [
+            1949,
+            3
+          ],
+          "lower": [
+            1949
+          ],
+          "upper": [
+            1949
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "right_knee": {
+          "vertices": [
+            976,
+            3
+          ],
+          "normals": [
+            1945,
+            3
+          ],
+          "lower": [
+            1945
+          ],
+          "upper": [
+            1945
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "left_hand": {
+          "vertices": [
+            1178,
+            3
+          ],
+          "normals": [
+            2351,
+            3
+          ],
+          "lower": [
+            2351
+          ],
+          "upper": [
+            2351
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "right_hand": {
+          "vertices": [
+            1202,
+            3
+          ],
+          "normals": [
+            2397,
+            3
+          ],
+          "lower": [
+            2397
+          ],
+          "upper": [
+            2397
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "left_elbow": {
+          "vertices": [
+            463,
+            3
+          ],
+          "normals": [
+            914,
+            3
+          ],
+          "lower": [
+            914
+          ],
+          "upper": [
+            914
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "right_elbow": {
+          "vertices": [
+            462,
+            3
+          ],
+          "normals": [
+            913,
+            3
+          ],
+          "lower": [
+            913
+          ],
+          "upper": [
+            913
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        },
+        "pelvis": {
+          "vertices": [
+            2725,
+            3
+          ],
+          "normals": [
+            5443,
+            3
+          ],
+          "lower": [
+            5443
+          ],
+          "upper": [
+            5443
+          ],
+          "edges": [
+            256,
+            3
+          ]
+        }
+      }
+    },
+    "g1": {
+      "surface_samples": 224,
+      "per_body_samples": {
+        "left_foot": 4,
+        "right_foot": 4,
+        "left_knee": 24,
+        "right_knee": 24,
+        "left_hand": 48,
+        "right_hand": 48,
+        "left_elbow": 24,
+        "right_elbow": 24,
+        "pelvis": 24
+      },
+      "hulls": {}
+    }
+  },
+  "training": {
+    "global_policy_batch": 256,
+    "world_size": 2,
+    "horizon": 32,
+    "states_per_rank_per_iteration": 4096,
+    "reward_chunk_rows": 64,
+    "reward_chunks_per_rank": 64,
+    "recompute_in_backward": true,
+    "nearest_boxes": 4
+  },
+  "note": "Counts establish heavy geometry workload; no instrumented phase timing yet. They do not imply proportional end-to-end speedup."
+}

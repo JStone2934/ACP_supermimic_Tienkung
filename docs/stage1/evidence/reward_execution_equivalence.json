@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "robot": "tienkung3_29dof",
+  "contact_geometry": "spheres224",
+  "poses": 129,
+  "categories": [
+    "motions-high-climb-76",
+    "motions-high-step",
+    "motions-locomotion",
+    "motions-low-climb-76",
+    "motions-low-step"
+  ],
+  "check": "actual PaperReward plus soft termination, state and action gradients; CPU FP32; nondivisible chunk boundary",
+  "comparisons": {
+    "64": {
+      "max_output_abs": 0.0,
+      "max_gradient_abs": 1.4901161193847656e-08
+    },
+    "256": {
+      "max_output_abs": 0.0,
+      "max_gradient_abs": 0.0
+    },
+    "1024": {
+      "max_output_abs": 0.0,
+      "max_gradient_abs": 0.0
+    }
+  }
+}

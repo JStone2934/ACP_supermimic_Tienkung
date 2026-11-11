@@ -1,0 +1,7 @@
+{
+  "iteration": 3000,
+  "source_checkpoint_sha256": "2c400532df2e0a5f598835a8661042d36fd9ca590b96ead942394a40ea70bb3f",
+  "production_last_sha256": "2cbb922fba5d42a829112ecfeffd3d68050ccca2286603afe5fad22c69c134a7",
+  "all_checkpoint_fields_equal": true,
+  "note": "torch.save archive entry names depend on destination filename, so raw serialized hashes differ"
+}

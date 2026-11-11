@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "spheres": 224,
+  "true_radius_scale": 1,
+  "exact_centers_and_radii_verified": true,
+  "files": {
+    "03_g1_spheres_rotation.mp4": "33242c92b916864a0b66767996c7426e34af903c078692e336e9fa431e29e55b",
+    "g1_reward_spheres.csv": "964afd006879c1192ce903e9046e85d94393aa05614249303fc474dc0deeed2f",
+    "02_g1_spheres_closeups.png": "58a5124e13f422a6bc951d212a3b45b47d1e1c10cf6a87b64cfb6ab3a466c751",
+    "01_g1_spheres_overview.png": "1a9614cddfc9295fbaac46e6b178409a63ef84fdc7f77764e5a79bcbad4bcfb4"
+  },
+  "video": {
+    "frames": 192,
+    "fps": 24,
+    "duration_s": 8,
+    "width": 1280,
+    "height": 840
+  },
+  "render_kind": "fixed illustrative pose with camera rotation; not a learned-policy rollout"
+}

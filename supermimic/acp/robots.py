@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
+from functools import lru_cache
 import hashlib
 import json
 from pathlib import Path
+import time
 
 import mujoco
 import numpy as np
@@ -16,6 +18,41 @@ CONTACT_NAMES = ('left_foot', 'right_foot', 'left_knee', 'right_knee', 'left_han
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def _asset_identity(path):
+    stat = path.stat()
+    return stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns
+
+
+@lru_cache(maxsize=512)
+def _asset_digest(path, identity):
+    digest = sha256(path)
+    if _asset_identity(Path(path)) != identity:
+        raise ValueError(f'asset changed while hashing: {path}')
+    return digest
+
+
+def asset_sha256(path):
+    """Reuse a model asset hash only while its file identity remains unchanged.
+
+    Full motion libraries validate the same meshes thousands of times. Include
+    ctime and inode so rewriting with a restored mtime or replacing a file still
+    invalidates the process-local cache. Motion/label hashes are never cached.
+    """
+    path = Path(path).resolve()
+    identity = _asset_identity(path)
+    # Filesystems can give rapid same-size writes the same timestamp. Never
+    # reuse a hash in that recent-write window; model assets are normally old.
+    if max(identity[-2:]) >= time.time_ns() - 1_000_000_000:
+        digest = sha256(path)
+        if sha256(path) != digest:
+            raise ValueError(f'asset changed while hashing: {path}')
+    else:
+        digest = _asset_digest(str(path), identity)
+    if _asset_identity(path) != identity:
+        raise ValueError(f'asset changed during validation: {path}')
+    return digest
 
 
 @dataclass(frozen=True)
@@ -95,7 +132,7 @@ class RobotSpec:
             manifest = json.loads(manifest_path.read_text())
             root = manifest_path.parent.parent
             for rel, digest in manifest['files'].items():
-                if sha256(root/rel) != digest:
+                if asset_sha256(root/rel) != digest:
                     raise ValueError(f'asset hash mismatch: {rel}')
             model_hash = hashlib.sha256(json.dumps(manifest['files'],sort_keys=True).encode()).hexdigest()
         return dict(robot_id=self.robot_id,model_hash=model_hash,

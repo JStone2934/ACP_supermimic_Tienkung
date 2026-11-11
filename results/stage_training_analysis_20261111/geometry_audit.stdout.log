@@ -1,0 +1,199 @@
+{
+  "poses": 192,
+  "checks": 1728,
+  "threshold_m": 0.01,
+  "per_body": {
+    "left_foot": {
+      "native_touch": 175,
+      "sphere_touch": 181,
+      "false_touch": 6,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.008285992052318265
+    },
+    "right_foot": {
+      "native_touch": 185,
+      "sphere_touch": 187,
+      "false_touch": 2,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.00828983894142425
+    },
+    "left_knee": {
+      "native_touch": 42,
+      "sphere_touch": 33,
+      "false_touch": 0,
+      "missed_touch": 9,
+      "near_distance_error_p95_m": 0.01061346066180804
+    },
+    "right_knee": {
+      "native_touch": 30,
+      "sphere_touch": 25,
+      "false_touch": 0,
+      "missed_touch": 5,
+      "near_distance_error_p95_m": 0.008992219342671054
+    },
+    "left_hand": {
+      "native_touch": 18,
+      "sphere_touch": 18,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.004177952650328554
+    },
+    "right_hand": {
+      "native_touch": 20,
+      "sphere_touch": 20,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.0044654019131208315
+    },
+    "left_elbow": {
+      "native_touch": 0,
+      "sphere_touch": 0,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.0012133434164434311
+    },
+    "right_elbow": {
+      "native_touch": 0,
+      "sphere_touch": 0,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": null
+    },
+    "pelvis": {
+      "native_touch": 1,
+      "sphere_touch": 0,
+      "false_touch": 0,
+      "missed_touch": 1,
+      "near_distance_error_p95_m": 0.022279350564094032
+    }
+  },
+  "per_group": {
+    "motions-high-climb-76": {
+      "poses": 32,
+      "native_touch_by_body": [
+        26,
+        29,
+        6,
+        5,
+        9,
+        8,
+        0,
+        0,
+        1
+      ],
+      "sphere_touch_by_body": [
+        28,
+        30,
+        4,
+        4,
+        9,
+        8,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-high-step": {
+      "poses": 64,
+      "native_touch_by_body": [
+        56,
+        61,
+        14,
+        13,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        58,
+        62,
+        11,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-locomotion": {
+      "poses": 32,
+      "native_touch_by_body": [
+        30,
+        31,
+        8,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        31,
+        31,
+        5,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-low-climb-76": {
+      "poses": 32,
+      "native_touch_by_body": [
+        32,
+        32,
+        5,
+        4,
+        9,
+        12,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        32,
+        32,
+        5,
+        3,
+        9,
+        12,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-low-step": {
+      "poses": 32,
+      "native_touch_by_body": [
+        31,
+        32,
+        9,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        32,
+        32,
+        8,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "nearest_four_vs_all_terrain_touch_disagreements": 0,
+  "limitation": "192 poses from a selected 12-clip Stage2 recording, not a full geometry or gradient validation."
+}

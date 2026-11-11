@@ -1,0 +1,32 @@
+{
+  "time": "2026-11-10T18:45:53.114505+08:00",
+  "kind": "formal_actor_window_eta",
+  "window": {
+    "start_exclusive": 500,
+    "end_inclusive": 525,
+    "iterations": 25,
+    "seconds": 1088.1792,
+    "seconds_per_iteration": 43.527168,
+    "iterations_per_second": 0.022974157197638036
+  },
+  "warmup": {
+    "iterations": 500,
+    "seconds": 444.7044,
+    "seconds_per_iteration": 0.8894088
+  },
+  "target_iterations": 60000,
+  "remaining_iterations": 59475,
+  "estimated_remaining_hours": 719.105088,
+  "estimated_remaining_days": 29.962712000000003,
+  "estimated_finish": "2026-12-10T17:52:11.431305+08:00",
+  "current_configuration_only": true,
+  "quality_completion_not_guaranteed": true,
+  "evaluation_time_included": false,
+  "limitations": "One 25-iteration formal actor window; includes actor startup and checkpoint-500 overhead. Not a calibrated confidence interval; workload may change with curriculum.",
+  "geometry_evidence": "geometry_workload_20261110.json",
+  "surface_point_ratio": 1576.544642857143,
+  "bottleneck_inference": "The added policy/critic phase accounts for nearly all iteration time. Dense contact geometry is a prime optimization target based on its workload; no phase-level GPU profiler attribution yet.",
+  "training_continues": true,
+  "checkpoint_iteration": 500,
+  "training_log_sha256": "19b2a5e5ad6498f44664ea161bc635e146df75949e52ebbd58a09c5a91e93c28"
+}

@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-10T18:19:15.025003+08:00",
+  "scope": "preliminary full-actor smoke only; two iterations; no convergence guarantee",
+  "iterations": [
+    2,
+    3
+  ],
+  "seconds_per_iteration": 44.72217537890519,
+  "planned_iterations": 60000,
+  "extrapolated_days": 31.057066235350828,
+  "excludes": "startup, checkpoint overhead, evaluation, later changes in workload",
+  "formal_eta": "replace using stable actor iterations after 600"
+}

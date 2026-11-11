@@ -1,0 +1,17 @@
+[
+  "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+  "-m",
+  "supermimic.acp.evaluate",
+  "--ckpt",
+  "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/ckpt_040000.pt",
+  "--motion_dir",
+  "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage_training_analysis_20261111/eval_motions",
+  "--contacts_dir",
+  "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/stage1/php_all_variants_20261110/contacts",
+  "--term_window",
+  "0",
+  "--seed",
+  "0",
+  "--out",
+  "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage_training_analysis_20261111/s2_ref.json"
+]

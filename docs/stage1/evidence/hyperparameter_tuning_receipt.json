@@ -1,0 +1,117 @@
+{
+  "time": "2026-11-10T20:46:34.605343+08:00",
+  "decision": "baseline_retained",
+  "reason": "No candidate met both the prespecified speed and rollout-quality checks; no experimental weights promoted",
+  "source_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/ckpt_003000.pt",
+  "source_checkpoint_sha256": "2c400532df2e0a5f598835a8661042d36fd9ca590b96ead942394a40ea70bb3f",
+  "comparisons": {
+    "baseline": {
+      "parameters": {
+        "num_envs": 512,
+        "wm_batch": 256,
+        "pi_batch": 256,
+        "wm_batches": 10,
+        "utd": 0.4
+      },
+      "seconds_per_iteration": 0.4418599576409906,
+      "iteration_speedup": 1.0,
+      "simulation_transitions_per_s": 2896.845432280593,
+      "norm_return": 0.2515,
+      "failed": 48,
+      "root_rmse_m": 0.8701841592788696,
+      "joint_rmse_rad": 0.3284539026518663,
+      "checks": {
+        "iteration_time_at_least_10pct_lower": false,
+        "norm_return_within_5pct": true,
+        "failures_no_more_than_2_extra": true,
+        "all_folders_within_10pct": true,
+        "root_rmse_within_10pct": true,
+        "joint_rmse_within_10pct": true
+      },
+      "eligible": false
+    },
+    "scale2": {
+      "parameters": {
+        "num_envs": 1024,
+        "wm_batch": 512,
+        "pi_batch": 512,
+        "wm_batches": 10,
+        "utd": 0.4
+      },
+      "seconds_per_iteration": 0.41235782581148667,
+      "iteration_speedup": 1.071544978615226,
+      "simulation_transitions_per_s": 6208.2003535694475,
+      "norm_return": 0.2496,
+      "failed": 49,
+      "root_rmse_m": 0.585505502919356,
+      "joint_rmse_rad": 0.3355658988157908,
+      "checks": {
+        "iteration_time_at_least_10pct_lower": false,
+        "norm_return_within_5pct": true,
+        "failures_no_more_than_2_extra": true,
+        "all_folders_within_10pct": true,
+        "root_rmse_within_10pct": true,
+        "joint_rmse_within_10pct": true
+      },
+      "eligible": false
+    },
+    "balanced2": {
+      "parameters": {
+        "num_envs": 1024,
+        "wm_batch": 512,
+        "pi_batch": 256,
+        "wm_batches": 5,
+        "utd": 0.8
+      },
+      "seconds_per_iteration": 0.31841659316793086,
+      "iteration_speedup": 1.3876788054445282,
+      "simulation_transitions_per_s": 4019.8910090245713,
+      "norm_return": 0.2246,
+      "failed": 49,
+      "root_rmse_m": 1.0953654949863751,
+      "joint_rmse_rad": 0.3420072287321091,
+      "checks": {
+        "iteration_time_at_least_10pct_lower": true,
+        "norm_return_within_5pct": false,
+        "failures_no_more_than_2_extra": true,
+        "all_folders_within_10pct": false,
+        "root_rmse_within_10pct": false,
+        "joint_rmse_within_10pct": true
+      },
+      "eligible": false
+    },
+    "env2_keep_updates": {
+      "parameters": {
+        "num_envs": 1024,
+        "wm_batch": 256,
+        "pi_batch": 256,
+        "wm_batches": 10,
+        "utd": 0.8
+      },
+      "seconds_per_iteration": 0.37230997256934645,
+      "iteration_speedup": 1.1868066670137067,
+      "simulation_transitions_per_s": 3437.995472338811,
+      "norm_return": 0.2439,
+      "failed": 48,
+      "root_rmse_m": 1.2358245904246965,
+      "joint_rmse_rad": 0.3246284745633602,
+      "checks": {
+        "iteration_time_at_least_10pct_lower": true,
+        "norm_return_within_5pct": true,
+        "failures_no_more_than_2_extra": true,
+        "all_folders_within_10pct": true,
+        "root_rmse_within_10pct": false,
+        "joint_rmse_within_10pct": true
+      },
+      "eligible": false
+    }
+  },
+  "training_dataset_pairs": 2960,
+  "iteration_target": 60000,
+  "all_training_and_checkpoint_checks_passed": true,
+  "quality_scope": "400-iteration single-seed diagnostics on 60 fixed training clips; no convergence or generalization guarantee",
+  "formal_service_restarted_at": "2026-11-10T20:46:34.627456+08:00",
+  "formal_service": "acp-stage1-php-all-20261110.service",
+  "formal_validation": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/stage1/evidence/hyperparameter_review_formal_throughput.json",
+  "status": "original_configuration_running"
+}

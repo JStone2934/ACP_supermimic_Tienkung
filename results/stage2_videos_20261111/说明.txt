@@ -1,0 +1,27 @@
+Stage2 40k 成功与失败录像
+
+检查点：/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/ckpt_040000.pt
+评估协议：term_window=2 s，动作高斯噪声标准差 0.1，seed=0。
+这是挑选片段后的重新仿真录制，噪声序列可能与全量评估不同；标签以 record_eval.json 为准。
+SUCCESS 表示本次评估未触发提前终止，不代表通过严格窗口评估或完全准确跟踪。
+灰色实体是策略机器人，蓝色是参考动作，彩色小球是规划接触目标。
+视频为 1280×720、50 fps、1 倍速；片段末尾最多保留 1.5 秒评估结束后的观察画面。
+示例为定向挑选，不可据此估计整体成功率。
+
+01_success_locomotion.mp4 | 通过 | 有效时长 11.80 s | root RMSE 0.262 m
+  motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03
+02_success_low_step.mp4 | 通过 | 有效时长 7.72 s | root RMSE 0.173 m
+  motions-low-step/forward_walk0.8s_step0s__variant_05
+03_success_high_step.mp4 | 通过 | 有效时长 7.96 s | root RMSE 0.127 m
+  motions-high-step/run_left_90_0.9s_step0s__variant_09
+04_failure_high_step.mp4 | 失败 | 有效时长 7.18 s | root RMSE 2.759 m
+  motions-high-step/run_right_45_0.9s_step1.0s__variant_00
+05_failure_high_climb.mp4 | 失败 | 有效时长 6.08 s | root RMSE 0.388 m
+  motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03
+06_failure_low_climb.mp4 | 失败 | 有效时长 6.40 s | root RMSE 0.254 m
+  motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03
+
+stage2_success_failure_overview.mp4：全部 6 段合集，先成功后失败。
+successes.mp4 / failures.mp4：成功和失败各自合集。
+trajectories.npz / record_eval.json / videos.json：轨迹、评估与视频映射。
+已逐个完整解码检查全部 MP4，并抽查成功与失败画面。

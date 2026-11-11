@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
+import itertools
 import math
 import os
 import time
@@ -22,7 +23,7 @@ import time
 parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default="g1")
 parser.add_argument("--num_envs", type=int, default=4096)
-parser.add_argument("--iterations", type=int, default=60_000)
+parser.add_argument("--iterations", type=int, default=60_000, help="total iterations; -1 trains continuously until stopped")
 parser.add_argument("--buffer_steps", type=int, default=1000)
 parser.add_argument("--utd", type=float, default=0.4, help="updates per vectorized simulator step")
 parser.add_argument("--horizon", type=int, default=32)
@@ -45,6 +46,8 @@ parser.add_argument("--save_full_checkpoints", action="store_true", help="keep o
 parser.add_argument("--log_every", type=int, default=50)
 parser.add_argument("--motion_dir", type=str, default=None, help="default: data/php_parkour")
 parser.add_argument("--contacts_dir", type=str, default=None, help="supermimic.acp.make_labels output (default: <motion_dir>_contacts)")
+parser.add_argument("--contact_geometry", choices=["legacy", "spheres224"], default="legacy")
+parser.add_argument("--allow_contact_geometry_change", action="store_true", help="explicitly migrate a resumed checkpoint to different reward geometry; record provenance")
 parser.add_argument("--target_noise", type=float, default=0.05)
 parser.add_argument("--scan_noise", type=float, default=0.05, help="--no-blind: uniform noise on the command's height scan")
 parser.add_argument("--target_point", type=str, default="terrain", choices=["link", "terrain"], help="contact target: the terrain point the body touches, or its link")
@@ -69,12 +72,12 @@ import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.memory import compile_reward, reward_batch
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.robots import get_robot
+from supermimic.acp.robots import get_robot, sha256
 from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, normalize_xi, unflatten_state
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
-from supermimic.acp.task import ContactCfg, ContactTask, PaperReward, PaperRewardCfg
+from supermimic.acp.task import ContactCfg, ContactTask, PaperReward, PaperRewardCfg, check_contact_geometry_resume
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
@@ -89,7 +92,8 @@ kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
 mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev))
 ctc_cfg = ContactCfg(contacts_dir=args.contacts_dir, target_noise=args.target_noise, scan_noise=args.scan_noise, w_label=args.w_label,
-                     target_point=args.target_point, target_min_steps=args.target_min_steps, blind=args.blind)  # fmt: skip
+                     target_point=args.target_point, target_min_steps=args.target_min_steps, blind=args.blind,
+                     contact_geometry=args.contact_geometry)  # fmt: skip
 ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
 reward_cfg = PaperRewardCfg() if args.reward == "paper" else None
 paper_reward = PaperReward(reward_cfg, ctc) if reward_cfg is not None else None
@@ -104,12 +108,21 @@ opt_pi = torch.optim.Adam(pi.parameters(), lr=args.lr, betas=(0.9, 0.95))
 opt_v = torch.optim.Adam(critic.parameters(), lr=args.lr)
 start_it, wall_offset, sim_steps, lr_it0 = 0, 0.0, 0, 0
 wm_only_iters = 0 if args.init else args.wm_only_iters
+geometry_transition = None
 if args.resume or args.init:
     ck = torch.load(args.resume or args.init, map_location=dev)
     robot.validate_metadata(ck.get("robot_metadata"), legacy=True)
     # Resume continues the same run; --init explicitly fine-tunes on a new dataset.
     if args.resume and robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
         raise ValueError("checkpoint dataset mismatch")
+    changed = check_contact_geometry_resume(ck.get("ctc_cfg", {}), args.contact_geometry,
+                                            allow_change=args.allow_contact_geometry_change or bool(args.init))
+    geometry_transition = ck.get("geometry_transition")
+    if changed:
+        geometry_transition = dict(previous=ck.get("ctc_cfg", {}).get("contact_geometry", "legacy"),
+                                   current=args.contact_geometry, source_checkpoint=os.path.abspath(args.resume or args.init),
+                                   source_sha256=sha256(args.resume or args.init), source_iteration=ck["iteration"])
+        rt.print(f"explicit reward geometry migration: {geometry_transition}", flush=True)
     wm.load_state_dict(ck["wm"]), pi.load_state_dict(ck["pi"]), critic.load_state_dict(ck["critic"])
     opt_wm.load_state_dict(ck["opt_wm"]), opt_pi.load_state_dict(ck["opt_pi"]), opt_v.load_state_dict(ck["opt_v"])
     if args.resume:
@@ -333,7 +346,7 @@ stats_keys = ("r", "len", "ret", "n_ep", "term", "tp", "n_touch", "n_label")
 stats = {k: [] for k in stats_keys}
 collect(args.warmup_steps, stats)  # the replay buffer is not checkpointed, so a resumed run refills it too
 log_f = rt.open_log(os.path.join(args.log_dir, "train_log.csv"))
-if start_it == 0:
+if rt.main and os.path.getsize(os.path.join(args.log_dir, "train_log.csv")) == 0:
     log_f.write("iteration,wall_h,sim_steps,wm_loss,wm_err8,pi_loss,v_loss,imag_rew,pi_gradnorm,imag_survival,"
                 "sim_rew,ep_len,ep_ret_norm,term_frac,touch_precision,touch_recall,it_per_s,lr,phase_zero_frac"
                 + "".join(f",phase_{g}" for g in GROUPS) + "\n")  # fmt: skip
@@ -341,7 +354,7 @@ t_start = time.time() - wall_offset
 t_log = time.time()
 step_acc = ck.get("step_acc", 0.0) if args.resume else 0.0
 agg = {"wm": [], "wm8": [], "pi": [], "v": [], "ir": [], "gn": [], "surv": []}
-for it in range(start_it, args.iterations):
+for it in (itertools.count(start_it) if args.iterations == -1 else range(start_it, args.iterations)):
     lr = lr_at(it)
     for o in (opt_wm, opt_pi, opt_v):
         for gparam in o.param_groups:
@@ -384,11 +397,12 @@ for it in range(start_it, args.iterations):
         ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
               "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(), "iteration": it + 1,
               "wall_time": time.time() - t_start, "sim_steps": sim_steps, "step_acc": step_acc, "args": rt.args,
-              "ctc_cfg": dataclasses.asdict(ctc_cfg), "curriculum_phase": env.phase.clone(), "lr_it0": lr_it0,
+              "ctc_cfg": dataclasses.asdict(ctc_cfg), "geometry_transition": geometry_transition,
+              "curriculum_phase": env.phase.clone(), "lr_it0": lr_it0,
               "bin_G": env.bin_G.clone(), "bin_w_avg": env.bin_w_avg.clone(),
               "reward_cfg": dataclasses.asdict(reward_cfg) if reward_cfg is not None else None,
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
-        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "saved_at")}
+        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "geometry_transition", "saved_at")}
         rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=args.save_full_checkpoints)
 
 rt.close()

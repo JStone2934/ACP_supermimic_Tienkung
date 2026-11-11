@@ -1,0 +1,10 @@
+{
+  "time": "2026-11-10T19:19:34.263687+08:00",
+  "spheres": 224,
+  "exact_coordinate_match_to_probe_recipe": true,
+  "radius_m": 0.01,
+  "artifact_hashes_verified": true,
+  "visual_inspection": "all three PNGs inspected; geometry and labels visible",
+  "promoted": false,
+  "source_probe": "docs/stage1/evidence/contact_sampling_probe_20261110.json"
+}

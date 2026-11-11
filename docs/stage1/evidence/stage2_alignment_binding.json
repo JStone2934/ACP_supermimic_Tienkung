@@ -1,0 +1,23 @@
+{
+  "time": "2026-11-10T21:02:59.552228+08:00",
+  "changed_modules": {
+    "supermimic/acp/train_stage2.py": {
+      "before": "9716cd66e28929fb9dbf58367d7b81877f4e5a57baa90fbed78eb2caa2ecfadd",
+      "after": "8fc51bd26830bdecb5753d545da2f283883681041682e3b7b526c77e6b887419"
+    },
+    "supermimic/acp/train_planner_offline.py": {
+      "before": "048e90cc5e394a4fdb69908e3ae57f096a7fc66d14173b76c76f36df75eecded",
+      "after": "e2bb95b6e3d5f9850f4aa5e6442aecb22fc1a3e710c1632df2bb57de772095ef"
+    },
+    "supermimic/acp/stage2_contracts.py": {
+      "before": null,
+      "after": "2ec1ffdd8b4bda9f6b1fd640b381ca7366bbcfd728deed9af6a89903e182b14a"
+    }
+  },
+  "all_other_bound_sources_unchanged": true,
+  "stage1_service_state": "active",
+  "stage1_restarted": false,
+  "reason": "Stage2-only contract audit; preserve Stage1 restart binding while active Stage1 code is unchanged",
+  "snapshot": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/source_snapshot_stage2_alignment.zip",
+  "snapshot_sha256": "e61edb45d7465aa8f28876bd2b23a482b56a497b32b33b320422952af0784c8c"
+}

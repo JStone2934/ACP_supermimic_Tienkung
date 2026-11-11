@@ -1,0 +1,969 @@
+{
+  "poses": 192,
+  "checks": 1728,
+  "threshold_m": 0.01,
+  "per_body": {
+    "left_foot": {
+      "native_touch": 175,
+      "sphere_touch": 181,
+      "false_touch": 6,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.008285992052318265
+    },
+    "right_foot": {
+      "native_touch": 185,
+      "sphere_touch": 187,
+      "false_touch": 2,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.00828983894142425
+    },
+    "left_knee": {
+      "native_touch": 42,
+      "sphere_touch": 33,
+      "false_touch": 0,
+      "missed_touch": 9,
+      "near_distance_error_p95_m": 0.01061346066180804
+    },
+    "right_knee": {
+      "native_touch": 30,
+      "sphere_touch": 25,
+      "false_touch": 0,
+      "missed_touch": 5,
+      "near_distance_error_p95_m": 0.008992219342671054
+    },
+    "left_hand": {
+      "native_touch": 18,
+      "sphere_touch": 18,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.004177952650328554
+    },
+    "right_hand": {
+      "native_touch": 20,
+      "sphere_touch": 20,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.0044654019131208315
+    },
+    "left_elbow": {
+      "native_touch": 0,
+      "sphere_touch": 0,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": 0.0012133434164434311
+    },
+    "right_elbow": {
+      "native_touch": 0,
+      "sphere_touch": 0,
+      "false_touch": 0,
+      "missed_touch": 0,
+      "near_distance_error_p95_m": null
+    },
+    "pelvis": {
+      "native_touch": 1,
+      "sphere_touch": 0,
+      "false_touch": 0,
+      "missed_touch": 1,
+      "near_distance_error_p95_m": 0.022279350564094032
+    }
+  },
+  "per_group": {
+    "motions-high-climb-76": {
+      "poses": 32,
+      "native_touch_by_body": [
+        26,
+        29,
+        6,
+        5,
+        9,
+        8,
+        0,
+        0,
+        1
+      ],
+      "sphere_touch_by_body": [
+        28,
+        30,
+        4,
+        4,
+        9,
+        8,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-high-step": {
+      "poses": 64,
+      "native_touch_by_body": [
+        56,
+        61,
+        14,
+        13,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        58,
+        62,
+        11,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-locomotion": {
+      "poses": 32,
+      "native_touch_by_body": [
+        30,
+        31,
+        8,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        31,
+        31,
+        5,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-low-climb-76": {
+      "poses": 32,
+      "native_touch_by_body": [
+        32,
+        32,
+        5,
+        4,
+        9,
+        12,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        32,
+        32,
+        5,
+        3,
+        9,
+        12,
+        0,
+        0,
+        0
+      ]
+    },
+    "motions-low-step": {
+      "poses": 32,
+      "native_touch_by_body": [
+        31,
+        32,
+        9,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sphere_touch_by_body": [
+        32,
+        32,
+        8,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "sample_ids": [
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 0
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 20
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 40
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 60
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 80
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 101
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 121
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 141
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 161
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 181
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 202
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 222
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 242
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 262
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 282
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+      "frame": 303
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 0
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 20
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 41
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 62
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 83
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 104
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 124
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 145
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 166
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 187
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 208
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 228
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 249
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 270
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 291
+    },
+    {
+      "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+      "frame": 312
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 0
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 27
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 54
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 81
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 108
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 135
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 162
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 189
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 216
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 243
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 270
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 297
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 324
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 351
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 378
+    },
+    {
+      "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+      "frame": 405
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 0
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 26
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 52
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 79
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 105
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 132
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 158
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 185
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 211
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 238
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 264
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 291
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 317
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 344
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 370
+    },
+    {
+      "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+      "frame": 397
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 0
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 29
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 58
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 88
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 117
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 147
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 176
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 205
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 235
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 264
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 294
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 323
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 352
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 382
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 411
+    },
+    {
+      "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+      "frame": 441
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 0
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 23
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 47
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 71
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 95
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 119
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 143
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 167
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 190
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 214
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 238
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 262
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 286
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 310
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 334
+    },
+    {
+      "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+      "frame": 358
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 0
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 39
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 78
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 117
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 157
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 196
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 235
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 274
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 314
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 353
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 392
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 431
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 471
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 510
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 549
+    },
+    {
+      "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+      "frame": 589
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 0
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 23
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 47
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 71
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 95
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 119
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 143
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 167
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 191
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 215
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 239
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 263
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 287
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 311
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 335
+    },
+    {
+      "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+      "frame": 359
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 0
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 21
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 42
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 63
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 85
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 106
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 127
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 148
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 170
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 191
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 212
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 233
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 255
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 276
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 297
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+      "frame": 319
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 0
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 23
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 46
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 70
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 93
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 117
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 140
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 163
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 187
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 210
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 234
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 257
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 280
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 304
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 327
+    },
+    {
+      "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+      "frame": 351
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 0
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 25
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 51
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 77
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 102
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 128
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 154
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 179
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 205
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 231
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 256
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 282
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 308
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 333
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 359
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+      "frame": 385
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 0
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 25
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 51
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 77
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 102
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 128
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 154
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 179
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 205
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 231
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 256
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 282
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 308
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 333
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 359
+    },
+    {
+      "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+      "frame": 385
+    }
+  ],
+  "nearest_four_vs_all_terrain_touch_disagreements": 0,
+  "limitation": "192 poses from a selected 12-clip Stage2 recording, not a full geometry or gradient validation."
+}

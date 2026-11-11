@@ -1,0 +1,86 @@
+[
+  {
+    "name": "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03",
+    "moving_frames": 248,
+    "moving_no_planner_target": 0.5161290322580645,
+    "moving_no_ref_target": 0.0,
+    "missing_plan_when_ref_valid": 0.5161290322580645
+  },
+  {
+    "name": "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_01",
+    "moving_frames": 257,
+    "moving_no_planner_target": 0.48249027237354086,
+    "moving_no_ref_target": 0.0,
+    "missing_plan_when_ref_valid": 0.48249027237354086
+  },
+  {
+    "name": "motions-high-step/run_forward_0.6s_step0.5s__variant_01",
+    "moving_frames": 300,
+    "moving_no_planner_target": 0.65,
+    "moving_no_ref_target": 0.08333333333333333,
+    "missing_plan_when_ref_valid": 0.6181818181818182
+  },
+  {
+    "name": "motions-high-step/run_left_90_0.9s_step0s__variant_09",
+    "moving_frames": 276,
+    "moving_no_planner_target": 0.5942028985507246,
+    "moving_no_ref_target": 0.036231884057971016,
+    "missing_plan_when_ref_valid": 0.5789473684210527
+  },
+  {
+    "name": "motions-high-step/run_left_90_1.2s_step0.5s__variant_01",
+    "moving_frames": 331,
+    "moving_no_planner_target": 0.5287009063444109,
+    "moving_no_ref_target": 0.08459214501510574,
+    "missing_plan_when_ref_valid": 0.48514851485148514
+  },
+  {
+    "name": "motions-high-step/run_right_45_0.9s_step1.0s__variant_00",
+    "moving_frames": 306,
+    "moving_no_planner_target": 0.46405228758169936,
+    "moving_no_ref_target": 0.0,
+    "missing_plan_when_ref_valid": 0.46405228758169936
+  },
+  {
+    "name": "motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03",
+    "moving_frames": 443,
+    "moving_no_planner_target": 0.7607223476297968,
+    "moving_no_ref_target": 0.020316027088036117,
+    "missing_plan_when_ref_valid": 0.7557603686635944
+  },
+  {
+    "name": "motions-locomotion/cfg0042_stand_2.0s_run_right_90_1.2s_run_left_90_2.0s_stand_2.0s__variant_02",
+    "moving_frames": 222,
+    "moving_no_planner_target": 0.6981981981981982,
+    "moving_no_ref_target": 0.04504504504504504,
+    "missing_plan_when_ref_valid": 0.6839622641509434
+  },
+  {
+    "name": "motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03",
+    "moving_frames": 251,
+    "moving_no_planner_target": 0.7131474103585658,
+    "moving_no_ref_target": 0.0,
+    "missing_plan_when_ref_valid": 0.7131474103585658
+  },
+  {
+    "name": "motions-low-climb-76/right_90_walk1.2s_step0.7s__variant_09",
+    "moving_frames": 284,
+    "moving_no_planner_target": 0.7253521126760564,
+    "moving_no_ref_target": 0.0,
+    "missing_plan_when_ref_valid": 0.7253521126760564
+  },
+  {
+    "name": "motions-low-step/forward_walk0.8s_step0s__variant_05",
+    "moving_frames": 232,
+    "moving_no_planner_target": 0.6336206896551724,
+    "moving_no_ref_target": 0.03017241379310345,
+    "missing_plan_when_ref_valid": 0.6222222222222222
+  },
+  {
+    "name": "motions-low-step/forward_walk0.8s_step0s__variant_09",
+    "moving_frames": 232,
+    "moving_no_planner_target": 0.6293103448275862,
+    "moving_no_ref_target": 0.03017241379310345,
+    "missing_plan_when_ref_valid": 0.6177777777777778
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "scope": "CPU FP32 contract and actual reward/gradient checks, not a GPU Stage2 training benchmark",
+  "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/ckpt_005000.pt",
+  "checkpoint_sha256": "1343714a06bcf69ec6835fad4eaa7cba03fa6b27bfe6812fa4ff580520e09644",
+  "stage1_iteration": 5000,
+  "robot": "tienkung3_29dof",
+  "checkpoint_data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+  "dataset_manifest_sha256": "ff2e0a14fdee8451ab19efa9e960c48d983a009681e51831fb099952d6eb6e78",
+  "inherited_execution": {
+    "num_envs": 512,
+    "wm_batch": 256,
+    "pi_batch": 256,
+    "reward_chunk_size": 0
+  },
+  "contact_geometry": "spheres224",
+  "sphere_count": 224,
+  "reward_hulls": 0,
+  "sphere_sha256": "d97738195ac0160804dacee9306f68ba29e14ca05cbc8eed465feab4bc021a2f",
+  "split": {
+    "version": 1,
+    "grouping": "manifest_source_key",
+    "sha256": "4b918a0b99988d9763d71fc35937773cafe746a96178d9b61ef6635337f027ba",
+    "clips": 2960,
+    "sources": 296,
+    "validation_clips": 300,
+    "validation_sources": [
+      "motions-high-climb-76/run_forward_0.6s_step0.8s",
+      "motions-high-climb-76/run_left_45_1.0s_step0.8s",
+      "motions-high-climb-76/run_left_90_1.2s_step0.8s",
+      "motions-high-climb-76/run_right_45_1.5s_step0.8s",
+      "motions-high-step/run_forward_0.6s_step0.5s",
+      "motions-high-step/run_forward_1.5s_step0s",
+      "motions-high-step/run_left_45_1.2s_step1.0s",
+      "motions-high-step/run_left_90_1.2s_step0.5s",
+      "motions-high-step/run_right_45_0.9s_step0s",
+      "motions-high-step/run_right_90_0.6s_step1.0s",
+      "motions-locomotion/cfg0000_stand_2.0s_left_45_1.4s_forward_2.3s_right_90_0.9s_right_45_0.6s_right_45_2.0s_left_90_0.6s_left_45_2.6s_run_right_45_1.2s_left_45_1.3s_run_right_90_1.6s_stand_2.0s",
+      "motions-locomotion/cfg0010_stand_2.0s_left_45_1.2s_forward_2.8s_right_45_2.1s_right_90_2.5s_left_45_2.7s_right_45_2.5s_left_45_1.3s_stand_2.0s",
+      "motions-locomotion/cfg0020_stand_2.0s_left_45_2.9s_forward_2.7s_left_45_2.5s_left_90_1.9s_left_90_1.0s_run_left_45_1.2s_stand_2.0s",
+      "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s",
+      "motions-locomotion/cfg0040_stand_2.0s_forward_2.8s_stand_2.0s",
+      "motions-locomotion/cfg0050_stand_2.0s_run_left_45_2.6s_run_right_45_1.6s_stand_2.0s",
+      "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s",
+      "motions-locomotion/cfg0070_stand_2.0s_run_left_45_2.8s_run_right_90_2.2s_left_90_2.3s_right_45_1.9s_left_90_1.6s_left_90_2.8s_run_left_45_1.6s_stand_2.0s",
+      "motions-locomotion/cfg0080_stand_2.0s_left_45_1.2s_run_forward_2.1s_run_right_90_1.2s_run_forward_3.0s_left_45_0.9s_right_90_0.5s_run_right_45_1.2s_right_90_1.2s_run_left_45_2.1s_run_forward_1.2s_stand_2.0s",
+      "motions-locomotion/cfg0090_stand_2.0s_run_left_45_2.7s_stand_2.0s",
+      "motions-low-climb-76/forward_walk0.6s_step0.7s",
+      "motions-low-climb-76/left_45_walk0.9s_step0.7s",
+      "motions-low-climb-76/left_90_walk1.2s_step0.7s",
+      "motions-low-climb-76/right_45_walk1.5s_step0.7s",
+      "motions-low-step/forward_walk0.5s_step0.5s",
+      "motions-low-step/forward_walk1.5s_step0s",
+      "motions-low-step/left_45_walk1.2s_step1.0s",
+      "motions-low-step/left_90_walk1.5s_step0.5s",
+      "motions-low-step/right_45_walk1.2s_step1.0s",
+      "motions-low-step/right_90_walk1.2s_step0.5s"
+    ]
+  },
+  "planner_training_sources": 266,
+  "planner_training_clips": 2660,
+  "tracker_training_clips": 2960,
+  "longest_clip_frames": 1326,
+  "stage2_buffer_steps": 1350,
+  "world_model_and_policy_weights_load_strict": true,
+  "critic_widening_max_error": 1.52587890625e-05,
+  "stage1_equals_stage2_eta_zero": true,
+  "reward_poses": 129,
+  "reward_categories": [
+    "motions-high-climb-76",
+    "motions-high-step",
+    "motions-locomotion",
+    "motions-low-climb-76",
+    "motions-low-step"
+  ],
+  "reward_comparisons": {
+    "0.0": {
+      "max_chunk_output_error": 0.0,
+      "max_chunk_gradient_error": 9.08970832824707e-07
+    },
+    "0.5": {
+      "max_chunk_output_error": 0.0,
+      "max_chunk_gradient_error": 4.470348358154297e-07
+    },
+    "1.0": {
+      "max_chunk_output_error": 0.0,
+      "max_chunk_gradient_error": 2.812594175338745e-07
+    }
+  }
+}

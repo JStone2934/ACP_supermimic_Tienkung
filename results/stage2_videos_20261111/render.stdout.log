@@ -1,0 +1,19 @@
+Rendering 01_success_locomotion motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03 {'failed': False, 'alive_steps': 590, 'root_rmse_m': 0.262092262506485, 'root_max_m': 0.567058265209198, 'joint_rmse_rad': 0.34895747900009155, 'torque_saturation_fraction': 0.0001168907037936151, 'velocity_exceed_fraction': 5.844535189680755e-05}
+motions-locomotion/cfg0027_stand_2.0s_run_right_90_2.6s_right_45_0.8s_left_90_2.4s_run_forward_2.1s_stand_2.0s__variant_03: 590 frames, completed
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage2_videos_20261111/01_success_locomotion.mp4
+Rendering 02_success_low_step motions-low-step/forward_walk0.8s_step0s__variant_05 {'failed': False, 'alive_steps': 386, 'root_rmse_m': 0.1732819527387619, 'root_max_m': 0.33966413140296936, 'joint_rmse_rad': 0.37144070863723755, 'torque_saturation_fraction': 0.0005360014038160443, 'velocity_exceed_fraction': 0.0003573342983145267}
+motions-low-step/forward_walk0.8s_step0s__variant_05: 461 frames, completed
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage2_videos_20261111/02_success_low_step.mp4
+Rendering 03_success_high_step motions-high-step/run_left_90_0.9s_step0s__variant_09 {'failed': False, 'alive_steps': 398, 'root_rmse_m': 0.1266978234052658, 'root_max_m': 0.2753292918205261, 'joint_rmse_rad': 0.38833579421043396, 'torque_saturation_fraction': 0.000779760885052383, 'velocity_exceed_fraction': 0.0005198405706323683}
+motions-high-step/run_left_90_0.9s_step0s__variant_09: 473 frames, completed
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage2_videos_20261111/03_success_high_step.mp4
+Rendering 04_failure_high_step motions-high-step/run_right_45_0.9s_step1.0s__variant_00 {'failed': True, 'alive_steps': 359, 'root_rmse_m': 2.7590723037719727, 'root_max_m': 5.326689720153809, 'joint_rmse_rad': 0.4442160427570343, 'torque_saturation_fraction': 0.00038420900818891823, 'velocity_exceed_fraction': 0.0}
+motions-high-step/run_right_45_0.9s_step1.0s__variant_00: 434 frames, failed at 7.18 s
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage2_videos_20261111/04_failure_high_step.mp4
+Rendering 05_failure_high_climb motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03 {'failed': True, 'alive_steps': 304, 'root_rmse_m': 0.388475239276886, 'root_max_m': 0.9043376445770264, 'joint_rmse_rad': 0.5728713274002075, 'torque_saturation_fraction': 0.002041742205619812, 'velocity_exceed_fraction': 0.000340290367603302}
+motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_03: 379 frames, failed at 6.08 s
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage2_videos_20261111/05_failure_high_climb.mp4
+Rendering 06_failure_low_climb motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03 {'failed': True, 'alive_steps': 320, 'root_rmse_m': 0.2535187005996704, 'root_max_m': 0.5472338199615479, 'joint_rmse_rad': 0.5434104204177856, 'torque_saturation_fraction': 0.0032327587250620127, 'velocity_exceed_fraction': 0.0}
+motions-low-climb-76/right_90_walk0.6s_step0.7s__variant_03: 395 frames, failed at 6.40 s
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage2_videos_20261111/06_failure_low_climb.mp4
+All videos complete

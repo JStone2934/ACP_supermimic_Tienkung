@@ -1,0 +1,215 @@
+checked 8/120 poses
+checked 16/120 poses
+checked 24/120 poses
+checked 32/120 poses
+checked 40/120 poses
+checked 48/120 poses
+checked 56/120 poses
+checked 64/120 poses
+checked 72/120 poses
+checked 80/120 poses
+checked 88/120 poses
+checked 96/120 poses
+checked 104/120 poses
+checked 112/120 poses
+checked 120/120 poses
+{
+  "dense": {
+    "points": 353146,
+    "distance_error_vs_dense_near_native_m": {
+      "count": 423,
+      "mean": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "distance_error_vs_native_near_m": {
+      "count": 423,
+      "mean": 2.5259535050281556e-06,
+      "p95": 3.6067504538550565e-07,
+      "max": 0.0003551687113940716
+    },
+    "disagreements_vs_dense": 0,
+    "disagreements_vs_native": 0,
+    "missed_native_touch": 0,
+    "false_native_touch": 0,
+    "native_touch_count": 223,
+    "body_frame_count": 1080,
+    "soft_touch_error_vs_dense": {
+      "count": 1080,
+      "mean": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "weighted_stage1_reward_delta": {
+      "count": 120,
+      "mean": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    }
+  },
+  "spheres224_no_hull": {
+    "points": 224,
+    "distance_error_vs_dense_near_native_m": {
+      "count": 423,
+      "mean": 0.004549502395093441,
+      "p95": 0.00818789005279541,
+      "max": 0.014751158654689789
+    },
+    "distance_error_vs_native_near_m": {
+      "count": 423,
+      "mean": 0.004549476318061352,
+      "p95": 0.00818641483783722,
+      "max": 0.014751140028238297
+    },
+    "disagreements_vs_dense": 4,
+    "disagreements_vs_native": 4,
+    "missed_native_touch": 0,
+    "false_native_touch": 4,
+    "native_touch_count": 223,
+    "body_frame_count": 1080,
+    "soft_touch_error_vs_dense": {
+      "count": 1080,
+      "mean": 0.020665526390075684,
+      "p95": 0.10450880229473114,
+      "max": 0.3692578971385956
+    },
+    "weighted_stage1_reward_delta": {
+      "count": 120,
+      "mean": 0.0017319246484978907,
+      "p95": 0.002814656053632108,
+      "max": 0.004086179880688417
+    }
+  },
+  "surface_224": {
+    "points": 224,
+    "distance_error_vs_dense_near_native_m": {
+      "count": 423,
+      "mean": 0.0018189294496551156,
+      "p95": 0.005900591611862183,
+      "max": 0.016106516122817993
+    },
+    "distance_error_vs_native_near_m": {
+      "count": 423,
+      "mean": 0.0018212614813819528,
+      "p95": 0.005910221952944994,
+      "max": 0.0161064974963665
+    },
+    "disagreements_vs_dense": 5,
+    "disagreements_vs_native": 5,
+    "missed_native_touch": 5,
+    "false_native_touch": 0,
+    "native_touch_count": 223,
+    "body_frame_count": 1080,
+    "soft_touch_error_vs_dense": {
+      "count": 1080,
+      "mean": 0.009611631743609905,
+      "p95": 0.04475557059049606,
+      "max": 0.4975232779979706
+    },
+    "weighted_stage1_reward_delta": {
+      "count": 120,
+      "mean": 0.0008261233213854461,
+      "p95": 0.0024791295504324896,
+      "max": 0.005955101217013079
+    }
+  },
+  "g1_style_224": {
+    "points": 224,
+    "distance_error_vs_dense_near_native_m": {
+      "count": 423,
+      "mean": 0.004273693077266216,
+      "p95": 0.00818430446088314,
+      "max": 0.014751158654689789
+    },
+    "distance_error_vs_native_near_m": {
+      "count": 423,
+      "mean": 0.004273667931556702,
+      "p95": 0.008184302598237991,
+      "max": 0.014751140028238297
+    },
+    "disagreements_vs_dense": 4,
+    "disagreements_vs_native": 4,
+    "missed_native_touch": 0,
+    "false_native_touch": 4,
+    "native_touch_count": 223,
+    "body_frame_count": 1080,
+    "soft_touch_error_vs_dense": {
+      "count": 1080,
+      "mean": 0.019204163923859596,
+      "p95": 0.10442666709423065,
+      "max": 0.3692578971385956
+    },
+    "weighted_stage1_reward_delta": {
+      "count": 120,
+      "mean": 0.0016256466460001762,
+      "p95": 0.0028090436654628578,
+      "max": 0.004086179880688417
+    }
+  },
+  "surface_864": {
+    "points": 864,
+    "distance_error_vs_dense_near_native_m": {
+      "count": 423,
+      "mean": 0.001110187266021967,
+      "p95": 0.005336493253707886,
+      "max": 0.010215133428573608
+    },
+    "distance_error_vs_native_near_m": {
+      "count": 423,
+      "mean": 0.001112519414164126,
+      "p95": 0.0053365095518529415,
+      "max": 0.010215122252702713
+    },
+    "disagreements_vs_dense": 2,
+    "disagreements_vs_native": 2,
+    "missed_native_touch": 2,
+    "false_native_touch": 0,
+    "native_touch_count": 223,
+    "body_frame_count": 1080,
+    "soft_touch_error_vs_dense": {
+      "count": 1080,
+      "mean": 0.0033257200848311186,
+      "p95": 0.013031053356826305,
+      "max": 0.3977340757846832
+    },
+    "weighted_stage1_reward_delta": {
+      "count": 120,
+      "mean": 0.00026489059633222605,
+      "p95": 0.001256023860722973,
+      "max": 0.0037776585254404166
+    }
+  },
+  "surface_2304": {
+    "points": 2304,
+    "distance_error_vs_dense_near_native_m": {
+      "count": 423,
+      "mean": 0.0005300024640746415,
+      "p95": 0.001843419624492526,
+      "max": 0.007830917835235596
+    },
+    "distance_error_vs_native_near_m": {
+      "count": 423,
+      "mean": 0.0005325221573002636,
+      "p95": 0.00184341031126678,
+      "max": 0.007830899208784103
+    },
+    "disagreements_vs_dense": 0,
+    "disagreements_vs_native": 0,
+    "missed_native_touch": 0,
+    "false_native_touch": 0,
+    "native_touch_count": 223,
+    "body_frame_count": 1080,
+    "soft_touch_error_vs_dense": {
+      "count": 1080,
+      "mean": 0.0011874726042151451,
+      "p95": 0.004432028625160456,
+      "max": 0.1330539584159851
+    },
+    "weighted_stage1_reward_delta": {
+      "count": 120,
+      "mean": 8.825702860776909e-05,
+      "p95": 0.00039578978593151514,
+      "max": 0.001481836935434126
+    }
+  }
+}

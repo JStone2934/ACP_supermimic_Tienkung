@@ -1,0 +1,30 @@
+{
+  "time": "2026-11-10T19:34:34.780394+08:00",
+  "user_decision": "我认为 224 球的方案是可以接受的，并且可以和原版的G1 保持一致",
+  "contact_geometry": "spheres224",
+  "counts": [
+    28,
+    28,
+    24,
+    24,
+    24,
+    24,
+    24,
+    24,
+    24
+  ],
+  "radius_m": 0.01,
+  "accepted_coordinate_radius_sha256": "d97738195ac0160804dacee9306f68ba29e14ca05cbc8eed465feab4bc021a2f",
+  "distance_path": "G1 sphere-to-ground/box distance; no hull penetration override",
+  "data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+  "unchanged_dataset_and_robot": true,
+  "bootstrap_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110/train/ckpt_000500.pt",
+  "bootstrap_checkpoint_sha256": "da4523aea9f58f4d903581d09f15ddd95a15760d513de14f2df5f5a5640ca42e",
+  "known_screening_errors": {
+    "missed_contact": 0,
+    "false_contact": 4,
+    "body_frames": 1080
+  },
+  "scope": "reward approximation accepted by user; full policy simulation validation remains required",
+  "training_state": "formal training active; see spheres224_formal_throughput.json"
+}

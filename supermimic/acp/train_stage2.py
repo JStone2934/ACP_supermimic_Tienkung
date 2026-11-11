@@ -42,15 +42,15 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--init", type=str, default=None, help="supermimic.acp.train_stage1 last.pt (terrain-point targets)")
 parser.add_argument("--planner_init", type=str, default=None, help="supermimic.acp.train_planner_offline checkpoint")
-parser.add_argument("--num_envs", type=int, default=4096)
+parser.add_argument("--num_envs", type=int, default=None, help="global environments; default: input checkpoint")
 parser.add_argument("--iterations", type=int, default=40_000)
 parser.add_argument("--buffer_steps", type=int, default=1350, help="replay rows per environment: at least the longest clip")
 parser.add_argument("--utd", type=float, default=0.4, help="updates per vectorized simulator step")
 parser.add_argument("--horizon", type=int, default=32)
 parser.add_argument("--wm_window", type=int, default=8)
 parser.add_argument("--wm_batches", type=int, default=10)
-parser.add_argument("--wm_batch", type=int, default=2048)
-parser.add_argument("--pi_batch", type=int, default=4096)
+parser.add_argument("--wm_batch", type=int, default=None, help="global world-model batch; default: input checkpoint")
+parser.add_argument("--pi_batch", type=int, default=None, help="global policy batch; default: input checkpoint")
 parser.add_argument("--lr", type=float, default=2e-4)
 parser.add_argument("--gamma", type=float, default=0.99)
 parser.add_argument("--lam", type=float, default=0.95)
@@ -74,6 +74,7 @@ parser.add_argument("--term_window", type=float, default=0.0,
                     help="s: end a state only if it matches no reference root (height, tilt) this far either side of its frame; 0: its frame only")
 parser.add_argument("--planned_std", type=float, default=None, help="m: width of the planned-contact term (default: the checkpoint's)")
 parser.add_argument("--ckpt_every", type=int, default=2000)
+parser.add_argument("--save_full_checkpoints", action="store_true", help="retain optimizers/critic/schedules in numbered checkpoints for resume")
 parser.add_argument("--log_every", type=int, default=50)
 parser.add_argument("--val_every", type=int, default=500)
 parser.add_argument("--log_dir", type=str, required=True)
@@ -82,6 +83,7 @@ parser.add_argument("--resume", type=str, default=None)
 parser.add_argument("--amp", type=str, default="bf16", choices=["none", "bf16"], help="autocast dtype for MLP matmuls")
 from supermimic.acp.distributed import Runtime, add_arguments
 add_arguments(parser, planner=True)
+parser.set_defaults(reward_chunk_size=None)  # inherit the checkpoint unless explicitly overridden
 args = parser.parse_args()
 if not (args.init or args.resume):
     parser.error("--init (or --resume) is required")
@@ -93,7 +95,8 @@ import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.memory import checkpoint_reward, reward_batch
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.robots import resolve_robot
+from supermimic.acp.robots import resolve_robot, sha256
+from supermimic.acp.stage2_contracts import inherit_execution_sizes, initialize_critic, validate_planner_init, validation_split
 from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_DIMS, RewardCfg, normalize_xi, unflatten_state
 from supermimic.acp.motion import CONTROL_DT, MotionLib
@@ -105,10 +108,11 @@ from supermimic.acp.task import PLACE_WINDOW, ContactCfg, ContactTask, PaperRewa
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
 networks.AMP_DTYPE = torch.bfloat16 if args.amp == "bf16" else None
+ck = torch.load(args.resume or args.init, map_location='cpu', weights_only=False)
+inherit_execution_sizes(args, ck)
 rt = Runtime(args)
 dev = rt.device
 
-ck = torch.load(args.resume or args.init, map_location=dev)
 robot = resolve_robot(args.robot, ck)
 NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
 CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
@@ -119,6 +123,9 @@ kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
 if robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
     raise ValueError("checkpoint dataset mismatch")
+val_mask, split_record = validation_split(motion.names, motion_dir, saved=ck.get('validation_split') if args.resume else None,
+                                         continuing=bool(args.resume))
+rt.write_json('validation_split.json', split_record)
 mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev), RewardCfg(term_window=int(round(args.term_window / CONTROL_DT))))
 ctc_cfg = ContactCfg(**ck["ctc_cfg"])
 if ctc_cfg.target_point != "terrain":
@@ -128,8 +135,11 @@ reward_cfg = PaperRewardCfg(**{**ck["reward_cfg"], **({"planned_std": args.plann
 paper_reward = PaperReward(reward_cfg, ctc)
 MAX_R = reward_cfg.max_step_reward
 Hh, HZ = ia["hist"], args.horizon
-pk = torch.load(args.planner_init, map_location=dev) if args.planner_init and not args.resume else None
-if pk is not None: robot.validate_metadata(pk.get("robot_metadata"), legacy=True)
+pk = torch.load(args.planner_init, map_location='cpu', weights_only=False) if args.planner_init and not args.resume else None
+if pk is not None:
+    robot.validate_metadata(pk.get("robot_metadata"), legacy=True)
+    validate_planner_init(pk, ck, sha256(args.init), robot_id=robot.robot_id)
+    validation_split(motion.names, motion_dir, saved=pk.get('validation_split'), continuing=True)
 saved_pcfg = ck["planner_cfg"] if args.resume else pk["planner_cfg"] if pk else {}  # the planner's inputs as trained
 pcfg = PlannerCfg(**{**saved_pcfg, "capacity": args.planner_capacity})
 pcfg = rt.planner_config(pcfg)
@@ -155,19 +165,11 @@ if args.resume:
 else:
     lr_it0 = ck["iteration"] + ck.get("lr_it0", 0)  # the learning-rate schedule continues from Stage 1
     sched_it, admit_base = 0, None  # the schedules' clock (stops while held) and the eta=0 admission rate
-    sd, new = ck["critic"], critic.state_dict()  # the Stage 1 critic, its input widened with zero weights
-    n_in = sd["net.0.weight"].shape[1]
-    for k, v in sd.items():
-        if k == "net.0.weight":
-            new[k].zero_()[:, :n_in] = v
-        elif k in ("norm.mean", "norm.var"):
-            new[k][:n_in] = v
-        else:
-            new[k] = v
-    critic.load_state_dict(new)
+    initialize_critic(critic, ck['critic'])
     if pk:
         planner.load_state_dict(pk["planner"]), opt_pl.load_state_dict(pk["opt"])
 init_args = ia
+geometry_transition = ck.get('geometry_transition')
 
 
 def eta(it: int, u: int) -> float:
@@ -358,11 +360,7 @@ env = TrackingSim(N, motion, mdp, dev, gamma=args.gamma, start_phase=tuple(args.
 buffer = ReplayBuffer(args.buffer_steps, N, dev, robot=robot)
 pbuf = PlannerBuffer(rt.capacity(pcfg.capacity), pcfg.hist, planner.prop_dim, scan.num_z, dev)
 vbuf = PlannerBuffer(rt.capacity(pcfg.capacity // 5), pcfg.hist, planner.prop_dim, scan.num_z, dev)
-folders = sorted({n.split("/")[0] for n in motion.names})
-val_clip = torch.zeros(len(motion.names), dtype=torch.bool, device=dev)
-for g in folders:  # every 10th clip of each folder: planner validation only (the tracker trains on every clip)
-    idx = [i for i, n in enumerate(motion.names) if n.split("/")[0] == g]
-    val_clip[idx[::10]] = True
+val_clip = torch.tensor(val_mask, dtype=torch.bool, device=dev)  # planner only; tracker still trains on every clip
 obs_hist = torch.zeros(N, Hh, OBS_DIM, device=dev)
 goal_steps = ctc.sample_goal_steps(N)
 prev_touch = torch.ones(N, NB, dtype=torch.bool, device=dev)
@@ -533,12 +531,13 @@ for it in range(start_it, args.iterations):
               "opt_wm": opt_wm.state_dict(), "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(),
               "opt_planner": opt_pl.state_dict(), "iteration": it + 1, "wall_time": time.time() - t_start, "sim_steps": sim_steps, "step_acc": step_acc,
               "args": rt.args, "init_args": init_args, "ctc_cfg": dataclasses.asdict(ctc_cfg),
+              "geometry_transition": geometry_transition, "validation_split": split_record,
               "reward_cfg": dataclasses.asdict(reward_cfg), "planner_cfg": dataclasses.asdict(pcfg), "lr_it0": lr_it0,
               "eta": (e_obs, e_rew), "sched_it": sched_it, "admit_base": admit_base,
               "admission_totals": (n_ended, n_admitted), "admission_history": list(adm_hist),
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
         small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "planner", "iteration", "wall_time", "sim_steps", "args", "init_args", "ctc_cfg",
                                     "planner_cfg", "eta", "saved_at")}  # fmt: skip
-        rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=False)
+        rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=args.save_full_checkpoints)
 
 rt.close()

@@ -1,0 +1,983 @@
+{
+  "time": "2026-11-10T19:26:44.355114+08:00",
+  "diagnostic_only": true,
+  "promoted": false,
+  "samples": 120,
+  "source_motions": 15,
+  "sampling": "3 sources per category, original variants 0/5/9, up to 8 full-clip-spanning frames plus nonfoot support",
+  "reports": {
+    "dense": {
+      "points": 353146,
+      "distance_error_vs_dense_near_native_m": {
+        "count": 423,
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "distance_error_vs_native_near_m": {
+        "count": 423,
+        "mean": 2.5259535050281556e-06,
+        "p95": 3.6067504538550565e-07,
+        "max": 0.0003551687113940716
+      },
+      "disagreements_vs_dense": 0,
+      "disagreements_vs_native": 0,
+      "missed_native_touch": 0,
+      "false_native_touch": 0,
+      "native_touch_count": 223,
+      "body_frame_count": 1080,
+      "soft_touch_error_vs_dense": {
+        "count": 1080,
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "weighted_stage1_reward_delta": {
+        "count": 120,
+        "mean": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "per_body": {
+        "left_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "pelvis": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        }
+      }
+    },
+    "spheres224_no_hull": {
+      "points": 224,
+      "distance_error_vs_dense_near_native_m": {
+        "count": 423,
+        "mean": 0.004549502395093441,
+        "p95": 0.00818789005279541,
+        "max": 0.014751158654689789
+      },
+      "distance_error_vs_native_near_m": {
+        "count": 423,
+        "mean": 0.004549476318061352,
+        "p95": 0.00818641483783722,
+        "max": 0.014751140028238297
+      },
+      "disagreements_vs_dense": 4,
+      "disagreements_vs_native": 4,
+      "missed_native_touch": 0,
+      "false_native_touch": 4,
+      "native_touch_count": 223,
+      "body_frame_count": 1080,
+      "soft_touch_error_vs_dense": {
+        "count": 1080,
+        "mean": 0.020665526390075684,
+        "p95": 0.10450880229473114,
+        "max": 0.3692578971385956
+      },
+      "weighted_stage1_reward_delta": {
+        "count": 120,
+        "mean": 0.0017319246484978907,
+        "p95": 0.002814656053632108,
+        "max": 0.004086179880688417
+      },
+      "per_body": {
+        "left_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 3,
+          "disagreements_vs_dense": 3
+        },
+        "right_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 1,
+          "disagreements_vs_dense": 1
+        },
+        "left_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "pelvis": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        }
+      }
+    },
+    "surface_224": {
+      "points": 224,
+      "distance_error_vs_dense_near_native_m": {
+        "count": 423,
+        "mean": 0.0018189294496551156,
+        "p95": 0.005900591611862183,
+        "max": 0.016106516122817993
+      },
+      "distance_error_vs_native_near_m": {
+        "count": 423,
+        "mean": 0.0018212614813819528,
+        "p95": 0.005910221952944994,
+        "max": 0.0161064974963665
+      },
+      "disagreements_vs_dense": 5,
+      "disagreements_vs_native": 5,
+      "missed_native_touch": 5,
+      "false_native_touch": 0,
+      "native_touch_count": 223,
+      "body_frame_count": 1080,
+      "soft_touch_error_vs_dense": {
+        "count": 1080,
+        "mean": 0.009611631743609905,
+        "p95": 0.04475557059049606,
+        "max": 0.4975232779979706
+      },
+      "weighted_stage1_reward_delta": {
+        "count": 120,
+        "mean": 0.0008261233213854461,
+        "p95": 0.0024791295504324896,
+        "max": 0.005955101217013079
+      },
+      "per_body": {
+        "left_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_foot": {
+          "missed_native_touch": 2,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 2
+        },
+        "left_knee": {
+          "missed_native_touch": 2,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 2
+        },
+        "right_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_hand": {
+          "missed_native_touch": 1,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 1
+        },
+        "left_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "pelvis": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        }
+      }
+    },
+    "g1_style_224": {
+      "points": 224,
+      "distance_error_vs_dense_near_native_m": {
+        "count": 423,
+        "mean": 0.004273693077266216,
+        "p95": 0.00818430446088314,
+        "max": 0.014751158654689789
+      },
+      "distance_error_vs_native_near_m": {
+        "count": 423,
+        "mean": 0.004273667931556702,
+        "p95": 0.008184302598237991,
+        "max": 0.014751140028238297
+      },
+      "disagreements_vs_dense": 4,
+      "disagreements_vs_native": 4,
+      "missed_native_touch": 0,
+      "false_native_touch": 4,
+      "native_touch_count": 223,
+      "body_frame_count": 1080,
+      "soft_touch_error_vs_dense": {
+        "count": 1080,
+        "mean": 0.019204163923859596,
+        "p95": 0.10442666709423065,
+        "max": 0.3692578971385956
+      },
+      "weighted_stage1_reward_delta": {
+        "count": 120,
+        "mean": 0.0016256466460001762,
+        "p95": 0.0028090436654628578,
+        "max": 0.004086179880688417
+      },
+      "per_body": {
+        "left_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 3,
+          "disagreements_vs_dense": 3
+        },
+        "right_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 1,
+          "disagreements_vs_dense": 1
+        },
+        "left_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "pelvis": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        }
+      }
+    },
+    "surface_864": {
+      "points": 864,
+      "distance_error_vs_dense_near_native_m": {
+        "count": 423,
+        "mean": 0.001110187266021967,
+        "p95": 0.005336493253707886,
+        "max": 0.010215133428573608
+      },
+      "distance_error_vs_native_near_m": {
+        "count": 423,
+        "mean": 0.001112519414164126,
+        "p95": 0.0053365095518529415,
+        "max": 0.010215122252702713
+      },
+      "disagreements_vs_dense": 2,
+      "disagreements_vs_native": 2,
+      "missed_native_touch": 2,
+      "false_native_touch": 0,
+      "native_touch_count": 223,
+      "body_frame_count": 1080,
+      "soft_touch_error_vs_dense": {
+        "count": 1080,
+        "mean": 0.0033257200848311186,
+        "p95": 0.013031053356826305,
+        "max": 0.3977340757846832
+      },
+      "weighted_stage1_reward_delta": {
+        "count": 120,
+        "mean": 0.00026489059633222605,
+        "p95": 0.001256023860722973,
+        "max": 0.0037776585254404166
+      },
+      "per_body": {
+        "left_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_foot": {
+          "missed_native_touch": 1,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 1
+        },
+        "left_knee": {
+          "missed_native_touch": 1,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 1
+        },
+        "right_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "pelvis": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        }
+      }
+    },
+    "surface_2304": {
+      "points": 2304,
+      "distance_error_vs_dense_near_native_m": {
+        "count": 423,
+        "mean": 0.0005300024640746415,
+        "p95": 0.001843419624492526,
+        "max": 0.007830917835235596
+      },
+      "distance_error_vs_native_near_m": {
+        "count": 423,
+        "mean": 0.0005325221573002636,
+        "p95": 0.00184341031126678,
+        "max": 0.007830899208784103
+      },
+      "disagreements_vs_dense": 0,
+      "disagreements_vs_native": 0,
+      "missed_native_touch": 0,
+      "false_native_touch": 0,
+      "native_touch_count": 223,
+      "body_frame_count": 1080,
+      "soft_touch_error_vs_dense": {
+        "count": 1080,
+        "mean": 0.0011874726042151451,
+        "p95": 0.004432028625160456,
+        "max": 0.1330539584159851
+      },
+      "weighted_stage1_reward_delta": {
+        "count": 120,
+        "mean": 8.825702860776909e-05,
+        "p95": 0.00039578978593151514,
+        "max": 0.001481836935434126
+      },
+      "per_body": {
+        "left_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_foot": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_knee": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_hand": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "left_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "right_elbow": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        },
+        "pelvis": {
+          "missed_native_touch": 0,
+          "false_native_touch": 0,
+          "disagreements_vs_dense": 0
+        }
+      }
+    }
+  },
+  "cpu_seconds": {
+    "shared_hull_cpu_seconds": 1.3990214094519615,
+    "dense_point_cpu_seconds": 1.6118366327136755,
+    "spheres224_no_hull_point_cpu_seconds": 0.04454658995382488,
+    "surface_224_point_cpu_seconds": 0.047709140460938215,
+    "g1_style_224_point_cpu_seconds": 0.046326863346621394,
+    "surface_864_point_cpu_seconds": 0.05121258879080415,
+    "surface_2304_point_cpu_seconds": 0.06135512702167034
+  },
+  "total_seconds": 11.76291039492935,
+  "limitation": "Reference poses only; no learned-policy perturbations or gradient/rollout validation. CPU timings are not GPU training speed estimates. Only spheres224_no_hull removes the convex-hull penetration override.",
+  "sample_ids": [
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 0
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 90
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 146
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 181
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 202
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 452
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 543
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_0.6s_step0.8s__variant_00",
+      "frame": 634
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 0
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 90
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 146
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 181
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 201
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 452
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 543
+    },
+    {
+      "key": "motions-high-climb-76/run_right_90_0.6s_step0.8s__variant_05",
+      "frame": 634
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 0
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 87
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 175
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 190
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 245
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 438
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 526
+    },
+    {
+      "key": "motions-high-climb-76/run_right_45_1.2s_step0s__variant_09",
+      "frame": 614
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 0
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 60
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 120
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 181
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 241
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 302
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 362
+    },
+    {
+      "key": "motions-high-step/run_right_45_0.6s_step0.5s__variant_00",
+      "frame": 423
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 0
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 59
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 119
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 179
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 239
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 299
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 359
+    },
+    {
+      "key": "motions-high-step/run_left_90_1.2s_step0s__variant_05",
+      "frame": 419
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 0
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 61
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 123
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 185
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 246
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 308
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 370
+    },
+    {
+      "key": "motions-high-step/run_forward_0.9s_step0.5s__variant_09",
+      "frame": 432
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 0
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 100
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 201
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 302
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 402
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 503
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 604
+    },
+    {
+      "key": "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00",
+      "frame": 705
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 0
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 39
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 79
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 118
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 158
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 197
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 237
+    },
+    {
+      "key": "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05",
+      "frame": 277
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 0
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 32
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 64
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 96
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 128
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 160
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 192
+    },
+    {
+      "key": "motions-locomotion/cfg0030_stand_2.0s_left_45_0.5s_stand_2.0s__variant_09",
+      "frame": 225
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 0
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 119
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 175
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 239
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 294
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 597
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 717
+    },
+    {
+      "key": "motions-low-climb-76/left_90_walk0.9s_step0.7s__variant_00",
+      "frame": 837
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 0
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 116
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 190
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 233
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 310
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 583
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 700
+    },
+    {
+      "key": "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05",
+      "frame": 817
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 0
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 121
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 159
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 242
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 279
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 606
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 727
+    },
+    {
+      "key": "motions-low-climb-76/left_45_walk0.6s_step1.2s__variant_09",
+      "frame": 849
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 0
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 75
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 151
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 226
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 302
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 377
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 453
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step1.0s__variant_00",
+      "frame": 529
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 0
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 65
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 130
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 195
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 260
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 325
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 390
+    },
+    {
+      "key": "motions-low-step/right_90_walk0.5s_step0.5s__variant_05",
+      "frame": 455
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 0
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 71
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 143
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 215
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 287
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 359
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 431
+    },
+    {
+      "key": "motions-low-step/forward_walk1.5s_step0.5s__variant_09",
+      "frame": 503
+    }
+  ]
+}

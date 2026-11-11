@@ -1,0 +1,23 @@
+[
+  "systemd-run",
+  "--user",
+  "--unit=acp-stage1-php-all-20261110",
+  "--slice=php-compute.slice",
+  "--property=WorkingDirectory=/home/js/robot/locomotion/ACP_supermimic_Tienkung",
+  "--property=MemoryHigh=64G",
+  "--property=MemoryMax=80G",
+  "--property=Restart=no",
+  "--property=KillMode=control-group",
+  "--property=TimeoutStopSec=90",
+  "--setenv=CUDA_VISIBLE_DEVICES=0,1",
+  "--setenv=OMP_NUM_THREADS=4",
+  "--setenv=OPENBLAS_NUM_THREADS=1",
+  "--setenv=TORCHINDUCTOR_COMPILE_THREADS=4",
+  "--setenv=PYTHONUNBUFFERED=1",
+  "--setenv=MUJOCO_GL=egl",
+  "/home/js/miniconda3/envs/acp_supermimic/bin/python",
+  "-m",
+  "tools.run_stage1_training",
+  "--config",
+  "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/stage1/evidence/launch_config.json"
+]

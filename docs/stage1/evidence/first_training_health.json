@@ -1,0 +1,33 @@
+{
+  "time": "2026-11-10T18:21:09.364838+08:00",
+  "phase": "formal_training_wm_warmup",
+  "last_log": {
+    "iteration": "100",
+    "wall_h": "0.0253746",
+    "sim_steps": "160768",
+    "wm_loss": "0.332975",
+    "wm_err8": "0.475935",
+    "pi_loss": "0",
+    "v_loss": "0",
+    "imag_rew": "0",
+    "pi_gradnorm": "0",
+    "imag_survival": "0",
+    "sim_rew": "0.633467",
+    "ep_len": "36.4056",
+    "ep_ret_norm": "0.630737",
+    "term_frac": "0.59887",
+    "touch_precision": "0.874099",
+    "touch_recall": "0.983385",
+    "it_per_s": "1.11781",
+    "lr": "0.0002",
+    "phase_zero_frac": "0",
+    "phase_motions-high-climb-76": "0.92185",
+    "phase_motions-high-step": "0.892633",
+    "phase_motions-locomotion": "0.90882",
+    "phase_motions-low-climb-76": "0.92825",
+    "phase_motions-low-step": "0.89575"
+  },
+  "all_logged_values_finite": true,
+  "systemd_active": "active",
+  "initial_gates": "all passed; see training_start_receipt.json"
+}

@@ -1,0 +1,5 @@
+{
+  "time": "2026-11-10T19:49:31.819225+08:00",
+  "reason": "Controlled execution benchmark after durable iteration 1000; production checkpoint preserved",
+  "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/ckpt_001000.pt"
+}

@@ -4,8 +4,8 @@ The tracker (a supermimic.acp.train_stage1 checkpoint) runs in the simulator wit
 noise and reference contact targets, from uniform start phases (the paper's Stage 2 episode starts). The replay buffer
 of simulator transitions records the episodes; finished ones are labeled in hindsight
 (:func:`supermimic.acp.planner.label_episodes`) into the planner's buffer, and the planner trains on it with the paper's
-Table S5 settings. The planner sees the exact height scan of the episode's terrain variant (plus noise). Every 10th clip
-of each motion folder is held out: its samples only go to a validation buffer, on which ``planner_val.csv`` reports
+Table S5 settings. The planner sees the exact height scan of the episode's terrain variant (plus noise). Every 10th source motion
+of each motion folder is held out, including all materialized terrain variants: its samples only go to a validation buffer, on which ``planner_val.csv`` reports
 per-body occupancy precision / recall / F1, the median top-1 error and the share of top-1 points within 0.1 m.
 
     python -m supermimic.acp.train_planner_offline --tracker logs/acp_stage1/ckpt_060000.pt --log_dir logs/acp_planner
@@ -21,7 +21,7 @@ import time
 parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default=None)
 parser.add_argument("--tracker", type=str, default=None, help="supermimic.acp.train_stage1 checkpoint")
-parser.add_argument("--num_envs", type=int, default=4096)
+parser.add_argument("--num_envs", type=int, default=None, help="global environments; default: tracker/resume checkpoint")
 parser.add_argument("--steps", type=int, default=20_000, help="simulator steps")
 parser.add_argument("--updates_per_step", type=int, default=1, help="planner updates per simulator step")
 parser.add_argument("--buffer_steps", type=int, default=1350, help="replay rows per environment: at least the longest clip")
@@ -57,20 +57,20 @@ from supermimic.acp.networks import Policy
 from supermimic.acp.planner import (ContactPlanner, PlannerBuffer, PlannerCfg, PlannerScan, label_episodes,
                                     distributed_planner_metrics, planner_update)
 from supermimic.acp.task import ContactCfg, ContactTask
+from supermimic.acp.stage2_contracts import inherit_execution_sizes, validation_split
 
 torch.backends.cuda.matmul.allow_tf32 = True
-rt = Runtime(args)
-dev = rt.device
-resume_ck = torch.load(args.resume, map_location=dev) if args.resume else None
+resume_ck = torch.load(args.resume, map_location='cpu', weights_only=False) if args.resume else None
 if resume_ck is not None:
     args.tracker = args.tracker or resume_ck['tracker']
     if resume_ck.get('tracker_hash') and sha256(args.tracker) != resume_ck['tracker_hash']:
         raise ValueError('resume tracker checkpoint changed')
-rt.args['tracker'] = args.tracker
-rt.write_json('args.json', rt.args)
 tracker_hash = sha256(args.tracker)
 
-ck = torch.load(args.tracker, map_location=dev)
+ck = torch.load(args.tracker, map_location='cpu', weights_only=False)
+inherit_execution_sizes(args, resume_ck if resume_ck is not None else ck)
+rt = Runtime(args)
+dev = rt.device
 robot = resolve_robot(args.robot, ck)
 NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
 CONTACT_BODIES, NB = robot.contact_bodies, len(robot.contact_bodies)
@@ -110,11 +110,10 @@ if resume_ck is not None:
 rt.register({'pi': pi, 'planner': planner}, {'opt_planner': opt}, deferred=(planner.prop_norm,))
 pbuf = PlannerBuffer(rt.capacity(pcfg.capacity), pcfg.hist, planner.prop_dim, scan.num_z, dev)
 vbuf = PlannerBuffer(rt.capacity(pcfg.capacity // 5), pcfg.hist, planner.prop_dim, scan.num_z, dev)
-folders = sorted({n.split("/")[0] for n in motion.names})
-val_clip = torch.zeros(len(motion.names), dtype=torch.bool, device=dev)
-for g in folders:  # every 10th clip of each folder
-    idx = [i for i, n in enumerate(motion.names) if n.split("/")[0] == g]
-    val_clip[idx[::10]] = True
+val_mask, split_record = validation_split(motion.names, motion_dir,
+    saved=resume_ck.get('validation_split') if resume_ck is not None else None, continuing=resume_ck is not None)
+rt.write_json('validation_split.json', split_record)
+val_clip = torch.tensor(val_mask, dtype=torch.bool, device=dev)
 assert args.buffer_steps > int(motion.clip_len.max()), "the replay buffer must hold a whole episode"
 
 N = args.num_envs
@@ -137,6 +136,7 @@ acc = {"ended": 0, "admitted": 0, "labeled": 0, "loss": []}
 def save(step: int):
     ck = dict(robot_metadata=robot.metadata(), data_hash=motion.data_hash, planner=planner.state_dict(), opt=opt.state_dict(),
               planner_cfg=dataclasses.asdict(pcfg), step=step, tracker=args.tracker, tracker_hash=tracker_hash,
+              ctc_cfg=dataclasses.asdict(ctc.cfg), validation_split=split_record,
               prop_dim=planner.prop_dim, args=rt.args, wall_time=time.time()-t0, sim_steps=sim_steps)
     rt.save(ck, numbered=f'planner_{step:06d}.pt', full=True)
 

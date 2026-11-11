@@ -1,0 +1,17 @@
+{
+  "time": "2026-11-10T20:00:46.808838+08:00",
+  "accepted_reward_chunk_size": 0,
+  "resume_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/last.pt",
+  "resume_checkpoint_sha256": "b8122fb3b2d9c021d21d2ec7410c69b3201b0f8c8624f126886b35e7d4da3eaf",
+  "resume_iteration": 1000,
+  "old_seconds_per_iteration": 1.3002174580376595,
+  "candidate_seconds_per_iteration": 0.49781185292173175,
+  "speedup": 2.6118652065162573,
+  "same_training_samples_and_update_counts": true,
+  "probe_results_sha256": "a365e0c193c68d0bffe61ef3d4952e3ac93d2b452163c9abcdfde7453c3667c9",
+  "source_snapshot_sha256": "0970cf2071848d44a518a2081d26712f9d852f7e9cc990dfa6e0aefde1a13bed",
+  "stage": "production active; formal 50-iteration benchmark verified",
+  "immutable_source_checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/ckpt_001000.pt",
+  "formal_benchmark": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/stage1/evidence/execution_tuning_formal_benchmark.json",
+  "formal_throughput": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/docs/stage1/evidence/execution_tuning_formal_throughput.json"
+}

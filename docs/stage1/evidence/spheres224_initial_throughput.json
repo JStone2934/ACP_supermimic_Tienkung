@@ -1,0 +1,52 @@
+{
+  "time": "2026-11-10T19:33:17.482739+08:00",
+  "scope": "preliminary two-iteration smoke estimate, excluding initial compilation; formal calibration pending",
+  "seconds_per_iteration": [
+    1.368428975115119,
+    1.2886631151111214
+  ],
+  "mean_seconds": 1.3285460451131201,
+  "old_dense_seconds_per_iteration": 43.527168,
+  "remaining_iterations": 59500,
+  "estimated_remaining_hours": 21.95791380117518,
+  "speedup": 32.76301048059938,
+  "checkpoint": {
+    "iteration": 3,
+    "data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+    "distributed": {
+      "version": 1,
+      "world_size": 2,
+      "updates": {
+        "wm": 30,
+        "pi": 3,
+        "critic": 60
+      },
+      "skipped": {},
+      "ranks": [
+        {
+          "rank": 0,
+          "device": "cuda:0",
+          "torch_peak_allocated": 4756802048,
+          "torch_peak_reserved": 5721030656,
+          "device_used": 8620867584,
+          "warp_pool_used": 354701559,
+          "warp_pool_peak": 354702687
+        },
+        {
+          "rank": 1,
+          "device": "cuda:1",
+          "torch_peak_allocated": 4756797952,
+          "torch_peak_reserved": 5721030656,
+          "device_used": 7661355008,
+          "warp_pool_used": 354701559,
+          "warp_pool_peak": 354702687
+        }
+      ],
+      "state_sha256": "4c306cedf260da4423c14dd9b66b03780be00066c232fb0b8289004d584d6b06"
+    },
+    "contact_geometry": "spheres224",
+    "geometry_transition": null,
+    "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/smoke/last.pt",
+    "checkpoint_sha256": "e7c0c0621c57a02c8eac31b7cdbf2867f7897f8cceedd2ea28f6ed9cd72068dd"
+  }
+}

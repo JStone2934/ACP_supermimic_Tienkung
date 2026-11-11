@@ -1,0 +1,113 @@
+{
+  "10000": {
+    "motions-high-climb-76": {
+      "mean_phase": 0.6254749298095703,
+      "median_phase": 0.6399999260902405,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 395,
+      "count": 400
+    },
+    "motions-high-step": {
+      "mean_phase": 0.41068318486213684,
+      "median_phase": 0.39999985694885254,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 25,
+      "count": 600
+    },
+    "motions-locomotion": {
+      "mean_phase": 0.16841989755630493,
+      "median_phase": 0.1399998515844345,
+      "n_phase_zero": 334,
+      "n_phase_gt_half": 43,
+      "count": 1000
+    },
+    "motions-low-climb-76": {
+      "mean_phase": 0.637274980545044,
+      "median_phase": 0.6399999260902405,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 399,
+      "count": 400
+    },
+    "motions-low-step": {
+      "mean_phase": 0.3550534248352051,
+      "median_phase": 0.3499998450279236,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 4,
+      "count": 560
+    }
+  },
+  "30000": {
+    "motions-high-climb-76": {
+      "mean_phase": 0.5342248678207397,
+      "median_phase": 0.5499998927116394,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 243,
+      "count": 400
+    },
+    "motions-high-step": {
+      "mean_phase": 0.3825998306274414,
+      "median_phase": 0.39999985694885254,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 4,
+      "count": 600
+    },
+    "motions-locomotion": {
+      "mean_phase": 0.002619999460875988,
+      "median_phase": 0.0,
+      "n_phase_zero": 984,
+      "n_phase_gt_half": 1,
+      "count": 1000
+    },
+    "motions-low-climb-76": {
+      "mean_phase": 0.48402488231658936,
+      "median_phase": 0.4899998903274536,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 112,
+      "count": 400
+    },
+    "motions-low-step": {
+      "mean_phase": 0.3360355794429779,
+      "median_phase": 0.3499998450279236,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 0,
+      "count": 560
+    }
+  },
+  "60000": {
+    "motions-high-climb-76": {
+      "mean_phase": 0.46534988284111023,
+      "median_phase": 0.4499998688697815,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 109,
+      "count": 400
+    },
+    "motions-high-step": {
+      "mean_phase": 0.028666652739048004,
+      "median_phase": 0.0,
+      "n_phase_zero": 517,
+      "n_phase_gt_half": 2,
+      "count": 600
+    },
+    "motions-locomotion": {
+      "mean_phase": 0.0005000000237487257,
+      "median_phase": 0.0,
+      "n_phase_zero": 990,
+      "n_phase_gt_half": 0,
+      "count": 1000
+    },
+    "motions-low-climb-76": {
+      "mean_phase": 0.41764986515045166,
+      "median_phase": 0.39999985694885254,
+      "n_phase_zero": 0,
+      "n_phase_gt_half": 26,
+      "count": 400
+    },
+    "motions-low-step": {
+      "mean_phase": 0.018232135102152824,
+      "median_phase": 0.0,
+      "n_phase_zero": 484,
+      "n_phase_gt_half": 0,
+      "count": 560
+    }
+  }
+}

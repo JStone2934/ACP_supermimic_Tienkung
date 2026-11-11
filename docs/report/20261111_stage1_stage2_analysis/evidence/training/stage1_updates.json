@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "world_size": 2,
+  "updates": {
+    "wm": 600000,
+    "pi": 59500,
+    "critic": 1190000
+  },
+  "skipped": {},
+  "ranks": [
+    {
+      "rank": 0,
+      "device": "cuda:0",
+      "torch_peak_allocated": 4994446848,
+      "torch_peak_reserved": 5794430976,
+      "device_used": 9662038016,
+      "warp_pool_used": 354701559,
+      "warp_pool_peak": 354702687
+    },
+    {
+      "rank": 1,
+      "device": "cuda:1",
+      "torch_peak_allocated": 4994446848,
+      "torch_peak_reserved": 5794430976,
+      "device_used": 8611495936,
+      "warp_pool_used": 354701559,
+      "warp_pool_peak": 354702687
+    }
+  ],
+  "state_sha256": "c103b42d26a5b90b0bc7096ca7faefeed2478f68a7aaa9286532bb336d0c06b3"
+}

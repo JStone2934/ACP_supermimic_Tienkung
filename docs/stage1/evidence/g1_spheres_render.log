@@ -1,0 +1,26 @@
+{
+  "robot": "g1",
+  "sphere_count": 224,
+  "rendering": "exact BodySpheres centers and radii; camera rotation, not a policy rollout",
+  "point_radius_scale": 1,
+  "pose": "default lower body; shoulders opened to +/-0.65 rad and elbows 0.7 rad for visibility",
+  "count_by_body": {
+    "left_foot": 4,
+    "right_foot": 4,
+    "left_knee": 24,
+    "right_knee": 24,
+    "left_hand": 48,
+    "right_hand": 48,
+    "left_elbow": 24,
+    "right_elbow": 24,
+    "pelvis": 24
+  },
+  "source_sha256": "6e5ae0afa3b41e22c51a6ab15daec47843aa4d9bfaacd34598db7898c6d764b2",
+  "model_sha256": "f599416f2d4d5f724f34278baccb6630166e28191be5f4b221af05cbf7e86245",
+  "files": {
+    "03_g1_spheres_rotation.mp4": "33242c92b916864a0b66767996c7426e34af903c078692e336e9fa431e29e55b",
+    "g1_reward_spheres.csv": "964afd006879c1192ce903e9046e85d94393aa05614249303fc474dc0deeed2f",
+    "02_g1_spheres_closeups.png": "58a5124e13f422a6bc951d212a3b45b47d1e1c10cf6a87b64cfb6ab3a466c751",
+    "01_g1_spheres_overview.png": "1a9614cddfc9295fbaac46e6b178409a63ef84fdc7f77764e5a79bcbad4bcfb4"
+  }
+}

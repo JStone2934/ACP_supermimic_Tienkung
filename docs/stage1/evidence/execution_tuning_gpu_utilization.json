@@ -1,0 +1,35 @@
+{
+  "before": {
+    "0": {
+      "samples": 97,
+      "utilization.gpu [%]": 35.896907216494846,
+      "utilization.memory [%]": 1.9793814432989691,
+      "power.draw [W]": 128.78876288659794,
+      "memory.used [MiB]": 8223.0
+    },
+    "1": {
+      "samples": 97,
+      "utilization.gpu [%]": 32.21649484536083,
+      "utilization.memory [%]": 1.1134020618556701,
+      "power.draw [W]": 98.59381443298969,
+      "memory.used [MiB]": 7309.0
+    }
+  },
+  "after": {
+    "0": {
+      "samples": 77,
+      "utilization.gpu [%]": 48.76623376623377,
+      "utilization.memory [%]": 4.5064935064935066,
+      "power.draw [W]": 146.39142857142858,
+      "memory.used [MiB]": 9127.636363636364
+    },
+    "1": {
+      "samples": 77,
+      "utilization.gpu [%]": 41.298701298701296,
+      "utilization.memory [%]": 3.831168831168831,
+      "power.draw [W]": 114.93818181818182,
+      "memory.used [MiB]": 8213.0
+    }
+  },
+  "time": "2026-11-10T20:04:05.515069+08:00"
+}

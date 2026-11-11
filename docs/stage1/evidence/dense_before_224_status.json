@@ -1,0 +1,33 @@
+{
+  "time": "2026-11-10T19:23:06.676459+08:00",
+  "stage": "training",
+  "state": "running",
+  "run_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_20261110",
+  "pid": 3868500,
+  "training": {
+    "iteration": "575",
+    "wall_h": "1.02762",
+    "sim_steps": "768512",
+    "wm_loss": "0.297041",
+    "wm_err8": "0.493406",
+    "pi_loss": "-3.32486",
+    "v_loss": "0.130843",
+    "imag_rew": "0.327331",
+    "pi_gradnorm": "8.1331",
+    "imag_survival": "0.441652",
+    "sim_rew": "0.555557",
+    "ep_len": "36.0922",
+    "ep_ret_norm": "0.576879",
+    "term_frac": "0.527559",
+    "touch_precision": "0.86227",
+    "touch_recall": "0.954327",
+    "it_per_s": "0.0230286",
+    "lr": "0.000199997",
+    "phase_zero_frac": "0",
+    "phase_motions-high-climb-76": "0.9159",
+    "phase_motions-high-step": "0.889983",
+    "phase_motions-locomotion": "0.91097",
+    "phase_motions-low-climb-76": "0.929725",
+    "phase_motions-low-step": "0.893643"
+  }
+}

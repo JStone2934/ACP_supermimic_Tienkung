@@ -1,0 +1,25 @@
+{
+  "time": "2026-11-10T20:02:49.594410+08:00",
+  "iteration": 1100,
+  "seconds_per_iteration": 0.42144163730088624,
+  "measured_iterations": 50,
+  "elapsed_s": 21.07208186504431,
+  "speedup_vs_chunk64": 3.08516611307054,
+  "remaining_hours": 6.895253454728389,
+  "estimated_finish": "2026-11-11T02:56:32.506847+08:00",
+  "updates": {
+    "wm": 500,
+    "pi": 50,
+    "critic": 1000
+  },
+  "memory_events": {
+    "low": "0",
+    "high": "0",
+    "max": "0",
+    "oom": "0",
+    "oom_kill": "0",
+    "oom_group_kill": "0"
+  },
+  "all_logged_values_finite": true,
+  "scope": "early 50-iteration formal benchmark after 25 warmup actor updates; evaluation extra; not a convergence guarantee"
+}

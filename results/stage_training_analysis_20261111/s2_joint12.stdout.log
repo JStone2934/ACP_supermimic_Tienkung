@@ -1,0 +1,1123 @@
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/js/.cache/warp/1.16.0
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 2.49 ms  (cached)
+Module _nxn_broadphase__locals__kernel_af72a12e af72a12 load on device 'cuda:0' took 0.40 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_de98853f de98853 load on device 'cuda:0' took 1.76 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_de98853f a555bd0 load on device 'cuda:0' took 1.79 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_dc2ca7f4 dc2ca7f load on device 'cuda:0' took 0.56 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _friction_dof__locals__kernel_ddb8a6ec ddb8a6e load on device 'cuda:0' took 0.40 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_a75b7345 a75b734 load on device 'cuda:0' took 0.39 ms  (cached)
+Module _efc_contact_init__locals__kernel_cccfaa76 cccfaa7 load on device 'cuda:0' took 0.34 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_2144a1f6 2144a1f load on device 'cuda:0' took 0.36 ms  (cached)
+Module _efc_contact_update__locals__kernel_d8fb6a36 d8fb6a3 load on device 'cuda:0' took 0.37 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.95 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 1.02 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 0.95 ms  (cached)
+Module _qfrc_smooth__locals__kernel_4658f88b 4658f88 load on device 'cuda:0' took 0.32 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.35 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_d59a856e 173a666 load on device 'cuda:0' took 23.20 ms  (cached)
+Module _solve_init_dof__locals__kernel_e05b1ce4 e05b1ce load on device 'cuda:0' took 0.34 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.39 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_9aff3158 9aff315 load on device 'cuda:0' took 0.37 ms  (cached)
+Module mul_m_kernel__locals___mul_m_4f80c25f 4f80c25 load on device 'cuda:0' took 0.34 ms  (cached)
+Module _update_constraint_efc__locals__kernel_2874152a 2874152 load on device 'cuda:0' took 0.35 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_41cad2cd 41cad2c load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_dc20e701 dc20e70 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _update_gradient_grad__locals__kernel_75e45f77 75e45f7 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_36dd1e5a 36dd1e5 load on device 'cuda:0' took 0.32 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_342243de 342243d load on device 'cuda:0' took 0.33 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_342243de e314b13 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_fb90cc46 53fec0b load on device 'cuda:0' took 56.20 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_c15033af c15033a load on device 'cuda:0' took 0.36 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_d5499a80 da1f31a load on device 'cuda:0' took 0.54 ms  (cached)
+Module _update_constraint_efc__locals__kernel_c5c7ee21 c5c7ee2 load on device 'cuda:0' took 0.35 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_c8324c35 c8324c3 load on device 'cuda:0' took 0.33 ms  (cached)
+Module _update_gradient_grad__locals__kernel_5d6ef3e8 5d6ef3e load on device 'cuda:0' took 0.33 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_da279b83 da279b8 load on device 'cuda:0' took 0.34 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_d953dcb2 5d835d8 load on device 'cuda:0' took 63.69 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.69 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.77 ms  (cached)
+Module _next_time_builder__locals___next_time_b0eef204 b0eef20 load on device 'cuda:0' took 0.35 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_fb15556a fb15556 load on device 'cuda:0' took 0.32 ms  (cached)
+Module reset_data__locals__reset_M_7fe3caab 7fe3caa load on device 'cuda:0' took 0.28 ms  (cached)
+Module reset_data__locals__reset_mocap_72adcc80 72adcc8 load on device 'cuda:0' took 0.27 ms  (cached)
+Module reset_data__locals__reset_contact_d045dbe7 d045dbe load on device 'cuda:0' took 0.27 ms  (cached)
+Module reset_data__locals__reset_sleep_a443f67b a443f67 load on device 'cuda:0' took 0.28 ms  (cached)
+Module reset_data__locals__reset_nworld_afd827a5 afd827a load on device 'cuda:0' took 0.33 ms  (cached)
+Module repeat_array_kernel_f3ffbc3f f56645b load on device 'cuda:0' took 0.36 ms  (cached)
+Module repeat_array_kernel_f3ffbc3f 43f7a6f load on device 'cuda:0' took 0.39 ms  (cached)
+Module repeat_array_kernel_f3ffbc3f 4e2538d load on device 'cuda:0' took 0.40 ms  (cached)
+Module _nxn_broadphase__locals__kernel_429f5ebc 429f5eb load on device 'cuda:0' took 0.44 ms  (cached)
+{
+ "ckpt": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/ckpt_012000.pt",
+ "robot_metadata": {
+  "robot_id": "tienkung3_29dof",
+  "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+  "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+  "joint_order": [
+   "hip_pitch_l_joint",
+   "hip_roll_l_joint",
+   "hip_yaw_l_joint",
+   "knee_pitch_l_joint",
+   "ankle_pitch_l_joint",
+   "ankle_roll_l_joint",
+   "hip_pitch_r_joint",
+   "hip_roll_r_joint",
+   "hip_yaw_r_joint",
+   "knee_pitch_r_joint",
+   "ankle_pitch_r_joint",
+   "ankle_roll_r_joint",
+   "waist_yaw_joint",
+   "waist_roll_joint",
+   "waist_pitch_joint",
+   "shoulder_pitch_l_joint",
+   "shoulder_roll_l_joint",
+   "shoulder_yaw_l_joint",
+   "elbow_pitch_l_joint",
+   "elbow_yaw_l_joint",
+   "wrist_pitch_l_joint",
+   "wrist_roll_l_joint",
+   "shoulder_pitch_r_joint",
+   "shoulder_roll_r_joint",
+   "shoulder_yaw_r_joint",
+   "elbow_pitch_r_joint",
+   "elbow_yaw_r_joint",
+   "wrist_pitch_r_joint",
+   "wrist_roll_r_joint"
+  ],
+  "control_dt": 0.02
+ },
+ "data_hash": "288884991814aa4d5f6bcab3dd684e857288f1b88ce87dbd4817902ca83d8cfa",
+ "checkpoint_data_hash": "58adce5058da88c21860cb9212b09a1d1a609b5231fea93ac0d9ff6919e963be",
+ "evaluation_motion_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage_training_analysis_20261111/eval_motions",
+ "seed": 0,
+ "per_clip": {
+  "motions-high-climb-76/run_forward_0.6s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 199,
+   "root_rmse_m": 0.16449683904647827,
+   "root_max_m": 0.4890845715999603,
+   "joint_rmse_rad": 0.3620712161064148,
+   "torque_saturation_fraction": 0.003119043540209532,
+   "velocity_exceed_fraction": 0.00017328019021078944
+  },
+  "motions-high-climb-76/run_forward_0.6s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 194,
+   "root_rmse_m": 0.14523489773273468,
+   "root_max_m": 0.5024325847625732,
+   "joint_rmse_rad": 0.3326258659362793,
+   "torque_saturation_fraction": 0.003021684940904379,
+   "velocity_exceed_fraction": 0.0012442232109606266
+  },
+  "motions-high-climb-76/run_forward_1.2s_step0.8s__variant_00": {
+   "failed": true,
+   "alive_steps": 198,
+   "root_rmse_m": 0.24511447548866272,
+   "root_max_m": 0.5281438231468201,
+   "joint_rmse_rad": 0.34006252884864807,
+   "torque_saturation_fraction": 0.0010449320543557405,
+   "velocity_exceed_fraction": 0.0006966213695704937
+  },
+  "motions-high-climb-76/run_forward_1.2s_step0.8s__variant_05": {
+   "failed": true,
+   "alive_steps": 199,
+   "root_rmse_m": 0.2631615698337555,
+   "root_max_m": 0.5713392496109009,
+   "joint_rmse_rad": 0.3496292531490326,
+   "torque_saturation_fraction": 0.001559521770104766,
+   "velocity_exceed_fraction": 0.0003465603804215789
+  },
+  "motions-high-climb-76/run_forward_1.5s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 215,
+   "root_rmse_m": 0.4237098693847656,
+   "root_max_m": 0.7971990704536438,
+   "joint_rmse_rad": 0.3721398413181305,
+   "torque_saturation_fraction": 0.0019246190786361694,
+   "velocity_exceed_fraction": 0.00032076984643936157
+  },
+  "motions-high-climb-76/run_forward_1.5s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 213,
+   "root_rmse_m": 0.3441774547100067,
+   "root_max_m": 0.7313268184661865,
+   "joint_rmse_rad": 0.3661623001098633,
+   "torque_saturation_fraction": 0.001295127090997994,
+   "velocity_exceed_fraction": 0.0003237817727494985
+  },
+  "motions-high-climb-76/run_left_45_1.0s_step0.8s__variant_00": {
+   "failed": true,
+   "alive_steps": 216,
+   "root_rmse_m": 0.14898435771465302,
+   "root_max_m": 0.3144863247871399,
+   "joint_rmse_rad": 0.32511621713638306,
+   "torque_saturation_fraction": 0.002075351309031248,
+   "velocity_exceed_fraction": 0.0011174967512488365
+  },
+  "motions-high-climb-76/run_left_45_1.0s_step0.8s__variant_05": {
+   "failed": true,
+   "alive_steps": 221,
+   "root_rmse_m": 0.11178983747959137,
+   "root_max_m": 0.39318180084228516,
+   "joint_rmse_rad": 0.3260077238082886,
+   "torque_saturation_fraction": 0.0009361834963783622,
+   "velocity_exceed_fraction": 0.0007801529136486351
+  },
+  "motions-high-climb-76/run_left_45_1.0s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 218,
+   "root_rmse_m": 0.1394280344247818,
+   "root_max_m": 0.4927181005477905,
+   "joint_rmse_rad": 0.33398202061653137,
+   "torque_saturation_fraction": 0.0014236001297831535,
+   "velocity_exceed_fraction": 0.0001581777905812487
+  },
+  "motions-high-climb-76/run_left_45_1.0s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 222,
+   "root_rmse_m": 0.14503878355026245,
+   "root_max_m": 0.4627985656261444,
+   "joint_rmse_rad": 0.333957314491272,
+   "torque_saturation_fraction": 0.001397949643433094,
+   "velocity_exceed_fraction": 0.0006213109591044486
+  },
+  "motions-high-climb-76/run_left_90_0.6s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 184,
+   "root_rmse_m": 0.21940428018569946,
+   "root_max_m": 0.49535998702049255,
+   "joint_rmse_rad": 0.30826133489608765,
+   "torque_saturation_fraction": 0.0013118440983816981,
+   "velocity_exceed_fraction": 0.0003748126036953181
+  },
+  "motions-high-climb-76/run_left_90_0.6s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 172,
+   "root_rmse_m": 0.273043692111969,
+   "root_max_m": 0.5287137031555176,
+   "joint_rmse_rad": 0.3087448179721832,
+   "torque_saturation_fraction": 0.0008019246160984039,
+   "velocity_exceed_fraction": 0.00020048115402460098
+  },
+  "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_00": {
+   "failed": true,
+   "alive_steps": 218,
+   "root_rmse_m": 0.22238367795944214,
+   "root_max_m": 0.49636176228523254,
+   "joint_rmse_rad": 0.3515990674495697,
+   "torque_saturation_fraction": 0.0014236001297831535,
+   "velocity_exceed_fraction": 0.0003163555811624974
+  },
+  "motions-high-climb-76/run_left_90_1.2s_step0.8s__variant_05": {
+   "failed": true,
+   "alive_steps": 217,
+   "root_rmse_m": 0.126151442527771,
+   "root_max_m": 0.2806980311870575,
+   "joint_rmse_rad": 0.3457815647125244,
+   "torque_saturation_fraction": 0.0009534403216093779,
+   "velocity_exceed_fraction": 0.0006356269004754722
+  },
+  "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_00": {
+   "failed": true,
+   "alive_steps": 227,
+   "root_rmse_m": 0.2090001106262207,
+   "root_max_m": 0.39770597219467163,
+   "joint_rmse_rad": 0.3750697076320648,
+   "torque_saturation_fraction": 0.001822877093218267,
+   "velocity_exceed_fraction": 0.0007595321512781084
+  },
+  "motions-high-climb-76/run_left_90_1.5s_step0.8s__variant_05": {
+   "failed": true,
+   "alive_steps": 240,
+   "root_rmse_m": 0.2081129252910614,
+   "root_max_m": 0.4152795076370239,
+   "joint_rmse_rad": 0.41274940967559814,
+   "torque_saturation_fraction": 0.0010057471226900816,
+   "velocity_exceed_fraction": 0.00028735632076859474
+  },
+  "motions-high-climb-76/run_right_45_1.2s_step0.8s__variant_00": {
+   "failed": true,
+   "alive_steps": 218,
+   "root_rmse_m": 0.23259632289409637,
+   "root_max_m": 0.4766514003276825,
+   "joint_rmse_rad": 0.31040307879447937,
+   "torque_saturation_fraction": 0.002372666960582137,
+   "velocity_exceed_fraction": 0.0001581777905812487
+  },
+  "motions-high-climb-76/run_right_45_1.2s_step0.8s__variant_05": {
+   "failed": true,
+   "alive_steps": 229,
+   "root_rmse_m": 0.1405993402004242,
+   "root_max_m": 0.3719470500946045,
+   "joint_rmse_rad": 0.32430344820022583,
+   "torque_saturation_fraction": 0.0007528986316174269,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-high-climb-76/run_right_45_1.2s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 212,
+   "root_rmse_m": 0.3406272232532501,
+   "root_max_m": 0.6883065104484558,
+   "joint_rmse_rad": 0.3243904113769531,
+   "torque_saturation_fraction": 0.0014638906577602029,
+   "velocity_exceed_fraction": 0.000650618108920753
+  },
+  "motions-high-climb-76/run_right_45_1.2s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 218,
+   "root_rmse_m": 0.2712814211845398,
+   "root_max_m": 0.5945444107055664,
+   "joint_rmse_rad": 0.31813114881515503,
+   "torque_saturation_fraction": 0.0011072445195168257,
+   "velocity_exceed_fraction": 0.0003163555811624974
+  },
+  "motions-high-step/run_forward_1.2s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 183,
+   "root_rmse_m": 0.19898375868797302,
+   "root_max_m": 0.6148911714553833,
+   "joint_rmse_rad": 0.3449710011482239,
+   "torque_saturation_fraction": 0.002072734059765935,
+   "velocity_exceed_fraction": 0.0009421518770977855
+  },
+  "motions-high-step/run_forward_1.2s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 181,
+   "root_rmse_m": 0.22024711966514587,
+   "root_max_m": 0.7052540183067322,
+   "joint_rmse_rad": 0.3290351629257202,
+   "torque_saturation_fraction": 0.0020956373773515224,
+   "velocity_exceed_fraction": 0.0001905124809127301
+  },
+  "motions-high-step/run_forward_1.5s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 201,
+   "root_rmse_m": 0.3778538107872009,
+   "root_max_m": 1.3006947040557861,
+   "joint_rmse_rad": 0.362080842256546,
+   "torque_saturation_fraction": 0.001887116115540266,
+   "velocity_exceed_fraction": 0.0006862240261398256
+  },
+  "motions-high-step/run_forward_1.5s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 199,
+   "root_rmse_m": 0.3545641601085663,
+   "root_max_m": 1.1744745969772339,
+   "joint_rmse_rad": 0.3593432605266571,
+   "torque_saturation_fraction": 0.0013862415216863155,
+   "velocity_exceed_fraction": 0.0003465603804215789
+  },
+  "motions-high-step/run_left_45_0.9s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 181,
+   "root_rmse_m": 0.23284737765789032,
+   "root_max_m": 0.5973042249679565,
+   "joint_rmse_rad": 0.3247389793395996,
+   "torque_saturation_fraction": 0.0017146123573184013,
+   "velocity_exceed_fraction": 0.0003810249618254602
+  },
+  "motions-high-step/run_left_45_0.9s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 183,
+   "root_rmse_m": 0.16283579170703888,
+   "root_max_m": 0.4935424327850342,
+   "joint_rmse_rad": 0.32881617546081543,
+   "torque_saturation_fraction": 0.0033917466644197702,
+   "velocity_exceed_fraction": 0.0024495949037373066
+  },
+  "motions-high-step/run_left_45_1.2s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 186,
+   "root_rmse_m": 1.0081431865692139,
+   "root_max_m": 2.3537561893463135,
+   "joint_rmse_rad": 0.3772239089012146,
+   "torque_saturation_fraction": 0.0009269558941014111,
+   "velocity_exceed_fraction": 0.00037078236346133053
+  },
+  "motions-high-step/run_left_45_1.2s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 181,
+   "root_rmse_m": 0.22289931774139404,
+   "root_max_m": 0.6774076223373413,
+   "joint_rmse_rad": 0.3071068227291107,
+   "torque_saturation_fraction": 0.0017146123573184013,
+   "velocity_exceed_fraction": 0.0003810249618254602
+  },
+  "motions-high-step/run_left_45_1.5s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 195,
+   "root_rmse_m": 0.26132136583328247,
+   "root_max_m": 0.9366787672042847,
+   "joint_rmse_rad": 0.3388644754886627,
+   "torque_saturation_fraction": 0.0014146772446110845,
+   "velocity_exceed_fraction": 0.0008841733215376735
+  },
+  "motions-high-step/run_left_45_1.5s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 195,
+   "root_rmse_m": 0.2447388917207718,
+   "root_max_m": 0.8044143319129944,
+   "joint_rmse_rad": 0.33948612213134766,
+   "torque_saturation_fraction": 0.002298850566148758,
+   "velocity_exceed_fraction": 0.0010610079625621438
+  },
+  "motions-high-step/run_left_90_1.2s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 243,
+   "root_rmse_m": 0.32806652784347534,
+   "root_max_m": 0.9611379504203796,
+   "joint_rmse_rad": 0.37459832429885864,
+   "torque_saturation_fraction": 0.0005676174187101424,
+   "velocity_exceed_fraction": 0.0005676174187101424
+  },
+  "motions-high-step/run_left_90_1.2s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 243,
+   "root_rmse_m": 0.3470642864704132,
+   "root_max_m": 1.0813183784484863,
+   "joint_rmse_rad": 0.3761359453201294,
+   "torque_saturation_fraction": 0.0012771391775459051,
+   "velocity_exceed_fraction": 0.0001419043546775356
+  },
+  "motions-high-step/run_right_45_0.9s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 225,
+   "root_rmse_m": 0.4072568118572235,
+   "root_max_m": 1.101498007774353,
+   "joint_rmse_rad": 0.3775825798511505,
+   "torque_saturation_fraction": 0.0012260536896064878,
+   "velocity_exceed_fraction": 0.0006130268448032439
+  },
+  "motions-high-step/run_right_45_0.9s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 190,
+   "root_rmse_m": 0.25824064016342163,
+   "root_max_m": 0.8794552087783813,
+   "joint_rmse_rad": 0.34887808561325073,
+   "torque_saturation_fraction": 0.002722322940826416,
+   "velocity_exceed_fraction": 0.0023593467194586992
+  },
+  "motions-high-step/run_right_45_1.2s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 188,
+   "root_rmse_m": 0.3974155783653259,
+   "root_max_m": 0.9735386371612549,
+   "joint_rmse_rad": 0.30661332607269287,
+   "torque_saturation_fraction": 0.001100513618439436,
+   "velocity_exceed_fraction": 0.000550256809219718
+  },
+  "motions-high-step/run_right_45_1.2s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 186,
+   "root_rmse_m": 0.2133907675743103,
+   "root_max_m": 0.6894351243972778,
+   "joint_rmse_rad": 0.30505290627479553,
+   "torque_saturation_fraction": 0.0024100851733237505,
+   "velocity_exceed_fraction": 0.0007415647269226611
+  },
+  "motions-high-step/run_right_90_1.2s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 219,
+   "root_rmse_m": 0.3161745071411133,
+   "root_max_m": 0.8085991740226746,
+   "joint_rmse_rad": 0.3150099813938141,
+   "torque_saturation_fraction": 0.0012596441665664315,
+   "velocity_exceed_fraction": 0.0003149110416416079
+  },
+  "motions-high-step/run_right_90_1.2s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 186,
+   "root_rmse_m": 0.24547260999679565,
+   "root_max_m": 0.7002888917922974,
+   "joint_rmse_rad": 0.29382216930389404,
+   "torque_saturation_fraction": 0.0027808677405118942,
+   "velocity_exceed_fraction": 0.00018539118173066527
+  },
+  "motions-high-step/run_right_90_1.5s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 193,
+   "root_rmse_m": 0.6410207748413086,
+   "root_max_m": 1.1244205236434937,
+   "joint_rmse_rad": 0.3570265769958496,
+   "torque_saturation_fraction": 0.00017866714915726334,
+   "velocity_exceed_fraction": 0.00017866714915726334
+  },
+  "motions-high-step/run_right_90_1.5s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 192,
+   "root_rmse_m": 0.18851280212402344,
+   "root_max_m": 0.5437546968460083,
+   "joint_rmse_rad": 0.30414271354675293,
+   "torque_saturation_fraction": 0.0010775862028822303,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 268,
+   "root_rmse_m": 0.1438538283109665,
+   "root_max_m": 0.2766627371311188,
+   "joint_rmse_rad": 0.25404471158981323,
+   "torque_saturation_fraction": 0.0016726711764931679,
+   "velocity_exceed_fraction": 0.00012866701581515372
+  },
+  "motions-locomotion/cfg0006_stand_2.0s_run_forward_1.4s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 268,
+   "root_rmse_m": 0.1875688135623932,
+   "root_max_m": 0.3592018783092499,
+   "joint_rmse_rad": 0.2540799677371979,
+   "torque_saturation_fraction": 0.0020586722530424595,
+   "velocity_exceed_fraction": 0.0005146680632606149
+  },
+  "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 559,
+   "root_rmse_m": 3.6110641956329346,
+   "root_max_m": 5.7548112869262695,
+   "joint_rmse_rad": 0.37355172634124756,
+   "torque_saturation_fraction": 0.000986984116025269,
+   "velocity_exceed_fraction": 6.168650725157931e-05
+  },
+  "motions-locomotion/cfg0009_stand_2.0s_right_90_0.6s_run_right_90_1.3s_run_forward_2.8s_run_right_90_1.5s_right_45_1.1s_stand_2.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 447,
+   "root_rmse_m": 2.736924886703491,
+   "root_max_m": 4.878912925720215,
+   "joint_rmse_rad": 0.4240429103374481,
+   "torque_saturation_fraction": 0.001465710112825036,
+   "velocity_exceed_fraction": 0.0003857131814584136
+  },
+  "motions-locomotion/cfg0010_stand_2.0s_left_45_1.2s_forward_2.8s_right_45_2.1s_right_90_2.5s_left_45_2.7s_right_45_2.5s_left_45_1.3s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 955,
+   "root_rmse_m": 0.17507456243038177,
+   "root_max_m": 0.4280441403388977,
+   "joint_rmse_rad": 0.20163199305534363,
+   "torque_saturation_fraction": 0.0013720887945964932,
+   "velocity_exceed_fraction": 0.00028886081418022513
+  },
+  "motions-locomotion/cfg0010_stand_2.0s_left_45_1.2s_forward_2.8s_right_45_2.1s_right_90_2.5s_left_45_2.7s_right_45_2.5s_left_45_1.3s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 955,
+   "root_rmse_m": 0.32958927750587463,
+   "root_max_m": 0.6208882331848145,
+   "joint_rmse_rad": 0.21021932363510132,
+   "torque_saturation_fraction": 0.0016248420579358935,
+   "velocity_exceed_fraction": 0.00028886081418022513
+  },
+  "motions-locomotion/cfg0025_stand_2.0s_run_right_45_1.9s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 295,
+   "root_rmse_m": 1.1535505056381226,
+   "root_max_m": 2.189239740371704,
+   "joint_rmse_rad": 0.32308974862098694,
+   "torque_saturation_fraction": 0.0003506721113808453,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-locomotion/cfg0025_stand_2.0s_run_right_45_1.9s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 295,
+   "root_rmse_m": 1.739188551902771,
+   "root_max_m": 2.9035239219665527,
+   "joint_rmse_rad": 0.3146671950817108,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-locomotion/cfg0034_stand_2.0s_left_90_1.4s_right_90_1.8s_run_right_45_2.1s_run_right_90_1.2s_run_left_45_1.2s_right_45_2.9s_run_right_45_1.5s_right_45_1.6s_right_90_2.9s_run_left_45_2.9s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 1169,
+   "root_rmse_m": 1.3648622035980225,
+   "root_max_m": 2.649712562561035,
+   "joint_rmse_rad": 0.3171316385269165,
+   "torque_saturation_fraction": 0.00200584065169096,
+   "velocity_exceed_fraction": 0.0004719624703284353
+  },
+  "motions-locomotion/cfg0034_stand_2.0s_left_90_1.4s_right_90_1.8s_run_right_45_2.1s_run_right_90_1.2s_run_left_45_1.2s_right_45_2.9s_run_right_45_1.5s_right_45_1.6s_right_90_2.9s_run_left_45_2.9s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 1169,
+   "root_rmse_m": 1.5904947519302368,
+   "root_max_m": 3.2899084091186523,
+   "joint_rmse_rad": 0.3308306336402893,
+   "torque_saturation_fraction": 0.0015928733628243208,
+   "velocity_exceed_fraction": 0.00023598123516421765
+  },
+  "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 277,
+   "root_rmse_m": 0.5627004504203796,
+   "root_max_m": 1.0851815938949585,
+   "joint_rmse_rad": 0.262369304895401,
+   "torque_saturation_fraction": 0.0011203784961253405,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-locomotion/cfg0060_stand_2.0s_right_45_1.6s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 277,
+   "root_rmse_m": 0.5043032169342041,
+   "root_max_m": 0.8396739363670349,
+   "joint_rmse_rad": 0.1955879181623459,
+   "torque_saturation_fraction": 0.0007469189586117864,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-locomotion/cfg0071_stand_2.0s_forward_3.0s_left_90_0.8s_run_forward_2.7s_run_left_45_2.0s_right_45_0.6s_right_90_2.5s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 774,
+   "root_rmse_m": 2.7756171226501465,
+   "root_max_m": 5.082551956176758,
+   "joint_rmse_rad": 0.3351913392543793,
+   "torque_saturation_fraction": 0.0016038492321968079,
+   "velocity_exceed_fraction": 0.00035641095018945634
+  },
+  "motions-locomotion/cfg0071_stand_2.0s_forward_3.0s_left_90_0.8s_run_forward_2.7s_run_left_45_2.0s_right_45_0.6s_right_90_2.5s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 774,
+   "root_rmse_m": 3.444336414337158,
+   "root_max_m": 5.770753383636475,
+   "joint_rmse_rad": 0.357670396566391,
+   "torque_saturation_fraction": 0.0004900650237686932,
+   "velocity_exceed_fraction": 8.910273754736409e-05
+  },
+  "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 479,
+   "root_rmse_m": 1.19661283493042,
+   "root_max_m": 2.465139389038086,
+   "joint_rmse_rad": 0.3287351727485657,
+   "torque_saturation_fraction": 0.0006479014991782606,
+   "velocity_exceed_fraction": 0.000791879661846906
+  },
+  "motions-locomotion/cfg0081_stand_2.0s_run_left_45_1.2s_right_90_2.7s_run_right_45_2.0s_left_90_0.9s_right_45_1.5s_run_left_45_1.8s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 705,
+   "root_rmse_m": 2.5257372856140137,
+   "root_max_m": 4.599614143371582,
+   "joint_rmse_rad": 0.3304343819618225,
+   "torque_saturation_fraction": 0.0004402054182719439,
+   "velocity_exceed_fraction": 0.0002934702788479626
+  },
+  "motions-locomotion/cfg0086_stand_2.0s_run_left_90_2.9s_left_90_1.0s_left_45_2.7s_right_90_2.5s_run_right_45_2.2s_run_right_90_1.2s_run_forward_1.2s_left_45_2.9s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 1021,
+   "root_rmse_m": 1.0081639289855957,
+   "root_max_m": 1.8918553590774536,
+   "joint_rmse_rad": 0.36409875750541687,
+   "torque_saturation_fraction": 0.00260056066326797,
+   "velocity_exceed_fraction": 0.0007430172991007566
+  },
+  "motions-locomotion/cfg0086_stand_2.0s_run_left_90_2.9s_left_90_1.0s_left_45_2.7s_right_90_2.5s_run_right_45_2.2s_run_right_90_1.2s_run_forward_1.2s_left_45_2.9s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 1021,
+   "root_rmse_m": 0.936647891998291,
+   "root_max_m": 2.127570152282715,
+   "joint_rmse_rad": 0.3377036452293396,
+   "torque_saturation_fraction": 0.0006754702772013843,
+   "velocity_exceed_fraction": 0.00020264109480194747
+  },
+  "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s__variant_00": {
+   "failed": false,
+   "alive_steps": 594,
+   "root_rmse_m": 0.5299545526504517,
+   "root_max_m": 1.0962616205215454,
+   "joint_rmse_rad": 0.3264772593975067,
+   "torque_saturation_fraction": 0.0009868802735581994,
+   "velocity_exceed_fraction": 0.0002902589039877057
+  },
+  "motions-locomotion/cfg0093_stand_2.0s_left_45_3.0s_run_left_90_1.5s_left_90_1.0s_run_left_90_2.5s_stand_2.0s__variant_05": {
+   "failed": false,
+   "alive_steps": 594,
+   "root_rmse_m": 0.36826613545417786,
+   "root_max_m": 0.763092041015625,
+   "joint_rmse_rad": 0.33686578273773193,
+   "torque_saturation_fraction": 0.0008707767119631171,
+   "velocity_exceed_fraction": 0.0002902589039877057
+  },
+  "motions-low-climb-76/forward_walk1.2s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 254,
+   "root_rmse_m": 0.15346384048461914,
+   "root_max_m": 0.2955450415611267,
+   "joint_rmse_rad": 0.3440309166908264,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/forward_walk1.2s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 258,
+   "root_rmse_m": 0.23570697009563446,
+   "root_max_m": 0.4453141689300537,
+   "joint_rmse_rad": 0.4206085205078125,
+   "torque_saturation_fraction": 0.0006682705134153366,
+   "velocity_exceed_fraction": 0.00013365410268306732
+  },
+  "motions-low-climb-76/forward_walk1.5s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 266,
+   "root_rmse_m": 0.1994381695985794,
+   "root_max_m": 0.36228230595588684,
+   "joint_rmse_rad": 0.3252071440219879,
+   "torque_saturation_fraction": 0.0016852476401254535,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/forward_walk1.5s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 265,
+   "root_rmse_m": 0.2496243715286255,
+   "root_max_m": 0.48458218574523926,
+   "joint_rmse_rad": 0.30491191148757935,
+   "torque_saturation_fraction": 0.003253090428188443,
+   "velocity_exceed_fraction": 0.00013012361887376755
+  },
+  "motions-low-climb-76/left_45_walk1.5s_step0.7s__variant_00": {
+   "failed": true,
+   "alive_steps": 267,
+   "root_rmse_m": 0.12090028077363968,
+   "root_max_m": 0.3261687457561493,
+   "joint_rmse_rad": 0.3391924798488617,
+   "torque_saturation_fraction": 0.00025829780497588217,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/left_45_walk1.5s_step0.7s__variant_05": {
+   "failed": true,
+   "alive_steps": 269,
+   "root_rmse_m": 0.23386913537979126,
+   "root_max_m": 0.4567173421382904,
+   "joint_rmse_rad": 0.3374001383781433,
+   "torque_saturation_fraction": 0.0015382643323391676,
+   "velocity_exceed_fraction": 0.0003845660830847919
+  },
+  "motions-low-climb-76/left_45_walk1.5s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 269,
+   "root_rmse_m": 0.36262205243110657,
+   "root_max_m": 0.9143614172935486,
+   "joint_rmse_rad": 0.35982078313827515,
+   "torque_saturation_fraction": 0.002179207745939493,
+   "velocity_exceed_fraction": 0.0003845660830847919
+  },
+  "motions-low-climb-76/left_45_walk1.5s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 267,
+   "root_rmse_m": 0.3086364269256592,
+   "root_max_m": 0.715578019618988,
+   "joint_rmse_rad": 0.4318707287311554,
+   "torque_saturation_fraction": 0.0010331912199035287,
+   "velocity_exceed_fraction": 0.0006457445560954511
+  },
+  "motions-low-climb-76/left_90_walk0.6s_step0.7s__variant_00": {
+   "failed": true,
+   "alive_steps": 215,
+   "root_rmse_m": 0.2520907521247864,
+   "root_max_m": 0.49359869956970215,
+   "joint_rmse_rad": 0.3365398347377777,
+   "torque_saturation_fraction": 0.0009623095393180847,
+   "velocity_exceed_fraction": 0.00016038492321968079
+  },
+  "motions-low-climb-76/left_90_walk0.6s_step0.7s__variant_05": {
+   "failed": true,
+   "alive_steps": 224,
+   "root_rmse_m": 0.18092887103557587,
+   "root_max_m": 0.3302815556526184,
+   "joint_rmse_rad": 0.34247222542762756,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/left_90_walk0.9s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 240,
+   "root_rmse_m": 0.1650230586528778,
+   "root_max_m": 0.3247072994709015,
+   "joint_rmse_rad": 0.33849862217903137,
+   "torque_saturation_fraction": 0.0014367816038429737,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/left_90_walk0.9s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 240,
+   "root_rmse_m": 0.1996728479862213,
+   "root_max_m": 0.37116286158561707,
+   "joint_rmse_rad": 0.3110015094280243,
+   "torque_saturation_fraction": 0.0004310344811528921,
+   "velocity_exceed_fraction": 0.00028735632076859474
+  },
+  "motions-low-climb-76/left_90_walk1.2s_step0.7s__variant_00": {
+   "failed": true,
+   "alive_steps": 271,
+   "root_rmse_m": 0.1605032980442047,
+   "root_max_m": 0.3360100984573364,
+   "joint_rmse_rad": 0.3570610582828522,
+   "torque_saturation_fraction": 0.0006362132844515145,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/left_90_walk1.2s_step0.7s__variant_05": {
+   "failed": true,
+   "alive_steps": 270,
+   "root_rmse_m": 0.202130988240242,
+   "root_max_m": 0.40577811002731323,
+   "joint_rmse_rad": 0.37241578102111816,
+   "torque_saturation_fraction": 0.0006385695887729526,
+   "velocity_exceed_fraction": 0.0002554278471507132
+  },
+  "motions-low-climb-76/left_90_walk1.5s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 262,
+   "root_rmse_m": 0.34820979833602905,
+   "root_max_m": 0.7149677872657776,
+   "joint_rmse_rad": 0.32879894971847534,
+   "torque_saturation_fraction": 0.0002632271789480001,
+   "velocity_exceed_fraction": 0.00013161358947400004
+  },
+  "motions-low-climb-76/left_90_walk1.5s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 268,
+   "root_rmse_m": 0.3255114257335663,
+   "root_max_m": 0.6571618318557739,
+   "joint_rmse_rad": 0.3458600342273712,
+   "torque_saturation_fraction": 0.0009006690816022456,
+   "velocity_exceed_fraction": 0.0005146680632606149
+  },
+  "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 254,
+   "root_rmse_m": 0.08653706312179565,
+   "root_max_m": 0.26897281408309937,
+   "joint_rmse_rad": 0.33500707149505615,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/right_45_walk0.9s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 253,
+   "root_rmse_m": 0.15736320614814758,
+   "root_max_m": 0.29627394676208496,
+   "joint_rmse_rad": 0.35644736886024475,
+   "torque_saturation_fraction": 0.0012266593985259533,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/right_45_walk1.5s_step1.2s__variant_00": {
+   "failed": true,
+   "alive_steps": 265,
+   "root_rmse_m": 0.14457380771636963,
+   "root_max_m": 0.3384043872356415,
+   "joint_rmse_rad": 0.3379899263381958,
+   "torque_saturation_fraction": 0.0024723487440496683,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-climb-76/right_45_walk1.5s_step1.2s__variant_05": {
+   "failed": true,
+   "alive_steps": 268,
+   "root_rmse_m": 0.12639281153678894,
+   "root_max_m": 0.2677310109138489,
+   "joint_rmse_rad": 0.31186917424201965,
+   "torque_saturation_fraction": 0.0007720020366832614,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/forward_walk1.2s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 238,
+   "root_rmse_m": 0.34826168417930603,
+   "root_max_m": 0.8155526518821716,
+   "joint_rmse_rad": 0.32172325253486633,
+   "torque_saturation_fraction": 0.002463054144755006,
+   "velocity_exceed_fraction": 0.001303969882428646
+  },
+  "motions-low-step/forward_walk1.2s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 287,
+   "root_rmse_m": 0.2630644738674164,
+   "root_max_m": 0.5903308987617493,
+   "joint_rmse_rad": 0.2543463408946991,
+   "torque_saturation_fraction": 0.0004805959470104426,
+   "velocity_exceed_fraction": 0.0004805959470104426
+  },
+  "motions-low-step/forward_walk1.5s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 164,
+   "root_rmse_m": 0.2578725218772888,
+   "root_max_m": 0.6491380929946899,
+   "joint_rmse_rad": 0.26355570554733276,
+   "torque_saturation_fraction": 0.00021026072499807924,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/forward_walk1.5s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 200,
+   "root_rmse_m": 0.36400145292282104,
+   "root_max_m": 0.7841565608978271,
+   "joint_rmse_rad": 0.301029771566391,
+   "torque_saturation_fraction": 0.00034482759656384587,
+   "velocity_exceed_fraction": 0.00034482759656384587
+  },
+  "motions-low-step/left_45_walk0.5s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 230,
+   "root_rmse_m": 0.33731862902641296,
+   "root_max_m": 0.6267356872558594,
+   "joint_rmse_rad": 0.3204292953014374,
+   "torque_saturation_fraction": 0.00014992503565736115,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/left_45_walk0.5s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 230,
+   "root_rmse_m": 0.28303980827331543,
+   "root_max_m": 0.5418120622634888,
+   "joint_rmse_rad": 0.3151339888572693,
+   "torque_saturation_fraction": 0.0007496252073906362,
+   "velocity_exceed_fraction": 0.00014992503565736115
+  },
+  "motions-low-step/left_90_walk1.2s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 194,
+   "root_rmse_m": 0.29617223143577576,
+   "root_max_m": 0.5995021462440491,
+   "joint_rmse_rad": 0.3247535228729248,
+   "torque_saturation_fraction": 0.0014219693839550018,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/left_90_walk1.2s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 195,
+   "root_rmse_m": 0.20939388871192932,
+   "root_max_m": 0.4983658492565155,
+   "joint_rmse_rad": 0.23619726300239563,
+   "torque_saturation_fraction": 0.0005305039812810719,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/right_45_walk1.5s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 212,
+   "root_rmse_m": 0.12417249381542206,
+   "root_max_m": 0.34867337346076965,
+   "joint_rmse_rad": 0.25486332178115845,
+   "torque_saturation_fraction": 0.0008132726070471108,
+   "velocity_exceed_fraction": 0.0004879635525867343
+  },
+  "motions-low-step/right_45_walk1.5s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 310,
+   "root_rmse_m": 0.2276548147201538,
+   "root_max_m": 0.6015823483467102,
+   "joint_rmse_rad": 0.27065515518188477,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0002224694035248831
+  },
+  "motions-low-step/right_90_walk0.5s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 227,
+   "root_rmse_m": 0.2917177081108093,
+   "root_max_m": 0.5680468082427979,
+   "joint_rmse_rad": 0.294822096824646,
+   "torque_saturation_fraction": 0.0009114385466091335,
+   "velocity_exceed_fraction": 0.00030381284886971116
+  },
+  "motions-low-step/right_90_walk0.5s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 163,
+   "root_rmse_m": 0.2960544526576996,
+   "root_max_m": 0.7772347331047058,
+   "joint_rmse_rad": 0.25956714153289795,
+   "torque_saturation_fraction": 0.0016924053197726607,
+   "velocity_exceed_fraction": 0.0006346519803628325
+  },
+  "motions-low-step/right_90_walk0.5s_step0s__variant_00": {
+   "failed": true,
+   "alive_steps": 112,
+   "root_rmse_m": 0.40506789088249207,
+   "root_max_m": 1.1061930656433105,
+   "joint_rmse_rad": 0.26438412070274353,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/right_90_walk0.5s_step0s__variant_05": {
+   "failed": true,
+   "alive_steps": 112,
+   "root_rmse_m": 0.390799343585968,
+   "root_max_m": 1.061144232749939,
+   "joint_rmse_rad": 0.2620197534561157,
+   "torque_saturation_fraction": 0.00030788176809437573,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/right_90_walk0.5s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 246,
+   "root_rmse_m": 0.3305184543132782,
+   "root_max_m": 0.6475852131843567,
+   "joint_rmse_rad": 0.2588050365447998,
+   "torque_saturation_fraction": 0.000700869073625654,
+   "velocity_exceed_fraction": 0.001261564320884645
+  },
+  "motions-low-step/right_90_walk0.5s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 260,
+   "root_rmse_m": 0.22033533453941345,
+   "root_max_m": 0.5821229815483093,
+   "joint_rmse_rad": 0.2950655221939087,
+   "torque_saturation_fraction": 0.0009283819817937911,
+   "velocity_exceed_fraction": 0.0009283819817937911
+  },
+  "motions-low-step/right_90_walk0.8s_step0.5s__variant_00": {
+   "failed": true,
+   "alive_steps": 173,
+   "root_rmse_m": 0.3064180910587311,
+   "root_max_m": 0.748484194278717,
+   "joint_rmse_rad": 0.2591043710708618,
+   "torque_saturation_fraction": 0.00019932229770347476,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/right_90_walk0.8s_step0.5s__variant_05": {
+   "failed": true,
+   "alive_steps": 173,
+   "root_rmse_m": 0.23556530475616455,
+   "root_max_m": 0.6504855751991272,
+   "joint_rmse_rad": 0.25094982981681824,
+   "torque_saturation_fraction": 0.0,
+   "velocity_exceed_fraction": 0.0
+  },
+  "motions-low-step/right_90_walk1.5s_step1.0s__variant_00": {
+   "failed": true,
+   "alive_steps": 310,
+   "root_rmse_m": 0.2844468355178833,
+   "root_max_m": 0.6593096256256104,
+   "joint_rmse_rad": 0.2809326648712158,
+   "torque_saturation_fraction": 0.0008898776140995324,
+   "velocity_exceed_fraction": 0.0007786429487168789
+  },
+  "motions-low-step/right_90_walk1.5s_step1.0s__variant_05": {
+   "failed": true,
+   "alive_steps": 212,
+   "root_rmse_m": 0.2374107539653778,
+   "root_max_m": 0.5743933320045471,
+   "joint_rmse_rad": 0.23591935634613037,
+   "torque_saturation_fraction": 0.0008132726070471108,
+   "velocity_exceed_fraction": 0.000650618108920753
+  }
+ },
+ "interface": "planner",
+ "eta_obs": 1.0,
+ "term_window": 0.0,
+ "norm_return": 0.2708,
+ "n_failed": 82,
+ "per_folder": {
+  "motions-high-climb-76": {
+   "norm_return": 0.1801,
+   "fail_rate": 1.0
+  },
+  "motions-high-step": {
+   "norm_return": 0.2342,
+   "fail_rate": 1.0
+  },
+  "motions-locomotion": {
+   "norm_return": 0.496,
+   "fail_rate": 0.1
+  },
+  "motions-low-climb-76": {
+   "norm_return": 0.1864,
+   "fail_rate": 1.0
+  },
+  "motions-low-step": {
+   "norm_return": 0.2572,
+   "fail_rate": 1.0
+  }
+ },
+ "contacts": {
+  "left_foot": {
+   "precision": 0.748,
+   "recall": 0.925,
+   "label_frames": 21700,
+   "touch_frames": 26820,
+   "placement_err": 0.126,
+   "placement_median": 0.05,
+   "placement_within_0.1": 0.749,
+   "onsets": 334
+  },
+  "right_foot": {
+   "precision": 0.745,
+   "recall": 0.905,
+   "label_frames": 21472,
+   "touch_frames": 26082,
+   "placement_err": 0.139,
+   "placement_median": 0.056,
+   "placement_within_0.1": 0.716,
+   "onsets": 349
+  },
+  "left_knee": {
+   "precision": 0.034,
+   "recall": 0.243,
+   "label_frames": 370,
+   "touch_frames": 2639,
+   "placement_err": 0.273,
+   "placement_median": 0.166,
+   "placement_within_0.1": 0.359,
+   "onsets": 64
+  },
+  "right_knee": {
+   "precision": 0.005,
+   "recall": 0.043,
+   "label_frames": 350,
+   "touch_frames": 2865,
+   "placement_err": 0.111,
+   "placement_median": 0.077,
+   "placement_within_0.1": 0.625,
+   "onsets": 40
+  },
+  "left_hand": {
+   "precision": 0.844,
+   "recall": 0.631,
+   "label_frames": 1947,
+   "touch_frames": 1456,
+   "placement_err": 0.137,
+   "placement_median": 0.073,
+   "placement_within_0.1": 0.567,
+   "onsets": 30
+  },
+  "right_hand": {
+   "precision": 0.861,
+   "recall": 0.654,
+   "label_frames": 1951,
+   "touch_frames": 1481,
+   "placement_err": 0.18,
+   "placement_median": 0.175,
+   "placement_within_0.1": 0.0,
+   "onsets": 3
+  },
+  "left_elbow": {
+   "precision": 0.0,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 7,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_elbow": {
+   "precision": 0.0,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 28,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "pelvis": {
+   "precision": 0.0,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 185,
+   "placement_err": 0.101,
+   "placement_median": 0.055,
+   "placement_within_0.1": 0.5,
+   "onsets": 2
+  }
+ }
+}
+failed 82/100: ['motions-high-climb-76/run_forward_0.6s_step0s__variant_00', 'motions-high-climb-76/run_forward_0.6s_step0s__variant_05', 'motions-high-climb-76/run_forward_1.2s_step0.8s__variant_00', 'motions-high-climb-76/run_forward_1.2s_step0.8s__variant_05', 'motions-high-climb-76/run_forward_1.5s_step0s__variant_00', 'motions-high-climb-76/run_forward_1.5s_step0s__variant_05', 'motions-high-climb-76/run_left_45_1.0s_step0.8s__variant_00', 'motions-high-climb-76/run_left_45_1.0s_step0.8s__variant_05', 'motions-high-climb-76/run_left_45_1.0s_step0s__variant_00', 'motions-high-climb-76/run_left_45_1.0s_step0s__variant_05'] ...
+wrote /home/js/robot/locomotion/ACP_supermimic_Tienkung/results/stage_training_analysis_20261111/s2_joint12.json

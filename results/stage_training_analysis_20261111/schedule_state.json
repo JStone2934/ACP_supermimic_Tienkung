@@ -1,0 +1,93 @@
+{
+  "admit_base": 0.07787201233616037,
+  "admission_totals": [
+    203724,
+    14389
+  ],
+  "sched_it": 38686,
+  "planner_cfg": {
+    "scan_x": [
+      -0.8,
+      0.8,
+      17
+    ],
+    "scan_y": [
+      -0.5,
+      0.5,
+      11
+    ],
+    "hist": 5,
+    "goal_radius": 0.3,
+    "scan_noise": 0.03,
+    "sigma_a": 0.1,
+    "occ_threshold": 0.5,
+    "horizon_s": 1.5,
+    "min_contact_steps": 10,
+    "start_max": 0.1,
+    "reach_min": 0.9,
+    "lr": 0.0001,
+    "batch": 512,
+    "sub_batches": 8,
+    "min_entries": 1000,
+    "capacity": 300000
+  },
+  "reward_cfg": {
+    "w_base_pos": 3.0,
+    "w_base_vel": 1.0,
+    "w_joint_pos": 2.5,
+    "w_joint_vel": 0.5,
+    "w_contact_label": 5.0,
+    "w_contact_pos_base": 2.0,
+    "w_contact_pos_global": 1.0,
+    "base_pos_std": 0.5,
+    "base_ori_std": 1.0,
+    "base_lin_vel_std": 1.0,
+    "base_ang_vel_std": 3.14,
+    "joint_pos_std": 0.71,
+    "joint_vel_std": 3.16,
+    "contact_pos_std": 1.0,
+    "moving_speed": 0.1,
+    "w_action_rate": -0.1,
+    "w_action_rate_2nd": -0.05,
+    "w_joint_torque": -1e-05,
+    "w_torque_limits": -0.001,
+    "w_dof_pos_limits": -10.0,
+    "dof_pos_limits_cap": 1.0,
+    "w_dof_vel_limits": -1.0,
+    "soft_dof_vel_limit": 0.9,
+    "w_contact_acc": -0.01,
+    "contact_acc_cap": 20.0,
+    "w_planned": 1.5,
+    "planned_std": 1.0
+  },
+  "ctc_cfg": {
+    "contacts_dir": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/tienkung3_29dof/stage1/php_all_variants_20261110/contacts",
+    "contact_geometry": "spheres224",
+    "horizon_s": 1.5,
+    "goal_s": [
+      0.5,
+      1.5
+    ],
+    "goal_radius": 0.3,
+    "scan_x": [
+      -0.4,
+      0.4,
+      9
+    ],
+    "scan_y": [
+      -0.3,
+      0.3,
+      7
+    ],
+    "target_noise": 0.05,
+    "scan_noise": 0.05,
+    "debounce": 2,
+    "target_point": "terrain",
+    "target_min_steps": 10,
+    "w_label": 1.0,
+    "touch_dist": 0.01,
+    "touch_temp": 0.005,
+    "near_boxes": 4,
+    "blind": false
+  }
+}

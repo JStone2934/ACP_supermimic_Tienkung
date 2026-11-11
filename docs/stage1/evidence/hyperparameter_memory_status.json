@@ -1,0 +1,10 @@
+{
+  "time": "2026-11-10T20:37:18.959811+08:00",
+  "unit": "acp-stage1-hyperparam-probe-20261110.service",
+  "cgroup": "/user.slice/user-1002.slice/user@1002.service/php.slice/php-compute.slice/acp-stage1-hyperparam-probe-20261110.service",
+  "memory.current": "12709953536",
+  "memory.peak": "29822795776",
+  "memory.high": "68719476736",
+  "memory.max": "85899345920",
+  "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+}

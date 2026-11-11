@@ -43,6 +43,9 @@ from ..rotations import rot_angle_sq
 class ContactCfg:
     contacts_dir: str | None = None
     """supermimic.acp.make_labels output; default: the motion directory + ``_contacts``."""
+    contact_geometry: str = "legacy"
+    """legacy preserves the robot's original reward geometry; spheres224 uses the accepted Tienkung
+    224-sphere proxy and the G1 sphere-to-terrain distance path, without hull penetration overrides."""
     horizon_s: float = 1.5
     goal_s: tuple[float, float] = (0.5, 1.5)
     goal_radius: float = 0.3
@@ -131,15 +134,27 @@ def _farthest_points(x: np.ndarray, k: int) -> np.ndarray:
     return x[idx]
 
 
+def check_contact_geometry_resume(saved_cfg, current, allow_change=False):
+    """Reject accidental reward changes on resume; old checkpoints used legacy geometry."""
+    previous = saved_cfg.get("contact_geometry", "legacy")
+    if previous != current and not allow_change:
+        raise ValueError(f"checkpoint contact geometry mismatch: {previous} -> {current}; "
+                         "explicit --allow_contact_geometry_change is required")
+    return previous != current
+
+
 class BodySpheres:
     """Spheres covering each contact body's collision geoms, in its target link's frame: spheres exactly, capsules as
     3 spheres along their axis, convex meshes (the G1's limb hulls) as :data:`MESH_POINTS` spheres on their surface."""
 
-    def __init__(self, robot="g1"):
+    def __init__(self, robot="g1", contact_geometry="legacy"):
+        if contact_geometry not in ("legacy", "spheres224"):
+            raise ValueError(f"unknown contact geometry: {contact_geometry}")
         robot = get_robot(robot)
         m = robot.get_spec().compile()
         pts, rad, owner = [], [], []
         self.hulls = {}
+        sparse_groups = set()
         for b, (frame, links) in enumerate(robot.contact_bodies.values()):
             fid = m.body(frame).id
             for link in links:
@@ -150,6 +165,19 @@ class BodySpheres:
                         continue
                     c, Rg = p0 + R0 @ m.geom_pos[g], R0 @ _quat_mat(m.geom_quat[g])
                     t, size = m.geom_type[g], m.geom_size[g]
+                    if robot.robot_id == "tienkung3_29dof" and contact_geometry == "spheres224":
+                        if t != mujoco.mjtGeom.mjGEOM_MESH or b in sparse_groups:
+                            raise ValueError("spheres224 requires one collision mesh per Tienkung contact group")
+                        sparse_groups.add(b)
+                        # Match the previously rendered/screened candidate exactly, including float32 FPS.
+                        cloud = hull_data(m, g, p0, R0)["vertices"].astype(np.float32)
+                        count = 28 if b < 2 else 24
+                        selected = _farthest_points(cloud, count)
+                        inward = selected-cloud.mean(0)
+                        selected = selected-MESH_RADIUS*inward/np.linalg.norm(inward, axis=-1, keepdims=True).clip(min=1e-6)
+                        for x in selected:
+                            pts.append(x), rad.append(MESH_RADIUS), owner.append(b)
+                        continue
                     if robot.robot_id != "g1" and t == mujoco.mjtGeom.mjGEOM_MESH:
                         if b in self.hulls: raise ValueError("multiple contact mesh hulls need explicit geometry ownership")
                         self.hulls[b] = {k: torch.tensor(v, dtype=torch.float32) for k,v in hull_data(m,g,p0,R0).items()}
@@ -174,6 +202,8 @@ class BodySpheres:
                             pts.append(c + Rg @ x), rad.append(0.), owner.append(b)
         if set(owner) != set(range(len(robot.contact_bodies))):
             raise ValueError("empty contact geometry group")
+        if contact_geometry == "spheres224" and len(pts) != 224:
+            raise ValueError(f"spheres224 geometry budget changed: {len(pts)}")
         order = np.argsort(owner, kind="stable")
         self.pts = torch.tensor(np.array(pts)[order], dtype=torch.float32)
         self.rad = torch.tensor(np.array(rad)[order], dtype=torch.float32)
@@ -282,7 +312,7 @@ class ContactTask:
         else:
             assert cfg.target_point == "link", cfg.target_point
             self.next_pos = m.body_p[on, self.link_idx.view(1, 1, NB)]  # reference links at the onset frame
-        sp = BodySpheres(robot)
+        sp = BodySpheres(robot, cfg.contact_geometry)
         self.sph_pts, self.sph_rad, self.sph_owner = sp.pts.to(dev), sp.rad.to(dev), sp.owner.to(dev)
         self.sph_bounds = sp.bounds
         self.hulls = {b: {k:x.to(dev) for k,x in h.items()} for b,h in sp.hulls.items()}

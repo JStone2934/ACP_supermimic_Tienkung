@@ -1,0 +1,6 @@
+file '01_success_locomotion.mp4'
+file '02_success_low_step.mp4'
+file '03_success_high_step.mp4'
+file '04_failure_high_step.mp4'
+file '05_failure_high_climb.mp4'
+file '06_failure_low_climb.mp4'

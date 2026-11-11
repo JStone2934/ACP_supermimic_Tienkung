@@ -1,0 +1,332 @@
+{
+  "kind": "stage1-stage2-training-analysis-report",
+  "analysis_date": "2026-11-11",
+  "analysis_data_cutoff": "2026-11-11T12:27:00+08:00",
+  "source_directory": "results/stage_training_analysis_20261111",
+  "files": [
+    {
+      "path": "figures/training_diagnosis.png",
+      "source": "results/stage_training_analysis_20261111/training_diagnosis.png",
+      "bytes": 536269,
+      "sha256": "217b8476ed538fab0e8c40155facd92685963bf26f3809b834a3bd8132b297e4"
+    },
+    {
+      "path": "figures/training_diagnosis.pdf",
+      "source": "results/stage_training_analysis_20261111/training_diagnosis.pdf",
+      "bytes": 132092,
+      "sha256": "3639d2f3438c0643e1423d8333cff628788bd5427d96a29673946650581391d0"
+    },
+    {
+      "path": "evidence/summary.json",
+      "source": "results/stage_training_analysis_20261111/summary.json",
+      "bytes": 28628,
+      "sha256": "a2dc5f80b32de33a614552c812f9dc782046d0600c8f29dcadba2d3261ae1b0e"
+    },
+    {
+      "path": "evidence/checkpoint_curricula.json",
+      "source": "results/stage_training_analysis_20261111/checkpoint_curricula.json",
+      "bytes": 2876,
+      "sha256": "5c4cf7a84993e0f2e207bd499030b8c9da32c1c7fee2e083412e56b3fe70e4f7"
+    },
+    {
+      "path": "evidence/reference_label_census.json",
+      "source": "results/stage_training_analysis_20261111/reference_label_census.json",
+      "bytes": 892199,
+      "sha256": "80b5e8d5dce58c1ed247c29d0b88ae43cbaf77580d8512a53375d00fa49edeb3"
+    },
+    {
+      "path": "evidence/schedule_state.json",
+      "source": "results/stage_training_analysis_20261111/schedule_state.json",
+      "bytes": 1954,
+      "sha256": "86acd56e72bc915ad11783866a832f4f65dfc8a7449111709687b5ca4e8a925a"
+    },
+    {
+      "path": "evidence/video_target_coverage.json",
+      "source": "results/stage_training_analysis_20261111/video_target_coverage.json",
+      "bytes": 4039,
+      "sha256": "40cdc9a8817011eea08881ce71a4aacad2416bfe537573c71f937596f45f3749"
+    },
+    {
+      "path": "evidence/moving_target_coverage.json",
+      "source": "results/stage_training_analysis_20261111/moving_target_coverage.json",
+      "bytes": 3163,
+      "sha256": "7369da5640176328587d26bf6f086d51f86b34e1819e6ae3b9b7a81bf12bd006"
+    },
+    {
+      "path": "evidence/rollout_geometry_audit.json",
+      "source": "results/stage_training_analysis_20261111/rollout_geometry_audit.json",
+      "bytes": 25559,
+      "sha256": "16002abb2dc5737525707d2685576ef6d257b1523b6dbf5b1869d75fa0a48cfb"
+    },
+    {
+      "path": "evidence/cohort.json",
+      "source": "results/stage_training_analysis_20261111/cohort.json",
+      "bytes": 8341,
+      "sha256": "eaf462072bea901e43a81be4eef637a5546e54437e31d95ba59ccefeca2da00a"
+    },
+    {
+      "path": "evidence/swap_summary.json",
+      "source": "results/stage_training_analysis_20261111/swap_summary.json",
+      "bytes": 5848,
+      "sha256": "c5ff3149e38e313ce41a965bede5dddfee2680d6fe59245c0715a32701157e79"
+    },
+    {
+      "path": "evidence/diagnostics/s1_ref.json",
+      "source": "results/stage_training_analysis_20261111/s1_ref.json",
+      "bytes": 41599,
+      "sha256": "c702b24a788684f3cbfad9f37bda9189e2c979adf0e288340018c3f0e11e82d2"
+    },
+    {
+      "path": "evidence/diagnostics/s1_ref.command.json",
+      "source": "results/stage_training_analysis_20261111/s1_ref.command.json",
+      "bytes": 668,
+      "sha256": "9a2d72ea3fce6b6814775d74ca0d02fa637aee10bedb8ae35a1d1fab0950c802"
+    },
+    {
+      "path": "evidence/diagnostics/s1_offline.json",
+      "source": "results/stage_training_analysis_20261111/s1_offline.json",
+      "bytes": 42859,
+      "sha256": "2c4bb755c3e295641658c89d5031e9bd257443db717c3bbcc8f5a88c144a6634"
+    },
+    {
+      "path": "evidence/diagnostics/s1_offline.command.json",
+      "source": "results/stage_training_analysis_20261111/s1_offline.command.json",
+      "bytes": 824,
+      "sha256": "1dfdf72ad87c1bda53c41d5d92d16ed84e62f334cfdf7f79ae93371aee9b9f17"
+    },
+    {
+      "path": "evidence/diagnostics/s1_joint40.json",
+      "source": "results/stage_training_analysis_20261111/s1_joint40.json",
+      "bytes": 42556,
+      "sha256": "7939f7e617fcd4fed181f38d73746128ceb21349ebe5fee4799f65249abf9596"
+    },
+    {
+      "path": "evidence/diagnostics/s1_joint40.command.json",
+      "source": "results/stage_training_analysis_20261111/s1_joint40.command.json",
+      "bytes": 819,
+      "sha256": "9a418bfb293aa09a6f9f23f6a8b1ad47ddc546490a353b3d14e3350ee16ebf4e"
+    },
+    {
+      "path": "evidence/diagnostics/s2_ref.json",
+      "source": "results/stage_training_analysis_20261111/s2_ref.json",
+      "bytes": 41495,
+      "sha256": "4a24c9ba5a245c714569b2d72993075a88a9381bb12a59f99a970df1f546155e"
+    },
+    {
+      "path": "evidence/diagnostics/s2_ref.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_ref.command.json",
+      "bytes": 668,
+      "sha256": "075beb4f5b70424661a94545e91f1676e8bcd20cb0f617b4c59c83391f2987b2"
+    },
+    {
+      "path": "evidence/diagnostics/s2_offline.json",
+      "source": "results/stage_training_analysis_20261111/s2_offline.json",
+      "bytes": 41844,
+      "sha256": "cc8a10f23f09c6693fb83548ff4101f5cc197f34b0c0f9e7687a7cffa1a30c42"
+    },
+    {
+      "path": "evidence/diagnostics/s2_offline.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_offline.command.json",
+      "bytes": 824,
+      "sha256": "4ba49630c3f969d75bf007a082f102cbf1decd77187bd2384d53ddff0dd776c3"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint40.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint40.json",
+      "bytes": 41767,
+      "sha256": "81d1bf19ff53baeeb429d6df8477a3d9d0e556cd4e0270750ea0730bdb94eb0c"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint40.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint40.command.json",
+      "bytes": 819,
+      "sha256": "b50ea388b6f1d82c0c3250086c09d55ddb3d1aad48f80fe857f586e89525c6ae"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint24.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint24.json",
+      "bytes": 42225,
+      "sha256": "d567b839cdf3a9cd11cd5be607b4054ebb96f092da6a3dad3f7da7d8a4a5e9c7"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint24.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint24.command.json",
+      "bytes": 819,
+      "sha256": "caf442c22570e79f2248b92083204d706953f989b41fcdd5a46980720adef995"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint12.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint12.json",
+      "bytes": 44002,
+      "sha256": "9646e19a02c364a01630725f4f74f843e5fc1a4108d5a3181940a5ca540820cd"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint12.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint12.command.json",
+      "bytes": 819,
+      "sha256": "cabddb7506703b1d833b0fe6bd5a8e9709ba0a2600bf4d91b02b49dfbed0f8b3"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint40_repeat.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint40_repeat.json",
+      "bytes": 41737,
+      "sha256": "1a5da8a23bb8c3d3c45ca8ad90ea701510ae8a20c572515a6c4f8ebe77ea11f0"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint40_repeat.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint40_repeat.command.json",
+      "bytes": 826,
+      "sha256": "38bfde7268fce4ee1ae3c01d4d1a2d25e3288c432bc8d3d8a0fd1b45f9ddec25"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint12_half.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint12_half.json",
+      "bytes": 41781,
+      "sha256": "70ff86a9f9b631036a7a528d7e2807cc303899c2130c438e8339ca143c36e7e5"
+    },
+    {
+      "path": "evidence/diagnostics/s2_joint12_half.command.json",
+      "source": "results/stage_training_analysis_20261111/s2_joint12_half.command.json",
+      "bytes": 848,
+      "sha256": "4fa94ccb9348bc8e2df7338c7486a2436d9a557be3969ab61f9083afa76b4d76"
+    },
+    {
+      "path": "evidence/full_evaluations/stage1_final_eval.json",
+      "source": "logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/stage1_final_eval.json",
+      "bytes": 1141075,
+      "sha256": "541e1dd5fb0d4732ef3cbd6caeb0c5dc8734c1c2c51bc6df31d0b42bb8ae47b4"
+    },
+    {
+      "path": "evidence/full_evaluations/stage1_matched_eval.json",
+      "source": "logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/stage1_matched_eval.json",
+      "bytes": 1140137,
+      "sha256": "0d69ec477ee1d8312afa505cf47101830a5273b7b81780448bc83e4cffc191c2"
+    },
+    {
+      "path": "evidence/full_evaluations/stage2_final_eval.json",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/stage2_final_eval.json",
+      "bytes": 1128071,
+      "sha256": "3b82c0fe2e3122d0e590c645f5e35ef04b9561740da88121fb70e441193a7fec"
+    },
+    {
+      "path": "evidence/full_evaluations/stage2_strict_eval.json",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/stage2_strict_eval.json",
+      "bytes": 1155466,
+      "sha256": "9475ed7647dcd001b647e203a4323d9b5ac6f7b49e749373ea32f05e9f17a0f1"
+    },
+    {
+      "path": "evidence/training/stage1_train_log.csv",
+      "source": "logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/train_log.csv",
+      "bytes": 492219,
+      "sha256": "86aa6c842e2d8a021b6de524c8893e4983769b90132ba98a3365ecd1ee92fa9a"
+    },
+    {
+      "path": "evidence/training/stage1_args.json",
+      "source": "logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/args.json",
+      "bytes": 1492,
+      "sha256": "dae370b21d04d097b00835f7ecee53b0b632d4bc6ef109fc3ac30f066f7586ce"
+    },
+    {
+      "path": "evidence/training/stage1_updates.json",
+      "source": "logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/updates.json",
+      "bytes": 717,
+      "sha256": "28850583993e291ac2768b7c3615a0a455de594ccdf26cb3a699bce901c9f621"
+    },
+    {
+      "path": "evidence/training/planner_offline_train_log.csv",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/offline/train_log.csv",
+      "bytes": 14749,
+      "sha256": "8cb44253816395cb9796a250b5624aff072bbe371d82e8322b75d5944da82ad5"
+    },
+    {
+      "path": "evidence/training/planner_offline_planner_val.csv",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/offline/planner_val.csv",
+      "bytes": 21860,
+      "sha256": "cbb8c5a0dcde67f8ddb05fd21cb08f698f4f63f46f0559f6d43f2be8e10c926e"
+    },
+    {
+      "path": "evidence/training/planner_offline_args.json",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/offline/args.json",
+      "bytes": 850,
+      "sha256": "e1b113a55ebdb7330c082cf88f558ae329113930203a1b969b3e4641bca72510"
+    },
+    {
+      "path": "evidence/training/planner_offline_updates.json",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/offline/updates.json",
+      "bytes": 683,
+      "sha256": "00a9d9e291d2659c51487f5c61af9235dc9d55761ddc3158bc15ce3b0fce8307"
+    },
+    {
+      "path": "evidence/training/stage2_train_log.csv",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/train_log.csv",
+      "bytes": 410016,
+      "sha256": "383a0265e85542798a121dfc68c79f52557117e54fea680e52ae726f2eea1b80"
+    },
+    {
+      "path": "evidence/training/stage2_planner_val.csv",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/planner_val.csv",
+      "bytes": 43226,
+      "sha256": "6bf2939dc6c5d071c25e82f4154729e1e82e852138707da79a751a775240ff4d"
+    },
+    {
+      "path": "evidence/training/stage2_args.json",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/args.json",
+      "bytes": 1555,
+      "sha256": "a2b9988695b79debe7e8ba40c41f74b28ecb9b2b0329e93a9597e6ecb5b274c5"
+    },
+    {
+      "path": "evidence/training/stage2_updates.json",
+      "source": "logs/tienkung3_29dof/stage2_php_all_spheres224_20261110/joint/updates.json",
+      "bytes": 742,
+      "sha256": "ee4cefe745b7e1eab09f4ca8ba8705b212728bafadfeaf3d7cedaaf53da79dfc"
+    },
+    {
+      "path": "README.md",
+      "source": "results/stage_training_analysis_20261111/analysis_report.md",
+      "note": "Reordered, linked, and supplemented for the documentation archive.",
+      "bytes": 19074,
+      "sha256": "2063f4b3e33034b9592ae736165521e9daf41c9a5b60b79a8c27e15883aa9b57"
+    },
+    {
+      "path": "stage1_continuation_assessment.md",
+      "source": "Stage1 training log review; results/stage_training_analysis_20261111/stage1_late_trend.py",
+      "bytes": 5134,
+      "sha256": "53c23db5f393eb7815940b4054b9c304ab3073027453cd9467c93a3e33ff911a"
+    },
+    {
+      "path": "figures/stage1_late_training.png",
+      "source": "Stage1 training log review; results/stage_training_analysis_20261111/stage1_late_trend.py",
+      "bytes": 588688,
+      "sha256": "12ebd91ff21c03073f3dc4abf2004d162693af18f007f0d006d01e22a677f43c"
+    },
+    {
+      "path": "figures/stage1_late_training.pdf",
+      "source": "Stage1 training log review; results/stage_training_analysis_20261111/stage1_late_trend.py",
+      "bytes": 114144,
+      "sha256": "2b0959d83deeda43ef69a61afb2af9c097d364af82ea392fb4800731231f9f19"
+    },
+    {
+      "path": "evidence/stage1_late_statistics.json",
+      "source": "Stage1 training log review; results/stage_training_analysis_20261111/stage1_late_trend.py",
+      "bytes": 8165,
+      "sha256": "d9a7085daa0980d177d1f15ad3a6665c9e2a221c4cb8ba19e2c47e03e8453346"
+    }
+  ],
+  "source_code_sha256": {
+    "supermimic/acp/env.py": "eee50f748c13befa92e66d9022db3c225d13bc92863602b9fa249e03334579bc",
+    "supermimic/acp/mdp.py": "c9c25e82b856959e322b7d6d7da3bba5dc6c586b5c03099cfc0171e15b9b4d1e",
+    "supermimic/acp/task.py": "45dad9077fca94e24fb7f95366200aaf25c3e0a5bc44e20d09a46486133482ce",
+    "supermimic/acp/planner.py": "8dfe7c7048edb70043f34a19be11c40a407439dd63277d1877a425323f2a8b4f",
+    "supermimic/acp/train_stage1.py": "a74424b61ec2e2afe8e0a81bcfd86d1805fe705b2bfab40d47f131f5c913512d",
+    "supermimic/acp/train_stage2.py": "8fc51bd26830bdecb5753d545da2f283883681041682e3b7b526c77e6b887419",
+    "supermimic/acp/train_planner_offline.py": "e2bb95b6e3d5f9850f4aa5e6442aecb22fc1a3e710c1632df2bb57de772095ef",
+    "supermimic/acp/evaluate.py": "602db4c13bc760c58eead7f78047fb56ef0e1e007430ad335baa8a55f3e9643e"
+  },
+  "supplements": [
+    {
+      "date": "2026-11-11",
+      "report": "stage1_continuation_assessment.md",
+      "scope": "Existing training curve analysis; no training launched."
+    }
+  ]
+}

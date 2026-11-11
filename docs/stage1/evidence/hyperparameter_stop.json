@@ -1,0 +1,37 @@
+{
+  "time": "2026-11-10T20:16:15.674099+08:00",
+  "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_php_all_spheres224_20261110/train/ckpt_003000.pt",
+  "iteration": 3000,
+  "updates": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 30000,
+      "pi": 2500,
+      "critic": 50000
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 4994471424,
+        "torch_peak_reserved": 5794430976,
+        "device_used": 9570353152,
+        "warp_pool_used": 354701559,
+        "warp_pool_peak": 354702687
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 4994469376,
+        "torch_peak_reserved": 5794430976,
+        "device_used": 8611364864,
+        "warp_pool_used": 354701559,
+        "warp_pool_peak": 354702687
+      }
+    ],
+    "state_sha256": "f7c39690751ab60f5910acd4ec7918dbb6ffc89cf2590cade755241d084e1ead"
+  },
+  "reason": "User-authorized hyperparameter comparisons; one trainer at a time"
+}
