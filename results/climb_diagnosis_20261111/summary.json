@@ -1,0 +1,819 @@
+{
+  "cohort": "100 fixed training-set clips, 20 per category; seed 20261111; strict termination, no noise; 100k checkpoint",
+  "rollouts": {
+    "policy_0.0": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 3.1580000000000004,
+        "mean_saturation": 0.001129259404075922,
+        "mean_terminal_joint_rmse": 0.47258976846933365,
+        "mean_terminal_hand_distance": [
+          0.42978260247036815,
+          0.2514942340552807
+        ],
+        "hand_label_frames": [
+          3.0,
+          4.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 18,
+        "mean_alive_seconds": 8.331,
+        "mean_saturation": 0.002885546756349414,
+        "mean_terminal_joint_rmse": 0.10029313135892153,
+        "mean_terminal_hand_distance": [
+          0.6750723861157895,
+          0.6721663847565651
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 2,
+        "tilt_failures": 0
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 13.234000000000002,
+        "mean_saturation": 0.002279136292033832,
+        "mean_terminal_joint_rmse": 0.052809140738099815,
+        "mean_terminal_hand_distance": [
+          0.7269523322582245,
+          0.6460236221551895
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 4.648000000000001,
+        "mean_saturation": 0.002027584188143613,
+        "mean_terminal_joint_rmse": 0.44959007650613786,
+        "mean_terminal_hand_distance": [
+          0.18803681172430514,
+          0.13106866721063853
+        ],
+        "hand_label_frames": [
+          901.0,
+          900.0
+        ],
+        "hand_recall": [
+          0.025527192008879023,
+          0.23666666666666666
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 9.366,
+        "mean_saturation": 0.001989169542798025,
+        "mean_terminal_joint_rmse": 0.06351926904171705,
+        "mean_terminal_hand_distance": [
+          0.7200388342142106,
+          0.7072329640388488
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      }
+    },
+    "policy_0.4": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 16,
+        "mean_alive_seconds": 6.518,
+        "mean_saturation": 0.001708539386917732,
+        "mean_terminal_joint_rmse": 0.12878558970987797,
+        "mean_terminal_hand_distance": [
+          0.7507764756679535,
+          0.6260215099900961
+        ],
+        "hand_label_frames": [
+          490.0,
+          318.0
+        ],
+        "hand_recall": [
+          0.32857142857142857,
+          0.7169811320754716
+        ],
+        "height_failures": 3,
+        "tilt_failures": 1
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 15,
+        "mean_alive_seconds": 4.142,
+        "mean_saturation": 0.00288914539646144,
+        "mean_terminal_joint_rmse": 0.14187390133738517,
+        "mean_terminal_hand_distance": [
+          0.642335121333599,
+          0.6031401004642248
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 5,
+        "tilt_failures": 0
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 7.9479999999999995,
+        "mean_saturation": 0.0034102131295676483,
+        "mean_terminal_joint_rmse": 0.04947467558085918,
+        "mean_terminal_hand_distance": [
+          0.7262446224689484,
+          0.6495569989085197
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 17,
+        "mean_alive_seconds": 8.568,
+        "mean_saturation": 0.005112690314599995,
+        "mean_terminal_joint_rmse": 0.09447408393025399,
+        "mean_terminal_hand_distance": [
+          0.6761984743177891,
+          0.7095177739858627
+        ],
+        "hand_label_frames": [
+          502.0,
+          1402.0
+        ],
+        "hand_recall": [
+          0.5776892430278885,
+          0.6911554921540656
+        ],
+        "height_failures": 3,
+        "tilt_failures": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 5.627999999999999,
+        "mean_saturation": 0.0020190191441818795,
+        "mean_terminal_joint_rmse": 0.06513177286833524,
+        "mean_terminal_hand_distance": [
+          0.7229071170091629,
+          0.7038384735584259
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      }
+    },
+    "policy_0.6": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 18,
+        "mean_alive_seconds": 4.6450000000000005,
+        "mean_saturation": 0.0024690356330230147,
+        "mean_terminal_joint_rmse": 0.09508754359558225,
+        "mean_terminal_hand_distance": [
+          0.7567326575517654,
+          0.6581628978252411
+        ],
+        "hand_label_frames": [
+          474.0,
+          315.0
+        ],
+        "hand_recall": [
+          0.32489451476793246,
+          0.526984126984127
+        ],
+        "height_failures": 2,
+        "tilt_failures": 0
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 3.5500000000000003,
+        "mean_saturation": 0.0025077872536497176,
+        "mean_terminal_joint_rmse": 0.048202754370868205,
+        "mean_terminal_hand_distance": [
+          0.7262331247329712,
+          0.7012107372283936
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 5.3,
+        "mean_saturation": 0.002653144311224832,
+        "mean_terminal_joint_rmse": 0.04519854998216033,
+        "mean_terminal_hand_distance": [
+          0.7314179718494416,
+          0.6504127457737923
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 16,
+        "mean_alive_seconds": 5.38,
+        "mean_saturation": 0.002925194500462418,
+        "mean_terminal_joint_rmse": 0.18386295326054097,
+        "mean_terminal_hand_distance": [
+          0.7302174210548401,
+          0.58424867244903
+        ],
+        "hand_label_frames": [
+          0.0,
+          943.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.6871686108165429
+        ],
+        "height_failures": 4,
+        "tilt_failures": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 3.754,
+        "mean_saturation": 0.0017388543636110796,
+        "mean_terminal_joint_rmse": 0.05833197049796581,
+        "mean_terminal_hand_distance": [
+          0.7172884076833725,
+          0.709046745300293
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      }
+    },
+    "policy_0.8": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 18,
+        "mean_alive_seconds": 2.2840000000000003,
+        "mean_saturation": 0.004580564271996355,
+        "mean_terminal_joint_rmse": 0.08209946136921645,
+        "mean_terminal_hand_distance": [
+          0.7558463186025619,
+          0.745035320520401
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 2,
+        "tilt_failures": 0
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 1.7780000000000002,
+        "mean_saturation": 0.0006747338431793905,
+        "mean_terminal_joint_rmse": 0.07883694274351001,
+        "mean_terminal_hand_distance": [
+          0.7195720374584198,
+          0.7037509649991989
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 2.652,
+        "mean_saturation": 0.0024287461572444916,
+        "mean_terminal_joint_rmse": 0.045701418071985245,
+        "mean_terminal_hand_distance": [
+          0.7293240785598755,
+          0.6669142961502075
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 3.304,
+        "mean_saturation": 0.0020296652618360723,
+        "mean_terminal_joint_rmse": 0.05727079352363944,
+        "mean_terminal_hand_distance": [
+          0.7270276516675949,
+          0.7009250193834304
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 20,
+        "mean_alive_seconds": 1.8800000000000001,
+        "mean_saturation": 1.915708805123965e-05,
+        "mean_terminal_joint_rmse": 0.05641782470047474,
+        "mean_terminal_hand_distance": [
+          0.7250977039337159,
+          0.705300459265709
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 0,
+        "tilt_failures": 0
+      }
+    },
+    "pd_0.0": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.432,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.18620699122548104,
+        "mean_terminal_hand_distance": [
+          0.6988401502370835,
+          0.2747988000512123
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.361,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.1926857389509678,
+        "mean_terminal_hand_distance": [
+          0.5975316613912582,
+          0.2983613066375256
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.324,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.18985483497381211,
+        "mean_terminal_hand_distance": [
+          0.43720218986272813,
+          0.4068694025278091
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.375,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.18091616109013559,
+        "mean_terminal_hand_distance": [
+          0.4134136691689491,
+          0.4129005402326584
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.331,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.20233550369739534,
+        "mean_terminal_hand_distance": [
+          0.44728761464357375,
+          0.37647909075021746
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      }
+    },
+    "pd_velocity_0.0": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.429,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.1719340316951275,
+        "mean_terminal_hand_distance": [
+          0.7468555837869644,
+          0.24153668731451033
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.35,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.17858159095048903,
+        "mean_terminal_hand_distance": [
+          0.6328205034136772,
+          0.29922321289777754
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.308,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.18927516639232636,
+        "mean_terminal_hand_distance": [
+          0.43233865201473237,
+          0.4185441009700298
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.374,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.18047098591923713,
+        "mean_terminal_hand_distance": [
+          0.42611182332038877,
+          0.3962952092289925
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 0,
+        "mean_alive_seconds": 1.318,
+        "mean_saturation": 0.0,
+        "mean_terminal_joint_rmse": 0.19349994361400605,
+        "mean_terminal_hand_distance": [
+          0.45928806960582735,
+          0.38880409598350524
+        ],
+        "hand_label_frames": [
+          0.0,
+          0.0
+        ],
+        "hand_recall": [
+          0.0,
+          0.0
+        ],
+        "height_failures": 20,
+        "tilt_failures": 0
+      }
+    }
+  },
+  "wm": {
+    "motions-high-climb-76": {
+      "1": {
+        "n": 110,
+        "mean_root_error": 0.000718769912914881,
+        "p95_root_error": 0.0014551807777024805,
+        "mean_height_bias": 9.92319800636985e-05
+      },
+      "8": {
+        "n": 103,
+        "mean_root_error": 0.004017956396090138,
+        "p95_root_error": 0.010186898149549957,
+        "mean_height_bias": 0.0011274843540006472
+      },
+      "32": {
+        "n": 91,
+        "mean_root_error": 0.029245929050535618,
+        "p95_root_error": 0.06704860553145409,
+        "mean_height_bias": 0.004065739584493113
+      }
+    },
+    "motions-high-step": {
+      "1": {
+        "n": 268,
+        "mean_root_error": 0.0005700053586848814,
+        "p95_root_error": 0.001318199699744581,
+        "mean_height_bias": 4.357321938472008e-05
+      },
+      "8": {
+        "n": 266,
+        "mean_root_error": 0.004166364738729929,
+        "p95_root_error": 0.009802424581721425,
+        "mean_height_bias": -0.00017368434963369728
+      },
+      "32": {
+        "n": 248,
+        "mean_root_error": 0.03861454307221838,
+        "p95_root_error": 0.0801023542881011,
+        "mean_height_bias": -0.005205616835624941
+      }
+    },
+    "motions-locomotion": {
+      "1": {
+        "n": 424,
+        "mean_root_error": 0.00047862631893467723,
+        "p95_root_error": 0.0011860123660881066,
+        "mean_height_bias": -2.333817054640572e-05
+      },
+      "8": {
+        "n": 418,
+        "mean_root_error": 0.00377761598984331,
+        "p95_root_error": 0.00846366914920509,
+        "mean_height_bias": -0.0005131224125766297
+      },
+      "32": {
+        "n": 404,
+        "mean_root_error": 0.030593783175688016,
+        "p95_root_error": 0.06098201405256984,
+        "mean_height_bias": -0.0014782158455046096
+      }
+    },
+    "motions-low-climb-76": {
+      "1": {
+        "n": 158,
+        "mean_root_error": 0.0010358637582727698,
+        "p95_root_error": 0.00395122717600316,
+        "mean_height_bias": 0.0001337113259713861
+      },
+      "8": {
+        "n": 147,
+        "mean_root_error": 0.008834893966480127,
+        "p95_root_error": 0.03450769931077955,
+        "mean_height_bias": -0.0009964639637745968
+      },
+      "32": {
+        "n": 138,
+        "mean_root_error": 0.04988539956199626,
+        "p95_root_error": 0.18658987954258927,
+        "mean_height_bias": 0.0012639246988987577
+      }
+    },
+    "motions-low-step": {
+      "1": {
+        "n": 304,
+        "mean_root_error": 0.0005167484779708263,
+        "p95_root_error": 0.001294187357416376,
+        "mean_height_bias": -6.4390662469361955e-06
+      },
+      "8": {
+        "n": 298,
+        "mean_root_error": 0.003931435681281818,
+        "p95_root_error": 0.010869723092764615,
+        "mean_height_bias": -4.948585625462884e-06
+      },
+      "32": {
+        "n": 284,
+        "mean_root_error": 0.029401831946198,
+        "p95_root_error": 0.05879056975245475,
+        "mean_height_bias": -0.0020265900333162764
+      }
+    }
+  },
+  "failure_height": {
+    "motions-high-climb-76": {
+      "reference_rise": -0.04797333180904388,
+      "actual_rise": -0.3147998034954071
+    },
+    "motions-low-climb-76": {
+      "reference_rise": 0.02762238383293152,
+      "actual_rise": -0.23936383426189423
+    }
+  },
+  "full_evaluation_timing": {
+    "motions-high-climb-76": {
+      "before_first_hand": 331,
+      "n": 400,
+      "median_seconds_to_first_hand": 0.38
+    },
+    "motions-low-climb-76": {
+      "before_first_hand": 61,
+      "n": 400,
+      "median_seconds_to_first_hand": -1.1
+    }
+  },
+  "latest110500": {
+    "policy_0.0": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 0
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 14
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 20
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 0
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 20
+      }
+    },
+    "policy_0.4": {
+      "motions-high-climb-76": {
+        "n": 20,
+        "completed": 17
+      },
+      "motions-high-step": {
+        "n": 20,
+        "completed": 14
+      },
+      "motions-locomotion": {
+        "n": 20,
+        "completed": 18
+      },
+      "motions-low-climb-76": {
+        "n": 20,
+        "completed": 14
+      },
+      "motions-low-step": {
+        "n": 20,
+        "completed": 19
+      }
+    }
+  },
+  "support_screen_caveat": "Instantaneous reference LP failed frequently in all five categories, including locomotion and steps that the policy can complete. Sparse native contact manifolds, 1cm candidate threshold, friction-ray discretization and exact reference acceleration make this a limited screen. It cannot attribute climb-specific failures to impossible support, and passing cannot establish trajectory feasibility.",
+  "invalid_experiment": "invalid_reset_rollouts.json is excluded: done_eval flags were not cleared between cases. v2 cleared both done_eval and failed_eval before each case; only rollouts.json is used."
+}

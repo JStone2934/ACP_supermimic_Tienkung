@@ -1,0 +1,7 @@
+{
+  "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/stage1_continue_80k_20261111/train/ckpt_100000.pt",
+  "checkpoint_sha256": "35672b4606522eadf888f70516cfbb05abcf7c13635631132cc2223d44c03c2f",
+  "evaluator_sha256": "602db4c13bc760c58eead7f78047fb56ef0e1e007430ad335baa8a55f3e9643e",
+  "cohort": "existing fixed 100-clip cohort; 20 per class; training data, not held out",
+  "notes": "PD controls use same action target interface, gains, effort limits, free base and termination as policy. PD failure alone is not proof of infeasibility."
+}
