@@ -82,7 +82,7 @@ class TrackingSim:
                  max_episode_steps: int = 500, reset_noise: bool = True, backward_curriculum: bool = False,
                  start_phase: tuple[float, float] | None = None, sim_cfg: SimulationCfg | None = None, goal: GoalTask | None = None,
                  num_goal_envs: int = 0, goal_curriculum: GoalCurriculum | None = None, start_yaw: float = 0.4,
-                 runtime=None):  # fmt: skip
+                 runtime=None, transition_curriculum=None):  # fmt: skip
         self.device = dev = device
         self.runtime = runtime
         self.spec = mdp.robot
@@ -102,10 +102,13 @@ class TrackingSim:
         self.N = num_envs
         self.motion, self.mdp, self.gamma = motion, mdp, gamma
         self.eval_mode = eval_mode
-        self.curriculum = backward_curriculum and not eval_mode
+        if transition_curriculum is not None and (eval_mode or start_phase is not None or goal is not None):
+            raise ValueError('transition curriculum is only supported by Stage1 training')
+        self.transition_curriculum = transition_curriculum
+        self.curriculum = backward_curriculum and not eval_mode and transition_curriculum is None
         self.start_phase = None if eval_mode else start_phase
         assert not (self.curriculum and self.start_phase), "one episode-start rule"
-        self.max_episode_steps = max_episode_steps if not (eval_mode or self.curriculum or self.start_phase) else 10**9
+        self.max_episode_steps = max_episode_steps if not (eval_mode or self.curriculum or self.start_phase or transition_curriculum is not None) else 10**9
         self.reset_noise = reset_noise and not eval_mode
         self.default_q = self.robot.data.default_joint_pos[0, self.to_canonical].clone()
         self.alpha = torch.tensor(self.spec.action_scales, device=dev)
@@ -212,9 +215,14 @@ class TrackingSim:
         n = len(env_ids)
         dev, m = self.device, self.motion
         if frames is None:
-            frames, bins = self.sample_frames(n)
+            if self.transition_curriculum is not None:
+                frames, bins = self.transition_curriculum.sample(env_ids, self.phase)
+            else:
+                frames, bins = self.sample_frames(n)
         else:
             bins = m.frame_bin[frames]
+            if self.transition_curriculum is not None:
+                self.transition_curriculum.explicit_reset(env_ids, frames)
         goal_rows = self.is_goal[env_ids]
         if goal_rows.any():  # goal worlds: a standing first frame and a bank terrain
             gi = goal_rows.nonzero(as_tuple=False).squeeze(-1)
@@ -340,6 +348,9 @@ class TrackingSim:
         term = self.mdp.termination(S1, f1)
         clip_end = self.motion.clip_end[self.motion.clip_id[f]]
         timeout = (f1 >= clip_end) | (ep_step + 1 >= self.max_episode_steps)
+        if self.transition_curriculum is not None:
+            self.transition_curriculum.observe(S, S1, f1, v)
+            timeout |= f1 >= self.transition_curriculum.episode_end
         goal_w = self.goal_w.clone()
         if self.goal is not None and g.any():
             boxes1 = self.motion.boxes(f1, v)
@@ -352,6 +363,8 @@ class TrackingSim:
             close = g & (self.first_close < 0) & (dg < self.goal.cfg.close_xy)
             self.first_close = torch.where(close, ep_step + 1, self.first_close)
         done = term | timeout
+        if self.transition_curriculum is not None:
+            self.transition_curriculum.finish(f1, done, term)
         out = {"s": flatten_state(S), "a": a.clone(), "a_prev": a_prev, "f": f, "v": v, "s1": flatten_state(S1), "r": r, "o": o,
                "term": term, "done": done, "ep_step": ep_step, "xi": xi, "goal": goal_w}  # fmt: skip
         # bookkeeping

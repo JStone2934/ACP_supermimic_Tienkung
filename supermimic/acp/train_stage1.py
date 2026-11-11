@@ -56,6 +56,8 @@ parser.add_argument("--blind", action=argparse.BooleanOptionalAction, default=Fa
 parser.add_argument("--reward", type=str, default="paper", choices=["paper", "supermimic"], help="the contact paper's Stage 1 reward, or SuperMimic's tracking reward + contact labels")
 parser.add_argument("--w_label", type=float, default=1.0, help="--reward supermimic: weight of the contact-label term")
 parser.add_argument("--backward_curriculum", action=argparse.BooleanOptionalAction, default=True, help="episode starts: the paper's backward curriculum")
+parser.add_argument("--transition_curriculum", type=str, default=None,
+                    help="opt-in JSON plan from tools.build_transition_curriculum; changes only reset sampling and local truncation")
 parser.add_argument("--log_dir", type=str, required=True)
 parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--resume", type=str, default=None)
@@ -78,6 +80,7 @@ from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, normalize
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
 from supermimic.acp.task import ContactCfg, ContactTask, PaperReward, PaperRewardCfg, check_contact_geometry_resume
+from supermimic.acp.transition_curriculum import TransitionCurriculum
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
@@ -115,6 +118,8 @@ if args.resume or args.init:
     # Resume continues the same run; --init explicitly fine-tunes on a new dataset.
     if args.resume and robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
         raise ValueError("checkpoint dataset mismatch")
+    if args.resume and bool(ck.get('transition_curriculum')) != bool(args.transition_curriculum):
+        raise ValueError('changing reset curriculum requires --init in a new run; --resume must preserve it')
     changed = check_contact_geometry_resume(ck.get("ctc_cfg", {}), args.contact_geometry,
                                             allow_change=args.allow_contact_geometry_change or bool(args.init))
     geometry_transition = ck.get("geometry_transition")
@@ -293,7 +298,15 @@ def policy_update():
 
 
 # ------------------------------------------------------------------------------------------------
-env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum, runtime=rt)
+transition = (TransitionCurriculum(args.transition_curriculum, motion, ctc, args.num_envs, dev, rt)
+              if args.transition_curriculum else None)
+if transition is not None:
+    if args.resume:
+        transition.load_state_dict(ck['transition_curriculum'])
+    rt.write_json('transition_plan.json', transition.plan)
+    rt.print(f'transition curriculum enabled: {transition.summary()}', flush=True)
+env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum,
+                  runtime=rt, transition_curriculum=transition)
 if (args.resume or args.init) and "curriculum_phase" in ck:
     env.phase.copy_(ck["curriculum_phase"])
 if args.resume:
@@ -393,6 +406,8 @@ for it in (itertools.count(start_it) if args.iterations == -1 else range(start_i
               + "".join(f" {g.removeprefix('motions-')} {p:.2f}" for g, p in zip(GROUPS, phase_g)) + f" | {ips:.2f} it/s", flush=True)  # fmt: skip
         stats = {k: [] for k in stats_keys}
         agg = {k: [] for k in agg}
+        if transition is not None:
+            rt.write_json('transition_curriculum.json', dict(iteration=it+1, **transition.summary()))
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
         ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
               "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(), "iteration": it + 1,
@@ -402,7 +417,11 @@ for it in (itertools.count(start_it) if args.iterations == -1 else range(start_i
               "bin_G": env.bin_G.clone(), "bin_w_avg": env.bin_w_avg.clone(),
               "reward_cfg": dataclasses.asdict(reward_cfg) if reward_cfg is not None else None,
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
+        if transition is not None:
+            ck['transition_curriculum'] = transition.state_dict()
         small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "geometry_transition", "saved_at")}
+        if transition is not None:
+            small['transition_curriculum'] = ck['transition_curriculum']
         rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=args.save_full_checkpoints)
 
 rt.close()

@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "world_size": 2,
+  "steps": 128,
+  "checkpoint": "logs/tienkung3_29dof/stage1_continue_80k_20261111/train/ckpt_110500.pt",
+  "optimizer_updates": 0,
+  "done_episodes": 58,
+  "local_truncations": 20,
+  "unchanged_reward_and_failure_termination": true,
+  "state_sha256": "6c60322d62bc9866f7554ad40446557779f0bc7d74ad84b47f52d8118c8f18f5",
+  "plan_hash": "64d02f7c1d24e2e8489807cc41df109534e0edda3dfcdc553af5c0592d33eb4c",
+  "episode_kinds": [
+    "local",
+    "full_climb",
+    "retention"
+  ],
+  "environments_per_rank": [
+    8,
+    4,
+    4
+  ],
+  "counts": [
+    [
+      87,
+      55,
+      0
+    ],
+    [
+      16,
+      0,
+      0
+    ],
+    [
+      19,
+      3,
+      0
+    ]
+  ],
+  "count_columns": [
+    "started",
+    "ended",
+    "passed"
+  ],
+  "quality_columns": [
+    "checked",
+    "root_ok",
+    "joint_ok",
+    "hand_contact_ok",
+    "other_contact_ok",
+    "slip_proxy_ok",
+    "all_ok"
+  ],
+  "quality_counts": [
+    232,
+    60,
+    190,
+    98,
+    170,
+    13,
+    4
+  ],
+  "windows": 4800,
+  "windows_at_start": 0,
+  "promotions": 0,
+  "mean_start_frame": 174.58958435058594,
+  "note": "local passed is a curriculum quality gate; full/retention passed only means no termination, not task acceptance",
+  "cpu_regressions": {
+    "passed": 29,
+    "commands": [
+      "python -m unittest tools.test_transition_curriculum tools.test_stage1_dataset tools.test_stage2_alignment tools.test_buffer -v",
+      "python -m unittest tools.test_acp_distributed -v"
+    ]
+  },
+  "source_sha256": {
+    "supermimic/acp/transition_curriculum.py": "49f9502516c982ab08c33031ca143ea4ec0d054b999ddbcbb8341f5d5cbf4434",
+    "supermimic/acp/env.py": "bf3d3c885ccbb66dff004e2db9f0991beed7778a7ea81f356becdab5ac0f6fe7",
+    "supermimic/acp/train_stage1.py": "7db9f12752b86cd08bb8b1f49431d2ffd84180174bbcb04dbdf2251323a66b09",
+    "supermimic/acp/distributed.py": "478e800b4e01c93c7ac3d295c273c9e45be3a686ac9475ba068310f1ff247654",
+    "tools/build_transition_curriculum.py": "fc6d8a41b8da47ac40f52517a67e01f46ed5c02b7f731c55ffd7a7e4b4ec794f",
+    "tools/check_transition_curriculum.py": "62ff343957f0abd33a34c8d02feff78b9fd7ba37d090d4ae2af630267e66842c",
+    "tools/test_transition_curriculum.py": "12399c9687aaad2a5bf3ede6eaba147861ba99881cd670d4dd9744df3d67fccd",
+    "configs/stage1_climb_transition_20261111.json": "5835bd2327837f1fd3bd011382e9444a1ad1c7f5fef635465475f37957dd8948"
+  },
+  "scope": "Inference-only wiring check, not training. No climbing improvement claimed. Original training and background owner remain stopped."
+}

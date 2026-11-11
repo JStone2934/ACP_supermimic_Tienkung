@@ -356,7 +356,7 @@ class Runtime:
                 **self.memory_stats()))
         if self.args.get('verify_sync'):
             keys = ('curriculum_phase', 'bin_G', 'bin_w_avg', 'admission_totals', 'admission_history',
-                    'sched_it', 'admit_base', 'scale', 'curriculum_level', 'curriculum_success')
+                    'sched_it', 'admit_base', 'scale', 'curriculum_level', 'curriculum_success', 'transition_curriculum')
             ck['distributed']['state_sha256'] = self.check_sync({k: ck[k] for k in keys if k in ck})
         if self.main:
             for name, content in [('last.pt', ck), (numbered, ck if full or small_keys is None else {k: ck[k] for k in small_keys} | {'distributed': ck['distributed']})]:
