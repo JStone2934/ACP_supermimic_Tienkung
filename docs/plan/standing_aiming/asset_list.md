@@ -4,6 +4,8 @@
 
 路径均相对仓库根目录。状态区分为 **本地存在**、**历史记录存在但本地缺失**、**计划生成**；外部资料单列。运行资产的缺失路径只用代码文字列出，不伪装成已存在文件的链接。
 
+新增 [详细课程目录](../../config/standing_aiming_curriculum/README.md) 已保存单 actor 控制、IK 监督、课程与接入验收设计；监督数据、瞄准权重及课程代码尚未生成。
+
 ## 1. 本地存在：源码与配置资料
 
 | 资产 | 用途 |
@@ -83,8 +85,9 @@ python -m tools.preview_aiming_joints
 | 建议位置 | 内容 |
 |---|---|
 | `results/analysis/standing_aiming_finetune/` | 最佳与最终策略重新加载评估、漂移曲线、比较摘要与最佳录像 |
-| `logs/tienkung3_29dof/standing_aiming/<run>/` | 训练参数、身体策略检查点、日志；需要时保存末端残差权重 |
-| `results/standing_aiming/<run>/` | 简短评估摘要、实际轨迹和演示录像 |
+| `data/tienkung3_29dof/standing_aiming/ik_supervision/<dataset_id>/` | 拟新增的 IK 监督序列、教师配置、划分与质量摘要 |
+| `logs/tienkung3_29dof/standing_aiming_curriculum/<run>/` | 拟新增的单 actor、WM／critic、训练辅助、课程及优化器状态 |
+| `results/standing_aiming_curriculum/<run>/` | 拟新增的靶面与角误差摘要、实际轨迹和演示录像 |
 
 首版保留一份实际配置、可加载权重、简短效果记录和录像即可，不预设大量独立证据文件。
 
