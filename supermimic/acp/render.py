@@ -81,6 +81,7 @@ def main():
     ap.add_argument("--fps", type=int, default=50)
     ap.add_argument("--title", default=None, help="short video title")
     ap.add_argument("--solid-label", default="policy", help="legend for the solid robot, e.g. reference PD")
+    ap.add_argument("--hide-reference", action="store_true", help="show only the simulated robot")
     args = ap.parse_args()
 
     # Load once: accessing an NpzFile repeatedly decompresses whole arrays per frame.
@@ -100,6 +101,10 @@ def main():
                               stdin=subprocess.PIPE)  # fmt: skip
     for c in clips:
         m = mujoco.MjModel.from_xml_string(scene_xml(d["boxes"][c], robot))
+        if args.hide_reference:
+            for g in range(m.ngeom):
+                if m.body(int(m.geom_bodyid[g])).name.startswith('ref_'):
+                    m.geom_rgba[g, 3] = 0
         m.vis.global_.offwidth, m.vis.global_.offheight = args.width, args.height
         m.vis.headlight.ambient[:], m.vis.headlight.diffuse[:] = 0.45, 0.6
         data = mujoco.MjData(m)
@@ -113,7 +118,10 @@ def main():
         T = min(T_alive + int(args.tail * args.fps), len(alive))
         if args.seconds:
             T = min(T, int(args.seconds * args.fps))
-        failed = T_alive < int(d["clip_len"][c]) - 1
+        expected = int(d["clip_len"][c]) - 1
+        if args.seconds:
+            expected = min(expected, int(args.seconds * args.fps))
+        failed = T_alive < expected  # An intentional duration cap is not a fall.
         for t in range(T):
             fr = int(f[t, c])
             data.qpos[:3], data.qpos[3:7], data.qpos[qadr] = d["root_p"][t, c], d["root_quat"][t, c], d["q"][t, c]
@@ -131,7 +139,8 @@ def main():
             img = Image.fromarray(r.render())
             draw = ImageDraw.Draw(img)
             draw.text((10, 8), f"{args.title or names[c]}  t={t / args.fps:.2f}s" + ("  FAILED" if failed and t >= T_alive else ""), font=font, fill=(0, 0, 0))
-            draw.text((10, args.height - 30), f"Solid: {args.solid_label} | Blue ghost: reference | Dots: planned contacts", font=font, fill=(0, 0, 0))
+            legend = f"Solid: {args.solid_label}" + ("" if args.hide_reference else " | Blue ghost: reference") + " | Dots: planned contacts"
+            draw.text((10, args.height - 30), legend, font=font, fill=(0, 0, 0))
             ffmpeg.stdin.write(img.tobytes())
         r.close()
         print(f"{names[c]}: {T} frames, {'failed at %.2f s' % (T_alive / args.fps) if failed else 'completed'}", flush=True)

@@ -82,9 +82,10 @@ class TrackingSim:
                  max_episode_steps: int = 500, reset_noise: bool = True, backward_curriculum: bool = False,
                  start_phase: tuple[float, float] | None = None, sim_cfg: SimulationCfg | None = None, goal: GoalTask | None = None,
                  num_goal_envs: int = 0, goal_curriculum: GoalCurriculum | None = None, start_yaw: float = 0.4,
-                 runtime=None):  # fmt: skip
+                 runtime=None, control_task=None):  # fmt: skip
         self.device = dev = device
         self.runtime = runtime
+        self.control_task = control_task
         self.spec = mdp.robot
         self.num_joints = self.spec.num_joints
         n_boxes = motion.clip_boxes.shape[2]
@@ -107,6 +108,10 @@ class TrackingSim:
         assert not (self.curriculum and self.start_phase), "one episode-start rule"
         self.max_episode_steps = max_episode_steps if not (eval_mode or self.curriculum or self.start_phase) else 10**9
         self.reset_noise = reset_noise and not eval_mode
+        self.randomize = not eval_mode and control_task is None
+        if control_task is not None:
+            self.curriculum, self.start_phase, self.reset_noise = False, None, False
+            self.max_episode_steps = control_task.episode_steps
         self.default_q = self.robot.data.default_joint_pos[0, self.to_canonical].clone()
         self.alpha = torch.tensor(self.spec.action_scales, device=dev)
 
@@ -121,10 +126,10 @@ class TrackingSim:
         # ---- sim context xi = [friction, joint offsets (29), torso CoM offset (3)], friction and CoM once per env ----
         self.xi = torch.zeros(self.N, self.spec.xi_dim, device=dev)
         # terrain (ground and boxes) at the lowest friction of the range, since MuJoCo takes the max of a pair
-        self.sim.model.geom_friction[:, self._terrain_geoms, 0] = 1.0 if eval_mode else FRICTION[0]
-        self.xi[:, 0] = 1.0 if eval_mode else torch.empty(self.N, device=dev).uniform_(*FRICTION)
+        self.sim.model.geom_friction[:, self._terrain_geoms, 0] = FRICTION[0] if self.randomize else 1.0
+        self.xi[:, 0] = torch.empty(self.N, device=dev).uniform_(*FRICTION) if self.randomize else 1.0
         self.sim.model.geom_friction[:, self.robot.indexing.geom_ids, 0] = self.xi[:, :1]
-        if not eval_mode:
+        if self.randomize:
             com = torch.stack([torch.empty(self.N, device=dev).uniform_(lo, hi) for lo, hi in COM_RANGE], -1)
             self.xi[:, 1 + self.num_joints :] = com
             self.sim.model.body_ipos[:, torso] = self.sim.get_default_field("body_ipos")[torso] + com
@@ -137,10 +142,13 @@ class TrackingSim:
         self.start_bin = torch.zeros(self.N, dtype=torch.long, device=dev)
         self.ep_disc_ret = torch.zeros(self.N, device=dev)
         self.ep_ret = torch.zeros(self.N, device=dev)
-        self.G_max = MAX_STEP_REWARD / (1 - gamma)
+        self.max_step_reward = control_task.max_step_reward if control_task is not None else MAX_STEP_REWARD
+        self.G_max = self.max_step_reward / (1 - gamma)
         self.bin_G = torch.full((motion.num_bins,), 0.0, device=dev)
         self.bin_w_avg = torch.full((motion.num_bins,), 1.0 / motion.num_bins, device=dev)
         self.phase = torch.full((len(motion.clip_len),), CURRICULUM_START, device=dev)  # backward curriculum, per clip
+        if control_task is not None:
+            self.phase.zero_()
         self.done_eval = torch.zeros(self.N, dtype=torch.bool, device=dev)
         self.failed_eval = torch.zeros(self.N, dtype=torch.bool, device=dev)
         self._obs = None
@@ -185,6 +193,10 @@ class TrackingSim:
     # ------------------------------------------------------------------ reset
     def sample_frames(self, n: int) -> tuple[torch.Tensor, torch.Tensor]:
         m = self.motion
+        if self.control_task is not None:
+            clips = torch.randint(0, len(m.clip_len), (n,), device=self.device)
+            f = m.clip_start[clips]
+            return f, m.frame_bin[f]
         if self.curriculum:  # a uniform clip from its start phase
             clips = torch.randint(0, len(m.clip_len), (n,), device=self.device)
             f = m.clip_start[clips] + (self.phase[clips] * (m.clip_len[clips] - 1).float()).long()
@@ -273,8 +285,10 @@ class TrackingSim:
         self.reached[env_ids] = False
         self.min_dist[env_ids] = float("inf")
         self.first_close[env_ids] = -1
-        if not self.eval_mode:
+        if self.randomize:
             self.xi[env_ids, 1 : 1 + self.num_joints] = torch.empty(n, self.num_joints, device=dev).uniform_(-JOINT_OFFSET, JOINT_OFFSET)
+        if self.control_task is not None:
+            self.a_prev[env_ids] = self.control_task.compose(self.a_prev[env_ids], self.xi[env_ids])
         self._obs = None
 
     def _write_boxes(self, env_ids: torch.Tensor, clips: torch.Tensor, variants: torch.Tensor):
@@ -315,11 +329,13 @@ class TrackingSim:
     def observe(self) -> torch.Tensor:
         """Policy observation of the current state (training: noisy; eval: noise-free)."""
         o = self.mdp.obs(self.state(), self.a_prev, self.xi)
-        self._obs = o if self.eval_mode else self.mdp.add_noise(o)
+        self._obs = o if self.eval_mode or self.control_task is not None else self.mdp.add_noise(o)
         return self._obs
 
     # ------------------------------------------------------------------ step
     def step(self, a: torch.Tensor) -> dict:
+        if self.control_task is not None:
+            a = self.control_task.compose(a, self.xi)
         o = self._obs if self._obs is not None else self.observe()
         self._obs = None
         S = self.state()
@@ -336,7 +352,8 @@ class TrackingSim:
         S1 = self.state()
         g = self.is_goal
         f1 = torch.where(g, f, torch.minimum(f + 1, self.motion.clip_end[self.motion.clip_id[f]]))  # goal worlds keep their (unused) reference frame
-        r = self.mdp.reward(S1, f1, a, a_prev)
+        r = (self.mdp.reward(S1, f1, a, a_prev) if self.control_task is None
+             else self.control_task.reward(S1, f1, v, a, a_prev))
         term = self.mdp.termination(S1, f1)
         clip_end = self.motion.clip_end[self.motion.clip_id[f]]
         timeout = (f1 >= clip_end) | (ep_step + 1 >= self.max_episode_steps)
@@ -395,7 +412,7 @@ class TrackingSim:
                 self.phase.index_add_(0, c, torch.where(reached, -CURRICULUM_STEP, CURRICULUM_STEP))
                 self.phase.clamp_(0.0, CURRICULUM_MAX)
             out["ep_len"] = T
-            max_r = MAX_STEP_REWARD if self.goal is None else torch.where(ref, MAX_STEP_REWARD, (self.goal.cfg.w_move + self.goal.cfg.w_stand) * CONTROL_DT)
+            max_r = self.max_step_reward if self.goal is None else torch.where(ref, MAX_STEP_REWARD, (self.goal.cfg.w_move + self.goal.cfg.w_stand) * CONTROL_DT)
             out["ep_ret_norm"] = self.ep_ret[ids] / (T * max_r)
             if self.goal is not None:
                 out["ep_goal"], out["ep_reached"], out["ep_first_close"] = ~ref, self.reached[ids].clone(), self.first_close[ids].clone()

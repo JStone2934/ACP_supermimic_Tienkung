@@ -19,9 +19,12 @@ import itertools
 import math
 import os
 import time
+import shutil
+from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default="g1")
+parser.add_argument("--task", choices=['tracking', 'standing_aiming'], default='tracking')
 parser.add_argument("--num_envs", type=int, default=4096)
 parser.add_argument("--iterations", type=int, default=60_000, help="total iterations; -1 trains continuously until stopped")
 parser.add_argument("--buffer_steps", type=int, default=1000)
@@ -58,12 +61,24 @@ parser.add_argument("--w_label", type=float, default=1.0, help="--reward supermi
 parser.add_argument("--backward_curriculum", action=argparse.BooleanOptionalAction, default=True, help="episode starts: the paper's backward curriculum")
 parser.add_argument("--log_dir", type=str, required=True)
 parser.add_argument("--seed", type=int, default=0)
-parser.add_argument("--resume", type=str, default=None)
-parser.add_argument("--init", type=str, default=None, help="fine-tune: start from this run's last.pt")
+load_group = parser.add_mutually_exclusive_group()
+load_group.add_argument("--resume", type=str, default=None)
+load_group.add_argument("--init", type=str, default=None, help="fine-tune: start from this run's last.pt")
+load_group.add_argument("--finetune", type=str, default=None, help="load policy/world model; fresh critic, optimizers and schedule")
 parser.add_argument("--amp", type=str, default="bf16", choices=["none", "bf16"], help="autocast dtype for MLP matmuls")
 from supermimic.acp.distributed import Runtime, add_arguments
 add_arguments(parser, planner=False)
 args = parser.parse_args()
+if args.task == 'standing_aiming':
+    if args.robot != 'tienkung3_29dof':
+        parser.error('standing_aiming requires --robot tienkung3_29dof')
+    if args.init:
+        parser.error('standing_aiming uses --finetune or --resume, not legacy --init')
+    if int(os.environ.get('WORLD_SIZE', 1)) != 1:
+        parser.error('standing_aiming currently supports one local GPU')
+    args.reward, args.backward_curriculum = 'supermimic', False
+    args.target_noise, args.scan_noise = 0., 0.
+    args.contact_geometry = 'spheres224'
 
 import torch
 import torch.nn as nn
@@ -78,6 +93,7 @@ from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, normalize
 from supermimic.acp.motion import CONTROL_DT, MotionLib
 from supermimic.acp.networks import Critic, Policy, WorldModel
 from supermimic.acp.task import ContactCfg, ContactTask, PaperReward, PaperRewardCfg, check_contact_geometry_resume
+from supermimic.acp.standing import StandingTask, freeze_normalizers
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
@@ -95,9 +111,18 @@ ctc_cfg = ContactCfg(contacts_dir=args.contacts_dir, target_noise=args.target_no
                      target_point=args.target_point, target_min_steps=args.target_min_steps, blind=args.blind,
                      contact_geometry=args.contact_geometry)  # fmt: skip
 ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
+standing = StandingTask(mdp, ctc) if args.task == 'standing_aiming' else None
+task_config = standing.metadata() if standing else None
+if standing:
+    if motion.num_frames < standing.episode_steps + args.horizon + 1:
+        raise ValueError('standing reference must exceed episode length plus imagination horizon')
+    if not torch.allclose(motion.q, standing.target_q.expand_as(motion.q), atol=1e-6):
+        raise ValueError('standing reference does not match held-arm pose')
 reward_cfg = PaperRewardCfg() if args.reward == "paper" else None
 paper_reward = PaperReward(reward_cfg, ctc) if reward_cfg is not None else None
 MAX_R = reward_cfg.max_step_reward if reward_cfg is not None else MAX_STEP_REWARD + args.w_label * CONTROL_DT
+if standing:
+    MAX_R = standing.max_step_reward
 Hh, HZ = args.hist, args.horizon
 
 wm = WorldModel(mdp.scan_dim, robot=robot).to(dev)
@@ -109,26 +134,39 @@ opt_v = torch.optim.Adam(critic.parameters(), lr=args.lr)
 start_it, wall_offset, sim_steps, lr_it0 = 0, 0.0, 0, 0
 wm_only_iters = 0 if args.init else args.wm_only_iters
 geometry_transition = None
-if args.resume or args.init:
-    ck = torch.load(args.resume or args.init, map_location=dev)
+source_checkpoint = None
+if args.resume or args.init or args.finetune:
+    load_path = args.resume or args.init or args.finetune
+    ck = torch.load(load_path, map_location=dev)
     robot.validate_metadata(ck.get("robot_metadata"), legacy=True)
+    if ck.get('args', {}).get('hist') != args.hist:
+        raise ValueError('checkpoint history length mismatch')
+    if args.resume and ck.get('task_config') != task_config:
+        raise ValueError('checkpoint task configuration mismatch')
     # Resume continues the same run; --init explicitly fine-tunes on a new dataset.
     if args.resume and robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
         raise ValueError("checkpoint dataset mismatch")
     changed = check_contact_geometry_resume(ck.get("ctc_cfg", {}), args.contact_geometry,
-                                            allow_change=args.allow_contact_geometry_change or bool(args.init))
+                                            allow_change=args.allow_contact_geometry_change or bool(args.init or args.finetune))
     geometry_transition = ck.get("geometry_transition")
     if changed:
         geometry_transition = dict(previous=ck.get("ctc_cfg", {}).get("contact_geometry", "legacy"),
-                                   current=args.contact_geometry, source_checkpoint=os.path.abspath(args.resume or args.init),
-                                   source_sha256=sha256(args.resume or args.init), source_iteration=ck["iteration"])
+                                   current=args.contact_geometry, source_checkpoint=os.path.abspath(load_path),
+                                   source_sha256=sha256(load_path), source_iteration=ck["iteration"])
         rt.print(f"explicit reward geometry migration: {geometry_transition}", flush=True)
-    wm.load_state_dict(ck["wm"]), pi.load_state_dict(ck["pi"]), critic.load_state_dict(ck["critic"])
-    opt_wm.load_state_dict(ck["opt_wm"]), opt_pi.load_state_dict(ck["opt_pi"]), opt_v.load_state_dict(ck["opt_v"])
+    wm.load_state_dict(ck["wm"]), pi.load_state_dict(ck["pi"])
+    if not args.finetune:
+        critic.load_state_dict(ck["critic"])
+        opt_wm.load_state_dict(ck["opt_wm"]), opt_pi.load_state_dict(ck["opt_pi"]), opt_v.load_state_dict(ck["opt_v"])
+    source_checkpoint = (dict(path=os.path.abspath(load_path), sha256=sha256(load_path), iteration=ck['iteration'])
+                         if args.finetune else ck.get('source_checkpoint'))
     if args.resume:
         start_it, wall_offset, sim_steps, lr_it0 = ck["iteration"], ck["wall_time"], ck["sim_steps"], ck.get("lr_it0", 0)
-    else:  # the learning-rate schedule continues from the initial run's iteration
+    elif args.init:  # legacy --init continues its learning-rate schedule
         lr_it0 = ck["iteration"] + ck.get("lr_it0", 0)
+
+if standing or args.finetune or (args.resume and ck.get('freeze_normalizers', False)):
+    freeze_normalizers(pi, wm)
 
 
 rt.register({"wm": wm, "pi": pi, "critic": critic}, {"opt_wm": opt_wm, "opt_pi": opt_pi, "opt_v": opt_v})
@@ -158,14 +196,20 @@ def _wm_err(S_hat, s1, mask):
 
 
 def _imag_step(S, o_hist, f, v, gs, xi, xi_n, boxes):
-    a = pi(o_hist, ctc.command(S, f, v, gs, noise=True))
+    a = pi(o_hist, ctc.command(S, f, v, gs, noise=standing is None))
+    if standing:
+        a = standing.compose(a, xi)
     S1 = wm.step(S, a, xi_n, mdp.scan(S, boxes))
-    o1 = mdp.add_noise(mdp.obs(S1, a, xi))
+    o1 = mdp.obs(S1, a, xi)
+    if standing is None:
+        o1 = mdp.add_noise(o1)
     return S1, a, torch.cat((o_hist[:, 1:], o1.unsqueeze(1)), 1), f + 1
 
 
 def _reward_term(S, S_prev, f, v, a, a_prev, a_prev2, xi):
-    if paper_reward is not None:
+    if standing:
+        r = standing.reward(S, f, v, a, a_prev)
+    elif paper_reward is not None:
         r = paper_reward(S, S_prev, f, v, a, a_prev, a_prev2, xi)
     else:
         r = mdp.reward(S, f, a, a_prev) + ctc.cfg.w_label * ctc.label_reward(S, f, v, motion.boxes(f, v)) * CONTROL_DT
@@ -293,21 +337,30 @@ def policy_update():
 
 
 # ------------------------------------------------------------------------------------------------
-env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum, runtime=rt)
+env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum, runtime=rt,
+                  control_task=standing)
 if (args.resume or args.init) and "curriculum_phase" in ck:
     env.phase.copy_(ck["curriculum_phase"])
 if args.resume:
     for key in ('bin_G', 'bin_w_avg'):
         if key in ck:
             getattr(env, key).copy_(ck[key])
-if args.resume or args.init:
+if args.resume or args.init or args.finetune:
     env.reset(torch.arange(args.num_envs, device=dev))
+if standing:
+    from supermimic.acp.standing_eval import evaluate, selection_key
+    eval_env = TrackingSim(1, motion, mdp, dev, eval_mode=True, control_task=standing)
+    best_report_path = Path(args.log_dir) / 'best_eval.json'
+    import json
+    best_report = json.loads(best_report_path.read_text()) if args.resume and best_report_path.exists() else None
+    rt.write_json('task_config.json', dict(task_config=task_config, source_checkpoint=source_checkpoint))
 # clip groups for the curriculum log: the motion folders
 GROUPS = sorted({n.split("/")[0] for n in motion.names})
 clip_group = torch.tensor([GROUPS.index(n.split("/")[0]) for n in motion.names], device=dev)
 buffer = ReplayBuffer(args.buffer_steps, args.num_envs, dev, robot=robot)
 obs_hist = torch.zeros(args.num_envs, Hh, OBS_DIM, device=dev)
 goal_steps = ctc.sample_goal_steps(args.num_envs)
+collect_iteration = start_it
 
 
 @torch.no_grad()
@@ -317,11 +370,17 @@ def collect(n_steps: int, stats: dict):
         o = env.observe()
         fresh = env.ep_step == 0
         obs_hist = torch.where(fresh[:, None, None], o.unsqueeze(1).expand_as(obs_hist), torch.cat((obs_hist[:, 1:], o.unsqueeze(1)), 1))
-        cmd = ctc.command(env.state(), env.f, env.v, goal_steps, noise=True)
+        cmd = ctc.command(env.state(), env.f, env.v, goal_steps, noise=standing is None)
         pi.obs_norm.update(o)
         pi.goal_norm.update(cmd)
         a = pi(obs_hist, cmd)
-        a = torch.clamp(a + args.action_noise * torch.randn_like(a), -20, 20)
+        noise = standing.noise_scale(collect_iteration, args.action_noise) if standing else args.action_noise
+        eps = torch.randn_like(a)
+        if standing:
+            eps = eps * standing.free
+        a = torch.clamp(a + noise * eps, -20, 20)
+        if standing:
+            a = standing.compose(a, env.xi)
         out = env.step(a)
         out["goal_steps"] = goal_steps.clone()
         buffer.add(out)
@@ -334,7 +393,7 @@ def collect(n_steps: int, stats: dict):
         touch = ctc.body_distance(S1, motion.boxes(f1, out["v"])) <= ctc.cfg.touch_dist
         label = ctc.labels[f1, out["v"]]
         stats["tp"].append((touch & label).sum()), stats["n_touch"].append(touch.sum()), stats["n_label"].append(label.sum())
-        stats["r"].append(out["r"].mean() / MAX_STEP_REWARD)
+        stats["r"].append(out["r"].mean() / (MAX_R if standing else MAX_STEP_REWARD))
         if "ep_len" in out:
             stats["len"].append(out["ep_len"].sum()), stats["n_ep"].append(out["ep_len"].new_tensor(len(out["ep_len"])))
             stats["ret"].append(out["ep_ret_norm"].sum()), stats["term"].append(out["term"][out["done"]].float().sum())
@@ -355,6 +414,7 @@ t_log = time.time()
 step_acc = ck.get("step_acc", 0.0) if args.resume else 0.0
 agg = {"wm": [], "wm8": [], "pi": [], "v": [], "ir": [], "gn": [], "surv": []}
 for it in (itertools.count(start_it) if args.iterations == -1 else range(start_it, args.iterations)):
+    collect_iteration = it
     lr = lr_at(it)
     for o in (opt_wm, opt_pi, opt_v):
         for gparam in o.param_groups:
@@ -401,8 +461,32 @@ for it in (itertools.count(start_it) if args.iterations == -1 else range(start_i
               "curriculum_phase": env.phase.clone(), "lr_it0": lr_it0,
               "bin_G": env.bin_G.clone(), "bin_w_avg": env.bin_w_avg.clone(),
               "reward_cfg": dataclasses.asdict(reward_cfg) if reward_cfg is not None else None,
+              "task_config": task_config, "source_checkpoint": source_checkpoint,
+              "freeze_normalizers": bool(standing or args.finetune or (args.resume and ck.get('freeze_normalizers', False))),
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip
-        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "geometry_transition", "saved_at")}
+        small = {k: ck[k] for k in ("robot_metadata", "data_hash", "pi", "wm", "iteration", "wall_time", "sim_steps", "args", "ctc_cfg", "geometry_transition", "saved_at", "task_config", "source_checkpoint", "freeze_normalizers")}
         rt.save(ck, numbered=f"ckpt_{it + 1:06d}.pt", small_keys=list(small), full=args.save_full_checkpoints)
+        if standing:
+            output = Path(args.log_dir) / 'evaluations' / f'iter_{it + 1:06d}'
+            # Evaluation neither advances the collector nor consumes its random stream.
+            with torch.random.fork_rng(devices=[torch.cuda.current_device()]):
+                report = evaluate(pi, eval_env, standing, output, iteration=it + 1,
+                                  checkpoint=str(Path(args.log_dir) / f'ckpt_{it + 1:06d}.pt'))
+            rt.print('standing eval: ' + json.dumps({k: v for k, v in report.items() if k not in ('metrics', 'task_config')}), flush=True)
+            if best_report is None or report['standing_30s_pass'] or selection_key(report) < selection_key(best_report):
+                best_report = report
+                rt.write_json('best_eval.json', report)
+                shutil.copyfile(Path(args.log_dir) / 'last.pt', Path(args.log_dir) / 'best.pt')
+            if report['standing_30s_pass']:
+                saved = torch.load(Path(args.log_dir) / 'best.pt', map_location='cpu')
+                pi.load_state_dict(saved['pi'])
+                with torch.random.fork_rng(devices=[torch.cuda.current_device()]):
+                    confirmation = evaluate(pi, eval_env, standing, Path(args.log_dir) / 'confirmed', iteration=it + 1,
+                                            checkpoint=str(Path(args.log_dir) / 'best.pt'))
+                if confirmation['standing_30s_pass']:
+                    rt.write_json('completion.json', dict(status='passed', iteration=it + 1, report='confirmed.json'))
+                    break
+    if standing and it + 1 == args.iterations:
+        rt.write_json('completion.json', dict(status='not_passed', iteration=it + 1, report='best_eval.json'))
 
 rt.close()
