@@ -81,6 +81,7 @@ def main():
     ap.add_argument("--fps", type=int, default=50)
     ap.add_argument("--title", default=None, help="short video title")
     ap.add_argument("--solid-label", default="policy", help="legend for the solid robot, e.g. reference PD")
+    ap.add_argument("--hide-reference", action="store_true", help="hide the blue reference robot")
     args = ap.parse_args()
 
     # Load once: accessing an NpzFile repeatedly decompresses whole arrays per frame.
@@ -102,6 +103,11 @@ def main():
         m = mujoco.MjModel.from_xml_string(scene_xml(d["boxes"][c], robot))
         m.vis.global_.offwidth, m.vis.global_.offheight = args.width, args.height
         m.vis.headlight.ambient[:], m.vis.headlight.diffuse[:] = 0.45, 0.6
+        if args.hide_reference:
+            for geom_id in range(m.ngeom):
+                body_name = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_BODY, int(m.geom_bodyid[geom_id])) or ""
+                if body_name.startswith("ref_"):
+                    m.geom_rgba[geom_id, 3] = 0
         data = mujoco.MjData(m)
         nq = 7 + d["q"].shape[-1]
         qadr, _ = robot.joint_addresses(m)
@@ -131,7 +137,7 @@ def main():
             img = Image.fromarray(r.render())
             draw = ImageDraw.Draw(img)
             draw.text((10, 8), f"{args.title or names[c]}  t={t / args.fps:.2f}s" + ("  FAILED" if failed and t >= T_alive else ""), font=font, fill=(0, 0, 0))
-            draw.text((10, args.height - 30), f"Solid: {args.solid_label} | Blue ghost: reference | Dots: planned contacts", font=font, fill=(0, 0, 0))
+            draw.text((10, args.height - 30), f"Solid: {args.solid_label}" + ("" if args.hide_reference else " | Blue ghost: reference") + " | Dots: planned contacts", font=font, fill=(0, 0, 0))
             ffmpeg.stdin.write(img.tobytes())
         r.close()
         print(f"{names[c]}: {T} frames, {'failed at %.2f s' % (T_alive / args.fps) if failed else 'completed'}", flush=True)
