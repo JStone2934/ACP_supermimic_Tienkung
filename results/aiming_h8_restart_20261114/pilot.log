@@ -1,0 +1,20 @@
+envs=128 horizon=8 batch=128/128 warmup=100+100 budget=400
+iter=1 phase=wm stage=B1 wm=0.06584 actor_updates=0 model_ok=False
+iter=25 phase=wm stage=B1 wm=0.04189 actor_updates=0 model_ok=False
+iter=50 phase=wm stage=B1 wm=0.04613 actor_updates=0 model_ok=False
+iter=75 phase=wm stage=B1 wm=0.04360 actor_updates=0 model_ok=False
+iter=100 phase=wm stage=B1 wm=0.03451 actor_updates=0 model_ok=True
+iter=101 phase=critic stage=B1 wm=0.03452 actor_updates=0 model_ok=True
+iter=125 phase=critic stage=B1 wm=0.03126 actor_updates=0 model_ok=True
+iter=150 phase=critic stage=B1 wm=0.02824 actor_updates=0 model_ok=True
+iter=175 phase=critic stage=B1 wm=0.02624 actor_updates=0 model_ok=True
+iter=200 phase=critic stage=B1 wm=0.02573 actor_updates=0 model_ok=True
+iter=201 phase=joint stage=B1 wm=0.02945 actor_updates=1 model_ok=True
+iter=225 phase=joint stage=B1 wm=0.02400 actor_updates=25 model_ok=True
+iter=250 phase=joint stage=B1 wm=0.03956 actor_updates=50 model_ok=True
+iter=275 phase=joint stage=B1 wm=0.26839 actor_updates=75 model_ok=True
+iter=300 phase=joint stage=B1 wm=0.19866 actor_updates=100 model_ok=False
+iter=325 phase=joint stage=B1 wm=0.22751 actor_updates=125 model_ok=False
+iter=350 phase=joint stage=B1 wm=0.53919 actor_updates=150 model_ok=False
+iter=375 phase=joint stage=B1 wm=0.41168 actor_updates=175 model_ok=False
+iter=400 phase=joint stage=B1 wm=0.40672 actor_updates=200 model_ok=False

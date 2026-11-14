@@ -14,5 +14,7 @@ logs/
 *.mp4
 *.npz
 results/analysis/
+results/standing_aiming_curriculum/
 # third-party paper
 *.pdf
+results/standing_aiming_fullbody_v2/

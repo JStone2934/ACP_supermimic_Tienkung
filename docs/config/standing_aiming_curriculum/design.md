@@ -1,6 +1,6 @@
 # 控制、目标几何与奖励设计
 
-更新：2026-11-11（Asia/Shanghai）。返回 [入口](README.md)；教师见 [监督初始化](ik_pretraining.md)，阶段和验收见 [课程](curriculum.md)。本文件规定后续实现，除明确引用的现有接口外，均尚未接入源码。
+更新：2026-11-11（Asia/Shanghai）。返回 [入口](README.md)；教师见 [监督初始化](ik_pretraining.md)，阶段和验收见 [课程](curriculum.md)。本文件规定首版设计，核心接口已接入；实际配置和结果见 [训练准备记录](run.md)。
 
 ## 1. 控制对象与动作合成
 

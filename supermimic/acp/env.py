@@ -333,8 +333,8 @@ class TrackingSim:
         return self._obs
 
     # ------------------------------------------------------------------ step
-    def step(self, a: torch.Tensor) -> dict:
-        if self.control_task is not None:
+    def step(self, a: torch.Tensor, *, composed=False, reward_fn=None) -> dict:
+        if self.control_task is not None and not composed:
             a = self.control_task.compose(a, self.xi)
         o = self._obs if self._obs is not None else self.observe()
         self._obs = None
@@ -352,7 +352,7 @@ class TrackingSim:
         S1 = self.state()
         g = self.is_goal
         f1 = torch.where(g, f, torch.minimum(f + 1, self.motion.clip_end[self.motion.clip_id[f]]))  # goal worlds keep their (unused) reference frame
-        r = (self.mdp.reward(S1, f1, a, a_prev) if self.control_task is None
+        r = reward_fn(S1, f1, v, a, a_prev) if reward_fn is not None else (self.mdp.reward(S1, f1, a, a_prev) if self.control_task is None
              else self.control_task.reward(S1, f1, v, a, a_prev))
         term = self.mdp.termination(S1, f1)
         clip_end = self.motion.clip_end[self.motion.clip_id[f]]

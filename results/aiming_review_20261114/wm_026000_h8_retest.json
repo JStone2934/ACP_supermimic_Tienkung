@@ -1,0 +1,160 @@
+{
+  "passed": false,
+  "horizons": {
+    "1": {
+      "windows": 8192,
+      "total_windows": 8192,
+      "root_m_p95": 0.0020745990332216024,
+      "root_m_rmse": 0.0009994205320253968,
+      "feet_m_p95": 0.00653900345787406,
+      "feet_m_rmse": 0.003462358843535185,
+      "joints_rad_p95": 0.008272698149085045,
+      "joints_rad_rmse": 0.004619460087269545,
+      "tcp_m_p95": 0.0018957577412948012,
+      "tcp_m_rmse": 0.0010243406286463141,
+      "direction_deg_p95": 0.40563514828681946,
+      "direction_deg_rmse": 0.2098860740661621,
+      "tip_m_p95": 0.018672700971364975,
+      "tip_m_rmse": 0.00973516795784235
+    },
+    "8": {
+      "windows": 1024,
+      "total_windows": 1024,
+      "root_m_p95": 0.009456264786422253,
+      "root_m_rmse": 0.004636814817786217,
+      "feet_m_p95": 0.024115361273288727,
+      "feet_m_rmse": 0.01306715328246355,
+      "joints_rad_p95": 0.01620267890393734,
+      "joints_rad_rmse": 0.009576394222676754,
+      "tcp_m_p95": 0.013242285698652267,
+      "tcp_m_rmse": 0.006824898067861795,
+      "direction_deg_p95": 1.6005574464797974,
+      "direction_deg_rmse": 0.8349442481994629,
+      "tip_m_p95": 0.07335203886032104,
+      "tip_m_rmse": 0.038469262421131134
+    },
+    "16": {
+      "windows": 512,
+      "total_windows": 512,
+      "root_m_p95": 0.014169535599648952,
+      "root_m_rmse": 0.007469299249351025,
+      "feet_m_p95": 0.034410279244184494,
+      "feet_m_rmse": 0.017952993512153625,
+      "joints_rad_p95": 0.01812887005507946,
+      "joints_rad_rmse": 0.011094585061073303,
+      "tcp_m_p95": 0.03259577602148056,
+      "tcp_m_rmse": 0.0178980752825737,
+      "direction_deg_p95": 2.8733127117156982,
+      "direction_deg_rmse": 1.5764131546020508,
+      "tip_m_p95": 0.13165979087352753,
+      "tip_m_rmse": 0.07280534505844116
+    },
+    "32": {
+      "windows": 256,
+      "total_windows": 256,
+      "root_m_p95": 0.0474834218621254,
+      "root_m_rmse": 0.023866180330514908,
+      "feet_m_p95": 0.04456578195095062,
+      "feet_m_rmse": 0.025944475084543228,
+      "joints_rad_p95": 0.022578977048397064,
+      "joints_rad_rmse": 0.013626030646264553,
+      "tcp_m_p95": 0.06852689385414124,
+      "tcp_m_rmse": 0.03738713636994362,
+      "direction_deg_p95": 4.516159534454346,
+      "direction_deg_rmse": 2.5410995483398438,
+      "tip_m_p95": 0.20595651865005493,
+      "tip_m_rmse": 0.11677989363670349
+    }
+  },
+  "thresholds": {
+    "root_m_p95": 0.05,
+    "feet_m_p95": 0.025,
+    "tip_m_p95": 0.1
+  },
+  "thresholds_status": "stage-specific diagnostic, does not block optimizer updates or replace physical acceptance",
+  "independent_episodes": true,
+  "exploration_rad": {
+    "arm": 0.02,
+    "body": 0.005
+  },
+  "checkpoint_sha256": "b6a8b7892624de559882e74d6ba4c647f400e75e366b8a609e7416bb6b726d35",
+  "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/standing_aiming_fullbody_v2/h32_20261113/train/ckpt_026000.pt",
+  "task_config": {
+    "name": "standing_aiming_fullbody_v2",
+    "version": 2,
+    "command_layout": {
+      "contact_positions": [
+        0,
+        27
+      ],
+      "standing_goal": [
+        27,
+        30
+      ],
+      "height_scan": [
+        30,
+        93
+      ],
+      "target_torso_div3": [
+        93,
+        96
+      ],
+      "direction_torso": [
+        96,
+        99
+      ],
+      "normal_torso": [
+        99,
+        102
+      ],
+      "rho_sigma_div02": [
+        102,
+        104
+      ],
+      "velocity_heading": [
+        104,
+        107
+      ]
+    },
+    "obs_dim": 99,
+    "hist": 10,
+    "command_dim": 107,
+    "axis": [
+      0,
+      0,
+      -1
+    ],
+    "tcp": "right_tcp_link",
+    "episode_steps": 1500,
+    "terrain": "plane_z0",
+    "contact_valid": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "action": "q_default + xi_joint_offset + action_scale * a_exec; uniform soft clip",
+    "reward_weights": {
+      "aim": 2.0,
+      "root": 2.0,
+      "feet": 6.0,
+      "height": 1.0,
+      "upright": 1.0,
+      "velocity": 1.0,
+      "angular_velocity": 0.2,
+      "foot_velocity": 0.5,
+      "heading": 0.5,
+      "foot_boundary": -4.0,
+      "action_rate": -0.1,
+      "joint_limit": -2.0
+    },
+    "term_height": 0.25,
+    "term_rzz": 0.7071067811865476
+  },
+  "curriculum_level": 1
+}

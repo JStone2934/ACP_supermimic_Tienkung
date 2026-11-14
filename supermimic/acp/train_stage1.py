@@ -13,6 +13,17 @@ Usage: python -m supermimic.acp.train_stage1 --log_dir logs/acp_stage1
 
 from __future__ import annotations
 
+# The aiming curriculum has its own minimal runner; legacy tasks remain unchanged.
+import sys
+if any(x == '--task=standing_aiming_curriculum' for x in sys.argv) or ('--task' in sys.argv and sys.argv[sys.argv.index('--task')+1] == 'standing_aiming_curriculum'):
+    if '--task' in sys.argv:
+        i = sys.argv.index('--task'); del sys.argv[i:i+2]
+    else:
+        sys.argv.remove('--task=standing_aiming_curriculum')
+    from supermimic.acp.train_aiming import main
+    main()
+    raise SystemExit
+
 import argparse
 import dataclasses
 import itertools
@@ -24,7 +35,7 @@ from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default="g1")
-parser.add_argument("--task", choices=['tracking', 'standing_aiming'], default='tracking')
+parser.add_argument("--task", choices=['tracking', 'standing_aiming', 'standing_aiming_curriculum'], default='tracking')
 parser.add_argument("--num_envs", type=int, default=4096)
 parser.add_argument("--iterations", type=int, default=60_000, help="total iterations; -1 trains continuously until stopped")
 parser.add_argument("--buffer_steps", type=int, default=1000)

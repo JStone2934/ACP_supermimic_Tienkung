@@ -1,0 +1,18 @@
+test_acceptance_no_warmup_deletion (__main__.Contracts.test_acceptance_no_warmup_deletion) ... ok
+test_all_action_dimensions_and_offsets (__main__.Contracts.test_all_action_dimensions_and_offsets) ... ok
+test_bootstrap_upper_bound (__main__.Contracts.test_bootstrap_upper_bound) ... ok
+test_migration_both_known_layouts_and_rejection (__main__.Contracts.test_migration_both_known_layouts_and_rejection) ... ok
+test_ray_validity (__main__.Contracts.test_ray_validity) ... ok
+test_reference_free (__main__.Contracts.test_reference_free) ... ok
+test_replay_context_history_and_terminal_mask (__main__.Contracts.test_replay_context_history_and_terminal_mask) ... ok
+test_request_penalty_restores_inward_gradient (__main__.Contracts.test_request_penalty_restores_inward_gradient) ... ok
+test_reward_gradient_and_timeout (__main__.Contracts.test_reward_gradient_and_timeout) ... ok
+test_stage_exploration_restart_and_plateau (__main__.Contracts.test_stage_exploration_restart_and_plateau) ... ok
+test_static_curriculum (__main__.Contracts.test_static_curriculum) ... ok
+test_training_schedule_and_exploration (__main__.Contracts.test_training_schedule_and_exploration) ... ok
+test_world_target_and_command (__main__.Contracts.test_world_target_and_command) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.187s
+
+OK

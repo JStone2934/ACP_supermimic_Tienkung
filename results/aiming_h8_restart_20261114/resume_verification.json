@@ -1,0 +1,23 @@
+{
+  "capacity_iteration": 5,
+  "resume_iteration": 10,
+  "capacity_exploration": {
+    "level": 1,
+    "updates": 2,
+    "decay_origin": 0,
+    "stale_evaluations": 0,
+    "recoveries": 0,
+    "best_score": null,
+    "passed": false
+  },
+  "resume_exploration": {
+    "level": 1,
+    "updates": 5,
+    "decay_origin": 0,
+    "stale_evaluations": 0,
+    "recoveries": 0,
+    "best_score": null,
+    "passed": false
+  },
+  "restored": true
+}

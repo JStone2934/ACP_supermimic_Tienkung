@@ -1,0 +1,14 @@
+{
+  "script_sha256": "b78781991242856f17f7d55821d495bcfefbe53571309362a8ab7e5c30d4bbc4",
+  "conclusion": "支持继续有限小步试训；10 次更新后平均站立指标未见退化，但完整站立通过率仍仅 8/64，未达到验收。",
+  "formal_training_resumed": false,
+  "source_checkpoint_unchanged": true,
+  "checks": [
+    "终止当步奖励保留；终止后奖励不进入之前回报的数值检查通过",
+    "完整回合实际完成，无片段末端误作终止",
+    "actor 在 critic 数据采集及训练阶段逐张量不变",
+    "WM 全程逐张量不变",
+    "Python 语法检查通过"
+  ],
+  "actual_compute_seconds": 79.5148805771023
+}

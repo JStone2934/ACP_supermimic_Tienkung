@@ -1,6 +1,6 @@
 # 站立瞄准课程学习
 
-更新：2026-11-11（Asia/Shanghai）。机器人：`tienkung3_29dof`。本目录记录用户确认的设计，当前交付为文档，瞄准网络和课程尚未实现。
+更新：2026-11-11（Asia/Shanghai）。机器人：`tienkung3_29dof`。本目录记录用户确认的设计。最小单 actor、监督初始化及课程代码已接入，实际运行入口和结果见 [训练准备记录](run.md)。
 
 ## 1. 目标与已确认决策
 
@@ -52,9 +52,9 @@ logs/tienkung3_29dof/standing_aiming_from100500_20261111/train/best.pt
 
 当前成绩只证明固定七关节持臂站立；尚不证明末端运动、目标跟踪、外力扰动或实机能力。当前源码 [standing.py](../../../supermimic/acp/standing.py) 仍覆盖七个右臂关节动作。
 
-### 已确认设计、尚未实现
+### 单 actor 实现与训练准备
 
-方向 IK 教师、监督数据集、单 actor 的瞄准输入迁移与末端输出启用、25 维有效动作＋4 维固定覆盖、瞄准奖励、课程调度、动态目标和相关评估均属于后续实现。下文的字段、阶段编号、网络迁移和配置表是拟新增设计，不是已经存在的 CLI 或接口。
+方向 IK 教师、监督数据、单 actor 输入迁移、25 维有效动作＋4 维固定覆盖、瞄准奖励、课程调度和动态目标已接入。CLI、实际配置、C0 指标与剩余能力见 [训练准备记录](run.md)；完整课程训练尚未启动。
 
 ### 待验证的默认参数
 
@@ -70,7 +70,7 @@ logs/tienkung3_29dof/standing_aiming_from100500_20261111/train/best.pt
 
 共享网络训练时不能用“冻结身体输出层”保证身体行为不变。监督初始化加入冻结站立参考策略提供的身体动作保持损失，课程开始后逐步退火；该参考只用于训练，不进入最终部署。单 actor 的 25 维动作与肩肘四个固定目标统一合成，详见 [联合训练规则](curriculum.md#6-训练更新与身体适配)。
 
-拟新增运行资产置于 `data/tienkung3_29dof/standing_aiming/ik_supervision/<dataset_id>/`、`logs/tienkung3_29dof/standing_aiming_curriculum/<run>/` 和 `results/standing_aiming_curriculum/<run>/`；这些目录尚未由本次文档工作创建。行走、台阶、抬臂过渡、实机感知和系统辨识仍是后续路线。
+拟新增运行资产置于 `data/tienkung3_29dof/standing_aiming/ik_supervision/<dataset_id>/`、`logs/tienkung3_29dof/standing_aiming_curriculum/<run>/` 和 `results/standing_aiming_curriculum/<run>/`；本次运行资产见 [训练准备记录](run.md)。行走、台阶、抬臂过渡、实机感知和系统辨识仍是后续路线。
 
 ## 5. 研究依据
 
@@ -85,3 +85,16 @@ logs/tienkung3_29dof/standing_aiming_from100500_20261111/train/best.pt
 | [HugWBC](https://arxiv.org/html/2502.03206v2) | 上肢接管强度课程及冲突奖励处理；本项目保持已确认的四关节固定约束 |
 
 此前调研中的 [Residual Reinforcement Learning](https://arxiv.org/abs/1812.03201) 解释传统控制叠加学习残差的另一条路线；用户此次选择直接网络输出，因此它不是本方案的执行架构。
+
+
+### 2026-11-12：胸口正前方靶位续训
+
+新运行 `chest_forward_20261112` 显式设置 `target_frame=chest_forward`；缺省配置仍采用旧手部初始指向基准。参考第一帧的左右肩 pitch 关节中心中点为胸口中心，躯干 +X 投影到水平面为前向，世界 +Z 为上向。当前胸口世界高度约 1.340676 m，中央靶点为胸口水平正前方 3 m，半径 0.20 m。后续角度、深度及移动目标均使用同一固定世界坐标基准，不随机器人晃动移动。
+
+从旧运行第 25000 次完整 last.pt 迁移策略、世界模型、价值网络、归一化统计和优化器，保留学习率及 actor 更新进度；课程、恢复计数和最佳评分清空，从 C1-h1 重新统计。旧通过记录不迁移。首次续训先预热世界模型 100 次，再联合训练；仍每 500 次评估，无迭代上限。
+
+新基准下中央目标在 2/3/4 m 均通过现有离线 IK 条件；256 个角度候选在三个深度均可达，新池另存。IK 不进入执行控制。迁移源哈希、目标池哈希和基准定义见新运行 migration.json、geometry.json 和检查点 metadata。
+
+新靶位迁移前基线完整 30 秒未跌倒：骨盆最大位移 2.03 cm、双脚 1.92/1.36 cm、最大倾斜 3.32°；瞄准 P95 64.42 cm，未捕获。视频、轨迹与曲线位于 `results/standing_aiming_curriculum/chest_forward_20261112/baseline.{mp4,npz,png,json}`。这是旧策略对新靶位的未适应基线，不能与旧靶位通过率直接比较。
+
+训练与健康服务沿用原资源限制及 SSH 断连保护，通过 `--run-dir` 指向新目录，旧结果保留。

@@ -38,6 +38,7 @@ class ReplayBuffer:
     def __init__(self, T: int, N: int, device: str, extra: dict | None = None, robot="g1"):
         self.T, self.N, self.device = T, N, device
         self.fields = fields(extra, robot)
+        self.extra_keys = tuple(extra or {})
         self.data = {}
         for k, (shape, dt) in self.fields.items():
             shp = (T, N) + ((shape,) if isinstance(shape, int) else shape)
@@ -83,5 +84,6 @@ class ReplayBuffer:
         hrows = self._row(age.unsqueeze(-1) - back)
         henv = env.unsqueeze(-1).expand_as(hrows)
         start = {k: self.data[k][row, env] for k in ("s", "a_prev", "xi", "f", "v", "goal_steps", "goal", "ep_step")}
+        start.update({k: self.data[k][row, env] for k in self.extra_keys})
         hist_d = {k: self.data[k][hrows, henv] for k in ("o", "a_prev")}
         return start, hist_d

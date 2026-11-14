@@ -1,0 +1,91 @@
+CASE baseline_begin: 59 states x 4 replicas, same physical lanes
+physical baseline_begin.pt: 300/1500, active=204
+physical baseline_begin.pt: 600/1500, active=152
+physical baseline_begin.pt: 900/1500, active=103
+physical baseline_begin.pt: 1200/1500, active=52
+physical baseline_begin.pt: 1500/1500, active=0
+CASE 0_0.005_plus: 59 states x 4 replicas, same physical lanes
+physical 0_0.005_plus.pt: 300/1500, active=204
+physical 0_0.005_plus.pt: 600/1500, active=152
+physical 0_0.005_plus.pt: 900/1500, active=104
+physical 0_0.005_plus.pt: 1200/1500, active=52
+physical 0_0.005_plus.pt: 1500/1500, active=0
+CASE 0_0.005_minus: 59 states x 4 replicas, same physical lanes
+physical 0_0.005_minus.pt: 300/1500, active=204
+physical 0_0.005_minus.pt: 600/1500, active=151
+physical 0_0.005_minus.pt: 900/1500, active=103
+physical 0_0.005_minus.pt: 1200/1500, active=51
+physical 0_0.005_minus.pt: 1500/1500, active=0
+RESULT 0 0.005 {'physical_total': 0.35884636640548706, 'physical_first8': -0.0012924092588946223, 'physical_discounted_tail': 0.36013877391815186, 'physical_standing': 0.29115670919418335, 'model_discounted_tail': 0.4630257487297058, 'critic_at_physical_tail': 0.3180108666419983, 'physical_plus_vs_baseline': 0.09845591336488724, 'physical_minus_vs_baseline': -0.2603904604911804}
+CASE 0_0.02_plus: 59 states x 4 replicas, same physical lanes
+physical 0_0.02_plus.pt: 300/1500, active=203
+physical 0_0.02_plus.pt: 600/1500, active=152
+physical 0_0.02_plus.pt: 900/1500, active=104
+physical 0_0.02_plus.pt: 1200/1500, active=52
+physical 0_0.02_plus.pt: 1500/1500, active=0
+CASE 0_0.02_minus: 59 states x 4 replicas, same physical lanes
+physical 0_0.02_minus.pt: 300/1500, active=202
+physical 0_0.02_minus.pt: 600/1500, active=151
+physical 0_0.02_minus.pt: 900/1500, active=104
+physical 0_0.02_minus.pt: 1200/1500, active=52
+physical 0_0.02_minus.pt: 1500/1500, active=0
+RESULT 0 0.02 {'physical_total': 0.2593097686767578, 'physical_first8': -0.0028237260412424803, 'physical_discounted_tail': 0.26213350892066956, 'physical_standing': 0.23312926292419434, 'model_discounted_tail': 1.703370213508606, 'critic_at_physical_tail': 1.2956721782684326, 'physical_plus_vs_baseline': 0.172439306974411, 'physical_minus_vs_baseline': -0.08687048405408859}
+CASE 100_0.02_plus: 59 states x 4 replicas, same physical lanes
+physical 100_0.02_plus.pt: 300/1500, active=204
+physical 100_0.02_plus.pt: 600/1500, active=152
+physical 100_0.02_plus.pt: 900/1500, active=104
+physical 100_0.02_plus.pt: 1200/1500, active=51
+physical 100_0.02_plus.pt: 1500/1500, active=0
+CASE 100_0.02_minus: 59 states x 4 replicas, same physical lanes
+physical 100_0.02_minus.pt: 300/1500, active=204
+physical 100_0.02_minus.pt: 600/1500, active=152
+physical 100_0.02_minus.pt: 900/1500, active=104
+physical 100_0.02_minus.pt: 1200/1500, active=52
+physical 100_0.02_minus.pt: 1500/1500, active=0
+RESULT 100 0.02 {'physical_total': 0.038348980247974396, 'physical_first8': 1.563497971801553e-05, 'physical_discounted_tail': 0.038333334028720856, 'physical_standing': -0.002766132354736328, 'model_discounted_tail': 2.2291760444641113, 'critic_at_physical_tail': 2.102977991104126, 'physical_plus_vs_baseline': 0.2391938865184784, 'physical_minus_vs_baseline': 0.2008449137210846}
+CASE 500_0.02_plus: 59 states x 4 replicas, same physical lanes
+physical 500_0.02_plus.pt: 300/1500, active=204
+physical 500_0.02_plus.pt: 600/1500, active=152
+physical 500_0.02_plus.pt: 900/1500, active=104
+physical 500_0.02_plus.pt: 1200/1500, active=52
+physical 500_0.02_plus.pt: 1500/1500, active=0
+CASE 500_0.02_minus: 59 states x 4 replicas, same physical lanes
+physical 500_0.02_minus.pt: 300/1500, active=204
+physical 500_0.02_minus.pt: 600/1500, active=152
+physical 500_0.02_minus.pt: 900/1500, active=104
+physical 500_0.02_minus.pt: 1200/1500, active=52
+physical 500_0.02_minus.pt: 1500/1500, active=0
+RESULT 500 0.02 {'physical_total': -0.22332100570201874, 'physical_first8': -0.009308461099863052, 'physical_discounted_tail': -0.2140125334262848, 'physical_standing': -0.20168495178222656, 'model_discounted_tail': 2.4795727729797363, 'critic_at_physical_tail': 2.1453917026519775, 'physical_plus_vs_baseline': -0.12450283765792847, 'physical_minus_vs_baseline': 0.09881812334060669}
+CASE 2000_0.005_plus: 59 states x 4 replicas, same physical lanes
+physical 2000_0.005_plus.pt: 300/1500, active=204
+physical 2000_0.005_plus.pt: 600/1500, active=151
+physical 2000_0.005_plus.pt: 900/1500, active=104
+physical 2000_0.005_plus.pt: 1200/1500, active=52
+physical 2000_0.005_plus.pt: 1500/1500, active=0
+CASE 2000_0.005_minus: 59 states x 4 replicas, same physical lanes
+physical 2000_0.005_minus.pt: 300/1500, active=204
+physical 2000_0.005_minus.pt: 600/1500, active=152
+physical 2000_0.005_minus.pt: 900/1500, active=104
+physical 2000_0.005_minus.pt: 1200/1500, active=52
+physical 2000_0.005_minus.pt: 1500/1500, active=0
+RESULT 2000 0.005 {'physical_total': 0.053096044808626175, 'physical_first8': 0.0026945825666189194, 'physical_discounted_tail': 0.05040143057703972, 'physical_standing': 0.04844101890921593, 'model_discounted_tail': 0.5123658776283264, 'critic_at_physical_tail': 0.3048620820045471, 'physical_plus_vs_baseline': -0.09562522917985916, 'physical_minus_vs_baseline': -0.14872127771377563}
+CASE 2000_0.02_plus: 59 states x 4 replicas, same physical lanes
+physical 2000_0.02_plus.pt: 300/1500, active=204
+physical 2000_0.02_plus.pt: 600/1500, active=152
+physical 2000_0.02_plus.pt: 900/1500, active=104
+physical 2000_0.02_plus.pt: 1200/1500, active=52
+physical 2000_0.02_plus.pt: 1500/1500, active=0
+CASE 2000_0.02_minus: 59 states x 4 replicas, same physical lanes
+physical 2000_0.02_minus.pt: 300/1500, active=204
+physical 2000_0.02_minus.pt: 600/1500, active=150
+physical 2000_0.02_minus.pt: 900/1500, active=103
+physical 2000_0.02_minus.pt: 1200/1500, active=52
+physical 2000_0.02_minus.pt: 1500/1500, active=0
+RESULT 2000 0.02 {'physical_total': -0.08200990408658981, 'physical_first8': -0.0030944254249334335, 'physical_discounted_tail': -0.07891550660133362, 'physical_standing': -0.07109206914901733, 'model_discounted_tail': 2.021068572998047, 'critic_at_physical_tail': 1.7100951671600342, 'physical_plus_vs_baseline': -0.004909676965326071, 'physical_minus_vs_baseline': 0.07710026204586029}
+CASE baseline_end: 59 states x 4 replicas, same physical lanes
+physical baseline_end.pt: 300/1500, active=204
+physical baseline_end.pt: 600/1500, active=152
+physical baseline_end.pt: 900/1500, active=104
+physical baseline_end.pt: 1200/1500, active=52
+physical baseline_end.pt: 1500/1500, active=0
+COMPLETE {"source_experiment": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/results/critic_isolation_20261114", "states": 59, "replicas": 4, "same_lanes": true, "no_optimizer_steps": true, "unchanged": {"actor": true, "world_model": true}, "baseline_control": {"mean": -0.11663918942213058, "paired_state_se": 0.18138618767261505, "positive_fraction": 0.49152541160583496, "per_state": [1.4137694835662842, 0.6917483806610107, -0.8925919532775879, -1.6697454452514648, 0.0010905265808105469, -0.15998077392578125, 0.6155960559844971, 1.5454435348510742, 0.5359148979187012, -0.03398287296295166, -2.5580897331237793, 0.6456263065338135, -1.8004100322723389, 0.1414504051208496, -0.5313205718994141, 0.00021219253540039062, -3.143794536590576, -0.762872576713562, -4.076563358306885, 2.5991222858428955, 0.00012922286987304688, 1.343273639678955, 0.00046634674072265625, 3.004507064819336, -4.6134033203125, 1.529117226600647, 0.20195746421813965, -0.24048256874084473, -0.005774021148681641, 1.8648653030395508, -2.1016693115234375, 3.3932690620422363, -0.709221601486206, 0.001956462860107422, -0.33057117462158203, 0.0005145072937011719, -0.10019183158874512, 0.07930183410644531, -1.0617272853851318, -0.9393622875213623, -0.5550439357757568, 1.6689300537109375e-05, -7.152557373046875e-06, 0.0015726089477539062, 0.019954681396484375, 0.28201520442962646, 1.0701849460601807, -0.17540955543518066, -0.00014829635620117188, -0.03272247314453125, -0.01943516731262207, -0.32162046432495117, -1.1089272499084473, -0.2808513641357422, 0.0004801750183105469, -0.18105649948120117, -0.00020122528076171875, 0.541569173336029, 0.00034165382385253906]}, "baseline_control_mae": 0.8463160395622253, "baseline_individual_control_mae": 1.4962406158447266, "baseline_replica_mae": 0.8967705368995667}

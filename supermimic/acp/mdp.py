@@ -112,7 +112,7 @@ class MDP:
         return height_scan(S[0], S[1], boxes, self.scan_offsets)
 
     # ---------------- reward / termination ----------------
-    def reward(self, S, f, a, a_prev):
+    def reward(self, S, f, a, a_prev, *, body_ids=None, action_weights=None):
         """SuperMimic's tracking reward (already multiplied by dt) of S on reference frame f: the simulator's
         reward, which drives the start-bin sampling and the logs (the contact policy learns from its own)."""
         c, m = self.cfg, self.motion
@@ -124,16 +124,21 @@ class MDP:
         anchor = torch.cat((p[..., :2], rp[..., 2:3]), -1)
         ref_bp = anchor.unsqueeze(-2) + ((dR.unsqueeze(-3) @ (m.body_p[f] - rp.unsqueeze(-2)).unsqueeze(-1)).squeeze(-1))
         ref_bR = dR.unsqueeze(-3) @ m.body_R[f]
+        if body_ids is not None:
+            bp, bR, bv, bw = bp[..., body_ids, :], bR[..., body_ids, :, :], bv[..., body_ids, :], bw[..., body_ids, :]
+            ref_bp, ref_bR = ref_bp[..., body_ids, :], ref_bR[..., body_ids, :, :]
+        ref_v = m.body_v[f] if body_ids is None else m.body_v[f][..., body_ids, :]
+        ref_w = m.body_w[f] if body_ids is None else m.body_w[f][..., body_ids, :]
         e_pos = ((ref_bp - bp) ** 2).sum(-1).mean(-1)
         e_ori = rot_angle_sq(ref_bR, bR).mean(-1)
-        e_lv = ((m.body_v[f] - bv) ** 2).sum(-1).mean(-1)
-        e_av = ((m.body_w[f] - bw) ** 2).sum(-1).mean(-1)
+        e_lv = ((ref_v - bv) ** 2).sum(-1).mean(-1)
+        e_av = ((ref_w - bw) ** 2).sum(-1).mean(-1)
         e_rp = ((rp - p) ** 2).sum(-1)
         e_ro = rot_angle_sq(rR, R)
         r_track = (torch.exp(-e_pos / c.body_pos_std**2) + torch.exp(-e_ori / c.body_ori_std**2) + torch.exp(-e_lv / c.body_linvel_std**2)
                    + torch.exp(-e_av / c.body_angvel_std**2) + 0.5 * torch.exp(-e_rp / c.root_pos_std**2)
                    + 0.5 * torch.exp(-e_ro / c.root_ori_std**2))  # fmt: skip
-        r_rate = ((a - a_prev) ** 2).sum(-1)
+        r_rate = (((a - a_prev) ** 2) * (1 if action_weights is None else action_weights)).sum(-1)
         r_lim = (torch.relu(q - self.soft_hi) + torch.relu(self.soft_lo - q)).sum(-1)
         return (r_track + c.w_action_rate * r_rate + c.w_joint_limit * r_lim) * CONTROL_DT
 

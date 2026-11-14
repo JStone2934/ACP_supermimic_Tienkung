@@ -1,0 +1,6 @@
+envs=512 horizon=8 batch=256/256 warmup=2+1 budget=5
+iter=1 phase=wm stage=B1 wm=0.11278 actor_updates=0 model_ok=False
+iter=2 phase=wm stage=B1 wm=0.14219 actor_updates=0 model_ok=False
+iter=3 phase=critic stage=B1 wm=0.12994 actor_updates=0 model_ok=False
+iter=4 phase=joint stage=B1 wm=0.11541 actor_updates=1 model_ok=False
+iter=5 phase=joint stage=B1 wm=0.10909 actor_updates=2 model_ok=False

@@ -1,0 +1,12 @@
+{
+  "actor_and_wm_exact": true,
+  "curriculum": {
+    "level": 1,
+    "consecutive": 0,
+    "mastered": [
+      0
+    ]
+  },
+  "critic_and_optimizers_reset": true,
+  "horizon": 8
+}

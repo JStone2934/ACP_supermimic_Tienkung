@@ -1,0 +1,212 @@
+{
+  "checkpoint": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/standing_aiming_fullbody_v2/h8_request_stage_20261114/train/ckpt_001000.pt",
+  "checkpoint_iteration": 1000,
+  "trajectory": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/logs/tienkung3_29dof/standing_aiming_fullbody_v2/h8_request_stage_20261114/train/wm_validation/001000.npz",
+  "batch": 64,
+  "gradient_decomposition": {
+    "objectives": {
+      "standing": {
+        "mean": 0.20534679293632507,
+        "gradient_norm": 3.5396013259887695,
+        "cosine_with_total": 0.2889813482761383
+      },
+      "request": {
+        "mean": -0.0788736641407013,
+        "gradient_norm": 3.0192370414733887,
+        "cosine_with_total": 0.16789491474628448
+      },
+      "bootstrap": {
+        "mean": 2.2321083545684814,
+        "gradient_norm": 97.68074035644531,
+        "cosine_with_total": 0.999042809009552
+      }
+    },
+    "cosines": {
+      "request__standing": -0.049028798937797546,
+      "bootstrap__standing": 0.2585095167160034,
+      "bootstrap__request": 0.14123103022575378
+    },
+    "total_gradient_norm": 99.11703491210938,
+    "critic_features": {
+      "state": {
+        "feature_gradient_norm": 2.318073272705078,
+        "std_min": 0.010000107809901237,
+        "near_constant_features": 1
+      },
+      "command": {
+        "feature_gradient_norm": 1.1344566345214844,
+        "std_min": 0.009999999776482582,
+        "near_constant_features": 26
+      },
+      "root_anchor": {
+        "feature_gradient_norm": 0.36294376850128174,
+        "std_min": 0.01798170804977417,
+        "near_constant_features": 0
+      },
+      "yaw": {
+        "feature_gradient_norm": 0.04030873253941536,
+        "std_min": 0.2198183834552765,
+        "near_constant_features": 0
+      },
+      "height": {
+        "feature_gradient_norm": 0.05316605046391487,
+        "std_min": 0.01798170804977417,
+        "near_constant_features": 0
+      },
+      "feet": {
+        "feature_gradient_norm": 3.033829927444458,
+        "std_min": 0.01708991825580597,
+        "near_constant_features": 0
+      },
+      "previous_action": {
+        "feature_gradient_norm": 0.06003555655479431,
+        "std_min": 0.23825527727603912,
+        "near_constant_features": 0
+      },
+      "xi": {
+        "feature_gradient_norm": 0.817785918712616,
+        "std_min": 0.009999999776482582,
+        "near_constant_features": 33
+      },
+      "scan": {
+        "feature_gradient_norm": 1.6642248630523682,
+        "std_min": 0.017981743440032005,
+        "near_constant_features": 0
+      },
+      "remaining_time": {
+        "feature_gradient_norm": 0.5209628939628601,
+        "std_min": 0.2748827338218689,
+        "near_constant_features": 0
+      },
+      "history": {
+        "feature_gradient_norm": 9.808589935302734,
+        "std_min": 0.010000107809901237,
+        "near_constant_features": 22
+      },
+      "aim_weight": {
+        "feature_gradient_norm": 0.1376885324716568,
+        "std_min": 0.009999999776482582,
+        "near_constant_features": 1
+      }
+    },
+    "raw_value_mean": 2.432194948196411,
+    "raw_value_max": 15.526272773742676,
+    "capped_fraction": 0.0
+  },
+  "physical_direction_tests": [
+    {
+      "epsilon_rad": 0.005,
+      "restored_state_max_error": 2.384185791015625e-07,
+      "cases": {
+        "baseline": {
+          "physical_reward_8": 0.056060343980789185,
+          "physical_reward_72": -0.16363418102264404,
+          "model_reward_8": 0.058594852685928345,
+          "model_bootstrap": 1.4841290712356567,
+          "alive_fraction_72": 1.0
+        },
+        "standing_plus": {
+          "physical_reward_8": 0.060038939118385315,
+          "physical_reward_72": -0.13957738876342773,
+          "model_reward_8": 0.0653441846370697,
+          "model_bootstrap": 1.4911272525787354,
+          "alive_fraction_72": 1.0
+        },
+        "standing_minus": {
+          "physical_reward_8": 0.05301670730113983,
+          "physical_reward_72": 0.07837295532226562,
+          "model_reward_8": 0.05197778344154358,
+          "model_bootstrap": 1.4730639457702637,
+          "alive_fraction_72": 1.0
+        },
+        "bootstrap_plus": {
+          "physical_reward_8": 0.05898827314376831,
+          "physical_reward_72": -0.11824929714202881,
+          "model_reward_8": 0.05896380543708801,
+          "model_bootstrap": 1.5821335315704346,
+          "alive_fraction_72": 1.0
+        },
+        "bootstrap_minus": {
+          "physical_reward_8": 0.05948701500892639,
+          "physical_reward_72": -0.09562814235687256,
+          "model_reward_8": 0.05815976858139038,
+          "model_bootstrap": 1.3643770217895508,
+          "alive_fraction_72": 1.0
+        }
+      },
+      "directions": {
+        "standing": {
+          "physical_plus_minus_reward_8": 0.007022252306342125,
+          "positive_physical_fraction_8": 0.875,
+          "physical_plus_minus_reward_72": -0.21795018017292023,
+          "model_plus_minus_reward_8": 0.013366373255848885,
+          "model_plus_minus_bootstrap": 0.01806342601776123
+        },
+        "bootstrap": {
+          "physical_plus_minus_reward_8": -0.0004987609572708607,
+          "positive_physical_fraction_8": 0.5625,
+          "physical_plus_minus_reward_72": -0.02262120321393013,
+          "model_plus_minus_reward_8": 0.0008040320826694369,
+          "model_plus_minus_bootstrap": 0.21775656938552856
+        }
+      }
+    },
+    {
+      "epsilon_rad": 0.02,
+      "restored_state_max_error": 2.384185791015625e-07,
+      "cases": {
+        "baseline": {
+          "physical_reward_8": 0.056016042828559875,
+          "physical_reward_72": -0.25209492444992065,
+          "model_reward_8": 0.058594852685928345,
+          "model_bootstrap": 1.4841290712356567,
+          "alive_fraction_72": 1.0
+        },
+        "standing_plus": {
+          "physical_reward_8": 0.08012980222702026,
+          "physical_reward_72": -0.16308104991912842,
+          "model_reward_8": 0.0845937579870224,
+          "model_bootstrap": 1.5026729106903076,
+          "alive_fraction_72": 1.0
+        },
+        "standing_minus": {
+          "physical_reward_8": 0.03920409083366394,
+          "physical_reward_72": -0.09207558631896973,
+          "model_reward_8": 0.032792747020721436,
+          "model_bootstrap": 1.446948766708374,
+          "alive_fraction_72": 1.0
+        },
+        "bootstrap_plus": {
+          "physical_reward_8": 0.055357784032821655,
+          "physical_reward_72": -0.046994924545288086,
+          "model_reward_8": 0.05959133803844452,
+          "model_bootstrap": 1.8709796667099,
+          "alive_fraction_72": 1.0
+        },
+        "bootstrap_minus": {
+          "physical_reward_8": 0.05961516499519348,
+          "physical_reward_72": -0.09418308734893799,
+          "model_reward_8": 0.05642688274383545,
+          "model_bootstrap": 1.022541880607605,
+          "alive_fraction_72": 1.0
+        }
+      },
+      "directions": {
+        "standing": {
+          "physical_plus_minus_reward_8": 0.04092572256922722,
+          "positive_physical_fraction_8": 1.0,
+          "physical_plus_minus_reward_72": -0.07100547850131989,
+          "model_plus_minus_reward_8": 0.051801007241010666,
+          "model_plus_minus_bootstrap": 0.05572415143251419
+        },
+        "bootstrap": {
+          "physical_plus_minus_reward_8": -0.004257385618984699,
+          "positive_physical_fraction_8": 0.3125,
+          "physical_plus_minus_reward_72": 0.04718836396932602,
+          "model_plus_minus_reward_8": 0.003164454363286495,
+          "model_plus_minus_bootstrap": 0.8484377264976501
+        }
+      }
+    }
+  ]
+}

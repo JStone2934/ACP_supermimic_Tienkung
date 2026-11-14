@@ -1,0 +1,57 @@
+{
+  "epsilon_rad": 0.005,
+  "restored_state_max_error": 2.384185791015625e-07,
+  "cases": {
+    "baseline": {
+      "physical_reward_8": 1.305941104888916,
+      "physical_reward_72": 9.09988784790039,
+      "model_reward_8": 1.2893574237823486,
+      "model_bootstrap": 22.928150177001953,
+      "alive_fraction_72": 1.0
+    },
+    "standing_plus": {
+      "physical_reward_8": 1.3066022396087646,
+      "physical_reward_72": 8.88900375366211,
+      "model_reward_8": 1.2893574237823486,
+      "model_bootstrap": 22.928150177001953,
+      "alive_fraction_72": 1.0
+    },
+    "standing_minus": {
+      "physical_reward_8": 1.3066074848175049,
+      "physical_reward_72": 8.824775695800781,
+      "model_reward_8": 1.2893574237823486,
+      "model_bootstrap": 22.928150177001953,
+      "alive_fraction_72": 1.0
+    },
+    "bootstrap_plus": {
+      "physical_reward_8": 1.305742859840393,
+      "physical_reward_72": 9.089649200439453,
+      "model_reward_8": 1.2893574237823486,
+      "model_bootstrap": 22.928150177001953,
+      "alive_fraction_72": 1.0
+    },
+    "bootstrap_minus": {
+      "physical_reward_8": 1.3046996593475342,
+      "physical_reward_72": 8.883699417114258,
+      "model_reward_8": 1.2893574237823486,
+      "model_bootstrap": 22.928150177001953,
+      "alive_fraction_72": 1.0
+    }
+  },
+  "directions": {
+    "standing": {
+      "physical_plus_minus_reward_8": -5.207955837249756e-06,
+      "positive_physical_fraction_8": 0.375,
+      "physical_plus_minus_reward_72": 0.06422998011112213,
+      "model_plus_minus_reward_8": 0.0,
+      "model_plus_minus_bootstrap": 0.0
+    },
+    "bootstrap": {
+      "physical_plus_minus_reward_8": 0.0010431883856654167,
+      "positive_physical_fraction_8": 0.25,
+      "physical_plus_minus_reward_72": 0.20594875514507294,
+      "model_plus_minus_reward_8": 0.0,
+      "model_plus_minus_bootstrap": 0.0
+    }
+  }
+}

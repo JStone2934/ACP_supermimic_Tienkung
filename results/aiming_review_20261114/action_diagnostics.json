@@ -1,0 +1,47 @@
+{
+  "iteration": 25500,
+  "action_reconstruction_max_abs_error": 0.0032352805137634277,
+  "clipped_fraction_by_joint": {
+    "hip_pitch_l_joint": 0.0,
+    "hip_roll_l_joint": 0.0,
+    "hip_yaw_l_joint": 0.0,
+    "knee_pitch_l_joint": 0.006000000052154064,
+    "ankle_pitch_l_joint": 0.0,
+    "ankle_roll_l_joint": 0.0,
+    "hip_pitch_r_joint": 0.0,
+    "hip_roll_r_joint": 0.0,
+    "hip_yaw_r_joint": 0.0,
+    "knee_pitch_r_joint": 0.0013333333190530539,
+    "ankle_pitch_r_joint": 0.04066666588187218,
+    "ankle_roll_r_joint": 0.0,
+    "waist_yaw_joint": 0.0,
+    "waist_roll_joint": 0.01066666655242443,
+    "waist_pitch_joint": 0.0,
+    "shoulder_pitch_l_joint": 0.0,
+    "shoulder_roll_l_joint": 0.0,
+    "shoulder_yaw_l_joint": 0.0,
+    "elbow_pitch_l_joint": 0.0,
+    "elbow_yaw_l_joint": 0.0,
+    "wrist_pitch_l_joint": 0.0,
+    "wrist_roll_l_joint": 0.0,
+    "shoulder_pitch_r_joint": 0.0,
+    "shoulder_roll_r_joint": 0.0,
+    "shoulder_yaw_r_joint": 0.0,
+    "elbow_pitch_r_joint": 0.0,
+    "elbow_yaw_r_joint": 0.0,
+    "wrist_pitch_r_joint": 0.0,
+    "wrist_roll_r_joint": 0.9853333234786987
+  },
+  "curriculum": {
+    "level": 1,
+    "consecutive": 0,
+    "mastered": [
+      0
+    ]
+  },
+  "best_selection_key": [
+    1,
+    0.0,
+    -0.038651565089821815
+  ]
+}

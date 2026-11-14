@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-11-14T16:44:35.980783+08:00",
+  "service": "aiming-fullbody-h8.service",
+  "service_state": "MainPID=0\nActiveState=inactive\n",
+  "last_logged_iteration": 1400,
+  "last_saved_iteration": 1000,
+  "findings": {
+    "bootstrap_to_standing_gradient_ratio": {
+      "500": 34.394462509130584,
+      "1000": 27.59653739511432
+    },
+    "bootstrap_total_gradient_cosine": {
+      "500": 0.99920654296875,
+      "1000": 0.999042809009552
+    },
+    "largest_bootstrap_input_path": "history",
+    "history_path_gradient_norm": 254.89784240722656,
+    "clipped_value_fraction_iter500": 0.203125,
+    "source_audit": "Critic TD targets use rewards from imagined WM rollouts and its own bootstrap; replay physical rewards are collected but not used in update_actor critic targets."
+  },
+  "counterfactuals": [
+    {
+      "scale": 1.0,
+      "baseline_replicas": [
+        1.2964675426483154,
+        1.2982521057128906,
+        1.2969127893447876
+      ],
+      "full_saved": {
+        "physical_standing_reward_difference": 0.01305091381072998,
+        "model_bootstrap_difference": 0.08588218688964844
+      },
+      "full_fresh": {
+        "physical_standing_reward_difference": 0.006310939788818359,
+        "model_bootstrap_difference": 0.10811042785644531
+      },
+      "no_bootstrap_fresh": {
+        "physical_standing_reward_difference": 0.011146903038024902,
+        "model_bootstrap_difference": 0.0074405670166015625
+      }
+    },
+    {
+      "scale": 10.0,
+      "baseline_replicas": [
+        1.296767234802246,
+        1.2970523834228516,
+        1.2970314025878906
+      ],
+      "full_saved": {
+        "physical_standing_reward_difference": -0.0018725395202636719,
+        "model_bootstrap_difference": 0.9546318054199219
+      },
+      "full_fresh": {
+        "physical_standing_reward_difference": -0.010498762130737305,
+        "model_bootstrap_difference": 1.1709632873535156
+      },
+      "no_bootstrap_fresh": {
+        "physical_standing_reward_difference": 0.02565479278564453,
+        "model_bootstrap_difference": 0.08955955505371094
+      }
+    }
+  ],
+  "interpretation": "Strong evidence of an unreliable critic tail dominating policy optimization. Not proof that every small update harms standing, nor that removing the tail alone guarantees long-term success.",
+  "limits": [
+    "64 states for parameter gradients, 16 states for physical direction/counterfactual tests",
+    "Scale 10 multiplies one computed Adam delta; it is not ten actual optimizer steps",
+    "72-step physical rollouts exhibit noticeable no-op variation; short 8-step tests are the primary directional evidence",
+    "Training remains stopped; only disposable model copies were perturbed."
+  ],
+  "production_source_changed_since_launch": []
+}

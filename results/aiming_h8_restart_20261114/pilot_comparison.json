@@ -1,0 +1,97 @@
+{
+  "pilot": {
+    "200": {
+      "standing_pass": true,
+      "aiming_pass": false,
+      "failures": [
+        "capture_or_hold"
+      ],
+      "root_max_m": 0.024304401129484177,
+      "feet_max_m": [
+        0.023997679352760315,
+        0.032504573464393616
+      ],
+      "tilt_max_deg": 4.304251194000244,
+      "angle_p95_deg": 88.58143615722656,
+      "wrist_clipped_fraction": 0.9873333333333333,
+      "request_penalty_mean": 5.555485725402832
+    },
+    "400": {
+      "standing_pass": false,
+      "aiming_pass": false,
+      "failures": [
+        "fall",
+        "root_drift",
+        "foot_drift",
+        "tilt",
+        "capture_or_hold"
+      ],
+      "root_max_m": 1.6757012605667114,
+      "feet_max_m": [
+        2.0046558380126953,
+        2.0897598266601562
+      ],
+      "tilt_max_deg": 106.44139862060547,
+      "angle_p95_deg": 81.86945343017578,
+      "wrist_clipped_fraction": 0.026,
+      "request_penalty_mean": 16.16823959350586
+    },
+    "training": {
+      "iteration": 400,
+      "actor_updates": 200,
+      "actor_loss": -359130.78125,
+      "critic_loss": 105606791168.0,
+      "wm_loss": 0.40672367811203003,
+      "bootstrap_max": null,
+      "return_target_max": null
+    }
+  },
+  "pilot_bounded": {
+    "200": {
+      "standing_pass": false,
+      "aiming_pass": false,
+      "failures": [
+        "foot_drift",
+        "capture_or_hold"
+      ],
+      "root_max_m": 0.05195046216249466,
+      "feet_max_m": [
+        0.04323423653841019,
+        0.06100226938724518
+      ],
+      "tilt_max_deg": 5.655651569366455,
+      "angle_p95_deg": 89.41096496582031,
+      "wrist_clipped_fraction": 0.9873333333333333,
+      "request_penalty_mean": 5.555800914764404
+    },
+    "400": {
+      "standing_pass": false,
+      "aiming_pass": false,
+      "failures": [
+        "fall",
+        "root_drift",
+        "foot_drift",
+        "tilt",
+        "capture_or_hold"
+      ],
+      "root_max_m": 2.106022357940674,
+      "feet_max_m": [
+        1.0718735456466675,
+        1.637505292892456
+      ],
+      "tilt_max_deg": 99.70368957519531,
+      "angle_p95_deg": 88.811279296875,
+      "wrist_clipped_fraction": 0.04733333333333333,
+      "request_penalty_mean": 0.7404828071594238
+    },
+    "training": {
+      "iteration": 400,
+      "actor_updates": 200,
+      "actor_loss": -17.106304168701172,
+      "critic_loss": 0.22467416524887085,
+      "wm_loss": 0.18129950761795044,
+      "bootstrap_max": 27.369873046875,
+      "return_target_max": 27.275001525878906
+    }
+  }
+}
