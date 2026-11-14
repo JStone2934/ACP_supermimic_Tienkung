@@ -1,0 +1,88 @@
+{
+  "kind": "h8-physical-critic-and-standing-regression-report",
+  "created_at": "2026-11-14T19:09:22.528027+08:00",
+  "source_commit": "5e0645665bc0af9bb5315f7ea9fb9c84179c7e37",
+  "sources": [
+    {
+      "path": "results/aiming_update_diagnosis_20261114/diagnosis.json",
+      "bytes": 2767,
+      "sha256": "6dc41f37c039f214dede9db13c8fb2e5a735634677da5d7e980f3ce2dd64b85e"
+    },
+    {
+      "path": "results/critic_isolation_20261114/report.json",
+      "bytes": 34280,
+      "sha256": "2eff8a4b3e47a95ea1d78bb0cd03b696543ade6ed77cb5f627ffd433b9af9ba2"
+    },
+    {
+      "path": "results/critic_isolation_20261114/direction_recheck/report.json",
+      "bytes": 100950,
+      "sha256": "8b26249f52d4ff7ebb4d7a4b70a0c6a1bd928fd0f18f57b43b29f73e8c13d002"
+    },
+    {
+      "path": "results/physical_critic_pilot_20261114/report.json",
+      "bytes": 26145,
+      "sha256": "7605eacf35c27cf7a86493faa1f7c910a8e9dc7a86609d908589ea5fdf980ddd"
+    },
+    {
+      "path": "results/physical_critic_continuation_20261114/report.json",
+      "bytes": 159687,
+      "sha256": "f2dc7155bb1f8be7188106b64e7f089cc02b0b0fa236cc34622b0cb6a24280dd"
+    },
+    {
+      "path": "results/physical_critic_continuation_20261114/decision.json",
+      "bytes": 33817,
+      "sha256": "29a78b54235d83a7b73528a5b0491b3957b1ec1a8de0c409452e36d0b9408ffc"
+    },
+    {
+      "path": "results/aiming_review_20261114/wm_026000_h8_retest.json",
+      "bytes": 4356,
+      "sha256": "59a617d2cf456beed1a2faa277409b510b94b4d4e750d1dd2649a9fb8417e5aa"
+    }
+  ],
+  "copied_figures": [
+    {
+      "path": "figures/critic_isolation.png",
+      "source": "results/critic_isolation_20261114/critic_isolation.png",
+      "sha256": "ba26884f8c696c3bad6199523740f694bbd987d5b39d2025931e20858c0d0d89"
+    },
+    {
+      "path": "figures/physical_critic_continuation.png",
+      "source": "results/physical_critic_continuation_20261114/trend.png",
+      "sha256": "9179f00e0d8dcd8a11e9fefa082f468498ad373b42d6627aed06aed895c9d63d"
+    }
+  ],
+  "large_artifacts": "Checkpoints and raw trajectory files remain at their original local paths and are not copied into this report.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 19369,
+      "sha256": "63e06f768c840319f6f505a6986db53dec70134b9c9514d588a4f8da77719c81"
+    },
+    {
+      "path": "evidence/continuation_metrics.csv",
+      "bytes": 1027,
+      "sha256": "ab98f49879929b30197dd57ffe7a31bd617e639af6ad9e252a28cb10b3a41ffa"
+    },
+    {
+      "path": "evidence/summary.json",
+      "bytes": 35964,
+      "sha256": "cc0e0caaa141178d9eea542b952255128c7d910eb966a2c6a0e1686491cb8a5d"
+    },
+    {
+      "path": "figures/critic_isolation.png",
+      "bytes": 362608,
+      "sha256": "ba26884f8c696c3bad6199523740f694bbd987d5b39d2025931e20858c0d0d89"
+    },
+    {
+      "path": "figures/physical_critic_continuation.png",
+      "bytes": 234449,
+      "sha256": "9179f00e0d8dcd8a11e9fefa082f468498ad373b42d6627aed06aed895c9d63d"
+    }
+  ],
+  "validation": {
+    "local_markdown_links_checked": 19,
+    "continuation_table_rows_checked": 11,
+    "source_hashes_verified": true,
+    "whitespace_checked": true
+  }
+}
