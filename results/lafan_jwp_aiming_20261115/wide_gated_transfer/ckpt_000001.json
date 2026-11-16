@@ -1,0 +1,26 @@
+{
+  "checkpoint_sha256": "2da8dcecff4f2eb64430d18d6a28379e8c379798d7e3a8156e3381003fd69e5c",
+  "promotion": {
+    "previous_level": 3,
+    "next_level": 4,
+    "source_checkpoint_sha256": "f795e96a6504991ebb59fc043e1d3de959df42871e0706d24c6802cfd401e7ff",
+    "reports": [
+      {
+        "path": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_medium_grid_feedback/iteration_000001/seed_17.json",
+        "sha256": "8494709d014232d1f71b06474f7ecd00fe3179c602c15a93ab309fbe7c1cd554",
+        "seed": 17
+      },
+      {
+        "path": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_medium_grid_feedback/iteration_000001/seed_53.json",
+        "sha256": "d704ea0fee23d6bf86329459dda2b34250792d2147d5e0e5bea8bdedc9bf3a7b",
+        "seed": 53
+      }
+    ],
+    "all_policy_and_model_weights_exact": true,
+    "optimizer_updates": 0,
+    "previous_stage_passed": true,
+    "next_stage_accepted": false,
+    "final_policy_accepted": false,
+    "scope": "Evaluate the exact transferred policy before deciding whether more training is needed. Training from this artifact uses fresh critic and100model warmup updates."
+  }
+}

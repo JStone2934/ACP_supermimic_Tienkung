@@ -1,0 +1,64 @@
+{
+  "created": "2026-11-16 11:50:20.528950",
+  "status": "intentionally_stopped_regression",
+  "unit": "wide-support-training.service",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v17",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/wide_support/train",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/wide_shared_proximal_candidates/ckpt_000002.pt",
+  "init_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+  "level": 4,
+  "same_stage_recovery": true,
+  "source_full_stage_passed": false,
+  "iterations": 1000,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "wm_only_iters": 100,
+  "critic_warmup_iters": 100,
+  "actor_lr": 0.0001,
+  "actor_value_gradient": 0,
+  "matmul_tf32": false,
+  "policy_training_scope": "aiming_support_error_inputs",
+  "trainable_elements": 12288,
+  "arm_and_head_frozen": true,
+  "normalizers_frozen": true,
+  "support_capture_steps": 25,
+  "checkpoint_every": 50,
+  "evaluation_iterations": [
+    250,
+    400,
+    600,
+    1000
+  ],
+  "evaluation_seeds": [
+    17,
+    53
+  ],
+  "evaluation_gpus": [
+    0,
+    1
+  ],
+  "smoke_weights_reused": false,
+  "required_gate_reports": [
+    "aiming_support_compile_benchmark.json",
+    "aiming_support_smoke_verification.json",
+    "wide_shared_proximal_candidates_verification.json"
+  ],
+  "physical_acceptance": false,
+  "acceptance_changed": false,
+  "launched": "2026-11-16 11:52:03.931753",
+  "baseline": "wide_shared_proximal_comparison.json",
+  "stop_record": {
+    "time": "2026-11-16 12:04:48.884203",
+    "reason": "First full250 evaluation regressed balance136/147 to108/128 andfeetdrift.057to.071m; reject this support-only adaptation rather than continue the failing branch",
+    "cancelled_evaluations": [
+      400,
+      600,
+      1000
+    ],
+    "preserved_source": "wide_shared_proximal_candidates/ckpt_000002.pt",
+    "failed_evidence": "wide_support250_comparison.json"
+  }
+}

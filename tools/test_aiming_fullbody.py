@@ -82,6 +82,36 @@ class Contracts(unittest.TestCase):
         invalid = list(self.S); invalid[4] = invalid[4].clone(); invalid[4][0, 0] = float('nan')
         self.assertTrue(self.task.termination(invalid, torch.zeros(3), self.ctx)[0][0])
 
+    def test_rebalanced_rewards_and_configured_foot_scale(self):
+        task = self.task
+        shifted = {k: v.clone() for k, v in self.ctx.items()}
+        shifted['feet_anchor_w'][:, :, 0] += .10
+        h, d, _ = task.hand(self.S)
+        shifted['aim_target_w'] = h + 3. * d
+        a = torch.zeros(3, 29)
+        terms, parts = task.reward_terms(self.S, a, a, shifted)
+        torch.testing.assert_close(terms['feet'], torch.full((3,), .5))
+        torch.testing.assert_close(parts['feet'], torch.full((3,), .02))
+        torch.testing.assert_close(parts['aim'], torch.full((3,), .08), atol=1e-5, rtol=0)
+        self.assertAlmostEqual(task.max_step_reward, .244)
+        shifted['aim_weight'].zero_()
+        torch.testing.assert_close(task.reward_terms(self.S, a, a, shifted)[1]['aim'], torch.zeros(3))
+        narrower = FullbodyTask('cpu', {'feet_position_scale_m': .05})
+        torch.testing.assert_close(narrower.reward_terms(self.S, a, a, shifted)[0]['feet'], torch.full((3,), .2))
+
+    def test_legacy_reward_identity_and_scale_mismatch(self):
+        cfg = {'reward_weights': dict(self.task.weights, aim=2., feet=6.)}
+        legacy = FullbodyTask('cpu', cfg)
+        self.assertEqual(legacy.feet_position_scale_m, .05)
+        metadata = legacy.metadata()
+        metadata.pop('feet_position_scale_m')
+        ck = dict(task_config=metadata, robot_metadata=legacy.robot.metadata())
+        validate_checkpoint(ck, legacy)
+        with self.assertRaises(ValueError):
+            validate_checkpoint(ck, FullbodyTask('cpu', dict(cfg, feet_position_scale_m=.10)))
+        with self.assertRaises(ValueError):
+            FullbodyTask('cpu', {'feet_position_scale_m': 0.})
+
     def test_replay_context_history_and_terminal_mask(self):
         torch.manual_seed(3)
         buf = FullbodyReplay(12, 1, 'cpu', extra=REPLAY_FIELDS, robot=self.task.robot)
@@ -146,7 +176,9 @@ class Contracts(unittest.TestCase):
         cur.settle(good); self.assertEqual(cur.level, 0)
         cur.settle(good); self.assertEqual(cur.level, 1)
         p, w = cur.sample(1000)
-        self.assertTrue((w == 0).any() and (w == 2).any())
+        self.assertTrue((w == 0).any() and (w == 4).any())
+        _, legacy_w = cur.sample(1000, aim_weight=2.)
+        self.assertTrue((legacy_w == 0).any() and (legacy_w == 2).any())
 
     def test_training_schedule_and_exploration(self):
         from supermimic.acp.train_aiming_fullbody import training_phase, exploration_fraction

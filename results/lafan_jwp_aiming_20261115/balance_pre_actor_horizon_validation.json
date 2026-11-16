@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "active_horizon": 32,
+  "passed_by_horizon": {
+    "1": true,
+    "8": true,
+    "16": true,
+    "32": true
+  },
+  "horizons": {
+    "1": {
+      "windows": 8192,
+      "total_windows": 8192,
+      "root_m_p95": 0.0005927077145315707,
+      "root_m_rmse": 0.0002898697857744992,
+      "feet_m_p95": 0.0020496498327702284,
+      "feet_m_rmse": 0.0009765625,
+      "joints_rad_p95": 0.0027959675062447786,
+      "joints_rad_rmse": 0.0013302505249157548,
+      "tcp_m_p95": 0.0005414148326963186,
+      "tcp_m_rmse": 0.00026287176297046244,
+      "direction_deg_p95": 0.11190583556890488,
+      "direction_deg_rmse": 0.05126576125621796,
+      "tip_m_p95": 0.005235636606812477,
+      "tip_m_rmse": 0.0024914683308452368
+    },
+    "8": {
+      "windows": 1024,
+      "total_windows": 1024,
+      "root_m_p95": 0.0020542433485388756,
+      "root_m_rmse": 0.0009344117133878171,
+      "feet_m_p95": 0.006879120133817196,
+      "feet_m_rmse": 0.003193102078512311,
+      "joints_rad_p95": 0.004348319955170155,
+      "joints_rad_rmse": 0.0022031457629054785,
+      "tcp_m_p95": 0.0031055782455950975,
+      "tcp_m_rmse": 0.0014608055353164673,
+      "direction_deg_p95": 0.4566246271133423,
+      "direction_deg_rmse": 0.229645237326622,
+      "tip_m_p95": 0.021487822756171227,
+      "tip_m_rmse": 0.010704396292567253
+    },
+    "16": {
+      "windows": 512,
+      "total_windows": 512,
+      "root_m_p95": 0.003113775048404932,
+      "root_m_rmse": 0.0014586199540644884,
+      "feet_m_p95": 0.011447858065366745,
+      "feet_m_rmse": 0.005591576918959618,
+      "joints_rad_p95": 0.006062499713152647,
+      "joints_rad_rmse": 0.002967186737805605,
+      "tcp_m_p95": 0.007382815703749657,
+      "tcp_m_rmse": 0.0035819201730191708,
+      "direction_deg_p95": 0.9567824006080627,
+      "direction_deg_rmse": 0.4619537591934204,
+      "tip_m_p95": 0.04447539523243904,
+      "tip_m_rmse": 0.02150074951350689
+    },
+    "32": {
+      "windows": 256,
+      "total_windows": 256,
+      "root_m_p95": 0.009623998776078224,
+      "root_m_rmse": 0.0041181230917572975,
+      "feet_m_p95": 0.0158540066331625,
+      "feet_m_rmse": 0.007828817702829838,
+      "joints_rad_p95": 0.00689857080578804,
+      "joints_rad_rmse": 0.003558047581464052,
+      "tcp_m_p95": 0.013594560325145721,
+      "tcp_m_rmse": 0.006622470915317535,
+      "direction_deg_p95": 1.4219927787780762,
+      "direction_deg_rmse": 0.721625566482544,
+      "tip_m_p95": 0.06499849259853363,
+      "tip_m_rmse": 0.03356150910258293
+    }
+  },
+  "thresholds": {
+    "root_m_p95": 0.05,
+    "feet_m_p95": 0.025
+  },
+  "thresholds_status": "required before imagined actor updates; does not replace physical acceptance",
+  "independent_episodes": true,
+  "exploration_rad": {
+    "arm": 0.02,
+    "body": 0.005
+  },
+  "checkpoint_sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c",
+  "scope": "Read-only longer-horizon dynamics check of the exact pre-actor balance checkpoint.",
+  "weights_changed": false,
+  "policy_acceptance": false
+}

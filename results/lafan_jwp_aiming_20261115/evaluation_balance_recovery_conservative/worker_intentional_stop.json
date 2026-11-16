@@ -1,0 +1,11 @@
+{
+  "status": "intentionally_stopped_while_waiting_for_absent4000",
+  "completed_iterations": [
+    2500,
+    3000,
+    3500
+  ],
+  "cancelled_iteration": 4000,
+  "reason": "Source training stopped after independent3500regression; all completed physicalreports retained.",
+  "time": "2026-11-16 05:43:17.458060"
+}

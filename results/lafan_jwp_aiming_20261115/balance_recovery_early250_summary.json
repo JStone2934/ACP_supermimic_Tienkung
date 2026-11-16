@@ -1,0 +1,12 @@
+{
+  "scope": "Migration-only baseline; full stage gate failed. Balance-only is diagnostic, not acceptance.",
+  "checkpoint_sha256": "4ad995cbc522120ed96431b4b5b4d712e4a2dc3d07820ddd2a39c232a9ccf880",
+  "full_success_rate": 0.0,
+  "balance_only_success_rate": 0.693069306930693,
+  "median_max_tilt_deg": 14.449447631835938,
+  "median_max_root_drift_m": 0.20332515239715576,
+  "median_max_foot_drift_after3s_m": 0.3372737467288971,
+  "unique_initial_joint_states": 101,
+  "state_count": 101,
+  "finite": true
+}

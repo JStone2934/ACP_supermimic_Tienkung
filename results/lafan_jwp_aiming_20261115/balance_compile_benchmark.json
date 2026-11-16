@@ -1,0 +1,40 @@
+{
+  "scope": "Read-only eager/compiled loss and parameter-gradient equivalence on recorded physical states.",
+  "checkpoint_sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c",
+  "weights_changed": false,
+  "formal_training": false,
+  "matmul_tf32": false,
+  "comparisons": {
+    "wm8": {
+      "passed": true,
+      "loss_eager": 0.03212420642375946,
+      "loss_compiled": 0.03212418779730797,
+      "parameter_gradient_relative_l2_error": 5.2490718189801555e-06,
+      "eager_cold_s": 0.28951249696547166,
+      "eager_warm_median_s": 0.0474251140258275,
+      "compiled_cold_s": 43.008244001015555,
+      "compiled_warm_median_s": 0.011471866047941148
+    },
+    "actor8": {
+      "passed": true,
+      "loss_eager": -0.4572775363922119,
+      "loss_compiled": -0.4572775363922119,
+      "parameter_gradient_relative_l2_error": 4.293618530937238e-06,
+      "eager_cold_s": 1.1215648399665952,
+      "eager_warm_median_s": 1.1141029800055549,
+      "compiled_cold_s": 167.4923993839766,
+      "compiled_warm_median_s": 0.1471044750069268
+    },
+    "actor32": {
+      "passed": true,
+      "loss_eager": -1.4198763370513916,
+      "loss_compiled": -1.4198768138885498,
+      "parameter_gradient_relative_l2_error": 5.022167442803038e-06,
+      "eager_cold_s": 7.749139046994969,
+      "eager_warm_median_s": 5.948178614024073,
+      "compiled_cold_s": 0.6327852159738541,
+      "compiled_warm_median_s": 0.6554396079736762
+    }
+  },
+  "passed": true
+}

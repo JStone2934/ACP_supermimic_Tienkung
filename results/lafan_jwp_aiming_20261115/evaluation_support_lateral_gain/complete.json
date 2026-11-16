@@ -1,0 +1,74 @@
+{
+  "results": [
+    {
+      "gain": 3.0,
+      "axes": "lateral",
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_3.pt",
+      "checkpoint_sha256": "5947208d02d56f1f2adb5f9fc83553e85bafca89ee608f9962fc10933f011380",
+      "passed": false,
+      "reports": [
+        {
+          "seed": 17,
+          "passed": false,
+          "fixed_grid_all_pass": true,
+          "random_success_rate": 0.11
+        },
+        {
+          "seed": 53,
+          "passed": false,
+          "fixed_grid_all_pass": true,
+          "random_success_rate": 0.09
+        }
+      ],
+      "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+    },
+    {
+      "gain": 6.0,
+      "axes": "lateral",
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_6.pt",
+      "checkpoint_sha256": "925251d96d5ed774490e827cb9d1a59dbfa8cf0a906dbb8784a6662a10177d76",
+      "passed": false,
+      "reports": [
+        {
+          "seed": 17,
+          "passed": false,
+          "fixed_grid_all_pass": false,
+          "random_success_rate": 0.0
+        },
+        {
+          "seed": 53,
+          "passed": false,
+          "fixed_grid_all_pass": false,
+          "random_success_rate": 0.0
+        }
+      ],
+      "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+    },
+    {
+      "gain": 12.0,
+      "axes": "lateral",
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_12.pt",
+      "checkpoint_sha256": "432670ca2c6fcfa7b239ae48fb6bdadc3f59727fb219c25369ba771a784cfa2f",
+      "passed": false,
+      "reports": [
+        {
+          "seed": 17,
+          "passed": false,
+          "fixed_grid_all_pass": false,
+          "random_success_rate": 0.0
+        },
+        {
+          "seed": 53,
+          "passed": false,
+          "fixed_grid_all_pass": false,
+          "random_success_rate": 0.0
+        }
+      ],
+      "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+    }
+  ],
+  "selected_checkpoint": null,
+  "not_evaluated": [],
+  "final_policy_acceptance": false,
+  "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+}

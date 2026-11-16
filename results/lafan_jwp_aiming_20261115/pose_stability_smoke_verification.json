@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 4,
+      "critic": 4,
+      "pi": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 665090560,
+        "torch_peak_reserved": 815792128,
+        "device_used": 2543976448,
+        "warp_pool_used": 317534695,
+        "warp_pool_peak": 317535655
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 665090560,
+        "torch_peak_reserved": 815792128,
+        "device_used": 2163343360,
+        "warp_pool_used": 317534695,
+        "warp_pool_peak": 317535655
+      }
+    ],
+    "state_sha256": "67398f7b92dfb26e89b31c45e6a0fcb6ca381c7c9def96d1767211f0cefce5a3"
+  },
+  "warmup_actor_exactly_unchanged": true,
+  "actor_changed_after_warmup": true,
+  "formal_initialization_allowed": false,
+  "scope": "Dual-GPU integration and phase ordering; physical acceptance remains separate"
+}

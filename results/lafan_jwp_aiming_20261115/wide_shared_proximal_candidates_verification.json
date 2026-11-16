@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "checkpoint_sha256": "bb80d5a32d96b83511b3a2a87361c52fcbd4281c14e55a481e72e7c177b47bc5",
+      "body_output_max_error_rad": 0.0,
+      "body_weights_and_normalizers_unchanged": true,
+      "reset_body_and_noise_unchanged": true,
+      "proximal_observation_folded": false
+    },
+    {
+      "checkpoint_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+      "body_output_max_error_rad": 1.4901161193847656e-07,
+      "body_weights_and_normalizers_unchanged": true,
+      "reset_body_and_noise_unchanged": true,
+      "proximal_observation_folded": true
+    }
+  ],
+  "scope": "Artifact identity and functional invariants, not physical acceptance"
+}

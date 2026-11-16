@@ -1,0 +1,22 @@
+{
+  "scope": "Read-only eager/compiled loss and parameter-gradient equivalence on recorded physical states.",
+  "checkpoint_sha256": "52fb9962f243b3ad4cc4a5765932e2ded68df756f1cb5a14d1247ec042685dc7",
+  "weights_changed": false,
+  "formal_training": false,
+  "matmul_tf32": false,
+  "soft_termination_mode": "compact",
+  "comparisons": {
+    "actor32": {
+      "passed": true,
+      "loss_eager": -2.0874741077423096,
+      "loss_compiled": -2.0874743461608887,
+      "parameter_gradient_relative_l2_error": 1.340516064374242e-05,
+      "eager_cold_s": 5.384792786033358,
+      "eager_warm_median_s": 5.92843631998403,
+      "compiled_cold_s": 175.27992982795695,
+      "compiled_warm_median_s": 0.6016645419877023
+    }
+  },
+  "support_test": "Half locked with2cm position error; half immediately before capture boundary",
+  "passed": true
+}

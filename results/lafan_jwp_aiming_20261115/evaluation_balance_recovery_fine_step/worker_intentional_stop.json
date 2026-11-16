@@ -1,0 +1,15 @@
+{
+  "status": "intentionally_stopped_after_training_branch_regression",
+  "completed_iterations": [
+    3300,
+    3400
+  ],
+  "cancelled_iterations": [
+    3500,
+    3600,
+    3700,
+    3750
+  ],
+  "time": "2026-11-16 06:04:42.289586",
+  "reason": "Source training stopped; all completed reports retained."
+}

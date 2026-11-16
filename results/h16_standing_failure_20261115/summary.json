@@ -1,0 +1,37 @@
+{
+  "stopped": {
+    "time": "2026-11-15T13:57:34.830230+08:00",
+    "reason": "explicit user request to stop and diagnose",
+    "run": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/standing_aiming_fullbody_v2/dual_h16_critic4096_reward_v2_20261114",
+    "phase": "stopped",
+    "iteration": 47103,
+    "actor_updates": 2960,
+    "checkpoint_sha256": "47b2495c8add2311d3a6c0cfff0edcb6145d3826e82a4501d79e774b05c4e4d9",
+    "snapshot": "/home/js/robot/locomotion/standing-aiming/results/h16_standing_failure_20261115/checkpoint.pt"
+  },
+  "h16_rounds": 42308,
+  "h16_wm_updates": 423080,
+  "attempted_blocks": 1609,
+  "accepted_blocks": 557,
+  "rejected_blocks": 1052,
+  "attempted_actor_updates": 8045,
+  "retained_actor_updates": 2785,
+  "last_accept_iteration": 17010,
+  "trailing_rejected_blocks": 786,
+  "hours_without_accept": 9.348210396322223,
+  "recovery_count": 342,
+  "full_recovery_rounds": 34200,
+  "partial_final_recovery_rounds": 63,
+  "actor_lr_values": [
+    1e-07
+  ],
+  "all_candidate_mean_survival_under_two_seconds": true,
+  "last_wm_validation_iteration": 17000,
+  "unchanged_critic_calibrations": 1172,
+  "unchanged_last500": 449,
+  "actor_start_fraction_before_step16": 0.12122406890695135,
+  "actor_start_fraction_after_step32": 0.6885842533058353,
+  "actor_start_mean_step": 39.323911197379594,
+  "gradient_tail_to_reward": 2.7588500601988075,
+  "recovery_fraction": 0.8098468374775456
+}

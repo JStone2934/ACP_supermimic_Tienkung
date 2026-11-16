@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-16 10:29:51.511360",
+  "reason": "Original narrow branch250 achieved15/16% vs full-ready calibrated branch82/82%; stop original branch and evaluate remaining calibrated residual before selecting next formal initialization",
+  "native_goal_active": true,
+  "next": "Bounded constant-distal calibration followed by gated promotion or same-stage ACP recovery",
+  "cancelled_evaluations": [
+    400,
+    600,
+    1000
+  ]
+}

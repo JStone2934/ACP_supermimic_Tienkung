@@ -1,0 +1,65 @@
+{
+  "scope": "Diagnostic only, conditioned on36of101balancedepisodes; fullgatefailed.",
+  "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+  "seed": 17,
+  "balanced_count": 36,
+  "foot_displacements": [
+    {
+      "time_s": 3,
+      "median_displacement_from3s_m": 0.0
+    },
+    {
+      "time_s": 5,
+      "median_displacement_from3s_m": 0.00944088026881218
+    },
+    {
+      "time_s": 10,
+      "median_displacement_from3s_m": 0.030009891837835312
+    },
+    {
+      "time_s": 20,
+      "median_displacement_from3s_m": 0.060159601271152496
+    },
+    {
+      "time_s": 30,
+      "median_displacement_from3s_m": 0.07981588691473007
+    }
+  ],
+  "foot_speeds": [
+    {
+      "interval_s": [
+        0,
+        3
+      ],
+      "mean_foot_speed_m_s": 0.04515024274587631
+    },
+    {
+      "interval_s": [
+        3,
+        5
+      ],
+      "mean_foot_speed_m_s": 0.0045735896565020084
+    },
+    {
+      "interval_s": [
+        5,
+        10
+      ],
+      "mean_foot_speed_m_s": 0.0039939177222549915
+    },
+    {
+      "interval_s": [
+        10,
+        20
+      ],
+      "mean_foot_speed_m_s": 0.003113369457423687
+    },
+    {
+      "interval_s": [
+        20,
+        30
+      ],
+      "mean_foot_speed_m_s": 0.004354878794401884
+    }
+  ]
+}

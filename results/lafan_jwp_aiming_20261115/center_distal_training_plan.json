@@ -1,0 +1,45 @@
+{
+  "created": "2026-11-16 09:16:55.056909",
+  "unit": "center-distal-training.service",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/center_distal/train",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v15",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/balance_pose_center_folded/ckpt_000002.pt",
+  "init_sha256": "cc651d928d1d40793bb4eeba784b1c2e081889e056cd193c4883d5246a5bf97f",
+  "level": 1,
+  "iterations": 1500,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "wm_only_iters": 100,
+  "critic_warmup_iters": 100,
+  "actor_lr": 0.0001,
+  "policy_training_scope": "right_distal_outputs",
+  "trainable_policy_elements": 771,
+  "checkpoint_every": 50,
+  "evaluation_iterations": [
+    250,
+    400,
+    600,
+    1000,
+    1500
+  ],
+  "evaluation_seeds": [
+    17,
+    53
+  ],
+  "parallel_evaluation_gpus": [
+    0,
+    1
+  ],
+  "source_smoke": false,
+  "source_full_center_passed": false,
+  "same_stage_recovery": true,
+  "physical_aiming_acceptance": false,
+  "acceptance_changed": false,
+  "launch_requires": [
+    "right_distal_compile_benchmark.json passed",
+    "center_distal_smoke_verification.json passed"
+  ]
+}

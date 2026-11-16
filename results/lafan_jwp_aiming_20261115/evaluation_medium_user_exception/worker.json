@@ -1,0 +1,19 @@
+{
+  "run": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/medium_user_exception_transfer",
+  "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v17",
+  "out": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_medium_user_exception",
+  "iterations": [
+    1
+  ],
+  "level": 3,
+  "seeds": [
+    17,
+    53
+  ],
+  "timeout_hours": 1.0,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "parallel_seeds": true
+}

@@ -1,0 +1,79 @@
+{
+  "created": "2026-11-16T12:55:13.084851",
+  "status": "completed_rejected_regression",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v19",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/wide_translated_full_gain7/ckpt_000001.pt",
+  "init_sha256": "9ce3d12ec31c12a584f73b4907b03d8844c15f04726b860b8788fed5372f14e5",
+  "level": 4,
+  "same_stage_recovery": true,
+  "source_full_stage_passed": false,
+  "iterations": 300,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "wm_only_iters": 100,
+  "critic_warmup_iters": 100,
+  "actor_lr": 1e-05,
+  "actor_value_gradient": 0,
+  "matmul_tf32": false,
+  "policy_training_scope": "body_outputs",
+  "trainable_elements": 5654,
+  "right_arm_and_both_heads_frozen": true,
+  "normalizers_and_encoder_frozen": true,
+  "checkpoint_every": 25,
+  "evaluation_iterations": [
+    225,
+    250,
+    300
+  ],
+  "evaluation_seeds": [
+    17,
+    53
+  ],
+  "evaluation_gpus": [
+    0,
+    1
+  ],
+  "smoke_weights_reused": false,
+  "required_gates": [
+    "body_output_adapter_tests.log",
+    "body_output_compile_benchmark.json",
+    "body_output_smoke_verification.json"
+  ],
+  "physical_acceptance": false,
+  "acceptance_changed": false,
+  "reason": "Measured contact-load compensation improved full precision pass count to308/350. Adapt only final22 body-output rows at1e-5 to preserve acquired aiming behavior; prior support-input-only training regressed and is not resumed.",
+  "unit": "body-output-training.service",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/body_output_recovery/train",
+  "baseline": "evaluation_body_output_source/iteration_000001",
+  "compiled_gradient_relative_error": 1.1051955880247988e-05,
+  "smoke_first_attempt": "Rejected before output creation because --actor-value-gradient is resume-only; removed redundant flag, config already0",
+  "smoke_unit": "body-output-smoke-serial-compile.service",
+  "compiler_threads_per_rank": 1,
+  "smoke_memory_limits_gib": {
+    "high": 24,
+    "max": 32
+  },
+  "compiler_retry_reason": "systemd-oomd terminated initial default compiler worker pool; no checkpoint created; lowered compile concurrency without raising memory limits",
+  "baseline_full_pass_count": 307,
+  "baseline_total": 350,
+  "baseline_random_rates": [
+    0.88,
+    0.9
+  ],
+  "launched": "2026-11-16T13:10:33.681322",
+  "preflight_passed": true,
+  "evaluation_unit": "body-output-training-evaluation.service",
+  "finished": "2026-11-16T13:33:09.707318",
+  "actual_actor_updates": 50,
+  "results": {
+    "baseline": 307,
+    "iteration225": 243,
+    "iteration300": 176,
+    "total": 350
+  },
+  "skipped_duplicate_evaluation": 250,
+  "decision": "Do not resume this reward/update branch. Preserve all evidence and baseline; bounded antithetic direction probes next."
+}

@@ -1,0 +1,11 @@
+{
+  "checkpoint_sha256": "5904ae9f4fe68a9d0ebd6ca9876a05c2cb24c07e57a81050139672175b0ef609",
+  "stage_exception": {
+    "manifest": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/user_authorized_narrow_stage_exceptions.json",
+    "sha256": "608f9fcb8711a0cb143f4c8637e6a31371dbe9ea657b82162850823edcac50c6",
+    "source_stage_passed": false,
+    "user_authorized": true,
+    "weights_unchanged": true,
+    "physical_acceptance": false
+  }
+}

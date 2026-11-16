@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": "Artifact and two-GPU training integrity; not physical policy acceptance",
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/center_distal_skip_smoke/train/ckpt_000002.pt",
+  "checkpoint_sha256": "49b17d4e1ca63fc71664fc1740c9a74d588272b0761a2a3218384ff5b237933c",
+  "source_sha256": "6a252c283dceb7d1479ce07418a0ae994b541469cafdba5d4dae97d46f5bb566",
+  "smoke": true,
+  "formal_initialization_allowed": false,
+  "iteration": 2,
+  "all_body_proximal_arm_and_support_weights_unchanged": true,
+  "normalizers_unchanged": true,
+  "right_distal_deltas": {
+    "dec.8.weight": 0.004390714690089226,
+    "dec.8.bias": 0.0002489551261533052,
+    "distal_command_skip.weight": 0.0008774116286076605,
+    "distal_command_skip.bias": 0.00024903289158828557
+  },
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "updates": {
+    "wm": 2,
+    "pi": 2,
+    "critic": 2
+  },
+  "world_size": 2,
+  "state_sha256": "036bce1e1fce70683070054fba390fc01f1ba758fdec495afbaf7b277c2a88c1",
+  "model_ready": false,
+  "physical_acceptance": false
+}

@@ -1,0 +1,640 @@
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+     "cuda:1"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   CUDA peer access:
+     Not supported
+   Kernel cache:
+     /home/js/.cache/warp/1.16.0
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 4.41 ms  (cached)
+Module _nxn_broadphase__locals__kernel_af72a12e af72a12 load on device 'cuda:0' took 1.24 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_de98853f de98853 load on device 'cuda:0' took 2.37 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_de98853f a555bd0 load on device 'cuda:0' took 4.89 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_dc2ca7f4 dc2ca7f load on device 'cuda:0' took 4.40 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 4.12 ms  (cached)
+Module _friction_dof__locals__kernel_ddb8a6ec ddb8a6e load on device 'cuda:0' took 2.87 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_a75b7345 a75b734 load on device 'cuda:0' took 2.54 ms  (cached)
+Module _efc_contact_init__locals__kernel_cccfaa76 cccfaa7 load on device 'cuda:0' took 0.96 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_2144a1f6 2144a1f load on device 'cuda:0' took 2.50 ms  (cached)
+Module _efc_contact_update__locals__kernel_d8fb6a36 d8fb6a3 load on device 'cuda:0' took 2.81 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 5.43 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 4.22 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 5.36 ms  (cached)
+Module _qfrc_smooth__locals__kernel_4658f88b 4658f88 load on device 'cuda:0' took 3.78 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 3.92 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_d59a856e 173a666 load on device 'cuda:0' took 28.97 ms  (cached)
+Module _solve_init_dof__locals__kernel_e05b1ce4 e05b1ce load on device 'cuda:0' took 1.52 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.90 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_9aff3158 9aff315 load on device 'cuda:0' took 1.46 ms  (cached)
+Module mul_m_kernel__locals___mul_m_4f80c25f 4f80c25 load on device 'cuda:0' took 2.13 ms  (cached)
+Module _update_constraint_efc__locals__kernel_2874152a 2874152 load on device 'cuda:0' took 0.61 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_41cad2cd 41cad2c load on device 'cuda:0' took 1.61 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_dc20e701 dc20e70 load on device 'cuda:0' took 1.94 ms  (cached)
+Module _update_gradient_grad__locals__kernel_75e45f77 75e45f7 load on device 'cuda:0' took 1.86 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_36dd1e5a 36dd1e5 load on device 'cuda:0' took 1.87 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_342243de 342243d load on device 'cuda:0' took 1.59 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_342243de e314b13 load on device 'cuda:0' took 2.18 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_fb90cc46 53fec0b load on device 'cuda:0' took 56.74 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_c15033af c15033a load on device 'cuda:0' took 0.89 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_d5499a80 da1f31a load on device 'cuda:0' took 1.26 ms  (cached)
+Module _update_constraint_efc__locals__kernel_c5c7ee21 c5c7ee2 load on device 'cuda:0' took 2.29 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_c8324c35 c8324c3 load on device 'cuda:0' took 1.61 ms  (cached)
+Module _update_gradient_grad__locals__kernel_5d6ef3e8 5d6ef3e load on device 'cuda:0' took 2.15 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_da279b83 da279b8 load on device 'cuda:0' took 1.40 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_d953dcb2 5d835d8 load on device 'cuda:0' took 74.68 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 3.40 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 3.01 ms  (cached)
+Module _next_time_builder__locals___next_time_b0eef204 b0eef20 load on device 'cuda:0' took 0.90 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_fb15556a fb15556 load on device 'cuda:0' took 2.03 ms  (cached)
+Module reset_data__locals__reset_M_7fe3caab 7fe3caa load on device 'cuda:0' took 2.32 ms  (cached)
+Module reset_data__locals__reset_mocap_72adcc80 72adcc8 load on device 'cuda:0' took 2.46 ms  (cached)
+Module reset_data__locals__reset_contact_d045dbe7 d045dbe load on device 'cuda:0' took 2.35 ms  (cached)
+Module reset_data__locals__reset_sleep_a443f67b a443f67 load on device 'cuda:0' took 2.28 ms  (cached)
+Module reset_data__locals__reset_nworld_afd827a5 afd827a load on device 'cuda:0' took 2.21 ms  (cached)
+Module repeat_array_kernel_f3ffbc3f f56645b load on device 'cuda:0' took 3.22 ms  (cached)
+Module repeat_array_kernel_f3ffbc3f 43f7a6f load on device 'cuda:0' took 3.93 ms  (cached)
+Module repeat_array_kernel_f3ffbc3f 4e2538d load on device 'cuda:0' took 2.20 ms  (cached)
+Module _nxn_broadphase__locals__kernel_e21f8abd e21f8ab load on device 'cuda:0' took 2.37 ms  (cached)
+{
+ "ckpt": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001000.pt",
+ "checkpoint_sha256": "389a81fd40f8e4e561d08ec47d7ee28402403c42aa4020debcfa6143c77014f2",
+ "robot_metadata": {
+  "robot_id": "tienkung3_29dof",
+  "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+  "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+  "joint_order": [
+   "hip_pitch_l_joint",
+   "hip_roll_l_joint",
+   "hip_yaw_l_joint",
+   "knee_pitch_l_joint",
+   "ankle_pitch_l_joint",
+   "ankle_roll_l_joint",
+   "hip_pitch_r_joint",
+   "hip_roll_r_joint",
+   "hip_yaw_r_joint",
+   "knee_pitch_r_joint",
+   "ankle_pitch_r_joint",
+   "ankle_roll_r_joint",
+   "waist_yaw_joint",
+   "waist_roll_joint",
+   "waist_pitch_joint",
+   "shoulder_pitch_l_joint",
+   "shoulder_roll_l_joint",
+   "shoulder_yaw_l_joint",
+   "elbow_pitch_l_joint",
+   "elbow_yaw_l_joint",
+   "wrist_pitch_l_joint",
+   "wrist_roll_l_joint",
+   "shoulder_pitch_r_joint",
+   "shoulder_roll_r_joint",
+   "shoulder_yaw_r_joint",
+   "elbow_pitch_r_joint",
+   "elbow_yaw_r_joint",
+   "wrist_pitch_r_joint",
+   "wrist_roll_r_joint"
+  ],
+  "control_dt": 0.02
+ },
+ "data_hash": "5b32b754f2e8637b9b8dd30b1bebab6dffa2bebb215de8379d18cc470f19178a",
+ "checkpoint_data_hash": "9e35f0f9320ce6264db4362f17addfb526389b1555174d35acac9bb36cae429c",
+ "evaluation_motion_dir": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_wave1/lafan_focus/validation/motions",
+ "seed": 0,
+ "per_clip": {
+  "lafan/aiming2_subject3__f001372_001935": {
+   "failed": true,
+   "alive_steps": 197,
+   "expected_steps": 562,
+   "finite": true,
+   "root_rmse_m": 1.663683533668518,
+   "root_max_m": 3.258514881134033,
+   "joint_rmse_rad": 0.7483344674110413,
+   "torque_saturation_fraction": 0.008051811717450619,
+   "velocity_exceed_fraction": 0.005076142027974129
+  },
+  "lafan/aiming2_subject3__f001940_002976": {
+   "failed": true,
+   "alive_steps": 253,
+   "expected_steps": 1035,
+   "finite": true,
+   "root_rmse_m": 2.4278671741485596,
+   "root_max_m": 4.123574733734131,
+   "joint_rmse_rad": 0.7137531042098999,
+   "torque_saturation_fraction": 0.0010903639486059546,
+   "velocity_exceed_fraction": 0.00040888646617531776
+  },
+  "lafan/aiming2_subject3__f003036_003778": {
+   "failed": true,
+   "alive_steps": 48,
+   "expected_steps": 741,
+   "finite": true,
+   "root_rmse_m": 0.2653404474258423,
+   "root_max_m": 0.44314053654670715,
+   "joint_rmse_rad": 0.7338581681251526,
+   "torque_saturation_fraction": 0.017959769815206528,
+   "velocity_exceed_fraction": 0.01508620660752058
+  },
+  "lafan/aiming2_subject3__f004188_004902": {
+   "failed": false,
+   "alive_steps": 713,
+   "expected_steps": 713,
+   "finite": true,
+   "root_rmse_m": 6.2404584884643555,
+   "root_max_m": 10.129794120788574,
+   "joint_rmse_rad": 0.6403847336769104,
+   "torque_saturation_fraction": 0.005610098131000996,
+   "velocity_exceed_fraction": 0.004884654656052589
+  },
+  "lafan/aiming2_subject3__f005082_005599": {
+   "failed": true,
+   "alive_steps": 96,
+   "expected_steps": 516,
+   "finite": true,
+   "root_rmse_m": 0.608399510383606,
+   "root_max_m": 1.1568348407745361,
+   "joint_rmse_rad": 0.8500015139579773,
+   "torque_saturation_fraction": 0.01760057546198368,
+   "velocity_exceed_fraction": 0.02693965472280979
+  },
+  "lafan/aiming2_subject3__f005958_006567": {
+   "failed": true,
+   "alive_steps": 604,
+   "expected_steps": 608,
+   "finite": true,
+   "root_rmse_m": 7.116454124450684,
+   "root_max_m": 11.601835250854492,
+   "joint_rmse_rad": 0.669283926486969,
+   "torque_saturation_fraction": 0.0021694451570510864,
+   "velocity_exceed_fraction": 0.0025119890924543142
+  },
+  "lafan/aiming2_subject3__f006637_007203": {
+   "failed": true,
+   "alive_steps": 51,
+   "expected_steps": 565,
+   "finite": true,
+   "root_rmse_m": 0.5014641284942627,
+   "root_max_m": 0.7936782836914062,
+   "joint_rmse_rad": 0.6082234978675842,
+   "torque_saturation_fraction": 0.007437457796186209,
+   "velocity_exceed_fraction": 0.01149425283074379
+  },
+  "lafan/aiming2_subject3__f007208_008017": {
+   "failed": true,
+   "alive_steps": 487,
+   "expected_steps": 808,
+   "finite": true,
+   "root_rmse_m": 5.446170806884766,
+   "root_max_m": 9.432769775390625,
+   "joint_rmse_rad": 0.6671099066734314,
+   "torque_saturation_fraction": 0.003752743825316429,
+   "velocity_exceed_fraction": 0.0028322595171630383
+  },
+  "lafan/aiming2_subject3__f008613_009455": {
+   "failed": true,
+   "alive_steps": 575,
+   "expected_steps": 841,
+   "finite": true,
+   "root_rmse_m": 4.931103706359863,
+   "root_max_m": 10.310907363891602,
+   "joint_rmse_rad": 0.6678823232650757,
+   "torque_saturation_fraction": 0.004077961202710867,
+   "velocity_exceed_fraction": 0.004377811215817928
+  },
+  "lafan/aiming2_subject3__f010049_010504": {
+   "failed": true,
+   "alive_steps": 448,
+   "expected_steps": 454,
+   "finite": true,
+   "root_rmse_m": 3.161895751953125,
+   "root_max_m": 4.508583068847656,
+   "joint_rmse_rad": 0.6402832269668579,
+   "torque_saturation_fraction": 0.008235837332904339,
+   "velocity_exceed_fraction": 0.010314038954675198
+  },
+  "lafan/aiming2_subject3__f010785_011477": {
+   "failed": false,
+   "alive_steps": 691,
+   "expected_steps": 691,
+   "finite": true,
+   "root_rmse_m": 6.6160054206848145,
+   "root_max_m": 12.79849624633789,
+   "joint_rmse_rad": 0.6331239342689514,
+   "torque_saturation_fraction": 0.005289684981107712,
+   "velocity_exceed_fraction": 0.004940366372466087
+  },
+  "lafan/aiming2_subject3__f012654_013272": {
+   "failed": true,
+   "alive_steps": 13,
+   "expected_steps": 617,
+   "finite": true,
+   "root_rmse_m": 0.18572913110256195,
+   "root_max_m": 0.2741297483444214,
+   "joint_rmse_rad": 0.5709841847419739,
+   "torque_saturation_fraction": 0.03183024004101753,
+   "velocity_exceed_fraction": 0.05835543945431709
+  },
+  "lafan/aiming2_subject3__f013609_013882": {
+   "failed": false,
+   "alive_steps": 272,
+   "expected_steps": 272,
+   "finite": true,
+   "root_rmse_m": 2.84197735786438,
+   "root_max_m": 6.266787528991699,
+   "joint_rmse_rad": 0.7071879506111145,
+   "torque_saturation_fraction": 0.01635395549237728,
+   "velocity_exceed_fraction": 0.009508113376796246
+  },
+  "lafan/aiming2_subject3__f014016_014390": {
+   "failed": true,
+   "alive_steps": 153,
+   "expected_steps": 373,
+   "finite": true,
+   "root_rmse_m": 1.1301677227020264,
+   "root_max_m": 3.0669617652893066,
+   "joint_rmse_rad": 0.6686524152755737,
+   "torque_saturation_fraction": 0.027045300230383873,
+   "velocity_exceed_fraction": 0.028397565707564354
+  },
+  "lafan/aiming2_subject3__f014559_015284": {
+   "failed": false,
+   "alive_steps": 724,
+   "expected_steps": 724,
+   "finite": true,
+   "root_rmse_m": 4.210307598114014,
+   "root_max_m": 6.135577201843262,
+   "joint_rmse_rad": 0.4346041679382324,
+   "torque_saturation_fraction": 0.014574204571545124,
+   "velocity_exceed_fraction": 0.008430177345871925
+  },
+  "lafan/aiming2_subject5__f000246_002398": {
+   "failed": true,
+   "alive_steps": 35,
+   "expected_steps": 2151,
+   "finite": true,
+   "root_rmse_m": 0.18421730399131775,
+   "root_max_m": 0.26151126623153687,
+   "joint_rmse_rad": 0.7626555562019348,
+   "torque_saturation_fraction": 0.015763547271490097,
+   "velocity_exceed_fraction": 0.019704433158040047
+  },
+  "lafan/aiming2_subject5__f002484_002869": {
+   "failed": true,
+   "alive_steps": 32,
+   "expected_steps": 384,
+   "finite": true,
+   "root_rmse_m": 0.16628853976726532,
+   "root_max_m": 0.27189815044403076,
+   "joint_rmse_rad": 0.730055570602417,
+   "torque_saturation_fraction": 0.017241379246115685,
+   "velocity_exceed_fraction": 0.02801724150776863
+  },
+  "lafan/aiming2_subject5__f002874_004899": {
+   "failed": true,
+   "alive_steps": 93,
+   "expected_steps": 2024,
+   "finite": true,
+   "root_rmse_m": 0.2656862139701843,
+   "root_max_m": 0.7379702925682068,
+   "joint_rmse_rad": 0.6992350816726685,
+   "torque_saturation_fraction": 0.01520207617431879,
+   "velocity_exceed_fraction": 0.022617723792791367
+  },
+  "lafan/aiming2_subject5__f004990_005556": {
+   "failed": true,
+   "alive_steps": 173,
+   "expected_steps": 565,
+   "finite": true,
+   "root_rmse_m": 1.454168438911438,
+   "root_max_m": 2.240365982055664,
+   "joint_rmse_rad": 0.7638071775436401,
+   "torque_saturation_fraction": 0.01654375158250332,
+   "velocity_exceed_fraction": 0.021726131439208984
+  },
+  "lafan/aiming2_subject5__f005567_006463": {
+   "failed": true,
+   "alive_steps": 504,
+   "expected_steps": 895,
+   "finite": true,
+   "root_rmse_m": 6.528555393218994,
+   "root_max_m": 11.130653381347656,
+   "joint_rmse_rad": 0.6413138508796692,
+   "torque_saturation_fraction": 0.00868910737335682,
+   "velocity_exceed_fraction": 0.00868910737335682
+  },
+  "lafan/aiming2_subject5__f006693_007440": {
+   "failed": true,
+   "alive_steps": 95,
+   "expected_steps": 746,
+   "finite": true,
+   "root_rmse_m": 0.9721882343292236,
+   "root_max_m": 1.9247734546661377,
+   "joint_rmse_rad": 0.7211775779724121,
+   "torque_saturation_fraction": 0.016333937644958496,
+   "velocity_exceed_fraction": 0.01669691503047943
+  },
+  "lafan/aiming2_subject5__f007462_007781": {
+   "failed": true,
+   "alive_steps": 299,
+   "expected_steps": 318,
+   "finite": true,
+   "root_rmse_m": 2.2716503143310547,
+   "root_max_m": 3.8882522583007812,
+   "joint_rmse_rad": 0.7015735507011414,
+   "torque_saturation_fraction": 0.004728404805064201,
+   "velocity_exceed_fraction": 0.004728404805064201
+  },
+  "lafan/aiming2_subject5__f008037_011417": {
+   "failed": true,
+   "alive_steps": 61,
+   "expected_steps": 3379,
+   "finite": true,
+   "root_rmse_m": 0.3353308141231537,
+   "root_max_m": 0.6311559677124023,
+   "joint_rmse_rad": 0.7045482993125916,
+   "torque_saturation_fraction": 0.011871113441884518,
+   "velocity_exceed_fraction": 0.013001696206629276
+  },
+  "lafan/aiming2_subject5__f011666_012098": {
+   "failed": true,
+   "alive_steps": 111,
+   "expected_steps": 431,
+   "finite": true,
+   "root_rmse_m": 0.9577701091766357,
+   "root_max_m": 2.156745672225952,
+   "joint_rmse_rad": 0.7252904772758484,
+   "torque_saturation_fraction": 0.015532773919403553,
+   "velocity_exceed_fraction": 0.018639329820871353
+  },
+  "lafan/aiming2_subject5__f012109_012395": {
+   "failed": false,
+   "alive_steps": 285,
+   "expected_steps": 285,
+   "finite": true,
+   "root_rmse_m": 2.129427433013916,
+   "root_max_m": 4.728175163269043,
+   "joint_rmse_rad": 0.6730602383613586,
+   "torque_saturation_fraction": 0.006412583403289318,
+   "velocity_exceed_fraction": 0.009437386877834797
+  },
+  "lafan/aiming2_subject5__f012751_013827": {
+   "failed": true,
+   "alive_steps": 403,
+   "expected_steps": 1075,
+   "finite": true,
+   "root_rmse_m": 5.431077480316162,
+   "root_max_m": 10.480823516845703,
+   "joint_rmse_rad": 0.7138795256614685,
+   "torque_saturation_fraction": 0.002566954819485545,
+   "velocity_exceed_fraction": 0.002823650138452649
+  },
+  "lafan/aiming2_subject5__f014357_015284": {
+   "failed": true,
+   "alive_steps": 302,
+   "expected_steps": 926,
+   "finite": true,
+   "root_rmse_m": 2.7948906421661377,
+   "root_max_m": 5.8528876304626465,
+   "joint_rmse_rad": 0.6690448522567749,
+   "torque_saturation_fraction": 0.017127197235822678,
+   "velocity_exceed_fraction": 0.016784654930233955
+  },
+  "lafan/walk1_subject2__f000002_000677": {
+   "failed": true,
+   "alive_steps": 457,
+   "expected_steps": 674,
+   "finite": true,
+   "root_rmse_m": 5.514690399169922,
+   "root_max_m": 11.830039978027344,
+   "joint_rmse_rad": 0.39648064970970154,
+   "torque_saturation_fraction": 0.004753640852868557,
+   "velocity_exceed_fraction": 0.005810005124658346
+  },
+  "lafan/walk1_subject2__f000705_004248": {
+   "failed": true,
+   "alive_steps": 563,
+   "expected_steps": 3542,
+   "finite": true,
+   "root_rmse_m": 6.5762939453125,
+   "root_max_m": 11.973909378051758,
+   "joint_rmse_rad": 0.3929978013038635,
+   "torque_saturation_fraction": 0.0025724261067807674,
+   "velocity_exceed_fraction": 0.002939915517345071
+  },
+  "lafan/walk1_subject2__f004254_004930": {
+   "failed": true,
+   "alive_steps": 649,
+   "expected_steps": 675,
+   "finite": true,
+   "root_rmse_m": 9.692133903503418,
+   "root_max_m": 15.301285743713379,
+   "joint_rmse_rad": 0.41781601309776306,
+   "torque_saturation_fraction": 0.008448010310530663,
+   "velocity_exceed_fraction": 0.0074916318990290165
+  },
+  "lafan/walk1_subject2__f004935_011007": {
+   "failed": true,
+   "alive_steps": 447,
+   "expected_steps": 6071,
+   "finite": true,
+   "root_rmse_m": 3.4301769733428955,
+   "root_max_m": 5.750629425048828,
+   "joint_rmse_rad": 0.42987003922462463,
+   "torque_saturation_fraction": 0.013808531686663628,
+   "velocity_exceed_fraction": 0.008254261687397957
+  },
+  "lafan/walk1_subject2__f011014_011923": {
+   "failed": true,
+   "alive_steps": 101,
+   "expected_steps": 908,
+   "finite": true,
+   "root_rmse_m": 1.4808810949325562,
+   "root_max_m": 3.5035512447357178,
+   "joint_rmse_rad": 0.45238977670669556,
+   "torque_saturation_fraction": 0.02833731658756733,
+   "velocity_exceed_fraction": 0.021850461140275
+  },
+  "lafan/walk1_subject2__f011929_012987": {
+   "failed": true,
+   "alive_steps": 345,
+   "expected_steps": 1057,
+   "finite": true,
+   "root_rmse_m": 3.056018114089966,
+   "root_max_m": 7.147348403930664,
+   "joint_rmse_rad": 0.4384521245956421,
+   "torque_saturation_fraction": 0.00809595175087452,
+   "velocity_exceed_fraction": 0.003698150860145688
+  },
+  "lafan/walk3_subject2__f000002_000557": {
+   "failed": true,
+   "alive_steps": 284,
+   "expected_steps": 554,
+   "finite": true,
+   "root_rmse_m": 3.013056993484497,
+   "root_max_m": 6.765164852142334,
+   "joint_rmse_rad": 0.4451911449432373,
+   "torque_saturation_fraction": 0.008984943851828575,
+   "velocity_exceed_fraction": 0.009834871627390385
+  },
+  "lafan/walk3_subject2__f000902_003838": {
+   "failed": true,
+   "alive_steps": 258,
+   "expected_steps": 2935,
+   "finite": true,
+   "root_rmse_m": 3.2723238468170166,
+   "root_max_m": 6.814822673797607,
+   "joint_rmse_rad": 0.5816338658332825,
+   "torque_saturation_fraction": 0.018711574375629425,
+   "velocity_exceed_fraction": 0.015236567705869675
+  },
+  "lafan/walk3_subject2__f003844_008001": {
+   "failed": true,
+   "alive_steps": 607,
+   "expected_steps": 4156,
+   "finite": true,
+   "root_rmse_m": 5.533779144287109,
+   "root_max_m": 12.983817100524902,
+   "joint_rmse_rad": 0.35917118191719055,
+   "torque_saturation_fraction": 0.0006817019893787801,
+   "velocity_exceed_fraction": 0.0006817019893787801
+  },
+  "lafan/walk3_subject2__f008014_008310": {
+   "failed": false,
+   "alive_steps": 295,
+   "expected_steps": 295,
+   "finite": true,
+   "root_rmse_m": 2.1482303142547607,
+   "root_max_m": 5.374578475952148,
+   "joint_rmse_rad": 0.34410393238067627,
+   "torque_saturation_fraction": 0.007247223984450102,
+   "velocity_exceed_fraction": 0.0030391584150493145
+  },
+  "lafan/walk3_subject2__f008373_009459": {
+   "failed": true,
+   "alive_steps": 288,
+   "expected_steps": 1085,
+   "finite": true,
+   "root_rmse_m": 4.339961528778076,
+   "root_max_m": 8.5200777053833,
+   "joint_rmse_rad": 0.41383621096611023,
+   "torque_saturation_fraction": 0.011135057546198368,
+   "velocity_exceed_fraction": 0.01173371635377407
+  },
+  "lafan/walk3_subject2__f009464_012329": {
+   "failed": true,
+   "alive_steps": 366,
+   "expected_steps": 2864,
+   "finite": true,
+   "root_rmse_m": 5.059264659881592,
+   "root_max_m": 10.060548782348633,
+   "joint_rmse_rad": 0.37454208731651306,
+   "torque_saturation_fraction": 0.008479367010295391,
+   "velocity_exceed_fraction": 0.004899189807474613
+  }
+ },
+ "interface": "reference",
+ "eta_obs": 0.0,
+ "term_window": 0.0,
+ "norm_return": 0.0437,
+ "n_failed": 33,
+ "per_folder": {
+  "lafan": {
+   "norm_return": 0.0437,
+   "fail_rate": 0.846
+  }
+ },
+ "contacts": {
+  "left_foot": {
+   "precision": 0.551,
+   "recall": 0.8,
+   "label_frames": 6775,
+   "touch_frames": 9836,
+   "placement_err": 4.412,
+   "placement_median": 3.654,
+   "placement_within_0.1": 0.003,
+   "onsets": 294
+  },
+  "right_foot": {
+   "precision": 0.603,
+   "recall": 0.824,
+   "label_frames": 7378,
+   "touch_frames": 10068,
+   "placement_err": 4.343,
+   "placement_median": 3.601,
+   "placement_within_0.1": 0.003,
+   "onsets": 324
+  },
+  "left_knee": {
+   "precision": 0.0,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 611,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_knee": {
+   "precision": 0.003,
+   "recall": 0.5,
+   "label_frames": 2,
+   "touch_frames": 376,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_hand": {
+   "precision": 0.0,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 6,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_hand": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_elbow": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_elbow": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "pelvis": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  }
+ }
+}
+failed 33/39: ['lafan/aiming2_subject3__f001372_001935', 'lafan/aiming2_subject3__f001940_002976', 'lafan/aiming2_subject3__f003036_003778', 'lafan/aiming2_subject3__f005082_005599', 'lafan/aiming2_subject3__f005958_006567', 'lafan/aiming2_subject3__f006637_007203', 'lafan/aiming2_subject3__f007208_008017', 'lafan/aiming2_subject3__f008613_009455', 'lafan/aiming2_subject3__f010049_010504', 'lafan/aiming2_subject3__f012654_013272'] ...
+wrote /home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_wave1_settle3/iteration_001000/reference.json

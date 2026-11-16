@@ -1,0 +1,65 @@
+{
+  "scope": "Intermediate narrow stage only",
+  "rows": [
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_narrow_ready_constant_distal/iteration_000002/seed_17.json",
+      "checkpoint_sha256": "f187cad1d8d5ef92a07282dac246db6203a538ce6a618b28c458e6fabdd1d891",
+      "seed": 17,
+      "level": 2,
+      "full_gate_passed": true,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 1.0,
+      "episodes": 175,
+      "balanced_episodes": 175,
+      "aim_only_episodes": 175,
+      "both_balanced_and_aimed_episodes": 175,
+      "fully_passed_episodes": 175,
+      "balanced_postgrace_error_m_median": 0.006159441079944372,
+      "balanced_postgrace_error_m_p95": 0.019551360979676247,
+      "balanced_postgrace_ray_valid_fraction": 1.0,
+      "balanced_postgrace_hit_fraction": 1.0,
+      "balanced_foot_drift_after3s_m_median": 0.03182413429021835,
+      "median_max_tilt_deg": 1.4690039157867432,
+      "balanced_error_m_median_at_seconds": {
+        "0": 0.5519869923591614,
+        "1": 0.014155774377286434,
+        "2": 0.010876130312681198,
+        "3": 0.00914029125124216,
+        "5": 0.008116675540804863,
+        "10": 0.0056380326859653,
+        "20": 0.005949234124273062,
+        "30": 0.007488483563065529
+      }
+    },
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_narrow_ready_constant_distal/iteration_000002/seed_53.json",
+      "checkpoint_sha256": "f187cad1d8d5ef92a07282dac246db6203a538ce6a618b28c458e6fabdd1d891",
+      "seed": 53,
+      "level": 2,
+      "full_gate_passed": false,
+      "fixed_grid_all_pass": false,
+      "random_success_rate": 0.99,
+      "episodes": 175,
+      "balanced_episodes": 173,
+      "aim_only_episodes": 173,
+      "both_balanced_and_aimed_episodes": 173,
+      "fully_passed_episodes": 173,
+      "balanced_postgrace_error_m_median": 0.007173686753958464,
+      "balanced_postgrace_error_m_p95": 0.01968899741768837,
+      "balanced_postgrace_ray_valid_fraction": 1.0,
+      "balanced_postgrace_hit_fraction": 1.0,
+      "balanced_foot_drift_after3s_m_median": 0.031236330047249794,
+      "median_max_tilt_deg": 1.5977742671966553,
+      "balanced_error_m_median_at_seconds": {
+        "0": 0.6258367896080017,
+        "1": 0.015053537674248219,
+        "2": 0.01057357620447874,
+        "3": 0.009968388825654984,
+        "5": 0.007750950753688812,
+        "10": 0.006772366818040609,
+        "20": 0.006912576034665108,
+        "30": 0.007671907544136047
+      }
+    }
+  ]
+}

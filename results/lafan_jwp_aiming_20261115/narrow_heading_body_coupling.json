@@ -1,0 +1,44 @@
+{
+  "scope": "Read-only input counterfactual on recorded balance-teacher histories, not physical acceptance or proof of causation",
+  "checkpoint_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+  "samples": 128,
+  "only_changed_command_column": 29,
+  "rows": [
+    {
+      "relative_heading_deg": -60,
+      "max_leg_pd_target_change_rad": 0.04821152985095978,
+      "median_leg_pd_target_change_l2_rad": 0.08257682621479034,
+      "max_proximal_right_arm_change_rad": 0.0
+    },
+    {
+      "relative_heading_deg": -30,
+      "max_leg_pd_target_change_rad": 0.013008147478103638,
+      "median_leg_pd_target_change_l2_rad": 0.016207657754421234,
+      "max_proximal_right_arm_change_rad": 0.0
+    },
+    {
+      "relative_heading_deg": -15,
+      "max_leg_pd_target_change_rad": 0.00839775800704956,
+      "median_leg_pd_target_change_l2_rad": 0.010996311902999878,
+      "max_proximal_right_arm_change_rad": 0.0
+    },
+    {
+      "relative_heading_deg": 15,
+      "max_leg_pd_target_change_rad": 0.009870260953903198,
+      "median_leg_pd_target_change_l2_rad": 0.012822634540498257,
+      "max_proximal_right_arm_change_rad": 0.0
+    },
+    {
+      "relative_heading_deg": 30,
+      "max_leg_pd_target_change_rad": 0.017832458019256592,
+      "median_leg_pd_target_change_l2_rad": 0.02397140860557556,
+      "max_proximal_right_arm_change_rad": 0.0
+    },
+    {
+      "relative_heading_deg": 60,
+      "max_leg_pd_target_change_rad": 0.030107080936431885,
+      "median_leg_pd_target_change_l2_rad": 0.040305569767951965,
+      "max_proximal_right_arm_change_rad": 0.0
+    }
+  ]
+}

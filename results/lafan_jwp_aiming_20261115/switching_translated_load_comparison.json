@@ -1,0 +1,65 @@
+{
+  "scope": "Diagnostics only; authoritative full pass flags remain unchanged. Aim-only excludes feet. Null error quantiles include invalid rays or an empty subset.",
+  "rows": [
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_switching_translated_load/iteration_000001/seed_17.json",
+      "checkpoint_sha256": "27ea001a0318584f273c9cb761f1068299bf7c3fe0ac582b0e146b0720c975e0",
+      "seed": 17,
+      "level": 6,
+      "full_gate_passed": false,
+      "fixed_grid_all_pass": false,
+      "random_success_rate": 0.9,
+      "episodes": 175,
+      "balanced_episodes": 158,
+      "aim_only_episodes": 153,
+      "both_balanced_and_aimed_episodes": 153,
+      "fully_passed_episodes": 153,
+      "balanced_postgrace_error_m_median": 0.010091917589306831,
+      "balanced_postgrace_error_m_p95": 0.03478099778294563,
+      "balanced_postgrace_ray_valid_fraction": 0.9976482493043128,
+      "balanced_postgrace_hit_fraction": 0.9786234294334248,
+      "balanced_foot_drift_after3s_m_median": 0.03832266852259636,
+      "median_max_tilt_deg": 1.6004667282104492,
+      "balanced_error_m_median_at_seconds": {
+        "0": 2.144378900527954,
+        "1": 0.010137726552784443,
+        "2": 0.010613715276122093,
+        "3": 0.009758101776242256,
+        "5": 0.00975111499428749,
+        "10": 1.1587848663330078,
+        "20": 1.138810634613037,
+        "30": 0.011070040054619312
+      }
+    },
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_switching_translated_load/iteration_000001/seed_53.json",
+      "checkpoint_sha256": "27ea001a0318584f273c9cb761f1068299bf7c3fe0ac582b0e146b0720c975e0",
+      "seed": 53,
+      "level": 6,
+      "full_gate_passed": false,
+      "fixed_grid_all_pass": false,
+      "random_success_rate": 0.87,
+      "episodes": 175,
+      "balanced_episodes": 155,
+      "aim_only_episodes": 149,
+      "both_balanced_and_aimed_episodes": 149,
+      "fully_passed_episodes": 149,
+      "balanced_postgrace_error_m_median": 0.010474367998540401,
+      "balanced_postgrace_error_m_p95": 0.03429809585213661,
+      "balanced_postgrace_ray_valid_fraction": 0.9998949404264463,
+      "balanced_postgrace_hit_fraction": 0.9845657935579379,
+      "balanced_foot_drift_after3s_m_median": 0.03747669979929924,
+      "median_max_tilt_deg": 1.7088041305541992,
+      "balanced_error_m_median_at_seconds": {
+        "0": 2.5468852519989014,
+        "1": 0.010398732498288155,
+        "2": 0.009175155311822891,
+        "3": 0.009970983490347862,
+        "5": 0.010302141308784485,
+        "10": 0.7170939445495605,
+        "20": 0.9825149774551392,
+        "30": 0.009982991963624954
+      }
+    }
+  ]
+}

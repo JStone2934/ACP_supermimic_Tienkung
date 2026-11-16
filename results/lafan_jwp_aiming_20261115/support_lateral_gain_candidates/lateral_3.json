@@ -1,0 +1,18 @@
+{
+  "checkpoint_sha256": "5947208d02d56f1f2adb5f9fc83553e85bafca89ee608f9962fc10933f011380",
+  "source_sha256": "257cdebe57649f8aa1a3197770a6a47035ea45643df6b193dcb24b912cb97681",
+  "calibration": {
+    "method": "gain and optional axis selection on previously learned support feedback",
+    "gain": 3.0,
+    "axes": "lateral",
+    "axis_frame": "current base; left xyz then right xyz",
+    "changed_tensor": "enc.0.weight[:, :6]",
+    "all_other_policy_tensors_exact": true,
+    "zero_error_policy_unchanged": true,
+    "source_iteration": 300,
+    "optimizer_states_omitted": true,
+    "critic": "fresh if training starts from this artifact",
+    "acceptance": "Unaccepted candidate; requires exact-checkpoint full physical reports",
+    "physical_acceptance": false
+  }
+}

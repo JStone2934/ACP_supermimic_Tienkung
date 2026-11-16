@@ -1,0 +1,249 @@
+{
+  "scope": "Held-out reference tracking only; standing and aiming require separate physical gates",
+  "passed": false,
+  "successful_clips": 0,
+  "clips": 49,
+  "successful_fraction": 0.0,
+  "required_fraction": 0.9,
+  "failures": {
+    "lafan/aiming2_subject3__f001372_001935": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f001940_002976": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f003036_003778": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f004188_004902": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f005082_005599": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f005958_006567": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f006637_007203": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f007208_008017": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f008613_009455": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f010049_010504": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f010785_011477": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f012654_013272": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f013609_013882": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f014016_014390": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject3__f014559_015284": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f000246_002398": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f002484_002869": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f002874_004899": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f004990_005556": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f005567_006463": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f006693_007440": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f007462_007781": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f008037_011417": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f011666_012098": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f012109_012395": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f012751_013827": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming2_subject5__f014357_015284": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk1_subject2__f000002_000677": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk1_subject2__f000705_004248": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk1_subject2__f004254_004930": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk1_subject2__f004935_011007": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk1_subject2__f011014_011923": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk1_subject2__f011929_012987": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject2__f000002_000557": [
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject2__f000902_003838": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject2__f003844_008001": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject2__f008014_008310": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject2__f008373_009459": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject2__f009464_012329": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f000175_000556": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f000568_001445": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f001450_002143": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f002361_005063": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f005385_006067": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f006096_006566": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f006631_007312": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f007321_008297": [
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f008385_009109": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/walk3_subject1__f011030_012326": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ]
+  },
+  "checkpoint_sha256": "cbbe8a3eaf1f53041b98d8ef41064187a3327542b8f08eaa4f29fdb16573d716",
+  "report_sha256": "254f2fc85fc3e3f18c6a8cb03f1c9d5c4360a6e394664e75308cbb933fabbf54",
+  "manifest_sha256": "856745d92892a41458d97d5dc2f8f6eed9e1743a24384b52a08af29d4568e93c"
+}

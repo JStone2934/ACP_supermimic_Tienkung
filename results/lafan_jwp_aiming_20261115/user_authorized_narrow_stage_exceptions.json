@@ -1,0 +1,69 @@
+{
+  "created": "2026-11-16 11:13:29.720699",
+  "authorization": "用户：放弃这个跌倒的场景，把其他的先跑通",
+  "scope": "Temporary development-stage exception for the currently documented failed scenarios; continue the remaining scenarios and subsequent curriculum. Excluded scenarios remain unvalidated, not passed.",
+  "source_iteration": 400,
+  "level": 2,
+  "exceptions": [
+    {
+      "seed": 17,
+      "scenario": 86,
+      "fixed": false,
+      "target_parameters": [
+        3.446542501449585,
+        0.1616695374250412,
+        0.08650962263345718,
+        0.15000000596046448
+      ],
+      "reason": "physical fall",
+      "original_report": "results/lafan_jwp_aiming_20261115/evaluation_narrow_support/iteration_000400/seed_17.json",
+      "original_checkpoint_sha256": "d662dfc2a879fd0d9d66f126d74c5e7bd6ded9b7dfe825db29631849c190421d"
+    },
+    {
+      "seed": 53,
+      "scenario": 2,
+      "fixed": true,
+      "target_parameters": [
+        2.5,
+        -0.2617993950843811,
+        0.0,
+        0.15000000596046448
+      ],
+      "reason": "physical fall",
+      "original_report": "results/lafan_jwp_aiming_20261115/evaluation_narrow_support/iteration_000400/seed_53.json",
+      "original_checkpoint_sha256": "d662dfc2a879fd0d9d66f126d74c5e7bd6ded9b7dfe825db29631849c190421d"
+    },
+    {
+      "seed": 53,
+      "scenario": 41,
+      "fixed": true,
+      "target_parameters": [
+        3.0,
+        0.13089969754219055,
+        -0.0872664600610733,
+        0.15000000596046448
+      ],
+      "reason": "physical fall",
+      "original_report": "results/lafan_jwp_aiming_20261115/evaluation_narrow_support/iteration_000400/seed_53.json",
+      "original_checkpoint_sha256": "d662dfc2a879fd0d9d66f126d74c5e7bd6ded9b7dfe825db29631849c190421d"
+    },
+    {
+      "seed": 53,
+      "scenario": 75,
+      "fixed": false,
+      "target_parameters": [
+        3.4267044067382812,
+        0.171570286154747,
+        -0.05771443247795105,
+        0.15000000596046448
+      ],
+      "reason": "physical fall",
+      "original_report": "results/lafan_jwp_aiming_20261115/evaluation_narrow_support/iteration_000400/seed_53.json",
+      "original_checkpoint_sha256": "d662dfc2a879fd0d9d66f126d74c5e7bd6ded9b7dfe825db29631849c190421d"
+    }
+  ],
+  "automatic_exclusion_of_future_failures": false,
+  "original_reports_unchanged": true,
+  "full_original_acceptance_claim_allowed": false,
+  "next_action": "Transfer exact400weights to level3 with explicit user-authorized stage exception provenance, then evaluate wider targets. Do not use strict unmodified check_promotion to falsely certify level2."
+}

@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "scope": "Four-update integration only; never formal initialization or physical acceptance",
+  "finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "actor_unchanged_during_critic_warmup": true,
+  "actor_changed_after_updates": true,
+  "support_reward_cfg": {
+    "root_weight": 2.0,
+    "position_weight": 2.0,
+    "velocity_weight": 1.0,
+    "root_scale": 0.1,
+    "position_scale": 0.05,
+    "velocity_scale": 0.1
+  },
+  "updates": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 4,
+      "critic": 12,
+      "pi": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 750712832,
+        "torch_peak_reserved": 874512384,
+        "device_used": 19533856768,
+        "warp_pool_used": 322774407,
+        "warp_pool_peak": 322775367
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 750714880,
+        "torch_peak_reserved": 874512384,
+        "device_used": 19153289216,
+        "warp_pool_used": 322774407,
+        "warp_pool_peak": 322775367
+      }
+    ],
+    "state_sha256": "0701d8bc911a52efe373fbb6c40b7dd64ad51b234743beb08844c2e825e8919a"
+  },
+  "source_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+  "physics_substeps": 16
+}

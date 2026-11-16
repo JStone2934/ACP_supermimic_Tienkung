@@ -1,0 +1,23 @@
+{
+  "run": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/narrow_distal_feedback/train",
+  "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v16",
+  "out": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_narrow_distal_feedback",
+  "iterations": [
+    100,
+    250,
+    400,
+    600,
+    1000
+  ],
+  "level": 2,
+  "seeds": [
+    17,
+    53
+  ],
+  "timeout_hours": 2.0,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "parallel_seeds": true
+}

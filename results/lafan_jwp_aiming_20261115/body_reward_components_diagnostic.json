@@ -1,0 +1,130 @@
+{
+  "scope": "Read-only ACP reward-gradient decomposition on recorded physical states. Not physical acceptance.",
+  "source_sha256": "045d84e966390fa161757c7fc93b1644b0418ec776e8ae4783b20e6a946c9e73",
+  "trained_sha256": "52c0cdafd5baef205310807ac6410ee39e97bb89a14c7b9c66135e34badb80c9",
+  "trajectory_sha256": "5ae390017fa073179049a10c4f227f3a1c7830581b7fd0a9246e76abcdc97f50",
+  "groups": {
+    "aim": {
+      "reward": 2.1263673305511475,
+      "gradient_norm": 4.439403057098389,
+      "actual_update_dot_gradient": 0.012257835827767849,
+      "actual_update_cosine": 0.2932342290878296
+    },
+    "upright": {
+      "reward": 0.5373973250389099,
+      "gradient_norm": 1.1789042949676514,
+      "actual_update_dot_gradient": 0.0016685165464878082,
+      "actual_update_cosine": 0.15030638873577118
+    },
+    "height": {
+      "reward": 0.5318222045898438,
+      "gradient_norm": 0.5552873611450195,
+      "actual_update_dot_gradient": 0.0011020328383892775,
+      "actual_update_cosine": 0.21076682209968567
+    },
+    "feet": {
+      "reward": 1.9988404512405396,
+      "gradient_norm": 2.6658737659454346,
+      "actual_update_dot_gradient": 0.007408026605844498,
+      "actual_update_cosine": 0.29511305689811707
+    },
+    "foot_motion": {
+      "reward": 0.5320844054222107,
+      "gradient_norm": 3.3070948123931885,
+      "actual_update_dot_gradient": 0.006270942743867636,
+      "actual_update_cosine": 0.20137783885002136
+    },
+    "foot_velocity": {
+      "reward": 0.26458287239074707,
+      "gradient_norm": 2.912407398223877,
+      "actual_update_dot_gradient": 0.005549309309571981,
+      "actual_update_cosine": 0.20235423743724823
+    },
+    "velocity": {
+      "reward": 0.5350055694580078,
+      "gradient_norm": 0.6823973059654236,
+      "actual_update_dot_gradient": 0.0012978112790733576,
+      "actual_update_cosine": 0.2019759714603424
+    },
+    "angular_velocity": {
+      "reward": 0.10749735683202744,
+      "gradient_norm": 0.2967630624771118,
+      "actual_update_dot_gradient": 0.00039203790947794914,
+      "actual_update_cosine": 0.14029549062252045
+    },
+    "root": {
+      "reward": 1.0981661081314087,
+      "gradient_norm": 0.0984671488404274,
+      "actual_update_dot_gradient": 0.0001738767314236611,
+      "actual_update_cosine": 0.18753208220005035
+    },
+    "heading": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "foot_boundary": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "regularization": {
+      "reward": -0.0016568646533414721,
+      "gradient_norm": 0.048373159021139145,
+      "actual_update_dot_gradient": -6.31095326752984e-06,
+      "actual_update_cosine": -0.013855301775038242
+    }
+  },
+  "group_order": [
+    "aim",
+    "upright",
+    "height",
+    "feet",
+    "foot_motion",
+    "foot_velocity",
+    "velocity",
+    "angular_velocity",
+    "root",
+    "heading",
+    "foot_boundary",
+    "regularization"
+  ],
+  "source_predicted_rewards": [
+    2.1263673305511475,
+    0.5373973250389099,
+    0.5318222045898438,
+    1.9988404512405396,
+    0.5320844054222107,
+    0.26458287239074707,
+    0.5350055694580078,
+    0.10749735683202744,
+    1.0981661081314087,
+    0.0,
+    0.0,
+    -0.0016568646533414721
+  ],
+  "trained_predicted_rewards": [
+    2.139780282974243,
+    0.5387427806854248,
+    0.5329752564430237,
+    2.00693416595459,
+    0.5362316370010376,
+    0.26721543073654175,
+    0.5368423461914062,
+    0.10779336094856262,
+    1.0983140468597412,
+    0.0,
+    0.0,
+    -0.0011899364180862904
+  ],
+  "fixed_source_world_model": true,
+  "recorded_start_times": [
+    64,
+    112
+  ],
+  "sample_count": 16,
+  "horizon": 32,
+  "physical_policy_weights_modified": false
+}

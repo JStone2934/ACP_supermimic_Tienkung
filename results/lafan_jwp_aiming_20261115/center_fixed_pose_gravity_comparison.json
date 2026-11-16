@@ -1,0 +1,65 @@
+{
+  "scope": "Diagnostics only; authoritative full pass flags remain unchanged. Aim-only excludes feet. Null error quantiles include invalid rays or an empty subset.",
+  "rows": [
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_center_fixed_pose/iteration_000002/seed_17.json",
+      "checkpoint_sha256": "b3e90e2ec62cb0d68184ed24875348894623b6f3bc08b4aaa0696e62b591ab8f",
+      "seed": 17,
+      "level": 1,
+      "full_gate_passed": false,
+      "fixed_grid_all_pass": false,
+      "random_success_rate": 0.0,
+      "episodes": 101,
+      "balanced_episodes": 0,
+      "aim_only_episodes": 0,
+      "both_balanced_and_aimed_episodes": 0,
+      "fully_passed_episodes": 0,
+      "balanced_postgrace_error_m_median": null,
+      "balanced_postgrace_error_m_p95": null,
+      "balanced_postgrace_ray_valid_fraction": null,
+      "balanced_postgrace_hit_fraction": null,
+      "balanced_foot_drift_after3s_m_median": null,
+      "median_max_tilt_deg": 114.15045166015625,
+      "balanced_error_m_median_at_seconds": {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "5": null,
+        "10": null,
+        "20": null,
+        "30": null
+      }
+    },
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_center_fixed_pose/iteration_000002/seed_53.json",
+      "checkpoint_sha256": "b3e90e2ec62cb0d68184ed24875348894623b6f3bc08b4aaa0696e62b591ab8f",
+      "seed": 53,
+      "level": 1,
+      "full_gate_passed": false,
+      "fixed_grid_all_pass": false,
+      "random_success_rate": 0.0,
+      "episodes": 101,
+      "balanced_episodes": 0,
+      "aim_only_episodes": 0,
+      "both_balanced_and_aimed_episodes": 0,
+      "fully_passed_episodes": 0,
+      "balanced_postgrace_error_m_median": null,
+      "balanced_postgrace_error_m_p95": null,
+      "balanced_postgrace_ray_valid_fraction": null,
+      "balanced_postgrace_hit_fraction": null,
+      "balanced_foot_drift_after3s_m_median": null,
+      "median_max_tilt_deg": 114.2715835571289,
+      "balanced_error_m_median_at_seconds": {
+        "0": null,
+        "1": null,
+        "2": null,
+        "3": null,
+        "5": null,
+        "10": null,
+        "20": null,
+        "30": null
+      }
+    }
+  ]
+}

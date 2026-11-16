@@ -1,0 +1,64 @@
+{
+  "scope": "Same independent physical transitions, identical frozen policy. Extra model training plus auxiliary supervision changed together; this comparison does not isolate their individual effects.",
+  "baseline_checkpoint_sha256": "04294c3d5b717fe2fd5713f7d985b5b28c7b4447cacbce68e91c1eff2d920c79",
+  "adapted_checkpoint_sha256": "9e047c73bdcd3a78edfe97217e829f2d483732a309eaee2debc2a129dea1d542",
+  "recorded_sha256": "83093167ce8076af64f07fb37fbcce8a9ed7cc4a8b80a3095686d4612c869b2a",
+  "baseline_h32": {
+    "windows": 368,
+    "foot_velocity_error_norm_p95_m_s": 0.009969914332032204,
+    "foot_velocity_error_component_rmse_m_s": 0.007832962088286877,
+    "signed_foot_velocity_error_xyz_m_s": [
+      0.0020735838916152716,
+      -0.0003195361059624702,
+      -0.00011835921759484336
+    ],
+    "predicted_foot_speed_median_m_s": 0.004451653454452753,
+    "actual_foot_speed_median_m_s": 0.0036626870278269053,
+    "predicted_quiet_reward_mean": 0.9677852392196655,
+    "actual_quiet_reward_mean": 0.9739816188812256,
+    "signed_velocity_error_by_foot_heading_xyz_m_s": [
+      [
+        0.00035559889511205256,
+        -1.7628661225899123e-05,
+        -0.0006280409288592637
+      ],
+      [
+        0.0026209955103695393,
+        -0.0029018546920269728,
+        0.0003913224791176617
+      ]
+    ],
+    "feet_position_error_p95_m": 0.003990061115473509,
+    "root_position_error_p95_m": 0.004045390989631414
+  },
+  "adapted_h32": {
+    "windows": 368,
+    "foot_velocity_error_norm_p95_m_s": 0.03591693937778473,
+    "foot_velocity_error_component_rmse_m_s": 0.01825127750635147,
+    "signed_foot_velocity_error_xyz_m_s": [
+      -0.003987541887909174,
+      0.001559253316372633,
+      0.000634439114946872
+    ],
+    "predicted_foot_speed_median_m_s": 0.027678050100803375,
+    "actual_foot_speed_median_m_s": 0.0036626870278269053,
+    "predicted_quiet_reward_mean": 0.7494449019432068,
+    "actual_quiet_reward_mean": 0.9739816188812256,
+    "signed_velocity_error_by_foot_heading_xyz_m_s": [
+      [
+        -0.02152380347251892,
+        0.01933557540178299,
+        0.0011593856615945697
+      ],
+      [
+        0.016850309446454048,
+        -0.011981495656073093,
+        0.00010949264105875045
+      ]
+    ],
+    "feet_position_error_p95_m": 0.007057821378111839,
+    "root_position_error_p95_m": 0.005155299324542284
+  },
+  "decision": "Reject adapted world model for actor training: foot velocity and position prediction regressed on the shared nominal trajectories. Policy remained unchanged.",
+  "accepted_for_actor_training": false
+}

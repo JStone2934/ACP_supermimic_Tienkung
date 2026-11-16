@@ -1,0 +1,11 @@
+{
+  "unit": "balance-foot-velocity-vectorized-compile-check.service",
+  "start_time": "2026-11-16 05:24:23.733688",
+  "code_hashes": {
+    "supermimic/acp/train_aiming_fullbody.py": "8bd104ea0ecb33504bccba8306317fa06c40e9a93f19d63d66d0d571154b7013",
+    "supermimic/acp/train_wide_aiming.py": "4afb255d2a2d138771d275dbeeb2d0603756c796b74d3ca544f6537c9232abea",
+    "supermimic/acp/aiming_fullbody_validation.py": "842fb72ffc1836cd44d675c46a4dbbafdb348c3609cb5d21dfd4fe3cd4152ba6",
+    "results/lafan_jwp_aiming_20261115/benchmark_wm_foot_velocity.py": "cd086fa88bb875d7592686b2ddf49f23298eca7140fd0f26b0a37bc948938a99"
+  },
+  "mode": "Read-only loss/gradient verification; no optimizer updates"
+}

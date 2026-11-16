@@ -1,0 +1,58 @@
+{
+  "scope": "Analytical audit of legacy imagined softtermination; actual hardtermination and final acceptance unchanged",
+  "legacy_term_tilt_deg": 30,
+  "legacy_rzz_temperature": 0.04,
+  "rows": [
+    {
+      "tilt_deg": 0,
+      "per_step_survival": 0.9660804324494212,
+      "survival8": 0.7587632463453723,
+      "survival32": 0.3314554344041888,
+      "discounted_effective_horizon_s": 0.4589221968397095
+    },
+    {
+      "tilt_deg": 5,
+      "per_step_survival": 0.9628213109096443,
+      "survival8": 0.7385256004811007,
+      "survival32": 0.29748304464946707,
+      "discounted_effective_horizon_s": 0.4272874097665469
+    },
+    {
+      "tilt_deg": 10,
+      "per_step_survival": 0.9511762452431278,
+      "survival8": 0.6700203063751957,
+      "survival32": 0.20153564073593488,
+      "discounted_effective_horizon_s": 0.34284430749523515
+    },
+    {
+      "tilt_deg": 15,
+      "per_step_survival": 0.923963673499442,
+      "survival8": 0.5311768937048318,
+      "survival32": 0.07960799748588412,
+      "discounted_effective_horizon_s": 0.2345326776873251
+    },
+    {
+      "tilt_deg": 20,
+      "per_step_survival": 0.8631441105037444,
+      "survival8": 0.30808211881464126,
+      "survival32": 0.009008779761868415,
+      "discounted_effective_horizon_s": 0.13746901477496934
+    },
+    {
+      "tilt_deg": 25,
+      "per_step_survival": 0.7324415808738434,
+      "survival8": 0.08282928846147264,
+      "survival32": 4.70690813684227e-05,
+      "discounted_effective_horizon_s": 0.07275827173689083
+    },
+    {
+      "tilt_deg": 30,
+      "per_step_survival": 0.4999981366803579,
+      "survival8": 0.003906133544041341,
+      "survival32": 2.3280287963129088e-10,
+      "discounted_effective_horizon_s": 0.03960381572946124
+    }
+  ],
+  "physical_failure_evidence": "balance_h32_1750_first_seed.json",
+  "causal_status": "Mechanism demonstrated; benefit of proposed correction requires new physical evaluation"
+}

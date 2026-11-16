@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "training_source_sha256": "9ce3d12ec31c12a584f73b4907b03d8844c15f04726b860b8788fed5372f14e5",
+  "evaluated_precision_source_sha256": "069036dffd92b201c152a579f1fba3cbae88292ca932b4cc0be3489e2ea52276",
+  "all_policy_weights_exact": true,
+  "reset_pose_exact": true,
+  "training_level": 4,
+  "evaluated_level": 5,
+  "formal_source_stage_passed": false
+}

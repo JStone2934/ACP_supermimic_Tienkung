@@ -1,0 +1,14 @@
+{
+  "checkpoint_sha256": "04b964f501cbdda6c843c35c37ae7e304f9ef3c2fe627a0e6b713cfc4d9effd5",
+  "source_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/com_pose_gain7_2/ckpt_000001.pt",
+    "sha256": "4b91036a41885e0a22d8ac7175031080c23727912083709fdf337f1615be5e6b"
+  },
+  "range_diagnostic": {
+    "diagnostic_only": true,
+    "source_stage_passed": false,
+    "automatic_promotion": false,
+    "physical_acceptance": false,
+    "all_weights_and_initial_pose_exact": true
+  }
+}

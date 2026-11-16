@@ -1,0 +1,46 @@
+{
+  "scope": "Independent MuJoCo FK audit of offline distal head on fresh development targets.",
+  "source_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+  "head_sha256": "66ffe7fdec033abe8db3bc8c4ba67ac5c2864e4eddd19a3359aeac0273e7547f",
+  "development_seed": 2671,
+  "rows": [
+    {
+      "feedforward_refinements": 1,
+      "grid_within5cm": 21,
+      "random_within5cm": 0.4033203125,
+      "p95_error_m": 0.09900488704442978,
+      "max_error_m": 0.11043978482484818
+    },
+    {
+      "feedforward_refinements": 2,
+      "grid_within5cm": 73,
+      "random_within5cm": 1.0,
+      "p95_error_m": 0.010067279450595379,
+      "max_error_m": 0.05719947814941406
+    },
+    {
+      "feedforward_refinements": 3,
+      "grid_within5cm": 73,
+      "random_within5cm": 1.0,
+      "p95_error_m": 0.01150052435696125,
+      "max_error_m": 0.05723113566637039
+    },
+    {
+      "feedforward_refinements": 4,
+      "grid_within5cm": 73,
+      "random_within5cm": 1.0,
+      "p95_error_m": 0.01145944558084011,
+      "max_error_m": 0.057218994945287704
+    },
+    {
+      "feedforward_refinements": 5,
+      "grid_within5cm": 73,
+      "random_within5cm": 1.0,
+      "p95_error_m": 0.011459746398031712,
+      "max_error_m": 0.05721990019083023
+    }
+  ],
+  "torch_mujoco_max_error_difference_m": 4.5955810162260496e-07,
+  "physical_acceptance": false,
+  "limitations": "Fixed body pose, no dynamics or torque; refinements diagnose consistency rather than add runtime IK"
+}

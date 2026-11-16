@@ -1,0 +1,192 @@
+{
+  "checked_at": "2026-11-14T22:25:35.742152+08:00",
+  "scope": "Independent finite diagnostics. No active service, checkpoint, reward weights or training parameters changed.",
+  "production": {
+    "latest_iteration": 3450,
+    "blocks_since_last_accept": 51,
+    "accepted": 0,
+    "reject_reasons": {
+      "physical_return": 51
+    },
+    "mean_discounted_return_delta": -0.32161806143966376,
+    "mean_undiscounted_return_delta": -0.5192732717476639
+  },
+  "baseline_repeat_return_mean": 12.431384325027466,
+  "baseline_repeat_range": [
+    12.347358703613281,
+    12.474462509155273
+  ],
+  "counterfactuals": {
+    "full_saved": {
+      "return": 11.881420135498047,
+      "delta_from_baseline_mean": -0.549964189529419,
+      "survival_s": 1.34046870470047
+    },
+    "full_fresh": {
+      "return": 12.029878616333008,
+      "delta_from_baseline_mean": -0.401505708694458,
+      "survival_s": 1.34046870470047
+    },
+    "immediate_fresh": {
+      "return": 12.161559104919434,
+      "delta_from_baseline_mean": -0.2698252201080322,
+      "survival_s": 1.3392186760902405
+    },
+    "saved_update_reverse": {
+      "return": 12.346827983856201,
+      "delta_from_baseline_mean": -0.08455634117126465,
+      "survival_s": 1.339531123638153
+    }
+  },
+  "findings": [
+    {
+      "finding": "价值网络对动作扰动的局部变化估计失真，且主导当前更新。",
+      "evidence": {
+        "tail_to_direct_reward_gradient_ratio": 50.23757573455067,
+        "critic_direction": {
+          "predicted_total": {
+            "mean": 0.9927979111671448,
+            "state_sem": 0.02381376177072525
+          },
+          "predicted_tail": {
+            "mean": 0.9927022457122803,
+            "state_sem": 0.02374129556119442
+          },
+          "predicted_reward": {
+            "mean": 9.544193744659424e-05,
+            "state_sem": 0.0001639864785829559
+          },
+          "physical_total": {
+            "mean": -0.019636809825897217,
+            "state_sem": 0.021668866276741028
+          },
+          "physical_tail": {
+            "mean": -0.01975727081298828,
+            "state_sem": 0.02120276354253292
+          },
+          "physical_reward": {
+            "mean": 0.00012010335922241211,
+            "state_sem": 0.0010938637424260378
+          },
+          "physical_predicted_real_tail": {
+            "mean": 0.9445464611053467,
+            "state_sem": 0.020134586840867996
+          }
+        }
+      },
+      "qualification": "真实差值接近零且落在诊断波动范围内，不能声称该方向在所有状态必然有害；可确认预测的约 0.99 收益没有得到物理结果支持。真实第 8 步状态输入 critic 仍高估约 0.94，不能只归因于 WM。"
+    },
+    {
+      "finding": "当前实现下的小批策略更新确实退化，不只是门槛或折扣口径不一致。",
+      "evidence": {
+        "full_saved": {
+          "return": 11.881420135498047,
+          "delta_from_baseline_mean": -0.549964189529419,
+          "survival_s": 1.34046870470047
+        },
+        "full_fresh": {
+          "return": 12.029878616333008,
+          "delta_from_baseline_mean": -0.401505708694458,
+          "survival_s": 1.34046870470047
+        },
+        "immediate_fresh": {
+          "return": 12.161559104919434,
+          "delta_from_baseline_mean": -0.2698252201080322,
+          "survival_s": 1.3392186760902405
+        },
+        "saved_update_reverse": {
+          "return": 12.346827983856201,
+          "delta_from_baseline_mean": -0.08455634117126465,
+          "survival_s": 1.339531123638153
+        }
+      },
+      "qualification": "同策略重复评估存在波动；使用固定第 2990 轮快照、64 环境和 FP32 eager 模式，未复现每一次生产批次的全部 1024 环境采样。"
+    },
+    {
+      "finding": "已核对的奖励符号与接线正确，但从零站立阶段的权重、时域与最终验收不够一致。",
+      "evidence": {
+        "checks": {
+          "stage_A_aim_zero": true,
+          "rate_penalty_negative": true,
+          "request_penalty_negative": true,
+          "sum_matches_reward": true,
+          "finite_rewards": true
+        },
+        "weights": {
+          "aim": 2.0,
+          "root": 2.0,
+          "feet": 6.0,
+          "height": 1.0,
+          "upright": 1.0,
+          "velocity": 1.0,
+          "angular_velocity": 0.2,
+          "foot_velocity": 0.5,
+          "heading": 0.5,
+          "foot_boundary": -4.0,
+          "action_rate": -0.1,
+          "joint_limit": -2.0,
+          "request_limit": -0.1
+        },
+        "stage_A_positive_reward_per_second": 12.2,
+        "stage_A_feet_max_fraction": 0.49180327868852464,
+        "baseline_terms": {
+          "aim": 0.0,
+          "root": 0.03999999910593033,
+          "feet": 0.11999999731779099,
+          "height": 0.019999999552965164,
+          "upright": 0.019999999552965164,
+          "velocity": 0.019999999552965164,
+          "angular_velocity": 0.004000000189989805,
+          "foot_velocity": 0.009999999776482582,
+          "heading": 0.009999999776482582,
+          "foot_boundary": -0.0,
+          "action_rate": -0.0,
+          "joint_limit": -0.0,
+          "request_limit": -0.0
+        },
+        "discount": {
+          "gamma": 0.99,
+          "dt": 0.02,
+          "H8_seconds": 0.16,
+          "half_life_seconds": 1.3793512787305684,
+          "after5s": 0.08105851616218128,
+          "after30s": 2.8365594903161287e-07
+        },
+        "differences": [
+          "Training actor/critic use discounted return; unprotected gate uses undiscounted return and survival.",
+          "Feet reward uses three-dimensional displacement; acceptance uses horizontal maximum displacement.",
+          "Reward averages per-step and per-foot scores; acceptance requires all limits throughout 30 seconds.",
+          "No explicit fall penalty; termination instead removes future rewards."
+        ]
+      },
+      "qualification": "脚部奖励占当前失败回合约六成，尚不能据此证明某组新权重会收敛。当前瞄准权重为零，越界请求和动作平滑惩罚几乎为零，不是这次回报下降的主因。"
+    },
+    {
+      "finding": "回退机制保护了现有策略，但恢复逻辑重复同一种失败更新。",
+      "evidence": {
+        "consecutive_rejection_trigger": 3,
+        "wm_only_recovery_rounds": 100,
+        "actor_lr_floor": 1e-07,
+        "preserve_old_adam_moments": true
+      },
+      "qualification": "新 Adam 和去掉末端价值都未单独消除退化，不能只改其中一项就宣布解决。"
+    }
+  ],
+  "next_work": [
+    "先建立动作扰动下的物理方向校验，减少/约束 critic 经历史与上一动作产生的未经验证梯度；保留长期价值，不直接永久删除末端价值。",
+    "站立阶段重排存活、姿态、高度和脚位精度的优先级，并用固定场景检查实际存活与完整站立验收；不放宽原 30 秒标准。",
+    "统一训练与候选检查的回报口径，并检查更长折扣时域；本轮两种回报都下降，口径不同不是全部原因。",
+    "连续失败时采集有辨识度的动作扰动和物理回报，更新诊断/数据，而非只降低学习率并原样重复。"
+  ],
+  "source_sha256": {
+    "tools/diagnose_h8_policy_reward.py": "037d65b6cd71fa196b303ae3136b90140d237b9111798344c9488f558a201b91",
+    "tools/diagnose_h8_action_directions.py": "0ee1425645f87e8dc991471d43e39de99921adbeede0da4f73be2d4fd1bd4a09",
+    "tools/diagnose_aiming_fullbody_update.py": "26d47fa1da79e15276e8ad95fd2ad16165d6ed277089c43937ff3e23971af6eb",
+    "supermimic/acp/aiming_fullbody.py": "ab6587059f1f0abcfe18ba710c42c8a935eab9e9b4083533e6b02cd0f2521478",
+    "supermimic/acp/aiming_fullbody_env.py": "b44f45df56999932449a0806c3068aad9b44446055c1563ceca45a085dca9779",
+    "supermimic/acp/aiming_physical.py": "65ef0ff480667015efcf1a428075a2fb6a56f357c94e0bd02cbea60bba692a97",
+    "supermimic/acp/train_aiming_physical.py": "363d9d29a05e0f6db7737df3fb4fced2f0463a5e6c9f505bf06e9fdeb4e3969b",
+    "supermimic/acp/train_aiming_fullbody.py": "ac1b0b5db23ddf6adbe81d8829cf5ac4603d6207ea59b04694e74100c8d12023"
+  },
+  "service_status": "MainPID=2528988\nNRestarts=0\nActiveState=active\n"
+}

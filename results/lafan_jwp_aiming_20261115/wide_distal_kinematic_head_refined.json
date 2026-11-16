@@ -1,0 +1,14 @@
+{
+  "scope": "Offline differentiable-kinematics distal network experiment, not a physical policy.",
+  "source_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+  "report": {
+    "iteration": 8000,
+    "loss": 1.1124653610750102e-05,
+    "grid_within5cm": 73,
+    "random_within5cm": 1.0,
+    "p95_error_m": 0.011721954680979252,
+    "max_error_m": 0.05719941109418869,
+    "elapsed_s": 465.47858333587646
+  },
+  "physical_acceptance": false
+}

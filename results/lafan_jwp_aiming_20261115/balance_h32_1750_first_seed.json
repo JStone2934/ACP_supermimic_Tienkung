@@ -1,0 +1,55 @@
+{
+  "scope": "Diagnostic only. Balance-only excludes foot stability. Low foot motion after falling is not standing success.",
+  "rows": [
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_h32/iteration_001750/seed_17.json",
+      "checkpoint_sha256": "aa0585de4fa5beecfa8c50e2a3b800a093cc17814ae11882bc8cf736761b6086",
+      "seed": 17,
+      "full_gate_passed": false,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.0,
+      "median_max_tilt_deg": 85.7218017578125,
+      "median_max_root_drift_m": 1.2412168979644775,
+      "median_max_foot_drift_after3s_m": 0.0652523785829544,
+      "mean_foot_speed_20_30s_m_s": 0.002323630265891552,
+      "balanced_episodes": 0,
+      "balanced_episodes_median_foot_drift_m": null,
+      "balanced_episodes_mean_foot_speed_m_s": null,
+      "tilt_crossings": {
+        "15": {
+          "episodes": 101,
+          "median_first_crossing_s": 1.08
+        },
+        "30": {
+          "episodes": 101,
+          "median_first_crossing_s": 1.2
+        },
+        "45": {
+          "episodes": 101,
+          "median_first_crossing_s": 1.3800000000000001
+        }
+      },
+      "median_tilt_at_seconds": {
+        "0": 8.45094108581543,
+        "0.16": 1.8397305011749268,
+        "0.32": 1.278706669807434,
+        "0.64": 2.0210044384002686,
+        "1": 10.757678985595703,
+        "2": 78.72090911865234,
+        "3": 79.70994567871094,
+        "10": 79.93970489501953,
+        "20": 80.83367156982422,
+        "30": 81.83893585205078
+      },
+      "median_root_height_at_seconds": {
+        "0": 0.9906508922576904,
+        "1": 0.8807151913642883,
+        "2": 0.14100198447704315,
+        "3": 0.14869064092636108,
+        "10": 0.14898772537708282,
+        "20": 0.14579544961452484,
+        "30": 0.1434328705072403
+      }
+    }
+  ]
+}

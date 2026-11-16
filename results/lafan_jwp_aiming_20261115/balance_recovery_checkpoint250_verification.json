@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "scope": "Training provenance, finite synchronized migration updates only; no standing/aiming acceptance",
+  "checkpoint_sha256": "4ad995cbc522120ed96431b4b5b4d712e4a2dc3d07820ddd2a39c232a9ccf880",
+  "iteration": 250,
+  "physics_substeps": 16,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2500,
+      "distill": 250
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 2381800960,
+        "torch_peak_reserved": 2457862144,
+        "device_used": 11837898752,
+        "warp_pool_used": 787369870,
+        "warp_pool_peak": 787370818
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 2381720576,
+        "torch_peak_reserved": 2459959296,
+        "device_used": 11178541056,
+        "warp_pool_used": 473809235,
+        "warp_pool_peak": 473810183
+      }
+    ],
+    "state_sha256": "03fc707f18264c6f6122397c5029275ed038b8032bf961d6610856b7f8de66fd"
+  },
+  "source_normalizers_exactly_preserved": {
+    "pi": true,
+    "wm": true
+  },
+  "initialization_from_smoke": false,
+  "critic_warmup_done": 0,
+  "policy_acceptance": false
+}

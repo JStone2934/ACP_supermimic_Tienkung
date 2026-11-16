@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "command_dim": 122,
+  "checked_frames": 4140,
+  "nonfoot_target_fraction": 0.0,
+  "per_body_target_fraction": [
+    0.6786621809005737,
+    0.6996281147003174,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "body_names": [
+    "left_foot",
+    "right_foot",
+    "left_knee",
+    "right_knee",
+    "left_hand",
+    "right_hand",
+    "left_elbow",
+    "right_elbow",
+    "pelvis"
+  ],
+  "explicit_pose_matches_next_reference": true,
+  "fixed_pose_command_independent_of_future_frames": true,
+  "data_hash": "a5f7aed562fba98f1ab3933a73be8431dbede4c982fdbf46fac74d1b1f72afd5",
+  "scope": "Command observability and interface audit, not physical policy acceptance"
+}

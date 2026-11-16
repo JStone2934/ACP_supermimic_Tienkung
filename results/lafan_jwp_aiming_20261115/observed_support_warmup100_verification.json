@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "100 model-only warmup iterations; policy unchanged, no policy acceptance.",
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/observed_support/train/ckpt_000100.pt",
+  "checkpoint_sha256": "d31201c7a6544a35fb918c4a1a2dc108bacc40b5a8f5e7eedff0e7e3054ceeef",
+  "policy_unchanged": true,
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 1000
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 2148271616,
+        "torch_peak_reserved": 2229272576,
+        "device_used": 4326555648,
+        "warp_pool_used": 787369870,
+        "warp_pool_peak": 787370818
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 2148190720,
+        "torch_peak_reserved": 2229272576,
+        "device_used": 3643998208,
+        "warp_pool_used": 473809235,
+        "warp_pool_peak": 473810183
+      }
+    ],
+    "state_sha256": "926f3aa38a01408be7d36b3d8e5452ccea753133c7b9c8850e3229e1af3655bf"
+  },
+  "source_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/observed_support_init.pt",
+    "sha256": "f1aad639b9a45e16c88c1eaa6e7f003a0173f156b600652b05d603d5860ebe92"
+  },
+  "policy_acceptance": false
+}

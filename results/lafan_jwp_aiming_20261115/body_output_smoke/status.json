@@ -1,0 +1,31 @@
+{
+  "iteration": 2,
+  "phase": "joint",
+  "level": 4,
+  "stage": "wide",
+  "sim_reward": 0.2746499478816986,
+  "physical_termination_fraction": 0.0,
+  "physical_timeout_fraction": 0.0,
+  "mean_physical_episode_age_s": 0.7999999523162842,
+  "completed_physical_episodes": 0,
+  "mean_completed_physical_episode_s": null,
+  "observed_support_locked_fraction": 1.0,
+  "wm_loss": 0.2676955461502075,
+  "model_ready": false,
+  "critic_warmup_done": 0,
+  "updates": {
+    "wm": 2,
+    "pi": 2,
+    "critic": 2
+  },
+  "elapsed_s": 157.19686106100016,
+  "actor_loss": -4.16939640045166,
+  "critic_loss": 4.911196708679199,
+  "actor_grad": 10.611490249633789,
+  "critic_grad": 12.658370971679688,
+  "actor_value_gradient": 0.0,
+  "imagined_reward_objective": 4.183411598205566,
+  "bootstrap_objective": -0.01401553861796856,
+  "bootstrap_max": 0.4403965175151825,
+  "return_target_max": 3.8775460720062256
+}

@@ -1,0 +1,54 @@
+{
+  "created": "2026-11-16 10:48:01.910390",
+  "status": "intentionally_stopped",
+  "unit": "narrow-support-training.service",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v17",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/narrow_support/train",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/narrow_early_support_candidates/ckpt_000001.pt",
+  "init_sha256": "22898227a278735292e56c96212f69ccec29f5c30554dda15bd113199cc5f3b6",
+  "level": 2,
+  "same_stage_recovery": true,
+  "source_full_stage_passed": false,
+  "iterations": 1000,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "wm_only_iters": 100,
+  "critic_warmup_iters": 100,
+  "actor_lr": 0.0001,
+  "actor_value_gradient": 0.0,
+  "matmul_tf32": false,
+  "policy_training_scope": "aiming_support_error_inputs",
+  "trainable_elements": 12288,
+  "distal_decoder_and_command_head_frozen": true,
+  "normalizers_frozen": true,
+  "zero_support_error_action_unchanged": true,
+  "support_capture_steps": 25,
+  "checkpoint_every": 50,
+  "evaluation_iterations": [
+    250,
+    400,
+    600,
+    1000
+  ],
+  "evaluation_seeds": [
+    17,
+    53
+  ],
+  "evaluation_gpus": [
+    0,
+    1
+  ],
+  "smoke_weights_reused": false,
+  "required_gate_reports": [
+    "aiming_support_compile_benchmark.json",
+    "aiming_support_smoke_verification.json"
+  ],
+  "physical_acceptance": false,
+  "acceptance_changed": false,
+  "launched": "2026-11-16 10:52:00.405580",
+  "required_gates_passed": true,
+  "stop_record": "logs/tienkung3_29dof/lafan_jwp_20261115/narrow_support/intentional_stop.json"
+}

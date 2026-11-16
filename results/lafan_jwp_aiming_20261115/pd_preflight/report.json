@@ -1,0 +1,58 @@
+{
+  "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/accepted/motions/lafan/aiming1_subject1__f003563_004793_motion.npz": {
+    "protocol": "free-root joint-position PD; no root support or reference forces; no self collisions as in ACP",
+    "completed": false,
+    "tracking_pass": false,
+    "simulated_s": 0.72,
+    "reference_s": 24.58,
+    "error_sampling": "post-step against the next reference frame, including terminal transition",
+    "root_error_rmse_m": 0.1768821825502054,
+    "root_error_max_m": 0.3462677168818322,
+    "joint_error_rmse_rad": 0.13214617924364436,
+    "torque_saturation_fraction": 0.0,
+    "joint_velocity_exceed_fraction": 0.0,
+    "trajectory": "results/lafan_jwp_aiming_20261115/pd_preflight/lafan/aiming1_subject1__f003563_004793_pd.npz"
+  },
+  "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/accepted/motions/lafan/walk1_subject1__f003271_003803_motion.npz": {
+    "protocol": "free-root joint-position PD; no root support or reference forces; no self collisions as in ACP",
+    "completed": false,
+    "tracking_pass": false,
+    "simulated_s": 0.88,
+    "reference_s": 10.62,
+    "error_sampling": "post-step against the next reference frame, including terminal transition",
+    "root_error_rmse_m": 0.10074628487369186,
+    "root_error_max_m": 0.2578317137140936,
+    "joint_error_rmse_rad": 0.09306908943675633,
+    "torque_saturation_fraction": 0.0,
+    "joint_velocity_exceed_fraction": 0.0,
+    "trajectory": "results/lafan_jwp_aiming_20261115/pd_preflight/lafan/walk1_subject1__f003271_003803_pd.npz"
+  },
+  "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/accepted/motions/lafan/fallAndGetUp1_subject1__f006481_006837_motion.npz": {
+    "protocol": "free-root joint-position PD; no root support or reference forces; no self collisions as in ACP",
+    "completed": false,
+    "tracking_pass": false,
+    "simulated_s": 0.4,
+    "reference_s": 7.1,
+    "error_sampling": "post-step against the next reference frame, including terminal transition",
+    "root_error_rmse_m": 0.1871023519835855,
+    "root_error_max_m": 0.3334256481612726,
+    "joint_error_rmse_rad": 0.1742773629127113,
+    "torque_saturation_fraction": 0.0,
+    "joint_velocity_exceed_fraction": 0.0,
+    "trajectory": "results/lafan_jwp_aiming_20261115/pd_preflight/lafan/fallAndGetUp1_subject1__f006481_006837_pd.npz"
+  },
+  "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/accepted/motions/jwp/take044_chr00_motion.npz": {
+    "protocol": "free-root joint-position PD; no root support or reference forces; no self collisions as in ACP",
+    "completed": false,
+    "tracking_pass": false,
+    "simulated_s": 0.9,
+    "reference_s": 5.0,
+    "error_sampling": "post-step against the next reference frame, including terminal transition",
+    "root_error_rmse_m": 0.22105346611699103,
+    "root_error_max_m": 0.5000185567106396,
+    "joint_error_rmse_rad": 0.10066195835485064,
+    "torque_saturation_fraction": 0.0,
+    "joint_velocity_exceed_fraction": 0.0,
+    "trajectory": "results/lafan_jwp_aiming_20261115/pd_preflight/jwp/take044_chr00_pd.npz"
+  }
+}

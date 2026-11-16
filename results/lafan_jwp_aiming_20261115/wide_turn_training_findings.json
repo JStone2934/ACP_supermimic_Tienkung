@@ -1,0 +1,24 @@
+{
+  "scope": "Evidence and prospective options for later full-range curriculum; no reward or body-training changes applied",
+  "evidence": {
+    "fixed_body_distal_reachability": "distal_wide_geometry.json:57/75targets",
+    "ideal_yaw_adjusted_reachability": "distal_heading_geometry.json:75/75targets,minimumjointmargin0.0255rad",
+    "actual_body_control": "distal600_wide_turn_comparison.json:52/75fixedbasicbalance;all15negative60degcasesfailed;survivorsdo notcloseheadingerror",
+    "current_center_scope": "Only3distaloutputrows train; body/support/heading parameters frozen",
+    "heading_command": "WideAimingTask.command uses atan2(worldtarget\u2212root); legacy goalrelativeyaw iscommandcolumn29",
+    "heading_reward": "Static yaw-anchor reward heading hasweight0 andisforbidden nonzero inWideAimingTask",
+    "adjustment_rewards": "Feetpositionrewarddisableduntilcapture;foot_motion1andfoot_velocity0.5stillpenalizemotionduringfirst3s; rootradius0.5remainsoriginalcontract"
+  },
+  "candidate_changes_not_implemented": [
+    "Aftercenterstagepasses, testnarrowbodyheading response beforedecidingadditionalbodyadaptation",
+    "Ifneeded, learnheadinginputcolumn29andobservedsupportcolumnswhilepreservingzero-errorbodyactions; normalizermean29mayneedlosslesscentering",
+    "A newtarget-bearingheadingrewardcouldencourageallowedturning; do not enabletheexistingstaticyaw-anchorheadingreward",
+    "Considerallowingfootmotionduringtheauthorizedadjustmentwindowwhilekeepingpostcapturefeetcriteriaunchanged"
+  ],
+  "constraints": [
+    "Fulltargetrangeand5cmfinalradiusunchanged",
+    "Noautomaticpromotion",
+    "Noformalheadingadaptationstarted",
+    "Nochanges torunningfrozenv15trainingor frozenv16skiprunner"
+  ]
+}

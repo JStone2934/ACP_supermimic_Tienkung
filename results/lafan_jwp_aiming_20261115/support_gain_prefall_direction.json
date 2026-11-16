@@ -1,0 +1,507 @@
+{
+  "scope": "Descriptive failed episode directions only; no causal assertion.",
+  "rows": {
+    "2": [
+      {
+        "scenario": 3,
+        "first15deg_s": 29.32,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18995121121406555,
+          0.0488385371863842
+        ]
+      },
+      {
+        "scenario": 27,
+        "first15deg_s": 28.54,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19750240445137024,
+          0.0341293066740036
+        ]
+      },
+      {
+        "scenario": 54,
+        "first15deg_s": 23.46,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19613629579544067,
+          0.006008855998516083
+        ]
+      },
+      {
+        "scenario": 95,
+        "first15deg_s": 28.98,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19224879145622253,
+          0.03144266456365585
+        ]
+      }
+    ],
+    "3": [
+      {
+        "scenario": 2,
+        "first15deg_s": 12.32,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.2161562740802765,
+          0.01097182184457779
+        ]
+      },
+      {
+        "scenario": 20,
+        "first15deg_s": 17.0,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.22539448738098145,
+          0.007941104471683502
+        ]
+      },
+      {
+        "scenario": 54,
+        "first15deg_s": 12.1,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.22362186014652252,
+          -0.0213022381067276
+        ]
+      },
+      {
+        "scenario": 61,
+        "first15deg_s": 9.08,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.2273608148097992,
+          -0.013803765177726746
+        ]
+      },
+      {
+        "scenario": 83,
+        "first15deg_s": 29.34,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18075303733348846,
+          0.057469628751277924
+        ]
+      }
+    ],
+    "4": [
+      {
+        "scenario": 1,
+        "first15deg_s": 27.64,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.2054971605539322,
+          0.03498430550098419
+        ]
+      },
+      {
+        "scenario": 2,
+        "first15deg_s": 24.98,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1946689486503601,
+          0.06491293013095856
+        ]
+      },
+      {
+        "scenario": 5,
+        "first15deg_s": 23.76,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19240136444568634,
+          0.05881336331367493
+        ]
+      },
+      {
+        "scenario": 6,
+        "first15deg_s": 27.68,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19520661234855652,
+          0.04040910676121712
+        ]
+      },
+      {
+        "scenario": 7,
+        "first15deg_s": 26.060000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19253969192504883,
+          0.050251275300979614
+        ]
+      },
+      {
+        "scenario": 8,
+        "first15deg_s": 26.64,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.17828303575515747,
+          0.0647830069065094
+        ]
+      },
+      {
+        "scenario": 9,
+        "first15deg_s": 28.66,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.16012613475322723,
+          0.0619102418422699
+        ]
+      },
+      {
+        "scenario": 11,
+        "first15deg_s": 26.98,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1876545399427414,
+          0.06324924528598785
+        ]
+      },
+      {
+        "scenario": 16,
+        "first15deg_s": 28.82,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18874943256378174,
+          0.06016302481293678
+        ]
+      },
+      {
+        "scenario": 17,
+        "first15deg_s": 29.18,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.20289194583892822,
+          0.033515192568302155
+        ]
+      },
+      {
+        "scenario": 19,
+        "first15deg_s": 24.26,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.14983393251895905,
+          0.0826307088136673
+        ]
+      },
+      {
+        "scenario": 20,
+        "first15deg_s": 26.92,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19671298563480377,
+          0.041304536163806915
+        ]
+      },
+      {
+        "scenario": 21,
+        "first15deg_s": 23.240000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19731338322162628,
+          0.04939967766404152
+        ]
+      },
+      {
+        "scenario": 22,
+        "first15deg_s": 26.04,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18354834616184235,
+          0.053800687193870544
+        ]
+      },
+      {
+        "scenario": 23,
+        "first15deg_s": 29.62,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18531984090805054,
+          0.04012155532836914
+        ]
+      },
+      {
+        "scenario": 24,
+        "first15deg_s": 25.82,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.17431481182575226,
+          0.059511698782444
+        ]
+      },
+      {
+        "scenario": 26,
+        "first15deg_s": 23.28,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.16679763793945312,
+          0.06680458784103394
+        ]
+      },
+      {
+        "scenario": 27,
+        "first15deg_s": 28.740000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19521856307983398,
+          0.06239036098122597
+        ]
+      },
+      {
+        "scenario": 28,
+        "first15deg_s": 28.68,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1882731169462204,
+          0.05042421445250511
+        ]
+      },
+      {
+        "scenario": 30,
+        "first15deg_s": 23.740000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.20382466912269592,
+          0.029228202998638153
+        ]
+      },
+      {
+        "scenario": 32,
+        "first15deg_s": 29.38,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1611694097518921,
+          0.06966642290353775
+        ]
+      },
+      {
+        "scenario": 33,
+        "first15deg_s": 23.96,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19478599727153778,
+          0.04157866910099983
+        ]
+      },
+      {
+        "scenario": 34,
+        "first15deg_s": 26.82,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.17969387769699097,
+          0.07322119176387787
+        ]
+      },
+      {
+        "scenario": 35,
+        "first15deg_s": 25.560000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1760483682155609,
+          0.06250190734863281
+        ]
+      },
+      {
+        "scenario": 36,
+        "first15deg_s": 28.2,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19740836322307587,
+          0.05191653221845627
+        ]
+      },
+      {
+        "scenario": 38,
+        "first15deg_s": 25.0,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18874318897724152,
+          0.050495099276304245
+        ]
+      },
+      {
+        "scenario": 40,
+        "first15deg_s": 28.68,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1968846321105957,
+          0.03831097483634949
+        ]
+      },
+      {
+        "scenario": 41,
+        "first15deg_s": 24.14,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19665318727493286,
+          0.04869760572910309
+        ]
+      },
+      {
+        "scenario": 45,
+        "first15deg_s": 28.82,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.2056630551815033,
+          0.040561482310295105
+        ]
+      },
+      {
+        "scenario": 47,
+        "first15deg_s": 24.32,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1916063278913498,
+          0.05999860167503357
+        ]
+      },
+      {
+        "scenario": 49,
+        "first15deg_s": 28.54,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.16274826228618622,
+          0.0652332752943039
+        ]
+      },
+      {
+        "scenario": 50,
+        "first15deg_s": 25.560000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.21487075090408325,
+          0.04811755567789078
+        ]
+      },
+      {
+        "scenario": 51,
+        "first15deg_s": 26.740000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.17444941401481628,
+          0.06060444563627243
+        ]
+      },
+      {
+        "scenario": 55,
+        "first15deg_s": 26.22,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18152999877929688,
+          0.05445745959877968
+        ]
+      },
+      {
+        "scenario": 57,
+        "first15deg_s": 24.68,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18589800596237183,
+          0.0553116537630558
+        ]
+      },
+      {
+        "scenario": 58,
+        "first15deg_s": 25.16,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19618123769760132,
+          0.04189588129520416
+        ]
+      },
+      {
+        "scenario": 59,
+        "first15deg_s": 27.6,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.20151227712631226,
+          0.033028051257133484
+        ]
+      },
+      {
+        "scenario": 62,
+        "first15deg_s": 29.22,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19416804611682892,
+          0.036294855177402496
+        ]
+      },
+      {
+        "scenario": 63,
+        "first15deg_s": 24.86,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.20423007011413574,
+          0.04903921112418175
+        ]
+      },
+      {
+        "scenario": 66,
+        "first15deg_s": 28.3,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19319306313991547,
+          0.04500493407249451
+        ]
+      },
+      {
+        "scenario": 67,
+        "first15deg_s": 29.54,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18984384834766388,
+          0.049720898270606995
+        ]
+      },
+      {
+        "scenario": 71,
+        "first15deg_s": 29.580000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.1590884029865265,
+          0.07410693913698196
+        ]
+      },
+      {
+        "scenario": 79,
+        "first15deg_s": 28.68,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.18983860313892365,
+          0.06900648772716522
+        ]
+      },
+      {
+        "scenario": 80,
+        "first15deg_s": 24.96,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.19372467696666718,
+          0.05890811234712601
+        ]
+      },
+      {
+        "scenario": 81,
+        "first15deg_s": 29.14,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.16177546977996826,
+          0.0780348926782608
+        ]
+      },
+      {
+        "scenario": 82,
+        "first15deg_s": 26.560000000000002,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.13551175594329834,
+          0.0672725960612297
+        ]
+      },
+      {
+        "scenario": 83,
+        "first15deg_s": 25.96,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.17909696698188782,
+          0.05744638666510582
+        ]
+      },
+      {
+        "scenario": 87,
+        "first15deg_s": 25.46,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.13423389196395874,
+          0.06256889551877975
+        ]
+      },
+      {
+        "scenario": 88,
+        "first15deg_s": 7.0200000000000005,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.21393239498138428,
+          -0.08493620902299881
+        ]
+      },
+      {
+        "scenario": 95,
+        "first15deg_s": 8.02,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.23530526459217072,
+          -0.01743996888399124
+        ]
+      },
+      {
+        "scenario": 96,
+        "first15deg_s": 21.72,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.15870912373065948,
+          0.048242636024951935
+        ]
+      },
+      {
+        "scenario": 97,
+        "first15deg_s": 26.22,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.14125694334506989,
+          0.07953648269176483
+        ]
+      },
+      {
+        "scenario": 98,
+        "first15deg_s": 25.32,
+        "root_displacement_halfsecond_before_failure_heading_xy_m": [
+          -0.12233735620975494,
+          0.08952005207538605
+        ]
+      }
+    ]
+  }
+}

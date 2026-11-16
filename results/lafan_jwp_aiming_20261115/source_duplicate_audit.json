@@ -1,0 +1,185 @@
+{
+  "trajectory_groups": {
+    "120de8e638c8694101eb00c84ee837af2e2a955127e7b15eed45611e42cc298c": [
+      "aiming1_subject1"
+    ],
+    "0e6743a71f23e3240931e88b371e898b40e45e66a3ee2c1d9ce25902f258e3d5": [
+      "aiming1_subject4"
+    ],
+    "677101c49a3b9b902e4012815ac82bda46b5a56be85f7946fb63843d929ad376": [
+      "aiming2_subject2"
+    ],
+    "b533452e525f48e65e9e355ec6b718fc0315fc47686e02cbdc7b598cccbc9152": [
+      "aiming2_subject3"
+    ],
+    "48d2385e0fa56141214b773443719ed7e71bc558147f35ee5dd6929e288f2f28": [
+      "aiming2_subject5"
+    ],
+    "f4e1cd17e408662dab65c849cf10f16e36b9746d42ca00e80043c926cd85c96e": [
+      "dance1_subject1"
+    ],
+    "cff7aabe49aea88f7ec459e38c8f3b218d62efa49b290e6e2969b37ed0411ec8": [
+      "dance1_subject2"
+    ],
+    "9029b4ab10f4990c822704daa53c93c39bbabae43212f8adbc29ec9d65686a1a": [
+      "dance1_subject3"
+    ],
+    "4521e025f1d7c37f76633651cbb215de5b11a3480c041123ba66f5d53df8fb82": [
+      "dance2_subject1"
+    ],
+    "34d52a5b5f700776cab073de8f01885b4cd26ff25405503158270d28094ec2f9": [
+      "dance2_subject2"
+    ],
+    "141bfad9561cbcb7d1e4330b086f9f5ce6b42019b50d691af869e4b084ff44df": [
+      "dance2_subject3"
+    ],
+    "e1c24e9c1f78c61d610b7e09b273ec1ab935ea1ca002765363b4f333f187a642": [
+      "dance2_subject4"
+    ],
+    "4ca9d9a844da0d876286631c17bf35f72b5c4e98a1540977aa338b71cbcd6a12": [
+      "dance2_subject5"
+    ],
+    "636fb44865a8c44cd982d03f1c5e7a6c89b9e5d9095a57c78b87881838ca9cec": [
+      "fallAndGetUp1_subject1"
+    ],
+    "4a258290043228a33870faa0a490c19d80cb92ef744ee14cd086c6121d5988a7": [
+      "fallAndGetUp1_subject4"
+    ],
+    "ab666d9883f3ad2bcbd4e049b9549bcfe928649ea5065db44f82c4355517188b": [
+      "fallAndGetUp1_subject5"
+    ],
+    "d8fdaaf365655c18c954ee33d84e2f089071af657511348dd0032f10fc688e75": [
+      "fallAndGetUp2_subject2"
+    ],
+    "f63c6351cae58d095117404331ce3b69b10fe2f4a19c935c9d5508a34be1efbf": [
+      "fallAndGetUp2_subject3"
+    ],
+    "487cc5f3b401712f25850f800b6fcf87c32cf929bd85e8f13b3645bb06f8f515": [
+      "fallAndGetUp3_subject1"
+    ],
+    "6016c1626114284b21e9d3623420c1035d6f2a2f7c337eb18161ecf0085f8e6a": [
+      "fight1_subject2"
+    ],
+    "63a834dc0e1c71a3df1c06c040910feab94f917ce1c807fd9374d66a987106c8": [
+      "fight1_subject3"
+    ],
+    "7cb578dcfa671bd2d2aef0b2b18993acb8152006fb3c52c322c2388adf7356ab": [
+      "fight1_subject5"
+    ],
+    "a51bad42b1618c7a50548125ba0d044e5ec05a385b36ed639d51ca66ffb76049": [
+      "fightAndSports1_subject1"
+    ],
+    "74069eef913a077bf79b974caabbe0792f1bd7cfa65365a4fde360e4f9378dda": [
+      "fightAndSports1_subject4"
+    ],
+    "1bc0e6c97e3e6c22a4a6bbf210ed2610d03b8029ac02becccf4b989873c50980": [
+      "ground1_subject1"
+    ],
+    "ad569efe5d32a675af8d99a828234ab531cef90c8bbc5517d7d55654d4585fe1": [
+      "ground1_subject4"
+    ],
+    "b82d81832aa852e5dcb662b80a7d0e589ec3cc6cfcf5d0a82ae4602fa64d2d41": [
+      "ground1_subject5"
+    ],
+    "0d326d6f9a61068aad7996b96a475b2e0cdfda8d46f649f62cf8e651bec7062c": [
+      "ground2_subject2"
+    ],
+    "53189a0b5a034dbbf5f117028fd35cf16ac53763e2088badcc467bd6c3ac0fbb": [
+      "ground2_subject3"
+    ],
+    "0e5d8b0e6d1c6a0b1cea7b0fabac812ce7850ac3c03337d768b4d94921420d22": [
+      "jumps1_subject1"
+    ],
+    "42ebb672aaf846e98c4943b783a368f6be9b13b5fcf391f8387ba71f85b019f6": [
+      "jumps1_subject2"
+    ],
+    "cd3fae3bcefb510bb255ba2804317e05fb0e5b01f1c6199e3b34a517ed07b308": [
+      "jumps1_subject5"
+    ],
+    "c1c24feba2daacf2408239f458ad4eee5b93f76c9b92bd2a7dd5edf5d57f52d7": [
+      "multipleActions1_subject1"
+    ],
+    "6c8220248f135ffa5f9253c25320ba5bbb9a54c20557da037f99bc36b99cc3bb": [
+      "multipleActions1_subject2"
+    ],
+    "912feb62807443bebc04f184c4b1967ce78f67cf5b9b66179cc955404b1e2109": [
+      "multipleActions1_subject3"
+    ],
+    "85c58f35172172b3539324eeb7f3766356b352b46f4a14eab3cdde876b891f52": [
+      "multipleActions1_subject4"
+    ],
+    "b48b04c2ba178438bd42c033dc74a56d10f3e719edddf5d529a7262504414c58": [
+      "push1_subject2"
+    ],
+    "bd5272a4d0ba0bda94f8f64a7365625d88324ef3822936d3941e103e74871b4f": [
+      "pushAndFall1_subject1"
+    ],
+    "272f3ca3f8b69950f2a778730bc1513942a5ffd91b2c43c6bfb4764412007dac": [
+      "pushAndFall1_subject4"
+    ],
+    "b72fd2b6c919cf6ae62712b0c8f2bcd4ecbe6fb7c791bb486a544c38ef125fd8": [
+      "pushAndStumble1_subject2"
+    ],
+    "b383a7662e0cd6fe1c5cccebbcc1507661295285ac5f8186f1124ed90fe5454a": [
+      "pushAndStumble1_subject3"
+    ],
+    "214bfadb80b3c824fab82d3ee69b42953daa4beb949ede1837ee3dc88f7b16ac": [
+      "pushAndStumble1_subject5"
+    ],
+    "ca2fd761f13e1a4d5ac42521fcbf9143d0f55eea171bb130fe5d0ebffb021110": [
+      "run1_subject2"
+    ],
+    "533c79a8263c98ffd4e22892096be933630cfe3a5b09f694fd38a679b263009a": [
+      "run1_subject5"
+    ],
+    "a7a8ab93391ba7af53f8147befdfe580935f0a690414a15c631f78991a964c7b": [
+      "run2_subject1"
+    ],
+    "c7accb5cee067720ea2c573d54ef6b9935a3332f4ddb7e32edb9fe7fdc78643a": [
+      "run2_subject4"
+    ],
+    "e5946375e3996bea3f390955495941376a641845de4816846be5fb8d21e3c79d": [
+      "sprint1_subject2"
+    ],
+    "b575c48379c66e3ff7fbf5aeeba114fdd987e72431293dca992202d502885c9d": [
+      "sprint1_subject4"
+    ],
+    "5387021b0f7bb62b38b2f00585a895289a2fbff05ff76855603f7bb43d18785a": [
+      "walk1_subject1"
+    ],
+    "aa0d41bc10a6d27901584dd29062d2005bd13b76d43b78c8d99add3b0e29eedd": [
+      "walk1_subject2"
+    ],
+    "4e0745b9177972022e689439fa3c78a3a22e6fe81c0372abc39c41284f8bd0c7": [
+      "walk1_subject5"
+    ],
+    "73f926151d30a257806acf45fa3e00f403c8dc667ff7889084684d3a676a7a0a": [
+      "walk2_subject1"
+    ],
+    "5f7a59d9ca085b614a48c4c770abf3a2bc344bb67e8091e4e4d183b6d36dcc29": [
+      "walk2_subject3"
+    ],
+    "5005298f66dc741169c7e2db9761d1c4c013fa4a8a960d81b3bf14b8b42fd10c": [
+      "walk2_subject4"
+    ],
+    "44c1e0a0cece656db2b175a0f29f67d5153df9f80b98ecdd619477ec3b34d165": [
+      "walk3_subject1"
+    ],
+    "8c00e01d9d656b9f658613f55326ab88e32e8dcd9925637907473383501f8947": [
+      "walk3_subject2"
+    ],
+    "25906f224cce107987a45e43cc28e19234561733a39d963ade08a1e992bfd74e": [
+      "walk3_subject3"
+    ],
+    "4c27d5329fc1f9a041699b1b510e660fc9da6c159bf915605acd52971732688f": [
+      "walk3_subject4"
+    ],
+    "9449b89c09a29627c5cb9a7f5ec39a554e0c843d3b2c2c8d078f64e5e9b1a956": [
+      "walk3_subject5"
+    ],
+    "5c8c80d5e08a49fbc037ea2473facaa5343866be966e0945a6820cb260f41db3": [
+      "walk4_subject1"
+    ]
+  },
+  "scope": "Exact joint positions and first body world positions"
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "Deterministic collection-clock audit; resets can only lower individual episode age. This does not establish the cause of failed evaluations.",
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/center_combined/train/ckpt_000100.pt",
+  "checkpoint_sha256": "b3500a4c0a2a1f73558f88cff759dc1f78c2e501a7c941166be9ef17cdd0e006",
+  "initial_collect_steps": 128,
+  "collect_steps_per_update": 3,
+  "replay_capacity_steps": 1000,
+  "replay_capacity_seconds": 20.0,
+  "earliest_policy_update_iteration": 201,
+  "policy_acceptance": false,
+  "proposed_if_recovery_fails": {
+    "initial_collect_steps": 1500,
+    "buffer_steps": 2048,
+    "reason": "Collect a full physical episode before any model/actor adaptation, retain both initial and late states",
+    "implemented": false
+  },
+  "physical_seconds_collected_after_scheduled_warmups": 14.56,
+  "physical_seconds_collected_at_earliest_actor_update": 14.62,
+  "late20to30s_covered_at_earliest_actor_update": false,
+  "qualification": "Model accuracy gates may delay the first actor update and increase collected time. Synchronized initial resets and automatic early-failure resets can reduce actual episode ages."
+}

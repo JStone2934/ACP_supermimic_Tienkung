@@ -1,0 +1,17 @@
+{
+  "time": "2026-11-16 08:22:59.259266",
+  "run": "logs/tienkung3_29dof/lafan_jwp_20261115/center_combined_smoke/train",
+  "passed": false,
+  "reason": "Actual trainer overwrote support optimizer group learning rate in non-distillation phase",
+  "expected_optimizer_rates": [
+    0.0001,
+    1e-05
+  ],
+  "saved_optimizer_rates": [
+    1e-05,
+    1e-05
+  ],
+  "formal_training_started": false,
+  "weights_reused": false,
+  "fix": "set_policy_learning_rates preserves each group at phase transitions; tested then frozen v14"
+}

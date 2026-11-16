@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "scope": "DualGPU actual curriculum runner integration only; smoke weights prohibited as formal initialization",
+  "finite": true,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 367959040,
+        "torch_peak_reserved": 436207616,
+        "device_used": 14603124736,
+        "warp_pool_used": 627436720,
+        "warp_pool_peak": 627437668
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 367887872,
+        "torch_peak_reserved": 436207616,
+        "device_used": 15658713088,
+        "warp_pool_used": 314822435,
+        "warp_pool_peak": 314823383
+      }
+    ],
+    "state_sha256": "e8b2e59496d47509accb8b0d8eac254a06c4b0bfa46b3df545a7cafcfed1ceed"
+  },
+  "physics_substeps": 16,
+  "reset_noise": {
+    "reset_position_noise_m": 0.01,
+    "reset_rotation_noise_rad": 0.015,
+    "reset_joint_noise_rad": 0.03
+  },
+  "formal_initialization_allowed": false
+}

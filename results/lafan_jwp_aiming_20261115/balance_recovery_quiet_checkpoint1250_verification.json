@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "scope": "Resume and reward integration audit before critic/actor training; not policy acceptance",
+  "checkpoint_sha256": "793979091e404af9d15363fa85d4b79e9aa07ceb06d6b528a218d3b70c64ba27",
+  "source_sha256": "94e6fb4ceff81f6de25de48979cfa6d1ce9b9298561dd6fe8a2794f068251f0b",
+  "iteration": 1250,
+  "policy_and_critic_unchanged_during_WM_warmup": {
+    "pi": true,
+    "critic": true
+  },
+  "world_model_changed": true,
+  "foot_motion_weight": 1.0,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 12500,
+      "distill": 1000
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 2097039872,
+        "torch_peak_reserved": 2191523840,
+        "device_used": 4286775296,
+        "warp_pool_used": 787369870,
+        "warp_pool_peak": 787370818
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 2096959488,
+        "torch_peak_reserved": 2191523840,
+        "device_used": 5321064448,
+        "warp_pool_used": 473809235,
+        "warp_pool_peak": 473810183
+      }
+    ],
+    "state_sha256": "c00d5793a3356ecb9f50c9378cd4bd71ce5eebb342e7b5cc210f7cffd09b8f0c"
+  }
+}

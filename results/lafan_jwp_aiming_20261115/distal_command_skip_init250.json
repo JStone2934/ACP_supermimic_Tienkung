@@ -1,0 +1,11 @@
+{
+  "method": "Add a zero-initialized, 45-parameter distal target readout without changing actions.",
+  "old_weights_and_normalizers_exact": true,
+  "initial_actions_exact": true,
+  "new_parameters": 45,
+  "runtime_motion_files": false,
+  "online_ik": false,
+  "physical_acceptance": false,
+  "checkpoint_sha256": "6a252c283dceb7d1479ce07418a0ae994b541469cafdba5d4dae97d46f5bb566",
+  "source_sha256": "1cfc2e633ef4dcd160f44f64be00447d2524e1a58c2b092d18258fdc31370894"
+}

@@ -1,0 +1,95 @@
+{
+  "passed": false,
+  "active_horizon": 32,
+  "passed_by_horizon": {
+    "1": true,
+    "8": false,
+    "16": false,
+    "32": false
+  },
+  "horizons": {
+    "1": {
+      "windows": 82,
+      "total_windows": 82,
+      "root_m_p95": 0.0013487323885783553,
+      "root_m_rmse": 0.00107561144977808,
+      "feet_m_p95": 0.003855564631521702,
+      "feet_m_rmse": 0.001993148820474744,
+      "feet_velocity_m_s_p95": 0.21111780405044556,
+      "feet_velocity_m_s_rmse": 0.10654441267251968,
+      "joints_rad_p95": 0.005883755628019571,
+      "joints_rad_rmse": 0.005008911248296499,
+      "tcp_m_p95": 0.0042383186519145966,
+      "tcp_m_rmse": 0.0027090595103800297,
+      "direction_deg_p95": 0.8917914032936096,
+      "direction_deg_rmse": 0.5723715424537659,
+      "tip_m_p95": 0.030235636979341507,
+      "tip_m_rmse": 0.01797516830265522
+    },
+    "8": {
+      "windows": 10,
+      "total_windows": 10,
+      "root_m_p95": 0.007988711819052696,
+      "root_m_rmse": 0.006489927880465984,
+      "feet_m_p95": 0.011372687295079231,
+      "feet_m_rmse": 0.009121114388108253,
+      "feet_velocity_m_s_p95": 0.09767873585224152,
+      "feet_velocity_m_s_rmse": 0.0716683566570282,
+      "joints_rad_p95": 0.02097546122968197,
+      "joints_rad_rmse": 0.02034560963511467,
+      "tcp_m_p95": 0.040593843907117844,
+      "tcp_m_rmse": 0.03306605666875839,
+      "direction_deg_p95": 4.1482110023498535,
+      "direction_deg_rmse": 3.28910493850708,
+      "tip_m_p95": 0.14319393038749695,
+      "tip_m_rmse": 0.10539456456899643
+    },
+    "16": {
+      "windows": 4,
+      "total_windows": 4,
+      "root_m_p95": 0.018480347469449043,
+      "root_m_rmse": 0.015852533280849457,
+      "feet_m_p95": 0.022003252059221268,
+      "feet_m_rmse": 0.01963159814476967,
+      "feet_velocity_m_s_p95": 0.1230781078338623,
+      "feet_velocity_m_s_rmse": 0.096783846616745,
+      "joints_rad_p95": 0.030161671340465546,
+      "joints_rad_rmse": 0.02897026762366295,
+      "tcp_m_p95": 0.07043495774269104,
+      "tcp_m_rmse": 0.06365920603275299,
+      "direction_deg_p95": 6.588783264160156,
+      "direction_deg_rmse": 5.668552875518799,
+      "tip_m_p95": 0.22516487538814545,
+      "tip_m_rmse": 0.18007248640060425
+    },
+    "32": {
+      "windows": 2,
+      "total_windows": 2,
+      "root_m_p95": 0.0493948832154274,
+      "root_m_rmse": 0.047756221145391464,
+      "feet_m_p95": 0.04418105259537697,
+      "feet_m_rmse": 0.04393615573644638,
+      "feet_velocity_m_s_p95": 0.09806119650602341,
+      "feet_velocity_m_s_rmse": 0.09769275039434433,
+      "joints_rad_p95": 0.031120946630835533,
+      "joints_rad_rmse": 0.030531324446201324,
+      "tcp_m_p95": 0.09522292762994766,
+      "tcp_m_rmse": 0.0935296043753624,
+      "direction_deg_p95": 6.343976020812988,
+      "direction_deg_rmse": 5.995952129364014,
+      "tip_m_p95": 0.2176567167043686,
+      "tip_m_rmse": 0.1905631124973297
+    }
+  },
+  "thresholds": {
+    "root_m_p95": 0.05,
+    "feet_m_p95": 0.025,
+    "tip_m_p95": 0.05000000074505806
+  },
+  "thresholds_status": "required before imagined actor updates; does not replace physical acceptance",
+  "independent_episodes": true,
+  "exploration_rad": {
+    "arm": 0.02,
+    "body": 0.005
+  }
+}

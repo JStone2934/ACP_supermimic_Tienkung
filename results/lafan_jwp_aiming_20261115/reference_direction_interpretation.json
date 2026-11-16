@@ -1,0 +1,10 @@
+{
+  "physical_tail_complete": true,
+  "worlds": 256,
+  "training_source_states": 32,
+  "checkpoint_sha256": "361a61c09cef89c13caac8b471f70778a049c403ed247b2588002bbaf7c2349b",
+  "baseline_repeat_total_return_delta_mean": 0.018240724690258503,
+  "baseline_repeat_total_return_delta_sem": 0.03012557229138278,
+  "result": "Immediate reward gradient matches physical H8 reward. Tail gradient gives positive measured long-term mean but with material noise; total gradient long-term effect is inconclusive. No evidence here justifies removing or reweighting critic bootstrap.",
+  "decision": "Keep current algorithm and await independent checkpoint acceptance. No physical acceptance implied."
+}

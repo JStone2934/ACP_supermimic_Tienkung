@@ -1,0 +1,25 @@
+{
+  "status": "physical_evaluation_running",
+  "purpose": "Physically grounded posture/load calibration after shared right-proximal arm change shiftedCOM by7.48mm forward and2.02mm sideways",
+  "old_geometry_source": "wide_gated_transfer/ckpt_000001.pt",
+  "new_policy_source": "wide_kinematic_head_candidates/ckpt_000001.pt",
+  "reference_script": "check_shared_pose_contact_load.py",
+  "proposal": [
+    "Compile nativeMuJoCo model and compare old/new initial q; rootheight/quat identical.",
+    "Solve12legjointangles plus2commonhorizontalfootshift variables withscipy least_squares. Preserve bothfoot rotations andheights; translatebothfeet equallyxy. Restore oldCOMxy-minus-meanfootxy despite newrightarm pose. Optionallyhalf/full correction, boundqdelta<.05rad, verifysoftlimits/footresiduals.",
+    "Recompute sameweighted minimum-norm2x6D contactwrenches andjointgravitytau atnewpose vsold geometry. Checkbaseforce residual, positiveFz/friction/COP bounds. IndependentTorchFKchecknativejointordering/footposes.",
+    "If feasible, checkpointcalibration fromnew_policy_source which hasNOpreviouslegloadbias: initial_q legs=newq; finallegdecoderbias adds deltaa=(dqleg + (tau_new-tau_old)/kp)/alpha. Translate legq observationhistory andprevious-actionhistory throughdec.0.bias: subtractWq*(dqleg/obsstd) andWa*(deltaa/obsstd), repeated10. Keep allweightsotherthan2biases, bothaimheads/armoutputs/norms unchanged; functional body equivalence with explicitly shiftedhistory must pass. Rootheight/quat/resetnoise unchanged, alltargets same resetpose.",
+    "Gain2basehead can be raisedto7 usingexistingfeedbacksweeptool. Labellevel5 diagnostic, evaluatebothseeds onv19; noformalpromotion oracceptancechange. Geometry/posturecalibrationisnotimplemented yet."
+  ],
+  "motivation": "Earlierstaticloadbiascompensationkeptoldlegpose; maynotrestoreCOMrelativefeet. CurrentACPshort-horizonbodyupdatesimprovedpredictedrewardandfootquietnessbutdegradedphysicalbalance. This tests a distinctmechanicalcause ratherthanrepeatingfailedgradientbranch.",
+  "physical_acceptance": false,
+  "geometry": "com_preserving_pose_geometry.json",
+  "geometry_passed": true,
+  "policy_translation_verified": true,
+  "geometry_tool": "tools/check_com_preserving_pose.py",
+  "preparation_tool": "tools/prepare_com_pose_calibration.py",
+  "candidates": "precise_com_pose_candidates",
+  "evaluation": "evaluation_precise_com_pose",
+  "unit": "precise-com-pose-evaluation.service",
+  "reset_noise_unchanged": true
+}

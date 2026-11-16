@@ -1,0 +1,21 @@
+{
+  "run": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/arm_observation_candidates",
+  "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v14",
+  "out": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_arm_observation",
+  "iterations": [
+    1,
+    2,
+    3
+  ],
+  "level": 1,
+  "seeds": [
+    17,
+    53
+  ],
+  "timeout_hours": 1.0,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "parallel_seeds": true
+}

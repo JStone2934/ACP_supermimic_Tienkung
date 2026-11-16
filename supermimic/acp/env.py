@@ -68,10 +68,13 @@ def make_scene_cfg(num_envs: int, n_boxes: int, robot="g1") -> SceneCfg:
                     entities={"robot": get_robot(robot).entity_cfg(), "obstacles": obstacles_cfg(n_boxes)})  # fmt: skip
 
 
-def make_sim(njmax: int = 500, nconmax: int = 128, robot="g1") -> SimulationCfg:
+def make_sim(njmax: int = 500, nconmax: int = 128, robot="g1", physics_substeps: int | None = None) -> SimulationCfg:
     robot = get_robot(robot)
+    steps = robot.decimation if physics_substeps is None else physics_substeps
+    if isinstance(steps, bool) or not isinstance(steps, int) or steps < 1:
+        raise ValueError('physics_substeps must be a positive integer')
     return SimulationCfg(njmax=njmax, nconmax=nconmax,
-                         mujoco=MujocoCfg(timestep=robot.control_dt / robot.decimation, integrator="implicitfast", cone="pyramidal", solver="newton",
+                         mujoco=MujocoCfg(timestep=robot.control_dt / steps, integrator="implicitfast", cone="pyramidal", solver="newton",
                                           iterations=100, ls_iterations=50, tolerance=1e-6, ccd_iterations=35))  # fmt: skip
 
 
@@ -90,7 +93,12 @@ class TrackingSim:
         self.num_joints = self.spec.num_joints
         n_boxes = motion.clip_boxes.shape[2]
         self.scene = Scene(make_scene_cfg(num_envs, n_boxes, self.spec), device=device)
-        self.sim = Simulation(num_envs=num_envs, cfg=sim_cfg or make_sim(robot=self.spec), model=self.scene.compile(), device=device)
+        sim_cfg = sim_cfg or make_sim(robot=self.spec)
+        self.physics_dt = sim_cfg.mujoco.timestep
+        self.physics_substeps = round(self.spec.control_dt / self.physics_dt)
+        if self.physics_substeps < 1 or abs(self.physics_dt * self.physics_substeps - self.spec.control_dt) > 1e-9:
+            raise ValueError('physics timestep must divide the control timestep exactly')
+        self.sim = Simulation(num_envs=num_envs, cfg=sim_cfg, model=self.scene.compile(), device=device)
         # Retain Warp scratch across PyTorch synchronization/compilation in all stages.
         wp.set_mempool_release_threshold(device, torch.cuda.get_device_properties(device).total_memory)
         self.scene.initialize(mj_model=self.sim.mj_model, model=self.sim.model, data=self.sim.data)
@@ -193,16 +201,22 @@ class TrackingSim:
     # ------------------------------------------------------------------ reset
     def sample_frames(self, n: int) -> tuple[torch.Tensor, torch.Tensor]:
         m = self.motion
+        weights = getattr(self, 'dataset_weights', None)
+        def sample_clips():
+            if weights is None:
+                return torch.randint(0, len(m.clip_len), (n,), device=self.device)
+            from .dataset_sampling import group_probabilities
+            return torch.multinomial(group_probabilities(m.names, weights, self.device), n, replacement=True)
         if self.control_task is not None:
-            clips = torch.randint(0, len(m.clip_len), (n,), device=self.device)
+            clips = sample_clips()
             f = m.clip_start[clips]
             return f, m.frame_bin[f]
         if self.curriculum:  # a uniform clip from its start phase
-            clips = torch.randint(0, len(m.clip_len), (n,), device=self.device)
+            clips = sample_clips()
             f = m.clip_start[clips] + (self.phase[clips] * (m.clip_len[clips] - 1).float()).long()
             return f, m.frame_bin[f]
         if self.start_phase is not None:  # a uniform clip at a uniform phase
-            clips = torch.randint(0, len(m.clip_len), (n,), device=self.device)
+            clips = sample_clips()
             u = torch.empty(n, device=self.device).uniform_(*self.start_phase)
             f = m.clip_start[clips] + (u * (m.clip_len[clips] - 1).float()).long()
             return f, m.frame_bin[f]
@@ -210,6 +224,10 @@ class TrackingSim:
         if self.runtime is None or not self.runtime.active:
             self.bin_w_avg.mul_(0.999).add_(0.001 * soft)
         probs = 0.5 / m.num_bins + 0.4 * soft + 0.1 * self.bin_w_avg / self.bin_w_avg.sum()
+        if weights is not None:
+            from .dataset_sampling import group_probabilities
+            names = [m.names[i] for i in m.bin_clip.tolist()]
+            probs = group_probabilities(names, weights, self.device, probs)
         bins = torch.multinomial(probs, n, replacement=True)
         start = m.bin_start[bins]
         end = torch.minimum(start + 50, m.clip_end[m.bin_clip[bins]])  # keep >= 1 step before the clip end
@@ -345,10 +363,10 @@ class TrackingSim:
         ep_step = self.ep_step.clone()
         target = self.default_q + xi[:, 1 : 1 + self.num_joints] + self.alpha * a
         self.robot.set_joint_position_target(target[:, self.to_internal])
-        for _ in range(self.spec.decimation):
+        for _ in range(self.physics_substeps):
             self.scene.write_data_to_sim()
             self.sim.step()
-            self.scene.update(self.spec.control_dt / self.spec.decimation)
+            self.scene.update(self.physics_dt)
         S1 = self.state()
         g = self.is_goal
         f1 = torch.where(g, f, torch.minimum(f + 1, self.motion.clip_end[self.motion.clip_id[f]]))  # goal worlds keep their (unused) reference frame

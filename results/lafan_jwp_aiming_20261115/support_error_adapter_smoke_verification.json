@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Two dual-GPU integration updates. All previous policy parameters and normalization buffers exactly preserved; only the six new error-input columns changed.",
+  "checkpoint_sha256": "bdf2ad2acac1820357b5b53170a7b3d232c77db223e2b648903abfd225a5d39e",
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 321088512,
+        "torch_peak_reserved": 423624704,
+        "device_used": 2359427072,
+        "warp_pool_used": 627436720,
+        "warp_pool_peak": 627437668
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 319319040,
+        "torch_peak_reserved": 423624704,
+        "device_used": 1674772480,
+        "warp_pool_used": 314822435,
+        "warp_pool_peak": 314823383
+      }
+    ],
+    "state_sha256": "7cee5c324ba99bb61af92c36a7c110925616a76ad71f1ca85308c83ff2f1cfd4"
+  },
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "frozen_policy_elements_unchanged": true,
+  "new_input_columns_changed": true,
+  "observed_support_locked_fraction": 1.0,
+  "world_model_gate_passed": false,
+  "smoke_gate_bypass": true,
+  "policy_acceptance": false,
+  "formal_initialization_allowed": false
+}

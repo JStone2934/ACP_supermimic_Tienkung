@@ -1,0 +1,241 @@
+{
+  "scope": "Read-only mass/support geometry diagnostic on saved physical trajectories.\n\nStatic COM projection is descriptive only: it does not prove dynamic stability,\nand a moving robot may legitimately leave its instantaneous support polygon.\n",
+  "robot_mass_kg": 65.817756,
+  "rows": [
+    {
+      "label": "pre_actor",
+      "trajectory": "results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_quiet/iteration_001500/seed_17.npz",
+      "scenario": 0,
+      "samples": [
+        {
+          "time_s": 0,
+          "root_tilt_deg": 8.811020851135254,
+          "com_world_m": [
+            0.01939392329324699,
+            0.029254987656115502,
+            0.9081131496670144
+          ],
+          "foot_floor_contact_points": 0,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 0.16,
+          "root_tilt_deg": 5.781198501586914,
+          "com_world_m": [
+            0.029845115924882655,
+            0.04036211112102324,
+            0.8786310181125615
+          ],
+          "foot_floor_contact_points": 2,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 0.32,
+          "root_tilt_deg": 6.047307014465332,
+          "com_world_m": [
+            0.03209730372164719,
+            0.0388104357159247,
+            0.8841886461888562
+          ],
+          "foot_floor_contact_points": 6,
+          "static_com_support_margin_m": -0.05320440447197966
+        },
+        {
+          "time_s": 0.64,
+          "root_tilt_deg": 6.668651580810547,
+          "com_world_m": [
+            0.05855228377230023,
+            0.034478271039082395,
+            0.8782558387280793
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": -0.1908474987830667
+        },
+        {
+          "time_s": 1,
+          "root_tilt_deg": 5.52772331237793,
+          "com_world_m": [
+            0.0953162699831837,
+            0.02882552022668782,
+            0.8562454203584144
+          ],
+          "foot_floor_contact_points": 2,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 2,
+          "root_tilt_deg": 10.001384735107422,
+          "com_world_m": [
+            -0.010721327136072408,
+            0.07494298933763155,
+            0.8825359718516175
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": -0.021112407175773437
+        },
+        {
+          "time_s": 3,
+          "root_tilt_deg": 12.446492195129395,
+          "com_world_m": [
+            -0.12918445747352075,
+            -0.00838803201420858,
+            0.8941240646075915
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": -0.14529233054319896
+        },
+        {
+          "time_s": 10,
+          "root_tilt_deg": 6.379717826843262,
+          "com_world_m": [
+            0.08777882635746052,
+            0.04755952455595115,
+            0.8745902072930973
+          ],
+          "foot_floor_contact_points": 6,
+          "static_com_support_margin_m": 0.0007964898537772963
+        },
+        {
+          "time_s": 20,
+          "root_tilt_deg": 8.952077865600586,
+          "com_world_m": [
+            0.10195131063976466,
+            0.000932441147907141,
+            0.8660096068511794
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": 0.00840133364585674
+        },
+        {
+          "time_s": 30,
+          "root_tilt_deg": 6.767063140869141,
+          "com_world_m": [
+            0.020695536162585043,
+            0.04274336295484533,
+            0.8743386391067077
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": -0.1475054853383511
+        }
+      ]
+    },
+    {
+      "label": "failed_h8",
+      "trajectory": "results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_reward_gradient/iteration_001750/seed_17.npz",
+      "scenario": 0,
+      "samples": [
+        {
+          "time_s": 0,
+          "root_tilt_deg": 8.811020851135254,
+          "com_world_m": [
+            0.01939392329324699,
+            0.029254987656115502,
+            0.9081131496670144
+          ],
+          "foot_floor_contact_points": 0,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 0.16,
+          "root_tilt_deg": 2.563992977142334,
+          "com_world_m": [
+            0.02611862227898663,
+            0.03163761480209964,
+            0.9050483553673419
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": -0.14570334160938522
+        },
+        {
+          "time_s": 0.32,
+          "root_tilt_deg": 2.6926817893981934,
+          "com_world_m": [
+            0.04450074886825688,
+            0.029535789922387427,
+            0.8999142002160198
+          ],
+          "foot_floor_contact_points": 4,
+          "static_com_support_margin_m": -0.030142386484475633
+        },
+        {
+          "time_s": 0.64,
+          "root_tilt_deg": 4.068953037261963,
+          "com_world_m": [
+            0.13643893471654517,
+            0.023755253508862196,
+            0.8520439564031627
+          ],
+          "foot_floor_contact_points": 3,
+          "static_com_support_margin_m": -0.1693157100657967
+        },
+        {
+          "time_s": 1,
+          "root_tilt_deg": 20.48894500732422,
+          "com_world_m": [
+            0.4538929842884499,
+            0.0470259077249254,
+            0.7122015287721566
+          ],
+          "foot_floor_contact_points": 4,
+          "static_com_support_margin_m": -0.3560653466583923
+        },
+        {
+          "time_s": 2,
+          "root_tilt_deg": 74.03272247314453,
+          "com_world_m": [
+            1.0440100704452968,
+            -0.005257750286278704,
+            0.12914958298970283
+          ],
+          "foot_floor_contact_points": 2,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 3,
+          "root_tilt_deg": 74.21607208251953,
+          "com_world_m": [
+            1.0441213752844796,
+            -0.004729191904355228,
+            0.12739835307707012
+          ],
+          "foot_floor_contact_points": 2,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 10,
+          "root_tilt_deg": 74.71296691894531,
+          "com_world_m": [
+            1.0449116132193983,
+            -0.0011661963939839173,
+            0.12532317824318737
+          ],
+          "foot_floor_contact_points": 1,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 20,
+          "root_tilt_deg": 74.76203155517578,
+          "com_world_m": [
+            1.0450531922082875,
+            -0.0002718328220703928,
+            0.12513343998902648
+          ],
+          "foot_floor_contact_points": 1,
+          "static_com_support_margin_m": null
+        },
+        {
+          "time_s": 30,
+          "root_tilt_deg": 74.7669906616211,
+          "com_world_m": [
+            1.04513975271569,
+            -5.50542352283395e-05,
+            0.1251049847498437
+          ],
+          "foot_floor_contact_points": 1,
+          "static_com_support_margin_m": null
+        }
+      ]
+    }
+  ],
+  "policy_acceptance": false
+}

@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-15T14:14:39.313733+08:00",
+  "training_stopped": true,
+  "checkpoint_unchanged_after_diagnostics": true,
+  "frozen_runner_unchanged": true,
+  "diagnostic_json_finite": true,
+  "report_links_exist": true,
+  "training_algorithm_and_reward_not_modified": true,
+  "report": "/home/js/robot/locomotion/standing-aiming/docs/report/20261115_h16_standing_failure/README.md"
+}

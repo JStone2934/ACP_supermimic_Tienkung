@@ -1,0 +1,37 @@
+{
+  "scope": "Descriptive balance with footdrift measured after3s, independent of aim capture; not center-stage promotion",
+  "rows": [
+    {
+      "candidate": 1,
+      "seed": 17,
+      "checkpoint_sha256": "11eca16437837fe99dc3e028f8448affcd431c201de74cabc6852a364c211739",
+      "basic_and_stable_feet": 98,
+      "fixed_pass": true,
+      "random_rate": 0.97
+    },
+    {
+      "candidate": 1,
+      "seed": 53,
+      "checkpoint_sha256": "11eca16437837fe99dc3e028f8448affcd431c201de74cabc6852a364c211739",
+      "basic_and_stable_feet": 100,
+      "fixed_pass": true,
+      "random_rate": 0.99
+    },
+    {
+      "candidate": 2,
+      "seed": 17,
+      "checkpoint_sha256": "cc651d928d1d40793bb4eeba784b1c2e081889e056cd193c4883d5246a5bf97f",
+      "basic_and_stable_feet": 100,
+      "fixed_pass": true,
+      "random_rate": 0.99
+    },
+    {
+      "candidate": 2,
+      "seed": 53,
+      "checkpoint_sha256": "cc651d928d1d40793bb4eeba784b1c2e081889e056cd193c4883d5246a5bf97f",
+      "basic_and_stable_feet": 99,
+      "fixed_pass": true,
+      "random_rate": 0.98
+    }
+  ]
+}

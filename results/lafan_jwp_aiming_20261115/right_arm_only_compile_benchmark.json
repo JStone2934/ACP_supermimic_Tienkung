@@ -1,0 +1,22 @@
+{
+  "scope": "Read-only prospective right-arm-only stage1 compile test; not promotion or physical policy acceptance",
+  "checkpoint_sha256": "fff30ff5101934df6949b87e71a39d58b431872f7811717fcd5ef0525b67bb62",
+  "weights_changed": false,
+  "formal_training": false,
+  "matmul_tf32": false,
+  "soft_termination_mode": "compact",
+  "comparisons": {
+    "actor32": {
+      "passed": true,
+      "loss_eager": -2.288215160369873,
+      "loss_compiled": -2.2882156372070312,
+      "parameter_gradient_relative_l2_error": 1.7644621038925834e-05,
+      "eager_cold_s": 5.113954548025504,
+      "eager_warm_median_s": 6.127759130962659,
+      "compiled_cold_s": 123.94190580002032,
+      "compiled_warm_median_s": 0.6213882010197267
+    }
+  },
+  "support_test": "Half locked with2cm position error; half immediately before capture boundary",
+  "passed": true
+}

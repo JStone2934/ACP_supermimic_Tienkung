@@ -1,0 +1,69 @@
+{
+  "checkpoint_sha256": "97005d19af8139c67c559b3b8c22298d7a7073fe25f97c7d20cbe82ef153b020",
+  "calibration": {
+    "method": "Calibrate a constant distal equilibrium plus audited direction feedforward/feedback.",
+    "feedback_gain": 3.0,
+    "feedforward_gain": 1.0,
+    "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_narrow_ready_pose/iteration_000001/seed_17.npz",
+    "trajectory_sha256": "bfc8dcbe05c8be8a3a3609d1022fe3ac9044ff3c336f04f1dc883ac387d4c791",
+    "frame": 750,
+    "scenario": 37,
+    "jacobian": [
+      [
+        -0.27055883407592773,
+        0.5022955536842346,
+        0.21486511826515198
+      ],
+      [
+        0.6129298806190491,
+        -0.446365624666214,
+        0.7915072441101074
+      ],
+      [
+        0.08363699167966843,
+        -0.4288707971572876,
+        -0.5721443891525269
+      ]
+    ],
+    "pseudoinverse": [
+      [
+        -0.28899893164634705,
+        0.4846571981906891,
+        0.15661345422267914
+      ],
+      [
+        0.5878874659538269,
+        -0.3627508282661438,
+        -0.5651239156723022
+      ],
+      [
+        0.3244398832321167,
+        0.6077484488487244,
+        -0.6315248012542725
+      ]
+    ],
+    "jacobian_mujoco_max_abs_difference": 1.1965551605097602e-07,
+    "reference_direction_torso": [
+      0.746193528175354,
+      0.24491296708583832,
+      0.619041919708252
+    ],
+    "distal_q_rad": [
+      0.216903418302536,
+      -0.3888802230358124,
+      -0.6482101678848267
+    ],
+    "distal_pd_target_rad": [
+      0.2169797122478485,
+      -0.4328841269016266,
+      -0.657148540019989
+    ],
+    "all_other_joint_outputs_exact": true,
+    "normalizers_exact": true,
+    "initial_pose_unchanged": true,
+    "physical_acceptance": false,
+    "online_ik": false,
+    "runtime_motion_files": false,
+    "limitations": "Local linear kinematics and static gravity compensation; requires full physical evaluation"
+  }
+}

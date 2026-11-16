@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "iteration": 3,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 3
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 3600649728,
+        "torch_peak_reserved": 3720347648,
+        "device_used": 14188019712,
+        "warp_pool_used": 647636551,
+        "warp_pool_peak": 647637511
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 3600647680,
+        "torch_peak_reserved": 3720347648,
+        "device_used": 13748797440,
+        "warp_pool_used": 647636551,
+        "warp_pool_peak": 647637511
+      }
+    ],
+    "state_sha256": "d2677fb486a9e0d5222b02a2d194ec065ce2d7d1aadd637ac96f30050ae0f3d1"
+  },
+  "physics_substeps": 16,
+  "warmup_global_transitions": 1048576,
+  "scope": "Physical stability, finite optimizer updates and two-rank synchronization; not trained-policy acceptance",
+  "formal_initialization_allowed": false
+}

@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "stage_A_aim_zero": true,
+    "rate_penalty_negative": true,
+    "request_penalty_negative": true,
+    "sum_matches_reward": true,
+    "finite_rewards": true
+  },
+  "weights": {
+    "aim": 2.0,
+    "root": 2.0,
+    "feet": 6.0,
+    "height": 1.0,
+    "upright": 1.0,
+    "velocity": 1.0,
+    "angular_velocity": 0.2,
+    "foot_velocity": 0.5,
+    "heading": 0.5,
+    "foot_boundary": -4.0,
+    "action_rate": -0.1,
+    "joint_limit": -2.0,
+    "request_limit": -0.1
+  },
+  "stage_A_positive_reward_per_second": 12.2,
+  "stage_A_feet_max_fraction": 0.49180327868852464,
+  "baseline_terms": {
+    "aim": 0.0,
+    "root": 0.03999999910593033,
+    "feet": 0.11999999731779099,
+    "height": 0.019999999552965164,
+    "upright": 0.019999999552965164,
+    "velocity": 0.019999999552965164,
+    "angular_velocity": 0.004000000189989805,
+    "foot_velocity": 0.009999999776482582,
+    "heading": 0.009999999776482582,
+    "foot_boundary": -0.0,
+    "action_rate": -0.0,
+    "joint_limit": -0.0,
+    "request_limit": -0.0
+  },
+  "discount": {
+    "gamma": 0.99,
+    "dt": 0.02,
+    "H8_seconds": 0.16,
+    "half_life_seconds": 1.3793512787305684,
+    "after5s": 0.08105851616218128,
+    "after30s": 2.8365594903161287e-07
+  },
+  "differences": [
+    "Training actor/critic use discounted return; unprotected gate uses undiscounted return and survival.",
+    "Feet reward uses three-dimensional displacement; acceptance uses horizontal maximum displacement.",
+    "Reward averages per-step and per-foot scores; acceptance requires all limits throughout 30 seconds.",
+    "No explicit fall penalty; termination instead removes future rewards."
+  ]
+}

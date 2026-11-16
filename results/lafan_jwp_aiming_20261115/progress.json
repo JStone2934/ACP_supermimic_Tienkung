@@ -1,0 +1,4355 @@
+{
+  "status": "active",
+  "current_stage": "G4",
+  "stages": {
+    "G1": {
+      "status": "complete",
+      "accepted_lafan_segments": 534,
+      "accepted_lafan_frames": 371334,
+      "accepted_lafan_sources": 55,
+      "rejected_lafan_sources": [
+        "lafan/fallAndGetUp1_subject4",
+        "lafan/fallAndGetUp1_subject5",
+        "lafan/ground1_subject4",
+        "lafan/ground2_subject2",
+        "lafan/walk2_subject3"
+      ],
+      "accepted_jwp_clips": 100,
+      "accepted_jwp_frames": 32928,
+      "dataset": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_final",
+      "train_loader": "final_train_loader_validation.json",
+      "validation_loader": "final_validation_loader_validation.json",
+      "scope": "Data conversion, contact labels, strict quality and actual loading; does not imply policy acceptance"
+    },
+    "G2": {
+      "status": "pretraining_completed_benchmarks_failed",
+      "unit": "lafan-wave3-pose-stable.service",
+      "dataset": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_final/lafan_focus/train",
+      "validation": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_final/lafan_focus/validation",
+      "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable",
+      "initialization": "formal LAFAN wave2 ckpt_003000.pt; no JWP, no smoke weights",
+      "global_num_envs": 4096,
+      "wm_batch": 2048,
+      "pi_batch": 4096,
+      "horizon": 8,
+      "wm_only_iters": 100,
+      "iteration_target": 10000,
+      "physics_substeps": 16,
+      "reference_joint_aux": 1.0,
+      "reference_pose": true,
+      "policy_command_dim": 122,
+      "scope": "LAFAN foundation has completed formal runs and achieved100/100balance-only30s; full tracking/stationary-foot criteria remain unpassed. Bounded baseline/support comparison continues; final reference stage gate remains beforeG4.",
+      "warmup_verified": true,
+      "actor_lr": 2e-05,
+      "critic_warmup_iters": 200,
+      "preserve_critic": true,
+      "bound_reference_bootstrap": true,
+      "actor_updates_started": true,
+      "latest_independent_evaluation": {
+        "iteration": 6000,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable/train/ckpt_006000.pt",
+        "checkpoint_sha256": "4fb2a87ef64765fb4fb96dd11dbcbc3d0690b25605aa8bbeb84594603d0235d0",
+        "reference_passed": false,
+        "reference_successful_fraction": 0.0,
+        "standing_passed": false,
+        "standing_success_rate": 0.0,
+        "passed": false,
+        "scope": "Stage tracking and standing only; no aiming acceptance",
+        "complete_clips": 25,
+        "mean_root_rmse_m": 0.19890582880803517,
+        "mean_joint_rmse_rad": 0.4056650016989027,
+        "last_standing_failure_s": 6.74
+      },
+      "parallel_formal_comparison": "lafan-pose-adapter-aux8.service",
+      "baseline_process_status": "completed_not_accepted",
+      "baseline_final_evaluation": {
+        "iteration": 10000,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable/train/ckpt_010000.pt",
+        "checkpoint_sha256": "934022bdc0bbcbf51329e33979589d000061800509a3ed409acb4cbb35de1d64",
+        "reference_passed": false,
+        "reference_successful_fraction": 0.0,
+        "standing_passed": false,
+        "standing_success_rate": 0.0,
+        "passed": false,
+        "scope": "Stage tracking and standing only; no aiming acceptance",
+        "complete_clips": 23,
+        "mean_root_rmse_m": 0.20074294872429907,
+        "mean_joint_rmse_rad": 0.42962954421432653,
+        "standing_observed_s": 7.66,
+        "standing_failures_by_metric": {
+          "max_tilt_deg": 0,
+          "max_root_drift_m": 0,
+          "max_foot_drift_m": 100
+        }
+      },
+      "source_used_for_JWP": "formal LAFAN aux8 checkpoint1000 with validated from-scratch lineage; full reference/stationary-foot gates failed"
+    },
+    "G3": {
+      "status": "training_completed_benchmarks_failed",
+      "sampling": {
+        "jwp": 0.8,
+        "lafan": 0.2
+      },
+      "dataset": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_final/finetune_focus/train",
+      "validation": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_final/finetune_focus/validation",
+      "source": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_aux8/train/ckpt_001000.pt",
+      "gate_before_G4": "Unchanged reference90%/root0.1m/joints0.2rad and full100scenario30sstanding>=95%",
+      "prepared_config": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/jwp_finetune_config.json",
+      "unit": "jwp-finetune-support.service",
+      "evaluation_unit": "jwp-finetune-evaluation-gpu1.service",
+      "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_finetune_support",
+      "source_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+      "source_selection": "jwp_source_selection.json",
+      "iterations": 6000,
+      "global_num_envs": 2048,
+      "wm_batch": 1024,
+      "pi_batch": 2048,
+      "wm_only_iters": 100,
+      "critic_warmup_iters": 200,
+      "physics_substeps": 16,
+      "warmup_verified": "64 physical steps, physics16, finite normalization statistics on mixed JWP/LAFAN data",
+      "early_training": {
+        "iteration": "125",
+        "wall_h": "0.0690001",
+        "sim_steps": "770048",
+        "wm_loss": "0.0398319",
+        "wm_err8": "0.0586805",
+        "pi_loss": "-3.80743",
+        "v_loss": "0.35008",
+        "imag_rew": "0.423751",
+        "pi_gradnorm": "0",
+        "imag_survival": "0.966992",
+        "sim_rew": "0.430096",
+        "ep_len": "204.464",
+        "ep_ret_norm": "0.406599",
+        "term_frac": "0.0560538",
+        "touch_precision": "0.868389",
+        "touch_recall": "0.987102",
+        "it_per_s": "0.197277",
+        "lr": "0.0002",
+        "phase_zero_frac": "0.401015",
+        "phase_jwp": "0.01",
+        "phase_lafan": "0.548598",
+        "reference_joint_aux_mse": "0.0932126"
+      },
+      "source_split_verified": {
+        "train": {
+          "jwp_clips": 90,
+          "lafan_segments": 107
+        },
+        "validation": {
+          "jwp_clips": 10,
+          "lafan_segments": 49
+        },
+        "source_disjoint": true
+      },
+      "evaluation_physical_gpu": 1,
+      "evaluation_handoff": "Original worker was waiting for checkpoint1000 with no child; stopped before starting sole replacement on GPU1. No evaluation or training work discarded.",
+      "training_pose_seeds": {
+        "path": "jwp_training_quiet_seeds.json",
+        "count": 16,
+        "data_hash": "865edb8e0c6c05dabec51fbbe2e1c42e1fd1838979d584c747b948f844741b26",
+        "scope": "Training-source pose selection only; must physically verify selected pose after full source checkpoint gates"
+      },
+      "motion_profile": "mixed_motion_profile.json",
+      "motion_profile_summary": "JWP85.7%double-support frames, median foot speed0.00624m/s; includes substantial root/leg motion and no full1squiet windows under existing conservative seed rule. LAFAN median foot speed0.272m/s. Preserve unchanged standing gate.",
+      "initialization_lineage": "lafan_pretraining_lineage.json",
+      "actor_updates_started": true,
+      "checkpoint1000_audit": "jwp_finetune_checkpoint1000_provenance.json",
+      "checkpoint1000_updates": {
+        "wm": 10000,
+        "critic": 18000,
+        "pi": 700
+      },
+      "checkpoint1000_evaluation": {
+        "iteration": 1000,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_finetune_support/train/ckpt_001000.pt",
+        "checkpoint_sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+        "reference_passed": false,
+        "reference_successful_fraction": 0.05084745762711865,
+        "standing_passed": false,
+        "standing_success_rate": 0.0,
+        "passed": false,
+        "scope": "Stage tracking and standing only; no aiming acceptance"
+      },
+      "checkpoint1000_full_duration_diagnostic": {
+        "report": "standing_full_duration_jwp_001000.json",
+        "full_success_rate": 0.0,
+        "balance_only_success_rate": 0.7699999809265137,
+        "scope": "All original criteria unchanged; balance-only is diagnostic"
+      },
+      "multi_horizon_prediction_diagnostic": "jwp1000_horizon_prediction.json",
+      "horizon_comparison": {
+        "unit": "jwp-h16-comparison.service",
+        "config": "jwp_h16_comparison_config.json",
+        "evaluation_unit": "jwp-h16-evaluation.service",
+        "source": "formal JWP1000; not old failed H16",
+        "iterations": 2000,
+        "horizon": 16,
+        "wm_window": 16,
+        "status": "stopped_after_failed_physical_comparison",
+        "full_duration1000_diagnostic": {
+          "checkpoint_sha256": "17ae358e63c60e6055da116d8897e837c8bbffd0f2a0dee5586f8fba3badbc05",
+          "success_rate": 0.0,
+          "balance_only_success_rate": 0.5999999642372131,
+          "elapsed_sim_seconds": 30.0,
+          "max_foot_drift_m": 0.4469298869371414,
+          "max_root_drift_m": 0.4245794117450714,
+          "max_tilt_deg": 14.279834747314453
+        },
+        "saved_iteration": 1000,
+        "selected_for_downstream": false,
+        "stop_reason": "H16 comparison stopped deliberately after failed full30s evaluation (balance60%, feet median0.447m vsH8source77%,0.228m). Queued v2 controller stopped before training. Single replacement starts now; frozen code v2 and formal initialization unchanged.",
+        "stopped_time": "2026-11-16 02:51:25",
+        "checkpoint1000_evaluation": {
+          "iteration": 1000,
+          "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_h16_comparison/train/ckpt_001000.pt",
+          "checkpoint_sha256": "17ae358e63c60e6055da116d8897e837c8bbffd0f2a0dee5586f8fba3badbc05",
+          "reference_passed": false,
+          "reference_successful_fraction": 0.1694915254237288,
+          "standing_passed": false,
+          "standing_success_rate": 0.0,
+          "passed": false,
+          "scope": "Stage tracking and standing only; no aiming acceptance",
+          "groups": {
+            "jwp": {
+              "count": 10,
+              "complete": 10,
+              "root_rmse": 0.08455411158502102,
+              "joint_rmse": 0.1847270980477333
+            },
+            "lafan": {
+              "count": 49,
+              "complete": 21,
+              "root_rmse": 0.1906441094315782,
+              "joint_rmse": 0.26078672281333376
+            }
+          }
+        },
+        "evaluation_status": "1000 complete;2000 cancelled because training stopped"
+      },
+      "checkpoint3000_reference_summary": {
+        "jwp": {
+          "complete": 10,
+          "count": 10,
+          "mean_root_rmse_m": 0.09418361261487007,
+          "mean_joint_rmse_rad": 0.18592150658369064,
+          "strict_passed": 3
+        },
+        "lafan": {
+          "complete": 23,
+          "count": 49,
+          "mean_root_rmse_m": 0.19887723606459948,
+          "mean_joint_rmse_rad": 0.23281628075911073,
+          "strict_passed": 1
+        }
+      },
+      "checkpoint3000_evaluation": {
+        "iteration": 3000,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_finetune_support/train/ckpt_003000.pt",
+        "checkpoint_sha256": "14d298997d6eb377f6ca44392b498ab0b885139d3a18b6dba07ffb45a50b5691",
+        "reference_passed": false,
+        "reference_successful_fraction": 0.06779661016949153,
+        "standing_passed": false,
+        "standing_success_rate": 0.0,
+        "passed": false,
+        "scope": "Stage tracking and standing only; no aiming acceptance"
+      },
+      "completed_iterations": 6000,
+      "process_result": {
+        "exit_code": 0,
+        "scope": "Process completion is not policy acceptance"
+      },
+      "checkpoint6000_reference_summary": {
+        "checkpoint_sha256": "a22f1df40d131f039c193966b59021ed371270084699bd8b6e208543bcd9a674",
+        "groups": {
+          "jwp": {
+            "count": 10,
+            "complete": 10,
+            "mean_root_rmse_m": 0.0973635021597147,
+            "mean_joint_rmse_rad": 0.18814872205257416,
+            "strict_passed": 4
+          },
+          "lafan": {
+            "count": 49,
+            "complete": 17,
+            "mean_root_rmse_m": 0.2000268109294833,
+            "mean_joint_rmse_rad": 0.23240541134561812,
+            "strict_passed": 1
+          }
+        },
+        "scope": "All mixed held-out clips remain in the full gate; group statistics not acceptance"
+      },
+      "final_evaluation": {
+        "iteration": 6000,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_finetune_support/train/ckpt_006000.pt",
+        "checkpoint_sha256": "a22f1df40d131f039c193966b59021ed371270084699bd8b6e208543bcd9a674",
+        "reference_passed": false,
+        "reference_successful_fraction": 0.0847457627118644,
+        "standing_passed": false,
+        "standing_success_rate": 0.0,
+        "passed": false,
+        "scope": "Stage tracking and standing only; no aiming acceptance"
+      }
+    },
+    "G4": {
+      "status": "unaccepted_balance_recovery_training",
+      "balance_recovery": {
+        "status": "support_error_adapter_training",
+        "initialization": "balance_recovery_init.pt",
+        "source_checkpoint_sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+        "source_reference_passed": false,
+        "source_standing_passed": false,
+        "source_accepted": false,
+        "pose_selection": "balance_recovery_pose_selection.json",
+        "frozen_runner": "frozen_balance_recovery_v9",
+        "integration_unit": "balance-recovery-smoke-v2.service",
+        "unit_tests": {
+          "count": 16,
+          "passed": true,
+          "log": "balance_recovery_unit_tests.log"
+        },
+        "unit": "balance-recovery-fine-step-training.service",
+        "config": "balance_recovery_fine_step_config.json",
+        "iterations": 3000,
+        "wait_for": null,
+        "integration_verification": "balance_recovery_smoke_v2_verification.json",
+        "formal_initialization": "balance_recovery_init.pt",
+        "smoke_weights_used": false,
+        "evaluation_unit": "balance-recovery-reward-evaluation.service",
+        "evaluation_iterations": [
+          1750,
+          2000,
+          3000
+        ],
+        "evaluation_seeds": [
+          17,
+          53
+        ],
+        "handoff": "H16 comparison stopped deliberately after failed full30s evaluation (balance60%, feet median0.447m vsH8source77%,0.228m). Queued v2 controller stopped before training. Single replacement starts now; frozen code v2 and formal initialization unchanged.",
+        "latest_status": null,
+        "checkpoint250_verification": "balance_recovery_checkpoint250_verification.json",
+        "early_migration_baseline": {
+          "scope": "Migration-only baseline; full stage gate failed. Balance-only is diagnostic, not acceptance.",
+          "checkpoint_sha256": "4ad995cbc522120ed96431b4b5b4d712e4a2dc3d07820ddd2a39c232a9ccf880",
+          "full_success_rate": 0.0,
+          "balance_only_success_rate": 0.693069306930693,
+          "median_max_tilt_deg": 14.449447631835938,
+          "median_max_root_drift_m": 0.20332515239715576,
+          "median_max_foot_drift_after3s_m": 0.3372737467288971,
+          "unique_initial_joint_states": 101,
+          "state_count": 101,
+          "finite": true
+        },
+        "promotion_gate_update": {
+          "live_code": "supermimic/acp/train_wide_aiming.py",
+          "tests": "curriculum_promotion_evidence_tests.log",
+          "passed": true,
+          "scope": "Require actual30s,no resets,reference-free,full fixedgrid+100random scenario evidence. Future stages must freeze updated live code; currently running frozen v2 untouched."
+        },
+        "previous_run": {
+          "unit": "balance-recovery-training-active.service",
+          "status": "stopped_after_complete1000distillation_before_any_critic_or_actor_update",
+          "retained_checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery/train/ckpt_001000.pt",
+          "old_evaluation_unit": "balance-recovery-evaluation.service",
+          "old_evaluation_status": "stopped while waiting for1500; no evaluation discarded"
+        },
+        "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_fine_step",
+        "resumed_iteration": 1500,
+        "reward_change": {
+          "evidence": "balance_recovery_early250_motion_analysis.json",
+          "reason": "Persistent airborne stepping is unpenalized by contact-slip reward alone. Add all-foot world-speed bonus at zero command, retain slip reward, disable additional bonus during commanded locomotion.",
+          "weight": 1.0,
+          "scale_m_s": 0.05,
+          "timing": "Before first critic/actor update, so no old value function or replay reward targets reused",
+          "weights_optimizers_norms": "Resumed from exactdistillation1000; no smoke weights",
+          "tests": "quiet_foot_reward_tests.log"
+        },
+        "first_world_model_gate": {
+          "iteration": 1500,
+          "report": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_quiet/train/wm_validation/001500.json",
+          "passed": true,
+          "active_horizon": 8,
+          "horizon8": {
+            "windows": 128,
+            "total_windows": 128,
+            "root_m_p95": 0.0018724940018728375,
+            "root_m_rmse": 0.001026822836138308,
+            "feet_m_p95": 0.007993887178599834,
+            "feet_m_rmse": 0.003634164808318019,
+            "joints_rad_p95": 0.004693170543760061,
+            "joints_rad_rmse": 0.0024366213474422693,
+            "tcp_m_p95": 0.004139411728829145,
+            "tcp_m_rmse": 0.002650259528309107,
+            "direction_deg_p95": 0.6051994562149048,
+            "direction_deg_rmse": 0.3869006335735321,
+            "tip_m_p95": 0.027673494070768356,
+            "tip_m_rmse": 0.017841072753071785
+          },
+          "scope": "Predictive model validation only; not physical policy acceptance"
+        },
+        "checkpoint1250_verification": "balance_recovery_quiet_checkpoint1250_verification.json",
+        "critic_warmup_verified": {
+          "actual_updates": 100,
+          "critic_optimizer_steps": 2000,
+          "policy_updates_during_warmup": 0,
+          "actor_grad": 0.0,
+          "world_model_gate_passed": true,
+          "evidence": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_quiet/train/metrics.jsonl atiteration1600"
+        },
+        "unstable_actor_attempt": {
+          "unit": "balance-recovery-quiet-training.service",
+          "status": "stopped_intentionally",
+          "last_status": {
+            "iteration": 1675,
+            "phase": "joint",
+            "level": 0,
+            "stage": "balance",
+            "sim_reward": 0.024620868265628815,
+            "wm_loss": 0.01820969581604004,
+            "model_ready": true,
+            "critic_warmup_done": 100,
+            "updates": {
+              "wm": 16750,
+              "distill": 1000,
+              "critic": 3500,
+              "pi": 75
+            },
+            "elapsed_s": 696.8183000479476,
+            "actor_loss": -2.4770870208740234,
+            "critic_loss": 0.16807284951210022,
+            "actor_grad": 54.96717834472656,
+            "critic_grad": 3.3369736671447754,
+            "bootstrap_max": 12.08100414276123,
+            "return_target_max": 11.3815279006958
+          },
+          "evidence": "After50actor updates bootstrap rose from~2.5 to21.4 bound, gradientnorm~55 and physicalreward fell0.093->0.0246 by75actor updates.",
+          "retained_source_checkpoint": "balance_recovery_quiet/train/ckpt_001500.pt",
+          "retained_source_actor_updates": 0,
+          "evaluation1500": {
+            "checkpoint_sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c",
+            "iteration": 1500,
+            "level": 0,
+            "passed": false,
+            "reports": [
+              {
+                "seed": 17,
+                "passed": false,
+                "fixed_grid_all_pass": false,
+                "random_success_rate": 0.0
+              },
+              {
+                "seed": 53,
+                "passed": false,
+                "fixed_grid_all_pass": false,
+                "random_success_rate": 0.0
+              }
+            ],
+            "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+          },
+          "future_evaluation2000_3000": "Cancelled; never created checkpoints and no evaluation work discarded"
+        },
+        "value_gradient_comparison": {
+          "actor_value_gradient": 0.0,
+          "kept": "Same policy and learnedWM, H8, sameACP model-based reward derivatives, samecritictraining, samephysicaltask",
+          "isolated": "Entireterminalcriticgradient including survival multiplier",
+          "tests": "actor_value_gradient_tests.log",
+          "source_has_actor_updates": false,
+          "acceptance_unchanged": true
+        },
+        "long_horizon_diagnostic": "balance_pre_actor_horizon_validation.json",
+        "checkpoint1750_verification": "balance_reward_gradient_checkpoint1750_verification.json",
+        "evaluation1750": {
+          "result": {
+            "checkpoint_sha256": "811893cf8e274476b5768f3580f2c6e17d95f909bf8afc69ce1f48d5c2b161c0",
+            "iteration": 1750,
+            "level": 0,
+            "passed": false,
+            "reports": [
+              {
+                "seed": 17,
+                "passed": false,
+                "fixed_grid_all_pass": false,
+                "random_success_rate": 0.0
+              },
+              {
+                "seed": 53,
+                "passed": false,
+                "fixed_grid_all_pass": false,
+                "random_success_rate": 0.0
+              }
+            ],
+            "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+          },
+          "comparison": "balance_reward_gradient_1750_comparison.json"
+        },
+        "short_horizon_comparison_result": {
+          "status": "stopped_intentionally_after_failed_physical_evaluation",
+          "checkpoint_iteration": 1750,
+          "comparison": "balance_reward_gradient_1750_comparison.json",
+          "finding": "All101 episodes per seed fell; median30deg crossing1.1s. Smaller late foot motion is lying-on-ground, not standing improvement.",
+          "gate_passed": false,
+          "training_reward_is_not_success": true
+        },
+        "next_experiment": {
+          "horizon": 32,
+          "actor_value_gradient": 0.0,
+          "source": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_quiet/train/ckpt_001500.pt",
+          "source_actor_updates": 0,
+          "prediction_evidence": "balance_pre_actor_horizon_validation.json",
+          "prediction32_feet_p95_m": 0.0158540066331625,
+          "compile_benchmark": "balance_compile_benchmark.json",
+          "regression_tests": "balance_compile_regression_tests.log",
+          "started": true,
+          "acceptance_unchanged": true,
+          "compile_precision": "FP32; all3 loss/gradient comparisons passed",
+          "config": "balance_recovery_h32_config.json",
+          "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v5",
+          "first_wm_gate": {
+            "report": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_h32_reward_gradient/train/wm_validation/001500.json",
+            "passed": true,
+            "horizon32": {
+              "windows": 32,
+              "total_windows": 32,
+              "root_m_p95": 0.016134891659021378,
+              "root_m_rmse": 0.01062508299946785,
+              "feet_m_p95": 0.02429288811981678,
+              "feet_m_rmse": 0.01126482617110014,
+              "joints_rad_p95": 0.012867256999015808,
+              "joints_rad_rmse": 0.010847654193639755,
+              "tcp_m_p95": 0.025720728561282158,
+              "tcp_m_rmse": 0.01957116834819317,
+              "direction_deg_p95": 2.6641252040863037,
+              "direction_deg_rmse": 2.019955635070801,
+              "tip_m_p95": 0.12124354392290115,
+              "tip_m_rmse": 0.09322444349527359
+            },
+            "scope": "Balance model gate only; not aiming readiness or policy acceptance"
+          },
+          "evaluation_iterations": [
+            1750,
+            2000,
+            3000
+          ],
+          "evaluation_output": "results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_h32"
+        },
+        "action_response_diagnostic": {
+          "report": "balance_action_response.json",
+          "joint_velocity_cosine": 0.9603225,
+          "root_angular_velocity_cosine": 0.9737433,
+          "root_position_cosine": 0.4172161,
+          "scope": "Limited finite differences on8 physical states; positional accuracy alone does not establish exact derivatives or policy acceptance"
+        },
+        "support_geometry_diagnostic": {
+          "report": "balance_support_geometry.json",
+          "scope": "One recorded scenario; instantaneous static support margin is descriptive, not a dynamic stability gate",
+          "finding": "Baseline often moves COM outside currently grounded foot-contact polygon while stepping; no claimed static-balance capability"
+        },
+        "h32_attempt": {
+          "unit": "balance-recovery-h32-training.service",
+          "status": "stopped_intentionally",
+          "last_status": {
+            "iteration": 1825,
+            "phase": "joint",
+            "level": 0,
+            "stage": "balance",
+            "sim_reward": 0.09866663813591003,
+            "wm_loss": 0.010216757655143738,
+            "model_ready": true,
+            "critic_warmup_done": 100,
+            "updates": {
+              "wm": 18250,
+              "distill": 1000,
+              "critic": 6500,
+              "pi": 225
+            },
+            "elapsed_s": 933.8049232090125,
+            "actor_loss": -1.7253727912902832,
+            "critic_loss": 0.0011345534585416317,
+            "actor_grad": 4.437225341796875,
+            "critic_grad": 0.11622493714094162,
+            "actor_value_gradient": 0.0,
+            "imagined_reward_objective": 1.4816757440567017,
+            "bootstrap_objective": 0.243696928024292,
+            "bootstrap_max": 2.961627960205078,
+            "return_target_max": 2.959789752960205
+          },
+          "first_seed_report": "balance_h32_1750_first_seed.json",
+          "reason": "All101physicalepisodesfell, median30degcrossing1.2s. Analytical audit found nonzero nominal softfailure at each step truncating effective planning horizon.",
+          "checkpoint1750_retained": true,
+          "evaluation1750": {
+            "checkpoint_sha256": "aa0585de4fa5beecfa8c50e2a3b800a093cc17814ae11882bc8cf736761b6086",
+            "iteration": 1750,
+            "level": 0,
+            "passed": false,
+            "reports": [
+              {
+                "seed": 17,
+                "passed": false,
+                "fixed_grid_all_pass": false,
+                "random_success_rate": 0.0
+              },
+              {
+                "seed": 53,
+                "passed": false,
+                "fixed_grid_all_pass": false,
+                "random_success_rate": 0.0
+              }
+            ],
+            "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+          },
+          "comparison": "balance_h32_1750_comparison.json",
+          "evaluation_worker": "stoppedafter1750results;2000and3000notcreated"
+        },
+        "soft_termination_audit": "soft_termination_bias_audit.json",
+        "static_pose_pd_baseline": {
+          "report": "static_pose_pd_baseline.json",
+          "trained_policy": false,
+          "training_poses": 16,
+          "default_pose": 1,
+          "episodes_per_pose": 4,
+          "seconds": 30,
+          "full_passes": 0,
+          "scope": "Plant diagnostic only; constantPDtargets didnotstabilizeanytestedpose"
+        },
+        "pending_correction": {
+          "soft_termination_mode": "compact",
+          "safe_survival": "Exactly1 awayfrom2degree/2cm neighborhoods of existing hardtermination limits",
+          "hard_termination_changed": false,
+          "final_acceptance_changed": false,
+          "source_before_actor_and_critic": "balance_recovery_quiet/train/ckpt_001500.pt",
+          "tests": "compact_termination_tests.log",
+          "compile_benchmark": "compact_termination_compile_benchmark.json",
+          "started": true,
+          "regression_tests_passed": 14,
+          "runtime_test_passed": true,
+          "runtime_modes": [
+            "legacy_sigmoid",
+            "compact"
+          ],
+          "runtime_tasks": [
+            "standing",
+            "moving"
+          ],
+          "config": "balance_recovery_compact_config.json",
+          "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v6",
+          "compile_checks_passed": true,
+          "evaluation_output": "results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_compact",
+          "evaluation_iterations": [
+            1750,
+            2000,
+            2250,
+            2500,
+            3000
+          ],
+          "first_wm_gate": {
+            "passed": true,
+            "report": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_compact/train/wm_validation/001500.json",
+            "horizon32": {
+              "windows": 32,
+              "total_windows": 32,
+              "root_m_p95": 0.013882909901440144,
+              "root_m_rmse": 0.010579853318631649,
+              "feet_m_p95": 0.016181815415620804,
+              "feet_m_rmse": 0.00876013282686472,
+              "joints_rad_p95": 0.011199970729649067,
+              "joints_rad_rmse": 0.009681330062448978,
+              "tcp_m_p95": 0.022263962775468826,
+              "tcp_m_rmse": 0.01771228387951851,
+              "direction_deg_p95": 1.9003084897994995,
+              "direction_deg_rmse": 1.4160405397415161,
+              "tip_m_p95": 0.08867810666561127,
+              "tip_m_rmse": 0.06533750146627426
+            },
+            "scope": "Dynamics validation only"
+          },
+          "checkpoint1750_verification": "balance_compact_checkpoint1750_verification.json",
+          "evaluation1750": {
+            "result": {
+              "checkpoint_sha256": "7ba0fb229909b7c489d409f6c0b710ecca176a20836300e92811279ad713134e",
+              "iteration": 1750,
+              "level": 0,
+              "passed": false,
+              "reports": [
+                {
+                  "seed": 17,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                },
+                {
+                  "seed": 53,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                }
+              ],
+              "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+            },
+            "comparison": "balance_compact_1750_comparison.json",
+            "actor_updates": 100
+          },
+          "evaluation2000_first_seed": {
+            "report": "balance_compact_2000_first_seed.json",
+            "actor_updates": 200,
+            "passed": false,
+            "full_balance_success": 0.0,
+            "median30deg_crossing_s": 4.26
+          },
+          "prefall_diagnostic": "balance_compact_1750_2000_prefall_comparison.json",
+          "continue_reason": "Full30s gatesstillfail. However physicaldriftat3s fell0.512->0.063m andprefallfeet speed0.320->0.078m/s from100to200actorupdates. WMgate pausesactorwhenlongpredictioninaccurate; recoveredat1900and2100. Continue boundedrun to3000 whileevaluating; no promotion.",
+          "evaluation2000": {
+            "result": {
+              "checkpoint_sha256": "b6b0799e2be25eb27cf191f50e8e0e9fb7e3ea0fad81b6c744e59425ab3d449c",
+              "iteration": 2000,
+              "level": 0,
+              "passed": false,
+              "reports": [
+                {
+                  "seed": 17,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                },
+                {
+                  "seed": 53,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                }
+              ],
+              "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+            },
+            "comparison": "balance_compact_2000_comparison.json",
+            "actor_updates": 200
+          },
+          "evaluation_handoff": {
+            "previous": "balance-recovery-compact-evaluation.service",
+            "replacement": "balance-recovery-compact-evaluation-v2.service",
+            "reason": "2000bothseedscompleted; add2250and2500physicalchecksasrunningepisodeagerises. Noevaluationsdiscarded orduplicate workers.",
+            "preserved_worker_manifest": "evaluation_balance_recovery_compact/worker_initial1750_2000_3000.json"
+          },
+          "evaluation2250": {
+            "result": {
+              "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+              "iteration": 2250,
+              "level": 0,
+              "passed": false,
+              "reports": [
+                {
+                  "seed": 17,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                },
+                {
+                  "seed": 53,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                }
+              ],
+              "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+            },
+            "comparison": "balance_compact_2250_comparison.json",
+            "actor_updates": 350,
+            "foot_drift_diagnostic": "balance_compact2250_stable_foot_drift.json"
+          },
+          "evaluation2500": {
+            "result": {
+              "checkpoint_sha256": "eb055f7f6ec8a57e7510832a29068b9c9c542d13bac645f79b9c141c71c61966",
+              "iteration": 2500,
+              "level": 0,
+              "passed": false,
+              "reports": [
+                {
+                  "seed": 17,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                },
+                {
+                  "seed": 53,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                }
+              ],
+              "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+            },
+            "comparison": "balance_compact_2500_comparison.json",
+            "actor_updates": 600
+          },
+          "training_completion": {
+            "iteration": 3000,
+            "exit_code": 0,
+            "actor_updates": 600,
+            "model_ready": false,
+            "policy_acceptance": false
+          },
+          "evaluation3000": {
+            "status": "completed_before_stop_attempt",
+            "result": {
+              "checkpoint_sha256": "23626590049872d6b02ee86e80b0e36eb3597f304c7e44072d327d0421d5520f",
+              "iteration": 3000,
+              "level": 0,
+              "passed": false,
+              "reports": [
+                {
+                  "seed": 17,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                },
+                {
+                  "seed": 53,
+                  "passed": false,
+                  "fixed_grid_all_pass": false,
+                  "random_success_rate": 0.0
+                }
+              ],
+              "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+            },
+            "policy_identity_evidence": "balance_compact_3000_policy_identity.json",
+            "scope": "Independentphysicalevaluationscompletedandfailed; allartifactsretained. Evaluatorunitwasalreadyterminal, so no cancellation occurred."
+          }
+        },
+        "future_training_metrics": "Live trainer now records episode age, completed episode duration, termination and timeout fractions; frozen running code was never edited.",
+        "future_checkpoint_boundary": "Live trainer saves the critic-warmup completion checkpoint before any actor update. Applies only to a future frozen runner; activev6unchanged.",
+        "model_adaptation_plan": {
+          "source": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_compact/train/ckpt_002250.pt",
+          "source_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+          "source_actor_updates": 350,
+          "source_full_gate_passed": false,
+          "wm_window": 16,
+          "actor_horizon": 32,
+          "actor_lr": 5e-06,
+          "previous_actor_lr": 2e-05,
+          "wm_validation_every": 25,
+          "resume_wm_iters": 100,
+          "iterations": 4000,
+          "tests": "conservative_model_adaptation_tests.log",
+          "compile_benchmark": "wm_window16_compile_benchmark.json",
+          "started": true,
+          "criteria_unchanged": true,
+          "config": "balance_recovery_conservative_config.json",
+          "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v7",
+          "compile_check_passed": true,
+          "evaluation_output": "results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_conservative",
+          "evaluation_iterations": [
+            2500,
+            3000,
+            3500,
+            4000
+          ],
+          "warmup_verification": "balance_conservative_checkpoint2350_verification.json",
+          "warmup_policy_unchanged": true,
+          "warmup_world_model_changed": true,
+          "latest_training_snapshot": {
+            "iteration": 3525,
+            "phase": "joint",
+            "level": 0,
+            "stage": "balance",
+            "sim_reward": 0.09828318655490875,
+            "physical_termination_fraction": 0.0008138021221384406,
+            "physical_timeout_fraction": 0.00016276042151730508,
+            "mean_physical_episode_age_s": 9.937444686889648,
+            "completed_physical_episodes": 6,
+            "mean_completed_physical_episode_s": 16.566667556762695,
+            "wm_loss": 0.005177205428481102,
+            "model_ready": true,
+            "critic_warmup_done": 100,
+            "updates": {
+              "wm": 35250,
+              "distill": 1000,
+              "critic": 32500,
+              "pi": 1525
+            },
+            "elapsed_s": 2547.0033616260043,
+            "actor_loss": -9.25381851196289,
+            "critic_loss": 0.04362715035676956,
+            "actor_grad": 6.534422397613525,
+            "critic_grad": 2.501113176345825,
+            "actor_value_gradient": 0.0,
+            "imagined_reward_objective": 2.9155335426330566,
+            "bootstrap_objective": 6.338284492492676,
+            "bootstrap_max": 13.5353364944458,
+            "return_target_max": 13.47452449798584
+          },
+          "checkpoint2500_seed17_preliminary": "balance_conservative_2500_seed17_preliminary.json",
+          "checkpoint2500_drift_segments": "balance_conservative2500_drift_segments.json",
+          "checkpoint2500_velocity_prediction": "balance_conservative2500_velocity_prediction.json",
+          "diagnostic_findings": {
+            "first_seed_balance_only_rate": 0.7029702970297029,
+            "full_success_rate": 0,
+            "balanced_foot_drift_median_m": 0.4190215766429901,
+            "h32_foot_velocity_error_p95_m_s": 0.026814080774784088,
+            "model_gate_coverage_s": 2.56,
+            "limitation": "Short position-prediction gate does not establish late-episode foot-velocity accuracy; secondseed andlatercheckpoints pending. No acceptance orcausalclaim."
+          },
+          "checkpoint2500_evaluation": {
+            "report": "balance_conservative_2500_comparison.json",
+            "checkpoint_sha256": "e5eee541597338b88a9796edd939485c1bb504c9bc2670b3c317f51be77febb6",
+            "full_passed": false,
+            "balance_only_success_rates": [
+              0.7029702970297029,
+              0.801980198019802
+            ],
+            "balanced_foot_drift_medians_m": [
+              0.4190215766429901,
+              0.42063412070274353
+            ]
+          },
+          "next": "Finish second3500seed andevaluate3250 ifneeded. Current3000-derived model-only auxiliaryloss adaptation continues; no actor updates yet.",
+          "late_model_diagnostic": "balance_conservative2500_late_dynamics.json",
+          "kinematic_consistency_diagnostic": "balance_conservative2500_foot_kinematic_consistency.json",
+          "late_model_diagnostic_unit": "balance-conservative-late-dynamics.service",
+          "late_model_diagnostic_status": "completed",
+          "running_frozen_training_files_unchanged": {
+            "train_aiming_fullbody.py": true,
+            "train_wide_aiming.py": true
+          },
+          "checkpoint3000_seed17_preliminary": "balance_conservative_3000_seed17_preliminary.json",
+          "checkpoint3000_evaluation": {
+            "report": "balance_conservative_3000_comparison.json",
+            "checkpoint_sha256": "04294c3d5b717fe2fd5713f7d985b5b28c7b4447cacbce68e91c1eff2d920c79",
+            "full_passed": false,
+            "balance_only_success_rates": [
+              1.0,
+              1.0
+            ],
+            "balanced_foot_drift_medians_m": [
+              0.19556789100170135,
+              0.19350573420524597
+            ],
+            "scope": "202of202basicbalanceonly. Allfullgatesfailfootdrift; noaimingpromotion."
+          },
+          "checkpoint3000_stance_drift": "balance_conservative3000_stance_drift.json",
+          "checkpoint3000_velocity_prediction": "balance_conservative3000_velocity_prediction.json",
+          "stance_diagnostic": "Medianfootspan grows0.431m at3s to0.660m at30s; uprightbutfeetgraduallyspread. Descriptiveonly; no causalclaimoracceptance.",
+          "training_status": "intentionally_stopped_after3500_regression",
+          "intentional_stop": {
+            "status": "intentionally_stopped",
+            "time": "2026-11-16 05:42:52.453874",
+            "unit": "balance-recovery-conservative-training.service",
+            "reason": "The iteration-3500 first-seed independent test fell in all101cases, versus101/101 basicbalance at3000. Preserve3000 and redirect resources to boundedmodel-only correction. This is a branch stop, not a goal stop.",
+            "latest_logged_iteration": 3600,
+            "retained_stable_checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/ckpt_003000.pt",
+            "retained_failed_checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/ckpt_003500.pt",
+            "evidence": "balance_conservative_3500_seed17_preliminary.json",
+            "remaining_evaluation": "Finish3500 seed53; then cancel absent4000 wait. Consider independent3250 evaluation.",
+            "planned_iteration4000_not_reached": true,
+            "acceptance": false
+          },
+          "checkpoint3500_seed17_preliminary": "balance_conservative_3500_seed17_preliminary.json",
+          "checkpoint3500_evaluation": {
+            "report": "balance_conservative_3500_comparison.json",
+            "checkpoint_sha256": "f15c7d459c0fa535d2853a803910b1a21af462db1ca2b8c0e4d904b18d9858cb",
+            "full_passed": false,
+            "balance_only_success_rates": [
+              0.0,
+              0.0
+            ],
+            "tilt_crossings": [
+              {
+                "15": {
+                  "episodes": 101,
+                  "median_first_crossing_s": 17.68
+                },
+                "30": {
+                  "episodes": 101,
+                  "median_first_crossing_s": 17.98
+                },
+                "45": {
+                  "episodes": 101,
+                  "median_first_crossing_s": 18.02
+                }
+              },
+              {
+                "15": {
+                  "episodes": 100,
+                  "median_first_crossing_s": 17.77
+                },
+                "30": {
+                  "episodes": 100,
+                  "median_first_crossing_s": 18.07
+                },
+                "45": {
+                  "episodes": 100,
+                  "median_first_crossing_s": 18.11
+                }
+              }
+            ]
+          },
+          "evaluation_status": "2500/3000/3500 completed; absent4000wait intentionallycancelled",
+          "intermediate3250_evaluation": {
+            "unit": "balance-conservative-3250-evaluation.service",
+            "out": "evaluation_balance_recovery_conservative_3250",
+            "status": "completed",
+            "scope": "Check retained intermediatecheckpoint before discarding the regressed branch. Read-only two independent30s reports; no auto promotion.",
+            "summary": "balance_conservative_3250_comparison.json",
+            "full_passed": false,
+            "balance_only_success_rates": [
+              1.0,
+              1.0
+            ],
+            "full_success_rates": [
+              0.1188118811881188,
+              0.039603960396039604
+            ],
+            "foot_drift_medians_m": [
+              0.07352768629789352,
+              0.07401315122842789
+            ]
+          }
+        },
+        "prepared_foot_velocity_supervision": {
+          "status": "rejected_after_shared_holdout_comparison",
+          "enabled_in_active_training": false,
+          "cli": "--wm-foot-velocity-weight",
+          "default": 0,
+          "candidate_weight": 0.05,
+          "velocity_scale_m_s": 0.05,
+          "scope": "Supervised worldmodel loss only. No actor reward, inference, contact label, physical termination or acceptance change. No weights trained or accepted yet.",
+          "evidence": [
+            "balance_conservative2500_velocity_prediction.json",
+            "balance_conservative2500_late_dynamics.json",
+            "balance_conservative2500_foot_kinematic_consistency.json"
+          ],
+          "tests": "wm_foot_velocity_vectorized_tests.log",
+          "test_count": 10,
+          "benchmark_unit": "balance-foot-velocity-vectorized-compile-check.service",
+          "benchmark_output": "wm_foot_velocity_compile_benchmark.json",
+          "compiled_gradient_tolerance": 0.005,
+          "action_response_report": "balance_conservative2500_action_response.json",
+          "action_response_status": "completed",
+          "foot_velocity_diagnostic_added": true,
+          "acceptance_thresholds_changed": false,
+          "action_response_findings": {
+            "foot_velocity_cosine_eps005": 0.5872246026992798,
+            "foot_velocity_cosine_eps02": 0.7892809510231018,
+            "foot_position_cosine_eps005": 0.6178420782089233,
+            "direct_joint_velocity_sign_agreement_eps005": 0.9870689511299133,
+            "limitation": "Pairedfiniteperturbationscrosscontactboundaries; notexactJacobianorproofthatauxiliarylosswillfixpolicy."
+          },
+          "vectorized_eager_parity": "wm_foot_velocity_vectorized_parity.json",
+          "initial_compile_attempt": "wm_foot_velocity_initial_compile_attempt.json",
+          "benchmark_code_identity": "wm_foot_velocity_vectorized_compile_job.json",
+          "tests_passed": true,
+          "compiled_gradient_relative_l2_error": 3.6861703847534955e-05,
+          "compiled_benchmark": "wm_foot_velocity_compile_benchmark.json",
+          "smoke_unit": "balance-foot-velocity-smoke.service",
+          "smoke_config": "balance_foot_velocity_smoke_config.json",
+          "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v8",
+          "smoke_weights_formal_initialization_allowed": false,
+          "smoke_verification": "balance_foot_velocity_smoke_verification.json",
+          "smoke_passed_scope": "finite synchronized two-update integration only; smoke WM gatefailed; no convergence claim",
+          "adaptation_unit": "balance-foot-velocity-adaptation.service",
+          "adaptation_config": "balance_foot_velocity_adaptation_config.json",
+          "adaptation_source_checkpoint_sha256": "04294c3d5b717fe2fd5713f7d985b5b28c7b4447cacbce68e91c1eff2d920c79",
+          "adaptation_source_is_smoke": false,
+          "adaptation_updates": 100,
+          "adaptation_end_iteration": 3100,
+          "adaptation_actor_and_critic_frozen": true,
+          "adaptation_automatic_actor_resume": false,
+          "adaptation_output": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_foot_velocity_adaptation",
+          "adaptation_status": "completed",
+          "adaptation_verification": "balance_foot_velocity_adaptation_verification.json",
+          "adaptation_comparison": "balance_foot_velocity_adaptation_comparison.json",
+          "adaptation_model_accepted_for_actor_training": false,
+          "reason": "H32 foot velocity error p95 rose from0.00997m/s to0.03592m/s on identical independent nominal transitions; no actor updates used this model.",
+          "implemented_option_default": 0
+        },
+        "fine_step_refinement": {
+          "config": "balance_recovery_fine_step_config.json",
+          "source_checkpoint": "balance_recovery_conservative/train/ckpt_003250.pt",
+          "source_sha256": "129da13f040d189c8d0185dca4142b164feb88c24fa74c1d9ed20ab4b184dcd5",
+          "source_accepted": false,
+          "actor_lr": 1e-06,
+          "previous_actor_lr": 5e-06,
+          "wm_foot_velocity_weight": 0,
+          "checkpoint_every": 100,
+          "iterations": 3750,
+          "evaluation_iterations": [
+            3300,
+            3400,
+            3500,
+            3600,
+            3700,
+            3750
+          ],
+          "evaluation_unit": "balance-recovery-fine-step-evaluation-parallel.service",
+          "evaluation_output": "evaluation_balance_recovery_fine_step",
+          "parallel_seed_devices": [
+            "cuda:0",
+            "cuda:1"
+          ],
+          "seeds": [
+            17,
+            53
+          ],
+          "acceptance_changed": false,
+          "started": true,
+          "evaluation_worker_sha256": "844ff13a18954e6cb969f07b72ae9bb9b51e7370490753332e9852a06ef8f456",
+          "status": "intentionally_stopped_after3300_regression",
+          "intentional_stop": {
+            "status": "intentionally_stopped",
+            "time": "2026-11-16 06:00:01.761046",
+            "reason": "First3300 two-seed physical tests regressed from100%basicbalance to1/101 and0/101 after25actorupdates. Reducingstep size didnot preserve physicalstability. Retain source3250; do not continue failedactor.",
+            "evidence": "balance_fine_step_3300_comparison.json",
+            "goal_complete": false
+          },
+          "evaluation3300": "balance_fine_step_3300_comparison.json",
+          "evaluation3400": "balance_fine_step_3400_comparison.json"
+        }
+      }
+    },
+    "G5": {
+      "status": "pending"
+    }
+  },
+  "training_order": [
+    "LAFAN from scratch",
+    "JWP finetune",
+    "standing aiming curriculum",
+    "moving aiming curriculum"
+  ],
+  "remaining_source_clips": 0,
+  "existing_repaired_source_clips": 3,
+  "frozen_data_runner": "results/lafan_jwp_aiming_20261115/frozen_data_runner_v3",
+  "frozen_acp": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_acp",
+  "active_job": {
+    "id": "45c06ee1738c22cc9f05",
+    "unit": "php-job@45c06ee1738c22cc9f05.service",
+    "stage": "G1",
+    "source_clips": 57,
+    "gpu_workers": 2,
+    "cpu_workers": 4,
+    "reservation_gib": 44,
+    "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/repair_remaining57_v3",
+    "observed_completed_sources": 57,
+    "observed_execution_failures": 0,
+    "status": "completed"
+  },
+  "implemented": [
+    "source-grouped train/validation dataset builder",
+    "explicit dataset sampling weights and resume identity check",
+    "93-to-107 tracker transfer preserving all joint outputs",
+    "WideAimingTask: world-fixed spherical targets, reference-free commands, stepping permitted, support-point slip reward; not yet integrated into training",
+    "Wide aiming independent 75-grid + 100-switch-episode evaluator; metric tests passed, physical execution pending trained policy",
+    "Independent tracker standing gate: fixed contact/root commands, 100 perturbed 30-second episodes; smoke rejection verified",
+    "Wide aiming initialization tool requiring passed JWP reference/standing gates, 80/20 mixture and LAFAN checkpoint provenance; not yet executed",
+    "MovingAimingTask velocity command/reward and frame convention; unit-tested only, training/evaluation not implemented",
+    "Dedicated two-GPU wide stage trainer: teacher-command distillation, ACP WM/critic/actor updates, independent WM gate, explicit two-report promotion, target switches; pure tests passed, full runner not yet physically exercised or used for formal training"
+  ],
+  "verification": {
+    "unit_tests": 10,
+    "passed": true,
+    "physical_policy_acceptance": false,
+    "pd_lafan_clips": 31,
+    "pd_passes": 0,
+    "pd_longest_s": 1.14,
+    "pd_scope": "Open-loop PD baseline; not learned-policy evaluation",
+    "smoke_training": {
+      "iteration": 3,
+      "finite": {
+        "pi": true,
+        "wm": true,
+        "critic": true
+      },
+      "distributed": {
+        "version": 1,
+        "world_size": 1,
+        "updates": {
+          "wm": 3,
+          "pi": 2,
+          "critic": 2
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 478141440,
+            "torch_peak_reserved": 555745280,
+            "device_used": 23571136512,
+            "warp_pool_used": 322774407,
+            "warp_pool_peak": 322775367
+          }
+        ]
+      },
+      "sampling": {
+        "jwp": 0.8,
+        "lafan": 0.2
+      },
+      "smoke_only": true,
+      "eligible_for_formal_training_initialization": false
+    },
+    "existing_contract_tests": 18,
+    "smoke_reference_gate": {
+      "passed": false,
+      "successful_clips": 0,
+      "total_clips": 20,
+      "scope": "Expected rejection of a three-update smoke model; evaluation emitted Warp memory warnings, not acceptance evidence"
+    },
+    "new_gate_tests": 2,
+    "mesh_floor_gradient_test": true,
+    "loopback_two_process_all_reduce": true,
+    "provisional_full_loader": {
+      "passed": true,
+      "sources": 92,
+      "original_pairs": 111,
+      "sampleable_pairs": 111,
+      "frames": 43986,
+      "data_hash": "a16d3ff13311effa84bf3e493069f2fafcd7b3fc9ced0e4c6c395ff3ff9386d9",
+      "dataset_manifest_sha256": "92b33a314134cf3b8d44f3738c3eff6d35915509b38db982e089f3afa5b68dcf",
+      "robot_metadata": {
+        "robot_id": "tienkung3_29dof",
+        "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+        "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+        "joint_order": [
+          "hip_pitch_l_joint",
+          "hip_roll_l_joint",
+          "hip_yaw_l_joint",
+          "knee_pitch_l_joint",
+          "ankle_pitch_l_joint",
+          "ankle_roll_l_joint",
+          "hip_pitch_r_joint",
+          "hip_roll_r_joint",
+          "hip_yaw_r_joint",
+          "knee_pitch_r_joint",
+          "ankle_pitch_r_joint",
+          "ankle_roll_r_joint",
+          "waist_yaw_joint",
+          "waist_roll_joint",
+          "waist_pitch_joint",
+          "shoulder_pitch_l_joint",
+          "shoulder_roll_l_joint",
+          "shoulder_yaw_l_joint",
+          "elbow_pitch_l_joint",
+          "elbow_yaw_l_joint",
+          "wrist_pitch_l_joint",
+          "wrist_roll_l_joint",
+          "shoulder_pitch_r_joint",
+          "shoulder_roll_r_joint",
+          "shoulder_yaw_r_joint",
+          "elbow_pitch_r_joint",
+          "elbow_yaw_r_joint",
+          "wrist_pitch_r_joint",
+          "wrist_roll_r_joint"
+        ],
+        "control_dt": 0.02
+      },
+      "command_dim": 93,
+      "contact_geometry": "spheres224",
+      "reward_points": 224,
+      "reward_hulls": 0,
+      "seconds": 5.671105819987133,
+      "gpu_peak_allocated": 186502144
+    },
+    "wide_aiming_task_tests": 2,
+    "wide_aiming_acceptance_metric_tests": 3,
+    "capacity_smoke_wave1": {
+      "passed": true,
+      "scope": "Allocation, finite optimizer updates and two-rank synchronization only; no convergence claim",
+      "formal_initialization_allowed": false,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 3,
+          "pi": 3,
+          "critic": 3
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 1583812608,
+            "torch_peak_reserved": 1690304512,
+            "device_used": 7593852928,
+            "warp_pool_used": 396130375,
+            "warp_pool_peak": 396131335
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 1583808512,
+            "torch_peak_reserved": 1669332992,
+            "device_used": 7164395520,
+            "warp_pool_used": 396130375,
+            "warp_pool_peak": 396131335
+          }
+        ],
+        "state_sha256": "8388b7840fdc46d9649173957c44ec6963cd99a5272efb50fb6b1a8bdd24c515"
+      }
+    },
+    "wave1_loader": {
+      "passed": true,
+      "sources": 6,
+      "original_pairs": 57,
+      "sampleable_pairs": 57,
+      "frames": 58815,
+      "data_hash": "9e35f0f9320ce6264db4362f17addfb526389b1555174d35acac9bb36cae429c",
+      "dataset_manifest_sha256": "f2fd9481aef854e4d6a2bab5f493b09fb40fb586f7c60750cb66af192ef58333",
+      "robot_metadata": {
+        "robot_id": "tienkung3_29dof",
+        "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+        "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+        "joint_order": [
+          "hip_pitch_l_joint",
+          "hip_roll_l_joint",
+          "hip_yaw_l_joint",
+          "knee_pitch_l_joint",
+          "ankle_pitch_l_joint",
+          "ankle_roll_l_joint",
+          "hip_pitch_r_joint",
+          "hip_roll_r_joint",
+          "hip_yaw_r_joint",
+          "knee_pitch_r_joint",
+          "ankle_pitch_r_joint",
+          "ankle_roll_r_joint",
+          "waist_yaw_joint",
+          "waist_roll_joint",
+          "waist_pitch_joint",
+          "shoulder_pitch_l_joint",
+          "shoulder_roll_l_joint",
+          "shoulder_yaw_l_joint",
+          "elbow_pitch_l_joint",
+          "elbow_yaw_l_joint",
+          "wrist_pitch_l_joint",
+          "wrist_roll_l_joint",
+          "shoulder_pitch_r_joint",
+          "shoulder_roll_r_joint",
+          "shoulder_yaw_r_joint",
+          "elbow_pitch_r_joint",
+          "elbow_yaw_r_joint",
+          "wrist_pitch_r_joint",
+          "wrist_roll_r_joint"
+        ],
+        "control_dt": 0.02
+      },
+      "command_dim": 93,
+      "contact_geometry": "spheres224",
+      "reward_points": 224,
+      "reward_hulls": 0,
+      "seconds": 9.459524462989066,
+      "gpu_peak_allocated": 245774848
+    },
+    "physics16": {
+      "passed": true,
+      "iteration": 3,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 3
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 3600649728,
+            "torch_peak_reserved": 3720347648,
+            "device_used": 14188019712,
+            "warp_pool_used": 647636551,
+            "warp_pool_peak": 647637511
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 3600647680,
+            "torch_peak_reserved": 3720347648,
+            "device_used": 13748797440,
+            "warp_pool_used": 647636551,
+            "warp_pool_peak": 647637511
+          }
+        ],
+        "state_sha256": "d2677fb486a9e0d5222b02a2d194ec065ce2d7d1aadd637ac96f30050ae0f3d1"
+      },
+      "physics_substeps": 16,
+      "warmup_global_transitions": 1048576,
+      "scope": "Physical stability, finite optimizer updates and two-rank synchronization; not trained-policy acceptance",
+      "formal_initialization_allowed": false
+    },
+    "standing_gate_smoke": {
+      "passed": false,
+      "success_rate": 0.0,
+      "elapsed_sim_seconds": 1.32,
+      "unique_seed_count": 3,
+      "scenario_count": 100,
+      "scope": "Untrained capacity-smoke policy correctly rejected; not formal checkpoint evidence"
+    },
+    "tracker_standing_gate_unit_tests": 2,
+    "wide_and_transfer_tests": 6,
+    "wave2_loader": {
+      "passed": true,
+      "sources": 9,
+      "original_pairs": 88,
+      "sampleable_pairs": 88,
+      "frames": 79736,
+      "data_hash": "935e86c67c84124c6e326505b0a6ada361e480a729b7be8001b1d0137ac1bf2e",
+      "dataset_manifest_sha256": "44901cd9713879c3b3e330d26529dd1fb775c1120cce2efa19bb25911608fe2c",
+      "robot_metadata": {
+        "robot_id": "tienkung3_29dof",
+        "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+        "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+        "joint_order": [
+          "hip_pitch_l_joint",
+          "hip_roll_l_joint",
+          "hip_yaw_l_joint",
+          "knee_pitch_l_joint",
+          "ankle_pitch_l_joint",
+          "ankle_roll_l_joint",
+          "hip_pitch_r_joint",
+          "hip_roll_r_joint",
+          "hip_yaw_r_joint",
+          "knee_pitch_r_joint",
+          "ankle_pitch_r_joint",
+          "ankle_roll_r_joint",
+          "waist_yaw_joint",
+          "waist_roll_joint",
+          "waist_pitch_joint",
+          "shoulder_pitch_l_joint",
+          "shoulder_roll_l_joint",
+          "shoulder_yaw_l_joint",
+          "elbow_pitch_l_joint",
+          "elbow_yaw_l_joint",
+          "wrist_pitch_l_joint",
+          "wrist_roll_l_joint",
+          "shoulder_pitch_r_joint",
+          "shoulder_roll_r_joint",
+          "shoulder_yaw_r_joint",
+          "elbow_pitch_r_joint",
+          "elbow_yaw_r_joint",
+          "wrist_pitch_r_joint",
+          "wrist_roll_r_joint"
+        ],
+        "control_dt": 0.02
+      },
+      "command_dim": 93,
+      "contact_geometry": "spheres224",
+      "reward_points": 224,
+      "reward_hulls": 0,
+      "seconds": 7.357469581998885,
+      "gpu_peak_allocated": 276994560
+    },
+    "wide_initialization_gate_tests": 1,
+    "moving_task_command_test": 1,
+    "iteration_1000_reference": {
+      "scope": "Held-out reference tracking only; standing and aiming require separate physical gates",
+      "passed": false,
+      "successful_clips": 0,
+      "clips": 39,
+      "successful_fraction": 0.0,
+      "required_fraction": 0.9,
+      "failures": {
+        "lafan/aiming2_subject3__f001372_001935": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f001940_002976": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f003036_003778": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f004188_004902": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f005082_005599": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f005958_006567": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f006637_007203": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f007208_008017": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f008613_009455": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f010049_010504": [
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f010785_011477": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f012654_013272": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f013609_013882": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f014016_014390": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject3__f014559_015284": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f000246_002398": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f002484_002869": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f002874_004899": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f004990_005556": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f005567_006463": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f006693_007440": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f007462_007781": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f008037_011417": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f011666_012098": [
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f012109_012395": [
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f012751_013827": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/aiming2_subject5__f014357_015284": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk1_subject2__f000002_000677": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk1_subject2__f000705_004248": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk1_subject2__f004254_004930": [
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk1_subject2__f004935_011007": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk1_subject2__f011014_011923": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk1_subject2__f011929_012987": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk3_subject2__f000002_000557": [
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk3_subject2__f000902_003838": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk3_subject2__f003844_008001": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk3_subject2__f008014_008310": [
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk3_subject2__f008373_009459": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ],
+        "lafan/walk3_subject2__f009464_012329": [
+          "incomplete_or_fallen",
+          "root_rmse_m",
+          "joint_rmse_rad"
+        ]
+      },
+      "checkpoint_sha256": "389a81fd40f8e4e561d08ec47d7ee28402403c42aa4020debcfa6143c77014f2",
+      "report_sha256": "ed9f48affc8a54d57d5a0a6d6fb7abfac2e45898be95bbe3c3c50ff674c3e8a2",
+      "manifest_sha256": "bdd9cf46158414ce0265301c03c49731d75ccdf42d5c1770cb26ddb585e3eb7c"
+    },
+    "iteration_1000_standing_prior_protocol": "0% under initial-foot-anchor check; retained as diagnostic, superseded by 3-second adjustment protocol",
+    "iteration_1000": {
+      "iteration": 1000,
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001000.pt",
+      "checkpoint_sha256": "389a81fd40f8e4e561d08ec47d7ee28402403c42aa4020debcfa6143c77014f2",
+      "reference_passed": false,
+      "reference_successful_fraction": 0.0,
+      "standing_passed": false,
+      "standing_success_rate": 0.0,
+      "passed": false,
+      "scope": "Stage tracking and standing only; no aiming acceptance"
+    },
+    "reference_guidance_unit_tests": 2,
+    "guidance_smoke": {
+      "passed": true,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 3,
+          "pi": 3,
+          "critic": 3
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 594118656,
+            "torch_peak_reserved": 742391808,
+            "device_used": 6674055168,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 594121728,
+            "torch_peak_reserved": 742391808,
+            "device_used": 4780064768,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "9ff62f0366671022c4ad0812fbed26ae48d919fecbff16c5445b5324af0741ae"
+      },
+      "reference_joint_aux": 0.25,
+      "formal_initialization_allowed": false
+    },
+    "nominal_pd_physics16": {
+      "scope": "Nominal open-loop PD default-pose diagnostic only; not a trained policy or aiming acceptance",
+      "seconds": 1.04,
+      "passed": false,
+      "finite": true,
+      "max_root_drift_m": 0.27349653840065,
+      "max_tilt_deg": 15.433797836303711,
+      "initial_root_height": 0.9918161034584045,
+      "final_root_height": 0.94073885679245,
+      "physics_substeps": 16
+    },
+    "guidance_root_smoke": {
+      "passed": true,
+      "distributed": {
+        "version": 1,
+        "world_size": 2,
+        "updates": {
+          "wm": 3,
+          "pi": 3,
+          "critic": 3
+        },
+        "skipped": {},
+        "ranks": [
+          {
+            "rank": 0,
+            "device": "cuda:0",
+            "torch_peak_allocated": 527193088,
+            "torch_peak_reserved": 721420288,
+            "device_used": 5342953472,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          },
+          {
+            "rank": 1,
+            "device": "cuda:1",
+            "torch_peak_allocated": 527194112,
+            "torch_peak_reserved": 721420288,
+            "device_used": 5029494784,
+            "warp_pool_used": 317534695,
+            "warp_pool_peak": 317535655
+          }
+        ],
+        "state_sha256": "b9f4400a35ebb24d7c9679685bc1700b0a77b5304e1083ef70bca17c2c3023c3"
+      },
+      "reference_joint_aux": 0.25,
+      "tracking_root_radius": 0.5,
+      "formal_initialization_allowed": false
+    },
+    "iteration_1500": {
+      "iteration": 1500,
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001500.pt",
+      "checkpoint_sha256": "bb28e30fc87f6ff92bb5040bbbc33a299f3142c23f103cb06b9f76f4e1cabb19",
+      "reference_passed": false,
+      "reference_successful_fraction": 0.0,
+      "standing_passed": false,
+      "standing_success_rate": 0.0,
+      "passed": false,
+      "scope": "Stage tracking and standing only; no aiming acceptance"
+    },
+    "wide_training_pure_tests": 10,
+    "wide_runtime_smoke": {
+      "passed": true,
+      "updates": {
+        "wm": 1,
+        "critic": 2,
+        "pi": 1
+      },
+      "skipped": {},
+      "state_sha256": "a89b5e13d6485fb793af7a37339c189c90560bbf7b13560bf7f0355f088afc31",
+      "world_size": 2,
+      "physics_substeps": 16,
+      "wm_loss": 0.00947556085884571,
+      "metrics": {
+        "actor_loss": -0.33417874574661255,
+        "critic_loss": 0.05379709601402283,
+        "actor_grad": 8.956413269042969,
+        "critic_grad": 1.3651326894760132,
+        "bootstrap_max": 0.3244155943393707,
+        "return_target_max": 0.6198374032974243
+      },
+      "scope": "Bounded integration test of distributed wide-task updates; saves no weights.",
+      "formal_training": false,
+      "weights_saved": false,
+      "source_checkpoint_sha256": "659a880f8a086de0b6271e5fc99689618e68613dfbc99b1d0cffb765c21abe7b"
+    }
+  },
+  "prior_jobs": [
+    {
+      "id": "7505bc51b635e2277a36",
+      "unit": "php-job@7505bc51b635e2277a36.service",
+      "stage": "G1",
+      "source_clips": 57,
+      "gpu_workers": 2,
+      "cpu_workers": 4,
+      "reservation_gib": 44,
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/repair_remaining57_v1",
+      "result": "57 failures: CUDA OOM, no converted outputs"
+    },
+    {
+      "id": "ea4e12823e9595053f76",
+      "unit": "php-job@ea4e12823e9595053f76.service",
+      "stage": "G1",
+      "source_clips": 57,
+      "gpu_workers": 2,
+      "cpu_workers": 4,
+      "reservation_gib": 44,
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/repair_remaining57_v2",
+      "result": "57 failures: recurrent CUDA OOM after initial windows"
+    }
+  ],
+  "repair_window": {
+    "core_frames": 3072,
+    "context_frames": 256,
+    "max_window_frames": 3584,
+    "seams": "unblended; reject invalid global transitions during native QC",
+    "floor_objective": "Exact per-mesh support function; verified value and gradients against expanded vertices",
+    "cuda_graph_lifecycle": "Synchronize, clear gradients, graph.reset after each optimization round",
+    "verified_first_window_seconds": [
+      51.80505839799298,
+      51.73122772900388
+    ]
+  },
+  "distributed_smoke": {
+    "passed": true,
+    "iteration": 3,
+    "distributed": {
+      "version": 1,
+      "world_size": 2,
+      "updates": {
+        "wm": 3,
+        "pi": 2,
+        "critic": 2
+      },
+      "skipped": {},
+      "ranks": [
+        {
+          "rank": 0,
+          "device": "cuda:0",
+          "torch_peak_allocated": 429090816,
+          "torch_peak_reserved": 574619648,
+          "device_used": 6586564608,
+          "warp_pool_used": 317534695,
+          "warp_pool_peak": 317535655
+        },
+        {
+          "rank": 1,
+          "device": "cuda:1",
+          "torch_peak_allocated": 429090816,
+          "torch_peak_reserved": 574619648,
+          "device_used": 6264717312,
+          "warp_pool_used": 317534695,
+          "warp_pool_peak": 317535655
+        }
+      ],
+      "state_sha256": "5eb377b31763529c651583c662988245ae93ad830c4bfc06b83fd4a1b5c829fd"
+    },
+    "formal_initialization_allowed": false
+  },
+  "screening_job": {
+    "id": "723dacfaebb9b31eb7d3",
+    "unit": "php-job@723dacfaebb9b31eb7d3.service",
+    "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_first2_v3",
+    "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_first2_v4",
+    "source_keys": [
+      "lafan/aiming2_subject2",
+      "lafan/aiming2_subject3"
+    ],
+    "frozen_runner": "results/lafan_jwp_aiming_20261115/frozen_segment_runner_v1",
+    "status": "completed",
+    "passed_segments": 25,
+    "frames": 23396
+  },
+  "screening_prior_failure": {
+    "id": "0e9275f023e47b4a2331",
+    "state": "canceled using guard.py",
+    "reason": "frozen runner omitted upstream src package; new frozen segmentation runner includes src"
+  },
+  "accepted_lafan_manifests": [
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_first2_v4/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch2_v3/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch3_v3/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch4_v4/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/manifest.json",
+    "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_final_v3/manifest.json"
+  ],
+  "accepted_lafan_summary": {
+    "clips": 534,
+    "frames": 371334,
+    "sources": 55,
+    "source_keys": [
+      "lafan/aiming1_subject1",
+      "lafan/aiming1_subject4",
+      "lafan/aiming2_subject2",
+      "lafan/aiming2_subject3",
+      "lafan/aiming2_subject5",
+      "lafan/dance1_subject1",
+      "lafan/dance1_subject2",
+      "lafan/dance1_subject3",
+      "lafan/dance2_subject1",
+      "lafan/dance2_subject2",
+      "lafan/dance2_subject3",
+      "lafan/dance2_subject4",
+      "lafan/dance2_subject5",
+      "lafan/fallAndGetUp1_subject1",
+      "lafan/fallAndGetUp2_subject2",
+      "lafan/fallAndGetUp2_subject3",
+      "lafan/fallAndGetUp3_subject1",
+      "lafan/fight1_subject2",
+      "lafan/fight1_subject3",
+      "lafan/fight1_subject5",
+      "lafan/fightAndSports1_subject1",
+      "lafan/fightAndSports1_subject4",
+      "lafan/ground1_subject1",
+      "lafan/ground1_subject5",
+      "lafan/ground2_subject3",
+      "lafan/jumps1_subject1",
+      "lafan/jumps1_subject2",
+      "lafan/jumps1_subject5",
+      "lafan/multipleActions1_subject1",
+      "lafan/multipleActions1_subject2",
+      "lafan/multipleActions1_subject3",
+      "lafan/multipleActions1_subject4",
+      "lafan/push1_subject2",
+      "lafan/pushAndFall1_subject1",
+      "lafan/pushAndFall1_subject4",
+      "lafan/pushAndStumble1_subject2",
+      "lafan/pushAndStumble1_subject3",
+      "lafan/pushAndStumble1_subject5",
+      "lafan/run1_subject2",
+      "lafan/run1_subject5",
+      "lafan/run2_subject1",
+      "lafan/run2_subject4",
+      "lafan/sprint1_subject2",
+      "lafan/sprint1_subject4",
+      "lafan/walk1_subject1",
+      "lafan/walk1_subject2",
+      "lafan/walk1_subject5",
+      "lafan/walk2_subject1",
+      "lafan/walk2_subject4",
+      "lafan/walk3_subject1",
+      "lafan/walk3_subject2",
+      "lafan/walk3_subject3",
+      "lafan/walk3_subject4",
+      "lafan/walk3_subject5",
+      "lafan/walk4_subject1"
+    ],
+    "rejected_sources": [
+      "lafan/fallAndGetUp1_subject4",
+      "lafan/fallAndGetUp1_subject5",
+      "lafan/ground1_subject4",
+      "lafan/ground2_subject2",
+      "lafan/walk2_subject3"
+    ]
+  },
+  "screening_jobs": [
+    {
+      "id": "723dacfaebb9b31eb7d3",
+      "unit": "php-job@723dacfaebb9b31eb7d3.service",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_first2_v3",
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_first2_v4",
+      "source_keys": [
+        "lafan/aiming2_subject2",
+        "lafan/aiming2_subject3"
+      ],
+      "frozen_runner": "results/lafan_jwp_aiming_20261115/frozen_segment_runner_v1",
+      "status": "completed",
+      "passed_segments": 25,
+      "frames": 23396
+    },
+    {
+      "id": "0fea5f7c374b5c870811",
+      "unit": "php-job@0fea5f7c374b5c870811.service",
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_batch2_v3",
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch2_v3",
+      "source_keys": [
+        "lafan/aiming2_subject5",
+        "lafan/walk1_subject2",
+        "lafan/sprint1_subject4",
+        "lafan/walk1_subject5",
+        "lafan/sprint1_subject2"
+      ],
+      "passed_segments": 51,
+      "frames": 48151
+    },
+    {
+      "id": "dc28d1ba9e127c3d2c54",
+      "unit": "php-job@dc28d1ba9e127c3d2c54.service",
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_batch3_v3",
+      "source_keys": [
+        "lafan/walk3_subject2",
+        "lafan/walk3_subject3",
+        "lafan/walk3_subject4"
+      ],
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch3_v3",
+      "passed_segments": 19,
+      "frames": 23427
+    },
+    {
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_batch4_v3",
+      "source_keys": [
+        "lafan/fight1_subject2",
+        "lafan/fight1_subject3",
+        "lafan/fight1_subject5",
+        "lafan/fightAndSports1_subject1",
+        "lafan/fightAndSports1_subject4",
+        "lafan/jumps1_subject1",
+        "lafan/jumps1_subject2",
+        "lafan/run2_subject1",
+        "lafan/run2_subject4",
+        "lafan/walk3_subject1",
+        "lafan/walk3_subject5"
+      ],
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch4_v4",
+      "id": "7715c093eeea9283c18f",
+      "unit": "php-job@7715c093eeea9283c18f.service",
+      "passed_segments": 147,
+      "frames": 89308
+    },
+    {
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_batch5_v3",
+      "source_keys": [
+        "lafan/aiming1_subject4",
+        "lafan/jumps1_subject5",
+        "lafan/walk2_subject1",
+        "lafan/walk2_subject3"
+      ],
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3",
+      "id": "f25ccfa3bbdb7792a1d8",
+      "unit": "php-job@f25ccfa3bbdb7792a1d8.service",
+      "passed_segments": 29,
+      "frames": 26526
+    },
+    {
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_batch6_v3",
+      "source_keys": [
+        "lafan/dance2_subject1",
+        "lafan/dance2_subject2",
+        "lafan/pushAndStumble1_subject2",
+        "lafan/pushAndStumble1_subject3",
+        "lafan/pushAndStumble1_subject5",
+        "lafan/run1_subject2",
+        "lafan/run1_subject5",
+        "lafan/walk2_subject4"
+      ],
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3",
+      "id": "c49e5f2ba1bb9c6fd589",
+      "unit": "php-job@c49e5f2ba1bb9c6fd589.service",
+      "passed_segments": 90,
+      "frames": 56604
+    },
+    {
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_batch7_v3",
+      "source_keys": [
+        "lafan/dance2_subject3",
+        "lafan/dance2_subject4",
+        "lafan/dance2_subject5",
+        "lafan/fallAndGetUp1_subject4",
+        "lafan/fallAndGetUp1_subject5",
+        "lafan/fallAndGetUp2_subject2",
+        "lafan/fallAndGetUp2_subject3",
+        "lafan/ground1_subject1",
+        "lafan/ground2_subject2",
+        "lafan/ground2_subject3",
+        "lafan/pushAndFall1_subject1",
+        "lafan/pushAndFall1_subject4",
+        "lafan/walk4_subject1"
+      ],
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3",
+      "id": "1ae35a18635eacdb742a",
+      "unit": "php-job@1ae35a18635eacdb742a.service",
+      "passed_segments": 82,
+      "frames": 44326
+    },
+    {
+      "status": "completed",
+      "input_snapshot": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screen_input_final_v3",
+      "source_keys": [
+        "lafan/dance1_subject1",
+        "lafan/dance1_subject2",
+        "lafan/dance1_subject3",
+        "lafan/fallAndGetUp3_subject1",
+        "lafan/ground1_subject4",
+        "lafan/ground1_subject5",
+        "lafan/multipleActions1_subject1",
+        "lafan/multipleActions1_subject2",
+        "lafan/multipleActions1_subject3",
+        "lafan/multipleActions1_subject4",
+        "lafan/push1_subject2"
+      ],
+      "output": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_final_v3",
+      "id": "008bd5f0c3423369c882"
+    }
+  ],
+  "screening_reserved_source_keys": [
+    "lafan/aiming2_subject2",
+    "lafan/aiming2_subject3",
+    "lafan/aiming2_subject5",
+    "lafan/walk1_subject2",
+    "lafan/sprint1_subject4",
+    "lafan/walk1_subject5",
+    "lafan/sprint1_subject2",
+    "lafan/walk3_subject2",
+    "lafan/walk3_subject3",
+    "lafan/walk3_subject4",
+    "lafan/fight1_subject2",
+    "lafan/fight1_subject3",
+    "lafan/fight1_subject5",
+    "lafan/fightAndSports1_subject1",
+    "lafan/fightAndSports1_subject4",
+    "lafan/jumps1_subject1",
+    "lafan/jumps1_subject2",
+    "lafan/run2_subject1",
+    "lafan/run2_subject4",
+    "lafan/walk3_subject1",
+    "lafan/walk3_subject5",
+    "lafan/aiming1_subject4",
+    "lafan/jumps1_subject5",
+    "lafan/walk2_subject1",
+    "lafan/walk2_subject3",
+    "lafan/dance2_subject1",
+    "lafan/dance2_subject2",
+    "lafan/pushAndStumble1_subject2",
+    "lafan/pushAndStumble1_subject3",
+    "lafan/pushAndStumble1_subject5",
+    "lafan/run1_subject2",
+    "lafan/run1_subject5",
+    "lafan/walk2_subject4",
+    "lafan/dance2_subject3",
+    "lafan/dance2_subject4",
+    "lafan/dance2_subject5",
+    "lafan/fallAndGetUp1_subject4",
+    "lafan/fallAndGetUp1_subject5",
+    "lafan/fallAndGetUp2_subject2",
+    "lafan/fallAndGetUp2_subject3",
+    "lafan/ground1_subject1",
+    "lafan/ground2_subject2",
+    "lafan/ground2_subject3",
+    "lafan/pushAndFall1_subject1",
+    "lafan/pushAndFall1_subject4",
+    "lafan/walk4_subject1",
+    "lafan/dance1_subject1",
+    "lafan/dance1_subject2",
+    "lafan/dance1_subject3",
+    "lafan/fallAndGetUp3_subject1",
+    "lafan/ground1_subject4",
+    "lafan/ground1_subject5",
+    "lafan/multipleActions1_subject1",
+    "lafan/multipleActions1_subject2",
+    "lafan/multipleActions1_subject3",
+    "lafan/multipleActions1_subject4",
+    "lafan/push1_subject2"
+  ],
+  "dataset_wave1": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_wave1",
+  "schedule_adjustment": "Overlap accepted LAFAN pretraining with remaining source repair; fixed full-source holdout remains unchanged; JWP is excluded from pretraining.",
+  "current_stages": [
+    "G4"
+  ],
+  "physics_fix": {
+    "cause": "5ms integration physically unstable with current native29 PD dynamics; independently reproduced on CPU and GPU",
+    "change": "Explicit 16 substeps at 1.25ms, unchanged 50Hz action frequency and robot assets",
+    "evidence": "cpu_physics_replay.json and physics16_verification.json",
+    "prior_run": "lafan_wave1 aborted before optimizer updates"
+  },
+  "dataset_wave2": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_wave2",
+  "independent_evaluation_worker": {
+    "unit": "lafan-wave3-stable-evaluation.service",
+    "output": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_wave3_stable",
+    "iterations": [
+      1000,
+      3000,
+      6000,
+      10000
+    ],
+    "bounded": true
+  },
+  "guidance_smoke": {
+    "unit": "lafan-guidance-smoke.service",
+    "run": "logs/tienkung3_29dof/lafan_jwp_20261115/guidance_smoke",
+    "scope": "3-step check only; not formal initialization"
+  },
+  "next_training_change": {
+    "reference_joint_aux": 0.25,
+    "tracking_root_radius_m": 0.5,
+    "reason": "Reference evaluation: survives clips but drifts off reference path and has large joint error; tighten training termination and add dense pose supervision; acceptance unchanged",
+    "source": "formal ckpt_001500.pt, never a smoke checkpoint",
+    "dataset": "dataset_wave2/lafan_focus/train"
+  },
+  "outstanding": [
+    "G4: Train center then narrow/medium/wide/precise/switching aiming with exact checkpoint promotion gates; final fixed75+100random two fresh independent seeds",
+    "G4: Export independently verified standing policy, normalizers/runtime/config and passed-scenario video",
+    "G5: Initialize separate moving branch only from accepted standing policy; train0\u20130.3m/s start/stop with aiming, then independent final acceptance and export"
+  ],
+  "dataset_final": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_final",
+  "pose_conditioning_experiment": {
+    "status": "formal_stable_run_running",
+    "purpose": "Contact-only commands leave noncontact joint pose unspecified; evaluate explicit next-pose pretraining teacher",
+    "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_training_pose_v1",
+    "command_dim": 122,
+    "transfer": "normalize fixed initial q and fold 29 pose columns into first encoder bias; 107-column final runtime remains reference-free",
+    "tests": "13 unit tests and dual-GPU 3 WM/PI/critic updates passed, no skipped updates",
+    "smoke": "pose_condition_smoke_verification.json",
+    "formal_initialization": "Never use smoke weights; continue from an immutable formal LAFAN checkpoint",
+    "proposed_aux_weight": 1.0,
+    "audit": "pose_command_audit.json",
+    "nonfoot_target_fraction": 0.0,
+    "failure": "wave3_pose_failure.json",
+    "stability_smoke": "pose_stability_smoke_verification.json",
+    "stability_changes": [
+      "Preserve source critic outputs exactly while adding zero input columns",
+      "200 critic-only updates before actor updates",
+      "Actor learning rate 2e-5, WM/critic2e-4",
+      "Bootstrap maximum remaining reward; reference clip ends terminate imagination"
+    ],
+    "early_stability": "pose_stability_early_training.json"
+  },
+  "renderer_verification": {
+    "passed": true,
+    "video": "renderer_diagnostic_failure.mp4",
+    "scope": "Renderer exercised on failed physical standing states; target is diagnostic overlay, not policy acceptance"
+  },
+  "reference_free_runtime": {
+    "path": "supermimic/acp/aiming_policy.py",
+    "test": "tools.test_aiming_policy",
+    "passed": true,
+    "scope": "Interface and exact action equivalence only; no accepted learned weights yet",
+    "interfaces": [
+      "reset native29 state and spherical target",
+      "set world-fixed target without resetting history",
+      "step at50Hz returns29 PD targets",
+      "moving branch world velocity integration"
+    ]
+  },
+  "wave2_completion": {
+    "status": "process_completed_not_accepted",
+    "iterations": 3000,
+    "source_sha256": "b0c24c0ed1635498a4ee91ca856330517e632749ada9b79a5808d4f28128b254",
+    "reference_success_at_2000": 0.0,
+    "standing_success_at_2000": 0.0,
+    "final_metrics": {
+      "complete_clips": 22,
+      "clips": 49,
+      "mean_root_rmse_m": 0.2136614053529136,
+      "mean_joint_rmse_rad": 0.48129571761403767,
+      "standing_success_rate": 0.0,
+      "standing_observed_seconds": 4.98
+    },
+    "final_gate": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_wave2/iteration_003000/result.json"
+  },
+  "reference_pd_diagnostic": {
+    "completed": 0,
+    "clips": 49,
+    "mean_root_rmse_m": 0.20141503990304713,
+    "mean_joint_rmse_rad": 0.13839071091948724,
+    "data_hash": "d1cf03cf9cb1e370472049f8a573c0a57a78a192c5882aea2359c52287cf78c5",
+    "report": "reference_pd_baseline.json",
+    "scope": "Reference-dependent open-loop diagnostic, not a deliverable policy"
+  },
+  "moving_runtime": {
+    "status": "implemented_and_dual_gpu_integration_test_passed_not_formally_trained",
+    "smoke": "moving_runtime_smoke.json",
+    "world_goal": "velocity integral updated identically in real transition, imagined transition and inference",
+    "target": "world-fixed between explicit switches",
+    "metrics": "moving_aiming_validation.py",
+    "tests": "10 interface/context tests plus9 acceptance tests passed",
+    "formal_training_prerequisite": "Accepted standing aiming checkpoint; G5 remains pending",
+    "curriculum": "moving_curriculum.py:0.05,0.1,0.2,0.3m/s",
+    "training_runner": "train_wide_aiming.py auto-selects moving task from gated initialization",
+    "initializer": "tools.prepare_moving_aiming_init requires2fullstandingreports",
+    "evaluation": "tools.evaluate_moving_aiming full30s25fixed+100random",
+    "protocol_audit": "moving_evaluation_protocol_audit.json",
+    "formal_runner_status": "Implemented, unit/integration tested components; full formal runner awaits accepted standing initialization"
+  },
+  "standing_capture_metric": {
+    "status": "corrected_and_tested",
+    "reason": "Initial permitted adjustment can occur while ray already hits; acquisition requires sustained aim and stable feet together by3s",
+    "preserved_thresholds": {
+      "capture_s": 3,
+      "continuous_hit_s": 5,
+      "post_grace_hit_rate": 0.95,
+      "feet_drift_m": 0.05
+    }
+  },
+  "pose_adapter_comparison": {
+    "status": "process_completed_not_accepted",
+    "unit": "lafan-pose-adapter-comparison.service",
+    "evaluation_unit": "lafan-pose-adapter-evaluation.service",
+    "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_comparison",
+    "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_training_pose_adapter_v1",
+    "config": "lafan_pose_adapter_comparison_config.json",
+    "global_num_envs": 1024,
+    "wm_batch": 512,
+    "pi_batch": 1024,
+    "iterations": 1000,
+    "checkpoints": [
+      500,
+      1000
+    ],
+    "formal": true,
+    "source": "formal stable LAFAN ckpt003000; no smoke weights",
+    "actor_lr": 2e-05,
+    "pose_skip_lr": 0.001,
+    "extra_parameters": 870,
+    "diagnostic": "pose_command_sensitivity.json",
+    "smoke": "pose_adapter_smoke_verification.json",
+    "final_inference": "Exact fixed-pose fold into decoder output bias; no extra input or layer",
+    "paired_baseline": "pose_command_sensitivity_paired_baseline.json",
+    "warmup_verified": true,
+    "final_reference_success_fraction": 0.02040816326530612
+  },
+  "delivery_export": {
+    "status": "implemented_gates_tested_not_executed",
+    "entry": "tools.export_aiming_policy",
+    "requires": "Two full independently seeded acceptance reports plus matching30s video from passed scenario",
+    "preserves": "All policy tensors and normalization buffers exactly",
+    "tests": "6export/initializationgate tests passed",
+    "weights_delivered": false
+  },
+  "pose_adapter_aux8": {
+    "status": "completed_not_accepted",
+    "unit": "lafan-pose-adapter-aux8.service",
+    "config": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/lafan_pose_adapter_aux8_config.json",
+    "source_sha256": "361a61c09cef89c13caac8b471f70778a049c403ed247b2588002bbaf7c2349b",
+    "iterations": 3000,
+    "global_num_envs": 1024,
+    "reference_joint_aux": 8,
+    "scope": "LAFAN only; no stage promotion",
+    "early_observation": {
+      "iteration": 325,
+      "dense_target_mse_rad2": 0.0639393,
+      "sim_reward_normalized": 0.574283,
+      "scope": "Training log only; independent evaluation pending"
+    },
+    "latest_observed_training_row": {
+      "iteration": "600",
+      "wall_h": "0.120143",
+      "sim_steps": "1601536",
+      "wm_loss": "0.0478242",
+      "wm_err8": "0.0740217",
+      "pi_loss": "-4.48847",
+      "v_loss": "0.029848",
+      "imag_rew": "0.492079",
+      "pi_gradnorm": "1.26438",
+      "imag_survival": "0.954738",
+      "sim_rew": "0.583405",
+      "ep_len": "382.532",
+      "ep_ret_norm": "0.48649",
+      "term_frac": "0.395683",
+      "touch_precision": "0.604072",
+      "touch_recall": "0.97848",
+      "it_per_s": "0.986657",
+      "lr": "0.000199997",
+      "phase_zero_frac": "0.411215",
+      "phase_lafan": "0.348224",
+      "reference_joint_aux_mse": "0.049556"
+    },
+    "command_sensitivity_1000": {
+      "checkpoint_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+      "data_hash": "a5f7aed562fba98f1ab3933a73be8431dbede4c982fdbf46fac74d1b1f72afd5",
+      "samples": 982,
+      "permutation_seed": 123,
+      "reference_state_target_rmse_rad": 0.17586341500282288,
+      "command_change_rmse_rad": 0.6994160413742065,
+      "response_rmse_rad": 0.26976412534713745,
+      "response_gain": 0.36082494258880615,
+      "latent_saturation_fraction": 0.5559127330780029,
+      "pose_action_skip": true,
+      "scope": "Counterfactual pose-command sensitivity at fixed reference proprioception. Diagnostic only, not physical acceptance"
+    },
+    "evaluation_status": "iteration1000 completed_not_accepted; training continues to3000",
+    "latest_independent_evaluation": {
+      "iteration": 1000,
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_aux8/train/ckpt_001000.pt",
+      "checkpoint_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+      "reference_passed": false,
+      "reference_successful_fraction": 0.0,
+      "standing_passed": false,
+      "standing_success_rate": 0.0,
+      "passed": false,
+      "scope": "Stage tracking and standing only; no aiming acceptance",
+      "complete_clips": 21,
+      "mean_root_rmse_m": 0.21008642245920336,
+      "mean_joint_rmse_rad": 0.24837311250822885,
+      "last_standing_failure_s": 7.5200000000000005,
+      "standing_failures_by_metric": {
+        "max_tilt_deg": 0,
+        "max_root_drift_m": 0,
+        "max_foot_drift_m": 100
+      }
+    },
+    "full_duration_standing_diagnostic": {
+      "report": "standing_full_duration_aux8_001000.json",
+      "checkpoint_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+      "seconds": 30,
+      "scenarios": 100,
+      "full_gate_passed": false,
+      "balance_only_success_rate": 1.0,
+      "feet_drift_failure_count": 100,
+      "median_max_foot_drift_m": 0.24396706372499466,
+      "scope": "Separates active balance from stationary support; unchanged full gate still failed",
+      "foot_motion_windows": "standing_foot_motion_windows.json"
+    },
+    "iterations_completed": 3000,
+    "final_checkpoint_sha256": "2b6742407e2d881e4992b2b5b999d7f8d307e7e95d32421d7e4c2109fe003b98",
+    "full_duration_3000": {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/standing_full_duration_aux8_003000.json",
+      "balance_only_success_rate": 0.6699999570846558,
+      "full_gate_passed": false,
+      "selected_for_JWP": false
+    },
+    "final_independent_evaluation": {
+      "iteration": 3000,
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_aux8/train/ckpt_003000.pt",
+      "checkpoint_sha256": "2b6742407e2d881e4992b2b5b999d7f8d307e7e95d32421d7e4c2109fe003b98",
+      "reference_passed": false,
+      "reference_successful_fraction": 0.0,
+      "standing_passed": false,
+      "standing_success_rate": 0.0,
+      "passed": false,
+      "scope": "Stage tracking and standing only; no aiming acceptance",
+      "complete_clips": 20,
+      "mean_root_rmse_m": 0.20391724577971868,
+      "mean_joint_rmse_rad": 0.20992009037611437,
+      "standing_observed_seconds": 6.4
+    }
+  },
+  "static_pose_diagnostics": {
+    "com_report": "quiet_pose_support_audit.json",
+    "min_static_support_margin_m": 0.04622565,
+    "fixed_pd_report": "static_pd_diagnostic.json",
+    "fixed_pd_success_fraction": 0.0,
+    "interpretation": "Quiet reference poses have COM inside approximate static support polygon but fixed joint PD targets fail all100 perturbed physical scenarios; active balance is necessary. Not a policy acceptance result."
+  },
+  "reference_direction_diagnostic": {
+    "report": "reference_direction_diagnostic.json",
+    "status": "completed",
+    "scope": "Read-only physical finite differences on training-source states; no optimizer updates",
+    "full_tail_report": "reference_direction_fulltail_batched.json",
+    "gradient_norms": {
+      "reward": 0.006148438900709152,
+      "tail": 0.047272324562072754,
+      "total": 0.04771261662244797
+    },
+    "reward_gradient_physical_gain": {
+      "mean": 0.004362029954791069,
+      "sem": 0.0005092596402391791,
+      "positive_fraction": 0.9375
+    },
+    "caveat": "Short physical tail means critic evaluated on real state, not measured future return; full-tail test is required. Baseline repeat has contact-solver variability.",
+    "full_tail_status": "completed",
+    "short_report_limitation": "Critic gradient norm0.0473 exceeds immediate reward gradient0.00615; good physical next-state derivative does not validate true long-term return gradient.",
+    "interpretation": "reference_direction_interpretation.json"
+  },
+  "reference_support_reward": {
+    "status": "completed_not_accepted",
+    "unit_tests": 5,
+    "reason": "Prior standing failures overwhelmingly persistent feet drift; add optional contact-label-gated world foot pose/velocity reward and tighter root reward",
+    "scales_m_m_s": {
+      "root": 0.1,
+      "support_position": 0.05,
+      "support_velocity": 0.1
+    },
+    "acceptance_unchanged": true,
+    "smoke_unit": "reference-support-smoke.service",
+    "smoke_status": "passed_not_formal",
+    "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_training_support_v1",
+    "proposed_weights": {
+      "root": 2,
+      "support_position": 2,
+      "support_velocity": 1
+    },
+    "verification": "reference_support_smoke_verification.json",
+    "unit": "lafan-reference-support.service",
+    "evaluation_unit": "lafan-reference-support-evaluation.service",
+    "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_reference_support",
+    "config": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/lafan_reference_support_config.json",
+    "iterations": 2000,
+    "global_num_envs": 1024,
+    "wm_batch": 512,
+    "pi_batch": 1024,
+    "wm_only_iters": 50,
+    "critic_warmup_iters": 200,
+    "source": "formal LAFAN aux8 ckpt001000",
+    "source_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+    "simulation_reward": "Same base+labels+support reward as imagined optimization; normalized log denominator changes to0.22; old normalized reward is not directly comparable",
+    "early_training": {
+      "iteration": "1050",
+      "wall_h": "0.344087",
+      "sim_steps": "2753536",
+      "wm_loss": "0.0455293",
+      "wm_err8": "0.0704693",
+      "pi_loss": "-7.53946",
+      "v_loss": "0.0622328",
+      "imag_rew": "0.410833",
+      "pi_gradnorm": "2.24922",
+      "imag_survival": "0.970338",
+      "sim_rew": "0.406181",
+      "ep_len": "386.929",
+      "ep_ret_norm": "0.344652",
+      "term_frac": "0.222222",
+      "touch_precision": "0.574385",
+      "touch_recall": "0.984408",
+      "it_per_s": "0.674554",
+      "lr": "0.000199992",
+      "phase_zero_frac": "0.514019",
+      "phase_lafan": "0.274579",
+      "reference_joint_aux_mse": "0.0486265"
+    },
+    "foot_motion_evidence": "Foot displacement remains~0.24m and mean foot speed~0.1m/s even during20-30s; persistent stepping, not just initial settling.",
+    "latest_independent_evaluation": {
+      "iteration": 1000,
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_reference_support/train/ckpt_001000.pt",
+      "checkpoint_sha256": "ccc6ebcd0739a545bf8e613cd08feba0a406705952aa860c4056acc856e35560",
+      "reference_passed": false,
+      "reference_successful_fraction": 0.04081632653061224,
+      "standing_passed": false,
+      "standing_success_rate": 0.0,
+      "passed": false,
+      "scope": "Stage tracking and standing only; no aiming acceptance",
+      "complete_clips": 22,
+      "mean_root_rmse_m": 0.19111961536869712,
+      "mean_joint_rmse_rad": 0.23849910376023273,
+      "standing_observed_s": 6.5,
+      "standing_failures_by_metric": {
+        "max_tilt_deg": 0,
+        "max_root_drift_m": 0,
+        "max_foot_drift_m": 100
+      }
+    },
+    "full30s_diagnostic1000": {
+      "checkpoint_sha256": "ccc6ebcd0739a545bf8e613cd08feba0a406705952aa860c4056acc856e35560",
+      "passed": false,
+      "success_rate": 0.0,
+      "balance_only_success_rate": 1.0,
+      "elapsed_sim_seconds": 30.0,
+      "median_max_foot_drift_m": 0.19629862904548645,
+      "median_max_tilt_deg": 10.742901802062988,
+      "report": "standing_full_duration_support_001000.json"
+    },
+    "final_independent_evaluation": {
+      "iteration": 2000,
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_reference_support/train/ckpt_002000.pt",
+      "checkpoint_sha256": "c5c19e908f4117241219d3a54031b6b5c14c89a4076d811eec3d16eb050d84c1",
+      "reference_passed": false,
+      "reference_successful_fraction": 0.061224489795918366,
+      "standing_passed": false,
+      "standing_success_rate": 0.0,
+      "passed": false,
+      "scope": "Stage tracking and standing only; no aiming acceptance",
+      "complete_clips": 23,
+      "mean_root_rmse_m": 0.18642724244570247,
+      "mean_joint_rmse_rad": 0.23408433034711953,
+      "standing_observed_s": 4.76,
+      "standing_failure_counts": {
+        "max_tilt_deg": 31,
+        "max_root_drift_m": 0,
+        "max_foot_drift_m": 97
+      }
+    }
+  },
+  "reference_stage_schedule": {
+    "clarification": "G2 LAFAN foundation precedes G3 JWP fine-tuning. The unchanged stage1_gate applies before the reference-free G4 curriculum, as enforced by prepare_wide_aiming_init. Failed LAFAN reports remain failed; no gate is claimed passed by a training process completion. G3 must validate both held-out LAFAN and JWP sources.",
+    "evidence": "LAFAN aux8 checkpoint1000 maintains balance100/100for30s; all fail stationary-foot condition. JWP is the requested next reference-learning phase and supplies the task-specific stationary data.",
+    "criteria_changed": false,
+    "acceptance_contract_unchanged": true,
+    "next": "Select a completed formal LAFAN checkpoint after its pending evaluation, start JWP80/LAFAN20 fine-tuning with support reward; preserve current LAFAN support comparison."
+  },
+  "workflow_revision_balance_recovery": {
+    "time": "2026-11-16 02:38:28",
+    "reason": "Reference tracking rewards intentional motion and has not learned quiet support. Requiring stationary support before training the balance curriculum prevents learning the missing skill. Start explicitly unaccepted balance-only training after formal LAFAN then JWP; retain every failed source benchmark.",
+    "old_stage1_reference_gate": "Unchanged diagnostic threshold and all failure records retained; experimental initialization is explicitly separate from validated-source initialization.",
+    "promotion": "Two independent full30s reference-free balance evaluations with perturbed resets required before aim_weight>0. Existing per-stage promotion gates remain.",
+    "final_acceptance": "Unchanged standing/moving target grids,random episodes,precision,30s,no-reference inference,independent seeds and video requirements. No policy accepted or delivered.",
+    "training_order": "LAFAN from scratch -> JWP80/LAFAN20 -> balance recovery -> aiming -> moving"
+  },
+  "last_runtime_snapshot": {
+    "time": "2026-11-16 10:05:32.785083",
+    "active_training": [
+      "center-distal-skip-training.service"
+    ],
+    "active_evaluation_workers": [
+      "center-distal-skip-evaluation.service",
+      "distal-feedback-calibration-evaluation.service",
+      "distal-feedback-stronger-evaluation.service"
+    ],
+    "active_diagnostic": null,
+    "accepted_policies": 0,
+    "standing_aiming_delivered": false,
+    "moving_aiming_delivered": false,
+    "php_background_owner_inactive": true
+  },
+  "last_goal_turn_classification": {
+    "status": "active_meaningful_progress",
+    "reason": "400/600/800physicalaimingimprovementobserved;fulltargetreachabilityandbodyturninglimitationsmeasured;qualified45parameterdirecttargetfeatureextensionthroughunit,compile,andtwoGPUtests;singleownerhandofffrom800function-preservinginit toformalnewtraining"
+  },
+  "observed_support_training": {
+    "status": "stopped_both_physical_comparisons_failed",
+    "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v10",
+    "source_checkpoint_sha256": "129da13f040d189c8d0185dca4142b164feb88c24fa74c1d9ed20ab4b184dcd5",
+    "initialization_sha256": "f1aad639b9a45e16c88c1eaa6e7f003a0173f156b600652b05d603d5860ebe92",
+    "tests_passed": 37,
+    "compile_gradient_relative_error": 3.0269186481746146e-06,
+    "physical_interface_passed": true,
+    "physical_policy_acceptance": false,
+    "capture_after_seconds": 3,
+    "support_target": "current measured world feet; release on target changes or commanded movement",
+    "motion_files_at_inference": false,
+    "acceptance_changed": false,
+    "smoke_unit": "observed-support-smoke.service",
+    "smoke_run": "logs/tienkung3_29dof/lafan_jwp_20261115/observed_support_smoke/train",
+    "smoke_is_not_formal_initialization": true,
+    "formal_plan": {
+      "created": "2026-11-16 06:26:29.993992",
+      "unit": "observed-support-training.service",
+      "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/observed_support/train",
+      "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v10",
+      "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/observed_support_init.pt",
+      "init_sha256": "f1aad639b9a45e16c88c1eaa6e7f003a0173f156b600652b05d603d5860ebe92",
+      "iterations": 1500,
+      "global_num_envs": 2048,
+      "wm_batch": 1024,
+      "pi_batch": 1024,
+      "horizon": 32,
+      "wm_window": 16,
+      "wm_only_iters": 100,
+      "critic_warmup_iters": 100,
+      "actor_lr": 1e-06,
+      "checkpoint_every": 50,
+      "evaluation_iterations": [
+        250,
+        300,
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1500
+      ],
+      "evaluation_seeds": [
+        17,
+        53
+      ],
+      "parallel_evaluation_gpus": [
+        0,
+        1
+      ],
+      "source_smoke": false,
+      "physical_acceptance": false,
+      "acceptance_changed": false
+    },
+    "smoke_verification": "observed_support_smoke_verification.json",
+    "warmup100_verification": "observed_support_warmup100_verification.json",
+    "latest_training_status": {
+      "iteration": 300,
+      "phase": "joint",
+      "level": 0,
+      "stage": "balance",
+      "sim_reward": 0.1889679729938507,
+      "physical_termination_fraction": 0.0,
+      "physical_timeout_fraction": 0.0,
+      "mean_physical_episode_age_s": 20.53999900817871,
+      "completed_physical_episodes": 0,
+      "mean_completed_physical_episode_s": null,
+      "observed_support_locked_fraction": 1.0,
+      "wm_loss": 0.0006133728311397135,
+      "model_ready": true,
+      "critic_warmup_done": 100,
+      "updates": {
+        "wm": 3000,
+        "critic": 4000,
+        "pi": 100
+      },
+      "elapsed_s": 810.3328271009959,
+      "actor_loss": -18.812477111816406,
+      "critic_loss": 0.06953629851341248,
+      "actor_grad": 2.519662618637085,
+      "critic_grad": 4.044798851013184,
+      "actor_value_gradient": 0.0,
+      "imagined_reward_objective": 5.243624687194824,
+      "bootstrap_objective": 13.568854331970215,
+      "bootstrap_max": 24.314374923706055,
+      "return_target_max": 24.28494644165039
+    },
+    "initial_model_gate": {
+      "passed": true,
+      "report": "logs/tienkung3_29dof/lafan_jwp_20261115/observed_support/train/wm_validation/000100.json",
+      "feet_m_p95_H32": 0.004015895538032055,
+      "scope": "prediction gate only; physical standing acceptance pending"
+    },
+    "preactor200_verification": "observed_support_preactor200_verification.json",
+    "evaluation_active_checkpoint": null,
+    "intentional_stop": {
+      "time": "2026-11-16 06:40:55.079116",
+      "unit": "observed-support-training.service",
+      "reason": "First250fullphysicalevaluationsshowseverebalanceregressionat~15s; stopboundedbranch,preservepreactor200andcompletealreadyrunning300evaluation.",
+      "latest_logged_iteration": 300,
+      "physical_report": "observed_support250_comparison.json",
+      "policy_acceptance": false,
+      "acceptance_changed": false
+    },
+    "first_physical_evaluation": "observed_support250_comparison.json",
+    "second_physical_evaluation": "observed_support300_comparison.json",
+    "preactor_physical_evaluation": "observed_support200_comparison.json",
+    "preactor_balanced_episodes": 202,
+    "com_diagnostic": "observed_support_com_diagnostic.json"
+  },
+  "wide_grid_geometry": {
+    "report": "wide_grid_geometry.json",
+    "scenarios": 75,
+    "within_5cm_count": 75,
+    "worst_error_m": 4.951133405484143e-07,
+    "physical_acceptance": false,
+    "scope": "Kinematic direction search from the exact tracker-derived pose; no policy, dynamics, collision, or stability acceptance."
+  },
+  "support_error_adapter": {
+    "status": "stopped_after_physical_plateau",
+    "source": "logs/tienkung3_29dof/lafan_jwp_20261115/observed_support/train/ckpt_000200.pt",
+    "policy_backbone": "frozen",
+    "trainable_columns": "encoder first6, driven only by base-frame measured foot position error",
+    "input_normalization_std_m": 0.05,
+    "actor_lr": 0.0001,
+    "source_accepted": false,
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "reason": "Fullactorupdatesdestroyedprevious202/202balance;retainoriginalnetworkandtrainonlynewfeedbackinputs",
+    "initialization": "support_error_adapter_init.pt",
+    "initialization_sha256": "52fb9962f243b3ad4cc4a5765932e2ded68df756f1cb5a14d1247ec042685dc7",
+    "initialization_verification": {
+      "source_accepted": false,
+      "source_checkpoint_sha256": "39bec21543b001ef6f8a157ab998373a547103ddddc2ad58690c35f8ec48d6a7",
+      "policy_function_max_difference_rad": 0.0,
+      "normalizer_change": "Only first6 channels: zero mean,0.05m standard deviation",
+      "trainable_policy_elements": 12288,
+      "frozen_policy": "All existing parameters; only first6 columns of encoder input weights train",
+      "no_feedback_when": "Before support capture, during movement, or exactly zero support error",
+      "physical_acceptance": false
+    },
+    "tests_passed": 16,
+    "rotated_coordinate_tests_passed": 3,
+    "compile_check_unit": "support-error-adapter-compile-check.service",
+    "physical_check_unit": "support-error-adapter-physics-check.service",
+    "planned_formal_source": "support_error_adapter_init.pt",
+    "smoke_weights_for_formal_initialization": false,
+    "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v11",
+    "compile_gradient_relative_error": 1.340516064374242e-05,
+    "physical_interface_passed": true,
+    "smoke_unit": "support-error-adapter-smoke.service",
+    "smoke_verification": "support_error_adapter_smoke_verification.json",
+    "formal_plan": {
+      "created": "2026-11-16 07:00:30.577808",
+      "unit": "support-error-adapter-training.service",
+      "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/support_error_adapter/train",
+      "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v11",
+      "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_error_adapter_init.pt",
+      "init_sha256": "52fb9962f243b3ad4cc4a5765932e2ded68df756f1cb5a14d1247ec042685dc7",
+      "iterations": 1500,
+      "global_num_envs": 2048,
+      "wm_batch": 1024,
+      "pi_batch": 1024,
+      "horizon": 32,
+      "wm_window": 16,
+      "wm_only_iters": 100,
+      "critic_warmup_iters": 100,
+      "actor_lr": 0.0001,
+      "policy_training_scope": "support_error_inputs",
+      "trainable_policy_elements": 12288,
+      "checkpoint_every": 50,
+      "evaluation_iterations": [
+        250,
+        300,
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1500
+      ],
+      "evaluation_seeds": [
+        17,
+        53
+      ],
+      "parallel_evaluation_gpus": [
+        0,
+        1
+      ],
+      "source_smoke": false,
+      "physical_acceptance": false,
+      "acceptance_changed": false
+    },
+    "warmup100_verification": "support_error_adapter100_verification.json",
+    "latest_training_status": {
+      "iteration": 675,
+      "phase": "joint",
+      "level": 0,
+      "stage": "balance",
+      "sim_reward": 0.19453953206539154,
+      "physical_termination_fraction": 0.0,
+      "physical_timeout_fraction": 0.0,
+      "mean_physical_episode_age_s": 13.039999961853027,
+      "completed_physical_episodes": 0,
+      "mean_completed_physical_episode_s": null,
+      "observed_support_locked_fraction": 1.0,
+      "wm_loss": 0.00031885539647191763,
+      "model_ready": true,
+      "critic_warmup_done": 100,
+      "updates": {
+        "wm": 6750,
+        "critic": 11500,
+        "pi": 475
+      },
+      "elapsed_s": 1704.1683941970114,
+      "actor_loss": -15.46900463104248,
+      "critic_loss": 0.3544831871986389,
+      "actor_grad": 0.003105686279013753,
+      "critic_grad": 12.555522918701172,
+      "actor_value_gradient": 0.0,
+      "imagined_reward_objective": 4.946528434753418,
+      "bootstrap_objective": 10.522476196289062,
+      "bootstrap_max": 22.05324363708496,
+      "return_target_max": 21.56683921813965
+    },
+    "initial_model_gate": {
+      "passed": true,
+      "report": "logs/tienkung3_29dof/lafan_jwp_20261115/support_error_adapter/train/wm_validation/000100.json",
+      "H32": {
+        "windows": 96,
+        "total_windows": 96,
+        "root_m_p95": 0.0029033401515334845,
+        "root_m_rmse": 0.0018891332438215613,
+        "feet_m_p95": 0.00372990220785141,
+        "feet_m_rmse": 0.001648854580707848,
+        "feet_velocity_m_s_p95": 0.013769993558526039,
+        "feet_velocity_m_s_rmse": 0.024971775710582733,
+        "joints_rad_p95": 0.0017700896132737398,
+        "joints_rad_rmse": 0.0011985631426796317,
+        "tcp_m_p95": 0.00401864480227232,
+        "tcp_m_rmse": 0.0026538518723100424,
+        "direction_deg_p95": 0.3414457440376282,
+        "direction_deg_rmse": 0.20025165379047394,
+        "tip_m_p95": 0.016555072739720345,
+        "tip_m_rmse": 0.009630081243813038
+      },
+      "scope": "Prediction gate only; physical acceptance pending"
+    },
+    "preactor200_verification": "support_error_adapter200_verification.json",
+    "first_physical_report": "support_error_adapter250_comparison.json",
+    "first_physical_results": [
+      {
+        "seed": 17,
+        "balance_only_success_rate": 1.0,
+        "full_success_rate": 0.12871287128712872,
+        "foot_drift_median_m": 0.0667019933462143,
+        "baseline_foot_drift_median_m": 0.07436591386795044,
+        "full_gate_passed": false
+      },
+      {
+        "seed": 53,
+        "balance_only_success_rate": 1.0,
+        "full_success_rate": 0.09900990099009901,
+        "foot_drift_median_m": 0.06546066701412201,
+        "baseline_foot_drift_median_m": 0.07387351989746094,
+        "full_gate_passed": false
+      }
+    ],
+    "checkpoint250_frozen_verification": "support_error_adapter250_verification.json",
+    "latest_physical_report": "support_error_adapter600_comparison.json",
+    "latest_physical_results": [
+      {
+        "seed": 17,
+        "full_gate_passed": false,
+        "full_success_rate": 0.16831683168316833,
+        "balance_only_success_rate": 1.0,
+        "balanced_episodes_median_foot_drift_m": 0.055953897535800934
+      },
+      {
+        "seed": 53,
+        "full_gate_passed": false,
+        "full_success_rate": 0.1782178217821782,
+        "balance_only_success_rate": 1.0,
+        "balanced_episodes_median_foot_drift_m": 0.0549868568778038
+      }
+    ],
+    "best_evaluated_iteration": 300,
+    "training_decision": "Continueboundedrun:400preserves202/202balancebutfullsuccessandfootdriftplateau;donotpromote,retain300.",
+    "intentional_stop": {
+      "time": "2026-11-16 07:29:28.487248",
+      "reason": "400and600physicalresultsshowfootdriftplateauafterbest300;nominalquietvelocitypredictionerrorlargerthanactualcreep. Stopgradientbranchandcalibratethealready-learnedfeedbackgainusingfullphysics,withsameacceptance.",
+      "latest_logged_iteration": 675,
+      "retained_best_iteration": 300,
+      "policy_acceptance": false
+    },
+    "late_dynamics": "support_error_adapter300_late_dynamics.json",
+    "motion_windows": "support_error_adapter_motion_windows.json"
+  },
+  "aiming_parameter_scope_preparation": {
+    "status": "implemented_and_unit_tested_not_launched",
+    "scope": "support_and_right_arm_outputs",
+    "allowed_curriculum_levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tests": "right_arm_scope_tests.log",
+    "tests_passed": 4,
+    "body_parameters": "frozen except the already introduced support-error input columns",
+    "conditional_output_invariance": "same inputs and zero support error: all non-right-arm joint outputs remain exact",
+    "requires_before_launch": "two full physical balance stage passes for the exact source checkpoint; compiled and dualGPU integration checks",
+    "changes_to_running_v11": false,
+    "physical_acceptance": false
+  },
+  "support_gain_calibration": {
+    "status": "completed_all_candidates_failed",
+    "unit": "support-gain-physical-calibration.service",
+    "source_iteration": 300,
+    "source_sha256": "257cdebe57649f8aa1a3197770a6a47035ea45643df6b193dcb24b912cb97681",
+    "gains": [
+      1.5,
+      2,
+      3,
+      4
+    ],
+    "candidates_dir": "support_gain_candidates",
+    "evaluation_dir": "evaluation_support_gain_calibration",
+    "development_seeds": [
+      17,
+      53
+    ],
+    "evaluation": "exactcandidate,full30s,fixedgrid+100randomperseed,noreset",
+    "tests_passed": 9,
+    "stop_after_first_passing_gain": true,
+    "changed_tensors": "encoder first6 input columns only; scalar gain folded into weights",
+    "inference_extra_dependencies": false,
+    "final_policy_acceptance": false,
+    "results": [
+      {
+        "gain": 1.5,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_1.5.pt",
+        "checkpoint_sha256": "fff30ff5101934df6949b87e71a39d58b431872f7811717fcd5ef0525b67bb62",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.49
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.54
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      },
+      {
+        "gain": 2.0,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_2.pt",
+        "checkpoint_sha256": "2d5d124a10a9eb8d0f455be4f310f66a663de64d4d0e6325ba71ca68d0c1eec8",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.57
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.62
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      },
+      {
+        "gain": 3.0,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_3.pt",
+        "checkpoint_sha256": "47233ed57c21bf22fbe6546cfd941c1b315836f9a5d0c258676572d94b43219f",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.69
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.71
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      },
+      {
+        "gain": 4.0,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_4.pt",
+        "checkpoint_sha256": "9d7a31312264cb8358341e74b82c9581f80787b2b546876ec482362753bb7568",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.32
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.4
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      }
+    ],
+    "selected_checkpoint": null,
+    "prefall_direction_report": "support_gain_prefall_direction.json",
+    "interpretation": "Higherall-axisgainreducesfeetdriftbutcausesbackwardbodyinstability;gain4balanceunder50%.Noacceptedcandidate."
+  },
+  "support_lateral_gain_calibration": {
+    "status": "completed_all_candidates_failed",
+    "unit": "support-lateral-gain-physical-calibration.service",
+    "gains": [
+      3,
+      6,
+      12
+    ],
+    "source_sha256": "257cdebe57649f8aa1a3197770a6a47035ea45643df6b193dcb24b912cb97681",
+    "axes": "currentbaseYforleftandrightfeet;X/Zerrorinputweightszeroed",
+    "candidates_dir": "support_lateral_gain_candidates",
+    "evaluation_dir": "evaluation_support_lateral_gain",
+    "tests_passed": 10,
+    "acceptance": "Unchanged full3Dfootdrift<=.05m,balance30s,fixed+100random,twoindependentdevelopmentseeds",
+    "final_policy_acceptance": false,
+    "results": [
+      {
+        "gain": 3.0,
+        "axes": "lateral",
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_3.pt",
+        "checkpoint_sha256": "5947208d02d56f1f2adb5f9fc83553e85bafca89ee608f9962fc10933f011380",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.11
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.09
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      },
+      {
+        "gain": 6.0,
+        "axes": "lateral",
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_6.pt",
+        "checkpoint_sha256": "925251d96d5ed774490e827cb9d1a59dbfa8cf0a906dbb8784a6662a10177d76",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": false,
+            "random_success_rate": 0.0
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": false,
+            "random_success_rate": 0.0
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      },
+      {
+        "gain": 12.0,
+        "axes": "lateral",
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_12.pt",
+        "checkpoint_sha256": "432670ca2c6fcfa7b239ae48fb6bdadc3f59727fb219c25369ba771a784cfa2f",
+        "passed": false,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": false,
+            "fixed_grid_all_pass": false,
+            "random_success_rate": 0.0
+          },
+          {
+            "seed": 53,
+            "passed": false,
+            "fixed_grid_all_pass": false,
+            "random_success_rate": 0.0
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      }
+    ],
+    "comparison": "support_lateral_gain_comparison.json"
+  },
+  "stance_bias_calibration": {
+    "status": "balance_stage_passed",
+    "source": "support_gain_candidates/gain_1.5.pt",
+    "source_sha256": "fff30ff5101934df6949b87e71a39d58b431872f7811717fcd5ef0525b67bb62",
+    "direction": "stance_inward_direction_diagnostic.json",
+    "nominal_inward_distances_m": [
+      0.0025,
+      0.005,
+      0.01
+    ],
+    "policy_change": "native12leg decoder bias only; all other parameters and normalizers exact",
+    "extra_runtime_controller": false,
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "unit": "stance-bias-physical-calibration.service",
+    "evaluation_dir": "evaluation_stance_bias",
+    "candidate_raw_action_function_errors_rad": [
+      4.563480615615845e-08,
+      3.166496753692627e-08,
+      4.400499165058136e-08
+    ],
+    "results": [
+      {
+        "scale": 0.25,
+        "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_0.25.pt",
+        "checkpoint_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+        "passed": true,
+        "reports": [
+          {
+            "seed": 17,
+            "passed": true,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.97
+          },
+          {
+            "seed": 53,
+            "passed": true,
+            "fixed_grid_all_pass": true,
+            "random_success_rate": 0.98
+          }
+        ],
+        "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+      }
+    ],
+    "selected_checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_0.25.pt",
+    "comparison": "stance_bias_0p25_comparison.json",
+    "balanced_episodes": 202,
+    "total_episodes": 202,
+    "random_full_success_rates": [
+      0.97,
+      0.98
+    ],
+    "final_policy_acceptance": false,
+    "visual_check": "balance_stage_passed_snapshot.png; fixedscenario recorded3s/15s/30s inspected; balanceonly"
+  },
+  "aiming_arm_only_preparation": {
+    "status": "formal_center_training_started",
+    "scope": "right_arm_outputs",
+    "tests_passed": 5,
+    "tests": "right_arm_only_scope_tests.log",
+    "compile_unit": "right-arm-only-compile-check.service",
+    "compile_source": "support_gain_candidates/gain_1.5.pt",
+    "compile_source_accepted": false,
+    "training_started": true,
+    "physical_acceptance": false,
+    "requires_before_training": "exact source passes both full balance stage reports; compiled parity and dualGPU smoke checks",
+    "runner": "frozen_balance_recovery_v12",
+    "smoke_unit": "center-arm-only-smoke.service",
+    "source": "stance_bias_candidates/inward_0.25.pt",
+    "source_balance_stage_accepted": true,
+    "source_final_accepted": false,
+    "compile_passed": true,
+    "compile_gradient_relative_error": 1.7644621038925834e-05,
+    "formal_plan": "center_arm_only_training_plan.json",
+    "smoke_verification": "center_arm_only_smoke_verification.json",
+    "smoke_passed": true,
+    "source_smoke": false
+  },
+  "center_arm_only_training": {
+    "status": "stopped_after_physical_regression",
+    "unit": "center-arm-only-training.service",
+    "evaluation_unit": "center-arm-only-evaluation.service",
+    "plan": "center_arm_only_training_plan.json",
+    "source_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+    "source_balance_stage_passed": true,
+    "physical_aiming_acceptance": false,
+    "latest_status": {
+      "iteration": 375,
+      "phase": "joint",
+      "level": 1,
+      "stage": "center",
+      "sim_reward": 0.15176069736480713,
+      "physical_termination_fraction": 0.0052083334885537624,
+      "physical_timeout_fraction": 0.0,
+      "mean_physical_episode_age_s": 10.808013916015625,
+      "completed_physical_episodes": 32,
+      "mean_completed_physical_episode_s": 25.037498474121094,
+      "observed_support_locked_fraction": 0.4013671875,
+      "wm_loss": 0.0010194048518314958,
+      "model_ready": true,
+      "critic_warmup_done": 100,
+      "updates": {
+        "wm": 3750,
+        "critic": 4000,
+        "pi": 100
+      },
+      "elapsed_s": 798.2692031149636,
+      "actor_loss": -16.916662216186523,
+      "critic_loss": 0.07711168378591537,
+      "actor_grad": 10.063004493713379,
+      "critic_grad": 4.0532097816467285,
+      "actor_value_gradient": 0.0,
+      "imagined_reward_objective": 6.0391693115234375,
+      "bootstrap_objective": 10.877492904663086,
+      "bootstrap_max": 22.488313674926758,
+      "return_target_max": 21.77382469177246
+    },
+    "model_gate100": {
+      "passed": true,
+      "horizon": 32,
+      "tip_m_p95": 0.019145015627145767,
+      "feet_m_p95": 0.004453880712389946
+    },
+    "warmup100_verification": "center_arm_only100_verification.json",
+    "initial_aiming_diagnostic": "center_aiming_initial_baseline.json",
+    "evaluation_diagnostics": "summarize_aiming_eval.py separates balance, aiming and full acceptance without changing pass flags",
+    "warmup200_verification": "center_arm_only200_verification.json",
+    "first_actor_checkpoint_verification": "center_arm_only250_verification.json",
+    "first_physical_comparison": "center_arm_only250_comparison.json",
+    "iteration250_results": [
+      {
+        "seed": 17,
+        "balanced_episodes": 94,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 0.6506662368774414,
+        "balanced_foot_drift_after3s_m_median": 0.08696051687002182
+      },
+      {
+        "seed": 53,
+        "balanced_episodes": 94,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 0.6299037337303162,
+        "balanced_foot_drift_after3s_m_median": 0.08662024140357971
+      }
+    ],
+    "latest_comparison": "center_arm_only400_comparison.json",
+    "stop_record": "evaluation_center_arm_only/intentional_stop.json",
+    "iteration400_results": [
+      {
+        "seed": 17,
+        "balanced_episodes": 14,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 0.3720349967479706,
+        "balanced_foot_drift_after3s_m_median": 0.07137661427259445
+      },
+      {
+        "seed": 53,
+        "balanced_episodes": 14,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 0.33054015040397644,
+        "balanced_foot_drift_after3s_m_median": 0.07286610454320908
+      }
+    ]
+  },
+  "center_combined_adaptation": {
+    "status": "stopped_after_physical_regression",
+    "source": "logs/tienkung3_29dof/lafan_jwp_20261115/center_arm_only/train/ckpt_000250.pt",
+    "source_sha256": "517f9cbbdbb94951f15cec7389e18a64165ca23d5b43a0d81910f77fa04c8572",
+    "source_full_center_passed": false,
+    "source_balanced_episodes": 188,
+    "source_total_episodes": 202,
+    "training_scope": "support_and_right_arm_outputs",
+    "actor_lr": 1e-05,
+    "support_actor_lr": 0.0001,
+    "frozen": "All other policy weights and normalizers; calibrated native leg decoder biases retained",
+    "reason": "Arm-only motion improved aim but destabilized physical balance; permit already introduced support feedback to adapt jointly with slower arm updates",
+    "compile_unit": "center-combined-compile-check.service",
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "runner": "frozen_balance_recovery_v14",
+    "smoke_unit": "center-combined-smoke-v2.service",
+    "tests_passed": 6,
+    "training_plan": "center_combined_training_plan.json",
+    "moving_initialization_compatibility": "workingtree prepare_moving_aiming_init resets scope to full and removes standing support optimizer rate; exact inherited policy weights and full standing acceptance prerequisites unchanged; moving not launched",
+    "initial_smoke_rejection": "center_combined_smoke_v1_rejection.json",
+    "compile_passed": true,
+    "compile_gradient_relative_error": 4.9325291911372915e-05,
+    "smoke_passed": true,
+    "smoke_verification": "center_combined_smoke_verification.json",
+    "training_unit": "center-combined-training.service",
+    "evaluation_unit": "center-combined-evaluation.service",
+    "source_smoke": false,
+    "latest_status": {
+      "iteration": 400,
+      "phase": "joint",
+      "level": 1,
+      "stage": "center",
+      "sim_reward": 0.15323202311992645,
+      "physical_termination_fraction": 0.004069010727107525,
+      "physical_timeout_fraction": 0.0,
+      "mean_physical_episode_age_s": 3.106966018676758,
+      "completed_physical_episodes": 25,
+      "mean_completed_physical_episode_s": 25.991201400756836,
+      "observed_support_locked_fraction": 0.1044921875,
+      "wm_loss": 0.00045509112533181906,
+      "model_ready": true,
+      "critic_warmup_done": 100,
+      "updates": {
+        "wm": 4000,
+        "critic": 6000,
+        "pi": 200
+      },
+      "elapsed_s": 900.86401483597,
+      "actor_loss": -16.898630142211914,
+      "critic_loss": 0.04310297220945358,
+      "actor_grad": 7.162951469421387,
+      "critic_grad": 1.9520485401153564,
+      "actor_value_gradient": 0.0,
+      "imagined_reward_objective": 5.564780235290527,
+      "bootstrap_objective": 11.333850860595703,
+      "bootstrap_max": 25.966848373413086,
+      "return_target_max": 25.93463134765625
+    },
+    "warmup100_verification": "center_combined100_verification.json",
+    "model_gate100": {
+      "passed": true,
+      "horizon": 32,
+      "tip_m_p95": 0.032590098679065704,
+      "feet_m_p95": 0.005036718212068081
+    },
+    "warmup200_verification": "center_combined200_verification.json",
+    "temporal_coverage_audit": "center_training_temporal_coverage_audit.json",
+    "late_dynamics_diagnostic": "center_combined200_late_dynamics.json",
+    "late_dynamics_summary": {
+      "model_position_and_tip_gate_passed": true,
+      "late20to30": {
+        "windows": 98,
+        "root_error_p95_m": 0.00554990116506815,
+        "aim_tip_error_p95_m": 0.02790878713130951,
+        "feet_position_error_p95_m": 0.003567282110452652,
+        "foot_velocity_error_p95_m_s": 0.03327605128288269,
+        "signed_foot_velocity_error_xyz_m_s": [
+          0.006737207528203726,
+          -0.0002263019559904933,
+          0.0014859733637422323
+        ],
+        "actual_foot_speed_median_m_s": 0.002195144072175026,
+        "predicted_foot_speed_median_m_s": 0.008731227368116379
+      },
+      "physical_policy_acceptance": false,
+      "interpretation": "Late position and aim-tip errors remain below current stage thresholds; speed prediction bias remains. This read-only auto-reset diagnostic does not prove a cause or certify a policy. Initial collection length remains unchanged pending actual combined policy evaluation."
+    },
+    "first_actor_checkpoint_verification": "center_combined250_verification.json",
+    "first_physical_comparison": "center_combined250_comparison.json",
+    "iteration250_results": [
+      {
+        "seed": 17,
+        "balanced_episodes": 65,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 0.5487158298492432,
+        "balanced_foot_drift_after3s_m_median": 0.10329652577638626
+      },
+      {
+        "seed": 53,
+        "balanced_episodes": 77,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 0.4907173812389374,
+        "balanced_foot_drift_after3s_m_median": 0.10090957581996918
+      }
+    ],
+    "latest_comparison": "center_combined400_comparison.json",
+    "stop_record": "evaluation_center_combined/intentional_stop.json",
+    "iteration400_results": [
+      {
+        "seed": 17,
+        "balanced_episodes": 44,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 1.2243880033493042,
+        "balanced_foot_drift_after3s_m_median": 0.06088048592209816
+      },
+      {
+        "seed": 53,
+        "balanced_episodes": 41,
+        "fully_passed_episodes": 0,
+        "balanced_postgrace_error_m_median": 1.206849455833435,
+        "balanced_foot_drift_after3s_m_median": 0.061019256711006165
+      }
+    ]
+  },
+  "center_fixed_pose_diagnostic": {
+    "status": "completed_all_candidates_failed",
+    "unit": "center-fixed-pose-evaluation.service",
+    "source": "stance_bias_candidates/inward_0.25.pt",
+    "source_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+    "source_full_balance_stage_passed": true,
+    "geometry": "wide_grid_geometry.json",
+    "geometry_index": 37,
+    "gravity_compensation_gains": [
+      0.0,
+      1.0
+    ],
+    "changed_policy": "Only native right-arm decoder rows; constant IK PD targets with optional static gravity compensation",
+    "all_other_weights_and_normalizers_exact": true,
+    "scope": "Fixed center3m diagnostic; not variable targets or final acceptance",
+    "evaluation": "Full30s,1fixed+100randomperseed,seeds17/53",
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "balanced_episodes": 0,
+    "total_episodes": 404,
+    "comparisons": [
+      "center_fixed_pose_no_gravity_comparison.json",
+      "center_fixed_pose_gravity_comparison.json"
+    ]
+  },
+  "observed_arm_center_diagnostic": {
+    "status": "completed_all_candidates_failed",
+    "unit": "observed-arm-center-evaluation.service",
+    "source": "stance_bias_candidates/inward_0.25.pt",
+    "source_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+    "pose_trajectory": "evaluation_center_arm_only/iteration_000250/seed_17.npz",
+    "pose_frame": 500,
+    "pose_scenario": 0,
+    "pose_scenario_balanced_full30s": true,
+    "candidates": [
+      "observed pose with gravity compensation",
+      "distal-only center IK with gravity compensation",
+      "distal-only center IK with half gravity compensation"
+    ],
+    "distal_joints": [
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "distal_ik_torch_and_mujoco_agree": true,
+    "initial_reset_pose_unchanged": true,
+    "all_non_right_arm_policy_weights_exact": true,
+    "final_policy_acceptance": false,
+    "acceptance_changed": false,
+    "evaluation": "Full30s,1fixed+100randomperseed,seeds17/53",
+    "summaries": [
+      "observed_arm_center_original_comparison.json",
+      "observed_arm_center_distal_comparison.json",
+      "observed_arm_center_half_gravity_comparison.json"
+    ],
+    "basic_balance_counts": [
+      [
+        52,
+        54
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "arm_observation_calibration": {
+    "status": "completed_all_candidates_failed",
+    "unit": "arm-observation-calibration-evaluation.service",
+    "source": "observed_arm_center_candidates/ckpt_000002.pt",
+    "source_sha256": "e98e370ddbe398878b5207a157828da8f2d36e0086263e2577faf1a8858e8930",
+    "input_sensitivity_report": "observed_arm_body_sensitivity.json",
+    "evidence": "At a fixed body pose, changing arm proprioception changed leg PD targets up to0.086rad; static COM difference below1mm. Diagnostic only, not proof of complete physical causation.",
+    "constants_samples": 8000,
+    "candidates": [
+      "all right-arm inputs fixed to initial balance pose",
+      "all right-arm inputs fixed to measured5\u201325s balance median",
+      "distal inputs fixed to observed original arm pose"
+    ],
+    "implementation": "Fixed observations folded exactly into decoder affine weights; measured body feedback retained, no added runtime controller",
+    "tests": "arm_observation_calibration_tests.log",
+    "evaluation": "Full30s,noreset,1fixed+100random,seeds17/53,cuda0/1",
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "completed_candidate_summaries": [
+      "arm_observation_initial_comparison.json",
+      "arm_observation_steady_comparison.json",
+      "arm_observation_distal_comparison.json"
+    ],
+    "basic_balance_counts": [
+      [
+        0,
+        0
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        40,
+        46
+      ]
+    ]
+  },
+  "balance_pose_center_diagnostic": {
+    "status": "completed_no_full_center_pass",
+    "source": "stance_bias_candidates/inward_0.25.pt",
+    "pose_trajectory": "evaluation_stance_bias/inward_0.25/seed_17.npz",
+    "pose_frame": 500,
+    "pose_scenario": 0,
+    "source_balance_passed_both_seeds": true,
+    "arm_pose_source": "Exact passed balance policy, not arm-only failing branch",
+    "kinematic_solution": "Only elbow_yaw_r,wrist_pitch_r,wrist_roll_r adjusted; Torch and MuJoCo ray error zero within float precision",
+    "candidates": {
+      "1": "All right-arm observations fixed to measured balance steady median",
+      "2": "Distal observations fixed to measured balance steady median",
+      "3": "Unfolded distal IK constant arm control"
+    },
+    "checkpoint_dir": "balance_pose_center_folded",
+    "source_candidate_dir": "balance_pose_center_candidates",
+    "physical_acceptance": false,
+    "reset_pose_unchanged": true,
+    "acceptance_changed": false,
+    "completed_candidate_summaries": [
+      "balance_pose_center_all_arm_comparison.json",
+      "balance_pose_center_distal_comparison.json",
+      "balance_pose_center_unfolded_comparison.json"
+    ],
+    "basic_balance_counts": [
+      [
+        98,
+        100
+      ],
+      [
+        100,
+        100
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "selected_for_same_stage_training": "balance_pose_center_folded/ckpt_000002.pt",
+    "selection_reason": "Distal-input folding preserves more balance feedback;200/202basicbalance,medianfootdrift0.037m,aimerror0.201m,butfullcenterstillfails",
+    "balance_with_stable_feet_report": "balance_pose_center_balance_subset.json",
+    "matched_control_result": "Identical arm PD targets: without distal observation fold0/202basicbalance, with distal fold200/202basicbalance; full center gate still failed",
+    "visual_snapshot": "balance_pose_center_snapshot.png",
+    "visual_inspection": "Actual scenario0 at3/15/30s: upright and right TCP local\u2212Z ray towards center target; diagnostic only, center acceptance failed"
+  },
+  "balance_teacher_samples": {
+    "status": "completed",
+    "path": "balance_teacher_samples.pt",
+    "report": "balance_teacher_samples.json",
+    "samples": 24000,
+    "seed": 2057,
+    "training_worlds": 24,
+    "validation_worlds": 8,
+    "terminations": 0,
+    "teacher_output_recompute_max_abs_error": 0.0,
+    "purpose": "Contingency body-feedback distillation; not used in policy training yet",
+    "physical_acceptance": false
+  },
+  "center_distal_preparation": {
+    "status": "passed",
+    "runner": "frozen_balance_recovery_v15",
+    "tests_passed": 9,
+    "tests": "right_distal_scope_tests.log",
+    "scope": "right_distal_outputs",
+    "native_joints": [
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "trainable_elements": 771,
+    "all_body_proximal_arm_and_support_weights_frozen": true,
+    "compile_unit": "right-distal-compile-benchmark.service",
+    "smoke_unit": "center-distal-smoke.service",
+    "smoke_source": "balance_pose_center_folded/ckpt_000001.pt",
+    "formal_source": "balance_pose_center_folded/ckpt_000002.pt",
+    "formal_source_selected_after_smoke_launch": true,
+    "reason": "Candidate2 has better independent physical balance and aiming; architecture,parameter masks,and optimizer unchanged",
+    "formal_started": true,
+    "compile_report": "right_distal_compile_benchmark.json",
+    "compile_gradient_relative_l2_error": 0.00012116443394916132,
+    "smoke_report": "center_distal_smoke_verification.json",
+    "smoke_checkpoint_sha256": "ae4db8e8e8a70c7fdce3f9be56f59b751182c3b6a673101a9faf795edd1efcfd"
+  },
+  "center_distal_training": {
+    "status": "intentionally_stopped_for_lossless_target_feature_extension",
+    "plan": "center_distal_training_plan.json",
+    "unit": "center-distal-training.service",
+    "evaluation_unit": "center-distal-evaluation.service",
+    "source": "balance_pose_center_folded/ckpt_000002.pt",
+    "source_sha256": "cc651d928d1d40793bb4eeba784b1c2e081889e056cd193c4883d5246a5bf97f",
+    "same_stage_recovery": true,
+    "full_center_passed": false,
+    "acceptance_changed": false,
+    "evaluation_iterations": [
+      250,
+      400,
+      600,
+      1000,
+      1500
+    ],
+    "verification100": "center_distal100_verification.json",
+    "warmup100_policy_unchanged": true,
+    "checkpoint100_sha256": "2c640761cf02a9382a792db31df4f0aa7d9df874547b670ffe4d16c2647cc3e6",
+    "wm_updates100": 1000,
+    "verification200": "center_distal200_verification.json",
+    "verification250": "center_distal250_verification.json",
+    "evaluation250": "center_distal250_comparison.json",
+    "checkpoint250_sha256": "1cfc2e633ef4dcd160f44f64be00447d2524e1a58c2b092d18258fdc31370894",
+    "actor_updates250": 50,
+    "basic_balance250": [
+      99,
+      99
+    ],
+    "random_full_center_rate250": [
+      0.17,
+      0.15
+    ],
+    "balanced_aim_error_median250_m": [
+      0.13764,
+      0.14094
+    ],
+    "median_foot_drift250_m": [
+      0.036923,
+      0.037102
+    ],
+    "body_proximal_and_support_weights_unchanged250": true,
+    "latest_status": {
+      "iteration": 350,
+      "phase": "joint",
+      "level": 1,
+      "stage": "center",
+      "sim_reward": 0.2507229447364807,
+      "physical_termination_fraction": 0.0,
+      "physical_timeout_fraction": 0.0,
+      "mean_physical_episode_age_s": 23.188026428222656,
+      "completed_physical_episodes": 0,
+      "mean_completed_physical_episode_s": null,
+      "observed_support_locked_fraction": 0.99658203125,
+      "wm_loss": 0.00041345038334839046,
+      "model_ready": true,
+      "critic_warmup_done": 100,
+      "updates": {
+        "wm": 3500,
+        "critic": 5000,
+        "pi": 150
+      },
+      "elapsed_s": 717.4879776870366,
+      "actor_loss": -26.187570571899414,
+      "critic_loss": 0.02987922914326191,
+      "actor_grad": 7.001822471618652,
+      "critic_grad": 3.8340234756469727,
+      "actor_value_gradient": 0.0,
+      "imagined_reward_objective": 7.344959259033203,
+      "bootstrap_objective": 18.84261131286621,
+      "bootstrap_max": 28.804359436035156,
+      "return_target_max": 28.26667594909668
+    },
+    "verification400": "center_distal400_verification.json",
+    "checkpoint400_sha256": "4b2190591f70ae278531ad6b3d2a0ae6ab6e9646ad2bfd0ebcb3c8d97f6a8f99",
+    "actor_updates400": 200,
+    "body_proximal_and_support_weights_unchanged400": true,
+    "evaluation400": "center_distal400_comparison.json",
+    "basic_balance400": [
+      99,
+      97
+    ],
+    "random_full_center_rate400": [
+      0.23,
+      0.17
+    ],
+    "balanced_aim_error_median400_m": [
+      0.112584,
+      0.107612
+    ],
+    "median_foot_drift400_m": [
+      0.036565,
+      0.036407
+    ],
+    "balanced_error30s400_m": [
+      0.13679,
+      0.15519
+    ],
+    "decision_after400": "Continue improving bounded distal-only training; compare600before changing architecture",
+    "evaluation600": "center_distal600_comparison.json",
+    "verification600": "center_distal600_verification.json",
+    "checkpoint600_sha256": "b0d187d6327be20ddf0aa9ac3ada0e6a473bf54cceb235197c11ba3423f34cd0",
+    "basic_balance600": [
+      101,
+      98
+    ],
+    "random_full_center_rate600": [
+      0.47,
+      0.44
+    ],
+    "balanced_aim_error_median600_m": [
+      0.109782,
+      0.10384
+    ],
+    "median_foot_drift600_m": [
+      0.036426,
+      0.036878
+    ],
+    "decision_after600": "Continue improving training to planned1000/1500evaluations; noarchitecturechangeinactiveformalrun",
+    "extra_evaluation800": {
+      "unit": "center-distal800-extra-evaluation.service",
+      "out": "evaluation_center_distal_extra",
+      "reason": "Resolve whether sustained aiming precision has plateaued before activating a direct target-feature connection.400/600postgracehitfractionsremainabout80%despitecaptureimprovement",
+      "no_automatic_promotion": true
+    },
+    "evaluation800": "center_distal800_comparison.json",
+    "verification800": "center_distal800_verification.json",
+    "checkpoint800_sha256": "39d395786d1c0b6ca1fa6834428a1f2f4071f1048fde44d5d28007ec57aaa641",
+    "basic_balance800": [
+      97,
+      99
+    ],
+    "random_full_center_rate800": [
+      0.58,
+      0.6
+    ],
+    "balanced_aim_error_median800_m": [
+      0.113414,
+      0.107293
+    ],
+    "postgrace_hit_fraction800": [
+      0.788244,
+      0.799954
+    ],
+    "median_foot_drift800_m": [
+      0.036383,
+      0.036347
+    ],
+    "selected_for_transfer": 800,
+    "planned1000and1500_cancelled": true,
+    "stop_record": "logs/tienkung3_29dof/lafan_jwp_20261115/center_distal/intentional_stop.json",
+    "systemd_failed_status_expected": "Torchrun exit1after intentionalSIGTERM"
+  },
+  "distal_command_skip_preparation": {
+    "status": "qualified_and_activated_in_formal_same_stage_branch",
+    "motivation_report": "distal_command_observability.json",
+    "observed_weak_aim_features": "At fixed measured history,0.25 change in target vertical coordinate changes final256features by about0.000735L2; a0.1rad readout response requires rowL2>=532 in that local direction",
+    "implementation": "Optional14-to3affine skip from unit-target,direction,normal,tolerance,velocity into three distal actions only",
+    "new_parameters": 45,
+    "zero_initialized_function_exact": true,
+    "online_ik": false,
+    "runtime_motion_files": false,
+    "active_training_unmodified_frozen_v15": true,
+    "activation_condition": "Activated: exact-zero optional45parameter head implemented, compiled and trained; see center_stage_passed.json and downstream narrow calibration records.",
+    "regression_tests": "distal_command_skip_tests.log",
+    "regression_tests_passed": 31,
+    "runtime_tests": "distal_command_skip_runtime_tests.log",
+    "runtime_tests_passed": 5,
+    "reference_free_loader_checked": true,
+    "traced_forward_checked": true,
+    "preparation_tool": "tools.prepare_distal_command_skip",
+    "frozen_runner_created": true,
+    "frozen_runner": "frozen_balance_recovery_v16",
+    "runner_manifest": "distal_command_skip_runner_manifest.json",
+    "zero_initialization_artifact": "distal_command_skip_init250.pt",
+    "zero_initialization_report": "distal_command_skip_init250.json",
+    "compile_unit": "distal-command-skip-compile-benchmark.service",
+    "compile_report": "distal_command_skip_compile_benchmark.json",
+    "compile_gradient_relative_l2_error": 1.4997980542830192e-05,
+    "smoke_report": "center_distal_skip_smoke_verification.json",
+    "smoke_checkpoint_sha256": "49b17d4e1ca63fc71664fc1740c9a74d588272b0761a2a3218384ff5b237933c",
+    "zero_initialization_sha256": "6a252c283dceb7d1479ce07418a0ae994b541469cafdba5d4dae97d46f5bb566",
+    "smoke_never_used_for_formal_initialization": true,
+    "formal_source": "distal_command_skip_init800.pt",
+    "formal_source_sha256": "bb904449029db71cd10bd1a5a908689927232846c87f8227bab56dd0c3165a00",
+    "formal_initialization_actions_exact": true
+  },
+  "distal_full_range_geometry": {
+    "status": "completed",
+    "fixed_heading_report": "distal_wide_geometry.json",
+    "fixed_heading_within5cm": 57,
+    "targets": 75,
+    "fixed_heading_failed_targets": "All\u221260degazimuth targets;\u221230degazimuth,+30degelevation targets; all atsoftjointlimits",
+    "fixed_heading_torch_mujoco_max_difference_m": 4.710754344603326e-07,
+    "heading_alignment_unit": "distal-heading-geometry.service",
+    "heading_alignment_assumption": "Ideal bodyyaw rotation toward target before distal IK; physicalturningstillunverified",
+    "acceptance_criteria_unchanged": true,
+    "physical_policy_acceptance": false,
+    "heading_aligned_report": "distal_heading_geometry.json",
+    "heading_aligned_within5cm": 75,
+    "heading_aligned_minimum_soft_limit_margin_rad": 0.025503158569335938,
+    "physical_turning_verified": false
+  },
+  "distal_full_range_turning_diagnostic": {
+    "status": "completed_failed",
+    "unit": "distal600-wide-turn-diagnostic.service",
+    "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/center_distal/train/ckpt_000600.pt",
+    "seed": 917,
+    "seed_role": "Development diagnostic, not reserved finalseed",
+    "evaluation": "Unchanged full75fixed+100random protocol;30s,noreset,targetswitches,5cmradius",
+    "output": "evaluation_distal600_wide_diagnostic/seed_917.json",
+    "purpose": "Assess whether existing body controller turns toward off-center targets; no curriculum promotion",
+    "summary": "distal600_wide_turn_comparison.json",
+    "fixed_basic_balance": 52,
+    "random_basic_balance": 62,
+    "fixed_basic_balance_by_azimuth": {
+      "-60": 0,
+      "-30": 7,
+      "0": 15,
+      "30": 15,
+      "60": 15
+    },
+    "body_turning_sufficient": false,
+    "final_policy_passed": false,
+    "implication": "Fixed3distal outputs suffice kinematically only after body yaw adjustment; existing body controller does not perform that adjustment and loses balance onlefttargets. Actualturningmustbelearned orproximalarmrange expanded; originaltargetrangeunchanged."
+  },
+  "center_distal_skip_training": {
+    "status": "intentionally_stopped_after_center_stage_pass_in_calibrated_branch",
+    "plan": "center_distal_skip_training_plan.json",
+    "unit": "center-distal-skip-training.service",
+    "evaluation_unit": "center-distal-skip-evaluation.service",
+    "source": "distal_command_skip_init800.pt",
+    "source_sha256": "bb904449029db71cd10bd1a5a908689927232846c87f8227bab56dd0c3165a00",
+    "same_stage_recovery": true,
+    "source_full_center_passed": false,
+    "trainable_elements": 816,
+    "new_parameters": 45,
+    "source_pi_exact_at_initialization": true,
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "verification100": "center_distal_skip100_verification.json",
+    "checkpoint100_sha256": "e72862dcd2e6d1074c8d9d785cd6ac36cf1594c72bd0b37c526e470641420963",
+    "warmup100_all_policy_weights_unchanged": true,
+    "verification200": "center_distal_skip200_verification.json",
+    "checkpoint200_sha256": "5e1c345f12e39b82fcb67b7e9844d91d5f6aacc38a6c33d0c91a8bb98c36c147",
+    "warmup200_all_policy_weights_unchanged": true,
+    "model_ready200": true,
+    "verification250": "center_distal_skip250_verification.json",
+    "evaluation250": {
+      "random_success": [
+        0.57,
+        0.57
+      ],
+      "passed": false
+    },
+    "stop_record": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/center_distal_skip/intentional_stop.json"
+  },
+  "distal_feedback_calibration": {
+    "status": "center_stage_passed_not_final_accepted",
+    "unit": "distal-feedback-calibration-evaluation.service",
+    "source": "distal_command_skip_init800.pt",
+    "candidate_directory": "distal_feedback_candidates",
+    "gains": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "method": "Initialize only45parameteraffinecommandreadout from independently checked localTCPdirectionJacobian; existingencoder,decoder,normalizers retainedexactly",
+    "geometry": {
+      "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_center_distal_extra/iteration_000800/seed_17.npz",
+      "trajectory_sha256": "a39dcd95a21362d105373c1dd17d0a51c86c1d1a1392a311e9b9254e03f46166",
+      "trajectory_checkpoint_sha256": "39d395786d1c0b6ca1fa6834428a1f2f4071f1048fde44d5d28007ec57aaa641",
+      "frame": 750,
+      "scenario": 0,
+      "scenario_passed_full_center": true,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "frame_of_vectors": "torso",
+      "joint_names": [
+        "elbow_yaw_r_joint",
+        "wrist_pitch_r_joint",
+        "wrist_roll_r_joint"
+      ],
+      "q_rad": [
+        0.13659381866455078,
+        -0.3105356693267822,
+        -0.6895601153373718
+      ],
+      "jacobian": [
+        [
+          -0.2526817321777344,
+          0.4220677316188812,
+          0.2575768828392029
+        ],
+        [
+          0.5936827063560486,
+          -0.4407656788825989,
+          0.8103340864181519
+        ],
+        [
+          0.20981067419052124,
+          -0.47205591201782227,
+          -0.526320219039917
+        ]
+      ],
+      "pseudoinverse": [
+        [
+          -0.2795654833316803,
+          0.48483771085739136,
+          0.27010053396224976
+        ],
+        [
+          0.489554226398468,
+          -0.3597951829433441,
+          -0.5809638500213623
+        ],
+        [
+          0.34300321340560913,
+          0.662182629108429,
+          -0.608854353427887
+        ]
+      ],
+      "singular_values": [
+        1.1064215898513794,
+        0.911817729473114,
+        2.3478156307987774e-08
+      ],
+      "torch_mujoco_jacobian_max_abs_difference": 5.911403044844832e-08
+    },
+    "extra_runtime_ik": false,
+    "physical_acceptance": false,
+    "evaluation": "Full30s,noreset,center1fixed+100random,two developmentseeds17/53",
+    "active_formal_training_unchanged": true,
+    "gain1_report": "distal_feedback_gain1_comparison.json",
+    "gain1_random_full_center_pass_rate": [
+      0.94,
+      0.94
+    ],
+    "gain1_fixed_pass": [
+      true,
+      true
+    ],
+    "gain1_basic_balance": [
+      99,
+      99
+    ],
+    "gain1_balanced_error_median_m": [
+      0.058152,
+      0.04882
+    ],
+    "gain1_postgrace_hit_fraction": [
+      0.995865,
+      0.994751
+    ],
+    "gain1_failures": "Bothseeds2falls; remainingfailuresincludeoutlieraimingandfootdrift. Fullgatefailed at94%,criteriaunchanged",
+    "stronger_candidate_directory": "distal_feedback_stronger_candidates",
+    "stronger_gains": [
+      1.5,
+      2.0
+    ],
+    "stronger_evaluation_unit": "distal-feedback-stronger-evaluation.service",
+    "selected_checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates/ckpt_000001.pt",
+    "selected_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+    "selected_gain": 1.5,
+    "center_random_success": [
+      0.99,
+      0.97
+    ],
+    "stronger_gain2_random_success": [
+      0.98,
+      0.97
+    ],
+    "both_fixed_pass": true
+  },
+  "narrow_distal_feedback_training": {
+    "created": "2026-11-16 10:13:35.691056",
+    "unit": "narrow-distal-feedback-training.service",
+    "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/narrow_distal_feedback/train",
+    "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v16",
+    "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates/ckpt_000001.pt",
+    "init_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+    "level": 2,
+    "previous_level": 1,
+    "promotion_reports": [
+      "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger/iteration_000001/seed_17.json",
+      "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger/iteration_000001/seed_53.json"
+    ],
+    "iterations": 1000,
+    "global_num_envs": 2048,
+    "wm_batch": 1024,
+    "pi_batch": 1024,
+    "horizon": 32,
+    "wm_window": 16,
+    "actor_lr": 1e-05,
+    "policy_training_scope": "right_distal_with_command_skip",
+    "physical_acceptance": false,
+    "evaluation_iterations": [
+      100,
+      250,
+      400,
+      600,
+      1000
+    ],
+    "status": "intentionally_stopped_after250_evaluation",
+    "initial_evaluation": "narrow_distal_feedback100_comparison.json",
+    "initial_random_success": [
+      0.14,
+      0.15
+    ],
+    "initial_full_stage_passed": false,
+    "verification100": "narrow_distal_feedback100_verification.json",
+    "evaluation250": {
+      "passed": false,
+      "random_success": [
+        0.15,
+        0.16
+      ]
+    },
+    "stop_record": "logs/tienkung3_29dof/lafan_jwp_20261115/narrow_distal_feedback/intentional_stop.json",
+    "verification250": "narrow_distal_feedback250_verification.json"
+  },
+  "narrow_feedforward_calibration": {
+    "status": "completed_both_failed",
+    "unit": "narrow-feedforward-evaluation.service",
+    "candidates": "narrow_feedforward_candidates",
+    "reports": "evaluation_narrow_feedforward",
+    "gains": [
+      0.5,
+      1.0
+    ],
+    "feedback_gain": 1.5,
+    "source": "logs/tienkung3_29dof/lafan_jwp_20261115/narrow_distal_feedback/train/ckpt_000100.pt",
+    "source_actor_updates": 0,
+    "method": "Add fixed local Jacobian feedforward to the existing audited affine feedback head; all encoder/decoder weights and normalizers unchanged",
+    "tool": "tools/prepare_distal_feedforward_calibration.py",
+    "tool_sha256": "136283adaa7206acec24ed422fee0c66a731c7d72431c4e0a714d12d76323c26",
+    "runtime_motion_files": false,
+    "online_ik": false,
+    "physical_acceptance": false
+  },
+  "current_work": "Medium range aiming correction; preparing stronger fixed-Jacobian feedback candidates3and5, preserving bodyweights and user exception provenance.",
+  "center_stage_passed": "center_stage_passed.json",
+  "shared_proximal_geometry": {
+    "status": "complete_kinematic_only",
+    "report": "shared_proximal_geometry.json",
+    "within5cm_by_bound": [
+      60,
+      75,
+      75
+    ],
+    "smallest_successful_bound_rad": 0.4,
+    "turning_required_by_current_fixed_proximal_pose": true,
+    "alternate_shared_proximal_pose_covers_full_grid": true,
+    "physical_stability_unproven": true
+  },
+  "narrow_heading_fold_calibration": {
+    "status": "completed_both_failed",
+    "unit": "narrow-heading-fold-evaluation.service",
+    "report": "narrow_heading_fold_feedforward_comparison.json",
+    "fold_column": 29,
+    "direct_head_preserved": true,
+    "first_candidate_with_feedforward_random_success": [
+      0.4,
+      0.22
+    ],
+    "passed": false
+  },
+  "narrow_ready_pose_calibration": {
+    "status": "completed_both_failed",
+    "unit": "narrow-ready-pose-evaluation.service",
+    "source": "narrow_heading_fold_candidates/ckpt_000002.pt",
+    "candidates": "narrow_ready_pose_candidates",
+    "reports": "evaluation_narrow_ready_pose",
+    "modes": [
+      "right_arm_only",
+      "full_observed_pose"
+    ],
+    "weights_unchanged": true,
+    "initial_pose_changed": true,
+    "reset_noise_unchanged": true,
+    "target_independent_pose": true,
+    "acceptance_criteria_unchanged": true,
+    "pose_provenance": "Fixed3mcenter scenario37 at15s in source seed17 development rollout",
+    "physical_acceptance": false,
+    "full_ready_report": "narrow_ready_full_comparison.json",
+    "full_ready_random_success": [
+      0.82,
+      0.82
+    ]
+  },
+  "narrow_constant_distal_calibration": {
+    "status": "completed_both_failed",
+    "source": "narrow_ready_pose_candidates/ckpt_000001.pt",
+    "source_pose": "right_arm_ready_only",
+    "candidates": "narrow_constant_distal_candidates",
+    "feedback_gains": [
+      1.5,
+      3.0
+    ],
+    "feedforward_gain": 1.0,
+    "changes": "Replace only the three distal decoder rows with observed pose plus MuJoCo gravity compensation; affine direction head calibrated at that pose; other26outputs and all normalizers unchanged",
+    "physical_acceptance": false,
+    "full_ready_candidates": "narrow_ready_constant_distal_candidates",
+    "full_ready_pose_calibration_seed": 53,
+    "rejected_pose_source": {
+      "seed": 17,
+      "scenario": 37,
+      "reason": "Centercapture3.06s exceeds3s; calibration provenance gate rejected it. No threshold changed."
+    },
+    "unit": "narrow-ready-constant-distal-evaluation.service",
+    "reports": "evaluation_narrow_ready_constant_distal",
+    "gain1p5_report": "narrow_ready_constant_distal1p5_comparison.json",
+    "gain1p5_random_success": [
+      1.0,
+      1.0
+    ],
+    "gain1p5_fixed_pass": [
+      true,
+      false
+    ],
+    "gain1p5_failure": {
+      "seed": 53,
+      "scenario": 41,
+      "first_tilt_above15_seconds": 10.68,
+      "cause": "Physical lateral fall; no aim threshold failure in the other349scenarios"
+    },
+    "gain3_report": "narrow_ready_constant_distal3_comparison.json",
+    "gain3_random_success": [
+      1.0,
+      0.99
+    ],
+    "gain3_fixed_pass": [
+      true,
+      false
+    ],
+    "gain3_failures": {
+      "seed": 53,
+      "scenarios": [
+        2,
+        159
+      ],
+      "cause": "Physical falls"
+    }
+  },
+  "narrow_support_gain_calibration": {
+    "status": "completed_both_failed",
+    "source": "narrow_ready_constant_distal_candidates/ckpt_000001.pt",
+    "source_full_stage_passed": false,
+    "relative_gains": [
+      0.8,
+      1.2
+    ],
+    "support_base_source": "stance_bias_candidates/inward_0.25.pt",
+    "frozen_arm_and_normalizers": true,
+    "initial_pose_unchanged": true,
+    "physical_acceptance": false,
+    "unit": "narrow-support-gain-evaluation.service",
+    "reports": "evaluation_narrow_support_gain",
+    "relative_gain0p8_full_pass": [
+      true,
+      false
+    ],
+    "relative_gain1p2_full_pass": [
+      true,
+      false
+    ]
+  },
+  "narrow_early_support_calibration": {
+    "status": "completed_both_failed",
+    "candidates": "narrow_early_support_candidates",
+    "reports": "evaluation_narrow_early_support",
+    "capture_steps": [
+      25,
+      75
+    ],
+    "weights_exact": true,
+    "initial_pose_exact": true,
+    "acceptance_criteria_unchanged": true
+  },
+  "aiming_support_training_preparation": {
+    "status": "complete",
+    "policy_training_scope": "aiming_support_error_inputs",
+    "source": "narrow_early_support_candidates/ckpt_000001.pt",
+    "source_sha256": "22898227a278735292e56c96212f69ccec29f5c30554dda15bd113199cc5f3b6",
+    "source_full_stage_passed": false,
+    "same_level_recovery": 2,
+    "trainable_elements": 12288,
+    "frozen_distal_decoder_and_command_head": true,
+    "tests": "aiming_support_adapter_tests.log",
+    "tests_passed": 15,
+    "runner_manifest": "aiming_support_runner_manifest.json",
+    "runner": "frozen_balance_recovery_v17",
+    "benchmark_unit": "aiming-support-compile-benchmark.service",
+    "smoke_unit": "aiming-support-smoke.service",
+    "smoke_run": "logs/tienkung3_29dof/lafan_jwp_20261115/aiming_support_smoke/train",
+    "smoke_weights_formal_initialization_allowed": false,
+    "acceptance_changed": false,
+    "compile_report": "aiming_support_compile_benchmark.json",
+    "compile_gradient_relative_l2_error": 3.0925577448215336e-05,
+    "smoke_report": "aiming_support_smoke_verification.json",
+    "smoke_checkpoint_sha256": "35609f8f536ae31eed448c88ce62c5e538ce18ffc11c5bbce3d7320979bee0a4",
+    "formal_started_from_original_calibration": true
+  },
+  "narrow_support_training": {
+    "created": "2026-11-16 10:48:01.910390",
+    "status": "intentionally_stopped_per_user_stage_exception",
+    "unit": "narrow-support-training.service",
+    "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v17",
+    "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/narrow_support/train",
+    "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/narrow_early_support_candidates/ckpt_000001.pt",
+    "init_sha256": "22898227a278735292e56c96212f69ccec29f5c30554dda15bd113199cc5f3b6",
+    "level": 2,
+    "same_stage_recovery": true,
+    "source_full_stage_passed": false,
+    "iterations": 1000,
+    "global_num_envs": 2048,
+    "wm_batch": 1024,
+    "pi_batch": 1024,
+    "horizon": 32,
+    "wm_window": 16,
+    "wm_only_iters": 100,
+    "critic_warmup_iters": 100,
+    "actor_lr": 0.0001,
+    "actor_value_gradient": 0.0,
+    "matmul_tf32": false,
+    "policy_training_scope": "aiming_support_error_inputs",
+    "trainable_elements": 12288,
+    "distal_decoder_and_command_head_frozen": true,
+    "normalizers_frozen": true,
+    "zero_support_error_action_unchanged": true,
+    "support_capture_steps": 25,
+    "checkpoint_every": 50,
+    "evaluation_iterations": [
+      250,
+      400,
+      600,
+      1000
+    ],
+    "evaluation_seeds": [
+      17,
+      53
+    ],
+    "evaluation_gpus": [
+      0,
+      1
+    ],
+    "smoke_weights_reused": false,
+    "required_gate_reports": [
+      "aiming_support_compile_benchmark.json",
+      "aiming_support_smoke_verification.json"
+    ],
+    "physical_acceptance": false,
+    "acceptance_changed": false,
+    "launched": "2026-11-16 10:52:00.405580",
+    "required_gates_passed": true,
+    "verification100": "narrow_support100_verification.json",
+    "latest_verified_iteration": 400,
+    "latest_verified_actor_updates": 200,
+    "latest_verified_model_ready": true,
+    "model_ready_at125": true,
+    "model_validation125": "logs/tienkung3_29dof/lafan_jwp_20261115/narrow_support/train/wm_validation/000125.json",
+    "model_h32_root_p95_m": 0.003918560221791267,
+    "model_h32_feet_p95_m": 0.004098163917660713,
+    "model_h32_tip_p95_m": 0.018809322267770767,
+    "latest_observed_phase": "critic_warmup",
+    "verification200": "narrow_support200_verification.json",
+    "critic_warmup_complete": true,
+    "verification250": "narrow_support250_verification.json",
+    "evaluation250_status": "completed_failed",
+    "evaluation250": "narrow_support250_comparison.json",
+    "evaluation250_random_success": [
+      0.99,
+      1.0
+    ],
+    "evaluation250_fixed_pass": [
+      true,
+      false
+    ],
+    "evaluation250_failures": {
+      "17": [
+        99
+      ],
+      "53": [
+        2,
+        41
+      ]
+    },
+    "next_physical_evaluation": 600,
+    "failure_comparison250": "narrow_support250_failure_comparison.json",
+    "verification400": "narrow_support400_verification.json",
+    "evaluation400": "narrow_support400_comparison.json",
+    "evaluation400_status": "completed_failed",
+    "evaluation400_random_success": [
+      0.99,
+      0.99
+    ],
+    "evaluation400_fixed_pass": [
+      true,
+      false
+    ],
+    "evaluation400_failures": {
+      "17": [
+        86
+      ],
+      "53": [
+        2,
+        41,
+        75
+      ]
+    },
+    "stop_record": "logs/tienkung3_29dof/lafan_jwp_20261115/narrow_support/intentional_stop.json"
+  },
+  "narrow_support_device_diagnostic": {
+    "status": "completed_both_devices_failed",
+    "unit": "narrow-support250-device-check.service",
+    "checkpoint_iteration": 250,
+    "seed": 53,
+    "device": "cuda:0",
+    "original_device": "cuda:1",
+    "purpose": "Investigate different observed failure frequency; does not supersede original failed gates",
+    "report": "evaluation_narrow_support250_device_check/seed_53_cuda0.json",
+    "comparison": "narrow_support250_device_comparison.json"
+  },
+  "training_evaluation_gap_followup": {
+    "status": "needs_bounded_matched_diagnostic",
+    "finding": "Training2048worlds reports zero terminations through26.5s whereas175world deterministic evaluations repeat rare lateral falls",
+    "checked": "Initial perturbation settings and history update semantics match; seed53 also fails oncuda0",
+    "remaining": "Compare same initial states and targets with/without training action exploration noise; diagnostic only, keep original deterministic acceptance unchanged"
+  },
+  "user_authorized_stage_exceptions": "user_authorized_narrow_stage_exceptions.json",
+  "medium_user_exception_transfer": {
+    "status": "evaluation_completed_failed_aiming_range",
+    "checkpoint": "medium_user_exception_transfer/ckpt_000001.pt",
+    "sha256": "5904ae9f4fe68a9d0ebd6ca9876a05c2cb24c07e57a81050139672175b0ef609",
+    "unit": "medium-user-exception-evaluation.service",
+    "reports": "evaluation_medium_user_exception",
+    "level": 3,
+    "source_stage_passed": false,
+    "authorization": "user_authorized_narrow_stage_exceptions.json",
+    "comparison": "medium_initial_comparison.json",
+    "failures": "medium_initial_failures.json",
+    "random_success": [
+      0.94,
+      0.91
+    ]
+  },
+  "medium_feedback_calibration": {
+    "status": "gain3completed_gain5running",
+    "unit": "medium-feedback-evaluation.service",
+    "candidates": "medium_feedback_candidates",
+    "reports": "evaluation_medium_feedback",
+    "gain3_comparison": "medium_feedback3_comparison.json",
+    "gain3_failures": "medium_feedback3_failures.json",
+    "random_success": [
+      0.98,
+      0.98
+    ],
+    "stage_passed": false,
+    "authorization_lineage": "user_authorized_narrow_stage_exceptions.json"
+  }
+}

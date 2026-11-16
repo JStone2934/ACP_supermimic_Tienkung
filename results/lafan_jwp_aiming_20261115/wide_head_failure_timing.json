@@ -1,0 +1,135 @@
+{
+  "scope": "Diagnostic only; all full-report failures retained",
+  "rows": [
+    {
+      "seed": 17,
+      "counts": {
+        "standing": 27,
+        "capture": 46,
+        "hit_rate": 12,
+        "foot_drift": 43
+      },
+      "balanced_time_series": [
+        {
+          "seconds": 0,
+          "median_tilt_deg": 0.6672958135604858,
+          "median_root_shift_m": 0.0,
+          "median_error_m": 2.2304458618164062
+        },
+        {
+          "seconds": 1,
+          "median_tilt_deg": 2.275409698486328,
+          "median_root_shift_m": 0.017481200397014618,
+          "median_error_m": 0.02405385486781597
+        },
+        {
+          "seconds": 2,
+          "median_tilt_deg": 3.8744001388549805,
+          "median_root_shift_m": 0.03913247585296631,
+          "median_error_m": 0.03140754997730255
+        },
+        {
+          "seconds": 3,
+          "median_tilt_deg": 2.216949939727783,
+          "median_root_shift_m": 0.03720477223396301,
+          "median_error_m": 0.019762154668569565
+        },
+        {
+          "seconds": 5,
+          "median_tilt_deg": 2.0629191398620605,
+          "median_root_shift_m": 0.03578333556652069,
+          "median_error_m": 0.021950095891952515
+        },
+        {
+          "seconds": 10,
+          "median_tilt_deg": 1.4214766025543213,
+          "median_root_shift_m": 0.03929971903562546,
+          "median_error_m": 0.021809618920087814
+        },
+        {
+          "seconds": 15,
+          "median_tilt_deg": 0.7999077439308167,
+          "median_root_shift_m": 0.03439696133136749,
+          "median_error_m": 0.01695268601179123
+        },
+        {
+          "seconds": 20,
+          "median_tilt_deg": 0.7354187369346619,
+          "median_root_shift_m": 0.032705605030059814,
+          "median_error_m": 0.016972679644823074
+        },
+        {
+          "seconds": 30,
+          "median_tilt_deg": 0.6956223249435425,
+          "median_root_shift_m": 0.030189715325832367,
+          "median_error_m": 0.016413699835538864
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "counts": {
+        "standing": 28,
+        "capture": 48,
+        "hit_rate": 14,
+        "foot_drift": 33
+      },
+      "balanced_time_series": [
+        {
+          "seconds": 0,
+          "median_tilt_deg": 0.6658785939216614,
+          "median_root_shift_m": 0.0,
+          "median_error_m": 2.7316837310791016
+        },
+        {
+          "seconds": 1,
+          "median_tilt_deg": 2.3373262882232666,
+          "median_root_shift_m": 0.0164102204144001,
+          "median_error_m": 0.0245051272213459
+        },
+        {
+          "seconds": 2,
+          "median_tilt_deg": 3.856508493423462,
+          "median_root_shift_m": 0.03943075239658356,
+          "median_error_m": 0.03169852867722511
+        },
+        {
+          "seconds": 3,
+          "median_tilt_deg": 2.4468865394592285,
+          "median_root_shift_m": 0.03823339194059372,
+          "median_error_m": 0.020434023812413216
+        },
+        {
+          "seconds": 5,
+          "median_tilt_deg": 2.003204345703125,
+          "median_root_shift_m": 0.03725743666291237,
+          "median_error_m": 0.023237532004714012
+        },
+        {
+          "seconds": 10,
+          "median_tilt_deg": 1.259898066520691,
+          "median_root_shift_m": 0.039839960634708405,
+          "median_error_m": 0.02246175706386566
+        },
+        {
+          "seconds": 15,
+          "median_tilt_deg": 0.8062433004379272,
+          "median_root_shift_m": 0.03564749285578728,
+          "median_error_m": 0.01798539236187935
+        },
+        {
+          "seconds": 20,
+          "median_tilt_deg": 0.7273927330970764,
+          "median_root_shift_m": 0.032134972512722015,
+          "median_error_m": 0.017867498099803925
+        },
+        {
+          "seconds": 30,
+          "median_tilt_deg": 0.6932334899902344,
+          "median_root_shift_m": 0.030847158282995224,
+          "median_error_m": 0.017172805964946747
+        }
+      ]
+    }
+  ]
+}

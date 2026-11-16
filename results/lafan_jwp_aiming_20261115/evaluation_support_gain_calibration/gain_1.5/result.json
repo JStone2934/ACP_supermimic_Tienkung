@@ -1,0 +1,21 @@
+{
+  "gain": 1.5,
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_1.5.pt",
+  "checkpoint_sha256": "fff30ff5101934df6949b87e71a39d58b431872f7811717fcd5ef0525b67bb62",
+  "passed": false,
+  "reports": [
+    {
+      "seed": 17,
+      "passed": false,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.49
+    },
+    {
+      "seed": 53,
+      "passed": false,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.54
+    }
+  ],
+  "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+}

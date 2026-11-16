@@ -1,0 +1,54 @@
+{
+  "checkpoint_sha256": "52b900d808ebc095e517c05daab00cd8fd95e07bad252a50807bece18e4ff4a6",
+  "source_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+  "calibration": {
+    "method": "distal_ik_half_gravity",
+    "gravity_compensation_gain": 0.5,
+    "observed_pose": {
+      "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_stance_bias/inward_0.25/seed_17.npz",
+      "trajectory_sha256": "0e3c271d62461d9b39a31c0d8ce8efdea72fc15cf7c5c74364e4ca0fc3dd1c9c",
+      "trajectory_checkpoint_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+      "frame": 500,
+      "scenario": 0,
+      "balanced_full30s": true
+    },
+    "arm_joint_order": [
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "arm_pose_rad": [
+      -0.5785605907440186,
+      -0.45284029841423035,
+      0.6903830766677856,
+      -1.2733895778656006,
+      0.12413502484560013,
+      -0.25835877656936646,
+      -0.6929563283920288
+    ],
+    "arm_pd_targets_rad": [
+      -0.5979261994361877,
+      -0.459550678730011,
+      0.6724877953529358,
+      -1.2877804040908813,
+      0.12500198185443878,
+      -0.2802290618419647,
+      -0.6974378824234009
+    ],
+    "distal_joint_names": [
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "torch_ray_error_m": 0.0,
+    "mujoco_ray_error_m": 3.192285369557422e-07,
+    "all_non_right_arm_policy_weights_exact": true,
+    "reset_pose_unchanged": true,
+    "physical_acceptance": false,
+    "scope": "Center-only constant arm diagnostic; independent full physical evaluation required"
+  }
+}

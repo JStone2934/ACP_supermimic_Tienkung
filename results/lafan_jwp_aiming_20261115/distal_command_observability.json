@@ -1,0 +1,55 @@
+{
+  "scope": "Fixed-history decoder feature sensitivity to isolated command coordinates; not physical policy acceptance or exact target-angle test",
+  "checkpoint_sha256": "cc651d928d1d40793bb4eeba784b1c2e081889e056cd193c4883d5246a5bf97f",
+  "history_source": "balance_teacher_samples.pt",
+  "sample_time_s": 20.0,
+  "worlds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "rows": [
+    {
+      "field": "target_vertical",
+      "command_column": 95,
+      "delta": 0.25,
+      "hidden_feature_delta_l2_median": 0.00073485221946612,
+      "minimum_readout_row_l2_for_0p1rad_output_change_median": 531.9705810546875
+    },
+    {
+      "field": "target_lateral",
+      "command_column": 94,
+      "delta": 0.25,
+      "hidden_feature_delta_l2_median": 0.0012704902328550816,
+      "minimum_readout_row_l2_for_0p1rad_output_change_median": 304.8334655761719
+    },
+    {
+      "field": "hand_direction_vertical",
+      "command_column": 98,
+      "delta": 0.25,
+      "hidden_feature_delta_l2_median": 0.0025305775925517082,
+      "minimum_readout_row_l2_for_0p1rad_output_change_median": 154.96832275390625
+    },
+    {
+      "field": "first_terrain_scan_coordinate",
+      "command_column": 30,
+      "delta": 0.25,
+      "hidden_feature_delta_l2_median": 0.2000098079442978,
+      "minimum_readout_row_l2_for_0p1rad_output_change_median": 1.9766851663589478
+    },
+    {
+      "field": "legacy_goal_relative_yaw",
+      "command_column": 29,
+      "delta": 0.25,
+      "hidden_feature_delta_l2_median": 0.2783183455467224,
+      "minimum_readout_row_l2_for_0p1rad_output_change_median": 1.4157867431640625
+    }
+  ],
+  "all_policy_weights_unchanged": true,
+  "interpretation": "Current frozen features weakly transmit new aiming coordinates. Evidence for a direct learned aim-feature connection if varied-target training cannot learn; no architecture change implemented."
+}

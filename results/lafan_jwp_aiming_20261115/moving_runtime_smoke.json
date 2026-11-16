@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "updates": {
+    "wm": 1,
+    "critic": 2,
+    "pi": 1
+  },
+  "skipped": {},
+  "state_sha256": "d7234a706ee101db2768e99692bc9eb844f329b8e662f9fd4f185d57d4800b73",
+  "world_size": 2,
+  "physics_substeps": 16,
+  "wm_loss": 0.006805398501455784,
+  "metrics": {
+    "actor_loss": -0.38925087451934814,
+    "critic_loss": 0.04637585207819939,
+    "actor_grad": 8.230895042419434,
+    "critic_grad": 0.6178382635116577,
+    "bootstrap_max": 0.21052972972393036,
+    "return_target_max": 0.4643050730228424
+  },
+  "scope": "Bounded integration test of distributed wide-task updates; saves no weights.",
+  "moving": true,
+  "formal_training": false,
+  "weights_saved": false,
+  "source_checkpoint_sha256": "b0c24c0ed1635498a4ee91ca856330517e632749ada9b79a5808d4f28128b254"
+}

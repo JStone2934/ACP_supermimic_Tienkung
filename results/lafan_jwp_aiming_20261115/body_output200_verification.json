@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "scope": "Verify body-output updates, frozen aiming outputs and two-rank integrity. Not physical policy acceptance.",
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/body_output_recovery/train/ckpt_000200.pt",
+  "checkpoint_sha256": "045d84e966390fa161757c7fc93b1644b0418ec776e8ae4783b20e6a946c9e73",
+  "source_sha256": "9ce3d12ec31c12a584f73b4907b03d8844c15f04726b860b8788fed5372f14e5",
+  "smoke": false,
+  "formal_initialization_allowed": true,
+  "iteration": 200,
+  "updates": {
+    "wm": 2000,
+    "critic": 2000
+  },
+  "frozen_entire_right_arm_actions_exact": true,
+  "normalizers_exact": true,
+  "only_22_body_output_rows_changed": true,
+  "body_output_weight_change_l2": 0.0,
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "world_size": 2,
+  "state_sha256": "c2e2675a2d44fe202a5b7668d55574ea06d1ec9a8606c02f46820fe58fdd75c7",
+  "model_ready": true,
+  "physical_acceptance": false
+}

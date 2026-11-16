@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "Exactly two dual-GPU integration updates; finite synchronized execution only.",
+  "checkpoint_sha256": "14c6a3ac780a24f58ed93783700f2abd2ea4f55f24f2afa30d9b096c757e0ecc",
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 367938560,
+        "torch_peak_reserved": 429916160,
+        "device_used": 2367815680,
+        "warp_pool_used": 627436720,
+        "warp_pool_peak": 627437668
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 369053184,
+        "torch_peak_reserved": 425721856,
+        "device_used": 1676869632,
+        "warp_pool_used": 314822435,
+        "warp_pool_peak": 314823383
+      }
+    ],
+    "state_sha256": "400cb8d1b58da65d10b24945c1fad8d91608796a52b57d5201ec37305982d049"
+  },
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "observed_support_locked_fraction": 1.0,
+  "world_model_gate_passed": false,
+  "smoke_gate_bypass": true,
+  "policy_acceptance": false,
+  "formal_initialization_allowed": false
+}

@@ -1,0 +1,42 @@
+{
+  "quiet_seed_count": 3,
+  "frames": [
+    22778,
+    45168,
+    9327
+  ],
+  "motion_names": [
+    "lafan/walk1_subject2__f000002_000677",
+    "lafan/walk3_subject2__f000002_000557",
+    "lafan/aiming2_subject3__f014559_015284"
+  ],
+  "current_foot_contact_labels": [
+    [
+      true,
+      true
+    ],
+    [
+      true,
+      true
+    ],
+    [
+      true,
+      true
+    ]
+  ],
+  "upcoming_foot_target_valid": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "scope": "Compare static support labels with future-contact-onset command validity"
+}

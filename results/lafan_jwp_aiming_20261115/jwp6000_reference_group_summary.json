@@ -1,0 +1,20 @@
+{
+  "checkpoint_sha256": "a22f1df40d131f039c193966b59021ed371270084699bd8b6e208543bcd9a674",
+  "groups": {
+    "jwp": {
+      "count": 10,
+      "complete": 10,
+      "mean_root_rmse_m": 0.0973635021597147,
+      "mean_joint_rmse_rad": 0.18814872205257416,
+      "strict_passed": 4
+    },
+    "lafan": {
+      "count": 49,
+      "complete": 17,
+      "mean_root_rmse_m": 0.2000268109294833,
+      "mean_joint_rmse_rad": 0.23240541134561812,
+      "strict_passed": 1
+    }
+  },
+  "scope": "All mixed held-out clips remain in the full gate; group statistics not acceptance"
+}

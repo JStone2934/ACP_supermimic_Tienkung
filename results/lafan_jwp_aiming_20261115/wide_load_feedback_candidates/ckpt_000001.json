@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "4fd89fa7a18b3589b63d212c09a53fef3000228472cd7e458949a40893778ea6",
+  "calibration": {
+    "method": "Change only direction-feedback gain around an unchanged learned distal mapping.",
+    "feedback_gain": 4.0,
+    "reference_sha256": "6c677b1d35ec3753e493d911387b72736866262b75a35a808b4488b8f25e6393",
+    "all_other_weights_and_config_exact": true,
+    "physical_acceptance": false
+  }
+}

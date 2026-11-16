@@ -1,0 +1,18 @@
+{
+  "scope": "Read-only parity check for batching auxiliary FK over a dynamics window.",
+  "checkpoint_sha256": "e5eee541597338b88a9796edd939485c1bb504c9bc2670b3c317f51be77febb6",
+  "results": [
+    {
+      "loss": 0.013579978607594967,
+      "elapsed_s": 1.1875839070416987
+    },
+    {
+      "loss": 0.013579979538917542,
+      "elapsed_s": 0.1582397730089724
+    }
+  ],
+  "gradient_relative_l2_error": 1.5756617699480557e-07,
+  "passed": true,
+  "weights_changed": false,
+  "policy_acceptance": false
+}

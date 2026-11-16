@@ -1,0 +1,19 @@
+{
+  "run": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/switching_load_feedback_diagnostic",
+  "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v18",
+  "out": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_switching_load_feedback",
+  "iterations": [
+    1
+  ],
+  "level": 6,
+  "seeds": [
+    17,
+    53
+  ],
+  "timeout_hours": 1.0,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "parallel_seeds": true
+}

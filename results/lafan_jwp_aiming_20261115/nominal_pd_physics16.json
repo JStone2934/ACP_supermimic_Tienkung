@@ -1,0 +1,11 @@
+{
+  "scope": "Nominal open-loop PD default-pose diagnostic only; not a trained policy or aiming acceptance",
+  "seconds": 1.04,
+  "passed": false,
+  "finite": true,
+  "max_root_drift_m": 0.27349653840065,
+  "max_tilt_deg": 15.433797836303711,
+  "initial_root_height": 0.9918161034584045,
+  "final_root_height": 0.94073885679245,
+  "physics_substeps": 16
+}

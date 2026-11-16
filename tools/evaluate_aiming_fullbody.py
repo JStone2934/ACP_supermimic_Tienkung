@@ -51,11 +51,18 @@ def metric_report(x, rho, terminated, full_length, standing_only=False):
 
 
 @torch.no_grad()
-def evaluate(pi, task, out, level=8):
+def evaluate(pi, task, out, level=8, *, env=None):
     out = Path(out); out.parent.mkdir(parents=True, exist_ok=True)
     parameters = fixed_parameters(level, task.alpha.device)
     n = len(parameters)
-    env = FullbodySim(task, n, lambda count: (parameters.clone(), 0. if level == 0 else task.weights['aim']), eval_mode=True)
+    sampler = lambda count: (parameters.clone(), 0. if level == 0 else task.weights['aim'])
+    if env is None:
+        env = FullbodySim(task, n, sampler, eval_mode=True)
+    else:
+        if env.N != n or not env.eval_mode or env.task is not task:
+            raise ValueError('Formal evaluation simulator does not match task/scenario count')
+        env.sampler = sampler
+        env.reset(torch.arange(n, device=task.alpha.device))
     ctx = {k: v.clone() for k, v in env.context.items()}
     hist = env.observe()[:, None].repeat(1, 10, 1)
     records, states, actions, raw_actions, contributions, torques = [], [], [], [], [], []

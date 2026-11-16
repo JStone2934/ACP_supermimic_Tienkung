@@ -1,0 +1,40 @@
+{
+  "checkpoint_sha256": "7aeddd9f42c810db5f9ae6b8e007b3954c5b9a6211f32b8c4247d47dc3852255",
+  "source_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/wide_translated_load_candidates/ckpt_000001.pt",
+    "sha256": "5564587e2db66ad0fbe90839210dab06a188980138a09e8d66089833f57c9943"
+  },
+  "range_diagnostic": {
+    "diagnostic_only": true,
+    "source_stage_passed": false,
+    "automatic_promotion": false,
+    "feedback_gain": 7,
+    "physical_acceptance": false
+  },
+  "calibration": {
+    "method": "Offline leg-output bias compensation for a measured change in static contact load.",
+    "scale": 0.5,
+    "previous_action_history_translated": true,
+    "explicit_translated_history_equivalence": true,
+    "load_diagnostic_sha256": "5949cda95a9ed7d0c0b0a70dd33509db60e61c82bd6769bf1a278176a23a7639",
+    "delta_leg_pd_rad": [
+      0.0017513486091047525,
+      0.001400110311806202,
+      -0.0008124709129333496,
+      0.0024298964999616146,
+      0.02492251619696617,
+      -0.005928054451942444,
+      0.0031388818752020597,
+      0.0012469207867980003,
+      0.0005846951389685273,
+      0.0022412422113120556,
+      0.023265890777111053,
+      -0.017730457708239555
+    ],
+    "arm_outputs_exact": true,
+    "normalizers_and_reset_exact": true,
+    "extra_runtime_controller": false,
+    "physical_acceptance": false,
+    "limitation": "Static minimum-norm load allocation is an approximation; full physical evaluation required"
+  }
+}

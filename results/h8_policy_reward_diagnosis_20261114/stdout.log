@@ -1,0 +1,19 @@
+/home/js/miniconda3/envs/acp_supermimic/lib/python3.11/site-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+baseline_repeat_0 {"return_": 9.438789367675781, "undiscounted_return": 12.474462509155273, "survival_s": 1.3381248712539673, "feet_max_m": 0.021712951362133026}
+baseline_repeat_1 {"return_": 9.359334945678711, "undiscounted_return": 12.347358703613281, "survival_s": 1.3390624523162842, "feet_max_m": 0.02508050575852394}
+baseline_repeat_2 {"return_": 9.417201042175293, "undiscounted_return": 12.441555976867676, "survival_s": 1.3390624523162842, "feet_max_m": 0.023064162582159042}
+/home/js/robot/locomotion/standing-aiming/tools/diagnose_aiming_fullbody_update.py:71: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  stats = {k: dict(mean=float(parts[k].mean()), gradient_norm=float(norm(g)),
+gradient_decomposition_done
+full_saved {"return_": 9.06417465209961, "undiscounted_return": 11.870155334472656, "survival_s": 1.3406249284744263, "feet_max_m": 0.037490859627723694}
+full_saved_repeat {"return_": 9.078450202941895, "undiscounted_return": 11.892684936523438, "survival_s": 1.3403124809265137, "feet_max_m": 0.036580778658390045}
+full_fresh {"return_": 9.177881240844727, "undiscounted_return": 12.053645133972168, "survival_s": 1.3403124809265137, "feet_max_m": 0.03258054703474045}
+full_fresh_repeat {"return_": 9.147895812988281, "undiscounted_return": 12.006112098693848, "survival_s": 1.3406249284744263, "feet_max_m": 0.033674851059913635}
+immediate_fresh {"return_": 9.266229629516602, "undiscounted_return": 12.19642448425293, "survival_s": 1.3390624523162842, "feet_max_m": 0.028960250318050385}
+immediate_fresh_repeat {"return_": 9.222372055053711, "undiscounted_return": 12.126693725585938, "survival_s": 1.3393748998641968, "feet_max_m": 0.03098481148481369}
+saved_update_reverse {"return_": 9.346952438354492, "undiscounted_return": 12.327325820922852, "survival_s": 1.3393748998641968, "feet_max_m": 0.02572694793343544}
+saved_update_reverse_repeat {"return_": 9.371435165405273, "undiscounted_return": 12.36633014678955, "survival_s": 1.3396873474121094, "feet_max_m": 0.024431537836790085}
+baseline_final {"return_": 9.430831909179688, "undiscounted_return": 12.462160110473633, "survival_s": 1.3378124237060547, "feet_max_m": 0.021867627277970314}
+diagnostic_complete

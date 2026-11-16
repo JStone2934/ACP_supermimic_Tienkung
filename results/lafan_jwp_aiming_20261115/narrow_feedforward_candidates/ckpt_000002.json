@@ -1,0 +1,21 @@
+{
+  "checkpoint_sha256": "139c5714f7dc313c5992f38b761409e39e0541330e0bef171787c00af6877a95",
+  "calibration": {
+    "method": "Add a local target feedforward term to an audited affine distal feedback head.",
+    "feedforward_gain": 1.0,
+    "feedback_gain": 1.5,
+    "geometry_source": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates/ckpt_000001.pt",
+    "geometry_source_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+    "reference_direction_torso": [
+      0.796482503414154,
+      0.1303289383649826,
+      0.5904491543769836
+    ],
+    "all_encoder_decoder_weights_exact": true,
+    "normalizers_exact": true,
+    "online_ik": false,
+    "runtime_motion_files": false,
+    "physical_acceptance": false,
+    "formula": "Existing feedback + gain * J_pseudoinverse * (unit_target_direction - reference_direction) / action_scale"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "Checkpoint3000hasexactlythe samephysicalinferencepolicy/config asfailed2500; no newacceptanceclaim",
+  "checkpoint2500_sha256": "eb055f7f6ec8a57e7510832a29068b9c9c542d13bac645f79b9c141c71c61966",
+  "checkpoint3000_sha256": "23626590049872d6b02ee86e80b0e36eb3597f304c7e44072d327d0421d5520f",
+  "all_policy_tensors_identical": true,
+  "all_config_and_robot_metadata_identical": true,
+  "actor_updates_2500": 600,
+  "actor_updates_3000": 600,
+  "world_model_used_in_physical_policy_evaluation": false,
+  "previous_evaluation": "evaluation_balance_recovery_compact/iteration_002500/result.json",
+  "physical_policy_passed": false
+}

@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "scope": "Exactlytwo dualGPUintegrationupdates; finite/synchronized execution only. WMgatefailed andsmoke bypassedgate bydesign; no convergenceoracceptanceclaim.",
+  "checkpoint_sha256": "31a84cb9f95ee2092b0cd0edb687e6797d9f3e00aee5c41019a724e05415229a",
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 367930880,
+        "torch_peak_reserved": 429916160,
+        "device_used": 7586971648,
+        "warp_pool_used": 627436720,
+        "warp_pool_peak": 627437668
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 369044992,
+        "torch_peak_reserved": 425721856,
+        "device_used": 6589841408,
+        "warp_pool_used": 314822435,
+        "warp_pool_peak": 314823383
+      }
+    ],
+    "state_sha256": "9d483b11645844c237174cc4aaa8b90ed6e2274c45051db782b8d1224409d0dc"
+  },
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "world_model_gate_passed": false,
+  "formal_initialization_allowed": false,
+  "config_fields": {
+    "horizon": 32,
+    "wm_window": 16,
+    "wm_foot_velocity_weight": 0.05,
+    "wm_validation_steps": 32,
+    "physics_substeps": 16,
+    "compile_training": true
+  }
+}

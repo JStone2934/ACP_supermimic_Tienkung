@@ -1,0 +1,18 @@
+{
+  "checkpoint_sha256": "22898227a278735292e56c96212f69ccec29f5c30554dda15bd113199cc5f3b6",
+  "calibration": {
+    "method": "Compare earlier measured-foot support acquisition within the permitted adjustment window.",
+    "old_capture_steps": 150,
+    "new_capture_steps": 25,
+    "new_capture_seconds": 0.5,
+    "all_policy_and_model_weights_exact": true,
+    "normalizers_exact": true,
+    "initial_pose_and_reset_noise_unchanged": true,
+    "future_contacts": false,
+    "support_anchor": "Actual measured feet at acquisition; release on target change or movement",
+    "acceptance_criteria_changed": false,
+    "acceptance_contract_sha256": "5ff1675d1ea0a5dc5b2a121dc887682f0a2bed19a6e198b937813ee717cf28f1",
+    "physical_acceptance": false,
+    "limitation": "Controller acquisition timing changed; full physical re-evaluation required. Acceptance still uses the original3s window."
+  }
+}

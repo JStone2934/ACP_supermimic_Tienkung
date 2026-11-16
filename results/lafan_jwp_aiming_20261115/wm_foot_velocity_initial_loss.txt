@@ -1,0 +1,22 @@
+def wm_loss(wm, task, windows):
+    S = unflatten_state(windows['s'][:, 0])
+    loss = S[0].new_zeros(())
+    scale = wm.out_norm.std().clamp_min(.003)
+    foot_velocity_weight = task.config.get('wm_foot_velocity_weight', 0.)
+    for j in range(windows['a'].shape[1]):
+        # Invalid tails must not propagate arbitrary post-reset actions through the old episode.
+        truth = unflatten_state(windows['s'][:, j])
+        S = tuple(torch.where(windows['mask'][:, j].reshape(-1, *([1] * (x.ndim - 1))).bool(), x, y)
+                  for x, y in zip(S, truth))
+        S = wm.step(S, windows['a'][:, j], normalize_xi(windows['xi'][:, j]), task.mdp.scan(S, flat_boxes(S)))
+        target = unflatten_state(windows['s1'][:, j])
+        err = (wm.state_error(S, target) / scale).square().mean(-1)
+        if foot_velocity_weight:
+            # State-component normalization can hide a small, persistent Cartesian
+            # foot-velocity bias. Supervise this reward-relevant quantity directly
+            # against physical transitions; no contact labels or fixed anchors.
+            predicted_velocity = task.kin.forward(*S)[2][:, task.feet]
+            target_velocity = task.kin.forward(*target)[2][:, task.feet]
+            err = err + foot_velocity_weight * ((predicted_velocity-target_velocity)/.05).square().mean((-1,-2))
+        loss += (err * windows['mask'][:, j]).sum()
+    return loss / windows['mask'].sum().clamp_min(1)

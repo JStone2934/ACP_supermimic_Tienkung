@@ -31,12 +31,14 @@ import math
 import os
 import time
 import shutil
+from collections import deque
 from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--robot", choices=["g1", "tienkung3_29dof"], default="g1")
 parser.add_argument("--task", choices=['tracking', 'standing_aiming', 'standing_aiming_curriculum'], default='tracking')
 parser.add_argument("--num_envs", type=int, default=4096)
+parser.add_argument("--physics_substeps", type=int, default=None, help="physics steps per 50 Hz control step; saved with the policy")
 parser.add_argument("--iterations", type=int, default=60_000, help="total iterations; -1 trains continuously until stopped")
 parser.add_argument("--buffer_steps", type=int, default=1000)
 parser.add_argument("--utd", type=float, default=0.4, help="updates per vectorized simulator step")
@@ -47,9 +49,18 @@ parser.add_argument("--wm_batches", type=int, default=10)
 parser.add_argument("--wm_batch", type=int, default=2048)
 parser.add_argument("--pi_batch", type=int, default=4096)
 parser.add_argument("--lr", type=float, default=2e-4)
+parser.add_argument("--actor_lr", type=float, default=None, help="Separate actor learning rate; other optimizers retain --lr")
+parser.add_argument("--critic_warmup_iters", type=int, default=0, help="Value-only updates after WM warmup before actor updates")
+parser.add_argument("--preserve_critic", action="store_true", help="Explicit finetuning copies source value function with zero columns for added commands")
+parser.add_argument("--bound_reference_bootstrap", action="store_true", help="Cap bootstrap by maximum remaining reference-episode return")
 parser.add_argument("--gamma", type=float, default=0.99)
 parser.add_argument("--lam", type=float, default=0.95)
 parser.add_argument("--action_noise", type=float, default=0.1)
+parser.add_argument("--reference_joint_aux", type=float, default=0., help="training-only dense joint PD-target guidance weight; no extra policy input")
+parser.add_argument("--reference_root_weight", type=float, default=0., help="Additional world root tracking reward, 0.1m scale")
+parser.add_argument("--reference_support_position_weight", type=float, default=0., help="Labeled support feet world-position reward, 0.05m scale")
+parser.add_argument("--reference_support_velocity_weight", type=float, default=0., help="Labeled support feet velocity tracking reward, 0.1m/s scale")
+parser.add_argument("--tracking_root_radius", type=float, default=None, help="end a reference rollout when its root diverges by this many meters")
 parser.add_argument("--critic_epochs", type=int, default=5)
 parser.add_argument("--critic_minibatches", type=int, default=4)
 parser.add_argument("--warmup_steps", type=int, default=64, help="sim steps before any update")
@@ -60,7 +71,11 @@ parser.add_argument("--save_full_checkpoints", action="store_true", help="keep o
 parser.add_argument("--log_every", type=int, default=50)
 parser.add_argument("--motion_dir", type=str, default=None, help="default: data/php_parkour")
 parser.add_argument("--contacts_dir", type=str, default=None, help="supermimic.acp.make_labels output (default: <motion_dir>_contacts)")
+parser.add_argument("--dataset_weights", type=str, default=None, help='JSON group weights, e.g. {"jwp":0.8,"lafan":0.2}')
 parser.add_argument("--contact_geometry", choices=["legacy", "spheres224"], default="legacy")
+parser.add_argument("--reference_pose", action="store_true", help="Explicit reference joint command for pretraining; removed by fixed-pose transfer before aiming")
+parser.add_argument("--pose_action_skip", action="store_true", help="Zero-initialized direct pose-to-action adapter; fixed pose folds into final output bias")
+parser.add_argument("--pose_skip_lr", type=float, default=1e-3)
 parser.add_argument("--allow_contact_geometry_change", action="store_true", help="explicitly migrate a resumed checkpoint to different reward geometry; record provenance")
 parser.add_argument("--target_noise", type=float, default=0.05)
 parser.add_argument("--scan_noise", type=float, default=0.05, help="--no-blind: uniform noise on the command's height scan")
@@ -80,6 +95,25 @@ parser.add_argument("--amp", type=str, default="bf16", choices=["none", "bf16"],
 from supermimic.acp.distributed import Runtime, add_arguments
 add_arguments(parser, planner=False)
 args = parser.parse_args()
+if args.critic_warmup_iters<0 or (args.actor_lr is not None and (not math.isfinite(args.actor_lr) or args.actor_lr<=0)):
+    parser.error('Invalid actor learning rate or value warmup')
+if args.preserve_critic and not (args.finetune or args.resume):
+    parser.error('preserve_critic requires explicit --finetune or --resume')
+if args.reference_pose and args.task != 'tracking':
+    parser.error('reference_pose is restricted to motion pretraining')
+if args.pose_action_skip and (not args.reference_pose or not math.isfinite(args.pose_skip_lr) or args.pose_skip_lr<=0):
+    parser.error('pose_action_skip requires reference_pose and a positive adapter learning rate')
+if not math.isfinite(args.reference_joint_aux) or args.reference_joint_aux < 0:
+    parser.error('reference_joint_aux must be finite and nonnegative')
+if args.task != 'tracking' and args.reference_joint_aux:
+    parser.error('reference guidance is restricted to reference-tracking stages')
+support_weight_keys = ('reference_root_weight', 'reference_support_position_weight', 'reference_support_velocity_weight')
+if any(not math.isfinite(getattr(args,key)) or getattr(args,key)<0 for key in support_weight_keys):
+    parser.error('Reference support weights must be finite and nonnegative')
+if any(getattr(args,key) for key in support_weight_keys) and (args.task!='tracking' or args.reward!='supermimic'):
+    parser.error('Reference support reward requires tracking with the supermimic reward')
+if args.tracking_root_radius is not None and (args.task != 'tracking' or not math.isfinite(args.tracking_root_radius) or args.tracking_root_radius <= 0):
+    parser.error('tracking_root_radius must be positive and is restricted to reference tracking')
 if args.task == 'standing_aiming':
     if args.robot != 'tienkung3_29dof':
         parser.error('standing_aiming requires --robot tienkung3_29dof')
@@ -97,7 +131,7 @@ import torch.nn as nn
 import supermimic.acp.networks as networks
 from supermimic.acp.buffer import ReplayBuffer
 from supermimic.acp.memory import compile_reward, reward_batch
-from supermimic.acp.env import TrackingSim
+from supermimic.acp.env import TrackingSim, make_sim
 from supermimic.acp.robots import get_robot, sha256
 from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import INV_DIM, MAX_STEP_REWARD, MDP, OBS_DIM, normalize_xi, unflatten_state
@@ -117,10 +151,16 @@ NUM_J, OBS_DIM, INV_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim
 motion_dir = args.motion_dir or robot.motion_dir
 kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
+import json
+dataset_weights = json.loads(args.dataset_weights) if args.dataset_weights else None
+if dataset_weights is not None:
+    from .dataset_sampling import group_probabilities
+    group_probabilities(motion.names, dataset_weights, dev)
 mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev))
+mdp.cfg.term_root_distance = args.tracking_root_radius
 ctc_cfg = ContactCfg(contacts_dir=args.contacts_dir, target_noise=args.target_noise, scan_noise=args.scan_noise, w_label=args.w_label,
                      target_point=args.target_point, target_min_steps=args.target_min_steps, blind=args.blind,
-                     contact_geometry=args.contact_geometry)  # fmt: skip
+                     contact_geometry=args.contact_geometry, reference_pose=args.reference_pose)  # fmt: skip
 ctc = ContactTask(ctc_cfg, mdp, motion_dir, dev)
 standing = StandingTask(mdp, ctc) if args.task == 'standing_aiming' else None
 task_config = standing.metadata() if standing else None
@@ -131,16 +171,28 @@ if standing:
         raise ValueError('standing reference does not match held-arm pose')
 reward_cfg = PaperRewardCfg() if args.reward == "paper" else None
 paper_reward = PaperReward(reward_cfg, ctc) if reward_cfg is not None else None
+support_reward = None
+if any(getattr(args,key) for key in support_weight_keys):
+    from .reference_support import ReferenceSupportCfg, ReferenceSupportReward
+    support_reward = ReferenceSupportReward(mdp, ctc, ReferenceSupportCfg(
+        root_weight=args.reference_root_weight, position_weight=args.reference_support_position_weight,
+        velocity_weight=args.reference_support_velocity_weight))
 MAX_R = reward_cfg.max_step_reward if reward_cfg is not None else MAX_STEP_REWARD + args.w_label * CONTROL_DT
+if support_reward is not None:
+    MAX_R += support_reward.max_step_reward
 if standing:
     MAX_R = standing.max_step_reward
 Hh, HZ = args.hist, args.horizon
 
 wm = WorldModel(mdp.scan_dim, robot=robot).to(dev)
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)  # the contact command in place of the reference goal
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot,pose_action_skip=args.pose_action_skip).to(dev)
 critic = Critic(INV_DIM + mdp.critic_extra + ctc.cmd_dim).to(dev)
 opt_wm = torch.optim.Adam(wm.parameters(), lr=args.lr)
-opt_pi = torch.optim.Adam(pi.parameters(), lr=args.lr, betas=(0.9, 0.95))
+pi_parameters=pi.parameters()
+if args.pose_action_skip:
+    pi_parameters=[dict(params=[p for n,p in pi.named_parameters() if not n.startswith('pose_skip.')]),
+                   dict(params=list(pi.pose_skip.parameters()),pose_skip=True)]
+opt_pi = torch.optim.Adam(pi_parameters, lr=args.lr, betas=(0.9, 0.95))
 opt_v = torch.optim.Adam(critic.parameters(), lr=args.lr)
 start_it, wall_offset, sim_steps, lr_it0 = 0, 0.0, 0, 0
 wm_only_iters = 0 if args.init else args.wm_only_iters
@@ -152,8 +204,24 @@ if args.resume or args.init or args.finetune:
     robot.validate_metadata(ck.get("robot_metadata"), legacy=True)
     if ck.get('args', {}).get('hist') != args.hist:
         raise ValueError('checkpoint history length mismatch')
+    if (ck.get('args', {}).get('physics_substeps') or robot.decimation) != (args.physics_substeps or robot.decimation):
+        raise ValueError('checkpoint physics substeps mismatch')
     if args.resume and ck.get('task_config') != task_config:
         raise ValueError('checkpoint task configuration mismatch')
+    if args.resume:
+        for key in support_weight_keys:
+            if ck.get('args',{}).get(key,0.)!=getattr(args,key):
+                raise ValueError(f'Checkpoint {key} mismatch; use explicit finetune')
+        for key,default in [('actor_lr',None),('critic_warmup_iters',0),('bound_reference_bootstrap',False),('pose_action_skip',False),('pose_skip_lr',1e-3)]:
+            if ck.get('args',{}).get(key,default)!=getattr(args,key):
+                raise ValueError(f'Checkpoint {key} mismatch')
+        if ck.get('args', {}).get('tracking_root_radius') != args.tracking_root_radius:
+            raise ValueError('checkpoint tracking root radius mismatch; use explicit --init')
+        if ck.get('args', {}).get('reference_joint_aux', 0.) != args.reference_joint_aux:
+            raise ValueError('checkpoint reference guidance mismatch; use explicit --init for a new experiment')
+        saved_weights = ck.get('args', {}).get('dataset_weights')
+        if (json.loads(saved_weights) if saved_weights else None) != dataset_weights:
+            raise ValueError('checkpoint dataset sampling mixture mismatch')
     # Resume continues the same run; --init explicitly fine-tunes on a new dataset.
     if args.resume and robot.robot_id != "g1" and ck.get("data_hash") != motion.data_hash:
         raise ValueError("checkpoint dataset mismatch")
@@ -165,12 +233,27 @@ if args.resume or args.init or args.finetune:
                                    current=args.contact_geometry, source_checkpoint=os.path.abspath(load_path),
                                    source_sha256=sha256(load_path), source_iteration=ck["iteration"])
         rt.print(f"explicit reward geometry migration: {geometry_transition}", flush=True)
-    wm.load_state_dict(ck["wm"]), pi.load_state_dict(ck["pi"])
+    if bool(ck.get('ctc_cfg', {}).get('reference_pose', False)) != args.reference_pose:
+        if not (args.finetune and args.reference_pose):
+            raise ValueError('Reference-pose command change requires explicit --finetune into reference_pose')
+        from .reference_guidance import expand_pose_command
+        pi_state = expand_pose_command(ck['pi'], ctc.cmd_dim)
+    else:
+        pi_state = ck['pi']
+    if bool(ck.get('args',{}).get('pose_action_skip',False))!=args.pose_action_skip:
+        if not (args.finetune and args.pose_action_skip):raise ValueError('Pose adapter change requires explicit --finetune')
+        pi_state=dict(pi_state)
+        pi_state.update({k:v for k,v in pi.state_dict().items() if k.startswith('pose_skip.')})
+    wm.load_state_dict(ck["wm"]), pi.load_state_dict(pi_state)
+    if args.finetune and args.preserve_critic:
+        from .reference_guidance import expand_critic_command
+        extra=critic.net[0].weight.shape[1]-ck['critic']['net.0.weight'].shape[1]
+        critic.load_state_dict(expand_critic_command(ck['critic'],extra))
     if not args.finetune:
         critic.load_state_dict(ck["critic"])
         opt_wm.load_state_dict(ck["opt_wm"]), opt_pi.load_state_dict(ck["opt_pi"]), opt_v.load_state_dict(ck["opt_v"])
     source_checkpoint = (dict(path=os.path.abspath(load_path), sha256=sha256(load_path), iteration=ck['iteration'])
-                         if args.finetune else ck.get('source_checkpoint'))
+                         if args.finetune or args.init else ck.get('source_checkpoint'))
     if args.resume:
         start_it, wall_offset, sim_steps, lr_it0 = ck["iteration"], ck["wall_time"], ck["sim_steps"], ck.get("lr_it0", 0)
     elif args.init:  # legacy --init continues its learning-rate schedule
@@ -224,7 +307,12 @@ def _reward_term(S, S_prev, f, v, a, a_prev, a_prev2, xi):
         r = paper_reward(S, S_prev, f, v, a, a_prev, a_prev2, xi)
     else:
         r = mdp.reward(S, f, a, a_prev) + ctc.cfg.w_label * ctc.label_reward(S, f, v, motion.boxes(f, v)) * CONTROL_DT
-    return r, mdp.soft_termination(S, f)
+    if support_reward is not None:
+        r = r + support_reward(S, f, v)
+    done=mdp.soft_termination(S, f)
+    if args.bound_reference_bootstrap:
+        done=torch.where(f>=motion.clip_end[motion.clip_id[f]],torch.ones_like(done),done)
+    return r, done
 
 
 wm_rollout = torch.compile(_wm_rollout)
@@ -279,7 +367,7 @@ def sample_starts(B: int):
     return s, h["o"]
 
 
-def policy_update():
+def policy_update(train_actor=True):
     s, o_hist = sample_starts(args.pi_batch)
     S = unflatten_state(s["s"])
     xi, f, v, a_prev, a_prev2, gs = s["xi"], s["f"], s["v"], s["a_prev"], s["a_prev2"], s["goal_steps"]
@@ -289,6 +377,12 @@ def policy_update():
     set_requires_grad(critic, False)
     B = args.pi_batch
     S0, f0 = S, f
+    joint_aux = S[0].new_zeros(())
+    if args.reference_joint_aux:
+        from .reference_guidance import joint_target_loss
+        guided_action = pi(o_hist, ctc.command(S, f, v, gs, noise=True))
+        joint_aux = joint_target_loss(guided_action, xi, mdp.default_q,
+                                     S[0].new_tensor(robot.action_scales), motion.q[f + 1])
     Ss, Sps, As, Aps, Ap2s, F1s = [], [], [], [], [], []
     for t in range(HZ):
         Sps.append(S), Aps.append(a_prev), Ap2s.append(a_prev2)
@@ -309,11 +403,18 @@ def policy_update():
     c = alive[-1]
     r_sum = (c_t * r).detach().sum(0)
     rews, dones = r.detach(), d.detach()
-    Jr = Jr + (args.gamma**HZ) * c * critic(ctc.critic_input(S, f, v, gs, xi_n))
-    loss = -Jr.mean()
+    bootstrap=critic(ctc.critic_input(S, f, v, gs, xi_n))
+    if args.bound_reference_bootstrap:
+        from .reference_guidance import cap_reference_value
+        bootstrap=cap_reference_value(bootstrap,f,motion.clip_end,motion.clip_id,MAX_R,args.gamma)
+    Jr = Jr + (args.gamma**HZ) * c * bootstrap
+    loss = -Jr.mean() + args.reference_joint_aux * joint_aux
     opt_pi.zero_grad(set_to_none=True)
-    loss.backward()
-    gn = rt.step(opt_pi, pi, "pi", max_norm=1.0, clip_value=0.1)
+    if train_actor:
+        loss.backward()
+        gn = rt.step(opt_pi, pi, "pi", max_norm=1.0, clip_value=0.1)
+    else:
+        gn=loss.new_zeros(())
     set_requires_grad(wm, True)
     set_requires_grad(critic, True)
     # ---------------- critic: GAE(lambda) targets over the imagined transitions ----------------
@@ -326,6 +427,8 @@ def policy_update():
     critic.norm.update(X)
     with torch.no_grad():
         V = critic(X)
+        if args.bound_reference_bootstrap:
+            V=cap_reference_value(V,f_c.view(HZ+1,B),motion.clip_end,motion.clip_id,MAX_R,args.gamma)
         R = V[-1]
         targets = []
         for t in range(HZ - 1, -1, -1):
@@ -344,23 +447,44 @@ def policy_update():
             v_loss.backward()
             rt.step(opt_v, critic, "critic", max_norm=1.0)
     imag_r = (r_sum / HZ / MAX_R).mean()
-    return loss.detach(), v_loss.detach(), imag_r, gn.detach(), c.mean().detach()
+    return loss.detach(), v_loss.detach(), imag_r, gn.detach(), c.mean().detach(), joint_aux.detach()
 
 
 # ------------------------------------------------------------------------------------------------
 env = TrackingSim(args.num_envs, motion, mdp, dev, gamma=args.gamma, backward_curriculum=args.backward_curriculum, runtime=rt,
+                  sim_cfg=make_sim(robot=robot, physics_substeps=args.physics_substeps),
                   control_task=standing)
+if support_reward is not None:
+    env.max_step_reward = MAX_R
+    env.G_max = MAX_R/(1-args.gamma)
+
+
+def reference_physical_reward(S, f, v, a, a_prev):
+    return (mdp.reward(S, f, a, a_prev)
+            + ctc.cfg.w_label*CONTROL_DT*ctc.label_reward(S, f, v, motion.boxes(f, v))
+            + support_reward(S, f, v))
+env.dataset_weights = dataset_weights
 if (args.resume or args.init) and "curriculum_phase" in ck:
-    env.phase.copy_(ck["curriculum_phase"])
+    if args.resume or ck.get('data_hash') == motion.data_hash:
+        env.phase.copy_(ck["curriculum_phase"])
+    elif args.init:
+        # Explicitly expanding the immutable reference dataset preserves learned
+        # networks/optimizers. Transfer curriculum only for identical clip keys;
+        # new clips keep their normal initial phase, never positional row copies.
+        previous_names=ck.get('motion_names', [])
+        previous_phase={name:phase for name,phase in zip(previous_names,ck['curriculum_phase'])}
+        for index,name in enumerate(motion.names):
+            if name in previous_phase:env.phase[index]=previous_phase[name]
 if args.resume:
     for key in ('bin_G', 'bin_w_avg'):
         if key in ck:
             getattr(env, key).copy_(ck[key])
-if args.resume or args.init or args.finetune:
+if args.resume or args.init or args.finetune or dataset_weights is not None:
     env.reset(torch.arange(args.num_envs, device=dev))
 if standing:
     from supermimic.acp.standing_eval import evaluate, selection_key
-    eval_env = TrackingSim(1, motion, mdp, dev, eval_mode=True, control_task=standing)
+    eval_env = TrackingSim(1, motion, mdp, dev, eval_mode=True, control_task=standing,
+                           sim_cfg=make_sim(robot=robot, physics_substeps=args.physics_substeps))
     best_report_path = Path(args.log_dir) / 'best_eval.json'
     import json
     best_report = json.loads(best_report_path.read_text()) if args.resume and best_report_path.exists() else None
@@ -372,6 +496,7 @@ buffer = ReplayBuffer(args.buffer_steps, args.num_envs, dev, robot=robot)
 obs_hist = torch.zeros(args.num_envs, Hh, OBS_DIM, device=dev)
 goal_steps = ctc.sample_goal_steps(args.num_envs)
 collect_iteration = start_it
+transition_history = deque(maxlen=8)
 
 
 @torch.no_grad()
@@ -392,19 +517,31 @@ def collect(n_steps: int, stats: dict):
         a = torch.clamp(a + noise * eps, -20, 20)
         if standing:
             a = standing.compose(a, env.xi)
-        out = env.step(a)
+        out = env.step(a, reward_fn=reference_physical_reward if support_reward is not None else None)
         out["goal_steps"] = goal_steps.clone()
+        transition_history.append({k: x.clone() for k, x in out.items() if torch.is_tensor(x)})
         buffer.add(out)
         S0, S1 = unflatten_state(out["s"]), unflatten_state(out["s1"])
         wm.in_norm.update(wm.inputs(S0, out["a"], normalize_xi(out["xi"]), mdp.scan(S0, motion.boxes(out["f"], out["v"]))))
-        wm.out_norm.update(wm.targets(S0, S1))
+        wm_target = wm.targets(S0, S1)
+        try:
+            wm.out_norm.update(wm_target)
+        except FloatingPointError:
+            # Every rank reaches the same failed collective; preserve the actual
+            # transition before changing any physical or normalization behavior.
+            diagnostic = {k: x.detach().cpu() for k, x in out.items() if torch.is_tensor(x)}
+            diagnostic.update(wm_target=wm_target.cpu(), sim_steps=sim_steps,
+                              motion_names=motion.names, clip_id=motion.clip_id.cpu())
+            diagnostic['history'] = [{k: x.cpu() for k, x in row.items()} for row in transition_history]
+            torch.save(diagnostic, os.path.join(args.log_dir, f'nonfinite_transition_rank{rt.rank}.pt'))
+            raise
         sim_steps += rt.args["num_envs"]
         # contact labels in the simulator: touch per body vs the reference label
         f1 = out["f"] + 1
         touch = ctc.body_distance(S1, motion.boxes(f1, out["v"])) <= ctc.cfg.touch_dist
         label = ctc.labels[f1, out["v"]]
         stats["tp"].append((touch & label).sum()), stats["n_touch"].append(touch.sum()), stats["n_label"].append(label.sum())
-        stats["r"].append(out["r"].mean() / (MAX_R if standing else MAX_STEP_REWARD))
+        stats["r"].append(out["r"].mean() / (MAX_R if standing or support_reward is not None else MAX_STEP_REWARD))
         if "ep_len" in out:
             stats["len"].append(out["ep_len"].sum()), stats["n_ep"].append(out["ep_len"].new_tensor(len(out["ep_len"])))
             stats["ret"].append(out["ep_ret_norm"].sum()), stats["term"].append(out["term"][out["done"]].float().sum())
@@ -415,21 +552,26 @@ def collect(n_steps: int, stats: dict):
 stats_keys = ("r", "len", "ret", "n_ep", "term", "tp", "n_touch", "n_label")
 stats = {k: [] for k in stats_keys}
 collect(args.warmup_steps, stats)  # the replay buffer is not checkpointed, so a resumed run refills it too
+rt.print(f'Warmup complete: {args.warmup_steps} steps, physics_substeps={env.physics_substeps}, finite normalization statistics', flush=True)
 log_f = rt.open_log(os.path.join(args.log_dir, "train_log.csv"))
 if rt.main and os.path.getsize(os.path.join(args.log_dir, "train_log.csv")) == 0:
     log_f.write("iteration,wall_h,sim_steps,wm_loss,wm_err8,pi_loss,v_loss,imag_rew,pi_gradnorm,imag_survival,"
                 "sim_rew,ep_len,ep_ret_norm,term_frac,touch_precision,touch_recall,it_per_s,lr,phase_zero_frac"
-                + "".join(f",phase_{g}" for g in GROUPS) + "\n")  # fmt: skip
+                + "".join(f",phase_{g}" for g in GROUPS)
+                + (",reference_joint_aux_mse" if args.reference_joint_aux else "") + "\n")  # fmt: skip
 t_start = time.time() - wall_offset
 t_log = time.time()
 step_acc = ck.get("step_acc", 0.0) if args.resume else 0.0
-agg = {"wm": [], "wm8": [], "pi": [], "v": [], "ir": [], "gn": [], "surv": []}
+agg = {"wm": [], "wm8": [], "pi": [], "v": [], "ir": [], "gn": [], "surv": [], "aux": []}
 for it in (itertools.count(start_it) if args.iterations == -1 else range(start_it, args.iterations)):
     collect_iteration = it
     lr = lr_at(it)
     for o in (opt_wm, opt_pi, opt_v):
         for gparam in o.param_groups:
             gparam["lr"] = lr
+    for gparam in opt_pi.param_groups:
+        if gparam.get('pose_skip'):gparam['lr']=lr*args.pose_skip_lr/args.lr
+        elif args.actor_lr is not None:gparam['lr']=lr*args.actor_lr/args.lr
     step_acc += 1.0 / args.utd
     n = int(step_acc)
     step_acc -= n
@@ -438,7 +580,7 @@ for it in (itertools.count(start_it) if args.iterations == -1 else range(start_i
         l, e8 = wm_update()
     agg["wm"].append(l), agg["wm8"].append(e8)
     if it >= wm_only_iters:
-        for k, v in zip(("pi", "v", "ir", "gn", "surv"), policy_update()):
+        for k, v in zip(("pi", "v", "ir", "gn", "surv", "aux"), policy_update(it>=wm_only_iters+args.critic_warmup_iters)):
             agg[k].append(v)
     rt.tick(it + 1, sim_steps, ready=rt.updates.get("pi", 0) > 0)
     if (it + 1) % args.log_every == 0:
@@ -456,6 +598,8 @@ for it in (itertools.count(start_it) if args.iterations == -1 else range(start_i
         # curriculum: fraction of clips started from their first frame, mean start phase per motion folder
         phase_g = [float(env.phase[clip_group == i].mean()) for i in range(len(GROUPS))]
         row += [float((env.phase == 0).float().mean())] + phase_g
+        if args.reference_joint_aux:
+            row.append(mean(agg['aux']))
         log_f.write(",".join(f"{x:.6g}" if isinstance(x, float) else str(x) for x in row) + "\n")
         log_f.flush()
         rt.print(f"it {it + 1} | {wall_h:.3f} h | wm {row[3]:.4f} e8 {row[4]:.4f} | pi {row[5]:.3f} v {row[6]:.4f} imag_r {row[7]:.3f} "
@@ -465,13 +609,15 @@ for it in (itertools.count(start_it) if args.iterations == -1 else range(start_i
         stats = {k: [] for k in stats_keys}
         agg = {k: [] for k in agg}
     if (it + 1) % args.ckpt_every == 0 or it + 1 == args.iterations:
-        ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
+        ck = {"robot_metadata": robot.metadata(), "data_hash": motion.data_hash, "motion_names": motion.names, "wm": wm.state_dict(), "pi": pi.state_dict(), "critic": critic.state_dict(), "opt_wm": opt_wm.state_dict(),
               "opt_pi": opt_pi.state_dict(), "opt_v": opt_v.state_dict(), "iteration": it + 1,
               "wall_time": time.time() - t_start, "sim_steps": sim_steps, "step_acc": step_acc, "args": rt.args,
               "ctc_cfg": dataclasses.asdict(ctc_cfg), "geometry_transition": geometry_transition,
               "curriculum_phase": env.phase.clone(), "lr_it0": lr_it0,
               "bin_G": env.bin_G.clone(), "bin_w_avg": env.bin_w_avg.clone(),
               "reward_cfg": dataclasses.asdict(reward_cfg) if reward_cfg is not None else None,
+              "mdp_cfg": dataclasses.asdict(mdp.cfg),
+              "support_reward_cfg": dataclasses.asdict(support_reward.cfg) if support_reward is not None else None,
               "task_config": task_config, "source_checkpoint": source_checkpoint,
               "freeze_normalizers": bool(standing or args.finetune or (args.resume and ck.get('freeze_normalizers', False))),
               "saved_at": time.strftime("%Y-%m-%d %H:%M:%S")}  # fmt: skip

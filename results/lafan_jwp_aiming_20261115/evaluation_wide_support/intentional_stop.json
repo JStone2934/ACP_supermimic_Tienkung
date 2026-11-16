@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-16 12:04:48.884203",
+  "reason": "First full250 evaluation regressed balance136/147 to108/128 andfeetdrift.057to.071m; reject this support-only adaptation rather than continue the failing branch",
+  "cancelled_evaluations": [
+    400,
+    600,
+    1000
+  ],
+  "preserved_source": "wide_shared_proximal_candidates/ckpt_000002.pt",
+  "failed_evidence": "wide_support250_comparison.json"
+}

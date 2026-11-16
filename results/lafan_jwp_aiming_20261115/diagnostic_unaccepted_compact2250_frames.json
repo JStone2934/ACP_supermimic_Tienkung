@@ -1,0 +1,13 @@
+{
+  "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+  "trajectory_sha256": "900ab45cae09fad10848c64b8afa7d3a04b9c08a6c4fd08be343c89bc0fc9a4d",
+  "scenario": 63,
+  "balanced30s": true,
+  "full_passed": false,
+  "foot_drift_m": 0.0799247995018959,
+  "times_s": [
+    10,
+    30
+  ],
+  "scope": "Diagnosticvisualizationofapartialcandidate, not anacceptedpolicy"
+}

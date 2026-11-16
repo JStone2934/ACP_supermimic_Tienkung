@@ -1,0 +1,45 @@
+{
+  "created": "2026-11-16 09:54:15.375612",
+  "unit": "center-distal-skip-training.service",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/center_distal_skip/train",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v16",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_command_skip_init800.pt",
+  "init_sha256": "bb904449029db71cd10bd1a5a908689927232846c87f8227bab56dd0c3165a00",
+  "source_training_checkpoint": "center_distal/train/ckpt_000800.pt",
+  "source_training_sha256": "39d395786d1c0b6ca1fa6834428a1f2f4071f1048fde44d5d28007ec57aaa641",
+  "source_full_center_passed": false,
+  "same_stage_recovery": true,
+  "initial_actions_exact": true,
+  "level": 1,
+  "iterations": 1500,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "wm_only_iters": 100,
+  "critic_warmup_iters": 100,
+  "actor_lr": 0.0001,
+  "policy_training_scope": "right_distal_with_command_skip",
+  "trainable_elements": 816,
+  "new_parameters": 45,
+  "checkpoint_every": 50,
+  "evaluation_iterations": [
+    250,
+    400,
+    600,
+    1000,
+    1500
+  ],
+  "evaluation_seeds": [
+    17,
+    53
+  ],
+  "evaluation_gpus": [
+    0,
+    1
+  ],
+  "smoke_weights_reused": false,
+  "physical_acceptance": false,
+  "acceptance_changed": false
+}

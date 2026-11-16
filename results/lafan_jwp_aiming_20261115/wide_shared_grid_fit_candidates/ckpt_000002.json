@@ -1,0 +1,12 @@
+{
+  "checkpoint_sha256": "7bb7e4baec45297bdd64561a083cc42384d458c8b6d8a9f708311d46f18b191f",
+  "calibration": {
+    "method": "Fit affine distal feedforward to an independently checked offline IK grid.",
+    "geometry_sha256": "511000a3f4a8bc647f945ca77a47cb36ebb96830707de8c02147bcd341b23ead",
+    "feedback_gain": 7.0,
+    "affine_fit_rms_rad": 0.24112121467365366,
+    "body_and_reset_exact": true,
+    "physical_acceptance": false,
+    "online_ik": false
+  }
+}

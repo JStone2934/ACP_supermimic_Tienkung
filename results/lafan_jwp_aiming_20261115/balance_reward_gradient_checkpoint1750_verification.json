@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "scope": "Finite synchronized training/provenance audit; physical acceptance still pending",
+  "checkpoint_sha256": "811893cf8e274476b5768f3580f2c6e17d95f909bf8afc69ce1f48d5c2b161c0",
+  "iteration": 1750,
+  "actor_value_gradient": 0.0,
+  "critic_warmup_done": 100,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 17500,
+      "distill": 1000,
+      "critic": 5000,
+      "pi": 150
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 2140514304,
+        "torch_peak_reserved": 2629828608,
+        "device_used": 4727111680,
+        "warp_pool_used": 787369870,
+        "warp_pool_peak": 787370818
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 2140433920,
+        "torch_peak_reserved": 2627731456,
+        "device_used": 4042457088,
+        "warp_pool_used": 473809235,
+        "warp_pool_peak": 473810183
+      }
+    ],
+    "state_sha256": "a912309a903bcd1b87a828a310e41a5df0a72a60365654e9340b863eadafeae1"
+  },
+  "comparison_limitation": "Restart recreates physical environments and replay; this is an algorithm variant comparison, not an identical-samples causal proof."
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Short-window diagnostic only; allfull30sepisodesfailed",
+  "rows": [
+    {
+      "label": "pre_actor",
+      "checkpoint_sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c",
+      "scope": "Pre-fall0.5to2.5s diagnostic; not full30s acceptance",
+      "mean_foot_speed_m_s": 0.09813341498374939,
+      "mean_root_speed_xy_m_s": 0.06706172972917557,
+      "root_displacement_m_at_3s": 0.06251456588506699,
+      "median_root_height_m_at_3s": 0.961272656917572
+    },
+    {
+      "label": "compact100_actor_updates",
+      "checkpoint_sha256": "7ba0fb229909b7c489d409f6c0b710ecca176a20836300e92811279ad713134e",
+      "scope": "Pre-fall0.5to2.5s diagnostic; not full30s acceptance",
+      "mean_foot_speed_m_s": 0.320167601108551,
+      "mean_root_speed_xy_m_s": 0.23071739077568054,
+      "root_displacement_m_at_3s": 0.5121464729309082,
+      "median_root_height_m_at_3s": 0.9692881107330322
+    }
+  ]
+}

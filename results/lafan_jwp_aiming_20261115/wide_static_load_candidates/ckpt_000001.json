@@ -1,0 +1,27 @@
+{
+  "checkpoint_sha256": "859de9241a3fdcc2ada47c111d81b8dc2fcc4b3b399980d5c5d3e0e2ab82c99c",
+  "calibration": {
+    "method": "Offline leg-output bias compensation for a measured change in static contact load.",
+    "scale": 0.5,
+    "load_diagnostic_sha256": "5949cda95a9ed7d0c0b0a70dd33509db60e61c82bd6769bf1a278176a23a7639",
+    "delta_leg_pd_rad": [
+      0.0017513486091047525,
+      0.001400110311806202,
+      -0.0008124709129333496,
+      0.0024298964999616146,
+      0.02492251619696617,
+      -0.005928054451942444,
+      0.0031388818752020597,
+      0.0012469207867980003,
+      0.0005846951389685273,
+      0.0022412422113120556,
+      0.023265890777111053,
+      -0.017730457708239555
+    ],
+    "arm_outputs_exact": true,
+    "normalizers_and_reset_exact": true,
+    "extra_runtime_controller": false,
+    "physical_acceptance": false,
+    "limitation": "Static minimum-norm load allocation is an approximation; full physical evaluation required"
+  }
+}

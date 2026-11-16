@@ -1,0 +1,30 @@
+{
+  "scope": "Matched checkpoint and seed across two GPUs; diagnostic only, original failed gates retained",
+  "rows": [
+    {
+      "device": "cuda:1",
+      "checkpoint_sha256": "5c73ece48217faf78f4ba60e9b6801e709a8ccea29c8e3a3d9ec23fc043931d6",
+      "seed": 53,
+      "passed": false,
+      "random_success_rate": 1.0,
+      "fixed_pass": false,
+      "failures": [
+        2,
+        41
+      ]
+    },
+    {
+      "device": "cuda:0",
+      "checkpoint_sha256": "5c73ece48217faf78f4ba60e9b6801e709a8ccea29c8e3a3d9ec23fc043931d6",
+      "seed": 53,
+      "passed": false,
+      "random_success_rate": 0.99,
+      "fixed_pass": false,
+      "failures": [
+        41,
+        75
+      ]
+    }
+  ],
+  "conclusion": "Failures occur on both GPUs; a device-specific explanation is not established."
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "Passed intermediate center curriculum only; not final standing acceptance",
+  "level": 1,
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates/ckpt_000001.pt",
+  "checkpoint_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+  "passed": true,
+  "reports": [
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger/iteration_000001/seed_17.json",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger/iteration_000001/seed_53.json"
+  ],
+  "random_success": [
+    0.99,
+    0.97
+  ],
+  "radius_m": 0.2,
+  "azimuth_deg": 0,
+  "elevation_deg": 0,
+  "range_m": 3.0,
+  "seconds": 30,
+  "continuous_without_reset": true,
+  "acceptance_contract_changed": false,
+  "next_level": 2,
+  "final_accepted_policies": 0
+}

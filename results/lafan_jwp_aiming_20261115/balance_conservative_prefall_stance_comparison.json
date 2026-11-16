@@ -1,0 +1,128 @@
+{
+  "scope": "Descriptive same-seed physical trajectories; no interpolation or newpolicy created.",
+  "rows": [
+    {
+      "iteration": 3000,
+      "checkpoint_sha256": "04294c3d5b717fe2fd5713f7d985b5b28c7b4447cacbce68e91c1eff2d920c79",
+      "rows": [
+        {
+          "time_s": 0,
+          "median_foot_separation_m": 0.3077515661716461,
+          "median_tilt_deg": 8.45094108581543,
+          "median_root_height_m": 0.9906508922576904,
+          "median_foot_displacement_since3s_m": null
+        },
+        {
+          "time_s": 3,
+          "median_foot_separation_m": 0.43070003390312195,
+          "median_tilt_deg": 0.7785862684249878,
+          "median_root_height_m": 0.98862624168396,
+          "median_foot_displacement_since3s_m": 0.0
+        },
+        {
+          "time_s": 5,
+          "median_foot_separation_m": 0.4509994089603424,
+          "median_tilt_deg": 0.42057928442955017,
+          "median_root_height_m": 0.9880873560905457,
+          "median_foot_displacement_since3s_m": 0.008351690135896206
+        },
+        {
+          "time_s": 10,
+          "median_foot_separation_m": 0.49601829051971436,
+          "median_tilt_deg": 0.4265846014022827,
+          "median_root_height_m": 0.9855735301971436,
+          "median_foot_displacement_since3s_m": 0.06632017344236374
+        },
+        {
+          "time_s": 15,
+          "median_foot_separation_m": 0.5350911617279053,
+          "median_tilt_deg": 0.5760728716850281,
+          "median_root_height_m": 0.9826456308364868,
+          "median_foot_displacement_since3s_m": 0.08876223862171173
+        }
+      ]
+    },
+    {
+      "iteration": 3250,
+      "checkpoint_sha256": "129da13f040d189c8d0185dca4142b164feb88c24fa74c1d9ed20ab4b184dcd5",
+      "rows": [
+        {
+          "time_s": 0,
+          "median_foot_separation_m": 0.3077515661716461,
+          "median_tilt_deg": 8.45094108581543,
+          "median_root_height_m": 0.9906508922576904,
+          "median_foot_displacement_since3s_m": null
+        },
+        {
+          "time_s": 3,
+          "median_foot_separation_m": 0.4181974530220032,
+          "median_tilt_deg": 0.4252062737941742,
+          "median_root_height_m": 0.9892255663871765,
+          "median_foot_displacement_since3s_m": 0.0
+        },
+        {
+          "time_s": 5,
+          "median_foot_separation_m": 0.4292741119861603,
+          "median_tilt_deg": 0.3516591489315033,
+          "median_root_height_m": 0.9889832139015198,
+          "median_foot_displacement_since3s_m": 0.0058714114129543304
+        },
+        {
+          "time_s": 10,
+          "median_foot_separation_m": 0.45797425508499146,
+          "median_tilt_deg": 0.524140477180481,
+          "median_root_height_m": 0.98777174949646,
+          "median_foot_displacement_since3s_m": 0.02195214107632637
+        },
+        {
+          "time_s": 15,
+          "median_foot_separation_m": 0.4874419569969177,
+          "median_tilt_deg": 0.5112900733947754,
+          "median_root_height_m": 0.9862490296363831,
+          "median_foot_displacement_since3s_m": 0.037065085023641586
+        }
+      ]
+    },
+    {
+      "iteration": 3500,
+      "checkpoint_sha256": "f15c7d459c0fa535d2853a803910b1a21af462db1ca2b8c0e4d904b18d9858cb",
+      "rows": [
+        {
+          "time_s": 0,
+          "median_foot_separation_m": 0.3077515661716461,
+          "median_tilt_deg": 8.45094108581543,
+          "median_root_height_m": 0.9906508922576904,
+          "median_foot_displacement_since3s_m": null
+        },
+        {
+          "time_s": 3,
+          "median_foot_separation_m": 0.47159022092819214,
+          "median_tilt_deg": 2.42325496673584,
+          "median_root_height_m": 0.9863195419311523,
+          "median_foot_displacement_since3s_m": 0.0
+        },
+        {
+          "time_s": 5,
+          "median_foot_separation_m": 0.5793079733848572,
+          "median_tilt_deg": 3.0517828464508057,
+          "median_root_height_m": 0.9757594466209412,
+          "median_foot_displacement_since3s_m": 0.1572446972131729
+        },
+        {
+          "time_s": 10,
+          "median_foot_separation_m": 0.5873936414718628,
+          "median_tilt_deg": 2.8553335666656494,
+          "median_root_height_m": 0.9672794938087463,
+          "median_foot_displacement_since3s_m": 1.0482604503631592
+        },
+        {
+          "time_s": 15,
+          "median_foot_separation_m": 0.5817336440086365,
+          "median_tilt_deg": 2.698418378829956,
+          "median_root_height_m": 0.9667563438415527,
+          "median_foot_displacement_since3s_m": 1.4864577054977417
+        }
+      ]
+    }
+  ]
+}

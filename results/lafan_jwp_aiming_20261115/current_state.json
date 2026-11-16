@@ -1,0 +1,314 @@
+{
+  "updated": "2026-11-16 12:25:28.654147",
+  "native_goal": "active_unbounded",
+  "final_accepted_policies": 0,
+  "current_stage": "G4 action-history-corrected load compensation5cm evaluation",
+  "acceptance_contract": "acceptance_contract.json",
+  "authoritative_history": "progress.json",
+  "training_order": [
+    "LAFAN_from_scratch",
+    "JWP_finetune",
+    "standing_aiming_curriculum",
+    "moving_aiming_curriculum"
+  ],
+  "current_formal_plan": "wide_support_training_plan.json",
+  "training_unit": null,
+  "evaluation_unit": "precise-translated-load-evaluation.service",
+  "run": "logs/tienkung3_29dof/lafan_jwp_20261115/wide_support/train",
+  "runner": "frozen_balance_recovery_v17",
+  "runner_manifest": "aiming_support_runner_manifest.json",
+  "initialization": "wide_shared_proximal_candidates/ckpt_000002.pt",
+  "source_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+  "policy_training_scope": "aiming_support_error_inputs",
+  "trainable_parameters": 12288,
+  "aiming_weights_frozen": true,
+  "support_capture_steps": 25,
+  "evaluation_iterations": [
+    1,
+    2
+  ],
+  "evaluation_directory": "evaluation_precise_translated_load",
+  "development_seeds": [
+    17,
+    53,
+    917
+  ],
+  "fresh_final_seeds_required": true,
+  "tests": {
+    "unit_tests": 15,
+    "unit_log": "aiming_support_adapter_tests.log",
+    "compile": "aiming_support_compile_benchmark.json",
+    "smoke": "aiming_support_smoke_verification.json",
+    "all_passed": true,
+    "smoke_weights_reused": false
+  },
+  "stage_evidence": {
+    "center": "center_stage_passed.json",
+    "narrow_comparisons": "narrow_recovery_comparison.json",
+    "best_narrow": "narrow_ready_constant_distal1p5_comparison.json",
+    "best_narrow_fully_passed_scenarios": 349,
+    "total_scenarios": 350,
+    "narrow_passed": false
+  },
+  "next_steps": [
+    "Finish current-pose shared proximal reachability audit against independent MuJoCo FK",
+    "Prepare bounded constant-arm and observation-fold calibration; evaluate remaining medium/fullwide aiming cases",
+    "Keep user-waived fall failures visible; do not claim original strict gates passed",
+    "Continue precise target switching and separate moving policy"
+  ],
+  "important_changes": [
+    "Ready pose now comes from a fixed center development rollout; identical for all targets, reset noise unchanged; see narrow_ready_pose_candidates/ckpt_000002.json",
+    "Distal decoder now has constant equilibrium plus static-Jacobian affine direction feedforward/feedback; native3joint order and TCP-minusZ checked againstMuJoCo",
+    "Legacy heading encoder column29 folded tozero for narrow recovery; no physical turning capability claimed",
+    "Alternative sharedproximal pose reaches75/75finaltargets in offlinekinematics; physicalstability nottested; see shared_proximal_geometry.json"
+  ],
+  "owner_check": "php-codex.service inactive at10:51; recheck eachturn; do notmodifyguard or launchconversions unnecessarily",
+  "no_new_agents": true,
+  "latest_verified_iteration": 250,
+  "latest_verification": "wide_support250_verification.json",
+  "latest_policy_updates": 50,
+  "latest_observed_iteration": 125,
+  "latest_model_ready": true,
+  "latest_phase": "joint_training",
+  "previous_goal_turn_classification": "progress_switching_video_verified_and_halftranslation_rejected_as_overall_improvement",
+  "live_training_main_pid": null,
+  "live_rank_pids": [],
+  "live_state_verified": false,
+  "observation": "Medium gains7and9 both passed formal stage3 gates. Gain7chosen as lower feedback and349/350 vs348/350. Fullwide evaluation now active.",
+  "evaluation250_status": "completed_failed",
+  "evaluation250": "narrow_support250_comparison.json",
+  "next_evaluation": "precise_translated_feedback9_diagnostic/ckpt_000001.pt",
+  "additional_diagnostic": "completed_both_devices_failed",
+  "additional_report": "evaluation_narrow_support250_device_check/seed_53_cuda0.json",
+  "evaluation400": "narrow_support400_comparison.json",
+  "next_independent_work": "Inspect COMpose half/full precise evaluations onv19. Allgeometry/functionaltranslationchecks passed: full feetshift8.181mm,-2.418mm maxlegdelta.042204rad, nativeFKerrors<1.04e-7. Initiallegs changed butheight/quat/resetnoise/armheadsunchanged; sourcewidekinematicheadcandidate1 nolegloadbias. Preserve bestreversehalf312static/313switching until improved full physicalproof. No final policyaccepted.",
+  "user_steering": "Proceed past current fall scenarios as explicit temporary exceptions",
+  "exception_manifest": "user_authorized_narrow_stage_exceptions.json",
+  "current_checkpoint": "precise_translated_load_candidates/ckpt_000001.pt",
+  "gain3_report": "medium_feedback3_comparison.json",
+  "gain3_random_success": [
+    0.98,
+    0.98
+  ],
+  "diagnostic_unit": null,
+  "gain5_report": "medium_feedback5_comparison.json",
+  "gain5_random_success": [
+    0.99,
+    0.97
+  ],
+  "shared_proximal_verification": "shared_proximal_candidates_verification.json",
+  "shared_proximal_unfolded_result": "medium_shared_proximal_unfolded_comparison.json",
+  "shared_proximal_unfolded_balanced": [
+    0,
+    0
+  ],
+  "rejected_ready_report": "medium_shared_ready_comparison.json",
+  "grid_fit3_comparison": "medium_grid_fit3_comparison.json",
+  "grid_fit3_failure_classification": "medium_grid_fit3_failures.json",
+  "grid_fit3_fully_passed": [
+    169,
+    169
+  ],
+  "grid_fit3_balanced": [
+    175,
+    173
+  ],
+  "grid_fit5_failure_classification": "medium_grid_fit5_failures.json",
+  "grid_fit5_fully_passed": [
+    174,
+    172
+  ],
+  "grid_fit5_random_success": [
+    1.0,
+    0.99
+  ],
+  "medium_passed": true,
+  "medium_pass_evidence": "medium_grid_feedback7_comparison.json",
+  "medium_pass_source": "medium_grid_feedback_candidates/ckpt_000001.pt",
+  "wide_transfer": "wide_gated_transfer/ckpt_000001.json",
+  "wide_initial_result": "wide_gated_comparison.json",
+  "wide_initial_failure_classification": "wide_gated_failures.json",
+  "wide_balanced": [
+    174,
+    174
+  ],
+  "wide_fully_passed": [
+    120,
+    115
+  ],
+  "development_video": "development_videos/medium_left_far_passed.mp4",
+  "wide_geometry": "wide_shared_proximal_geometry.json",
+  "wide_geometry_all75_reachable": true,
+  "wide_calibration_verification": "wide_shared_proximal_candidates_verification.json",
+  "offline_head_candidates": "wide_shared_grid_fit_candidates",
+  "offline_nonlinearity_diagnostic": "wide_polynomial_fit_comparison.json",
+  "offline_head_fit_unit": null,
+  "offline_head_fit_output": "wide_distal_kinematic_head_refined.pt",
+  "offline_head_fit_train_seed": 391,
+  "offline_head_fit_validation_seed": 1791,
+  "offline_head_first_audit": "wide_distal_kinematic_head_audit.json",
+  "optional_head_implementation": "workingtree_only_not_runningv17",
+  "optional_head_tests": "distal_kinematic_head_tests.log",
+  "optional_head_tests_passed": 12,
+  "optional_head_runner": "frozen_balance_recovery_v18",
+  "optional_head_manifest": "distal_kinematic_runner_manifest.json",
+  "optional_head_prepare_tool": "tools/prepare_distal_kinematic_policy.py",
+  "wide_support250_result": "wide_support250_comparison.json",
+  "evaluation_runner": "frozen_balance_recovery_v18",
+  "offline_head_refined_audit": "wide_distal_kinematic_head_refined_audit.json",
+  "static_contact_load_diagnostic": "shared_pose_contact_load.json",
+  "nonlinear_gain2_result": "wide_kinematic_head2_comparison.json",
+  "prepared_load_candidates": "wide_static_load_candidates",
+  "load_candidate_source": "wide_kinematic_head_candidates/ckpt_000001.pt",
+  "nonlinear_gain4_result": "wide_kinematic_head4_comparison.json",
+  "static_load_half_result": "wide_static_load_half_comparison.json",
+  "static_load_half_failure_classification": "wide_static_load_half_failures.json",
+  "static_load_half_fully_passed": [
+    143,
+    134
+  ],
+  "static_load_half_balanced": [
+    148,
+    138
+  ],
+  "static_load_full_result": "wide_static_load_full_comparison.json",
+  "load_feedback4_result": "wide_load_feedback4_comparison.json",
+  "load_feedback4_fully_passed": [
+    146,
+    137
+  ],
+  "load_feedback4_balanced": [
+    149,
+    137
+  ],
+  "prepared_history_translation_candidates": "wide_translated_load_candidates",
+  "load_feedback7_result": "wide_load_feedback7_comparison.json",
+  "formal_wide_stage_passed": false,
+  "precise_static_result": "precise_load_feedback7_comparison.json",
+  "precise_static_fully_passed": [
+    148,
+    134
+  ],
+  "precise_static_balanced": [
+    155,
+    135
+  ],
+  "formal_precise_stage_passed": false,
+  "switching_result": "switching_load_feedback7_comparison.json",
+  "switching_fully_passed": [
+    144,
+    133
+  ],
+  "switching_balanced": [
+    151,
+    135
+  ],
+  "switching_preview_scenario": 75,
+  "switching_preview": "development_videos/fullrange_switching_passed_scenario75.mp4",
+  "switching_preview_duration_s": 30,
+  "switching_preview_selection": "First passed random switching scenario75 seed17; selected successful example, not all-scenario acceptance",
+  "translated_half_result": "precise_translated_load_half_comparison.json",
+  "owner_handoff": {
+    "authorized_by_user": true,
+    "background_service": "php-codex.service",
+    "background_state": "inactive",
+    "owner": "current conversation",
+    "time": "2026-11-16T12:39:19.202257+08:00",
+    "existing_artifacts_preserved": true
+  },
+  "active_evaluation": "precise-com-pose-evaluation.service",
+  "next_candidate": "precise_support_restore_diagnostic/ckpt_000001.pt",
+  "next_candidate_scope": "Diagnostic restore of pre-narrow-training six support input columns; unchanged aiming outputs and zero-support actions verified. Not accepted.",
+  "best_precise_development_checkpoint": "precise_body_direction_candidates/ckpt_000001.pt",
+  "best_precise_development_result": {
+    "full_pass_count": 312,
+    "total": 350,
+    "random_rates": [
+      0.94,
+      0.89
+    ],
+    "formal_pass": false
+  },
+  "pending_evaluations": [],
+  "support_restore_half_result": {
+    "fully_passed": 274,
+    "total": 350,
+    "baseline_fully_passed": 282,
+    "selected": false
+  },
+  "support_restore_full_result": {
+    "fully_passed": 303,
+    "total": 350,
+    "baseline_fully_passed": 308,
+    "selected": false,
+    "identical_reset_and_targets_verified_both_seeds": true
+  },
+  "best_switching_development_checkpoint": "switching_body_reverse_half/ckpt_000001.pt",
+  "best_switching_development_result": {
+    "fully_passed": 313,
+    "total": 350,
+    "random_rates": [
+      0.95,
+      0.88
+    ],
+    "formal_pass": false
+  },
+  "feedback9_result": {
+    "fully_passed": 305,
+    "total": 350,
+    "baseline_fully_passed": 308,
+    "selected": false
+  },
+  "moving_preflight": {
+    "reset_rng_seed_fixed": true,
+    "tests_passed": 5,
+    "log": "moving_preflight_20261116.log",
+    "frozen_v18_not_changed": true
+  },
+  "active_preflight": null,
+  "current_runner": "frozen_balance_recovery_v19",
+  "static_intermediate_results": {
+    "scale075": 290,
+    "scale0875": 303,
+    "baseline_scale1": 308,
+    "total": 350,
+    "selected": "baseline_scale1"
+  },
+  "body_training_plan": "body_output_training_plan.json",
+  "body_compile_check": "body_output_compile_benchmark.json",
+  "body_command_fold": "precise_body_command_fold/ckpt_000001.pt",
+  "body_command_fold_scope": "Diagnostic removes target93:104 influence only on body encoder; independent right-arm actions exact; physical result pending",
+  "active_training": null,
+  "body_command_fold_result": {
+    "fully_passed": 305,
+    "total": 350,
+    "baseline": 308,
+    "selected": false
+  },
+  "body_training_last_verified_iteration": 200,
+  "body_training_pre_actor_verified": true,
+  "body_training_pre_actor_report": "body_output200_verification.json",
+  "body_training_world_model_gate": "logs/tienkung3_29dof/lafan_jwp_20261115/body_output_recovery/train/wm_validation/000100.json",
+  "body_training_wait": "First full-batch actor compilation after200 warmupiterations; active unit and bothworkerPIDs verified; do not restart solely for quiet journal.",
+  "body_training_status": "completed_rejected_regression",
+  "body_training_results": {
+    "baseline": 307,
+    "iteration225": 243,
+    "iteration300": 176,
+    "total": 350
+  },
+  "body_training_final_verification": "body_output300_verification.json",
+  "body_reverse_full_result": {
+    "fully_passed": 305,
+    "total": 350,
+    "selected": false
+  },
+  "body_gradient_diagnostics": [
+    "body_reward_direction_diagnostic.json",
+    "body_reward_components_diagnostic.json",
+    "body_bootstrap_direction_diagnostic.json"
+  ],
+  "body_gradient_finding": "SourceWM predicts positiveupdate improvesallrewardcomponents andbootstrap, whereasphysicalfallsworsen; not obviousaim-vs-balancegradientconflict. Bootstrapgradientnorm1192.78 vsstability9.65, alignedwithbadupdate(+1.30dot); donotblindlyenablebootstrap.",
+  "com_pose_geometry": "com_preserving_pose_geometry.json",
+  "com_pose_candidates": "precise_com_pose_candidates"
+}

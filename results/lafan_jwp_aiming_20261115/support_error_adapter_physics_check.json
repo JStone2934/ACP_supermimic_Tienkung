@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "Actual free-base simulation: support capture and inference/training command parity.",
+  "policy_acceptance": false,
+  "checkpoint_sha256": "52fb9962f243b3ad4cc4a5765932e2ded68df756f1cb5a14d1247ec042685dc7",
+  "simulated_seconds": 6.5200000000000005,
+  "environments": 8,
+  "maximum_pd_target_difference_rad": 1.1920928955078125e-07,
+  "capture_frames": [
+    150,
+    310
+  ],
+  "target_switch_frame": 160,
+  "root_supports_added": false,
+  "motion_reads": false,
+  "terminated_episodes": 0,
+  "observation": "Only state-machine and command parity are assessed; this is not a30s policy gate."
+}

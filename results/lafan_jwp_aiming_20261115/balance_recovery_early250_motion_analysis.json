@@ -1,0 +1,26 @@
+{
+  "scope": "Early migration checkpoint250 physical trace diagnosis; no acceptance",
+  "windows": {
+    "0-10s": {
+      "median_yaw_range_deg": 23.14727783203125,
+      "median_foot_max_displacement_m": 0.27794188261032104,
+      "median_foot_vertical_range_m": 0.06928497552871704,
+      "mean_foot_speed_m_s": 0.18717460334300995,
+      "mean_root_speed_m_s": 0.1414000391960144
+    },
+    "10-20s": {
+      "median_yaw_range_deg": 16.092214584350586,
+      "median_foot_max_displacement_m": 0.321841835975647,
+      "median_foot_vertical_range_m": 0.07493969798088074,
+      "mean_foot_speed_m_s": 0.20755115151405334,
+      "mean_root_speed_m_s": 0.16159389913082123
+    },
+    "20-30s": {
+      "median_yaw_range_deg": 15.814923286437988,
+      "median_foot_max_displacement_m": 0.32241305708885193,
+      "median_foot_vertical_range_m": 0.07493138313293457,
+      "mean_foot_speed_m_s": 0.21401947736740112,
+      "mean_root_speed_m_s": 0.16434885561466217
+    }
+  }
+}

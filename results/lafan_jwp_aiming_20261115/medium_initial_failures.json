@@ -1,0 +1,817 @@
+[
+  {
+    "seed": 17,
+    "falls": [
+      73
+    ],
+    "other_failures": [
+      {
+        "i": 4,
+        "parameters": [
+          2.0,
+          -0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 25,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.29163582531458176,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 28,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 0.22,
+            "post_grace_hit_rate": 0.9008142116950407,
+            "stable_foot_drift_m": 0.03977592661976814
+          }
+        ]
+      },
+      {
+        "i": 29,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 45,
+        "parameters": [
+          3.0,
+          0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 22.2,
+            "post_grace_hit_rate": 0.2975573649148779,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 46,
+        "parameters": [
+          3.0,
+          0.5235987901687622,
+          -0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.08660251665433012,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 50,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 51,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          -0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.03256846780162842,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 52,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          0.0,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 0.66,
+            "post_grace_hit_rate": 0.7372316802368616,
+            "stable_foot_drift_m": 0.035179443657398224
+          }
+        ]
+      },
+      {
+        "i": 53,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 7.5,
+            "post_grace_hit_rate": 0.8401184307920059,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 54,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 55,
+        "parameters": [
+          4.0,
+          -0.2617993950843811,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.16,
+            "post_grace_hit_rate": 0.9548482605477424,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 59,
+        "parameters": [
+          4.0,
+          -0.2617993950843811,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.8000000000000003,
+            "post_grace_hit_rate": 0.9985196150999259,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 70,
+        "parameters": [
+          4.0,
+          0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 71,
+        "parameters": [
+          4.0,
+          0.5235987901687622,
+          -0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.14211695040710584,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 74,
+        "parameters": [
+          4.0,
+          0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.48,
+            "post_grace_hit_rate": 0.9837157660991858,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 93,
+        "parameters": [
+          3.244391441345215,
+          -0.5081101059913635,
+          -0.14823366701602936,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 6.18,
+            "post_grace_hit_rate": 0.770540340488527,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 114,
+        "parameters": [
+          3.6758952140808105,
+          -0.4111252725124359,
+          0.2174404114484787,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 10.78,
+            "post_grace_hit_rate": 0.8549222797927462,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 128,
+        "parameters": [
+          3.965313196182251,
+          -0.4945038855075836,
+          -0.11860337108373642,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 7.94,
+            "post_grace_hit_rate": 0.6047372316802369,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 137,
+        "parameters": [
+          2.692228317260742,
+          0.45703139901161194,
+          -0.22117160260677338,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.84,
+            "post_grace_hit_rate": 0.9689119170984456,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 153,
+        "parameters": [
+          3.85988187789917,
+          -0.45483410358428955,
+          -0.2200678586959839,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.29015544041450775,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 159,
+        "parameters": [
+          3.0165417194366455,
+          -0.5007789731025696,
+          0.26170891523361206,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.027387120651369355,
+            "stable_foot_drift_m": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seed": 53,
+    "falls": [
+      75
+    ],
+    "other_failures": [
+      {
+        "i": 2,
+        "parameters": [
+          2.0,
+          -0.5235987901687622,
+          0.0,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 17.0,
+            "post_grace_hit_rate": 0.8719467061435974,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 3,
+        "parameters": [
+          2.0,
+          -0.5235987901687622,
+          0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 7.5200000000000005,
+            "post_grace_hit_rate": 0.9430051813471503,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 4,
+        "parameters": [
+          2.0,
+          -0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.018504811250925242,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 25,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 6.62,
+            "post_grace_hit_rate": 0.8786084381939304,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 26,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          -0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.1,
+            "post_grace_hit_rate": 0.8090303478904515,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 28,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.04071058475203553,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 29,
+        "parameters": [
+          3.0,
+          -0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.009622501850481125,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 45,
+        "parameters": [
+          3.0,
+          0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 50,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 51,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          -0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 5.0,
+            "post_grace_hit_rate": 0.8956328645447816,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 52,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          0.0,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 4.24,
+            "post_grace_hit_rate": 0.5077720207253886,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 53,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 4.64,
+            "post_grace_hit_rate": 0.5196150999259808,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 54,
+        "parameters": [
+          4.0,
+          -0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 55,
+        "parameters": [
+          4.0,
+          -0.2617993950843811,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 1.74,
+            "post_grace_hit_rate": 0.8327165062916358,
+            "stable_foot_drift_m": 0.03660108149051666
+          }
+        ]
+      },
+      {
+        "i": 70,
+        "parameters": [
+          4.0,
+          0.5235987901687622,
+          -0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 71,
+        "parameters": [
+          4.0,
+          0.5235987901687622,
+          -0.13089969754219055,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.0,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 74,
+        "parameters": [
+          4.0,
+          0.5235987901687622,
+          0.2617993950843811,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.72,
+            "post_grace_hit_rate": 0.9733530717986677,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 89,
+        "parameters": [
+          3.2568373680114746,
+          -0.3851351737976074,
+          -0.20488578081130981,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 0.28,
+            "post_grace_hit_rate": 0.8282753515914137,
+            "stable_foot_drift_m": 0.039493925869464874
+          }
+        ]
+      },
+      {
+        "i": 96,
+        "parameters": [
+          3.5338034629821777,
+          -0.4953765273094177,
+          -0.04066411405801773,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.52,
+            "post_grace_hit_rate": 0.6173205033308661,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 105,
+        "parameters": [
+          3.786379098892212,
+          -0.3117789328098297,
+          -0.24048055708408356,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 5.72,
+            "post_grace_hit_rate": 0.9674315321983715,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 106,
+        "parameters": [
+          2.367835283279419,
+          -0.5161630511283875,
+          0.20108343660831451,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": null,
+            "post_grace_hit_rate": 0.07031828275351591,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 128,
+        "parameters": [
+          3.2159218788146973,
+          0.4668632745742798,
+          -0.20097869634628296,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 3.46,
+            "post_grace_hit_rate": 0.9859363434492968,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 139,
+        "parameters": [
+          2.9912495613098145,
+          0.4894673526287079,
+          -0.2538350224494934,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 4.98,
+            "post_grace_hit_rate": 0.9711324944485566,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 145,
+        "parameters": [
+          2.94035005569458,
+          -0.4296448230743408,
+          -0.15643982589244843,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 4.64,
+            "post_grace_hit_rate": 0.9393042190969653,
+            "stable_foot_drift_m": null
+          }
+        ]
+      },
+      {
+        "i": 147,
+        "parameters": [
+          3.731689214706421,
+          -0.5007517337799072,
+          -0.06371976435184479,
+          0.10000000149011612
+        ],
+        "segments": [
+          {
+            "passed": false,
+            "capture_s": 6.84,
+            "post_grace_hit_rate": 0.7283493708364175,
+            "stable_foot_drift_m": null
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "scope": "Read-only checkpoint dynamics diagnostics on recorded independent episodes.",
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/ckpt_002500.pt",
+  "checkpoint_sha256": "e5eee541597338b88a9796edd939485c1bb504c9bc2670b3c317f51be77febb6",
+  "recorded": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/wm_validation/002500.npz",
+  "recorded_sha256": "5383250ea0c856b105ba788e0d37d4894e9604e89203eb6ab47b4e8bc67e56ee",
+  "observation_limit": "Recorded episodes cover only first2.56seconds; does not establish accuracy during later creeping. Checkpoint WM precedes recorded collection byoneWMtrainingiteration.",
+  "policy_acceptance": false,
+  "weights_changed": false,
+  "horizons": {
+    "1": {
+      "windows": 1024,
+      "foot_velocity_error_norm_p95_m_s": 0.0842246487736702,
+      "foot_velocity_error_component_rmse_m_s": 0.02242259308695793,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.005334740038961172,
+        -0.0002548854681663215,
+        -0.0019688415341079235
+      ],
+      "predicted_foot_speed_median_m_s": 0.012126275338232517,
+      "actual_foot_speed_median_m_s": 0.00644313171505928,
+      "predicted_quiet_reward_mean": 0.8145894408226013,
+      "actual_quiet_reward_mean": 0.8532405495643616
+    },
+    "8": {
+      "windows": 128,
+      "foot_velocity_error_norm_p95_m_s": 0.08312225341796875,
+      "foot_velocity_error_component_rmse_m_s": 0.024276671931147575,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.009149747900664806,
+        -0.0003100619651377201,
+        0.0009931923123076558
+      ],
+      "predicted_foot_speed_median_m_s": 0.013368199579417706,
+      "actual_foot_speed_median_m_s": 0.006416188087314367,
+      "predicted_quiet_reward_mean": 0.8190628290176392,
+      "actual_quiet_reward_mean": 0.8629373908042908
+    },
+    "16": {
+      "windows": 64,
+      "foot_velocity_error_norm_p95_m_s": 0.05799669399857521,
+      "foot_velocity_error_component_rmse_m_s": 0.020729171112179756,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.004687139764428139,
+        -0.0020037363283336163,
+        0.001992445904761553
+      ],
+      "predicted_foot_speed_median_m_s": 0.012622821144759655,
+      "actual_foot_speed_median_m_s": 0.0059611317701637745,
+      "predicted_quiet_reward_mean": 0.8643760085105896,
+      "actual_quiet_reward_mean": 0.8999729156494141
+    },
+    "32": {
+      "windows": 32,
+      "foot_velocity_error_norm_p95_m_s": 0.026814080774784088,
+      "foot_velocity_error_component_rmse_m_s": 0.019265905022621155,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.004940897226333618,
+        -0.002623707288876176,
+        0.0011017079232260585
+      ],
+      "predicted_foot_speed_median_m_s": 0.01138372253626585,
+      "actual_foot_speed_median_m_s": 0.005075779743492603,
+      "predicted_quiet_reward_mean": 0.9094934463500977,
+      "actual_quiet_reward_mean": 0.9557186365127563
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "stage": 3,
+  "passed": true,
+  "checkpoint": "medium_grid_feedback_candidates/ckpt_000001.pt",
+  "sha256": "f795e96a6504991ebb59fc043e1d3de959df42871e0706d24c6802cfd401e7ff",
+  "reports": [
+    "evaluation_medium_grid_feedback/iteration_000001/seed_17.json",
+    "evaluation_medium_grid_feedback/iteration_000001/seed_53.json"
+  ],
+  "fixed_both_passed": true,
+  "random_success": [
+    1.0,
+    0.99
+  ],
+  "fully_passed": 349,
+  "total": 350,
+  "final_acceptance": false
+}

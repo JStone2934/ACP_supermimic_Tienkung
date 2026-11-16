@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "scope": "Negative promotion gate test using actual failed fixed-grid evidence; no artifact produced",
+  "source_random_success": [
+    1.0,
+    1.0
+  ],
+  "source_fixed_pass": [
+    true,
+    false
+  ],
+  "raised": "ValueError: Promotion report does not certify this checkpoint and stage",
+  "existing_promotion_and_final_tolerance_unit_tests": 2
+}

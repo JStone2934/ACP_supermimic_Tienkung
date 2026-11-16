@@ -46,6 +46,7 @@ class RewardCfg:
     term_height: float = 0.25
     term_tilt: float = 0.8
     term_window: int = 0
+    term_root_distance: float | None = None
     """Frames either side of f (within its clip) whose reference root a state may match instead of frame f's: 0 =
     frame f only. Tolerates being late or early (stepping off a box after the reference) but still ends falls."""
 
@@ -159,7 +160,10 @@ class MDP:
         rp, rR = self.motion.root_p[f], self.motion.root_R[f]
         e_z = (rp[..., 2] - p[..., 2]).abs()
         e_tilt = (rR[..., 2, 2] - R[..., 2, 2]).abs()
-        return (e_z > self.cfg.term_height) | (e_tilt > self.cfg.term_tilt)
+        done = (e_z > self.cfg.term_height) | (e_tilt > self.cfg.term_tilt)
+        if self.cfg.term_root_distance is not None:
+            done = done | ((rp-p).norm(dim=-1) > self.cfg.term_root_distance)
+        return done
 
     def soft_termination(self, S, f, tz: float = 0.02, tt: float = 0.04) -> torch.Tensor:
         """Differentiable termination probability for imagined rollouts (at the best frame of the window)."""
@@ -170,6 +174,8 @@ class MDP:
         e_z = (rp[..., 2] - p[..., 2]).abs()
         e_tilt = (rR[..., 2, 2] - R[..., 2, 2]).abs()
         alive = (1 - torch.sigmoid((e_z - self.cfg.term_height) / tz)) * (1 - torch.sigmoid((e_tilt - self.cfg.term_tilt) / tt))
+        if self.cfg.term_root_distance is not None:
+            alive = alive * (1-torch.sigmoid(((rp-p).norm(dim=-1)-self.cfg.term_root_distance)/.05))
         return 1 - alive
 
     def critic_features(self, S, f, xi_n, boxes) -> torch.Tensor:

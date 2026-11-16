@@ -1,0 +1,7 @@
+{
+  "scope": "Only balanced36of101 episodes, drift decomposition3to30seconds; diagnosticnotacceptance",
+  "median_root_xy_shift_m": 0.029339253902435303,
+  "median_abs_root_yaw_change_deg": 5.404802322387695,
+  "median_foot_motion_relative_root_yaw_frame_m": 0.0918138399720192,
+  "median_max_foot_displacement_world_m": 0.07981588691473007
+}

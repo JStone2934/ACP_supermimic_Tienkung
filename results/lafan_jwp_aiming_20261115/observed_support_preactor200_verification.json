@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "Pre-actor recovery checkpoint; policy function retained, fresh critic warmed100updates. Not physical policy acceptance.",
+  "checkpoint_sha256": "39bec21543b001ef6f8a157ab998373a547103ddddc2ad58690c35f8ec48d6a7",
+  "policy_unchanged": true,
+  "updates": {
+    "wm": 2000,
+    "critic": 2000
+  },
+  "world_size": 2,
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "model_ready": true,
+  "policy_acceptance": false
+}

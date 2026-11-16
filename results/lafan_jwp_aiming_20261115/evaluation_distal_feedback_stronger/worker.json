@@ -1,0 +1,20 @@
+{
+  "run": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates",
+  "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v16",
+  "out": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger",
+  "iterations": [
+    1,
+    2
+  ],
+  "level": 1,
+  "seeds": [
+    17,
+    53
+  ],
+  "timeout_hours": 1.0,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "parallel_seeds": true
+}

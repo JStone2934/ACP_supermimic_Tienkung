@@ -1,0 +1,31 @@
+{
+  "scope": "100 model-only adaptation updates. Policy and critic are exactly unchanged; this does not certify improved model prediction or policy acceptance.",
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_foot_velocity_adaptation/train/ckpt_003100.pt",
+  "checkpoint_sha256": "9e047c73bdcd3a78edfe97217e829f2d483732a309eaee2debc2a129dea1d542",
+  "source_checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/ckpt_003000.pt",
+  "source_sha256": "04294c3d5b717fe2fd5713f7d985b5b28c7b4447cacbce68e91c1eff2d920c79",
+  "policy_and_critic_unchanged": {
+    "pi": true,
+    "critic": true
+  },
+  "world_model_changed": true,
+  "normalizers_preserved": {
+    "pi": true,
+    "wm": true
+  },
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "updates": {
+    "wm": 31000,
+    "distill": 1000,
+    "critic": 22000,
+    "pi": 1000
+  },
+  "world_size": 2,
+  "state_sha256": "f26f1340e065e20f93419f4d8dad9395a22115de09df9ea91208c6ddec2a3250",
+  "passed": true,
+  "policy_acceptance": false
+}

@@ -1,0 +1,18 @@
+{
+  "checkpoint_sha256": "481d3b65df8cd7a35384baf77d39fa38769758a26b89f66cd41294232502556b",
+  "calibration": {
+    "method": "Calibrate inherited support feedback while preserving the independently tested aiming head.",
+    "relative_support_gain": 1.2,
+    "balance_source": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_0.25.pt",
+    "balance_source_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+    "inherited_support_weights_verified_exact": true,
+    "changed_tensor": "enc.0.weight[:,:6]",
+    "all_other_weights_exact": true,
+    "normalizers_exact": true,
+    "zero_support_error_actions_exact": true,
+    "initial_pose_unchanged": true,
+    "support_capture_and_release_unchanged": true,
+    "physical_acceptance": false,
+    "acceptance_criteria_changed": false
+  }
+}

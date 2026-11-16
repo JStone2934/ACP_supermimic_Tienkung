@@ -1,0 +1,19 @@
+{
+  "scope": "Read-only numerical check of sixteen-step compiled dynamics training.",
+  "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+  "recorded_transitions": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_compact/train/wm_validation/002200.npz",
+  "recorded_transitions_sha256": "90feceb06e5e8bc4c39e332001d9252f6bf0ad31affd26b54e45ff5fb610c66a",
+  "weights_changed": false,
+  "policy_acceptance": false,
+  "window_steps": 16,
+  "batch": 16,
+  "matmul_tf32": false,
+  "loss_eager": 0.008332696743309498,
+  "loss_compiled": 0.00833266694098711,
+  "parameter_gradient_relative_l2_error": 2.1917634512647055e-05,
+  "eager_cold_s": 0.33048047800548375,
+  "compiled_cold_s": 100.82548782497179,
+  "passed": true,
+  "eager_warm_median_s": 0.0896795759908855,
+  "compiled_warm_median_s": 0.01875824498711154
+}

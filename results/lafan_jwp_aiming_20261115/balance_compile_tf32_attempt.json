@@ -1,0 +1,17 @@
+{
+  "scope": "Read-only eager/compiled loss and parameter-gradient equivalence on recorded physical states.",
+  "checkpoint_sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c",
+  "weights_changed": false,
+  "formal_training": false,
+  "comparisons": {
+    "wm8": {
+      "passed": true,
+      "loss_eager": 0.03219911456108093,
+      "loss_compiled": 0.03218754008412361,
+      "parameter_gradient_relative_l2_error": 0.0015846799360588193,
+      "eager_s": 0.3034928709967062,
+      "compiled_cold_s": 52.955438836012036,
+      "compiled_warm_median_s": 0.008874918974470347
+    }
+  }
+}

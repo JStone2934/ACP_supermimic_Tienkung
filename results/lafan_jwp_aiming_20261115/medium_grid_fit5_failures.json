@@ -1,0 +1,145 @@
+{
+  "scope": "Describe failures without excluding any scenario or changing report pass flags.",
+  "rows": [
+    {
+      "seed": 17,
+      "checkpoint_sha256": "2dddcb9447626c7458fa08095c57ce6b8f26dbdf85ae59949c797c316196986c",
+      "full_report_passed": false,
+      "failures": [
+        {
+          "index": 50,
+          "fixed": true,
+          "parameters": [
+            4.0,
+            -0.5235987901687622,
+            -0.2617993950843811,
+            0.10000000149011612
+          ],
+          "reasons": [
+            "hit_rate"
+          ],
+          "metrics": {
+            "passed": false,
+            "standing_pass": true,
+            "frames": 1501,
+            "full_30_seconds": true,
+            "terminated": false,
+            "finite": true,
+            "root_activity_radius_m": 0.03110610879957676,
+            "max_tilt_deg": 2.297802686691284,
+            "segments": [
+              {
+                "passed": false,
+                "capture_s": 0.18,
+                "post_grace_hit_rate": 0.5159141376757957,
+                "stable_foot_drift_m": 0.040167223662137985
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "checkpoint_sha256": "2dddcb9447626c7458fa08095c57ce6b8f26dbdf85ae59949c797c316196986c",
+      "full_report_passed": false,
+      "failures": [
+        {
+          "index": 50,
+          "fixed": true,
+          "parameters": [
+            4.0,
+            -0.5235987901687622,
+            -0.2617993950843811,
+            0.10000000149011612
+          ],
+          "reasons": [
+            "capture"
+          ],
+          "metrics": {
+            "passed": false,
+            "standing_pass": true,
+            "frames": 1501,
+            "full_30_seconds": true,
+            "terminated": false,
+            "finite": true,
+            "root_activity_radius_m": 0.034080974757671356,
+            "max_tilt_deg": 2.9915318489074707,
+            "segments": [
+              {
+                "passed": false,
+                "capture_s": 3.9,
+                "post_grace_hit_rate": 0.9666913397483345,
+                "stable_foot_drift_m": null
+              }
+            ]
+          }
+        },
+        {
+          "index": 70,
+          "fixed": true,
+          "parameters": [
+            4.0,
+            0.5235987901687622,
+            -0.2617993950843811,
+            0.10000000149011612
+          ],
+          "reasons": [
+            "capture"
+          ],
+          "metrics": {
+            "passed": false,
+            "standing_pass": true,
+            "frames": 1501,
+            "full_30_seconds": true,
+            "terminated": false,
+            "finite": true,
+            "root_activity_radius_m": 0.03421657904982567,
+            "max_tilt_deg": 1.5382424592971802,
+            "segments": [
+              {
+                "passed": false,
+                "capture_s": 3.9,
+                "post_grace_hit_rate": 0.9948186528497409,
+                "stable_foot_drift_m": null
+              }
+            ]
+          }
+        },
+        {
+          "index": 75,
+          "fixed": false,
+          "parameters": [
+            3.8534088134765625,
+            0.343140572309494,
+            -0.08657165616750717,
+            0.10000000149011612
+          ],
+          "reasons": [
+            "capture",
+            "hit_rate",
+            "standing"
+          ],
+          "metrics": {
+            "passed": false,
+            "standing_pass": false,
+            "frames": 1501,
+            "full_30_seconds": true,
+            "terminated": true,
+            "finite": true,
+            "root_activity_radius_m": 1.1319926977157593,
+            "max_tilt_deg": 124.31582641601562,
+            "segments": [
+              {
+                "passed": false,
+                "capture_s": null,
+                "post_grace_hit_rate": 0.0,
+                "stable_foot_drift_m": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

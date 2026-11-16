@@ -1,0 +1,105 @@
+{
+  "scope": "Diagnostic only. Balance-only excludes foot stability. Low foot motion after falling is not standing success.",
+  "rows": [
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_compact/iteration_002250/seed_17.json",
+      "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+      "seed": 17,
+      "full_gate_passed": false,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.3564356435643564,
+      "median_max_tilt_deg": 121.9479751586914,
+      "median_max_root_drift_m": 1.0266363620758057,
+      "median_max_foot_drift_after3s_m": 0.9672586917877197,
+      "mean_foot_speed_20_30s_m_s": 0.026026997715234756,
+      "balanced_episodes": 36,
+      "balanced_episodes_median_foot_drift_m": 0.07981588691473007,
+      "balanced_episodes_mean_foot_speed_m_s": 0.004354879260063171,
+      "tilt_crossings": {
+        "15": {
+          "episodes": 65,
+          "median_first_crossing_s": 6.58
+        },
+        "30": {
+          "episodes": 65,
+          "median_first_crossing_s": 6.68
+        },
+        "45": {
+          "episodes": 65,
+          "median_first_crossing_s": 6.74
+        }
+      },
+      "median_tilt_at_seconds": {
+        "0": 8.45094108581543,
+        "0.16": 0.4618246257305145,
+        "0.32": 0.597416341304779,
+        "0.64": 0.3426406979560852,
+        "1": 0.5008504390716553,
+        "2": 0.7984389662742615,
+        "3": 1.0343865156173706,
+        "10": 94.939697265625,
+        "20": 95.10649108886719,
+        "30": 95.2147445678711
+      },
+      "median_root_height_at_seconds": {
+        "0": 0.9906508922576904,
+        "1": 0.987281858921051,
+        "2": 0.9865885376930237,
+        "3": 0.986007571220398,
+        "10": 0.10553240031003952,
+        "20": 0.10490427166223526,
+        "30": 0.10487191379070282
+      }
+    },
+    {
+      "report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_compact/iteration_002250/seed_53.json",
+      "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+      "seed": 53,
+      "full_gate_passed": false,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.36633663366336633,
+      "median_max_tilt_deg": 121.84119415283203,
+      "median_max_root_drift_m": 1.0286986827850342,
+      "median_max_foot_drift_after3s_m": 0.9693363308906555,
+      "mean_foot_speed_20_30s_m_s": 0.023330476135015488,
+      "balanced_episodes": 37,
+      "balanced_episodes_median_foot_drift_m": 0.08079971373081207,
+      "balanced_episodes_mean_foot_speed_m_s": 0.0034330436028540134,
+      "tilt_crossings": {
+        "15": {
+          "episodes": 64,
+          "median_first_crossing_s": 6.380000000000001
+        },
+        "30": {
+          "episodes": 64,
+          "median_first_crossing_s": 6.51
+        },
+        "45": {
+          "episodes": 64,
+          "median_first_crossing_s": 6.6
+        }
+      },
+      "median_tilt_at_seconds": {
+        "0": 8.3064546585083,
+        "0.16": 0.5024107098579407,
+        "0.32": 0.6068404316902161,
+        "0.64": 0.36530497670173645,
+        "1": 0.513200044631958,
+        "2": 0.9995593428611755,
+        "3": 1.048478603363037,
+        "10": 94.82025909423828,
+        "20": 95.09870147705078,
+        "30": 95.17598724365234
+      },
+      "median_root_height_at_seconds": {
+        "0": 0.9911674857139587,
+        "1": 0.987320601940155,
+        "2": 0.986581027507782,
+        "3": 0.9857434630393982,
+        "10": 0.10595758259296417,
+        "20": 0.10488936305046082,
+        "30": 0.10487471520900726
+      }
+    }
+  ]
+}

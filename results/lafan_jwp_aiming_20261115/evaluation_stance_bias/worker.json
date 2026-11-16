@@ -1,0 +1,20 @@
+{
+  "checkpoints": [
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_0.25.pt",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_0.5.pt",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_1.pt"
+  ],
+  "seeds": [
+    17,
+    53
+  ],
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "fixed_count": 1,
+  "random_count": 100,
+  "seconds": 30,
+  "stop_after_first_passing_scale": true,
+  "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+}

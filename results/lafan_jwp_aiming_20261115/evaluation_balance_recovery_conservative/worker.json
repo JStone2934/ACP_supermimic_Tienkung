@@ -1,0 +1,17 @@
+{
+  "run": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train",
+  "frozen_runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v7",
+  "out": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_conservative",
+  "iterations": [
+    2500,
+    3000,
+    3500,
+    4000
+  ],
+  "level": 0,
+  "seeds": [
+    17,
+    53
+  ],
+  "timeout_hours": 6
+}

@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "scope": "JWP training provenance and numerical audit only; independent physical gates still pending",
+  "checkpoint_sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+  "source_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_aux8/train/ckpt_001000.pt",
+    "sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+    "iteration": 1000
+  },
+  "data_hash": "865edb8e0c6c05dabec51fbbe2e1c42e1fd1838979d584c747b948f844741b26",
+  "motion_groups": {
+    "jwp": 90,
+    "lafan": 107
+  },
+  "dataset_sampling_weights": {
+    "jwp": 0.8,
+    "lafan": 0.2
+  },
+  "actor_changed_from_LAFAN": true,
+  "policy_normalization_preserved": true,
+  "finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "physics_substeps": 16,
+  "support_reward_cfg": {
+    "root_weight": 2.0,
+    "position_weight": 2.0,
+    "velocity_weight": 1.0,
+    "root_scale": 0.1,
+    "position_scale": 0.05,
+    "velocity_scale": 0.1
+  },
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 10000,
+      "critic": 18000,
+      "pi": 700
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 3254243328,
+        "torch_peak_reserved": 3420454912,
+        "device_used": 9300410368,
+        "warp_pool_used": 479965767,
+        "warp_pool_peak": 479966727
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 3255308288,
+        "torch_peak_reserved": 3441426432,
+        "device_used": 7322599424,
+        "warp_pool_used": 479965767,
+        "warp_pool_peak": 479966727
+      }
+    ],
+    "state_sha256": "bf6249171a9218f9373a8f9acfd99fdf7daa082e1b28565f9ea7a0a24be1c90a"
+  }
+}

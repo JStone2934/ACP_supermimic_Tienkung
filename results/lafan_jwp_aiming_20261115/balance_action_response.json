@@ -1,0 +1,400 @@
+{
+  "scope": "Read-only finite action-response comparison; diagnostic, not policy acceptance.\n\nPosition prediction on observed actions does not establish that action derivatives\nare accurate. Paired physical worlds start from identical recorded states, with\nequal cleared solver warm starts, and differ in one PD joint target only.\nFinite differences cross contact boundaries and are not exact contact Jacobians.\n",
+  "checkpoint_sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c",
+  "weights_changed": false,
+  "policy_acceptance": false,
+  "recorded_time_indices": [
+    0,
+    15,
+    30,
+    50,
+    75,
+    100,
+    150,
+    200
+  ],
+  "recorded_world_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "responses": {
+    "0.005": {
+      "root_position": {
+        "cosine": 0.41721606254577637,
+        "physical_rms": 0.0017459308728575706,
+        "predicted_rms": 0.003156037302687764,
+        "relative_l2_error": 1.6610980033874512
+      },
+      "root_rotation": {
+        "cosine": 0.878315269947052,
+        "physical_rms": 0.029064428061246872,
+        "predicted_rms": 0.028027132153511047,
+        "relative_l2_error": 0.4857546091079712
+      },
+      "root_velocity": {
+        "cosine": 0.8733912706375122,
+        "physical_rms": 0.13840273022651672,
+        "predicted_rms": 0.14737018942832947,
+        "relative_l2_error": 0.5232802033424377
+      },
+      "root_angular_velocity": {
+        "cosine": 0.9737432599067688,
+        "physical_rms": 1.7996097803115845,
+        "predicted_rms": 1.782408595085144,
+        "relative_l2_error": 0.22826066613197327
+      },
+      "joint_position": {
+        "cosine": 0.9229292869567871,
+        "physical_rms": 0.04241856560111046,
+        "predicted_rms": 0.04269181191921234,
+        "relative_l2_error": 0.3939236104488373
+      },
+      "joint_velocity": {
+        "cosine": 0.9603224992752075,
+        "physical_rms": 2.4276909828186035,
+        "predicted_rms": 2.4096879959106445,
+        "relative_l2_error": 0.28075170516967773
+      },
+      "direct_joint_velocity_sign_agreement": 0.9870129823684692,
+      "per_joint": [
+        {
+          "name": "hip_pitch_l_joint",
+          "physical_response": 8.72408676147461,
+          "model_response": 8.01695728302002
+        },
+        {
+          "name": "hip_roll_l_joint",
+          "physical_response": 4.431719779968262,
+          "model_response": 3.460991859436035
+        },
+        {
+          "name": "hip_yaw_l_joint",
+          "physical_response": 10.249353408813477,
+          "model_response": 10.018875122070312
+        },
+        {
+          "name": "knee_pitch_l_joint",
+          "physical_response": 15.622626304626465,
+          "model_response": 14.932304382324219
+        },
+        {
+          "name": "ankle_pitch_l_joint",
+          "physical_response": 3.024118185043335,
+          "model_response": 2.289149761199951
+        },
+        {
+          "name": "ankle_roll_l_joint",
+          "physical_response": 3.609738826751709,
+          "model_response": 2.6549224853515625
+        },
+        {
+          "name": "hip_pitch_r_joint",
+          "physical_response": 9.216745376586914,
+          "model_response": 8.635063171386719
+        },
+        {
+          "name": "hip_roll_r_joint",
+          "physical_response": 6.18194580078125,
+          "model_response": 5.802040100097656
+        },
+        {
+          "name": "hip_yaw_r_joint",
+          "physical_response": 10.431856155395508,
+          "model_response": 10.410928726196289
+        },
+        {
+          "name": "knee_pitch_r_joint",
+          "physical_response": 13.160757064819336,
+          "model_response": 12.720548629760742
+        },
+        {
+          "name": "ankle_pitch_r_joint",
+          "physical_response": 2.856248378753662,
+          "model_response": 1.9952149391174316
+        },
+        {
+          "name": "ankle_roll_r_joint",
+          "physical_response": 2.689453125,
+          "model_response": 2.469615936279297
+        },
+        {
+          "name": "waist_yaw_joint",
+          "physical_response": 21.116371154785156,
+          "model_response": 21.208595275878906
+        },
+        {
+          "name": "waist_roll_joint",
+          "physical_response": 7.940823554992676,
+          "model_response": 7.643979072570801
+        },
+        {
+          "name": "waist_pitch_joint",
+          "physical_response": 15.516230583190918,
+          "model_response": 15.332294464111328
+        },
+        {
+          "name": "shoulder_pitch_l_joint",
+          "physical_response": 8.809870719909668,
+          "model_response": 8.491432189941406
+        },
+        {
+          "name": "shoulder_roll_l_joint",
+          "physical_response": 2.618455410003662,
+          "model_response": 2.524240016937256
+        },
+        {
+          "name": "shoulder_yaw_l_joint",
+          "physical_response": 14.485786437988281,
+          "model_response": 13.988067626953125
+        },
+        {
+          "name": "elbow_pitch_l_joint",
+          "physical_response": 17.822002410888672,
+          "model_response": 17.362293243408203
+        },
+        {
+          "name": "elbow_yaw_l_joint",
+          "physical_response": 8.334644317626953,
+          "model_response": 8.064476013183594
+        },
+        {
+          "name": "wrist_pitch_l_joint",
+          "physical_response": 8.42106819152832,
+          "model_response": 8.36582088470459
+        },
+        {
+          "name": "wrist_roll_l_joint",
+          "physical_response": 8.46330451965332,
+          "model_response": 8.37824821472168
+        },
+        {
+          "name": "shoulder_pitch_r_joint",
+          "physical_response": 12.164390563964844,
+          "model_response": 12.037442207336426
+        },
+        {
+          "name": "shoulder_roll_r_joint",
+          "physical_response": 5.184661865234375,
+          "model_response": 5.073744773864746
+        },
+        {
+          "name": "shoulder_yaw_r_joint",
+          "physical_response": 10.085711479187012,
+          "model_response": 10.161821365356445
+        },
+        {
+          "name": "elbow_pitch_r_joint",
+          "physical_response": 17.510772705078125,
+          "model_response": 16.935077667236328
+        },
+        {
+          "name": "elbow_yaw_r_joint",
+          "physical_response": 8.330864906311035,
+          "model_response": 8.237269401550293
+        },
+        {
+          "name": "wrist_pitch_r_joint",
+          "physical_response": 8.0894775390625,
+          "model_response": 8.152886390686035
+        },
+        {
+          "name": "wrist_roll_r_joint",
+          "physical_response": 8.38906478881836,
+          "model_response": 8.332478523254395
+        }
+      ]
+    },
+    "0.02": {
+      "root_position": {
+        "cosine": 0.41755181550979614,
+        "physical_rms": 0.0017135185189545155,
+        "predicted_rms": 0.003144236281514168,
+        "relative_l2_error": 1.6836549043655396
+      },
+      "root_rotation": {
+        "cosine": 0.8785809874534607,
+        "physical_rms": 0.028990311548113823,
+        "predicted_rms": 0.027944397181272507,
+        "relative_l2_error": 0.48515811562538147
+      },
+      "root_velocity": {
+        "cosine": 0.8790451288223267,
+        "physical_rms": 0.13637973368167877,
+        "predicted_rms": 0.14616236090660095,
+        "relative_l2_error": 0.5142056345939636
+      },
+      "root_angular_velocity": {
+        "cosine": 0.9749274849891663,
+        "physical_rms": 1.8010084629058838,
+        "predicted_rms": 1.7790038585662842,
+        "relative_l2_error": 0.2228943556547165
+      },
+      "joint_position": {
+        "cosine": 0.9390143156051636,
+        "physical_rms": 0.04139220714569092,
+        "predicted_rms": 0.042437225580215454,
+        "relative_l2_error": 0.3545251786708832
+      },
+      "joint_velocity": {
+        "cosine": 0.9646910429000854,
+        "physical_rms": 2.398732900619507,
+        "predicted_rms": 2.389732599258423,
+        "relative_l2_error": 0.2652680575847626
+      },
+      "direct_joint_velocity_sign_agreement": 0.9826839566230774,
+      "per_joint": [
+        {
+          "name": "hip_pitch_l_joint",
+          "physical_response": 8.707894325256348,
+          "model_response": 8.017090797424316
+        },
+        {
+          "name": "hip_roll_l_joint",
+          "physical_response": 4.400915145874023,
+          "model_response": 3.462963581085205
+        },
+        {
+          "name": "hip_yaw_l_joint",
+          "physical_response": 10.617594718933105,
+          "model_response": 10.049551010131836
+        },
+        {
+          "name": "knee_pitch_l_joint",
+          "physical_response": 13.468364715576172,
+          "model_response": 13.022588729858398
+        },
+        {
+          "name": "ankle_pitch_l_joint",
+          "physical_response": 2.4718551635742188,
+          "model_response": 2.2870352268218994
+        },
+        {
+          "name": "ankle_roll_l_joint",
+          "physical_response": 2.9137110710144043,
+          "model_response": 2.656092643737793
+        },
+        {
+          "name": "hip_pitch_r_joint",
+          "physical_response": 9.23009204864502,
+          "model_response": 8.63507080078125
+        },
+        {
+          "name": "hip_roll_r_joint",
+          "physical_response": 6.277436256408691,
+          "model_response": 5.804053783416748
+        },
+        {
+          "name": "hip_yaw_r_joint",
+          "physical_response": 10.465845108032227,
+          "model_response": 10.423492431640625
+        },
+        {
+          "name": "knee_pitch_r_joint",
+          "physical_response": 13.146036148071289,
+          "model_response": 12.725119590759277
+        },
+        {
+          "name": "ankle_pitch_r_joint",
+          "physical_response": 2.81613826751709,
+          "model_response": 1.9928257465362549
+        },
+        {
+          "name": "ankle_roll_r_joint",
+          "physical_response": 2.6966333389282227,
+          "model_response": 2.4696080684661865
+        },
+        {
+          "name": "waist_yaw_joint",
+          "physical_response": 21.143564224243164,
+          "model_response": 21.192611694335938
+        },
+        {
+          "name": "waist_roll_joint",
+          "physical_response": 7.951109886169434,
+          "model_response": 7.645688056945801
+        },
+        {
+          "name": "waist_pitch_joint",
+          "physical_response": 15.515144348144531,
+          "model_response": 15.34195613861084
+        },
+        {
+          "name": "shoulder_pitch_l_joint",
+          "physical_response": 8.807178497314453,
+          "model_response": 8.491192817687988
+        },
+        {
+          "name": "shoulder_roll_l_joint",
+          "physical_response": 2.6140167713165283,
+          "model_response": 2.523841381072998
+        },
+        {
+          "name": "shoulder_yaw_l_joint",
+          "physical_response": 14.485719680786133,
+          "model_response": 13.987247467041016
+        },
+        {
+          "name": "elbow_pitch_l_joint",
+          "physical_response": 17.771408081054688,
+          "model_response": 17.360370635986328
+        },
+        {
+          "name": "elbow_yaw_l_joint",
+          "physical_response": 8.334648132324219,
+          "model_response": 8.054861068725586
+        },
+        {
+          "name": "wrist_pitch_l_joint",
+          "physical_response": 8.421098709106445,
+          "model_response": 8.364273071289062
+        },
+        {
+          "name": "wrist_roll_l_joint",
+          "physical_response": 8.463207244873047,
+          "model_response": 8.377737045288086
+        },
+        {
+          "name": "shoulder_pitch_r_joint",
+          "physical_response": 12.160128593444824,
+          "model_response": 12.037633895874023
+        },
+        {
+          "name": "shoulder_roll_r_joint",
+          "physical_response": 5.183803558349609,
+          "model_response": 5.072791576385498
+        },
+        {
+          "name": "shoulder_yaw_r_joint",
+          "physical_response": 10.084921836853027,
+          "model_response": 10.160326957702637
+        },
+        {
+          "name": "elbow_pitch_r_joint",
+          "physical_response": 17.26128387451172,
+          "model_response": 16.929834365844727
+        },
+        {
+          "name": "elbow_yaw_r_joint",
+          "physical_response": 8.330903053283691,
+          "model_response": 8.231367111206055
+        },
+        {
+          "name": "wrist_pitch_r_joint",
+          "physical_response": 8.089099884033203,
+          "model_response": 8.151773452758789
+        },
+        {
+          "name": "wrist_roll_r_joint",
+          "physical_response": 8.389047622680664,
+          "model_response": 8.332164764404297
+        }
+      ]
+    }
+  }
+}

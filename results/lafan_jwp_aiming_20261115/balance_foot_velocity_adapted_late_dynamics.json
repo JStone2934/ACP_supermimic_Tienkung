@@ -1,0 +1,151 @@
+{
+  "passed": true,
+  "active_horizon": 32,
+  "passed_by_horizon": {
+    "1": true,
+    "8": true,
+    "16": true,
+    "32": true
+  },
+  "horizons": {
+    "1": {
+      "windows": 12000,
+      "total_windows": 12000,
+      "root_m_p95": 0.00044624635484069586,
+      "root_m_rmse": 0.00026812005671672523,
+      "feet_m_p95": 0.0007908126572147012,
+      "feet_m_rmse": 0.0006848411867395043,
+      "feet_velocity_m_s_p95": 0.05156826227903366,
+      "feet_velocity_m_s_rmse": 0.04803856834769249,
+      "joints_rad_p95": 0.0008529119659215212,
+      "joints_rad_rmse": 0.000546127324923873,
+      "tcp_m_p95": 0.0005405906122177839,
+      "tcp_m_rmse": 0.0002932865172624588,
+      "direction_deg_p95": 0.03426402062177658,
+      "direction_deg_rmse": 0.023362860083580017,
+      "tip_m_p95": 0.0017535167280584574,
+      "tip_m_rmse": 0.001246085623279214
+    },
+    "8": {
+      "windows": 1496,
+      "total_windows": 1496,
+      "root_m_p95": 0.0017350391717627645,
+      "root_m_rmse": 0.0008498320239596069,
+      "feet_m_p95": 0.0023840786889195442,
+      "feet_m_rmse": 0.00173398747574538,
+      "feet_velocity_m_s_p95": 0.03670286014676094,
+      "feet_velocity_m_s_rmse": 0.03658730909228325,
+      "joints_rad_p95": 0.002325329463928938,
+      "joints_rad_rmse": 0.0012300999369472265,
+      "tcp_m_p95": 0.002496821340173483,
+      "tcp_m_rmse": 0.0011746141826733947,
+      "direction_deg_p95": 0.2550694942474365,
+      "direction_deg_rmse": 0.12244868278503418,
+      "tip_m_p95": 0.011961765587329865,
+      "tip_m_rmse": 0.005847239401191473
+    },
+    "16": {
+      "windows": 744,
+      "total_windows": 744,
+      "root_m_p95": 0.002945713233202696,
+      "root_m_rmse": 0.0014534491347149014,
+      "feet_m_p95": 0.0041394648142158985,
+      "feet_m_rmse": 0.002413015114143491,
+      "feet_velocity_m_s_p95": 0.03683846443891525,
+      "feet_velocity_m_s_rmse": 0.03499022126197815,
+      "joints_rad_p95": 0.002616172656416893,
+      "joints_rad_rmse": 0.0013625079300254583,
+      "tcp_m_p95": 0.004761499352753162,
+      "tcp_m_rmse": 0.002061380073428154,
+      "direction_deg_p95": 0.30082622170448303,
+      "direction_deg_rmse": 0.1498723030090332,
+      "tip_m_p95": 0.014157259836792946,
+      "tip_m_rmse": 0.007136800792068243
+    },
+    "32": {
+      "windows": 368,
+      "total_windows": 368,
+      "root_m_p95": 0.005155299324542284,
+      "root_m_rmse": 0.0028319593984633684,
+      "feet_m_p95": 0.007057821378111839,
+      "feet_m_rmse": 0.003755797864869237,
+      "feet_velocity_m_s_p95": 0.037315528839826584,
+      "feet_velocity_m_s_rmse": 0.03873441368341446,
+      "joints_rad_p95": 0.003080505644902587,
+      "joints_rad_rmse": 0.0016732659423723817,
+      "tcp_m_p95": 0.007472004741430283,
+      "tcp_m_rmse": 0.00355673860758543,
+      "direction_deg_p95": 0.35808274149894714,
+      "direction_deg_rmse": 0.18205805122852325,
+      "tip_m_p95": 0.016861869022250175,
+      "tip_m_rmse": 0.008640186861157417
+    }
+  },
+  "thresholds": {
+    "root_m_p95": 0.05,
+    "feet_m_p95": 0.025
+  },
+  "thresholds_status": "required before imagined actor updates; does not replace physical acceptance",
+  "independent_episodes": true,
+  "exploration_rad": {
+    "arm": 0.0,
+    "body": 0.0
+  },
+  "checkpoint_sha256": "9e047c73bdcd3a78edfe97217e829f2d483732a309eaee2debc2a129dea1d542",
+  "scope": "Read-only thirty-second collection for late-episode dynamics diagnostics.",
+  "weights_changed": false,
+  "policy_acceptance": false,
+  "seed": 919,
+  "collection_steps": 1500,
+  "warning": "Physical termination resets collection environments; per-window episode age filters exclude reset crossings. This is model prediction diagnostics, not a no-reset30s policy acceptance.",
+  "late_h32": {
+    "0-3": {
+      "windows": 40,
+      "feet_position_error_p95_m": 0.005933492910116911,
+      "foot_velocity_error_p95_m_s": 0.03582802042365074,
+      "signed_foot_velocity_error_xyz_m_s": [
+        -0.005494525656104088,
+        -0.0001416329323546961,
+        0.0008579487330280244
+      ],
+      "actual_foot_speed_median_m_s": 0.004577762447297573,
+      "predicted_foot_speed_median_m_s": 0.02848188951611519
+    },
+    "3-10": {
+      "windows": 88,
+      "feet_position_error_p95_m": 0.0023223215248435736,
+      "foot_velocity_error_p95_m_s": 0.03643053397536278,
+      "signed_foot_velocity_error_xyz_m_s": [
+        -0.007264432962983847,
+        0.0012332312762737274,
+        0.0010440582409501076
+      ],
+      "actual_foot_speed_median_m_s": 0.0039118570275604725,
+      "predicted_foot_speed_median_m_s": 0.03429843485355377
+    },
+    "10-20": {
+      "windows": 128,
+      "feet_position_error_p95_m": 0.004556808155030012,
+      "foot_velocity_error_p95_m_s": 0.0344841331243515,
+      "signed_foot_velocity_error_xyz_m_s": [
+        -0.0065390802919864655,
+        0.00011441775131970644,
+        0.001104625640437007
+      ],
+      "actual_foot_speed_median_m_s": 0.0036108107306063175,
+      "predicted_foot_speed_median_m_s": 0.027869893237948418
+    },
+    "20-30": {
+      "windows": 112,
+      "feet_position_error_p95_m": 0.009755471721291542,
+      "foot_velocity_error_p95_m_s": 0.041112951934337616,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.0020414129830896854,
+        0.00407411390915513,
+        -0.00030458520632237196
+      ],
+      "actual_foot_speed_median_m_s": 0.003205455606803298,
+      "predicted_foot_speed_median_m_s": 0.027558527886867523
+    }
+  }
+}

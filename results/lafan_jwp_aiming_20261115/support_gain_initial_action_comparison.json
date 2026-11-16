@@ -1,0 +1,8 @@
+{
+  "scope": "Initial-action comparison for two support-gain candidates before observed capture",
+  "gpu": "cuda:0",
+  "max_pd_target_difference_rad": 0.0,
+  "initial_state_and_targets_identical": true,
+  "trajectory_divergence_observed_after_first_physics_step": true,
+  "causal_limit": "Does not identify the source of downstream numerical trajectory divergence. Full physical reports retained."
+}

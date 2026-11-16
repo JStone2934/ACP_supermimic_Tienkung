@@ -1,0 +1,391 @@
+{
+  "scope": "Physical diagnostic: replay reference joint PD targets without a learned actor.\n\nThis is an oracle/reference-dependent baseline, never a delivered policy.\nIt measures whether a learned residual is needed for balance and motion tracking.\n",
+  "physics_substeps": 16,
+  "data_hash": "d1cf03cf9cb1e370472049f8a573c0a57a78a192c5882aea2359c52287cf78c5",
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "per_clip": {
+    "lafan/aiming2_subject3__f001372_001935": {
+      "completed": false,
+      "alive_steps": 48,
+      "root_rmse_m": 0.2785572409629822,
+      "joint_rmse_rad": 0.16712547838687897,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f001940_002976": {
+      "completed": false,
+      "alive_steps": 38,
+      "root_rmse_m": 0.21540862321853638,
+      "joint_rmse_rad": 0.08941856026649475,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f003036_003778": {
+      "completed": false,
+      "alive_steps": 16,
+      "root_rmse_m": 0.15595151484012604,
+      "joint_rmse_rad": 0.11952731758356094,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f004188_004902": {
+      "completed": false,
+      "alive_steps": 35,
+      "root_rmse_m": 0.2703150808811188,
+      "joint_rmse_rad": 0.15180641412734985,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f005082_005599": {
+      "completed": false,
+      "alive_steps": 56,
+      "root_rmse_m": 0.21924440562725067,
+      "joint_rmse_rad": 0.1664232611656189,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f005958_006567": {
+      "completed": false,
+      "alive_steps": 31,
+      "root_rmse_m": 0.2388041615486145,
+      "joint_rmse_rad": 0.12227370589971542,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f006637_007203": {
+      "completed": false,
+      "alive_steps": 17,
+      "root_rmse_m": 0.1893022507429123,
+      "joint_rmse_rad": 0.18169331550598145,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f007208_008017": {
+      "completed": false,
+      "alive_steps": 34,
+      "root_rmse_m": 0.2240666300058365,
+      "joint_rmse_rad": 0.1118880957365036,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f008613_009455": {
+      "completed": false,
+      "alive_steps": 32,
+      "root_rmse_m": 0.28694066405296326,
+      "joint_rmse_rad": 0.168141707777977,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f010049_010504": {
+      "completed": false,
+      "alive_steps": 47,
+      "root_rmse_m": 0.2288963794708252,
+      "joint_rmse_rad": 0.1199331060051918,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f010785_011477": {
+      "completed": false,
+      "alive_steps": 44,
+      "root_rmse_m": 0.21247585117816925,
+      "joint_rmse_rad": 0.1386052966117859,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f012654_013272": {
+      "completed": false,
+      "alive_steps": 33,
+      "root_rmse_m": 0.18447618186473846,
+      "joint_rmse_rad": 0.16259324550628662,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f013609_013882": {
+      "completed": false,
+      "alive_steps": 41,
+      "root_rmse_m": 0.3077102601528168,
+      "joint_rmse_rad": 0.17794747650623322,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f014016_014390": {
+      "completed": false,
+      "alive_steps": 20,
+      "root_rmse_m": 0.1724451631307602,
+      "joint_rmse_rad": 0.14150185883045197,
+      "finite": true
+    },
+    "lafan/aiming2_subject3__f014559_015284": {
+      "completed": false,
+      "alive_steps": 71,
+      "root_rmse_m": 0.1841343641281128,
+      "joint_rmse_rad": 0.1333436369895935,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f000246_002398": {
+      "completed": false,
+      "alive_steps": 30,
+      "root_rmse_m": 0.1507139652967453,
+      "joint_rmse_rad": 0.1565493941307068,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f002484_002869": {
+      "completed": false,
+      "alive_steps": 15,
+      "root_rmse_m": 0.1579885184764862,
+      "joint_rmse_rad": 0.12042223662137985,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f002874_004899": {
+      "completed": false,
+      "alive_steps": 32,
+      "root_rmse_m": 0.1665133535861969,
+      "joint_rmse_rad": 0.149912491440773,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f004990_005556": {
+      "completed": false,
+      "alive_steps": 29,
+      "root_rmse_m": 0.20780839025974274,
+      "joint_rmse_rad": 0.19503095746040344,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f005567_006463": {
+      "completed": false,
+      "alive_steps": 49,
+      "root_rmse_m": 0.23005011677742004,
+      "joint_rmse_rad": 0.13352955877780914,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f006693_007440": {
+      "completed": false,
+      "alive_steps": 26,
+      "root_rmse_m": 0.15759024024009705,
+      "joint_rmse_rad": 0.1672988086938858,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f007462_007781": {
+      "completed": false,
+      "alive_steps": 27,
+      "root_rmse_m": 0.1906687468290329,
+      "joint_rmse_rad": 0.1334613412618637,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f008037_011417": {
+      "completed": false,
+      "alive_steps": 30,
+      "root_rmse_m": 0.1844511777162552,
+      "joint_rmse_rad": 0.17527464032173157,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f011666_012098": {
+      "completed": false,
+      "alive_steps": 34,
+      "root_rmse_m": 0.1566716581583023,
+      "joint_rmse_rad": 0.11314474791288376,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f012109_012395": {
+      "completed": false,
+      "alive_steps": 32,
+      "root_rmse_m": 0.24935318529605865,
+      "joint_rmse_rad": 0.16291388869285583,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f012751_013827": {
+      "completed": false,
+      "alive_steps": 28,
+      "root_rmse_m": 0.20535825192928314,
+      "joint_rmse_rad": 0.13464604318141937,
+      "finite": true
+    },
+    "lafan/aiming2_subject5__f014357_015284": {
+      "completed": false,
+      "alive_steps": 32,
+      "root_rmse_m": 0.17437636852264404,
+      "joint_rmse_rad": 0.11851485073566437,
+      "finite": true
+    },
+    "lafan/walk1_subject2__f000002_000677": {
+      "completed": false,
+      "alive_steps": 43,
+      "root_rmse_m": 0.21763579547405243,
+      "joint_rmse_rad": 0.10050725936889648,
+      "finite": true
+    },
+    "lafan/walk1_subject2__f000705_004248": {
+      "completed": false,
+      "alive_steps": 37,
+      "root_rmse_m": 0.2515411972999573,
+      "joint_rmse_rad": 0.1469966322183609,
+      "finite": true
+    },
+    "lafan/walk1_subject2__f004254_004930": {
+      "completed": false,
+      "alive_steps": 28,
+      "root_rmse_m": 0.09480831027030945,
+      "joint_rmse_rad": 0.12931790947914124,
+      "finite": true
+    },
+    "lafan/walk1_subject2__f004935_011007": {
+      "completed": false,
+      "alive_steps": 40,
+      "root_rmse_m": 0.11120268702507019,
+      "joint_rmse_rad": 0.13430839776992798,
+      "finite": true
+    },
+    "lafan/walk1_subject2__f011014_011923": {
+      "completed": false,
+      "alive_steps": 25,
+      "root_rmse_m": 0.1563926339149475,
+      "joint_rmse_rad": 0.13073647022247314,
+      "finite": true
+    },
+    "lafan/walk1_subject2__f011929_012987": {
+      "completed": false,
+      "alive_steps": 46,
+      "root_rmse_m": 0.2945713400840759,
+      "joint_rmse_rad": 0.16576139628887177,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f000175_000556": {
+      "completed": false,
+      "alive_steps": 41,
+      "root_rmse_m": 0.20892314612865448,
+      "joint_rmse_rad": 0.10141851007938385,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f000568_001445": {
+      "completed": false,
+      "alive_steps": 51,
+      "root_rmse_m": 0.15911267697811127,
+      "joint_rmse_rad": 0.10266143828630447,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f001450_002143": {
+      "completed": false,
+      "alive_steps": 31,
+      "root_rmse_m": 0.095358707010746,
+      "joint_rmse_rad": 0.1126052662730217,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f002361_005063": {
+      "completed": false,
+      "alive_steps": 65,
+      "root_rmse_m": 0.1365143209695816,
+      "joint_rmse_rad": 0.09414675086736679,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f005385_006067": {
+      "completed": false,
+      "alive_steps": 33,
+      "root_rmse_m": 0.23363599181175232,
+      "joint_rmse_rad": 0.17876136302947998,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f006096_006566": {
+      "completed": false,
+      "alive_steps": 35,
+      "root_rmse_m": 0.2529636323451996,
+      "joint_rmse_rad": 0.16708512604236603,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f006631_007312": {
+      "completed": false,
+      "alive_steps": 40,
+      "root_rmse_m": 0.2584506571292877,
+      "joint_rmse_rad": 0.18069100379943848,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f007321_008297": {
+      "completed": false,
+      "alive_steps": 33,
+      "root_rmse_m": 0.23178604245185852,
+      "joint_rmse_rad": 0.08744815737009048,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f008385_009109": {
+      "completed": false,
+      "alive_steps": 42,
+      "root_rmse_m": 0.22119207680225372,
+      "joint_rmse_rad": 0.17594684660434723,
+      "finite": true
+    },
+    "lafan/walk3_subject1__f011030_012326": {
+      "completed": false,
+      "alive_steps": 68,
+      "root_rmse_m": 0.17014364898204803,
+      "joint_rmse_rad": 0.12314943224191666,
+      "finite": true
+    },
+    "lafan/walk3_subject2__f000002_000557": {
+      "completed": false,
+      "alive_steps": 40,
+      "root_rmse_m": 0.22343094646930695,
+      "joint_rmse_rad": 0.09964174032211304,
+      "finite": true
+    },
+    "lafan/walk3_subject2__f000902_003838": {
+      "completed": false,
+      "alive_steps": 37,
+      "root_rmse_m": 0.24417883157730103,
+      "joint_rmse_rad": 0.09065762162208557,
+      "finite": true
+    },
+    "lafan/walk3_subject2__f003844_008001": {
+      "completed": false,
+      "alive_steps": 43,
+      "root_rmse_m": 0.1917993426322937,
+      "joint_rmse_rad": 0.10895942896604538,
+      "finite": true
+    },
+    "lafan/walk3_subject2__f008014_008310": {
+      "completed": false,
+      "alive_steps": 49,
+      "root_rmse_m": 0.17848730087280273,
+      "joint_rmse_rad": 0.131539449095726,
+      "finite": true
+    },
+    "lafan/walk3_subject2__f008373_009459": {
+      "completed": false,
+      "alive_steps": 34,
+      "root_rmse_m": 0.174266517162323,
+      "joint_rmse_rad": 0.14729911088943481,
+      "finite": true
+    },
+    "lafan/walk3_subject2__f009464_012329": {
+      "completed": false,
+      "alive_steps": 44,
+      "root_rmse_m": 0.1626684069633484,
+      "joint_rmse_rad": 0.1585840880870819,
+      "finite": true
+    }
+  },
+  "completed": 0,
+  "clips": 49,
+  "mean_root_rmse_m": 0.20141503990304713,
+  "mean_joint_rmse_rad": 0.13839071091948724
+}

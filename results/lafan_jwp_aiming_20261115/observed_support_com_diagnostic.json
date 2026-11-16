@@ -1,0 +1,299 @@
+{
+  "scope": "Descriptive offline COM/contact-position geometry. Contact forces unavailable; hull is not a certified support polygon. XCoM uses the linear inverted-pendulum approximation, not a proof of dynamic stability.",
+  "physical_acceptance": false,
+  "weights_changed": false,
+  "comparisons": {
+    "source3250": {
+      "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_balance_recovery_conservative_3250/iteration_003250/seed_17.npz",
+      "trajectory_sha256": "1701a343abd67c271323bf19da8b1c9d1f8ce5663de78956057c1367694d3baa",
+      "rows": [
+        {
+          "time_s": 3,
+          "valid_support_hulls": 96,
+          "median_com_margin_m": 0.0012710000519238138,
+          "median_xcom_margin_m": 0.0012977912172967218,
+          "outside_com_hulls": 46,
+          "outside_xcom_hulls": 43,
+          "median_com_speed_m_s": 0.004868390957086094,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.031435048426412815,
+              -0.009328426186620668
+            ],
+            "com_margin_m": -0.08155520141344044,
+            "xcom_margin_m": -0.07957680365924232,
+            "contact_count": 3,
+            "com_speed_m_s": 0.00804942358217781,
+            "tilt_deg": 0.3351345956325531
+          }
+        },
+        {
+          "time_s": 5,
+          "valid_support_hulls": 97,
+          "median_com_margin_m": 0.0006382365906461435,
+          "median_xcom_margin_m": 0.0007370624072437493,
+          "outside_com_hulls": 46,
+          "outside_xcom_hulls": 44,
+          "median_com_speed_m_s": 0.002057247829786551,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.02370931550371487,
+              -0.005607962348340316
+            ],
+            "com_margin_m": -0.006306327832026434,
+            "xcom_margin_m": -0.006621154903569154,
+            "contact_count": 3,
+            "com_speed_m_s": 0.001958755063792692,
+            "tilt_deg": 0.15195108950138092
+          }
+        },
+        {
+          "time_s": 10,
+          "valid_support_hulls": 101,
+          "median_com_margin_m": -0.0014740014633525325,
+          "median_xcom_margin_m": -0.0014507841674884711,
+          "outside_com_hulls": 54,
+          "outside_xcom_hulls": 54,
+          "median_com_speed_m_s": 0.000828858323100542,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.026047336096879134,
+              -0.003822160426371266
+            ],
+            "com_margin_m": 0.004412560929243012,
+            "xcom_margin_m": 0.004271530428586676,
+            "contact_count": 6,
+            "com_speed_m_s": 0.0005910967641453898,
+            "tilt_deg": 0.1266688108444214
+          }
+        },
+        {
+          "time_s": 12,
+          "valid_support_hulls": 99,
+          "median_com_margin_m": -0.00022826440568703837,
+          "median_xcom_margin_m": -0.0004761797556261521,
+          "outside_com_hulls": 52,
+          "outside_xcom_hulls": 52,
+          "median_com_speed_m_s": 0.0006055854076485618,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.02703139680935543,
+              -0.004310990361327694
+            ],
+            "com_margin_m": -0.01349200109832803,
+            "xcom_margin_m": -0.013480176945805541,
+            "contact_count": 5,
+            "com_speed_m_s": 3.934291822504252e-05,
+            "tilt_deg": 0.16668902337551117
+          }
+        },
+        {
+          "time_s": 13,
+          "valid_support_hulls": 97,
+          "median_com_margin_m": -0.00015356246664514211,
+          "median_xcom_margin_m": -0.0006231654948665385,
+          "outside_com_hulls": 50,
+          "outside_xcom_hulls": 50,
+          "median_com_speed_m_s": 0.0006755787945196186,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.02728319491564117,
+              -0.00472263179913842
+            ],
+            "com_margin_m": 0.012252706598776045,
+            "xcom_margin_m": 0.012231255328032334,
+            "contact_count": 4,
+            "com_speed_m_s": 0.0004758099330147492,
+            "tilt_deg": 0.18238426744937897
+          }
+        },
+        {
+          "time_s": 14,
+          "valid_support_hulls": 94,
+          "median_com_margin_m": -0.001991956310886873,
+          "median_xcom_margin_m": -0.0020552878786528426,
+          "outside_com_hulls": 51,
+          "outside_xcom_hulls": 52,
+          "median_com_speed_m_s": 0.0006692862441965312,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.027590235073118946,
+              -0.004850014354728895
+            ],
+            "com_margin_m": -0.0142151935574885,
+            "xcom_margin_m": -0.01423681162189118,
+            "contact_count": 6,
+            "com_speed_m_s": 0.00016582982974204448,
+            "tilt_deg": 0.19179700314998627
+          }
+        },
+        {
+          "time_s": 14.4,
+          "valid_support_hulls": 98,
+          "median_com_margin_m": -0.003401931148241312,
+          "median_xcom_margin_m": -0.0032541677772833302,
+          "outside_com_hulls": 55,
+          "outside_xcom_hulls": 55,
+          "median_com_speed_m_s": 0.0006411607493113881,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.027575457446102555,
+              -0.0051614351217277275
+            ],
+            "com_margin_m": 0.004523828879575323,
+            "xcom_margin_m": 0.00484090837674922,
+            "contact_count": 6,
+            "com_speed_m_s": 0.0012426683721603266,
+            "tilt_deg": 0.18767184019088745
+          }
+        }
+      ]
+    },
+    "observed250": {
+      "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_observed_support/iteration_000250/seed_17.npz",
+      "trajectory_sha256": "0e7ff5f08bf9f88b9c93479d7bc96788fd27b80afabf3b5f4f8992cb9d715899",
+      "rows": [
+        {
+          "time_s": 3,
+          "valid_support_hulls": 99,
+          "median_com_margin_m": -0.0034803563141072857,
+          "median_xcom_margin_m": -0.007645724262489412,
+          "outside_com_hulls": 61,
+          "outside_xcom_hulls": 57,
+          "median_com_speed_m_s": 0.014888616979159669,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.012655692196764962,
+              -0.0088890536616472
+            ],
+            "com_margin_m": -0.06694726700057622,
+            "xcom_margin_m": -0.06076357908643322,
+            "contact_count": 4,
+            "com_speed_m_s": 0.020764355081594407,
+            "tilt_deg": 0.8616193532943726
+          }
+        },
+        {
+          "time_s": 5,
+          "valid_support_hulls": 100,
+          "median_com_margin_m": -0.04422740970628965,
+          "median_xcom_margin_m": -0.03953253013813769,
+          "outside_com_hulls": 90,
+          "outside_xcom_hulls": 90,
+          "median_com_speed_m_s": 0.020749760462775595,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              -0.032447212432596295,
+              -0.015944095558322956
+            ],
+            "com_margin_m": -0.03706411120435746,
+            "xcom_margin_m": -0.03169183149291085,
+            "contact_count": 3,
+            "com_speed_m_s": 0.02367564454319364,
+            "tilt_deg": 0.8807117342948914
+          }
+        },
+        {
+          "time_s": 10,
+          "valid_support_hulls": 99,
+          "median_com_margin_m": -0.05370094161782045,
+          "median_xcom_margin_m": -0.04777993161992354,
+          "outside_com_hulls": 81,
+          "outside_xcom_hulls": 80,
+          "median_com_speed_m_s": 0.018297340498108536,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              -0.026161238781859046,
+              -0.010165311104849584
+            ],
+            "com_margin_m": -0.045867027770068174,
+            "xcom_margin_m": -0.038959770503510974,
+            "contact_count": 4,
+            "com_speed_m_s": 0.024999010160623173,
+            "tilt_deg": 1.262845754623413
+          }
+        },
+        {
+          "time_s": 12,
+          "valid_support_hulls": 99,
+          "median_com_margin_m": -0.01976109123229311,
+          "median_xcom_margin_m": -0.019079729398918527,
+          "outside_com_hulls": 77,
+          "outside_xcom_hulls": 77,
+          "median_com_speed_m_s": 0.022784738876154863,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              -0.06549907504004629,
+              0.0009124144271354141
+            ],
+            "com_margin_m": -0.016977802714842026,
+            "xcom_margin_m": -0.020402083500997197,
+            "contact_count": 5,
+            "com_speed_m_s": 0.0137665640965532,
+            "tilt_deg": 1.9307708740234375
+          }
+        },
+        {
+          "time_s": 13,
+          "valid_support_hulls": 96,
+          "median_com_margin_m": -0.02428915295848328,
+          "median_xcom_margin_m": -0.02521706668020347,
+          "outside_com_hulls": 72,
+          "outside_xcom_hulls": 75,
+          "median_com_speed_m_s": 0.026501196855602663,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              -0.03014294273416956,
+              0.011721000308687383
+            ],
+            "com_margin_m": -0.05275628066275787,
+            "xcom_margin_m": -0.07032740142265598,
+            "contact_count": 5,
+            "com_speed_m_s": 0.06252915044289448,
+            "tilt_deg": 0.4261256754398346
+          }
+        },
+        {
+          "time_s": 14,
+          "valid_support_hulls": 89,
+          "median_com_margin_m": -0.02464443736394193,
+          "median_xcom_margin_m": -0.025512540359654008,
+          "outside_com_hulls": 62,
+          "outside_xcom_hulls": 63,
+          "median_com_speed_m_s": 0.03557679285732905,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.015974765351807474,
+              0.017131498997900563
+            ],
+            "com_margin_m": -0.011087703666915236,
+            "xcom_margin_m": -0.01427693890137055,
+            "contact_count": 5,
+            "com_speed_m_s": 0.018036136769867903,
+            "tilt_deg": 0.3152790367603302
+          }
+        },
+        {
+          "time_s": 14.4,
+          "valid_support_hulls": 87,
+          "median_com_margin_m": -0.019740869954089496,
+          "median_xcom_margin_m": -0.02375838367063867,
+          "outside_com_hulls": 57,
+          "outside_xcom_hulls": 56,
+          "median_com_speed_m_s": 0.030093885773257483,
+          "scenario0": {
+            "com_minus_foot_midpoint_xy_m": [
+              0.017741686666235892,
+              0.016778202616591048
+            ],
+            "com_margin_m": -0.007195549549996502,
+            "xcom_margin_m": -0.008761494427216965,
+            "contact_count": 4,
+            "com_speed_m_s": 0.006590423117528957,
+            "tilt_deg": 0.4059005677700043
+          }
+        }
+      ]
+    }
+  }
+}

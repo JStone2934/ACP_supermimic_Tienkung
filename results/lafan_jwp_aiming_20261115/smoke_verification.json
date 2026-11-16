@@ -1,0 +1,35 @@
+{
+  "iteration": 3,
+  "finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "distributed": {
+    "version": 1,
+    "world_size": 1,
+    "updates": {
+      "wm": 3,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 478141440,
+        "torch_peak_reserved": 555745280,
+        "device_used": 23571136512,
+        "warp_pool_used": 322774407,
+        "warp_pool_peak": 322775367
+      }
+    ]
+  },
+  "sampling": {
+    "jwp": 0.8,
+    "lafan": 0.2
+  },
+  "smoke_only": true,
+  "eligible_for_formal_training_initialization": false
+}

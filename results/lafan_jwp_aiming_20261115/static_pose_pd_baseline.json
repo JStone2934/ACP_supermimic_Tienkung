@@ -1,0 +1,1534 @@
+{
+  "scope": "Physical plant baseline: fixed PD targets from training poses, not a learned policy.",
+  "policy_acceptance": false,
+  "formal_training": false,
+  "seconds": 30,
+  "continuous_without_reset": true,
+  "reset_seed": 214,
+  "copies_per_pose": 4,
+  "training_source_only": true,
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "physics_substeps": 16,
+  "reset_noise": {
+    "position_m": 0.01,
+    "rotation_rad": 0.015,
+    "joint_rad": 0.03
+  },
+  "rows": [
+    {
+      "index": 0,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 77,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 84.2948226928711,
+      "median_foot_drift_m": 0.01294495165348053,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0549261569976807,
+          "max_tilt_deg": 84.31734466552734,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.32,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.046485401690006256
+            }
+          ],
+          "foot_drift_after3s_m": 0.020484965294599533
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.053847312927246,
+          "max_tilt_deg": 84.11392974853516,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.22,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04699554666876793
+            }
+          ],
+          "foot_drift_after3s_m": 0.009868206456303596
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.062441110610962,
+          "max_tilt_deg": 84.27230072021484,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.24,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04601847752928734
+            }
+          ],
+          "foot_drift_after3s_m": 0.010467560961842537
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0641825199127197,
+          "max_tilt_deg": 84.5785140991211,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04463803395628929
+            }
+          ],
+          "foot_drift_after3s_m": 0.015422342345118523
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "clip": "lafan/walk3_subject3__f000742_001092",
+      "frame": 279,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 80.03350830078125,
+      "median_foot_drift_m": 0.017064250074326992,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0898789167404175,
+          "max_tilt_deg": 80.32174682617188,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.42,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04739949852228165
+            }
+          ],
+          "foot_drift_after3s_m": 0.01700809970498085
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.084416151046753,
+          "max_tilt_deg": 79.67195892333984,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.3800000000000001,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04804427921772003
+            }
+          ],
+          "foot_drift_after3s_m": 0.017520664259791374
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1004507541656494,
+          "max_tilt_deg": 80.28079986572266,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.48,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.043459195643663406
+            }
+          ],
+          "foot_drift_after3s_m": 0.017120400443673134
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.090950846672058,
+          "max_tilt_deg": 79.78621673583984,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.48,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.049204230308532715
+            }
+          ],
+          "foot_drift_after3s_m": 0.008741580881178379
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "clip": "lafan/walk2_subject4__f000004_000657",
+      "frame": 76,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 87.51958465576172,
+      "median_foot_drift_m": 0.008883508620783687,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1237831115722656,
+          "max_tilt_deg": 88.22530364990234,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.62,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04661623761057854
+            }
+          ],
+          "foot_drift_after3s_m": 0.029130684211850166
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0456717014312744,
+          "max_tilt_deg": 87.440185546875,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.22,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04235481470823288
+            }
+          ],
+          "foot_drift_after3s_m": 0.006336962338536978
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0479209423065186,
+          "max_tilt_deg": 87.05289459228516,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.24,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.045571550726890564
+            }
+          ],
+          "foot_drift_after3s_m": 0.0060431137681007385
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0536848306655884,
+          "max_tilt_deg": 87.59898376464844,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.029447102919220924
+            }
+          ],
+          "foot_drift_after3s_m": 0.011430054903030396
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "clip": "lafan/walk3_subject5__f000002_000261",
+      "frame": 28,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 87.66519165039062,
+      "median_foot_drift_m": 0.01009943475946784,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0453026294708252,
+          "max_tilt_deg": 87.5781478881836,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.28,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03825228288769722
+            }
+          ],
+          "foot_drift_after3s_m": 0.017435789108276367
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0077970027923584,
+          "max_tilt_deg": 87.75223541259766,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.1400000000000001,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.025962118059396744
+            }
+          ],
+          "foot_drift_after3s_m": 0.009970379061996937
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0171774625778198,
+          "max_tilt_deg": 87.9225082397461,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.18,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.022629039362072945
+            }
+          ],
+          "foot_drift_after3s_m": 0.009725292213261127
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.034543514251709,
+          "max_tilt_deg": 87.13944244384766,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.22,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.036291107535362244
+            }
+          ],
+          "foot_drift_after3s_m": 0.010228490456938744
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "clip": "lafan/walk1_subject1__f000004_000479",
+      "frame": 25,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 88.96673202514648,
+      "median_foot_drift_m": 0.0315637718886137,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1457353830337524,
+          "max_tilt_deg": 88.48951721191406,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.84,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04684163257479668
+            }
+          ],
+          "foot_drift_after3s_m": 0.025696877390146255
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1129387617111206,
+          "max_tilt_deg": 88.90949249267578,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.6400000000000001,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.047441188246011734
+            }
+          ],
+          "foot_drift_after3s_m": 0.025258507579565048
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1472500562667847,
+          "max_tilt_deg": 89.053955078125,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.76,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0453944057226181
+            }
+          ],
+          "foot_drift_after3s_m": 0.04263043403625488
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1116622686386108,
+          "max_tilt_deg": 89.02397155761719,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.58,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04571222886443138
+            }
+          ],
+          "foot_drift_after3s_m": 0.037430666387081146
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "clip": "lafan/walk3_subject5__f011255_011509",
+      "frame": 109,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 98.07434844970703,
+      "median_foot_drift_m": 0.03829095885157585,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0927249193191528,
+          "max_tilt_deg": 95.1381607055664,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.74,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04247135668992996
+            }
+          ],
+          "foot_drift_after3s_m": 0.037467051297426224
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0653746128082275,
+          "max_tilt_deg": 98.3601303100586,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.7800000000000002,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.048207469284534454
+            }
+          ],
+          "foot_drift_after3s_m": 0.03911486640572548
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0677095651626587,
+          "max_tilt_deg": 97.78856658935547,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.7600000000000002,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04905453696846962
+            }
+          ],
+          "foot_drift_after3s_m": 0.058271344751119614
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.074672818183899,
+          "max_tilt_deg": 98.86630249023438,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.74,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.045910585671663284
+            }
+          ],
+          "foot_drift_after3s_m": 0.03407154977321625
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "clip": "lafan/walk1_subject5__f000002_003121",
+      "frame": 29,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 87.57971572875977,
+      "median_foot_drift_m": 0.0110984374769032,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0479859113693237,
+          "max_tilt_deg": 87.75523376464844,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.3,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04131247475743294
+            }
+          ],
+          "foot_drift_after3s_m": 0.010401859879493713
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0643587112426758,
+          "max_tilt_deg": 87.46405029296875,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.32,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03475923091173172
+            }
+          ],
+          "foot_drift_after3s_m": 0.010501663200557232
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0539326667785645,
+          "max_tilt_deg": 87.55229949951172,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04378646984696388
+            }
+          ],
+          "foot_drift_after3s_m": 0.011695211753249168
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0585014820098877,
+          "max_tilt_deg": 87.60713195800781,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04935634136199951
+            }
+          ],
+          "foot_drift_after3s_m": 0.019879162311553955
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "clip": "lafan/aiming1_subject1__f007340_008477",
+      "frame": 153,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 75.35511016845703,
+      "median_foot_drift_m": 0.02747070323675871,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.04308021068573,
+          "max_tilt_deg": 75.68272399902344,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.4000000000000001,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04955015704035759
+            }
+          ],
+          "foot_drift_after3s_m": 0.027790894731879234
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0214813947677612,
+          "max_tilt_deg": 75.40980529785156,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.42,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.048146095126867294
+            }
+          ],
+          "foot_drift_after3s_m": 0.032717201858758926
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0439039468765259,
+          "max_tilt_deg": 75.3004150390625,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.46,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04989476501941681
+            }
+          ],
+          "foot_drift_after3s_m": 0.026386577636003494
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0247410535812378,
+          "max_tilt_deg": 75.10985565185547,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.44,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.049834806472063065
+            }
+          ],
+          "foot_drift_after3s_m": 0.027150511741638184
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "clip": "lafan/aiming2_subject2__f000002_002243",
+      "frame": 31,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 89.36344909667969,
+      "median_foot_drift_m": 0.006378822145052254,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0581895112991333,
+          "max_tilt_deg": 89.38093566894531,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.035473939031362534
+            }
+          ],
+          "foot_drift_after3s_m": 0.0030376624781638384
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0654758214950562,
+          "max_tilt_deg": 89.34596252441406,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.24,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.048884809017181396
+            }
+          ],
+          "foot_drift_after3s_m": 0.00971998181194067
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0973232984542847,
+          "max_tilt_deg": 89.54878997802734,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.54,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03936795890331268
+            }
+          ],
+          "foot_drift_after3s_m": 0.012574936263263226
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.062066674232483,
+          "max_tilt_deg": 89.12432861328125,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.044353168457746506
+            }
+          ],
+          "foot_drift_after3s_m": 0.0028699692338705063
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 27,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 84.89162063598633,
+      "median_foot_drift_m": 0.015509032644331455,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0722475051879883,
+          "max_tilt_deg": 84.8827133178711,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.28,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.045512955635786057
+            }
+          ],
+          "foot_drift_after3s_m": 0.01682562194764614
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0602210760116577,
+          "max_tilt_deg": 84.90052795410156,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04540210962295532
+            }
+          ],
+          "foot_drift_after3s_m": 0.014957737177610397
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0565593242645264,
+          "max_tilt_deg": 84.5341796875,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04323488101363182
+            }
+          ],
+          "foot_drift_after3s_m": 0.01097935251891613
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0832116603851318,
+          "max_tilt_deg": 85.43091583251953,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.44,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04576457664370537
+            }
+          ],
+          "foot_drift_after3s_m": 0.016060328111052513
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "clip": "lafan/walk2_subject4__f000004_000657",
+      "frame": 26,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 87.20136642456055,
+      "median_foot_drift_m": 0.012281017377972603,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0611319541931152,
+          "max_tilt_deg": 87.0409164428711,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.32,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03584127128124237
+            }
+          ],
+          "foot_drift_after3s_m": 0.010351426899433136
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0625073909759521,
+          "max_tilt_deg": 87.36181640625,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.3,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.035416144877672195
+            }
+          ],
+          "foot_drift_after3s_m": 0.014050665311515331
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.05708646774292,
+          "max_tilt_deg": 88.0225601196289,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.32,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04847912862896919
+            }
+          ],
+          "foot_drift_after3s_m": 0.022144272923469543
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0545846223831177,
+          "max_tilt_deg": 86.86247253417969,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.32,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04027500003576279
+            }
+          ],
+          "foot_drift_after3s_m": 0.010511369444429874
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "clip": "lafan/walk1_subject1__f000004_000479",
+      "frame": 75,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 89.03586196899414,
+      "median_foot_drift_m": 0.03037366922944784,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0995583534240723,
+          "max_tilt_deg": 88.76163482666016,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.62,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.048200782388448715
+            }
+          ],
+          "foot_drift_after3s_m": 0.02286195568740368
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.108852505683899,
+          "max_tilt_deg": 88.75687408447266,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.6,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04724591597914696
+            }
+          ],
+          "foot_drift_after3s_m": 0.020336618646979332
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.11288583278656,
+          "max_tilt_deg": 89.31008911132812,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.62,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04418409988284111
+            }
+          ],
+          "foot_drift_after3s_m": 0.037885382771492004
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1051578521728516,
+          "max_tilt_deg": 89.44120788574219,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.6,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04840210825204849
+            }
+          ],
+          "foot_drift_after3s_m": 0.03993101045489311
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 2046,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 82.21682739257812,
+      "median_foot_drift_m": 0.021723775193095207,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2646137475967407,
+          "max_tilt_deg": 82.58248138427734,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.34,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04319651797413826
+            }
+          ],
+          "foot_drift_after3s_m": 0.02449006959795952
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2563848495483398,
+          "max_tilt_deg": 81.99776458740234,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.3,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.047595299780368805
+            }
+          ],
+          "foot_drift_after3s_m": 0.02011953853070736
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2703603506088257,
+          "max_tilt_deg": 82.31404876708984,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.039396096020936966
+            }
+          ],
+          "foot_drift_after3s_m": 0.017092762514948845
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2633941173553467,
+          "max_tilt_deg": 82.1196060180664,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.32,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.049217116087675095
+            }
+          ],
+          "foot_drift_after3s_m": 0.023328011855483055
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 2436,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 81.5526237487793,
+      "median_foot_drift_m": 0.019949295558035374,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1960152387619019,
+          "max_tilt_deg": 80.94469451904297,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.3,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04922150447964668
+            }
+          ],
+          "foot_drift_after3s_m": 0.021064089611172676
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.182249903678894,
+          "max_tilt_deg": 81.61636352539062,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04460430517792702
+            }
+          ],
+          "foot_drift_after3s_m": 0.01883450150489807
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1897755861282349,
+          "max_tilt_deg": 81.7406005859375,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.34,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04390989989042282
+            }
+          ],
+          "foot_drift_after3s_m": 0.022330276668071747
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2049039602279663,
+          "max_tilt_deg": 81.48888397216797,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.043446268886327744
+            }
+          ],
+          "foot_drift_after3s_m": 0.014308920130133629
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 1631,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 82.20452880859375,
+      "median_foot_drift_m": 0.04429462552070618,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1349595785140991,
+          "max_tilt_deg": 82.83163452148438,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 0.0,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.5282436013221741
+            }
+          ],
+          "foot_drift_after3s_m": 0.05680956318974495
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1587986946105957,
+          "max_tilt_deg": 81.57742309570312,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.84,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04982162266969681
+            }
+          ],
+          "foot_drift_after3s_m": 0.04150973632931709
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1655032634735107,
+          "max_tilt_deg": 80.95101928710938,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.9000000000000001,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0494915135204792
+            }
+          ],
+          "foot_drift_after3s_m": 0.0406421460211277
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.172369122505188,
+          "max_tilt_deg": 83.0145263671875,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.18,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04968516528606415
+            }
+          ],
+          "foot_drift_after3s_m": 0.04707951471209526
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 1848,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 80.12995147705078,
+      "median_foot_drift_m": 0.024655867367982864,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.244912028312683,
+          "max_tilt_deg": 80.92205047607422,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.4000000000000001,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04885794222354889
+            }
+          ],
+          "foot_drift_after3s_m": 0.03506825119256973
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2454732656478882,
+          "max_tilt_deg": 80.48851776123047,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.044417764991521835
+            }
+          ],
+          "foot_drift_after3s_m": 0.024243678897619247
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2819280624389648,
+          "max_tilt_deg": 79.42487335205078,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.52,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04377346113324165
+            }
+          ],
+          "foot_drift_after3s_m": 0.02405460923910141
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.2639602422714233,
+          "max_tilt_deg": 79.7713851928711,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.44,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04705332592129707
+            }
+          ],
+          "foot_drift_after3s_m": 0.02506805583834648
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "clip": "robot_default_pose_baseline",
+      "frame": null,
+      "full_success_rate": 0.0,
+      "balance_only_rate": 0.0,
+      "median_max_tilt_deg": 91.22852325439453,
+      "median_foot_drift_m": 0.015077141113579273,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0931215286254883,
+          "max_tilt_deg": 90.65447998046875,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.82,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.047910455614328384
+            }
+          ],
+          "foot_drift_after3s_m": 0.014467045664787292
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.120423436164856,
+          "max_tilt_deg": 91.07321166992188,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.68,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04167989641427994
+            }
+          ],
+          "foot_drift_after3s_m": 0.015687236562371254
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.100314974784851,
+          "max_tilt_deg": 92.05724334716797,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.46,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03598324581980705
+            }
+          ],
+          "foot_drift_after3s_m": 0.013892070390284061
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.123602271080017,
+          "max_tilt_deg": 91.38383483886719,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.74,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04271345213055611
+            }
+          ],
+          "foot_drift_after3s_m": 0.018077334389090538
+        }
+      ]
+    }
+  ]
+}

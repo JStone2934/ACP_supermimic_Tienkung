@@ -1,0 +1,46 @@
+{
+  "checkpoint_sha256": "980f021ef9e6ffd7a3b51ce2163ec40be5bd59a04ad12b0bd4ce293741a330f4",
+  "calibration": {
+    "method": "Translate learned leg coordinates and static load to a COM-preserving stance.",
+    "fraction": 0.5,
+    "geometry_sha256": "f1b0a5a66a69b407b5d68063f51ee6ee28a1cf9f2561f7cfbe3bfdd99117ed03",
+    "leg_q_delta_rad": [
+      -0.006434653417073166,
+      -0.00537894179357748,
+      -0.000988792433047253,
+      0.006911063673826712,
+      0.00038767911235651313,
+      0.003837057996133819,
+      0.005718159868215611,
+      -0.00039584725396438203,
+      -0.0012771536161022556,
+      -0.019187693040987747,
+      0.014371936912686824,
+      0.0025572586768254496
+    ],
+    "leg_pd_delta_rad": [
+      -0.0029418224815104064,
+      -0.0010209901363781478,
+      -0.0015896893912041828,
+      0.00947148029268841,
+      0.025393832948282152,
+      -0.0020909963711926065,
+      0.012005989794796553,
+      0.004749210051637144,
+      0.0002279712531850183,
+      -0.011138502346223801,
+      0.0376091490230972,
+      -0.015173199879647048
+    ],
+    "foot_shift_xy_m": [
+      0.004134672560399664,
+      -0.0011947147391019601
+    ],
+    "translated_history_equivalence": true,
+    "right_arm_actions_exact": true,
+    "normalizers_exact": true,
+    "reset_noise_unchanged": true,
+    "shared_initial_pose_for_all_targets": true,
+    "physical_acceptance": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "Trace-based movement diagnostic, not acceptance; saved states sampled every0.2s",
+  "checkpoint_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+  "trajectory_sha256": "ac05d3e83d2c785fd7d8bd7b6951a8f6373f0f87c4b5a5383d02f44199281c69",
+  "sample_dt": 0.2,
+  "windows": {
+    "3_10s": {
+      "median_max_drift_m": 0.20788347721099854,
+      "p95_max_drift_m": 0.4860744774341583,
+      "fraction_drift_under5cm": 0.0,
+      "median_mean_foot_speed_m_s": 0.09661796689033508
+    },
+    "10_20s": {
+      "median_max_drift_m": 0.2385118156671524,
+      "p95_max_drift_m": 0.46539437770843506,
+      "fraction_drift_under5cm": 0.0,
+      "median_mean_foot_speed_m_s": 0.10193488746881485
+    },
+    "20_30s": {
+      "median_max_drift_m": 0.2407280057668686,
+      "p95_max_drift_m": 0.44542765617370605,
+      "fraction_drift_under5cm": 0.0,
+      "median_mean_foot_speed_m_s": 0.10685242712497711
+    }
+  }
+}

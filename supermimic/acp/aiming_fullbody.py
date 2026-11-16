@@ -26,6 +26,7 @@ CONTEXT_FIELDS = {
     'root_anchor_w': (3, torch.float32), 'yaw_anchor': (1, torch.float32),
     'height_anchor': (1, torch.float32), 'feet_anchor_w': ((2, 3), torch.float32),
     'terrain_id': ((), torch.long), 'aim_weight': ((), torch.float32),
+    'support_age_steps': ((), torch.long),
 }
 REPLAY_FIELDS = CONTEXT_FIELDS | {'terminated': ((), torch.bool), 'timeout': ((), torch.bool)}
 
@@ -65,16 +66,80 @@ def ray_metrics(h, d, target, normal):
     return torch.where(valid, error, torch.full_like(error, float('inf'))), torch.rad2deg(torch.acos(cosine)), valid, hit
 
 
+DISTAL_KINEMATIC_SHAPES = {'output_scale':(3,), 'output_bias':(3,), 'net.0.weight':(32,3), 'net.0.bias':(32,), 'net.2.weight':(32,32), 'net.2.bias':(32,), 'net.4.weight':(3,32), 'net.4.bias':(3,)}
+
+
+class DistalKinematicHead(torch.nn.Module):
+    """Small bounded target-direction readout; zero scales preserve existing policies."""
+    def __init__(self):
+        super().__init__()
+        self.net = torch.nn.Sequential(torch.nn.Linear(3,32),torch.nn.Tanh(),
+            torch.nn.Linear(32,32),torch.nn.Tanh(),torch.nn.Linear(32,3))
+        self.register_buffer('output_scale',torch.zeros(3))
+        self.register_buffer('output_bias',torch.zeros(3))
+
+    def forward(self, unit_target):
+        return self.output_bias + self.output_scale * torch.tanh(self.net(unit_target))
+
+
 class FullbodyPolicy(Policy):
-    def __init__(self, robot='tienkung3_29dof'):
+    def __init__(self, robot='tienkung3_29dof', *, freeze_norm=True):
         super().__init__(99, 93, hist=10, robot=robot)
         self.enc[0] = torch.nn.Linear(107, self.enc[0].out_features)
-        freeze_normalizers(self)
+        if freeze_norm:
+            freeze_normalizers(self)
+
+    def enable_distal_command_skip(self):
+        """An optional zero-initialized target readout affecting only three distal joints."""
+        if hasattr(self, 'distal_command_skip'):
+            raise ValueError('Distal command readout already exists')
+        names = ('elbow_yaw_r_joint', 'wrist_pitch_r_joint', 'wrist_roll_r_joint')
+        self._distal_command_ids = [self.robot.joint_names.index(name) for name in names]
+        weight = self.dec[0].weight
+        self.distal_command_skip = torch.nn.Linear(14, 3).to(device=weight.device, dtype=weight.dtype)
+        torch.nn.init.zeros_(self.distal_command_skip.weight)
+        torch.nn.init.zeros_(self.distal_command_skip.bias)
+
+    def enable_distal_kinematic_head(self):
+        if hasattr(self, 'distal_kinematic_head'):
+            raise ValueError('Distal kinematic readout already exists')
+        names = ('elbow_yaw_r_joint', 'wrist_pitch_r_joint', 'wrist_roll_r_joint')
+        self._distal_command_ids = [self.robot.joint_names.index(name) for name in names]
+        weight = self.dec[0].weight
+        self.distal_kinematic_head = DistalKinematicHead().to(device=weight.device,dtype=weight.dtype)
+
+    def load_state_dict(self, state_dict, strict=True, assign=False):
+        head_keys = {key for key in state_dict if key.startswith('distal_kinematic_head.')}
+        if head_keys:
+            expected = {'distal_kinematic_head.'+key:shape for key,shape in DISTAL_KINEMATIC_SHAPES.items()}
+            if head_keys != set(expected) or any(state_dict[key].shape != shape for key,shape in expected.items()):
+                raise ValueError('Unknown distal kinematic readout layout')
+            if not hasattr(self, 'distal_kinematic_head'):
+                self.enable_distal_kinematic_head()
+        keys = {key for key in state_dict if key.startswith('distal_command_skip.')}
+        if keys:
+            if (keys != {'distal_command_skip.weight', 'distal_command_skip.bias'}
+                    or state_dict['distal_command_skip.weight'].shape != (3, 14)
+                    or state_dict['distal_command_skip.bias'].shape != (3,)):
+                raise ValueError('Unknown distal command readout layout')
+            if not hasattr(self, 'distal_command_skip'):
+                self.enable_distal_command_skip()
+        return super().load_state_dict(state_dict, strict=strict, assign=assign)
 
     def forward(self, history, command):
         command = torch.cat((self.goal_norm(command[..., :93]), command[..., 93:]), -1)
         z = torch.tanh(run_mlp(self.enc, command))
-        return run_mlp(self.dec, torch.cat((z, self.obs_norm(history).flatten(-2)), -1))
+        result = run_mlp(self.dec, torch.cat((z, self.obs_norm(history).flatten(-2)), -1))
+        if hasattr(self, 'distal_command_skip'):
+            target = torch.nn.functional.normalize(command[..., 93:96], dim=-1, eps=1e-6)
+            features = torch.cat((target, command[..., 96:]), -1)
+            result = result.clone()
+            result[..., self._distal_command_ids] = result[..., self._distal_command_ids] + self.distal_command_skip(features)
+        if hasattr(self, 'distal_kinematic_head'):
+            target = torch.nn.functional.normalize(command[...,93:96],dim=-1,eps=1e-6)
+            result = result.clone()
+            result[...,self._distal_command_ids] = result[...,self._distal_command_ids] + self.distal_kinematic_head(target)
+        return result
 
 
 class FullbodyTask:
@@ -92,23 +157,49 @@ class FullbodyTask:
         self.policy_scan = grid_offsets((-.4, .4, 9), (-.3, .3, 7), device=device)
         self.episode_steps = 1500
         self.dt = robot.control_dt
-        self.weights = dict(aim=2., root=2., feet=6., height=1., upright=1., velocity=1.,
+        self.weights = dict(aim=4., root=2., feet=2., height=1., upright=1., velocity=1.,
                             angular_velocity=.2, foot_velocity=.5, heading=.5,
                             foot_boundary=-4., action_rate=-.1, joint_limit=-2.)
         self.weights.update(self.config.get('reward_weights', {}))
+        # Saved configs predating this field used a hard-coded 5 cm foot scale.
+        self.feet_position_scale_m = float(self.config.get('feet_position_scale_m', .05 if config is not None else .10))
+        if not math.isfinite(self.feet_position_scale_m) or self.feet_position_scale_m <= 0:
+            raise ValueError('feet_position_scale_m must be finite and positive')
         if self.weights.get('request_limit', 0.) > 0:
             raise ValueError('request_limit must be a nonpositive reward weight')
         self.max_step_reward = sum(max(0., w) for w in self.weights.values()) * self.dt
         self.term_height = self.config.get('term_height', .25)
         self.term_rzz = math.cos(math.radians(self.config.get('term_tilt_deg', 45.)))
+        self.soft_termination_mode=self.config.get('soft_termination_mode','legacy_sigmoid')
+        if self.soft_termination_mode not in ('legacy_sigmoid','compact'):
+            raise ValueError('Unknown imagined termination mode')
+        if self.soft_termination_mode=='compact':
+            tilt=float(self.config.get('term_tilt_deg',45.))
+            self.soft_tilt_margin=float(self.config.get('soft_termination_tilt_margin_deg',2.))
+            self.soft_height_margin=float(self.config.get('soft_termination_height_margin_m',.02))
+            if not (math.isfinite(self.soft_tilt_margin) and 0<self.soft_tilt_margin<min(tilt,90-tilt)
+                    and math.isfinite(self.soft_height_margin) and 0<self.soft_height_margin<self.term_height):
+                raise ValueError('Invalid compact imagined termination margins')
+            self.soft_rzz_safe=math.cos(math.radians(tilt-self.soft_tilt_margin))
+            self.soft_rzz_failed=math.cos(math.radians(tilt+self.soft_tilt_margin))
         self.critic_dim = robot.inv_dim + 107 + 3 + 1 + 1 + 6 + 29 + robot.xi_dim + self.mdp.scan_dim + 1 + 990 + 1
 
     def metadata(self):
-        return dict(name=TASK_NAME, version=2, command_layout=COMMAND_LAYOUT, obs_dim=99, hist=10,
+        result=dict(name=TASK_NAME, version=2, command_layout=COMMAND_LAYOUT, obs_dim=99, hist=10,
                     command_dim=107, axis=[0, 0, -1], tcp='right_tcp_link', episode_steps=1500,
                     terrain='plane_z0', contact_valid=[True, True] + [False] * 7,
                     action='q_default + xi_joint_offset + action_scale * a_exec; uniform soft clip',
-                    reward_weights=self.weights, term_height=self.term_height, term_rzz=self.term_rzz)
+                    reward_weights=self.weights, feet_position_scale_m=self.feet_position_scale_m,
+                    term_height=self.term_height, term_rzz=self.term_rzz)
+        if self.soft_termination_mode=='compact':
+            result['imagined_termination']=dict(mode='compact',tilt_margin_deg=self.soft_tilt_margin,
+                                               height_margin_m=self.soft_height_margin)
+        if self.config.get('distal_command_skip', False):
+            result['distal_command_skip'] = dict(version=1, inputs='unit_target_xyz,direction_xyz,normal_xyz,tolerance2,velocity3',
+                joints=['elbow_yaw_r_joint', 'wrist_pitch_r_joint', 'wrist_roll_r_joint'], outputs='additive_normalized_actions')
+        if self.config.get('distal_kinematic_head',False):
+            result['distal_kinematic_head'] = dict(version=1,inputs='unit_target_xyz',hidden=[32,32],activation='tanh',joints=['elbow_yaw_r_joint','wrist_pitch_r_joint','wrist_roll_r_joint'],outputs='additive_normalized_actions')
+        return result
 
     def initial_state(self, n):
         p = self.alpha.new_zeros(n, 3)
@@ -116,7 +207,7 @@ class FullbodyTask:
         R = torch.eye(3, device=p.device).expand(n, 3, 3).clone()
         return p, R, torch.zeros_like(p), torch.zeros_like(p), self.initial_q.expand(n, -1).clone(), self.alpha.new_zeros(n, 29)
 
-    def context(self, S, parameters, aim_weight=2.):
+    def context(self, S, parameters, aim_weight=None):
         """parameters: (N,4) forward depth, alpha radians, beta radians, radius."""
         if parameters.shape != (len(S[0]), 4) or not torch.isfinite(parameters).all():
             raise ValueError('Expected finite [depth, alpha, beta, rho] per episode')
@@ -137,7 +228,9 @@ class FullbodyTask:
                     yaw_anchor=torch.atan2(S[1][:, 1, 0], S[1][:, 0, 0])[:, None], height_anchor=S[0][:, 2:3].clone(),
                     feet_anchor_w=self.kin.forward(*S)[0][:, self.feet].clone(),
                     terrain_id=torch.zeros(len(L), dtype=torch.long, device=L.device),
-                    aim_weight=torch.as_tensor(aim_weight, device=L.device).expand_as(L).clone())
+                    support_age_steps=torch.zeros(len(L), dtype=torch.long, device=L.device),
+                    aim_weight=torch.as_tensor(self.weights['aim'] if aim_weight is None else aim_weight,
+                                               device=L.device).expand_as(L).clone())
 
     def compose_action(self, raw, xi):
         offset = xi[..., 1:30]
@@ -180,7 +273,7 @@ class FullbodyTask:
         terms = dict(
             aim=.1 * (1 + cosine) + .8 / (1 + 2 * D2 * (1 - cosine) / ctx['aim_tolerance'][:, 1].square()),
             root=K((p[:, :2] - ctx['root_anchor_w'][:, :2]).square().sum(-1), .10),
-            feet=K(feet_error.square().sum(-1), .05).mean(-1),
+            feet=K(feet_error.square().sum(-1), self.feet_position_scale_m).mean(-1),
             height=K((p[:, 2] - ctx['height_anchor'][:, 0]).square(), .05),
             upright=1 / (1 + (1 - R[:, 2, 2]).clamp_min(0) / (1 - math.cos(math.radians(10)))),
             velocity=K((vh[:, :2] - ctx['velocity_command'][:, :2]).square().sum(-1), .10),
@@ -207,8 +300,19 @@ class FullbodyTask:
         return terminated, next_step >= self.episode_steps
 
     def soft_termination(self, S, next_step, ctx):
-        alive = ((1 - torch.sigmoid(((S[0][:, 2] - ctx['height_anchor'][:, 0]).abs() - self.term_height) / .02))
-                 * torch.sigmoid((S[1][:, 2, 2] - self.term_rzz) / .04))
+        if self.soft_termination_mode=='compact':
+            # Exact survival inside the safe region: multiplying a sigmoid's
+            # nonzero nominal failure every20ms otherwise shortens the horizon.
+            def failure(value,safe,failed):
+                x=((value-safe)/(failed-safe)).clamp(0,1)
+                return x.square()*(3-2*x)
+            height_failure=failure((S[0][:,2]-ctx['height_anchor'][:,0]).abs(),
+                self.term_height-self.soft_height_margin,self.term_height+self.soft_height_margin)
+            tilt_failure=failure(S[1][:,2,2],self.soft_rzz_safe,self.soft_rzz_failed)
+            alive=(1-height_failure)*(1-tilt_failure)
+        else:
+            alive = ((1 - torch.sigmoid(((S[0][:, 2] - ctx['height_anchor'][:, 0]).abs() - self.term_height) / .02))
+                     * torch.sigmoid((S[1][:, 2, 2] - self.term_rzz) / .04))
         return torch.where(next_step >= self.episode_steps, torch.ones_like(alive), 1 - alive)
 
     def critic_features(self, S, history, a_prev, xi, step, ctx):
@@ -226,9 +330,32 @@ class FullbodyTask:
         h, d, _ = self.hand(S)
         return ray_metrics(h, d, ctx['aim_target_w'], ctx['aim_normal_w'])
 
+    def advance_context(self, ctx, steps):
+        """Stationary commands remain unchanged between explicit target switches."""
+        return ctx
+
+    def observe_context(self, S, ctx):
+        """Optional command state derived solely from the current measured state."""
+        return ctx
+
+    def release_support(self, ctx, ids=None):
+        """Legacy tasks have no delayed support capture."""
+        return None
+
 
 def validate_checkpoint(ck, task):
-    if ck.get('task_config') != task.metadata():
+    head_keys = {key for key in ck.get('pi',{}) if key.startswith('distal_kinematic_head.')}
+    expected_head = {'distal_kinematic_head.'+key:shape for key,shape in DISTAL_KINEMATIC_SHAPES.items()}
+    if bool(head_keys) != bool(task.config.get('distal_kinematic_head',False)) or (head_keys and (head_keys != set(expected_head) or any(ck['pi'][key].shape != shape for key,shape in expected_head.items()))):
+        raise ValueError('Distal kinematic readout weights and task contract disagree')
+    skip_keys = {key for key in ck.get('pi', {}) if key.startswith('distal_command_skip.')}
+    expected_skip = bool(task.config.get('distal_command_skip', False))
+    if (bool(skip_keys) != expected_skip or
+            (skip_keys and skip_keys != {'distal_command_skip.weight', 'distal_command_skip.bias'})):
+        raise ValueError('Distal command readout weights and task contract disagree')
+    saved_task = dict(ck.get('task_config') or {})
+    saved_task.setdefault('feet_position_scale_m', .05)
+    if saved_task != task.metadata():
         raise ValueError('v2 task/layout/reward mismatch; old tasks cannot be resumed')
     if ck.get('robot_metadata') != task.robot.metadata():
         raise ValueError('Robot identity, joint order or control parameters differ')

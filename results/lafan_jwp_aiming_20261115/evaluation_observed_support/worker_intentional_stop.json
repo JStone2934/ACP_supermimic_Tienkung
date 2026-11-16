@@ -1,0 +1,16 @@
+{
+  "time": "2026-11-16 06:43:02.229470",
+  "reason": "Trainingstoppedafter250regression;both250and300comparisonscomplete,cancelwaitforabsentfuturecheckpoints.",
+  "completed_iterations": [
+    250,
+    300
+  ],
+  "cancelled_iterations": [
+    400,
+    600,
+    800,
+    1000,
+    1200,
+    1500
+  ]
+}

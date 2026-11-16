@@ -1,0 +1,30 @@
+{
+  "created": "2026-11-16 10:13:35.691056",
+  "unit": "narrow-distal-feedback-training.service",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/narrow_distal_feedback/train",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v16",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates/ckpt_000001.pt",
+  "init_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+  "level": 2,
+  "previous_level": 1,
+  "promotion_reports": [
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger/iteration_000001/seed_17.json",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal_feedback_stronger/iteration_000001/seed_53.json"
+  ],
+  "iterations": 1000,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "actor_lr": 1e-05,
+  "policy_training_scope": "right_distal_with_command_skip",
+  "physical_acceptance": false,
+  "evaluation_iterations": [
+    100,
+    250,
+    400,
+    600,
+    1000
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "scope": "Read-only checkpoint dynamics diagnostics on recorded independent episodes.",
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/ckpt_003000.pt",
+  "checkpoint_sha256": "04294c3d5b717fe2fd5713f7d985b5b28c7b4447cacbce68e91c1eff2d920c79",
+  "recorded": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/wm_validation/003000.npz",
+  "recorded_sha256": "c686ae26cad2e30d82cd8537f5f3386537a9617616392f6f365f51bad601cefc",
+  "observation_limit": "Recorded episodes cover only first2.56seconds; does not establish accuracy during later creeping. Checkpoint WM precedes recorded collection byoneWMtrainingiteration.",
+  "policy_acceptance": false,
+  "weights_changed": false,
+  "horizons": {
+    "1": {
+      "windows": 1024,
+      "foot_velocity_error_norm_p95_m_s": 0.07068365812301636,
+      "foot_velocity_error_component_rmse_m_s": 0.020501546561717987,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.0024375393986701965,
+        -0.0016169124282896519,
+        -0.0006556957960128784
+      ],
+      "predicted_foot_speed_median_m_s": 0.00996436644345522,
+      "actual_foot_speed_median_m_s": 0.005901019088923931,
+      "predicted_quiet_reward_mean": 0.8509029150009155,
+      "actual_quiet_reward_mean": 0.8715092539787292,
+      "signed_velocity_error_by_foot_heading_xyz_m_s": [
+        [
+          0.0003220567596144974,
+          -0.003166371490806341,
+          -0.0006239223876036704
+        ],
+        [
+          0.001592431217432022,
+          -0.0024041589349508286,
+          -0.0006874693790450692
+        ]
+      ]
+    },
+    "8": {
+      "windows": 128,
+      "foot_velocity_error_norm_p95_m_s": 0.05858693644404411,
+      "foot_velocity_error_component_rmse_m_s": 0.01925620064139366,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.0021893091034144163,
+        -0.0018142948392778635,
+        -0.0006300785462372005
+      ],
+      "predicted_foot_speed_median_m_s": 0.010318595916032791,
+      "actual_foot_speed_median_m_s": 0.005949573591351509,
+      "predicted_quiet_reward_mean": 0.8706331253051758,
+      "actual_quiet_reward_mean": 0.8849388360977173,
+      "signed_velocity_error_by_foot_heading_xyz_m_s": [
+        [
+          0.00105446414090693,
+          -0.00564011512324214,
+          -5.1490325859049335e-05
+        ],
+        [
+          9.464315371587873e-05,
+          1.1742464266717434e-05,
+          -0.0012086669448763132
+        ]
+      ]
+    },
+    "16": {
+      "windows": 64,
+      "foot_velocity_error_norm_p95_m_s": 0.02764960005879402,
+      "foot_velocity_error_component_rmse_m_s": 0.019415784627199173,
+      "signed_foot_velocity_error_xyz_m_s": [
+        -0.0005350218852981925,
+        -3.84914455935359e-05,
+        -0.0007926068501546979
+      ],
+      "predicted_foot_speed_median_m_s": 0.008389049209654331,
+      "actual_foot_speed_median_m_s": 0.005305474624037743,
+      "predicted_quiet_reward_mean": 0.9336074590682983,
+      "actual_quiet_reward_mean": 0.9503312110900879,
+      "signed_velocity_error_by_foot_heading_xyz_m_s": [
+        [
+          -0.0010675713419914246,
+          -0.002190026920288801,
+          -0.0002624087210278958
+        ],
+        [
+          -0.0002364451065659523,
+          0.002701044548302889,
+          -0.0013228051830083132
+        ]
+      ]
+    },
+    "32": {
+      "windows": 32,
+      "foot_velocity_error_norm_p95_m_s": 0.015427473932504654,
+      "foot_velocity_error_component_rmse_m_s": 0.005334998015314341,
+      "signed_foot_velocity_error_xyz_m_s": [
+        0.0008249207749031484,
+        -0.002004186622798443,
+        -0.0002273605059599504
+      ],
+      "predicted_foot_speed_median_m_s": 0.007061343174427748,
+      "actual_foot_speed_median_m_s": 0.00505302008241415,
+      "predicted_quiet_reward_mean": 0.9665971994400024,
+      "actual_quiet_reward_mean": 0.9855767488479614,
+      "signed_velocity_error_by_foot_heading_xyz_m_s": [
+        [
+          -0.001982392044737935,
+          -0.003272734582424164,
+          -0.00034944122307933867
+        ],
+        [
+          0.0006780964322388172,
+          -0.0008319059270434082,
+          -0.00010527979611651972
+        ]
+      ]
+    }
+  }
+}

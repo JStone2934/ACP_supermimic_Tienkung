@@ -146,7 +146,7 @@ class WorldModel(nn.Module):
 class Policy(nn.Module):
     """a = dec(enc(g), o_{t-9:t}); deterministic, latent z in R^32 bounded by tanh."""
 
-    def __init__(self, obs_dim: int, goal_dim: int, hist: int = 10, z_dim: int = 32, robot="g1"):
+    def __init__(self, obs_dim: int, goal_dim: int, hist: int = 10, z_dim: int = 32, robot="g1", pose_action_skip=False):
         super().__init__()
         self.hist = hist
         self.robot = get_robot(robot)
@@ -157,12 +157,17 @@ class Policy(nn.Module):
             self.dec[-1].bias.zero_()
         self.obs_norm = RunningNorm(obs_dim)
         self.goal_norm = RunningNorm(goal_dim)
+        if pose_action_skip:
+            self.pose_skip=nn.Linear(self.robot.num_joints,self.robot.num_joints)
+            nn.init.zeros_(self.pose_skip.weight);nn.init.zeros_(self.pose_skip.bias)
 
     def forward(self, obs_hist: torch.Tensor, goal: torch.Tensor) -> torch.Tensor:
         """obs_hist: (B, hist, obs_dim) noisy observations, newest last."""
         z = torch.tanh(run_mlp(self.enc, self.goal_norm(goal)))
         o = self.obs_norm(obs_hist).flatten(-2)
-        return run_mlp(self.dec, torch.cat((z, o), -1))
+        result=run_mlp(self.dec, torch.cat((z, o), -1))
+        if hasattr(self,'pose_skip'):result=result+self.pose_skip(goal[...,-self.robot.num_joints:])
+        return result
 
 
 class Critic(nn.Module):

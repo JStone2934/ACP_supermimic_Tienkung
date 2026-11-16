@@ -1,0 +1,152 @@
+{
+  "scope": "Training-source pose selection only; all full-standing tests failed. Not held-out acceptance.",
+  "source_report": "jwp1000_training_pose_evaluation.json",
+  "source_checkpoint_sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+  "selected_index": 15,
+  "ranked": [
+    {
+      "index": 15,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 1848,
+      "balance": 1.0,
+      "tilt": 13.319080352783203,
+      "feet": 0.32561440765857697,
+      "root": 0.22025659680366516
+    },
+    {
+      "index": 2,
+      "clip": "lafan/walk2_subject4__f000004_000657",
+      "frame": 76,
+      "balance": 1.0,
+      "tilt": 14.519887924194336,
+      "feet": 0.3664591386914253,
+      "root": 0.3342868983745575
+    },
+    {
+      "index": 0,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 77,
+      "balance": 1.0,
+      "tilt": 14.933396339416504,
+      "feet": 0.40280239284038544,
+      "root": 0.23488906025886536
+    },
+    {
+      "index": 4,
+      "clip": "lafan/walk1_subject1__f000004_000479",
+      "frame": 25,
+      "balance": 1.0,
+      "tilt": 10.740357398986816,
+      "feet": 0.41193339228630066,
+      "root": 0.393882155418396
+    },
+    {
+      "index": 11,
+      "clip": "lafan/walk1_subject1__f000004_000479",
+      "frame": 75,
+      "balance": 1.0,
+      "tilt": 10.406412124633789,
+      "feet": 0.4834260493516922,
+      "root": 0.44379544258117676
+    },
+    {
+      "index": 6,
+      "clip": "lafan/walk1_subject5__f000002_003121",
+      "frame": 29,
+      "balance": 1.0,
+      "tilt": 12.093165397644043,
+      "feet": 0.6092242002487183,
+      "root": 0.34954141080379486
+    },
+    {
+      "index": 3,
+      "clip": "lafan/walk3_subject5__f000002_000261",
+      "frame": 28,
+      "balance": 1.0,
+      "tilt": 13.953679084777832,
+      "feet": 0.6213017702102661,
+      "root": 0.40159545838832855
+    },
+    {
+      "index": 12,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 2046,
+      "balance": 0.75,
+      "tilt": 15.224925994873047,
+      "feet": 0.31511184573173523,
+      "root": 0.17000266909599304
+    },
+    {
+      "index": 9,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 27,
+      "balance": 0.75,
+      "tilt": 15.310985565185547,
+      "feet": 0.4222031533718109,
+      "root": 0.2757471948862076
+    },
+    {
+      "index": 10,
+      "clip": "lafan/walk2_subject4__f000004_000657",
+      "frame": 26,
+      "balance": 0.75,
+      "tilt": 16.452241897583008,
+      "feet": 0.5141114443540573,
+      "root": 0.3350338935852051
+    },
+    {
+      "index": 13,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 2436,
+      "balance": 0.5,
+      "tilt": 16.720937728881836,
+      "feet": 0.43248450756073,
+      "root": 0.21265490353107452
+    },
+    {
+      "index": 1,
+      "clip": "lafan/walk3_subject3__f000742_001092",
+      "frame": 279,
+      "balance": 0.25,
+      "tilt": 17.941564559936523,
+      "feet": 0.2742156833410263,
+      "root": 0.28401948511600494
+    },
+    {
+      "index": 7,
+      "clip": "lafan/aiming1_subject1__f007340_008477",
+      "frame": 153,
+      "balance": 0.0,
+      "tilt": 19.95762062072754,
+      "feet": 0.3462322801351547,
+      "root": 0.41797205805778503
+    },
+    {
+      "index": 5,
+      "clip": "lafan/walk3_subject5__f011255_011509",
+      "frame": 109,
+      "balance": 0.0,
+      "tilt": 31.316410064697266,
+      "feet": 0.367104634642601,
+      "root": 0.20308159291744232
+    },
+    {
+      "index": 14,
+      "clip": "lafan/aiming1_subject1__f000002_003547",
+      "frame": 1631,
+      "balance": 0.0,
+      "tilt": 23.814645767211914,
+      "feet": 0.4927179366350174,
+      "root": 0.2507842183113098
+    },
+    {
+      "index": 8,
+      "clip": "lafan/aiming2_subject2__f000002_002243",
+      "frame": 31,
+      "balance": 0.0,
+      "tilt": 102.20014953613281,
+      "feet": 0.6924298703670502,
+      "root": 2.4754236936569214
+    }
+  ]
+}

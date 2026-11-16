@@ -28,14 +28,28 @@ def wm_loss(wm, task, windows):
     S = unflatten_state(windows['s'][:, 0])
     loss = S[0].new_zeros(())
     scale = wm.out_norm.std().clamp_min(.003)
+    foot_velocity_weight = task.config.get('wm_foot_velocity_weight', 0.)
+    predictions = []
     for j in range(windows['a'].shape[1]):
         # Invalid tails must not propagate arbitrary post-reset actions through the old episode.
         truth = unflatten_state(windows['s'][:, j])
         S = tuple(torch.where(windows['mask'][:, j].reshape(-1, *([1] * (x.ndim - 1))).bool(), x, y)
                   for x, y in zip(S, truth))
         S = wm.step(S, windows['a'][:, j], normalize_xi(windows['xi'][:, j]), task.mdp.scan(S, flat_boxes(S)))
-        err = (wm.state_error(S, unflatten_state(windows['s1'][:, j])) / scale).square().mean(-1)
+        target = unflatten_state(windows['s1'][:, j])
+        err = (wm.state_error(S, target) / scale).square().mean(-1)
         loss += (err * windows['mask'][:, j]).sum()
+        if foot_velocity_weight:
+            predictions.append(S)
+    if foot_velocity_weight:
+        # Supervise reward-relevant Cartesian velocity against physical transitions.
+        # Batch FK over time to avoid repeating its tree in the compiled unroll.
+        predicted = tuple(torch.stack([state[k] for state in predictions], 1).flatten(0, 1) for k in range(6))
+        target = unflatten_state(windows['s1'].flatten(0, 1))
+        predicted_velocity = task.kin.forward(*predicted)[2][:, task.feet]
+        target_velocity = task.kin.forward(*target)[2][:, task.feet]
+        error = ((predicted_velocity-target_velocity)/.05).square().mean((-1,-2))
+        loss += foot_velocity_weight * (error * windows['mask'].flatten()).sum()
     return loss / windows['mask'].sum().clamp_min(1)
 
 
@@ -49,7 +63,38 @@ def bound_bootstrap(value, step, task, cfg):
     return torch.minimum(value, upper)
 
 
-def update_actor(pi, wm, critic, task, buffer, optim_pi, optim_v, cfg, *, train_actor=True):
+def scale_value_gradient(value,weight):
+    """Keep value reporting unchanged while explicitly controlling its actor gradient."""
+    return value.detach()+weight*(value-value.detach())
+
+
+def imagination_step(pi,wm,task,S,history,ap,t,xi,ctx,start_step):
+    current_ctx=task.advance_context(ctx,t-start_step)
+    next_ctx=task.advance_context(ctx,t+1-start_step)
+    raw=pi(history,task.command(S,current_ctx))
+    a,_=task.compose_action(raw,xi)
+    next_state=wm.step(S,a,normalize_xi(xi),task.mdp.scan(S,flat_boxes(S)))
+    reward=task.reward(next_state,a,ap,next_ctx,raw=raw,xi=xi)
+    done=task.soft_termination(next_state,t+1,next_ctx)
+    next_history=torch.cat((history[:,1:],task.mdp.obs(next_state,a,xi)[:,None]),1)
+    return next_state,next_history,a,reward,done
+
+
+def compiled_imagination_step(pi,wm,task):
+    cache=getattr(pi,'_compiled_fullbody_step',None)
+    if cache is None:
+        def step(S,history,ap,t,xi,ctx,start_step):
+            return imagination_step(pi,wm,task,S,history,ap,t,xi,ctx,start_step)
+        def recomputed(*args):
+            return checkpoint(step,*args,use_reentrant=False)
+        # Compile checkpoint and reward together, avoiding saved-layout changes
+        # from wrapping an already-compiled reward in an eager checkpoint.
+        cache=torch.compile(recomputed,dynamic=False,options={'max_fusion_size':32})
+        pi._compiled_fullbody_step=cache
+    return cache
+
+
+def update_actor(pi, wm, critic, task, buffer, optim_pi, optim_v, cfg, *, train_actor=True, runtime=None):
     start, histories = buffer.sample_starts(cfg['pi_batch'], 10)
     S, history = unflatten_state(start['s']), histories['o']
     xi, ap, t = start['xi'], start['a_prev'], start['ep_step'].long()
@@ -62,35 +107,39 @@ def update_actor(pi, wm, critic, task, buffer, optim_pi, optim_v, cfg, *, train_
     wm.requires_grad_(False); critic.requires_grad_(False)
     optim_pi.zero_grad(set_to_none=True)
     actor_grad = 0.
-    def imagined_step(S, history, ap, t):
-        raw = pi(history, task.command(S, ctx))
-        a, _ = task.compose_action(raw, xi)
-        next_state = wm.step(S, a, normalize_xi(xi), task.mdp.scan(S, flat_boxes(S)))
-        reward = task.reward(next_state, a, ap, ctx, raw=raw, xi=xi)
-        done = task.soft_termination(next_state, t + 1, ctx)
-        next_history = torch.cat((history[:, 1:], task.mdp.obs(next_state, a, xi)[:, None]), 1)
-        return next_state, next_history, a, reward, done
+    def imagined_step(S,history,ap,t,xi,ctx,start_step):
+        return imagination_step(pi,wm,task,S,history,ap,t,xi,ctx,start_step)
+    fast_step=compiled_imagination_step(pi,wm,task) if train_actor and cfg.get('compile_training') else None
     try:
         with torch.set_grad_enabled(train_actor):
             for j in range(cfg['horizon']):
                 with torch.no_grad():
-                    xs.append(task.critic_features(S, history, ap, xi, t, ctx))
+                    xs.append(task.critic_features(S, history, ap, xi, t, task.advance_context(ctx,t-start_step)))
                 masks.append(alive.detach())
-                if train_actor:
-                    S, history, ap, r, d = checkpoint(imagined_step, S, history, ap, t, use_reentrant=False)
+                inputs=(S,history,ap,t,xi,ctx,start_step)
+                if fast_step is not None:
+                    S,history,ap,r,d=fast_step(*inputs)
+                elif train_actor:
+                    S, history, ap, r, d = checkpoint(imagined_step,*inputs,use_reentrant=False)
                 else:
-                    S, history, ap, r, d = imagined_step(S, history, ap, t)
+                    S, history, ap, r, d = imagined_step(*inputs)
                 objective = objective + gamma**j * alive * r
                 alive = alive * (1 - d); t = t + 1
                 rewards.append(r.detach()); dones.append(d.detach())
-            last = task.critic_features(S, history, ap, xi, t, ctx)
-            objective = objective + gamma**cfg['horizon'] * alive * bound_bootstrap(critic(last), t, task, cfg)
+            reward_objective=objective.detach().mean()
+            with torch.set_grad_enabled(train_actor and cfg.get('actor_value_gradient',1.)!=0.):
+                last = task.critic_features(S, history, ap, xi, t, task.advance_context(ctx,t-start_step))
+                tail=gamma**cfg['horizon'] * alive * bound_bootstrap(critic(last), t, task, cfg)
+            objective = objective + scale_value_gradient(tail,cfg.get('actor_value_gradient',1.))
             actor_loss = -objective.mean()
         if train_actor:
             actor_loss.backward()
-            actor_grad = torch.nn.utils.clip_grad_norm_(pi.parameters(), 1., error_if_nonfinite=True)
-            torch.nn.utils.clip_grad_value_(pi.parameters(), cfg.get('actor_grad_clip_value', .1))
-            optim_pi.step()
+            if runtime is None:
+                actor_grad = torch.nn.utils.clip_grad_norm_(pi.parameters(), 1., error_if_nonfinite=True)
+                torch.nn.utils.clip_grad_value_(pi.parameters(), cfg.get('actor_grad_clip_value', .1))
+                optim_pi.step()
+            else:
+                actor_grad = runtime.step(optim_pi,pi,'pi',max_norm=1.,clip_value=cfg.get('actor_grad_clip_value',.1))
     finally:
         wm.requires_grad_(True); critic.requires_grad_(True)
     X, mask = torch.stack(xs), torch.stack(masks)
@@ -110,10 +159,15 @@ def update_actor(pi, wm, critic, task, buffer, optim_pi, optim_v, cfg, *, train_
             optim_v.zero_grad()
             critic_loss = ((critic(X[ids]) - Y[ids]).square() * mask[ids]).sum() / mask[ids].sum().clamp_min(1)
             critic_loss.backward()
-            critic_grad = torch.nn.utils.clip_grad_norm_(critic.parameters(), 1., error_if_nonfinite=True)
-            optim_v.step()
+            if runtime is None:
+                critic_grad = torch.nn.utils.clip_grad_norm_(critic.parameters(), 1., error_if_nonfinite=True)
+                optim_v.step()
+            else:
+                critic_grad = runtime.step(optim_v,critic,'critic',max_norm=1.)
     return dict(actor_loss=float(actor_loss.detach()), critic_loss=float(critic_loss.detach()),
                 actor_grad=float(actor_grad), critic_grad=float(critic_grad),
+                actor_value_gradient=cfg.get('actor_value_gradient',1.),imagined_reward_objective=float(reward_objective),
+                bootstrap_objective=float(tail.detach().mean()),
                 bootstrap_max=float(V.max()), return_target_max=float(Y.max()))
 
 
@@ -128,6 +182,10 @@ def exploration_fraction(updates, cfg):
 
 
 def main():
+    if ('--from-scratch' in sys.argv or '--physical-critic' in sys.argv
+            or any(arg == '--precision' or arg.startswith('--precision=') for arg in sys.argv[1:])):
+        from .train_aiming_physical import main as physical_main
+        return physical_main()
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config', default=DEFAULT_CONFIG); p.add_argument('--log-dir', '--log_dir', required=True)
     group = p.add_mutually_exclusive_group(required=True)
@@ -138,6 +196,9 @@ def main():
     p.add_argument('--capacity-check', action='store_true', help='With --smoke: use configured env/batch counts and horizon for a short capacity check')
     args = p.parse_args()
     ck = torch.load(args.resume or args.init, map_location='cpu', weights_only=False)
+    if args.resume and ck.get('training_backend') == 'physical_mc_dual_v1':
+        from .train_aiming_physical import main as physical_main
+        return physical_main()
     if ck.get('task') != TASK_NAME:
         raise ValueError('Prepare an identified v2 checkpoint first; old task resume is forbidden')
     if args.resume and ck.get('stage') != 'training':

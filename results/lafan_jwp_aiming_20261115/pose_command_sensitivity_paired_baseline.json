@@ -1,0 +1,13 @@
+{
+  "checkpoint_sha256": "61794f196384ad2df4f70924ed8e56cd92a171be699ececc6fc0510685e4557a",
+  "data_hash": "a5f7aed562fba98f1ab3933a73be8431dbede4c982fdbf46fac74d1b1f72afd5",
+  "samples": 982,
+  "permutation_seed": 123,
+  "reference_state_target_rmse_rad": 0.28089895844459534,
+  "command_change_rmse_rad": 0.6994160413742065,
+  "response_rmse_rad": 0.03599819540977478,
+  "response_gain": 0.010091668926179409,
+  "latent_saturation_fraction": 0.595723032951355,
+  "pose_action_skip": false,
+  "scope": "Counterfactual pose-command sensitivity at fixed reference proprioception. Diagnostic only, not physical acceptance"
+}

@@ -1,0 +1,18 @@
+{
+  "num_envs": 64,
+  "wm_batch": 32,
+  "pi_batch": 32,
+  "horizon": 4,
+  "hist": 10,
+  "wm_window": 4,
+  "buffer_steps": 64,
+  "critic_epochs": 1,
+  "critic_minibatches": 1,
+  "seed": 0,
+  "gamma": 0.99,
+  "lambda_return": 0.95,
+  "actor_grad_clip_value": 0.1,
+  "bound_value_bootstrap": true,
+  "log_dir": "results/lafan_jwp_aiming_20261115/wide_runtime_smoke",
+  "device": null
+}

@@ -1,0 +1,21 @@
+{
+  "checkpoint_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+  "iteration": 1,
+  "level": 1,
+  "passed": true,
+  "reports": [
+    {
+      "seed": 17,
+      "passed": true,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.99
+    },
+    {
+      "seed": 53,
+      "passed": true,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.97
+    }
+  ],
+  "scope": "Intermediate stage only; no final acceptance and no automatic promotion"
+}

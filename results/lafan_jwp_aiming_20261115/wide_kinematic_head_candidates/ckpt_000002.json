@@ -1,0 +1,20 @@
+{
+  "checkpoint_sha256": "17e8581b3a1a8463df98bad1bad299f75784b6459f3810746607b2751d9a2f9b",
+  "calibration": {
+    "method": "Attach an audited offline target network while preserving all other joint outputs.",
+    "head_sha256": "66ffe7fdec033abe8db3bc8c4ba67ac5c2864e4eddd19a3359aeac0273e7547f",
+    "audit_sha256": "ba3c8e674a9e959c664780f873985d2443b91c9bda969f9369ea348c28a76641",
+    "geometry_source_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+    "feedback_gain": 4.0,
+    "gravity_pd_offset_rad": [
+      -0.000703772297129035,
+      -0.03678268566727638,
+      -0.014595823362469673
+    ],
+    "other26_outputs_exact": true,
+    "normalizers_and_reset_exact": true,
+    "online_ik": false,
+    "runtime_motion_files": false,
+    "physical_acceptance": false
+  }
+}

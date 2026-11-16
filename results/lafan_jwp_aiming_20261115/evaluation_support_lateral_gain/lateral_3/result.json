@@ -1,0 +1,22 @@
+{
+  "gain": 3.0,
+  "axes": "lateral",
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_lateral_gain_candidates/lateral_3.pt",
+  "checkpoint_sha256": "5947208d02d56f1f2adb5f9fc83553e85bafca89ee608f9962fc10933f011380",
+  "passed": false,
+  "reports": [
+    {
+      "seed": 17,
+      "passed": false,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.11
+    },
+    {
+      "seed": 53,
+      "passed": false,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.09
+    }
+  ],
+  "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+}

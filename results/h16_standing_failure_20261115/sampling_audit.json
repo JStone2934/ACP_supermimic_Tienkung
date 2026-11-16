@@ -1,0 +1,203 @@
+{
+  "checkpoint_iteration": 47103,
+  "environments": 4096,
+  "train_environments": 3072,
+  "validation_environments": 1024,
+  "valid_rows": 44039,
+  "train_rows": 32972,
+  "validation_rows": 11067,
+  "physical": {
+    "root_max_m": 0.6447993516921997,
+    "feet_max_m": 0.019108593463897705,
+    "tilt_max_deg": 42.60832214355469,
+    "survival_s": 1.341469645500183,
+    "return_": 5.852546691894531,
+    "undiscounted_return": 7.602459907531738,
+    "fell": 1.0,
+    "standing_pass": 0.0,
+    "hit_rate": 0.0,
+    "angle_deg": 35.3363037109375,
+    "finite": true,
+    "complete": true,
+    "requested_steps": 1500,
+    "control_steps": 78,
+    "environments": 4096,
+    "simulated_transitions": 319488,
+    "valid_transitions": 274733,
+    "wall_seconds": 4.158544202015037
+  },
+  "critic_mae": 0.021008934825658798,
+  "time_only_mean_mae": 0.07325761765241623,
+  "time_only_median_mae": 0.0717768743634224,
+  "critic_mse": 0.0017750608967617154,
+  "time_only_mean_mse": 0.0088319918140769,
+  "validation_target_mean": 2.124967336654663,
+  "validation_target_std": 1.6385589838027954,
+  "time_only_explained_variance": 0.996710167922576,
+  "by_time": [
+    {
+      "step": 0,
+      "train_count": 806,
+      "valid_count": 267,
+      "train_return_mean": 5.861075401306152,
+      "train_return_std": 0.05085891083138208,
+      "previous_action_joint_std_max_rad": 0.0
+    },
+    {
+      "step": 4,
+      "train_count": 925,
+      "valid_count": 312,
+      "train_return_mean": 5.461184501647949,
+      "train_return_std": 0.06987876573688397,
+      "previous_action_joint_std_max_rad": 0.003525049795634126
+    },
+    {
+      "step": 8,
+      "train_count": 1061,
+      "valid_count": 359,
+      "train_return_mean": 5.090075492858887,
+      "train_return_std": 0.0753806736752669,
+      "previous_action_joint_std_max_rad": 0.003906529750168735
+    },
+    {
+      "step": 12,
+      "train_count": 1205,
+      "valid_count": 404,
+      "train_return_mean": 4.699120044708252,
+      "train_return_std": 0.08259432235189564,
+      "previous_action_joint_std_max_rad": 0.003765698243676912
+    },
+    {
+      "step": 16,
+      "train_count": 1359,
+      "valid_count": 442,
+      "train_return_mean": 4.296508312225342,
+      "train_return_std": 0.09171729089086121,
+      "previous_action_joint_std_max_rad": 0.0038760736746112153
+    },
+    {
+      "step": 20,
+      "train_count": 1500,
+      "valid_count": 485,
+      "train_return_mean": 3.884420156478882,
+      "train_return_std": 0.10140503902508434,
+      "previous_action_joint_std_max_rad": 0.003621332092522664
+    },
+    {
+      "step": 24,
+      "train_count": 1641,
+      "valid_count": 541,
+      "train_return_mean": 3.4695446491241455,
+      "train_return_std": 0.10925173086072232,
+      "previous_action_joint_std_max_rad": 0.002800890467456496
+    },
+    {
+      "step": 28,
+      "train_count": 1771,
+      "valid_count": 595,
+      "train_return_mean": 3.0566670894622803,
+      "train_return_std": 0.11383220334013686,
+      "previous_action_joint_std_max_rad": 0.0033311813502325347
+    },
+    {
+      "step": 32,
+      "train_count": 1901,
+      "valid_count": 647,
+      "train_return_mean": 2.6501924991607666,
+      "train_return_std": 0.11886647443732615,
+      "previous_action_joint_std_max_rad": 0.0029712894764524615
+    },
+    {
+      "step": 36,
+      "train_count": 2056,
+      "valid_count": 704,
+      "train_return_mean": 2.2603275775909424,
+      "train_return_std": 0.11761798329222144,
+      "previous_action_joint_std_max_rad": 0.0032857420861967046
+    },
+    {
+      "step": 40,
+      "train_count": 2199,
+      "valid_count": 748,
+      "train_return_mean": 1.890882968902588,
+      "train_return_std": 0.11289103796345197,
+      "previous_action_joint_std_max_rad": 0.0026326701344634037
+    },
+    {
+      "step": 44,
+      "train_count": 2354,
+      "valid_count": 796,
+      "train_return_mean": 1.5457364320755005,
+      "train_return_std": 0.10635197240867407,
+      "previous_action_joint_std_max_rad": 0.0029208959324538834
+    },
+    {
+      "step": 48,
+      "train_count": 2521,
+      "valid_count": 853,
+      "train_return_mean": 1.2273181676864624,
+      "train_return_std": 0.09980755551431483,
+      "previous_action_joint_std_max_rad": 0.0028653560332963773
+    },
+    {
+      "step": 52,
+      "train_count": 2658,
+      "valid_count": 893,
+      "train_return_mean": 0.9368721842765808,
+      "train_return_std": 0.09100728191846992,
+      "previous_action_joint_std_max_rad": 0.002944563822992841
+    },
+    {
+      "step": 56,
+      "train_count": 2811,
+      "valid_count": 946,
+      "train_return_mean": 0.6701790690422058,
+      "train_return_std": 0.08188969248077987,
+      "previous_action_joint_std_max_rad": 0.002822736039522478
+    },
+    {
+      "step": 60,
+      "train_count": 2928,
+      "valid_count": 987,
+      "train_return_mean": 0.42013782262802124,
+      "train_return_std": 0.07463165392768452,
+      "previous_action_joint_std_max_rad": 0.0021020793068490685
+    },
+    {
+      "step": 64,
+      "train_count": 3066,
+      "valid_count": 1019,
+      "train_return_mean": 0.17821377515792847,
+      "train_return_std": 0.07079710817201523,
+      "previous_action_joint_std_max_rad": 0.0025498330621788958
+    },
+    {
+      "step": 68,
+      "train_count": 207,
+      "valid_count": 68,
+      "train_return_mean": 0.08090942353010178,
+      "train_return_std": 0.05204804817790991,
+      "previous_action_joint_std_max_rad": 0.0001716159168295557
+    },
+    {
+      "step": 72,
+      "train_count": 2,
+      "valid_count": 1,
+      "train_return_mean": 0.19085468351840973,
+      "train_return_std": 0.14864097651731042,
+      "previous_action_joint_std_max_rad": 0.00018740445959903148
+    },
+    {
+      "step": 76,
+      "train_count": 1,
+      "valid_count": 0,
+      "train_return_mean": 0.11052229255437851,
+      "train_return_std": 0.0,
+      "previous_action_joint_std_max_rad": 0.0
+    }
+  ],
+  "all_aim_weights_zero": true,
+  "xi_constant": true,
+  "limits": "Time-only lookup fitted on training environment IDs, evaluated on held-out IDs; single fresh collection.",
+  "std_convention": "population standard deviation; singleton groups have zero variance"
+}

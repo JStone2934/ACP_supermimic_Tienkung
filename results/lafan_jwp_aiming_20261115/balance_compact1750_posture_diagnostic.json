@@ -1,0 +1,103 @@
+{
+  "scope": "Recorded posture diagnostic only; no acceptance",
+  "rows": [
+    {
+      "label": "source",
+      "times_s": {
+        "0": {
+          "hip_pitch_l_joint": 0.0272,
+          "knee_pitch_l_joint": 0.1512,
+          "ankle_pitch_l_joint": -0.0344,
+          "hip_pitch_r_joint": 0.1833,
+          "knee_pitch_r_joint": 0.2614,
+          "ankle_pitch_r_joint": -0.2974,
+          "waist_yaw_joint": 0.0702,
+          "waist_roll_joint": -0.1023,
+          "waist_pitch_joint": 0.3203
+        },
+        "1": {
+          "hip_pitch_l_joint": -0.1551,
+          "knee_pitch_l_joint": 0.0175,
+          "ankle_pitch_l_joint": 0.2516,
+          "hip_pitch_r_joint": 0.0711,
+          "knee_pitch_r_joint": 0.4571,
+          "ankle_pitch_r_joint": -0.3174,
+          "waist_yaw_joint": 0.0024,
+          "waist_roll_joint": -0.0367,
+          "waist_pitch_joint": 0.4216
+        },
+        "2": {
+          "hip_pitch_l_joint": -0.1718,
+          "knee_pitch_l_joint": 0.0272,
+          "ankle_pitch_l_joint": 0.2606,
+          "hip_pitch_r_joint": 0.142,
+          "knee_pitch_r_joint": 0.4317,
+          "ankle_pitch_r_joint": -0.3249,
+          "waist_yaw_joint": 0.0326,
+          "waist_roll_joint": -0.0775,
+          "waist_pitch_joint": 0.364
+        },
+        "3": {
+          "hip_pitch_l_joint": -0.1819,
+          "knee_pitch_l_joint": 0.0139,
+          "ankle_pitch_l_joint": 0.2655,
+          "hip_pitch_r_joint": 0.1601,
+          "knee_pitch_r_joint": 0.4239,
+          "ankle_pitch_r_joint": -0.3399,
+          "waist_yaw_joint": 0.0342,
+          "waist_roll_joint": -0.0734,
+          "waist_pitch_joint": 0.3754
+        }
+      }
+    },
+    {
+      "label": "compact1750",
+      "times_s": {
+        "0": {
+          "hip_pitch_l_joint": 0.0272,
+          "knee_pitch_l_joint": 0.1512,
+          "ankle_pitch_l_joint": -0.0344,
+          "hip_pitch_r_joint": 0.1833,
+          "knee_pitch_r_joint": 0.2614,
+          "ankle_pitch_r_joint": -0.2974,
+          "waist_yaw_joint": 0.0702,
+          "waist_roll_joint": -0.1023,
+          "waist_pitch_joint": 0.3203
+        },
+        "1": {
+          "hip_pitch_l_joint": -0.2239,
+          "knee_pitch_l_joint": 0.1839,
+          "ankle_pitch_l_joint": 0.0666,
+          "hip_pitch_r_joint": -0.1282,
+          "knee_pitch_r_joint": 0.3181,
+          "ankle_pitch_r_joint": -0.0711,
+          "waist_yaw_joint": -0.0581,
+          "waist_roll_joint": 0.0317,
+          "waist_pitch_joint": 0.4298
+        },
+        "2": {
+          "hip_pitch_l_joint": -0.2379,
+          "knee_pitch_l_joint": 0.2062,
+          "ankle_pitch_l_joint": 0.0233,
+          "hip_pitch_r_joint": -0.1449,
+          "knee_pitch_r_joint": 0.3046,
+          "ankle_pitch_r_joint": -0.0735,
+          "waist_yaw_joint": -0.0282,
+          "waist_roll_joint": 0.0917,
+          "waist_pitch_joint": 0.629
+        },
+        "3": {
+          "hip_pitch_l_joint": -0.2779,
+          "knee_pitch_l_joint": 0.2145,
+          "ankle_pitch_l_joint": -0.012,
+          "hip_pitch_r_joint": -0.2559,
+          "knee_pitch_r_joint": 0.3533,
+          "ankle_pitch_r_joint": -0.0557,
+          "waist_yaw_joint": -0.1127,
+          "waist_roll_joint": 0.0439,
+          "waist_pitch_joint": 0.6637
+        }
+      }
+    }
+  ]
+}

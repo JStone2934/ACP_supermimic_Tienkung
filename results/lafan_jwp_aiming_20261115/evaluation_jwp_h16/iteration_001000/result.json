@@ -1,0 +1,11 @@
+{
+  "iteration": 1000,
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_h16_comparison/train/ckpt_001000.pt",
+  "checkpoint_sha256": "17ae358e63c60e6055da116d8897e837c8bbffd0f2a0dee5586f8fba3badbc05",
+  "reference_passed": false,
+  "reference_successful_fraction": 0.1694915254237288,
+  "standing_passed": false,
+  "standing_success_rate": 0.0,
+  "passed": false,
+  "scope": "Stage tracking and standing only; no aiming acceptance"
+}

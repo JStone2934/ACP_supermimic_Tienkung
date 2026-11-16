@@ -1,0 +1,6085 @@
+{
+  "passed": false,
+  "fixed_grid_all_pass": false,
+  "random_success_rate": 0.0,
+  "fixed_count": 25,
+  "random_count": 100,
+  "seed": 777,
+  "seconds": 30.0,
+  "continuous_without_reset": true,
+  "reference_free": true,
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "task_config": {
+    "name": "moving_aiming_v1",
+    "version": 1,
+    "command_layout": {
+      "contact_positions": [
+        0,
+        27
+      ],
+      "standing_goal": [
+        27,
+        30
+      ],
+      "height_scan": [
+        30,
+        93
+      ],
+      "target_torso_div3": [
+        93,
+        96
+      ],
+      "direction_torso": [
+        96,
+        99
+      ],
+      "normal_torso": [
+        99,
+        102
+      ],
+      "rho_sigma_div02": [
+        102,
+        104
+      ],
+      "velocity_heading": [
+        104,
+        107
+      ]
+    },
+    "obs_dim": 99,
+    "hist": 10,
+    "command_dim": 107,
+    "axis": [
+      0,
+      0,
+      -1
+    ],
+    "tcp": "right_tcp_link",
+    "episode_steps": 1500,
+    "terrain": "plane_z0",
+    "contact_valid": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "action": "q_default + xi_joint_offset + action_scale * a_exec; uniform soft clip",
+    "reward_weights": {
+      "aim": 4.0,
+      "root": 2.0,
+      "feet": 0.0,
+      "height": 1.0,
+      "upright": 1.0,
+      "velocity": 1.0,
+      "angular_velocity": 0.2,
+      "foot_velocity": 0.5,
+      "heading": 0.0,
+      "foot_boundary": 0.0,
+      "action_rate": -0.1,
+      "joint_limit": -2.0
+    },
+    "feet_position_scale_m": 0.05,
+    "term_height": 0.25,
+    "term_rzz": 0.7071067811865476,
+    "contact_command": "zero; no future reference or fixed foot anchors",
+    "target_coordinates": "world-fixed, spherical range/azimuth/elevation from initial chest",
+    "adjustment_steps": true,
+    "root_activity_radius_m": null,
+    "initial_q": [
+      -0.15000000596046448,
+      0.0,
+      0.0,
+      0.30000001192092896,
+      -0.15000000596046448,
+      0.0,
+      -0.15000000596046448,
+      0.0,
+      0.0,
+      0.30000001192092896,
+      -0.15000000596046448,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.20000000298023224,
+      0.10000000149011612,
+      0.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.20000000298023224,
+      -0.10000000149011612,
+      0.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_height": 0.991816019095717,
+    "initial_quat": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "physics_substeps": 16,
+    "physics_dt": 0.00125,
+    "imagination_command_interval_steps": 250,
+    "root_goal": "online integral of commanded world velocity",
+    "velocity_context": "world frame",
+    "velocity_policy_command": "current yaw frame",
+    "speed_range_m_s": [
+      0.0,
+      0.3
+    ],
+    "targets": "world-fixed between explicit switches"
+  },
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "scenarios": [
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.895132064819336,
+      "velocity_rmse_m_s": 0.1857771873474121,
+      "path_error_max_m": 0.29417312145233154,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.519821166992188,
+      "velocity_rmse_m_s": 0.15441375970840454,
+      "path_error_max_m": 0.3184118866920471,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.025632858276367,
+      "velocity_rmse_m_s": 0.1774924397468567,
+      "path_error_max_m": 0.30392104387283325,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.749966621398926,
+      "velocity_rmse_m_s": 0.19247181713581085,
+      "path_error_max_m": 0.25616952776908875,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.41843032836914,
+      "velocity_rmse_m_s": 0.18955227732658386,
+      "path_error_max_m": 0.2711411416530609,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 21.211101531982422,
+      "velocity_rmse_m_s": 0.15115070343017578,
+      "path_error_max_m": 0.14569057524204254,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.027137756347656,
+      "velocity_rmse_m_s": 0.14862065017223358,
+      "path_error_max_m": 0.1345556527376175,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.727048873901367,
+      "velocity_rmse_m_s": 0.14117136597633362,
+      "path_error_max_m": 0.15776994824409485,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.850707054138184,
+      "velocity_rmse_m_s": 0.14015941321849823,
+      "path_error_max_m": 0.13274843990802765,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.429986953735352,
+      "velocity_rmse_m_s": 0.14949637651443481,
+      "path_error_max_m": 0.125494584441185,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.32640266418457,
+      "velocity_rmse_m_s": 0.10462432354688644,
+      "path_error_max_m": 0.2236652821302414,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.38953971862793,
+      "velocity_rmse_m_s": 0.10383578389883041,
+      "path_error_max_m": 0.21335287392139435,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.601611137390137,
+      "velocity_rmse_m_s": 0.1023133173584938,
+      "path_error_max_m": 0.22419767081737518,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.57140350341797,
+      "velocity_rmse_m_s": 0.10387128591537476,
+      "path_error_max_m": 0.21645715832710266,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.117725372314453,
+      "velocity_rmse_m_s": 0.10421403497457504,
+      "path_error_max_m": 0.20814383029937744,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.146350860595703,
+      "velocity_rmse_m_s": 0.16986264288425446,
+      "path_error_max_m": 0.3977518379688263,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.360520362854004,
+      "velocity_rmse_m_s": 0.15204057097434998,
+      "path_error_max_m": 0.36224639415740967,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.252534866333008,
+      "velocity_rmse_m_s": 0.1561998873949051,
+      "path_error_max_m": 0.3734150230884552,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 11.666094779968262,
+      "velocity_rmse_m_s": 0.1570548415184021,
+      "path_error_max_m": 0.3744194209575653,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.022653579711914,
+      "velocity_rmse_m_s": 0.1592395305633545,
+      "path_error_max_m": 0.37621742486953735,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.644742965698242,
+      "velocity_rmse_m_s": 0.1779685616493225,
+      "path_error_max_m": 0.38618388772010803,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.329587936401367,
+      "velocity_rmse_m_s": 0.17646826803684235,
+      "path_error_max_m": 0.3705323338508606,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.552031517028809,
+      "velocity_rmse_m_s": 0.17042073607444763,
+      "path_error_max_m": 0.381518691778183,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.63502311706543,
+      "velocity_rmse_m_s": 0.16830305755138397,
+      "path_error_max_m": 0.3560200333595276,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.002857142857142857
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.27056312561035,
+      "velocity_rmse_m_s": 0.17262259125709534,
+      "path_error_max_m": 0.35434311628341675,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.9753360748291,
+      "velocity_rmse_m_s": 0.10800257325172424,
+      "path_error_max_m": 0.16909031569957733,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.324922561645508,
+      "velocity_rmse_m_s": 0.17803531885147095,
+      "path_error_max_m": 0.4300784170627594,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.226442337036133,
+      "velocity_rmse_m_s": 0.1787121295928955,
+      "path_error_max_m": 0.37616652250289917,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.155269622802734,
+      "velocity_rmse_m_s": 0.1723458170890808,
+      "path_error_max_m": 0.3113281726837158,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.55451202392578,
+      "velocity_rmse_m_s": 0.155523881316185,
+      "path_error_max_m": 0.4255012571811676,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.391648292541504,
+      "velocity_rmse_m_s": 0.15761269629001617,
+      "path_error_max_m": 0.3776164948940277,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.660717010498047,
+      "velocity_rmse_m_s": 0.14286990463733673,
+      "path_error_max_m": 0.36131978034973145,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.76858901977539,
+      "velocity_rmse_m_s": 0.16996581852436066,
+      "path_error_max_m": 0.3618333637714386,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.315549850463867,
+      "velocity_rmse_m_s": 0.1657031774520874,
+      "path_error_max_m": 0.4418064057826996,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 27.992830276489258,
+      "velocity_rmse_m_s": 0.2630186378955841,
+      "path_error_max_m": 0.7261695861816406,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.778473854064941,
+      "velocity_rmse_m_s": 0.14790908992290497,
+      "path_error_max_m": 0.43251121044158936,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.3168888092041,
+      "velocity_rmse_m_s": 0.16495516896247864,
+      "path_error_max_m": 0.36647269129753113,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.589454650878906,
+      "velocity_rmse_m_s": 0.20632991194725037,
+      "path_error_max_m": 0.41048339009284973,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.346975326538086,
+      "velocity_rmse_m_s": 0.15946227312088013,
+      "path_error_max_m": 0.37120792269706726,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.67574691772461,
+      "velocity_rmse_m_s": 0.16396749019622803,
+      "path_error_max_m": 0.46941497921943665,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.002857142857142857
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.675546646118164,
+      "velocity_rmse_m_s": 0.1643459051847458,
+      "path_error_max_m": 0.4144417643547058,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.476707458496094,
+      "velocity_rmse_m_s": 0.1431705504655838,
+      "path_error_max_m": 0.17558696866035461,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.654050827026367,
+      "velocity_rmse_m_s": 0.13549122214317322,
+      "path_error_max_m": 0.15836018323898315,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.871999740600586,
+      "velocity_rmse_m_s": 0.14793293178081512,
+      "path_error_max_m": 0.3711468279361725,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.74361801147461,
+      "velocity_rmse_m_s": 0.17493164539337158,
+      "path_error_max_m": 0.4392563998699188,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.115732192993164,
+      "velocity_rmse_m_s": 0.17794343829154968,
+      "path_error_max_m": 0.4087173640727997,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.251628875732422,
+      "velocity_rmse_m_s": 0.11522378027439117,
+      "path_error_max_m": 0.15701454877853394,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.540092468261719,
+      "velocity_rmse_m_s": 0.1611890345811844,
+      "path_error_max_m": 0.4389646351337433,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.006628036499023,
+      "velocity_rmse_m_s": 0.16022907197475433,
+      "path_error_max_m": 0.3697949945926666,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.867996215820312,
+      "velocity_rmse_m_s": 0.14334622025489807,
+      "path_error_max_m": 0.1346011906862259,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.00969409942627,
+      "velocity_rmse_m_s": 0.13259746134281158,
+      "path_error_max_m": 0.3511456251144409,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.941478729248047,
+      "velocity_rmse_m_s": 0.17134210467338562,
+      "path_error_max_m": 0.38806647062301636,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.214115142822266,
+      "velocity_rmse_m_s": 0.14111731946468353,
+      "path_error_max_m": 0.3934716284275055,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.525781631469727,
+      "velocity_rmse_m_s": 0.1302359700202942,
+      "path_error_max_m": 0.2354791760444641,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.9422664642334,
+      "velocity_rmse_m_s": 0.11466823518276215,
+      "path_error_max_m": 0.21469873189926147,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.521227836608887,
+      "velocity_rmse_m_s": 0.15286202728748322,
+      "path_error_max_m": 0.3881015479564667,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.566749572753906,
+      "velocity_rmse_m_s": 0.14779891073703766,
+      "path_error_max_m": 0.47508320212364197,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.58892059326172,
+      "velocity_rmse_m_s": 0.16730235517024994,
+      "path_error_max_m": 0.3769146800041199,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.406076431274414,
+      "velocity_rmse_m_s": 0.14098094403743744,
+      "path_error_max_m": 0.33400699496269226,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.113861083984375,
+      "velocity_rmse_m_s": 0.16671840846538544,
+      "path_error_max_m": 0.22808510065078735,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.704158782958984,
+      "velocity_rmse_m_s": 0.10401618480682373,
+      "path_error_max_m": 0.2366580218076706,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.400238037109375,
+      "velocity_rmse_m_s": 0.142069011926651,
+      "path_error_max_m": 0.3544841408729553,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.461544036865234,
+      "velocity_rmse_m_s": 0.1666124165058136,
+      "path_error_max_m": 0.38093215227127075,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.49810791015625,
+      "velocity_rmse_m_s": 0.153758704662323,
+      "path_error_max_m": 0.42139512300491333,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.223859786987305,
+      "velocity_rmse_m_s": 0.11646635830402374,
+      "path_error_max_m": 0.2274724543094635,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.55646514892578,
+      "velocity_rmse_m_s": 0.1731431782245636,
+      "path_error_max_m": 0.3728611171245575,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.330474853515625,
+      "velocity_rmse_m_s": 0.12553349137306213,
+      "path_error_max_m": 0.34976208209991455,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.09978485107422,
+      "velocity_rmse_m_s": 0.1643247902393341,
+      "path_error_max_m": 0.1716626137495041,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.826455116271973,
+      "velocity_rmse_m_s": 0.13920284807682037,
+      "path_error_max_m": 0.35235628485679626,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.207853317260742,
+      "velocity_rmse_m_s": 0.18536433577537537,
+      "path_error_max_m": 0.37844809889793396,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 20.853349685668945,
+      "velocity_rmse_m_s": 0.20885738730430603,
+      "path_error_max_m": 0.4168533384799957,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.293615341186523,
+      "velocity_rmse_m_s": 0.2293543964624405,
+      "path_error_max_m": 0.59885573387146,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.973730087280273,
+      "velocity_rmse_m_s": 0.15948331356048584,
+      "path_error_max_m": 0.3537888824939728,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 11.593876838684082,
+      "velocity_rmse_m_s": 0.119014672935009,
+      "path_error_max_m": 0.3657221794128418,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.492597579956055,
+      "velocity_rmse_m_s": 0.1798778474330902,
+      "path_error_max_m": 0.39673900604248047,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.487563133239746,
+      "velocity_rmse_m_s": 0.1775198131799698,
+      "path_error_max_m": 0.40263551473617554,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.79559326171875,
+      "velocity_rmse_m_s": 0.16250833868980408,
+      "path_error_max_m": 0.352020263671875,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.257564544677734,
+      "velocity_rmse_m_s": 0.1553058624267578,
+      "path_error_max_m": 0.370889276266098,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.713552474975586,
+      "velocity_rmse_m_s": 0.18061481416225433,
+      "path_error_max_m": 0.40846964716911316,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.550535202026367,
+      "velocity_rmse_m_s": 0.18606612086296082,
+      "path_error_max_m": 0.5614665150642395,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.204344749450684,
+      "velocity_rmse_m_s": 0.12914183735847473,
+      "path_error_max_m": 0.3384190797805786,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.21600914001465,
+      "velocity_rmse_m_s": 0.15967515110969543,
+      "path_error_max_m": 0.3690603971481323,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.475052833557129,
+      "velocity_rmse_m_s": 0.14534160494804382,
+      "path_error_max_m": 0.4284004271030426,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.42393684387207,
+      "velocity_rmse_m_s": 0.14624808728694916,
+      "path_error_max_m": 0.3503000736236572,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.670454025268555,
+      "velocity_rmse_m_s": 0.14596118032932281,
+      "path_error_max_m": 0.37011784315109253,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.152687072753906,
+      "velocity_rmse_m_s": 0.15756730735301971,
+      "path_error_max_m": 0.35657793283462524,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.166828155517578,
+      "velocity_rmse_m_s": 0.158710777759552,
+      "path_error_max_m": 0.42690399289131165,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.539231300354004,
+      "velocity_rmse_m_s": 0.16083063185214996,
+      "path_error_max_m": 0.38545677065849304,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.301944732666016,
+      "velocity_rmse_m_s": 0.16002145409584045,
+      "path_error_max_m": 0.3669649362564087,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 12.586722373962402,
+      "velocity_rmse_m_s": 0.12944760918617249,
+      "path_error_max_m": 0.35263878107070923,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.10516357421875,
+      "velocity_rmse_m_s": 0.12490613758563995,
+      "path_error_max_m": 0.16374900937080383,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.766319274902344,
+      "velocity_rmse_m_s": 0.1583699882030487,
+      "path_error_max_m": 0.4616524577140808,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.376562118530273,
+      "velocity_rmse_m_s": 0.15588000416755676,
+      "path_error_max_m": 0.38195905089378357,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.06891441345215,
+      "velocity_rmse_m_s": 0.18454596400260925,
+      "path_error_max_m": 0.4261130690574646,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.249799728393555,
+      "velocity_rmse_m_s": 0.17144903540611267,
+      "path_error_max_m": 0.42933857440948486,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 20.80149269104004,
+      "velocity_rmse_m_s": 0.2015306055545807,
+      "path_error_max_m": 0.5154405832290649,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.43385124206543,
+      "velocity_rmse_m_s": 0.16405269503593445,
+      "path_error_max_m": 0.3843444287776947,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 12.81113052368164,
+      "velocity_rmse_m_s": 0.11831135302782059,
+      "path_error_max_m": 0.3159991204738617,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.043460845947266,
+      "velocity_rmse_m_s": 0.1438489407300949,
+      "path_error_max_m": 0.1988728642463684,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 20.828039169311523,
+      "velocity_rmse_m_s": 0.18814024329185486,
+      "path_error_max_m": 0.405247300863266,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.96596908569336,
+      "velocity_rmse_m_s": 0.12467804551124573,
+      "path_error_max_m": 0.3166438043117523,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 20.68790626525879,
+      "velocity_rmse_m_s": 0.19238147139549255,
+      "path_error_max_m": 0.4256228506565094,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 13.763423919677734,
+      "velocity_rmse_m_s": 0.16279356181621552,
+      "path_error_max_m": 0.4140453040599823,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.662498474121094,
+      "velocity_rmse_m_s": 0.17586097121238708,
+      "path_error_max_m": 0.3913044035434723,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.664836883544922,
+      "velocity_rmse_m_s": 0.17553658783435822,
+      "path_error_max_m": 0.3378985822200775,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.47711181640625,
+      "velocity_rmse_m_s": 0.12795515358448029,
+      "path_error_max_m": 0.1691897213459015,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.912309646606445,
+      "velocity_rmse_m_s": 0.12777666747570038,
+      "path_error_max_m": 0.18716098368167877,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 22.379547119140625,
+      "velocity_rmse_m_s": 0.2143513411283493,
+      "path_error_max_m": 0.5187423229217529,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.090797424316406,
+      "velocity_rmse_m_s": 0.16111122071743011,
+      "path_error_max_m": 0.487863153219223,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.67177391052246,
+      "velocity_rmse_m_s": 0.17647036910057068,
+      "path_error_max_m": 0.16885223984718323,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 17.344207763671875,
+      "velocity_rmse_m_s": 0.1686241328716278,
+      "path_error_max_m": 0.3216592073440552,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.314322471618652,
+      "velocity_rmse_m_s": 0.1561112254858017,
+      "path_error_max_m": 0.33874908089637756,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.877480506896973,
+      "velocity_rmse_m_s": 0.12119453400373459,
+      "path_error_max_m": 0.34427526593208313,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.380788803100586,
+      "velocity_rmse_m_s": 0.17662271857261658,
+      "path_error_max_m": 0.4435836374759674,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.79362964630127,
+      "velocity_rmse_m_s": 0.16541431844234467,
+      "path_error_max_m": 0.40900418162345886,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.974088668823242,
+      "velocity_rmse_m_s": 0.19535022974014282,
+      "path_error_max_m": 0.46425747871398926,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 19.449764251708984,
+      "velocity_rmse_m_s": 0.14686809480190277,
+      "path_error_max_m": 0.46454840898513794,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 20.180906295776367,
+      "velocity_rmse_m_s": 0.1559886336326599,
+      "path_error_max_m": 0.4505070447921753,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.002857142857142857
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.084966659545898,
+      "velocity_rmse_m_s": 0.14307835698127747,
+      "path_error_max_m": 0.36116012930870056,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 18.419723510742188,
+      "velocity_rmse_m_s": 0.21673798561096191,
+      "path_error_max_m": 0.46159109473228455,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.796602249145508,
+      "velocity_rmse_m_s": 0.12476851791143417,
+      "path_error_max_m": 0.3573146164417267,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 15.66910457611084,
+      "velocity_rmse_m_s": 0.17153063416481018,
+      "path_error_max_m": 0.2220502495765686,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 23.062551498413086,
+      "velocity_rmse_m_s": 0.18140257894992828,
+      "path_error_max_m": 0.4890730082988739,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 14.694510459899902,
+      "velocity_rmse_m_s": 0.18158769607543945,
+      "path_error_max_m": 0.1772800087928772,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    },
+    {
+      "passed": false,
+      "full_30_seconds": true,
+      "finite": true,
+      "terminated": false,
+      "max_tilt_deg": 16.15494728088379,
+      "velocity_rmse_m_s": 0.18158531188964844,
+      "path_error_max_m": 0.3989384174346924,
+      "commanded_distance_m": 3.75,
+      "movement_and_stop_tested": true,
+      "segments": [
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        },
+        {
+          "passed": false,
+          "capture_s": null,
+          "post_grace_hit_rate": 0.0
+        }
+      ],
+      "feet_criterion": "Stepping is required; stationary global foot anchors do not apply"
+    }
+  ],
+  "target_parameters": [
+    [
+      [
+        4.0,
+        -1.0471975803375244,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3079361915588379,
+        -0.05421414226293564,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.29220128059387207,
+        0.30284202098846436,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6272460222244263,
+        -0.4119749963283539,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.20826399326324463,
+        -0.06806378066539764,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9387313723564148,
+        -0.4088941216468811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2722527086734772,
+        -0.05454954132437706,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.15803810954093933,
+        -0.3662370443344116,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.21916115283966064,
+        0.45515215396881104,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6194638609886169,
+        0.39555129408836365,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9263012409210205,
+        -0.20777219533920288,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5054415464401245,
+        -0.11436780542135239,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6693562865257263,
+        -0.23197047412395477,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9006906747817993,
+        -0.4238377809524536,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.21973970532417297,
+        -0.11986185610294342,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9131186008453369,
+        0.22935903072357178,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8541702032089233,
+        -0.06705635786056519,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.14227497577667236,
+        -0.35039839148521423,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3242188096046448,
+        -0.22708390653133392,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.036474429070949554,
+        -0.16317899525165558,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.72486412525177,
+        -0.24011950194835663,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5704312920570374,
+        -0.36142289638519287,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.18647074699401855,
+        -0.4741159677505493,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.665960431098938,
+        0.514263927936554,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5231294631958008,
+        -0.47081196308135986,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5555862188339233,
+        -0.07872256636619568,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5654569864273071,
+        0.02606450580060482,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6873971223831177,
+        -0.13423559069633484,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8873998522758484,
+        -0.1546686887741089,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7915407419204712,
+        0.2699260711669922,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.32088369131088257,
+        0.04220900684595108,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.17719414830207825,
+        0.008542006835341454,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9332525730133057,
+        -0.27627041935920715,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6513735055923462,
+        0.04242509603500366,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6923078894615173,
+        -0.34492355585098267,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3224716782569885,
+        -0.4916933476924896,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3746548593044281,
+        0.42698216438293457,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.08846667408943176,
+        0.20418012142181396,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8105032444000244,
+        -0.2934283912181854,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5904543399810791,
+        -0.09238629788160324,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.043451305478811264,
+        -0.46127113699913025,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7837908267974854,
+        -0.1261903941631317,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.14169998466968536,
+        0.4164120852947235,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6370278000831604,
+        -0.5091990232467651,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2960472106933594,
+        -0.1250304877758026,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2998640537261963,
+        0.13171300292015076,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2939222455024719,
+        -0.14236101508140564,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9381349086761475,
+        -0.058101586997509,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.18067924678325653,
+        -0.3633749485015869,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.24612540006637573,
+        -0.1446998119354248,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6958262324333191,
+        -0.012523671612143517,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9375501871109009,
+        -0.2914510667324066,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0330774784088135,
+        -0.1518200933933258,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3829084634780884,
+        0.1704547107219696,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7769226431846619,
+        -0.30847489833831787,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9678710699081421,
+        0.3466610312461853,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6169454455375671,
+        -0.15777888894081116,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.03237650915980339,
+        0.33357930183410645,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.47878801822662354,
+        0.3582145571708679,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.19529768824577332,
+        0.25249576568603516,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.00896463729441166,
+        0.2946338653564453,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5238739252090454,
+        -0.07224787026643753,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.711662769317627,
+        -0.4774044156074524,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.05726056918501854,
+        0.18931150436401367,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2059451788663864,
+        0.039642445743083954,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.06336946785449982,
+        0.019918344914913177,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5216119885444641,
+        -0.3011082410812378,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6378499269485474,
+        0.06310075521469116,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.27818265557289124,
+        0.11321236193180084,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6267298460006714,
+        0.46858271956443787,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9867897033691406,
+        0.2773492932319641,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9712977409362793,
+        0.46694618463516235,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5967873334884644,
+        -0.3404187858104706,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6805167198181152,
+        0.42505499720573425,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.05979348346590996,
+        0.3921898305416107,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9181166887283325,
+        -0.21615080535411835,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2907847464084625,
+        -0.5194628238677979,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8296689987182617,
+        -0.16854695975780487,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7620131373405457,
+        0.37765997648239136,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6241685748100281,
+        -0.17630654573440552,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8930304050445557,
+        0.3844008445739746,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3969777226448059,
+        0.41715043783187866,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.0497802272439003,
+        0.3842760920524597,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6581720113754272,
+        -0.19466327130794525,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.040536880493164,
+        -0.4963310956954956,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.846547544002533,
+        -0.06731496006250381,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.1387750804424286,
+        0.40665921568870544,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.47959285974502563,
+        0.07870827615261078,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5917441248893738,
+        -0.336588978767395,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.13425740599632263,
+        0.05585441738367081,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.49206218123435974,
+        0.11634716391563416,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0251729488372803,
+        0.4240644872188568,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9367580413818359,
+        0.3034276068210602,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9244580268859863,
+        0.15747709572315216,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.12718996405601501,
+        -0.4007643163204193,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6272926926612854,
+        0.2661958634853363,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.38746047019958496,
+        0.20250719785690308,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6147400736808777,
+        -0.1921808123588562,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7957782745361328,
+        0.30759862065315247,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7548046112060547,
+        -0.3626037836074829,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8961937427520752,
+        -0.4569626450538635,
+        0.05000000074505806
+      ]
+    ],
+    [
+      [
+        4.0,
+        -1.0471975803375244,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.20097945630550385,
+        -0.12092024087905884,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7237317562103271,
+        0.4933176636695862,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7245239615440369,
+        -0.3613930940628052,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.908203125,
+        0.2987595796585083,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.24672912061214447,
+        0.4966202974319458,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.794411838054657,
+        0.26635634899139404,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3385915756225586,
+        -0.16530275344848633,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.99055016040802,
+        0.5190391540527344,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.40062350034713745,
+        -0.496408075094223,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.713202953338623,
+        0.019489159807562828,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.4146735370159149,
+        -0.44868120551109314,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6353941559791565,
+        -0.4534160792827606,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7806001901626587,
+        -0.41978776454925537,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.557334303855896,
+        -0.45646482706069946,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.1605934202671051,
+        -0.371086061000824,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9793740510940552,
+        -0.08987985551357269,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7607933878898621,
+        -0.19928805530071259,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.32687899470329285,
+        -0.13681726157665253,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.4676775336265564,
+        -0.24010971188545227,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9867759943008423,
+        -0.46411603689193726,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7168566584587097,
+        0.38246724009513855,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2167196124792099,
+        -0.4237051010131836,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.146697536110878,
+        -0.03599945828318596,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7413655519485474,
+        -0.2085471749305725,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5101116895675659,
+        -0.22986331582069397,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.380609393119812,
+        -0.07714670896530151,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8263328075408936,
+        0.46813079714775085,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.07615126669406891,
+        0.32075050473213196,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0668284147977829,
+        -0.49528560042381287,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.025799166411161423,
+        -0.07466045022010803,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.86553955078125,
+        0.2081465721130371,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.10522150248289108,
+        0.1252676248550415,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6659696698188782,
+        -0.31956011056900024,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.26298147439956665,
+        0.035051487386226654,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7862032651901245,
+        -0.4949493110179901,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0760796070098877,
+        0.25684306025505066,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.35414621233940125,
+        0.4389234781265259,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8290592432022095,
+        -0.2961416244506836,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3501262664794922,
+        -0.4153096079826355,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.03869076073169708,
+        -0.13729897141456604,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8812269568443298,
+        -0.334907591342926,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.30609822273254395,
+        -0.3847588896751404,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7401325106620789,
+        0.09189391136169434,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3936537206172943,
+        0.12386458367109299,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9221259355545044,
+        -0.3759096562862396,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8450168371200562,
+        -0.4800177216529846,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8763253688812256,
+        -0.14004510641098022,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8372578024864197,
+        -0.46295636892318726,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.19162988662719727,
+        -0.19477131962776184,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9905041456222534,
+        0.35995250940322876,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6979141235351562,
+        -0.14246270060539246,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.22127287089824677,
+        0.4498955011367798,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6124595999717712,
+        0.2082447111606598,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5559015274047852,
+        -0.3980961740016937,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3413476347923279,
+        0.22054627537727356,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.1333899199962616,
+        0.3657112717628479,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9658690690994263,
+        -0.3853527009487152,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.41060957312583923,
+        0.46331870555877686,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3248046040534973,
+        0.14595569670200348,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.47446760535240173,
+        0.020138617604970932,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5404603481292725,
+        0.4080755114555359,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2636964023113251,
+        0.37187546491622925,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8118858337402344,
+        -0.4150890111923218,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5311261415481567,
+        -0.2887824475765228,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2469365894794464,
+        0.43990644812583923,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2890188694000244,
+        -0.2722148299217224,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.37315893173217773,
+        0.007568537723273039,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9924508929252625,
+        0.24816754460334778,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5163468718528748,
+        -0.3346129059791565,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.664128303527832,
+        -0.22814875841140747,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8356549739837646,
+        -0.2238726019859314,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5078921318054199,
+        -0.4120519161224365,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.20845149457454681,
+        -0.228304922580719,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5050240755081177,
+        0.26664870977401733,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.707415759563446,
+        0.12593293190002441,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.19604596495628357,
+        0.24965283274650574,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.36241135001182556,
+        0.4793661832809448,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5545393228530884,
+        -0.12842264771461487,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9943251013755798,
+        -0.40260982513427734,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9990062713623047,
+        0.44696903228759766,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.1724415272474289,
+        0.1728479266166687,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.4061146378517151,
+        0.13390761613845825,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0006322860717773,
+        0.34784600138664246,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2125382423400879,
+        -0.38161998987197876,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7072885036468506,
+        0.22109347581863403,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8036277294158936,
+        0.47735974192619324,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9870228171348572,
+        -0.33536776900291443,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.27722933888435364,
+        0.005318686366081238,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5316216945648193,
+        -0.20618903636932373,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8886679410934448,
+        0.3301636576652527,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2702251970767975,
+        0.38779911398887634,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.15915338695049286,
+        -0.12864433228969574,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.06716097146272659,
+        0.5020130276679993,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5212019681930542,
+        0.49989673495292664,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9711098074913025,
+        0.3749890923500061,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.21797995269298553,
+        0.5002319812774658,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0206650495529175,
+        0.12702324986457825,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6161094307899475,
+        -0.11546900868415833,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7587261199951172,
+        -0.3199109137058258,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8684966564178467,
+        0.38073623180389404,
+        0.05000000074505806
+      ]
+    ],
+    [
+      [
+        4.0,
+        -1.0471975803375244,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -1.0471975803375244,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5235987901687622,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.0,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5235987901687622,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        -0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        -0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.0,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.2617993950843811,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0471975803375244,
+        0.5235987901687622,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.43261057138442993,
+        0.08634378761053085,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.25060325860977173,
+        0.1392068862915039,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7956943511962891,
+        0.5053685903549194,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.4579351842403412,
+        -0.2899239659309387,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.018840450793504715,
+        0.14964209496974945,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3212940990924835,
+        0.20477178692817688,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.812355637550354,
+        0.24129027128219604,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7154587507247925,
+        0.049996376037597656,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5326057076454163,
+        0.4424017369747162,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.12131781876087189,
+        -0.16784588992595673,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5714263916015625,
+        -0.09155570715665817,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.4094637632369995,
+        0.3882041573524475,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9091583490371704,
+        0.4015755355358124,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.028648165985941887,
+        0.04834068566560745,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9186426997184753,
+        0.42413610219955444,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7154284715652466,
+        -0.007861651480197906,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.4148733615875244,
+        0.49188315868377686,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9346947073936462,
+        0.44526249170303345,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5981388092041016,
+        0.3489418923854828,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0357029438018799,
+        -0.40089067816734314,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5947038531303406,
+        -0.04172302037477493,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.04933343827724457,
+        -0.008474407717585564,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8582344055175781,
+        0.31468021869659424,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.27302807569503784,
+        -0.498928040266037,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3890666961669922,
+        -0.13140413165092468,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.28321322798728943,
+        -0.4420899748802185,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9937323331832886,
+        -0.27746307849884033,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.34008359909057617,
+        -0.1426498293876648,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9138985872268677,
+        0.06979382038116455,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7464144229888916,
+        -0.3175130784511566,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.46816587448120117,
+        0.4077179431915283,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.34043794870376587,
+        0.3740513324737549,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.12402050942182541,
+        -0.2309599369764328,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8588435053825378,
+        0.4216628968715668,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5588028430938721,
+        0.34135720133781433,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3980181813240051,
+        0.2263111174106598,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5059405565261841,
+        -0.4317343235015869,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5470566749572754,
+        -0.39273935556411743,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7712604403495789,
+        -0.38829800486564636,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7904534339904785,
+        0.011118303053081036,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9216615557670593,
+        0.318819522857666,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.11516541242599487,
+        0.35232505202293396,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8476666212081909,
+        -0.206374391913414,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.1274469941854477,
+        -0.4415488839149475,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.4802132844924927,
+        0.4529085159301758,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.013531189411878586,
+        -0.36031970381736755,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        1.0207278728485107,
+        -0.21857187151908875,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2926487326622009,
+        -0.4455080032348633,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7751920223236084,
+        0.2853774428367615,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5337051153182983,
+        0.24149033427238464,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.012447366490960121,
+        0.09769365191459656,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.44656455516815186,
+        0.30598706007003784,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5944973230361938,
+        0.14634567499160767,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7395933866500854,
+        -0.38635656237602234,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.03611515089869499,
+        0.2167023867368698,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.2813894748687744,
+        -0.21290728449821472,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.12575504183769226,
+        -0.029548730701208115,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5000492930412292,
+        0.41718488931655884,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.9947583675384521,
+        -0.273124635219574,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3561919331550598,
+        -0.1307729035615921,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.004755240865051746,
+        0.40298187732696533,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.013216229155659676,
+        0.2824796140193939,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6814645528793335,
+        0.09780657291412354,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6165574789047241,
+        0.04614195227622986,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7790852785110474,
+        0.37345069646835327,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.15732230246067047,
+        -0.2185707986354828,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6313731670379639,
+        -0.26692721247673035,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.15760591626167297,
+        -0.3265673518180847,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9406034350395203,
+        -0.22908779978752136,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5085351467132568,
+        -0.4074401557445526,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.7100903987884521,
+        0.3362118601799011,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.65232253074646,
+        0.2919628322124481,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6687215566635132,
+        0.34130412340164185,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6395399570465088,
+        0.1868792623281479,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7413996458053589,
+        -0.5031619071960449,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8977248668670654,
+        0.29095807671546936,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.8501648306846619,
+        -0.08223909139633179,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6027096509933472,
+        -0.11341914534568787,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.8907284140586853,
+        0.0173761285841465,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.3402043282985687,
+        0.18387547135353088,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.01856525056064129,
+        -0.4356551766395569,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.020016029477119446,
+        0.08107846975326538,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.4693039357662201,
+        0.23741523921489716,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6426771283149719,
+        0.22867755591869354,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.5333754420280457,
+        -0.19507333636283875,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.9581722617149353,
+        0.32433128356933594,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6573663949966431,
+        -0.08168341964483261,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.15775448083877563,
+        -0.253142386674881,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.008079865016043186,
+        -0.09364201873540878,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.1930398941040039,
+        -0.49870046973228455,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7661044597625732,
+        0.1634458601474762,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.2455723136663437,
+        0.34275203943252563,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7900003790855408,
+        -0.2417333722114563,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.7916874289512634,
+        0.21246352791786194,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.5115698575973511,
+        -0.2635229527950287,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        -0.6944323778152466,
+        -0.20850293338298798,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.3918137550354004,
+        -0.19365094602108002,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.33958563208580017,
+        -0.30052661895751953,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.06976953893899918,
+        0.18774855136871338,
+        0.05000000074505806
+      ],
+      [
+        4.0,
+        0.6839578151702881,
+        0.15866734087467194,
+        0.05000000074505806
+      ]
+    ]
+  ],
+  "level": null,
+  "scope": "Negative-control integration test: tracker weights have never trained this moving task",
+  "hit_radius_m": 0.05,
+  "maximum_speed_m_s": 0.3,
+  "velocity_rmse_limit_m_s": 0.08,
+  "online_target_switches": true,
+  "velocity_profile": [
+    0.0,
+    0.3333333333333333,
+    0.6666666666666666,
+    1.0,
+    0.0,
+    0.5
+  ],
+  "velocity_phase_seconds": 5.0,
+  "target_phase_seconds": 10.0,
+  "formal_training": false,
+  "source_checkpoint_sha256": "b0c24c0ed1635498a4ee91ca856330517e632749ada9b79a5808d4f28128b254",
+  "weights_saved": false
+}

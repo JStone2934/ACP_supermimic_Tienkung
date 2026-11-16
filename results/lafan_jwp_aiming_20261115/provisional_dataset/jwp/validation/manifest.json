@@ -1,0 +1,752 @@
+{
+  "clips": 10,
+  "frames": 3504,
+  "sources": [
+    "jwp/take002_chr00",
+    "jwp/take008_chr00",
+    "jwp/take009_chr00",
+    "jwp/take012_chr00",
+    "jwp/take014_chr00",
+    "jwp/take024_chr00",
+    "jwp/take049_chr00",
+    "jwp/take055_chr00",
+    "jwp/take092_chr00",
+    "jwp/take095_chr00"
+  ],
+  "entries": [
+    {
+      "key": "jwp/take002_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take002_chr00.bvh",
+      "source_sha256": "e2ffb781712b2f505116deb3c21a502571a5300594308126790bdaf72f726c36",
+      "provenance": {
+        "source_frames": 494,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          494
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 5.466612,
+        "output_duration_s": 5.46,
+        "output_frames": 274,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.02047271323131964,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 274,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 16.9904040399706,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take002_chr00_motion.npz",
+      "motion_sha256": "9a047909b86d6d3dd16d2798fedacb4742251f7066e2276e621123be911e6381",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take002_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take002_chr00.npz",
+      "labels_sha256": "00fb52b642a01c4d16ce43ad9de1358e95c8e9be4b696791513e7d97462c8364",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take002_chr00.json",
+      "quality_sha256": "3e5943929ba57f9ff977e40365c5e4e990c449e8767537303d2f4387d25eada9",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take002_chr00_motion.npz",
+      "parent_motion_sha256": "c813a6121100b75c100af05e7bf4f6a3f213cbe679b40c38a1784f78995abb05",
+      "repair_stats": {
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 7,
+            "loss": 0.01294312160462141
+          }
+        ],
+        "seconds": 20.26726732501993,
+        "peak_cuda_allocated_bytes": 687075840,
+        "body_displacement_p95_m": 0.01406274177134037,
+        "body_displacement_max_m": 0.021576082333922386,
+        "root_translation_max_m": 0.019355589523911476,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.01294312160462141,
+          2.1718806308967942e-08,
+          1.2386759673521652e-10,
+          7.641189903040413e-10,
+          0.0
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take008_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take008_chr00.bvh",
+      "source_sha256": "27145f62da22f5404609c018bfac76769b7117ac9e20d072397875295b8b06f1",
+      "provenance": {
+        "source_frames": 495,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          495
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 5.477723,
+        "output_duration_s": 5.46,
+        "output_frames": 274,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.017814253176853354,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 274,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 7.582775718008634,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take008_chr00_motion.npz",
+      "motion_sha256": "dbaf153c937263d53d456399d49f917d5ec03d0d6b439787474b7e47abf2286c",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take008_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take008_chr00.npz",
+      "labels_sha256": "291a1bd60f7d2e78398b2badbf2c0b45e83d32eaa1755745dbf9558259a7e166",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take008_chr00.json",
+      "quality_sha256": "1f5f09e269efe117dc60807cbcd4a5c1685ba738d7d1ee900aff8bf962fd821d",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take008_chr00_motion.npz",
+      "parent_motion_sha256": "84ea96a5b585f6e6a8211490f12f6a5a6ec69449622b5fd748cd6709f1abe208",
+      "repair_stats": {
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 16,
+            "loss": 0.01062012929469347
+          }
+        ],
+        "seconds": 20.21036715101218,
+        "peak_cuda_allocated_bytes": 687075840,
+        "body_displacement_p95_m": 0.012429565191268921,
+        "body_displacement_max_m": 0.020557785406708717,
+        "root_translation_max_m": 0.017110515385866165,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.01062012929469347,
+          3.017327188103991e-08,
+          4.4863698867025903e-10,
+          7.830918136164655e-10,
+          0.0
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take009_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take009_chr00.bvh",
+      "source_sha256": "3a2dea1ab961bb0aec22a97ca00c3276dcf2554c2a4425673d883395a4f65aaf",
+      "provenance": {
+        "source_frames": 506,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          506
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 5.599944,
+        "output_duration_s": 5.58,
+        "output_frames": 280,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.01976285165894888,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 280,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 7.534547023999039,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take009_chr00_motion.npz",
+      "motion_sha256": "46f55cfe7fcdf19e96365cfa71e0f7ba150e0a198007f5f66475b736cb5dcc63",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take009_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take009_chr00.npz",
+      "labels_sha256": "9bdda5b2460a8a9b7b4d900fc489d82985ce1c09329d7db2c4d7156b9da54552",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take009_chr00.json",
+      "quality_sha256": "96900a4b88502ef5c8d98bd1410b07dd4a183cfa7fcc9d4a7a6b8f7323466ef4",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take009_chr00_motion.npz",
+      "parent_motion_sha256": "fcb35d6b18d470821868a22a82fe28e0a6656af727fd520cb4013d8f0378ea49",
+      "repair_stats": {
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 4,
+            "loss": 0.00904480367898941
+          }
+        ],
+        "seconds": 11.00604349601781,
+        "peak_cuda_allocated_bytes": 337598464,
+        "body_displacement_p95_m": 0.0102020762860775,
+        "body_displacement_max_m": 0.023277128115296364,
+        "root_translation_max_m": 0.01674991473555565,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.00904480367898941,
+          3.631316758401226e-08,
+          3.179248878049101e-11,
+          0.0,
+          0.0
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take012_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take012_chr00.bvh",
+      "source_sha256": "1dd0094a5aa8e8a186119ad5011b51839f65beca54626c46e322c401f11d66e5",
+      "provenance": {
+        "source_frames": 817,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          817
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 9.055465,
+        "output_duration_s": 9.04,
+        "output_frames": 453,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.025757547342953102,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 453,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 9.01439308800036,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take012_chr00_motion.npz",
+      "motion_sha256": "9e316ea5a23817d30991f0d79ce7b760b7702ea9680eb50d449a1bb71dcf9f70",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take012_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take012_chr00.npz",
+      "labels_sha256": "0e244bd987bfad13e274410344a7ca0d3f2bb2b340e06d18d7109a8b6ac28443",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take012_chr00.json",
+      "quality_sha256": "c4f0bf4e7e175dae7f96bb420b8398dd532d76214ccdef041e5114de237dcb8d",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take012_chr00_motion.npz",
+      "parent_motion_sha256": "df477b5e8edadc129d653d15f129dcc4f5f1be32067d63209350ed4bcea15361",
+      "repair_stats": {
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [],
+        "seconds": 16.634352535998914,
+        "peak_cuda_allocated_bytes": 606730240,
+        "body_displacement_p95_m": 0.01444204431027174,
+        "body_displacement_max_m": 0.025137970224022865,
+        "root_translation_max_m": 0.022381599992513657,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.02083982527256012,
+          1.247580456720243e-07,
+          1.8052852546190934e-09,
+          2.060465353892482e-09,
+          0.0
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take014_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take014_chr00.bvh",
+      "source_sha256": "24f516d2d3b152bd4cfddc2bbb2dad93162299cf8d11b95d8129f5355fc01cdc",
+      "provenance": {
+        "source_frames": 1133,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          1133
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 12.566540999999999,
+        "output_duration_s": 12.56,
+        "output_frames": 629,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.00027356813236920335,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 629,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 10.97428595495876,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take014_chr00_motion.npz",
+      "motion_sha256": "7777c9d204cabe07c3c818b3c2aa121fed17c63b4b29bace519841dba20e8f7a",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take014_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take014_chr00.npz",
+      "labels_sha256": "428d9ded4e3947e637f9c54c8caf830a497332af0c2ebc74bb66420c345a3368",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take014_chr00.json",
+      "quality_sha256": "0f0afdd1cdd90717bd465d8daf58ea27037f187c3d34dd38b1e93b58acc410af",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take014_chr00_motion.npz",
+      "parent_motion_sha256": "363c124b2bf2185d12b0f02aaae2904496fb4d48d905311339bd76b7bbde98da",
+      "repair_stats": {
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 8,
+            "loss": 0.002384458901360631
+          },
+          {
+            "round": 1,
+            "witnesses": 1,
+            "loss": 0.002054204000160098
+          }
+        ],
+        "seconds": 44.92046562500764,
+        "peak_cuda_allocated_bytes": 694693888,
+        "body_displacement_p95_m": 0.002041615080088377,
+        "body_displacement_max_m": 0.01456732302904129,
+        "root_translation_max_m": 0.004221162758767605,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.002054204000160098,
+          1.2292126427837502e-08,
+          2.7953409986042344e-12,
+          0.0,
+          2.2308853915120434e-14
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take024_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take024_chr00.bvh",
+      "source_sha256": "8da30e873f76f1aaffa74040b4fe8144f07a272a67b1555e19f4791832fd9a95",
+      "provenance": {
+        "source_frames": 208,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          208
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 2.288866,
+        "output_duration_s": 2.28,
+        "output_frames": 115,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 8.480106109545315e-05,
+        "ground_shift_max_m": 0.00023128492569876157,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 115,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 6.1340018099872395,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take024_chr00_motion.npz",
+      "motion_sha256": "4497f1cae9585a17120c0fc4921e39eb53f01a8f4c463d3d2f0bbede0a6c839a",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take024_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take024_chr00.npz",
+      "labels_sha256": "bace11afe2da69a06faf79d3e8c9c8069189cb0b3073585cb9d5424b99c05e82",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take024_chr00.json",
+      "quality_sha256": "91630ba3741897e7852f80bd92bec1b1565a879d83acd4cd37c43da64ae7464b",
+      "reused": true
+    },
+    {
+      "key": "jwp/take049_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take049_chr00.bvh",
+      "source_sha256": "fbf9a6af80535c17c21d5c498afcb053117943daf84fe654f3678584e2a4ce39",
+      "provenance": {
+        "source_frames": 547,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          547
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 6.055495,
+        "output_duration_s": 6.04,
+        "output_frames": 303,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.02790444613742757,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 303,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 7.858740206982475,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take049_chr00_motion.npz",
+      "motion_sha256": "09334effc3cc1497afb6b7bcde533cec95432eab1de7a60344218dd1e2a17cd2",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take049_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take049_chr00.npz",
+      "labels_sha256": "28799fb69b72decdab5150bccfea8d2145b851a597c4ac66137707185368eb82",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take049_chr00.json",
+      "quality_sha256": "3856cc09a7def9806fac5b4602135747444ef4231f6b54eb8919eceb91bd9efd",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take049_chr00_motion.npz",
+      "parent_motion_sha256": "279b9920dd5630587b1d5cf7834d54de86b9342055b9d31a0a5bf09adb3c86c0",
+      "repair_stats": {
+        "device": "cuda:1",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 3,
+            "loss": 0.023191500455141068
+          }
+        ],
+        "seconds": 20.068190168007277,
+        "peak_cuda_allocated_bytes": 681387008,
+        "body_displacement_p95_m": 0.01866988092660904,
+        "body_displacement_max_m": 0.02857419103384018,
+        "root_translation_max_m": 0.024634066969156265,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.023191500455141068,
+          1.0208790968135872e-07,
+          1.134374039146735e-09,
+          1.1791685405881935e-09,
+          0.0
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take055_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take055_chr00.bvh",
+      "source_sha256": "532ec48829439c8206e1744b1beb7e8afac2fa0c6c6b9d36fd04598a3e5f1639",
+      "provenance": {
+        "source_frames": 1033,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          1033
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 11.455440999999999,
+        "output_duration_s": 11.44,
+        "output_frames": 573,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.02067804902866449,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 573,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 9.93491194699891,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take055_chr00_motion.npz",
+      "motion_sha256": "ed60b8f87594a1c15ecce72f6b0efe2af50c74fbb149dda4d438d592193ce867",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take055_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take055_chr00.npz",
+      "labels_sha256": "d2dda944fbb573ebb8473595ef53f9beaa045ffbd3936735155f7709534303aa",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take055_chr00.json",
+      "quality_sha256": "d10d33a217e382f76ac45d7a2422b5ca061738a47c6026d9d2ea05bb16b3ed34",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take055_chr00_motion.npz",
+      "parent_motion_sha256": "48b30d9796b89dab967f6a81efe732f62fb6c75269e30a06930f02a21b1d826b",
+      "repair_stats": {
+        "device": "cuda:1",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 7,
+            "loss": 0.010924001224339008
+          },
+          {
+            "round": 1,
+            "witnesses": 1,
+            "loss": 0.010085362941026688
+          },
+          {
+            "round": 2,
+            "witnesses": 1,
+            "loss": 0.00959740485996008
+          }
+        ],
+        "seconds": 49.28482174698729,
+        "peak_cuda_allocated_bytes": 724984320,
+        "body_displacement_p95_m": 0.009809612296521664,
+        "body_displacement_max_m": 0.022483747452497482,
+        "root_translation_max_m": 0.020926354452967644,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.00959740485996008,
+          1.414981998237863e-08,
+          9.705631263956516e-12,
+          4.9739383618796484e-12,
+          3.1715253473717795e-15
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take092_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take092_chr00.bvh",
+      "source_sha256": "1aaf5f95e5a9b171fcefc740309265ce9c605fb09bebe4c346e6c6613faf4b3a",
+      "provenance": {
+        "source_frames": 799,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          799
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 8.855466999999999,
+        "output_duration_s": 8.84,
+        "output_frames": 443,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.018487933194457226,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 443,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 9.323470084986184,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take092_chr00_motion.npz",
+      "motion_sha256": "70ed7d0f7c1df85d9b186ad820144571d342816f65715db3d4edb10af497c5da",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take092_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take092_chr00.npz",
+      "labels_sha256": "e813d7ca1b01dbe9bde45f7b3f0890b3be97ade592e260ddf1cb4dfd381dc01b",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take092_chr00.json",
+      "quality_sha256": "39e78af414bbcfec9ab93a7527cb3bf9e0fcbbb30ccb922dd9fb60139dc5787f",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take092_chr00_motion.npz",
+      "parent_motion_sha256": "07509ad5cfa33d364c46bdd807876b8d056d738f59ad5a3e11d03efda96ba12f",
+      "repair_stats": {
+        "device": "cuda:1",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [
+          {
+            "round": 0,
+            "witnesses": 32,
+            "loss": 0.005316445603966713
+          },
+          {
+            "round": 1,
+            "witnesses": 2,
+            "loss": 0.005267295055091381
+          },
+          {
+            "round": 2,
+            "witnesses": 5,
+            "loss": 0.005176067352294922
+          }
+        ],
+        "seconds": 41.46361815102864,
+        "peak_cuda_allocated_bytes": 665123840,
+        "body_displacement_p95_m": 0.003247773041948676,
+        "body_displacement_max_m": 0.0215689055621624,
+        "root_translation_max_m": 0.020150862634181976,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.005176067352294922,
+          1.1799647481325337e-08,
+          5.771503778638932e-15,
+          0.0,
+          1.3868700203081602e-15
+        ]
+      },
+      "reused": true
+    },
+    {
+      "key": "jwp/take095_chr00",
+      "source": "/home/js/robot/locomotion/ACP_supermimic_Tienkung/data/JWP/bvh/take095_chr00.bvh",
+      "source_sha256": "15367bd1d68f77dbb7586709dfdc6bde0ee71b3e8a555176a63cc2a310378120",
+      "provenance": {
+        "source_frames": 290,
+        "source_fps": 90.00090000900009,
+        "source_frame_time": 0.011111,
+        "source_frame_interval": [
+          1,
+          290
+        ],
+        "removed_reference_frames": 1,
+        "source_motion_duration_s": 3.1999679999999997,
+        "output_duration_s": 3.18,
+        "output_frames": 160,
+        "output_fps": 50.0,
+        "coordinate_conversion": "centimetres Y-up -> metres Z-up: (x,-z,y)",
+        "toe_fallback": "LeftFoot/RightFoot orientation when toe joints are absent"
+      },
+      "stats": {
+        "ground_shift_min_m": 0.0,
+        "ground_shift_max_m": 0.02300734433613129,
+        "smoothing": "Local BVH interpolation followed by contact-constrained GMR",
+        "collision_pairs_requested": 739,
+        "foot_clearance_m": [
+          0.05666484697198331,
+          0.056661602830214514
+        ],
+        "warmup_iterations": 20
+      },
+      "frames": 160,
+      "state": "converted",
+      "strict_quality_pass": true,
+      "rejection_reasons": [],
+      "seconds": 6.904518717026804,
+      "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take095_chr00_motion.npz",
+      "motion_sha256": "089347e0fc80a24d20324c0a3ca6f04e3eb5a11d80b9161e3ee802ab71a279a8",
+      "terrain": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/motions/jwp/take095_chr00_terrain.npy",
+      "terrain_sha256": "786948ea10646493f07a2cbcc4df3c3c8a0a80a3039c8f319842d43a34d2094e",
+      "labels": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/contacts/jwp/take095_chr00.npz",
+      "labels_sha256": "1fc59001e445961d8306a97574060c4c48da9b29337e06f4475ec4a582bbabe0",
+      "quality": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_repaired_v2/quality/jwp/take095_chr00.json",
+      "quality_sha256": "7c40fc1f43c9e9e2795904e212d41b5b6093377359ba00338f115c13cdc2d8eb",
+      "parent_motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/jwp_tienkung3_29dof/jwp100_v4/motions/jwp/take095_chr00_motion.npz",
+      "parent_motion_sha256": "882e87dc2d3d7b293145bfac9c13ccd50e30c108c27c59e14a03e191497e36c6",
+      "repair_stats": {
+        "device": "cuda:1",
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "cuda_graph": true,
+        "iterations": 800,
+        "collision_iterations": 400,
+        "collision_rounds": [],
+        "seconds": 9.764719580009114,
+        "peak_cuda_allocated_bytes": 713479168,
+        "body_displacement_p95_m": 0.010366607457399368,
+        "body_displacement_max_m": 0.022620854899287224,
+        "root_translation_max_m": 0.020683836191892624,
+        "root_rotation_max_rad": 0.0,
+        "final_objectives": [
+          0.011044333688914776,
+          3.293820682870319e-08,
+          8.485083469178534e-11,
+          0.0,
+          0.0
+        ]
+      },
+      "reused": true
+    }
+  ]
+}

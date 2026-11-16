@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "scope": "Selected JWP initialization ancestry: formal LAFAN-only native29 training to a checkpoint with no pretrained parent; no KPM or smoke initialization",
+  "selected_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+  "checkpoints": [
+    {
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_aux8/train/ckpt_001000.pt",
+      "sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+      "iteration": 1000,
+      "data_hash": "a5f7aed562fba98f1ab3933a73be8431dbede4c982fdbf46fac74d1b1f72afd5",
+      "motion_groups": {
+        "lafan": 107
+      },
+      "physics_substeps": 16,
+      "initialization_flags": {
+        "init": null,
+        "finetune": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_comparison/train/ckpt_001000.pt",
+        "resume": null
+      },
+      "source_checkpoint": {
+        "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_comparison/train/ckpt_001000.pt",
+        "sha256": "361a61c09cef89c13caac8b471f70778a049c403ed247b2588002bbaf7c2349b",
+        "iteration": 1000
+      }
+    },
+    {
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_comparison/train/ckpt_001000.pt",
+      "sha256": "361a61c09cef89c13caac8b471f70778a049c403ed247b2588002bbaf7c2349b",
+      "iteration": 1000,
+      "data_hash": "a5f7aed562fba98f1ab3933a73be8431dbede4c982fdbf46fac74d1b1f72afd5",
+      "motion_groups": {
+        "lafan": 107
+      },
+      "physics_substeps": 16,
+      "initialization_flags": {
+        "init": null,
+        "finetune": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable/train/ckpt_003000.pt",
+        "resume": null
+      },
+      "source_checkpoint": {
+        "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable/train/ckpt_003000.pt",
+        "sha256": "61794f196384ad2df4f70924ed8e56cd92a171be699ececc6fc0510685e4557a",
+        "iteration": 3000
+      }
+    },
+    {
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable/train/ckpt_003000.pt",
+      "sha256": "61794f196384ad2df4f70924ed8e56cd92a171be699ececc6fc0510685e4557a",
+      "iteration": 3000,
+      "data_hash": "a5f7aed562fba98f1ab3933a73be8431dbede4c982fdbf46fac74d1b1f72afd5",
+      "motion_groups": {
+        "lafan": 107
+      },
+      "physics_substeps": 16,
+      "initialization_flags": {
+        "init": null,
+        "finetune": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave2_guidance/train/ckpt_003000.pt",
+        "resume": null
+      },
+      "source_checkpoint": {
+        "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave2_guidance/train/ckpt_003000.pt",
+        "sha256": "b0c24c0ed1635498a4ee91ca856330517e632749ada9b79a5808d4f28128b254",
+        "iteration": 3000
+      }
+    },
+    {
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave2_guidance/train/ckpt_003000.pt",
+      "sha256": "b0c24c0ed1635498a4ee91ca856330517e632749ada9b79a5808d4f28128b254",
+      "iteration": 3000,
+      "data_hash": "935e86c67c84124c6e326505b0a6ada361e480a729b7be8001b1d0137ac1bf2e",
+      "motion_groups": {
+        "lafan": 88
+      },
+      "physics_substeps": 16,
+      "initialization_flags": {
+        "init": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001500.pt",
+        "finetune": null,
+        "resume": null
+      },
+      "source_checkpoint": {
+        "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001500.pt",
+        "sha256": "bb28e30fc87f6ff92bb5040bbbc33a299f3142c23f103cb06b9f76f4e1cabb19",
+        "iteration": 1500
+      }
+    },
+    {
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001500.pt",
+      "sha256": "bb28e30fc87f6ff92bb5040bbbc33a299f3142c23f103cb06b9f76f4e1cabb19",
+      "iteration": 1500,
+      "data_hash": "9e35f0f9320ce6264db4362f17addfb526389b1555174d35acac9bb36cae429c",
+      "motion_groups": {
+        "lafan": 57
+      },
+      "physics_substeps": 16,
+      "initialization_flags": {
+        "init": null,
+        "finetune": null,
+        "resume": null
+      },
+      "source_checkpoint": null
+    }
+  ],
+  "root_started_without_pretrained_parent": true
+}

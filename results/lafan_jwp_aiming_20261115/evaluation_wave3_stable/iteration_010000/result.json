@@ -1,0 +1,11 @@
+{
+  "iteration": 10000,
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave3_pose_stable/train/ckpt_010000.pt",
+  "checkpoint_sha256": "934022bdc0bbcbf51329e33979589d000061800509a3ed409acb4cbb35de1d64",
+  "reference_passed": false,
+  "reference_successful_fraction": 0.0,
+  "standing_passed": false,
+  "standing_success_rate": 0.0,
+  "passed": false,
+  "scope": "Stage tracking and standing only; no aiming acceptance"
+}

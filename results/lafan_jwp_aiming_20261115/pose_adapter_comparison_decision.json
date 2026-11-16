@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "evaluation": "evaluation_wave3_stable/iteration_003000",
+      "checkpoint_sha256": "61794f196384ad2df4f70924ed8e56cd92a171be699ececc6fc0510685e4557a",
+      "complete_clips": 23,
+      "clips": 49,
+      "strict_success_fraction": 0.0,
+      "standing_success_rate": 0.0,
+      "last_standing_failure_s": 14.38,
+      "clip_fields": [
+        "failed",
+        "alive_steps",
+        "expected_steps",
+        "finite",
+        "root_rmse_m",
+        "root_max_m",
+        "joint_rmse_rad",
+        "torque_saturation_fraction",
+        "velocity_exceed_fraction"
+      ]
+    },
+    {
+      "evaluation": "evaluation_wave3_stable/iteration_006000",
+      "checkpoint_sha256": "4fb2a87ef64765fb4fb96dd11dbcbc3d0690b25605aa8bbeb84594603d0235d0",
+      "complete_clips": 25,
+      "clips": 49,
+      "strict_success_fraction": 0.0,
+      "standing_success_rate": 0.0,
+      "last_standing_failure_s": 6.74,
+      "clip_fields": [
+        "failed",
+        "alive_steps",
+        "expected_steps",
+        "finite",
+        "root_rmse_m",
+        "root_max_m",
+        "joint_rmse_rad",
+        "torque_saturation_fraction",
+        "velocity_exceed_fraction"
+      ]
+    },
+    {
+      "evaluation": "evaluation_pose_adapter/iteration_000500",
+      "checkpoint_sha256": "be781dcae570d3dc38f60a9e4366b285dd6afb148ea484b9795859517d76a0b2",
+      "complete_clips": 25,
+      "clips": 49,
+      "strict_success_fraction": 0.0,
+      "standing_success_rate": 0.0,
+      "last_standing_failure_s": 5.62,
+      "clip_fields": [
+        "failed",
+        "alive_steps",
+        "expected_steps",
+        "finite",
+        "root_rmse_m",
+        "root_max_m",
+        "joint_rmse_rad",
+        "torque_saturation_fraction",
+        "velocity_exceed_fraction"
+      ]
+    },
+    {
+      "evaluation": "evaluation_pose_adapter/iteration_001000",
+      "checkpoint_sha256": "361a61c09cef89c13caac8b471f70778a049c403ed247b2588002bbaf7c2349b",
+      "complete_clips": 24,
+      "clips": 49,
+      "strict_success_fraction": 0.02040816326530612,
+      "standing_success_rate": 0.0,
+      "last_standing_failure_s": 13.6,
+      "clip_fields": [
+        "failed",
+        "alive_steps",
+        "expected_steps",
+        "finite",
+        "root_rmse_m",
+        "root_max_m",
+        "joint_rmse_rad",
+        "torque_saturation_fraction",
+        "velocity_exceed_fraction"
+      ]
+    }
+  ],
+  "decision": "Continue main baseline unchanged; bounded auxiliary-weight 8 experiment from formal adapter1000. Neither branch has passed."
+}

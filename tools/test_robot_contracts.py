@@ -103,7 +103,7 @@ class RobotContractTests(unittest.TestCase):
 
     def test_degenerate_native_distance_retries_without_moving_model(self):
         root=Path(__file__).resolve().parents[1]
-        case=json.loads((root/'docs/tienkung3_29dof/evidence/distance_degeneracy.json').read_text())
+        case=json.loads((root/'docs/config/tienkung3_29dof/evidence/distance_degeneracy.json').read_text())
         m=build_model(np.array([[0,0,1,1,0,.25,.3,.5]]),self.robot); d=mujoco.MjData(m)
         qa,_=self.robot.joint_addresses(m); d.qpos[qa]=self.robot.default_q; d.qpos[:7]=case['root_qpos']
         box=m.geom('box0').id; m.geom_pos[box]=case['box_center']; mujoco.mj_kinematics(m,d)

@@ -1,0 +1,49 @@
+{
+  "scope": "Same physical protocol and seeded resets, before/after150direct-reward policy updates. Balance-only excludes foot requirement and is diagnostic only.",
+  "rows": [
+    {
+      "kind": "before",
+      "iteration": 1500,
+      "seed": 17,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.7920792079207921,
+      "median_max_tilt_deg": 13.96057415008545,
+      "median_max_root_drift_m": 0.20028471946716309,
+      "median_max_foot_drift_after3s_m": 0.3419198989868164,
+      "mean_foot_speed_20_30s_m_s": 0.20653608441352844
+    },
+    {
+      "kind": "before",
+      "iteration": 1500,
+      "seed": 53,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.801980198019802,
+      "median_max_tilt_deg": 14.030726432800293,
+      "median_max_root_drift_m": 0.20950891077518463,
+      "median_max_foot_drift_after3s_m": 0.32329556345939636,
+      "mean_foot_speed_20_30s_m_s": 0.2120129019021988
+    },
+    {
+      "kind": "reward_gradient",
+      "iteration": 1750,
+      "seed": 17,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.0,
+      "median_max_tilt_deg": 74.76126098632812,
+      "median_max_root_drift_m": 1.136660099029541,
+      "median_max_foot_drift_after3s_m": 0.012336673215031624,
+      "mean_foot_speed_20_30s_m_s": 0.00014462973922491074
+    },
+    {
+      "kind": "reward_gradient",
+      "iteration": 1750,
+      "seed": 53,
+      "full_success_rate": 0.0,
+      "balance_only_success_rate": 0.0,
+      "median_max_tilt_deg": 74.7645034790039,
+      "median_max_root_drift_m": 1.1368639469146729,
+      "median_max_foot_drift_after3s_m": 0.012310418300330639,
+      "mean_foot_speed_20_30s_m_s": 0.0001476575416745618
+    }
+  ]
+}

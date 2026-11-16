@@ -1,0 +1,10 @@
+{
+  "dataset_manifest_sha256": "bdd9cf46158414ce0265301c03c49731d75ccdf42d5c1770cb26ddb585e3eb7c",
+  "run": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train",
+  "iterations": [
+    1000,
+    1500
+  ],
+  "scope": "Bounded evaluation worker; never trains, promotes, or changes a checkpoint.",
+  "pid": 3490707
+}

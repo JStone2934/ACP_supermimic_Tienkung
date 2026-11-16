@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "scope": "Allocation, finite optimizer updates and two-rank synchronization only; no convergence claim",
+  "formal_initialization_allowed": false,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 3,
+      "pi": 3,
+      "critic": 3
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 1583812608,
+        "torch_peak_reserved": 1690304512,
+        "device_used": 7593852928,
+        "warp_pool_used": 396130375,
+        "warp_pool_peak": 396131335
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 1583808512,
+        "torch_peak_reserved": 1669332992,
+        "device_used": 7164395520,
+        "warp_pool_used": 396130375,
+        "warp_pool_peak": 396131335
+      }
+    ],
+    "state_sha256": "8388b7840fdc46d9649173957c44ec6963cd99a5272efb50fb6b1a8bdd24c515"
+  }
+}

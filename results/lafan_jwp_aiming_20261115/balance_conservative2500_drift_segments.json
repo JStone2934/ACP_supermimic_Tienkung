@@ -1,0 +1,127 @@
+{
+  "scope": "Read-only full30s balance-only subset; not full acceptance. Different checkpoints and resets; no causalclaim.",
+  "rows": [
+    {
+      "run": "compact",
+      "iteration": 2250,
+      "checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+      "seed": 17,
+      "balanced_episodes": 36,
+      "segments": [
+        {
+          "start_s": 3,
+          "end_s": 5,
+          "mean_speed_m_s": 0.0045735896565020084,
+          "median_episode_speed_m_s": 0.004637416452169418,
+          "median_max_foot_displacement_m": 0.00944088026881218,
+          "mean_net_foot_displacement_xyz_m": [
+            7.23584889783524e-05,
+            -0.00034164596581831574,
+            -1.2768225133186206e-05
+          ],
+          "median_root_displacement_m": 0.0077590253204107285
+        },
+        {
+          "start_s": 5,
+          "end_s": 10,
+          "mean_speed_m_s": 0.0039939177222549915,
+          "median_episode_speed_m_s": 0.004003132693469524,
+          "median_max_foot_displacement_m": 0.020359881222248077,
+          "mean_net_foot_displacement_xyz_m": [
+            0.0008473482448607683,
+            -0.0008853247854858637,
+            2.9961267500766553e-05
+          ],
+          "median_root_displacement_m": 0.011427933350205421
+        },
+        {
+          "start_s": 10,
+          "end_s": 20,
+          "mean_speed_m_s": 0.003113369457423687,
+          "median_episode_speed_m_s": 0.003157612169161439,
+          "median_max_foot_displacement_m": 0.03121333196759224,
+          "mean_net_foot_displacement_xyz_m": [
+            0.0007178927771747112,
+            -0.000787381490226835,
+            1.8258475392940454e-05
+          ],
+          "median_root_displacement_m": 0.013776015490293503
+        },
+        {
+          "start_s": 20,
+          "end_s": 30,
+          "mean_speed_m_s": 0.004354878794401884,
+          "median_episode_speed_m_s": 0.001919328235089779,
+          "median_max_foot_displacement_m": 0.018469950184226036,
+          "mean_net_foot_displacement_xyz_m": [
+            0.01533492747694254,
+            0.00417966116219759,
+            0.00021414872026070952
+          ],
+          "median_root_displacement_m": 0.011395765468478203
+        }
+      ]
+    },
+    {
+      "run": "conservative",
+      "iteration": 2500,
+      "checkpoint_sha256": "e5eee541597338b88a9796edd939485c1bb504c9bc2670b3c317f51be77febb6",
+      "seed": 17,
+      "balanced_episodes": 71,
+      "segments": [
+        {
+          "start_s": 3,
+          "end_s": 5,
+          "mean_speed_m_s": 0.031977903097867966,
+          "median_episode_speed_m_s": 0.029553191736340523,
+          "median_max_foot_displacement_m": 0.07793761789798737,
+          "mean_net_foot_displacement_xyz_m": [
+            0.036680806428194046,
+            0.0182854775339365,
+            2.5097962861764245e-05
+          ],
+          "median_root_displacement_m": 0.04559742286801338
+        },
+        {
+          "start_s": 5,
+          "end_s": 10,
+          "mean_speed_m_s": 0.03858327120542526,
+          "median_episode_speed_m_s": 0.038748547434806824,
+          "median_max_foot_displacement_m": 0.16766619682312012,
+          "mean_net_foot_displacement_xyz_m": [
+            0.10028452426195145,
+            0.07572507113218307,
+            -0.0001960216322913766
+          ],
+          "median_root_displacement_m": 0.12321265786886215
+        },
+        {
+          "start_s": 10,
+          "end_s": 20,
+          "mean_speed_m_s": 0.02139311470091343,
+          "median_episode_speed_m_s": 0.025539634749293327,
+          "median_max_foot_displacement_m": 0.1716587096452713,
+          "mean_net_foot_displacement_xyz_m": [
+            0.09759032726287842,
+            0.0784386545419693,
+            0.00012938069994561374
+          ],
+          "median_root_displacement_m": 0.12541688978672028
+        },
+        {
+          "start_s": 20,
+          "end_s": 30,
+          "mean_speed_m_s": 0.011039800941944122,
+          "median_episode_speed_m_s": 0.013538837432861328,
+          "median_max_foot_displacement_m": 0.0861995592713356,
+          "mean_net_foot_displacement_xyz_m": [
+            0.0452103391289711,
+            0.03615522012114525,
+            0.0006801135605201125
+          ],
+          "median_root_displacement_m": 0.057554516941308975
+        }
+      ]
+    }
+  ]
+}

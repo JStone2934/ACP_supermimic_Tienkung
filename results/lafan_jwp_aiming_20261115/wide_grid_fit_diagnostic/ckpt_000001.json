@@ -1,0 +1,14 @@
+{
+  "checkpoint_sha256": "b257f84c6eb74378a47549f42f28c7fd66057fec0ab06282f0974fbf529a6e86",
+  "source_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/medium_grid_fit_candidates/ckpt_000002.pt",
+    "sha256": "2dddcb9447626c7458fa08095c57ce6b8f26dbdf85ae59949c797c316196986c"
+  },
+  "range_diagnostic": {
+    "diagnostic_only": true,
+    "source_stage_passed": false,
+    "automatic_promotion": false,
+    "physical_acceptance": false,
+    "all_weights_and_initial_pose_exact": true
+  }
+}

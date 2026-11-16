@@ -1,0 +1,15 @@
+{
+  "checkpoint_sha256": "b6d31e29c4c2f2758cb70fd24bae5dc7ef96f29b8a9376a987f2df3cea589a6b",
+  "diagnostic_only": true,
+  "physical_acceptance": false,
+  "factor": -0.5,
+  "method": "Bounded physical direction probes around an ACP body-only update; not promotion.",
+  "trained_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/body_output_recovery/train/ckpt_000225.pt",
+    "sha256": "52c0cdafd5baef205310807ac6410ee39e97bb89a14c7b9c66135e34badb80c9"
+  },
+  "only_body_output_rows_changed": true,
+  "right_arm_actions_exact": true,
+  "normalizers_and_reset_exact": true,
+  "automatic_promotion": false
+}

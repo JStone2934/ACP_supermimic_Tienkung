@@ -1,0 +1,39 @@
+{
+  "created": "2026-11-16 06:26:29.993992",
+  "unit": "observed-support-training.service",
+  "run_dir": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/observed_support/train",
+  "runner": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_balance_recovery_v10",
+  "init": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/observed_support_init.pt",
+  "init_sha256": "f1aad639b9a45e16c88c1eaa6e7f003a0173f156b600652b05d603d5860ebe92",
+  "iterations": 1500,
+  "global_num_envs": 2048,
+  "wm_batch": 1024,
+  "pi_batch": 1024,
+  "horizon": 32,
+  "wm_window": 16,
+  "wm_only_iters": 100,
+  "critic_warmup_iters": 100,
+  "actor_lr": 1e-06,
+  "checkpoint_every": 50,
+  "evaluation_iterations": [
+    250,
+    300,
+    400,
+    600,
+    800,
+    1000,
+    1200,
+    1500
+  ],
+  "evaluation_seeds": [
+    17,
+    53
+  ],
+  "parallel_evaluation_gpus": [
+    0,
+    1
+  ],
+  "source_smoke": false,
+  "physical_acceptance": false,
+  "acceptance_changed": false
+}

@@ -1,0 +1,67 @@
+{
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_compact/train/ckpt_001750.pt",
+  "checkpoint_sha256": "7ba0fb229909b7c489d409f6c0b710ecca176a20836300e92811279ad713134e",
+  "source_checkpoint": {
+    "path": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_quiet/train/ckpt_001500.pt",
+    "sha256": "902f925cf7d480957b0ecbf30b6fe52635d0656e51347253a5eb7e8e43feab8c"
+  },
+  "config_summary": {
+    "horizon": 32,
+    "soft_termination_mode": "compact",
+    "actor_value_gradient": 0.0,
+    "compile_training": true,
+    "matmul_tf32": false,
+    "num_envs": 2048,
+    "wm_batch": 1024,
+    "pi_batch": 1024
+  },
+  "finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "source_normalizers_preserved": {
+    "pi": true,
+    "wm": true
+  },
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 17500,
+      "distill": 1000,
+      "critic": 4000,
+      "pi": 100
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 2781118464,
+        "torch_peak_reserved": 3168796672,
+        "device_used": 5272371200,
+        "warp_pool_used": 787369870,
+        "warp_pool_peak": 787370818
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 2781039104,
+        "torch_peak_reserved": 3168796672,
+        "device_used": 4589813760,
+        "warp_pool_used": 473809235,
+        "warp_pool_peak": 473810183
+      }
+    ],
+    "state_sha256": "fc895a24cfe2395474856b8d84a14a41d15e2a3372eaa4343a38af174bedfc40"
+  },
+  "imagined_termination": {
+    "mode": "compact",
+    "tilt_margin_deg": 2.0,
+    "height_margin_m": 0.02
+  },
+  "critic_warmup_done": 100,
+  "policy_acceptance": false,
+  "scope": "Numerical and lineage audit only. Fullphysicalgatefailed."
+}

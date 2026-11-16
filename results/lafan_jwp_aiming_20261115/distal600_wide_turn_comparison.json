@@ -1,0 +1,123 @@
+{
+  "scope": "Separate body turning/balance from aiming in an unchanged full acceptance rollout.",
+  "source_report": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_distal600_wide_diagnostic/seed_917.json",
+  "checkpoint_sha256": "b0d187d6327be20ddf0aa9ac3ada0e6a473bf54cceb235197c11ba3423f34cd0",
+  "seed": 917,
+  "full_acceptance_passed": false,
+  "fixed_basic_balance": 52,
+  "random_basic_balance": 62,
+  "fixed_rows": [
+    {
+      "azimuth_deg": -60,
+      "scenarios": 15,
+      "basic_balance_passed": 0,
+      "full_aiming_passed": 0,
+      "balanced_median_foot_drift_m": null,
+      "all_median_abs_heading_error_deg_at_seconds": {
+        "0": 59.714134216308594,
+        "1": 55.22068786621094,
+        "3": 56.394683837890625,
+        "10": 135.793701171875,
+        "30": 135.67352294921875
+      },
+      "balanced_median_abs_heading_error_deg_at_seconds": {
+        "0": null,
+        "1": null,
+        "3": null,
+        "10": null,
+        "30": null
+      },
+      "median_max_tilt_deg": 121.35868072509766
+    },
+    {
+      "azimuth_deg": -30,
+      "scenarios": 15,
+      "basic_balance_passed": 7,
+      "full_aiming_passed": 0,
+      "balanced_median_foot_drift_m": 0.026084991171956062,
+      "all_median_abs_heading_error_deg_at_seconds": {
+        "0": 29.64518165588379,
+        "1": 30.937602996826172,
+        "3": 32.3409423828125,
+        "10": 39.9456672668457,
+        "30": 134.0233917236328
+      },
+      "balanced_median_abs_heading_error_deg_at_seconds": {
+        "0": 29.621490478515625,
+        "1": 30.571733474731445,
+        "3": 32.159828186035156,
+        "10": 36.15439224243164,
+        "30": 40.38811111450195
+      },
+      "median_max_tilt_deg": 119.64976501464844
+    },
+    {
+      "azimuth_deg": 0,
+      "scenarios": 15,
+      "basic_balance_passed": 15,
+      "full_aiming_passed": 0,
+      "balanced_median_foot_drift_m": 0.034635014832019806,
+      "all_median_abs_heading_error_deg_at_seconds": {
+        "0": 0.22711743414402008,
+        "1": 2.4572696685791016,
+        "3": 3.404569149017334,
+        "10": 3.4361040592193604,
+        "30": 3.5573978424072266
+      },
+      "balanced_median_abs_heading_error_deg_at_seconds": {
+        "0": 0.22711743414402008,
+        "1": 2.4572696685791016,
+        "3": 3.404569149017334,
+        "10": 3.4361040592193604,
+        "30": 3.5573978424072266
+      },
+      "median_max_tilt_deg": 8.333523750305176
+    },
+    {
+      "azimuth_deg": 30,
+      "scenarios": 15,
+      "basic_balance_passed": 15,
+      "full_aiming_passed": 0,
+      "balanced_median_foot_drift_m": 0.05813714489340782,
+      "all_median_abs_heading_error_deg_at_seconds": {
+        "0": 30.09476089477539,
+        "1": 26.329866409301758,
+        "3": 27.157629013061523,
+        "10": 27.065576553344727,
+        "30": 29.126684188842773
+      },
+      "balanced_median_abs_heading_error_deg_at_seconds": {
+        "0": 30.09476089477539,
+        "1": 26.329866409301758,
+        "3": 27.157629013061523,
+        "10": 27.065576553344727,
+        "30": 29.126684188842773
+      },
+      "median_max_tilt_deg": 8.345108985900879
+    },
+    {
+      "azimuth_deg": 60,
+      "scenarios": 15,
+      "basic_balance_passed": 15,
+      "full_aiming_passed": 0,
+      "balanced_median_foot_drift_m": 0.20940467715263367,
+      "all_median_abs_heading_error_deg_at_seconds": {
+        "0": 59.949195861816406,
+        "1": 57.13490295410156,
+        "3": 56.546791076660156,
+        "10": 56.795223236083984,
+        "30": 52.23150634765625
+      },
+      "balanced_median_abs_heading_error_deg_at_seconds": {
+        "0": 59.949195861816406,
+        "1": 57.13490295410156,
+        "3": 56.546791076660156,
+        "10": 56.795223236083984,
+        "30": 52.23150634765625
+      },
+      "median_max_tilt_deg": 8.66186237335205
+    }
+  ],
+  "physical_turning_certified": false,
+  "warning": "Untrained wide-range diagnostic. Heading errors of fallen cases are not evidence of successful turning. Final acceptance criteria remain unchanged."
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "Compare FK foot velocities with observed control-interval displacements.",
+  "checkpoint_sha256": "e5eee541597338b88a9796edd939485c1bb504c9bc2670b3c317f51be77febb6",
+  "recorded_sha256": "5383250ea0c856b105ba788e0d37d4894e9604e89203eb6ab47b4e8bc67e56ee",
+  "rows": {
+    "all": {
+      "physical": {
+        "samples": 1024,
+        "median_displacement_speed_m_s": 0.006047649774700403,
+        "median_fk_midpoint_speed_m_s": 0.005970469675958157,
+        "consistency_error_norm_p95_m_s": 0.08088084310293198,
+        "signed_consistency_error_xyz_m_s": [
+          0.002467481419444084,
+          0.0004524916294030845,
+          -0.0013254231307655573
+        ]
+      },
+      "model": {
+        "samples": 1024,
+        "median_displacement_speed_m_s": 0.012089131399989128,
+        "median_fk_midpoint_speed_m_s": 0.007778317667543888,
+        "consistency_error_norm_p95_m_s": 0.0873255804181099,
+        "signed_consistency_error_xyz_m_s": [
+          -0.00043795863166451454,
+          0.00035267259227111936,
+          -0.0031124399974942207
+        ]
+      }
+    },
+    "after1s": {
+      "physical": {
+        "samples": 624,
+        "median_displacement_speed_m_s": 0.005576621275395155,
+        "median_fk_midpoint_speed_m_s": 0.005354367196559906,
+        "consistency_error_norm_p95_m_s": 0.013237923383712769,
+        "signed_consistency_error_xyz_m_s": [
+          0.0011553284712135792,
+          0.0003186958492733538,
+          -0.0008214502013288438
+        ]
+      },
+      "model": {
+        "samples": 624,
+        "median_displacement_speed_m_s": 0.011566447094082832,
+        "median_fk_midpoint_speed_m_s": 0.00710954237729311,
+        "consistency_error_norm_p95_m_s": 0.04145124927163124,
+        "signed_consistency_error_xyz_m_s": [
+          -0.002718354109674692,
+          0.00147118023596704,
+          -0.0024207665119320154
+        ]
+      }
+    }
+  },
+  "caveat": "Midpoint velocity is an approximation across 20ms with contact changes. This is not an exact integration identity, causal attribution, or acceptance.",
+  "weights_changed": false
+}

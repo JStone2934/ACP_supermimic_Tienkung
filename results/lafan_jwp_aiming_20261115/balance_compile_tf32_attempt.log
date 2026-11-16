@@ -1,0 +1,15 @@
+/home/js/miniconda3/envs/acp_supermimic/lib/python3.11/site-packages/torch/backends/cuda/__init__.py:131: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  return torch._C._get_cublas_allow_tf32()
+{"passed": true, "loss_eager": 0.03219911456108093, "loss_compiled": 0.03218754008412361, "parameter_gradient_relative_l2_error": 0.0015846799360588193, "eager_s": 0.3034928709967062, "compiled_cold_s": 52.955438836012036, "compiled_warm_median_s": 0.008874918974470347}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/benchmark_balance_compile.py", line 66, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/benchmark_balance_compile.py", line 61, in main
+    measure(f'actor{horizon}',lambda:objective(eager_step,horizon),lambda:objective(fast_step,horizon),list(pi.parameters()))
+  File "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/benchmark_balance_compile.py", line 38, in measure
+    assert relative<.005,(name,relative)
+           ^^^^^^^^^^^^^
+AssertionError: ('actor8', 0.006702488288283348)

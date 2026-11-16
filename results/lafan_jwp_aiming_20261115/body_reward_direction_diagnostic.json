@@ -1,0 +1,44 @@
+{
+  "scope": "Read-only ACP reward-gradient decomposition on recorded physical states. Not physical acceptance.",
+  "source_sha256": "045d84e966390fa161757c7fc93b1644b0418ec776e8ae4783b20e6a946c9e73",
+  "trained_sha256": "52c0cdafd5baef205310807ac6410ee39e97bb89a14c7b9c66135e34badb80c9",
+  "trajectory_sha256": "5ae390017fa073179049a10c4f227f3a1c7830581b7fd0a9246e76abcdc97f50",
+  "groups": {
+    "aim": {
+      "reward": 2.1263673305511475,
+      "gradient_norm": 4.439403057098389,
+      "actual_update_dot_gradient": 0.012257835827767849,
+      "actual_update_cosine": 0.2932342290878296
+    },
+    "stability": {
+      "reward": 5.605396270751953,
+      "gradient_norm": 9.646932601928711,
+      "actual_update_dot_gradient": 0.023862548172473907,
+      "actual_update_cosine": 0.2626957595348358
+    },
+    "regularization": {
+      "reward": -0.0016568646533414721,
+      "gradient_norm": 0.048373159021139145,
+      "actual_update_dot_gradient": -6.31095326752984e-06,
+      "actual_update_cosine": -0.013855301775038242
+    }
+  },
+  "source_predicted_rewards": [
+    2.1263673305511475,
+    5.605396270751953,
+    -0.0016568646533414721
+  ],
+  "trained_predicted_rewards": [
+    2.139780282974243,
+    5.625049591064453,
+    -0.0011899364180862904
+  ],
+  "fixed_source_world_model": true,
+  "recorded_start_times": [
+    64,
+    112
+  ],
+  "sample_count": 16,
+  "horizon": 32,
+  "physical_policy_weights_modified": false
+}

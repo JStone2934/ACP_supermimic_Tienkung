@@ -1,0 +1,61 @@
+{
+  "checkpoint_sha256": "8d43cd40a39dd5f75d3918858018c89dc7c1b43f32103ef16ae122a865edd7e2",
+  "calibration": {
+    "method": "Compare two explicit, target-independent ready poses observed from this policy.",
+    "mode": "full_observed_pose",
+    "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_narrow_heading_fold/iteration_000002/seed_17.npz",
+    "trajectory_sha256": "1e9e9176f4d30a06fe7f7053acd820b133f00b02035803d5fc1bb0c677f324b7",
+    "scenario": 37,
+    "frame": 750,
+    "selection": "Fixed center 3m at15s; identical reset pose for every requested target and random seed",
+    "all_policy_and_model_weights_exact": true,
+    "all_normalizers_exact": true,
+    "reset_noise_unchanged": true,
+    "initial_pose_changed": true,
+    "old_initial_pose": {
+      "initial_q": [
+        0.024647066369652748,
+        -0.01776520349085331,
+        0.16043761372566223,
+        0.14610594511032104,
+        -0.030616650357842445,
+        -0.023455392569303513,
+        0.18369393050670624,
+        -0.06861424446105957,
+        -0.5082622170448303,
+        0.26457926630973816,
+        -0.2976052463054657,
+        0.031319137662649155,
+        0.07364161312580109,
+        -0.10313989222049713,
+        0.31708088517189026,
+        -0.31408730149269104,
+        0.0650429055094719,
+        -0.42677050828933716,
+        -0.7666107416152954,
+        1.3650047779083252,
+        -0.06538768857717514,
+        0.3156130015850067,
+        -0.6854084730148315,
+        -0.5415210127830505,
+        1.2687700986862183,
+        -1.8622268438339233,
+        -0.5257640480995178,
+        0.25785356760025024,
+        -0.22478710114955902
+      ],
+      "initial_height": 0.9885514974594116,
+      "initial_quat": [
+        0.9526930451393127,
+        0.04807908087968826,
+        -0.05554252862930298,
+        0.29492273926734924
+      ]
+    },
+    "acceptance_contract_sha256": "5ff1675d1ea0a5dc5b2a121dc887682f0a2bed19a6e198b937813ee717cf28f1",
+    "acceptance_criteria_changed": false,
+    "runtime_motion_files": false,
+    "physical_acceptance": false,
+    "limitation": "A policy operating from a ready stance, not evidence for arbitrary-pose recovery. Must be evaluated afresh with the full original target/noise protocol."
+  }
+}

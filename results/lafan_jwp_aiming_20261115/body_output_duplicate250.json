@@ -1,0 +1,10 @@
+{
+  "policy_weights_exact": true,
+  "reset_config_exact": true,
+  "iterations": [
+    225,
+    250
+  ],
+  "reason": "World-model gate stopped actor updates; omit redundant physical rerun",
+  "physical_acceptance": false
+}

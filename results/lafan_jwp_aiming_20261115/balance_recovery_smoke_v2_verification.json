@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "scope": "Actual dualGPU frozen v2 runner smoke; no formal initialization from smoke weights",
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 367959040,
+        "torch_peak_reserved": 436207616,
+        "device_used": 14647427072,
+        "warp_pool_used": 627436720,
+        "warp_pool_peak": 627437668
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 367887872,
+        "torch_peak_reserved": 436207616,
+        "device_used": 13985906688,
+        "warp_pool_used": 314822435,
+        "warp_pool_peak": 314823383
+      }
+    ],
+    "state_sha256": "0fd7d373178c884c991fce89f9a66bdc1c2a38d1ad1a686f938d200835b4099a"
+  },
+  "physics_substeps": 16,
+  "warmup_delay_unit_tests": "balance_recovery_warmup_tests.log",
+  "formal_initialization_allowed": false
+}

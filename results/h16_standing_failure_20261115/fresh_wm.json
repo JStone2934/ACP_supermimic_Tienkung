@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "active_horizon": 16,
+  "passed_by_horizon": {
+    "1": true,
+    "8": true,
+    "16": true
+  },
+  "horizons": {
+    "1": {
+      "windows": 8192,
+      "total_windows": 8192,
+      "root_m_p95": 0.000862216402310878,
+      "root_m_rmse": 0.0003969163226429373,
+      "feet_m_p95": 0.0019237505039200187,
+      "feet_m_rmse": 0.000906469882465899,
+      "joints_rad_p95": 0.0025074866134673357,
+      "joints_rad_rmse": 0.001209871144965291,
+      "tcp_m_p95": 0.0008450085879303515,
+      "tcp_m_rmse": 0.0003995352890342474,
+      "direction_deg_p95": 0.08846932649612427,
+      "direction_deg_rmse": 0.0403069332242012,
+      "tip_m_p95": 0.004201170057058334,
+      "tip_m_rmse": 0.0019791817758232355
+    },
+    "8": {
+      "windows": 923,
+      "total_windows": 1024,
+      "root_m_p95": 0.003428008174523711,
+      "root_m_rmse": 0.0018402348505333066,
+      "feet_m_p95": 0.007589840330183506,
+      "feet_m_rmse": 0.0037821922451257706,
+      "joints_rad_p95": 0.0077659497037529945,
+      "joints_rad_rmse": 0.0037771582137793303,
+      "tcp_m_p95": 0.005235826596617699,
+      "tcp_m_rmse": 0.0023944531567394733,
+      "direction_deg_p95": 0.4883482754230499,
+      "direction_deg_rmse": 0.2408597320318222,
+      "tip_m_p95": 0.02313128300011158,
+      "tip_m_rmse": 0.011275401338934898
+    },
+    "16": {
+      "windows": 404,
+      "total_windows": 512,
+      "root_m_p95": 0.006959511898458004,
+      "root_m_rmse": 0.0033710571005940437,
+      "feet_m_p95": 0.011314389295876026,
+      "feet_m_rmse": 0.005161258392035961,
+      "joints_rad_p95": 0.008746347390115261,
+      "joints_rad_rmse": 0.004259790293872356,
+      "tcp_m_p95": 0.009677572175860405,
+      "tcp_m_rmse": 0.005021732300519943,
+      "direction_deg_p95": 0.9100571274757385,
+      "direction_deg_rmse": 0.4281977415084839,
+      "tip_m_p95": 0.04205087199807167,
+      "tip_m_rmse": 0.019731907173991203
+    }
+  },
+  "thresholds": {
+    "root_m_p95": 0.05,
+    "feet_m_p95": 0.025
+  },
+  "thresholds_status": "stage-specific diagnostic, does not block optimizer updates or replace physical acceptance",
+  "independent_episodes": true,
+  "exploration_rad": {
+    "arm": 0.02,
+    "body": 0.005
+  }
+}

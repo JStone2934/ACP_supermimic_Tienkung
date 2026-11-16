@@ -1,0 +1,12 @@
+{
+  "checkpoint_sha256": "f7a3ff51379c81491e9af61bb7a282b08de9f1cf1dedaf1b4af66a3c4d069706",
+  "calibration": {
+    "method": "Bounded stronger feedback sweep; existing full-grid affine feedforward unchanged",
+    "geometry_sha256": "734dba0f358446bfba3b0ef6def9247f5f5476303a64d4ab7749663c3037744d",
+    "feedback_gain": 9.0,
+    "affine_fit_rms_rad": 0.07549515701462138,
+    "body_and_reset_exact": true,
+    "physical_acceptance": false,
+    "online_ik": false
+  }
+}

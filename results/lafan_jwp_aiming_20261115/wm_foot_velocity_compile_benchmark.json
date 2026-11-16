@@ -1,0 +1,21 @@
+{
+  "scope": "Read-only eager/compiled gradient check for optional Cartesian foot-velocity supervision.",
+  "checkpoint_sha256": "e5eee541597338b88a9796edd939485c1bb504c9bc2670b3c317f51be77febb6",
+  "recorded_transitions": "results/lafan_jwp_aiming_20261115/balance_conservative2500_late_dynamics.npz",
+  "recorded_transitions_sha256": "5b5ec0b8a038ad1e281318124e32b62e0bd5111c002f7ab9d95d9b4982bc6ba2",
+  "weights_changed": false,
+  "policy_acceptance": false,
+  "wm_foot_velocity_weight": 0.05,
+  "velocity_scale_m_s": 0.05,
+  "window_steps": 16,
+  "batch": 16,
+  "matmul_tf32": false,
+  "loss_eager": 0.013579979538917542,
+  "loss_compiled": 0.013579925522208214,
+  "parameter_gradient_relative_l2_error": 3.6861703847534955e-05,
+  "eager_cold_s": 0.3891680979868397,
+  "compiled_cold_s": 208.7487928100163,
+  "passed": true,
+  "eager_warm_median_s": 0.13124021200928837,
+  "compiled_warm_median_s": 0.025785673991777003
+}

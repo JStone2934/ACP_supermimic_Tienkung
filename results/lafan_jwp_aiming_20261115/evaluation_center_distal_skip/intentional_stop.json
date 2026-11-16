@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-16 10:13:33.802415",
+  "reason": "Center calibrated policy passed both full level1 gates (99% and97% random); transfer single formal training owner to level2",
+  "accepted_checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/distal_feedback_stronger_candidates/ckpt_000001.pt",
+  "accepted_sha256": "179fc7ff61f4aec99f79bf9c06d92066a0d6182c794788683f99b1700794a9ae",
+  "cancelled_iterations": [
+    400,
+    600,
+    1000,
+    1500
+  ],
+  "native_goal_remains_active": true
+}

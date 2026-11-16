@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checkpoint_sha256": "59b2709137825d7f20e82eb64988aff76fdff61bf5660d8001218ff04f444afa",
+  "source_sha256": "3ef3e6c528f829c94b3cef085e4c0b5e452d4aa5c43cfbdd12ebe68e70436d95",
+  "changed_config_keys": [
+    "initial_q",
+    "initial_height",
+    "initial_quat",
+    "initialization_mode"
+  ],
+  "policy_and_model_exact": true,
+  "source_center_full_pass": false,
+  "settled_center_only": true,
+  "physical_acceptance": false
+}

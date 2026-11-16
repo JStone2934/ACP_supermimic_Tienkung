@@ -1,0 +1,43 @@
+{
+  "time": "2026-11-16 08:16:51.673049",
+  "reason": "400 full physical evaluation retained only14/101balanced episodes per seed; arm-only update changes full closed-loop body behavior despite frozen body weights",
+  "last_status": {
+    "iteration": 450,
+    "phase": "joint",
+    "level": 1,
+    "stage": "center",
+    "sim_reward": 0.19277125597000122,
+    "physical_termination_fraction": 0.004069010727107525,
+    "physical_timeout_fraction": 0.0,
+    "mean_physical_episode_age_s": 8.119007110595703,
+    "completed_physical_episodes": 25,
+    "mean_completed_physical_episode_s": 8.361599922180176,
+    "observed_support_locked_fraction": 0.74609375,
+    "wm_loss": 0.0019720199052244425,
+    "model_ready": true,
+    "critic_warmup_done": 100,
+    "updates": {
+      "wm": 4500,
+      "critic": 5500,
+      "pi": 175
+    },
+    "elapsed_s": 994.0284774449538,
+    "actor_loss": -16.651622772216797,
+    "critic_loss": 0.3917628526687622,
+    "actor_grad": 6.286448001861572,
+    "critic_grad": 4.122354984283447,
+    "actor_value_gradient": 0.0,
+    "imagined_reward_objective": 5.735937595367432,
+    "bootstrap_objective": 10.91568660736084,
+    "bootstrap_max": 24.9840087890625,
+    "return_target_max": 25.10272979736328
+  },
+  "comparison": "center_arm_only400_comparison.json",
+  "retained_source_for_recovery": "ckpt_000250.pt",
+  "cancelled_future_evaluations": [
+    600,
+    1000,
+    1500
+  ],
+  "policy_acceptance": false
+}

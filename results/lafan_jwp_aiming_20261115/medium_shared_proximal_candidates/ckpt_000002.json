@@ -1,0 +1,37 @@
+{
+  "checkpoint_sha256": "3ef3e6c528f829c94b3cef085e4c0b5e452d4aa5c43cfbdd12ebe68e70436d95",
+  "calibration": {
+    "geometry": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/medium_shared_proximal_geometry.json",
+    "geometry_sha256": "fbd7d49c5a36974917684c00c9e24c849c1c8eb51b6c81064e9b5d972b50abb0",
+    "shared_arm_pose_rad": [
+      -0.8617795705795288,
+      -0.7133232951164246,
+      0.4565548002719879,
+      -1.395655870437622,
+      0.133965864777565,
+      -0.0870228111743927,
+      -0.19767919182777405
+    ],
+    "proximal_observation_folded": true,
+    "fold_values": [
+      -0.7852377891540527,
+      -0.35217997431755066,
+      0.6852098107337952,
+      -0.7739146947860718,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -3.2700254917144775,
+      -1.4666168689727783,
+      2.616473913192749,
+      -3.2087483406066895
+    ],
+    "feedback_gain": 3.0,
+    "jacobian_mujoco_max_abs_difference": 1.9836590758881556e-07,
+    "initial_pose_target_independent": true,
+    "body_reset_unchanged": true,
+    "physical_acceptance": false,
+    "online_ik": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-14T22:32:30.930243+08:00",
+  "paper": {
+    "title": "SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model",
+    "arxiv": "2610.28480v2",
+    "revision": "2026-11-09",
+    "url": "https://arxiv.org/pdf/2610.28480",
+    "project": "https://supermimic.github.io/"
+  },
+  "primary_source_findings": [
+    {
+      "location": "Section 3.3, Eq. 3, pp. 5-6",
+      "fact": "Critic regresses GAE returns computed from imagined transitions only; each rollout target stays fixed during fitting. No EMA target critic."
+    },
+    {
+      "location": "Table A.5, p.16",
+      "fact": "lambda=0.95, gamma=0.99, critic fitting 5 epochs x 4 minibatches per update."
+    },
+    {
+      "location": "Table A.4, p.15",
+      "fact": "Critic hidden widths 256,128; listed inputs are imagined state, goal and simulation context. Ten-frame observation history is explicitly listed for policy decoder, not critic."
+    },
+    {
+      "location": "Figure 4 caption, p.7; Section 4.3, p.8",
+      "fact": "Both critic and critic-free H=8 variants fail to reach target training return 0.82 on LAFAN1. With critic, H=16 matches critic-free H=32; default H=32 reaches target fastest."
+    },
+    {
+      "location": "Section 3.2 and Table A.5",
+      "fact": "World-model fitting window k=8 and actor imagination horizon H=32 are different settings."
+    }
+  ],
+  "current_code_differences": {
+    "critic_targets": "Complete physical Monte Carlo returns; critic not fit on actor imagined state/history distribution.",
+    "critic_input": "Adds explicit previous action and flattened 990-dimensional history.",
+    "horizon": "H=8 rather than paper H=32; k=8 unchanged.",
+    "network": "Same critic hidden widths 256,128.",
+    "task": "Reference-free fullbody standing/aiming, unlike full-reference motion tracking."
+  },
+  "corrections_to_prior_advice": [
+    "Paired physical perturbation supervision is an experimental proposal, not a mechanism established by SuperMimic.",
+    "gamma=0.99 is also the original paper setting, so it is not on its own evidence of a configuration bug.",
+    "Observed critic gradient failures do not establish inadequate network capacity as the cause.",
+    "H=8 is not supported as a successful default by the cited paper sweep; this does not prove it cannot work on this different standing task."
+  ],
+  "inferences_to_test": [
+    "Fitting only on physical trajectories while differentiating at predicted states can leave the actor input neighborhood insufficiently calibrated.",
+    "Additional history/previous-action input paths deserve an isolated comparison, given measured gradient dominance."
+  ],
+  "actions": "Read-only paper/code comparison. Active training and parameters unchanged."
+}

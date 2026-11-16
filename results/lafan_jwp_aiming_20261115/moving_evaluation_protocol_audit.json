@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "frames": 1501,
+  "scenarios": 125,
+  "seconds": 30,
+  "target_change_transition_indices": [
+    499,
+    999
+  ],
+  "velocity_change_transition_indices": [
+    249,
+    499,
+    749,
+    999,
+    1249
+  ],
+  "goal_integral_max_error_m": 5.168840289115906e-08,
+  "negative_control_rejected": true,
+  "actual_task_success_rate": 0.0,
+  "scope": "Evaluator protocol verification; no trained moving policy or acceptance"
+}

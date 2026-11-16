@@ -1,0 +1,8 @@
+......./home/js/robot/locomotion/standing-aiming/tools/test_quiet_foot_reward.py:19: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertGreater(float(terms['foot_velocity']),.999)
+.
+----------------------------------------------------------------------
+Ran 8 tests in 7.400s
+
+OK

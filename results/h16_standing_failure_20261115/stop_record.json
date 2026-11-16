@@ -1,0 +1,10 @@
+{
+  "time": "2026-11-15T13:57:34.830230+08:00",
+  "reason": "explicit user request to stop and diagnose",
+  "run": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/standing_aiming_fullbody_v2/dual_h16_critic4096_reward_v2_20261114",
+  "phase": "stopped",
+  "iteration": 47103,
+  "actor_updates": 2960,
+  "checkpoint_sha256": "47b2495c8add2311d3a6c0cfff0edcb6145d3826e82a4501d79e774b05c4e4d9",
+  "snapshot": "/home/js/robot/locomotion/standing-aiming/results/h16_standing_failure_20261115/checkpoint.pt"
+}

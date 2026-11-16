@@ -1,0 +1,58 @@
+{
+  "checkpoint_sha256": "8a5085c33660eb617ed33a8a99f6e755ba29f8474e51ca736011fb87627c5735",
+  "source_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+  "calibration": {
+    "method": "Constant right-arm decoder targets from audited center IK, optional static gravity torque divided by joint stiffness",
+    "gravity_compensation_gain": 0.0,
+    "arm_joint_order": [
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "arm_pose_rad": [
+      -0.8711593747138977,
+      -0.8234050869941711,
+      0.9659848809242249,
+      -1.521997094154358,
+      -0.33216702938079834,
+      0.2275695502758026,
+      -0.5326934456825256
+    ],
+    "arm_pd_targets_rad": [
+      -0.8711593747138977,
+      -0.8234050869941711,
+      0.9659848809242249,
+      -1.521997094154358,
+      -0.33216702938079834,
+      0.2275695502758026,
+      -0.5326934456825256
+    ],
+    "arm_gravity_torque_nm": [
+      -9.56957125975461,
+      -5.3301146483828,
+      -5.17555474562304,
+      -1.9368427755089028,
+      0.2723776204147912,
+      -0.6314738893480989,
+      -0.32386220336396976
+    ],
+    "arm_pd_gravity_offset_rad": [
+      -0.06379713863134384,
+      -0.10660229623317719,
+      -0.10351109504699707,
+      -0.012912285514175892,
+      0.005447552539408207,
+      -0.031573694199323654,
+      -0.01619311049580574
+    ],
+    "source_kinematic_ray_error_m": 0.0,
+    "all_non_right_arm_policy_weights_exact": true,
+    "geometry_sha256": "e8b05dcb7dc011b3f8ed6554f142029ab26b910e017faf1f7f6c59b00bab4103",
+    "scope": "Center-target physical diagnostic only; no variable-target policy or physical acceptance claim",
+    "physical_acceptance": false
+  }
+}

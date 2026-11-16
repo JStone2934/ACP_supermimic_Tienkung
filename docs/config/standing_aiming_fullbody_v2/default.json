@@ -34,10 +34,11 @@
   "wm_gate_root_m": 0.05,
   "wm_gate_feet_m": 0.025,
   "wm_gate_tip_m": 0.1,
+  "feet_position_scale_m": 0.1,
   "reward_weights": {
-    "aim": 2.0,
+    "aim": 4.0,
     "root": 2.0,
-    "feet": 6.0,
+    "feet": 2.0,
     "height": 1.0,
     "upright": 1.0,
     "velocity": 1.0,

@@ -1,0 +1,10 @@
+{
+  "selected_checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_pose_adapter_aux8/train/ckpt_001000.pt",
+  "selected_sha256": "9ae9ffa6ec1a135bede937d0e83fc30bcacd166648c011b74f7f41ef07e7a41e",
+  "balance_only_30s_success_rate": 1.0,
+  "full_standing_passed": false,
+  "rejected_later_checkpoint_sha256": "2b6742407e2d881e4992b2b5b999d7f8d307e7e95d32421d7e4c2109fe003b98",
+  "rejected_later_balance_only_30s_success_rate": 0.6699999570846558,
+  "reason": "Choose stable LAFAN balance foundation for requested JWP fine-tuning; later pose improvement does not justify balance regression. Neither checkpoint has passed the full stationary-foot gate.",
+  "reference_and_standing_gate_before_G4": "Unchanged; must pass on the JWP-finetuned checkpoint with held-out mixed sources."
+}

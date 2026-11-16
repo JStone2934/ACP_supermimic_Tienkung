@@ -1,0 +1,8 @@
+/home/js/robot/locomotion/standing-aiming/tools/test_support_error_adapter.py:69: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertGreater(float((after[:,arm]-before[:,arm]).abs().max()),0.)
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 18.211s
+
+OK

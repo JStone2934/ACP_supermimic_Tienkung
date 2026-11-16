@@ -1,0 +1,15 @@
+{
+  "world_size": 1,
+  "global_sizes": {
+    "num_envs": 64,
+    "wm_batch": 16,
+    "pi_batch": 16
+  },
+  "local_sizes": {
+    "num_envs": 64,
+    "wm_batch": 16,
+    "pi_batch": 16
+  },
+  "visible_devices": null,
+  "device": "cuda:0"
+}

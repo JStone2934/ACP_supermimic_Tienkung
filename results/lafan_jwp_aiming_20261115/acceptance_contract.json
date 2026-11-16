@@ -1,0 +1,70 @@
+{
+  "robot": "tienkung3_29dof",
+  "algorithm": "ACP",
+  "training_order": [
+    "LAFAN",
+    "JWP",
+    "standing_aiming_curriculum",
+    "moving_aiming_curriculum"
+  ],
+  "jwp_fraction": 0.8,
+  "lafan_replay_fraction": 0.2,
+  "seed": 0,
+  "validation_fraction": 0.1,
+  "split_unit": "source_clip",
+  "target": {
+    "azimuth_deg": [
+      -60,
+      60
+    ],
+    "elevation_deg": [
+      -30,
+      30
+    ],
+    "range_m": [
+      2,
+      4
+    ],
+    "radius_m": 0.05,
+    "axis": [
+      0,
+      0,
+      -1
+    ],
+    "tcp": "right_tcp_link",
+    "world_fixed": true,
+    "switch_seconds": 10,
+    "range_semantics": "Euclidean range from initial chest",
+    "direction_semantics": "relative to initial yaw; never updated to follow robot"
+  },
+  "standing": {
+    "adjustment_steps_allowed": true,
+    "root_radius_m": 0.5,
+    "tilt_max_deg": 15,
+    "capture_seconds": 3,
+    "continuous_hold_seconds": 5,
+    "post_capture_hit_rate": 0.95,
+    "episode_seconds": 30,
+    "random_scenarios": 100,
+    "random_success_rate": 0.95,
+    "fixed_grid_all_pass": true,
+    "consecutive_evaluations": 2
+  },
+  "moving": {
+    "speed_m_s": [
+      0,
+      0.3
+    ],
+    "velocity_rmse_m_s": 0.08,
+    "episode_seconds": 30,
+    "success_rate": 0.95,
+    "moving_target_initial_range_m": 4
+  },
+  "stage1_gate": {
+    "completion_fraction": 0.9,
+    "root_rmse_m": 0.1,
+    "joint_rmse_rad": 0.2,
+    "standing_30s_success_rate": 0.95
+  },
+  "scope": "simulation only; no reference trajectories at final inference"
+}

@@ -1,0 +1,281 @@
+{
+  "source_sha256": "129da13f040d189c8d0185dca4142b164feb88c24fa74c1d9ed20ab4b184dcd5",
+  "checkpoint_sha256": "f1aad639b9a45e16c88c1eaa6e7f003a0173f156b600652b05d603d5860ebe92",
+  "task_config": {
+    "name": "wide_aiming_v1",
+    "version": 2,
+    "command_layout": {
+      "contact_positions": [
+        0,
+        27
+      ],
+      "standing_goal": [
+        27,
+        30
+      ],
+      "height_scan": [
+        30,
+        93
+      ],
+      "target_torso_div3": [
+        93,
+        96
+      ],
+      "direction_torso": [
+        96,
+        99
+      ],
+      "normal_torso": [
+        99,
+        102
+      ],
+      "rho_sigma_div02": [
+        102,
+        104
+      ],
+      "velocity_heading": [
+        104,
+        107
+      ]
+    },
+    "obs_dim": 99,
+    "hist": 10,
+    "command_dim": 107,
+    "axis": [
+      0,
+      0,
+      -1
+    ],
+    "tcp": "right_tcp_link",
+    "episode_steps": 1500,
+    "terrain": "plane_z0",
+    "contact_valid": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "action": "q_default + xi_joint_offset + action_scale * a_exec; uniform soft clip",
+    "reward_weights": {
+      "aim": 4.0,
+      "root": 2.0,
+      "feet": 4.0,
+      "height": 1.0,
+      "upright": 1.0,
+      "velocity": 1.0,
+      "angular_velocity": 0.2,
+      "foot_velocity": 0.5,
+      "heading": 0.0,
+      "foot_boundary": 0.0,
+      "action_rate": -0.1,
+      "joint_limit": -2.0,
+      "foot_motion": 1.0
+    },
+    "feet_position_scale_m": 0.05,
+    "term_height": 0.25,
+    "term_rzz": 0.8660254037844387,
+    "imagined_termination": {
+      "mode": "compact",
+      "tilt_margin_deg": 2.0,
+      "height_margin_m": 0.02
+    },
+    "contact_command": "current measured support positions after adjustment; zero during adjustment or commanded movement",
+    "target_coordinates": "world-fixed, spherical range/azimuth/elevation from initial chest",
+    "adjustment_steps": true,
+    "root_activity_radius_m": 0.5,
+    "initial_q": [
+      0.024647066369652748,
+      -0.01776520349085331,
+      0.16043761372566223,
+      0.14610594511032104,
+      -0.030616650357842445,
+      -0.023455392569303513,
+      0.18369393050670624,
+      -0.06861424446105957,
+      -0.5082622170448303,
+      0.26457926630973816,
+      -0.2976052463054657,
+      0.031319137662649155,
+      0.07364161312580109,
+      -0.10313989222049713,
+      0.31708088517189026,
+      -0.31408730149269104,
+      0.0650429055094719,
+      -0.42677050828933716,
+      -0.7666107416152954,
+      1.3650047779083252,
+      -0.06538768857717514,
+      0.3156130015850067,
+      -0.6854084730148315,
+      -0.5415210127830505,
+      1.2687700986862183,
+      -1.8622268438339233,
+      -0.5257640480995178,
+      0.25785356760025024,
+      -0.22478710114955902
+    ],
+    "initial_height": 0.9885514974594116,
+    "initial_quat": [
+      0.9526930451393127,
+      0.04807908087968826,
+      -0.05554252862930298,
+      0.29492273926734924
+    ],
+    "physics_substeps": 16,
+    "physics_dt": 0.00125,
+    "imagination_command_interval_steps": null,
+    "observed_support": {
+      "capture_steps": 150,
+      "frame": "world",
+      "release": "explicit target change or nonzero velocity command",
+      "imagination": "truncate before the unobserved capture transition"
+    },
+    "reset_noise": {
+      "reset_position_noise_m": 0.01,
+      "reset_rotation_noise_rad": 0.015,
+      "reset_joint_noise_rad": 0.03
+    }
+  },
+  "initialization": {
+    "mode": "observed_support",
+    "source_accepted": false,
+    "critic_and_optimizers": "fresh at training start",
+    "source_constant_contact_columns_folded": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "numerical_pd_target_max_difference_rad": 1.1920928955078125e-07,
+    "physical_acceptance": false
+  },
+  "config": {
+    "task": "wide_aiming_v1",
+    "version": 1,
+    "seed": 0,
+    "hist": 10,
+    "horizon": 32,
+    "physics_substeps": 16,
+    "initial_q": [
+      0.024647066369652748,
+      -0.01776520349085331,
+      0.16043761372566223,
+      0.14610594511032104,
+      -0.030616650357842445,
+      -0.023455392569303513,
+      0.18369393050670624,
+      -0.06861424446105957,
+      -0.5082622170448303,
+      0.26457926630973816,
+      -0.2976052463054657,
+      0.031319137662649155,
+      0.07364161312580109,
+      -0.10313989222049713,
+      0.31708088517189026,
+      -0.31408730149269104,
+      0.0650429055094719,
+      -0.42677050828933716,
+      -0.7666107416152954,
+      1.3650047779083252,
+      -0.06538768857717514,
+      0.3156130015850067,
+      -0.6854084730148315,
+      -0.5415210127830505,
+      1.2687700986862183,
+      -1.8622268438339233,
+      -0.5257640480995178,
+      0.25785356760025024,
+      -0.22478710114955902
+    ],
+    "initial_height": 0.9885514974594116,
+    "initial_quat": [
+      0.9526930451393127,
+      0.04807908087968826,
+      -0.05554252862930298,
+      0.29492273926734924
+    ],
+    "num_envs": 2048,
+    "wm_batch": 1024,
+    "pi_batch": 1024,
+    "buffer_steps": 1000,
+    "wm_window": 16,
+    "wm_batches": 10,
+    "collect_steps": 3,
+    "initial_collect_steps": 128,
+    "wm_only_iters": 100,
+    "critic_warmup_iters": 100,
+    "actor_lr": 1e-06,
+    "wm_lr": 0.0001,
+    "critic_lr": 0.0001,
+    "gamma": 0.99,
+    "lambda_return": 0.95,
+    "critic_epochs": 5,
+    "critic_minibatches": 4,
+    "ckpt_every": 100,
+    "log_every": 25,
+    "body_noise_rad": 0.005,
+    "arm_noise_rad": 0.02,
+    "noise_decay_updates": 10000,
+    "noise_min_fraction": 0.1,
+    "actor_grad_clip_value": 0.1,
+    "term_height": 0.25,
+    "term_tilt_deg": 30.0,
+    "bound_value_bootstrap": true,
+    "reward_weights": {
+      "aim": 4.0,
+      "root": 2.0,
+      "feet": 4.0,
+      "height": 1.0,
+      "upright": 1.0,
+      "velocity": 1.0,
+      "angular_velocity": 0.2,
+      "foot_velocity": 0.5,
+      "heading": 0.0,
+      "foot_boundary": 0.0,
+      "action_rate": -0.1,
+      "joint_limit": -2.0,
+      "foot_motion": 1.0
+    },
+    "source": {
+      "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/jwp_finetune_support/train/ckpt_001000.pt",
+      "sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+      "iteration": 1000
+    },
+    "initialization_mode": "observed_support",
+    "curriculum_level": 0,
+    "reset_position_noise_m": 0.01,
+    "reset_rotation_noise_rad": 0.015,
+    "reset_joint_noise_rad": 0.03,
+    "iterations": 4000,
+    "switch_interval_steps": null,
+    "distill_iters": 0,
+    "distill_lr": 0.0001,
+    "wm_validation_every": 25,
+    "wm_validation_steps": 384,
+    "wm_validation_envs": 8,
+    "wm_gate_root_m": 0.05,
+    "wm_gate_feet_m": 0.025,
+    "wm_gate_tip_m": 0.1,
+    "validation_horizons": [
+      1,
+      8,
+      16,
+      32
+    ],
+    "enforce_wm_gate": true,
+    "verify_sync": true,
+    "soft_termination_mode": "compact",
+    "compile_training": true,
+    "actor_value_gradient": 0.0,
+    "matmul_tf32": false,
+    "support_capture_steps": 150,
+    "wm_foot_velocity_weight": 0.0
+  }
+}

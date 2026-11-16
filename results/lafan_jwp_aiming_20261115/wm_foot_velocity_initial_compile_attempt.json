@@ -1,0 +1,8 @@
+{
+  "status": "intentionally_stopped_before_compile_result",
+  "unit": "balance-foot-velocity-compile-check.service",
+  "time": "2026-11-16 05:24:05.886648",
+  "reason": "Replace repeated FK inside16stepunroll with verifiedequivalentbatchedFK. Processwasliveandcomputing, notclassifiedhungorfailed. No numericalpassclaimedforunfinishedcompile.",
+  "replacement_eager_parity": "wm_foot_velocity_vectorized_parity.json",
+  "original_loss_snapshot": "wm_foot_velocity_initial_loss.txt"
+}

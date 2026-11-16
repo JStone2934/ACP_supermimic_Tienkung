@@ -1,0 +1,113 @@
+{
+  "scope": "Held-out reference tracking only; standing and aiming require separate physical gates",
+  "passed": false,
+  "successful_clips": 0,
+  "clips": 20,
+  "successful_fraction": 0.0,
+  "required_fraction": 0.9,
+  "failures": {
+    "jwp/take002_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take008_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take009_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take012_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take014_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take024_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take049_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take055_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take092_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "jwp/take095_chr00": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f000002_003547": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f003563_004793": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f004833_005183": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f005500_005753": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f005789_006184": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f006352_007090": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f007340_008477": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f008482_009101": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f009770_010206": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ],
+    "lafan/aiming1_subject1__f010211_011970": [
+      "incomplete_or_fallen",
+      "root_rmse_m",
+      "joint_rmse_rad"
+    ]
+  },
+  "checkpoint_sha256": "57716cdebcac11de8798f15ee40507c308b9019f43df780412c00663fc38696b",
+  "report_sha256": "2251ac037ec4a74aa3a488ad0b7476bf1b3afd049cb6def8cb6d549859f1bd55",
+  "manifest_sha256": "ca3e64cdbd4ffac125b3b868b829caa23225fa0c844e21bc187e4e1ea2858e3c"
+}

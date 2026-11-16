@@ -1,0 +1,29 @@
+{
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/balance_recovery_conservative/train/ckpt_002350.pt",
+  "checkpoint_sha256": "f921c1222c935aeba01e8c40fd61b209ab9090610486e40eb84b1d6ffe2d6103",
+  "source_checkpoint_sha256": "b57f519e868a2380989d5bb6c799c77ffe56894b1f7ad4922631ac84cc7148ea",
+  "policy_and_critic_unchanged": {
+    "pi": true,
+    "critic": true
+  },
+  "world_model_changed": true,
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "normalizers_preserved": {
+    "pi": true,
+    "wm": true
+  },
+  "updates": {
+    "wm": 23500,
+    "distill": 1000,
+    "critic": 9000,
+    "pi": 350
+  },
+  "world_size": 2,
+  "state_sha256": "e014689d3722332b459ac14050a10cd054a1f3ef8f15f674ccab96c583ce3397",
+  "policy_acceptance": false,
+  "scope": "Exact100 model-only adaptationupdates; no policyconvergenceclaim"
+}

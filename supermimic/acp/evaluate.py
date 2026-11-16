@@ -41,7 +41,7 @@ import torch
 
 import supermimic.acp.networks as networks
 from supermimic.acp.env import TrackingSim
-from supermimic.acp.robots import resolve_robot
+from supermimic.acp.robots import resolve_robot, sha256
 from supermimic.acp.kinematics import RobotKinematics
 from supermimic.acp.mdp import MAX_STEP_REWARD, MDP, OBS_DIM, REF_ORI_DIMS, RewardCfg
 from supermimic.acp.motion import CONTROL_DT, MotionLib
@@ -53,6 +53,7 @@ from supermimic.rotations import mat_to_quat
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.manual_seed(args.seed)
 dev = "cuda:0"
+checkpoint_sha256 = sha256(args.ckpt)
 ck = torch.load(args.ckpt, map_location=dev)
 robot = resolve_robot(args.robot, ck)
 NUM_J, OBS_DIM, INV_DIM, XI_DIM = robot.num_joints, robot.obs_dim, robot.inv_dim, robot.xi_dim
@@ -63,14 +64,15 @@ motion_dir = args.motion_dir or ia.get("motion_dir") or robot.motion_dir
 kin = RobotKinematics(dev, robot)
 motion = MotionLib.from_dir(motion_dir, kin, dev)
 term_win = a_.get("term_window", 0.0) if args.term_window is None else args.term_window
-mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev), RewardCfg(term_window=int(round(term_win / CONTROL_DT))))
+mdp = MDP(kin, motion, torch.tensor(robot.default_q, device=dev),
+          RewardCfg(term_window=int(round(term_win / CONTROL_DT)),term_root_distance=a_.get('tracking_root_radius')))
 contact_cfg = dict(ck["ctc_cfg"])
 if args.motion_dir or args.contacts_dir:
     contact_cfg["contacts_dir"] = args.contacts_dir
 ctc = ContactTask(ContactCfg(**contact_cfg), mdp, motion_dir, dev)
 Hh = ia["hist"]
 networks.AMP_DTYPE = torch.bfloat16 if a_.get("amp", "none") == "bf16" else None
-pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot).to(dev)
+pi = Policy(OBS_DIM, ctc.cmd_dim, hist=Hh, robot=robot,pose_action_skip=a_.get('pose_action_skip',False)).to(dev)
 pi.load_state_dict(ck["pi"])
 pi.eval()
 
@@ -86,7 +88,9 @@ if args.planner:
 C = len(motion.names)
 FOLDERS = sorted({n.split("/")[0] for n in motion.names})
 folder_of = torch.tensor([FOLDERS.index(n.split("/")[0]) for n in motion.names], device=dev)
-env = TrackingSim(C, motion, mdp, dev, eval_mode=True)
+from supermimic.acp.env import make_sim
+env = TrackingSim(C, motion, mdp, dev, eval_mode=True,
+                  sim_cfg=make_sim(robot=robot, physics_substeps=a_.get('physics_substeps')))
 
 
 @torch.no_grad()
@@ -102,6 +106,8 @@ def evaluate() -> dict:
     tv_win = torch.zeros(PLACE_WINDOW, C, NB, dtype=torch.bool, device=dev)
     place = []  # (C, NB) per step: placement error at new contacts, NaN elsewhere
     root_sq, root_max, joint_sq, counts, saturated, velocity_over = (torch.zeros(C, device=dev) for _ in range(6))
+    finite = torch.ones(C, dtype=torch.bool, device=dev)
+    per_joint_sq = torch.zeros(C, robot.num_joints, device=dev)
     effort = torch.tensor([robot.effort[robot.joint_names.index(env.sim.mj_model.joint(int(j)).name.rsplit("/", 1)[-1])]
                            for j in env.sim.mj_model.actuator_trnid[:, 0]], device=dev)
     velocity_limit = torch.tensor(robot.velocity, device=dev)
@@ -130,10 +136,13 @@ def evaluate() -> dict:
         ret += torch.where(alive, out["r"], 0.0)
         f1 = torch.minimum(out["f"] + 1, motion.clip_end[motion.clip_id[out["f"]]])
         S1 = env.state()
+        finite_now = torch.stack([x.flatten(1).isfinite().all(-1) for x in S1]).all(0) & a.isfinite().all(-1)
+        finite &= ~alive | finite_now
         root_error = (S1[0] - motion.root_p[f1]).norm(dim=-1)
         root_sq += torch.where(alive, root_error.square(), 0)
         root_max = torch.maximum(root_max, torch.where(alive, root_error, 0))
         joint_sq += torch.where(alive, (S1[4] - motion.q[f1]).square().mean(-1), 0)
+        per_joint_sq += torch.where(alive[:, None], (S1[4] - motion.q[f1]).square(), 0)
         saturated += ((env.sim.data.actuator_force.abs() >= .99 * effort) & alive[:, None]).sum(-1)
         velocity_over += ((S1[5].abs() > velocity_limit) & alive[:, None]).sum(-1)
         counts += alive
@@ -160,12 +169,16 @@ def evaluate() -> dict:
     failed = env.failed_eval.float()
     return {
         "ckpt": args.ckpt,
+        "checkpoint_sha256": checkpoint_sha256,
         "robot_metadata": robot.metadata(),
         "data_hash": motion.data_hash,
         "checkpoint_data_hash": ck.get("data_hash"),
         "evaluation_motion_dir": motion_dir,
         "seed": args.seed,
+        "per_joint_rmse_rad": {name: float((per_joint_sq[:, j].sum()/counts.sum().clamp(min=1)).sqrt())
+                               for j, name in enumerate(robot.joint_names)},
         "per_clip": {name: {"failed": bool(failed[i]), "alive_steps": int(counts[i]),
+                            "expected_steps": int(motion.clip_len[i]) - 1, "finite": bool(finite[i]),
                             "root_rmse_m": float((root_sq[i] / counts[i].clamp(min=1)).sqrt()),
                             "root_max_m": float(root_max[i]),
                             "joint_rmse_rad": float((joint_sq[i] / counts[i].clamp(min=1)).sqrt()),

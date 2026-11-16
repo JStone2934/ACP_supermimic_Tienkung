@@ -1,0 +1,23 @@
+{
+  "checkpoint_sha256": "0f044e814e75663e5aef8cb1a504afee4265e461be21c536556b5158b9111eaa",
+  "diagnostic_only": true,
+  "physical_acceptance": false,
+  "method": "Isolate a fixed-posture body controller from the independent aiming heads.",
+  "reference_raw_command_93_104": [
+    0.7143990397453308,
+    0.21757368743419647,
+    0.49048975110054016,
+    0.7922302484512329,
+    0.21316415071487427,
+    0.5717798471450806,
+    0.8608404397964478,
+    0.11074197292327881,
+    0.49667879939079285,
+    0.25,
+    0.25
+  ],
+  "body_equivalent_to_constant_aim_command": true,
+  "right_arm_actions_exact": true,
+  "normalizers_and_reset_exact": true,
+  "velocity_command_columns_preserved": true
+}

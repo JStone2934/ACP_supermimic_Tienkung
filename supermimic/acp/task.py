@@ -41,6 +41,10 @@ from ..rotations import rot_angle_sq
 
 @dataclass
 class ContactCfg:
+    reference_pose: bool = False
+    """Append the next reference joint pose during motion pretraining only.
+    A fixed pose can be supplied explicitly for reference-free standing tests.
+    """
     contacts_dir: str | None = None
     """supermimic.acp.make_labels output; default: the motion directory + ``_contacts``."""
     contact_geometry: str = "legacy"
@@ -318,7 +322,7 @@ class ContactTask:
         self.hulls = {b: {k:x.to(dev) for k,x in h.items()} for b,h in sp.hulls.items()}
         self.scan_offsets = grid_offsets(cfg.scan_x, cfg.scan_y, device=dev)
         self.goal_steps = (int(round(cfg.goal_s[0] / CONTROL_DT)), int(round(cfg.goal_s[1] / CONTROL_DT)))
-        self.cmd_dim = NB * 3 + 3 + (0 if cfg.blind else self.scan_offsets.shape[0])
+        self.cmd_dim = NB * 3 + 3 + (0 if cfg.blind else self.scan_offsets.shape[0]) + (mdp.num_joints if cfg.reference_pose else 0)
 
     # ---------------- commands ----------------
     def sample_goal_steps(self, n: int) -> torch.Tensor:
@@ -330,7 +334,8 @@ class ContactTask:
         return torch.where(v < self.V, v, 0)
 
     def command(self, S, f: torch.Tensor, v: torch.Tensor, goal_steps: torch.Tensor | None, noise: bool, targets_w: torch.Tensor | None = None,
-                valid: torch.Tensor | None = None, goal: torch.Tensor | None = None) -> torch.Tensor:  # fmt: skip
+                valid: torch.Tensor | None = None, goal: torch.Tensor | None = None,
+                reference_q: torch.Tensor | None = None) -> torch.Tensor:  # fmt: skip
         """(B, cmd_dim): next-contact targets, goal command (and local scan) of state S on reference frame f, terrain v.
         ``targets_w`` (B, 9, 3) world and ``valid`` (B, 9): targets from another source (the contact planner); ``goal``
         (B, 3): the goal command of goal reaching instead of the reference's."""
@@ -343,12 +348,18 @@ class ContactTask:
         tgt = torch.where(valid.unsqueeze(-1), tgt, 0.0)
         if goal is None:
             goal = self.reference_goal(S, f, goal_steps)
-        if c.blind:
-            return torch.cat((tgt.flatten(-2), goal), -1)
-        scan = height_scan(p, R, self.motion.boxes(f, v), self.scan_offsets)
-        if noise:
-            scan = scan + (2 * torch.rand_like(scan) - 1) * c.scan_noise
-        return torch.cat((tgt.flatten(-2), goal, scan), -1)
+        parts = [tgt.flatten(-2), goal]
+        if not c.blind:
+            scan = height_scan(p, R, self.motion.boxes(f, v), self.scan_offsets)
+            if noise:
+                scan = scan + (2 * torch.rand_like(scan) - 1) * c.scan_noise
+            parts.append(scan)
+        if c.reference_pose:
+            if reference_q is None:
+                next_frame = torch.minimum(f + 1, self.motion.clip_end[self.motion.clip_id[f]])
+                reference_q = self.motion.q[next_frame]
+            parts.append(reference_q)
+        return torch.cat(parts, -1)
 
     def reference_goal(self, S, f: torch.Tensor, goal_steps: torch.Tensor, radius: float | None = None) -> torch.Tensor:
         """(B, 3) the goal command of the reference root ``goal_steps`` ahead (capped at the clip's end)."""

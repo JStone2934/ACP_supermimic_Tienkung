@@ -1,0 +1,16 @@
+{
+  "checkpoint_sha256": "9d7a31312264cb8358341e74b82c9581f80787b2b546876ec482362753bb7568",
+  "source_sha256": "257cdebe57649f8aa1a3197770a6a47035ea45643df6b193dcb24b912cb97681",
+  "calibration": {
+    "method": "scalar gain on previously learned support feedback",
+    "gain": 4.0,
+    "changed_tensor": "enc.0.weight[:, :6]",
+    "all_other_policy_tensors_exact": true,
+    "zero_error_policy_unchanged": true,
+    "source_iteration": 300,
+    "optimizer_states_omitted": true,
+    "critic": "fresh if training starts from this artifact",
+    "acceptance": "Unaccepted candidate; requires exact-checkpoint full physical reports",
+    "physical_acceptance": false
+  }
+}

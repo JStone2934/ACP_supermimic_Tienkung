@@ -5,14 +5,14 @@ import torch
 
 STAGES = [
     dict(name='A', depth=[3., 3.], alpha=0., beta=0., rho=.20, aim_weight=0.),
-    dict(name='B1', depth=[3., 3.], alpha=0., beta=0., rho=.20, aim_weight=2.),
-    dict(name='B2', depth=[3., 3.], alpha=5., beta=3., rho=.20, aim_weight=2.),
-    dict(name='C1a', depth=[3., 3.], alpha=10., beta=6., rho=.20, aim_weight=2.),
-    dict(name='C1b', depth=[3., 3.], alpha=15., beta=10., rho=.20, aim_weight=2.),
-    dict(name='C2a', depth=[2.5, 3.5], alpha=15., beta=10., rho=.20, aim_weight=2.),
-    dict(name='C2b', depth=[2., 4.], alpha=15., beta=10., rho=.20, aim_weight=2.),
-    dict(name='C3a', depth=[2., 4.], alpha=15., beta=10., rho=.10, aim_weight=2.),
-    dict(name='C3b', depth=[2., 4.], alpha=15., beta=10., rho=.05, aim_weight=2.),
+    dict(name='B1', depth=[3., 3.], alpha=0., beta=0., rho=.20, aim_weight=4.),
+    dict(name='B2', depth=[3., 3.], alpha=5., beta=3., rho=.20, aim_weight=4.),
+    dict(name='C1a', depth=[3., 3.], alpha=10., beta=6., rho=.20, aim_weight=4.),
+    dict(name='C1b', depth=[3., 3.], alpha=15., beta=10., rho=.20, aim_weight=4.),
+    dict(name='C2a', depth=[2.5, 3.5], alpha=15., beta=10., rho=.20, aim_weight=4.),
+    dict(name='C2b', depth=[2., 4.], alpha=15., beta=10., rho=.20, aim_weight=4.),
+    dict(name='C3a', depth=[2., 4.], alpha=15., beta=10., rho=.10, aim_weight=4.),
+    dict(name='C3b', depth=[2., 4.], alpha=15., beta=10., rho=.05, aim_weight=4.),
 ]
 
 
@@ -34,7 +34,7 @@ class Curriculum:
     def state_dict(self):
         return dict(level=self.level, consecutive=self.consecutive, mastered=self.mastered)
 
-    def sample(self, n, aim_weight=2.):
+    def sample(self, n, aim_weight=4.):
         levels = torch.full((n,), self.level, device=self.device, dtype=torch.long)
         if self.level:
             levels[torch.rand(n, device=self.device) < .2] -= 1

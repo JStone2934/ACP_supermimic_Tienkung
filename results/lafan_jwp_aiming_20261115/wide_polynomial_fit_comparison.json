@@ -1,0 +1,30 @@
+{
+  "scope": "Offline regression diagnostic only; 60train15heldout IK solutions, not physical acceptance",
+  "source_sha256": "b3af999756a087f28716c5d957f16eeb503a9073b79a7a6a57469084684099c0",
+  "results": [
+    {
+      "degree": 1,
+      "feature_count": 4,
+      "condition_number": 6.787953165560609,
+      "train_rms_rad": 0.23721749707201836,
+      "heldout_rms_rad": 0.2655118094034653,
+      "heldout_max_abs_rad": 0.9544484281373004
+    },
+    {
+      "degree": 2,
+      "feature_count": 9,
+      "condition_number": 78.98556387359007,
+      "train_rms_rad": 0.14523492641671729,
+      "heldout_rms_rad": 0.23112474552913942,
+      "heldout_max_abs_rad": 0.9583745478678596
+    },
+    {
+      "degree": 3,
+      "feature_count": 16,
+      "condition_number": 1119.5693485178972,
+      "train_rms_rad": 0.09284738600154754,
+      "heldout_rms_rad": 0.1809460557593901,
+      "heldout_max_abs_rad": 0.784997944341103
+    }
+  ]
+}

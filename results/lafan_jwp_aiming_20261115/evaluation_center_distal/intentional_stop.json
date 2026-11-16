@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-16 09:54:15.440895",
+  "intentional": true,
+  "reason": "Transfer exact verified800policy into zero-initialized45parameter target-feature skip. Sustained center postgracehit fractions plateau near80% across400/600/800; weak frozen aiming features measured independently. Preserve earlycaptureimprovements andallbodyweights.",
+  "last_selected_checkpoint": "ckpt_000800.pt",
+  "selected_sha256": "39d395786d1c0b6ca1fa6834428a1f2f4071f1048fde44d5d28007ec57aaa641",
+  "cancelled_evaluations": [
+    1000,
+    1500
+  ],
+  "goal_still_active": true,
+  "next_plan": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/center_distal_skip_training_plan.json"
+}

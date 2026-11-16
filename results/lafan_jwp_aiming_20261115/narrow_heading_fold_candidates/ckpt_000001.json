@@ -1,0 +1,14 @@
+{
+  "checkpoint_sha256": "7edf6b27eead5a2d9e52e3433d0e931af373eb218c9851ce30023f520f8bb100",
+  "calibration": {
+    "method": "Fold the legacy relative-heading encoder input to zero for a narrow-target diagnostic.",
+    "command_column": 29,
+    "constant_raw_value": 0.0,
+    "original_with_explicit_fixed_input_max_pd_difference_rad": 2.384185791015625e-07,
+    "decoder_and_all_normalizers_exact": true,
+    "support_error_columns_exact": true,
+    "direct_target_feedback_head_exact": true,
+    "physical_acceptance": false,
+    "limitation": "Disables the legacy encoder heading response; intended only for narrow targets reachable by the distal arm. Wide-target turning remains unresolved."
+  }
+}

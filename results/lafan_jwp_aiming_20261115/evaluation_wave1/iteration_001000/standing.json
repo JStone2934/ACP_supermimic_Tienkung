@@ -1,0 +1,900 @@
+{
+  "robot_metadata": {
+    "robot_id": "tienkung3_29dof",
+    "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+    "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+    "joint_order": [
+      "hip_pitch_l_joint",
+      "hip_roll_l_joint",
+      "hip_yaw_l_joint",
+      "knee_pitch_l_joint",
+      "ankle_pitch_l_joint",
+      "ankle_roll_l_joint",
+      "hip_pitch_r_joint",
+      "hip_roll_r_joint",
+      "hip_yaw_r_joint",
+      "knee_pitch_r_joint",
+      "ankle_pitch_r_joint",
+      "ankle_roll_r_joint",
+      "waist_yaw_joint",
+      "waist_roll_joint",
+      "waist_pitch_joint",
+      "shoulder_pitch_l_joint",
+      "shoulder_roll_l_joint",
+      "shoulder_yaw_l_joint",
+      "elbow_pitch_l_joint",
+      "elbow_yaw_l_joint",
+      "wrist_pitch_l_joint",
+      "wrist_roll_l_joint",
+      "shoulder_pitch_r_joint",
+      "shoulder_roll_r_joint",
+      "shoulder_yaw_r_joint",
+      "elbow_pitch_r_joint",
+      "elbow_yaw_r_joint",
+      "wrist_pitch_r_joint",
+      "wrist_roll_r_joint"
+    ],
+    "control_dt": 0.02
+  },
+  "data_hash": "5b32b754f2e8637b9b8dd30b1bebab6dffa2bebb215de8379d18cc470f19178a",
+  "seed": 0,
+  "motion_dir": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_wave1/lafan_focus/validation/motions",
+  "contacts_dir": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/dataset_wave1/lafan_focus/validation/contacts",
+  "quiet_window_s": 1.0,
+  "unique_seed_count": 3,
+  "seeds": [
+    {
+      "clip": "lafan/walk1_subject2__f000002_000677",
+      "frame": 52,
+      "initial_q": [
+        -0.12654098868370056,
+        -0.008047226816415787,
+        0.2824558913707733,
+        0.5203663110733032,
+        -0.363321989774704,
+        0.044670335948467255,
+        -0.1911291778087616,
+        -0.15949752926826477,
+        -0.22390908002853394,
+        0.5759621858596802,
+        -0.3226422369480133,
+        0.08658983558416367,
+        0.004925628192722797,
+        -0.07033181935548782,
+        0.13503548502922058,
+        0.31705382466316223,
+        1.314380168914795,
+        0.472094863653183,
+        -0.6065883040428162,
+        0.20655940473079681,
+        0.0911356657743454,
+        0.5034942626953125,
+        0.16900666058063507,
+        -1.3042222261428833,
+        -0.6164783239364624,
+        -0.7223647236824036,
+        0.16561874747276306,
+        0.07701236754655838,
+        -0.29314228892326355
+      ],
+      "initial_height": 0.968482494354248,
+      "initial_quat": [
+        0.6744019389152527,
+        -0.010500190779566765,
+        -0.01695387251675129,
+        -0.7380950450897217
+      ]
+    },
+    {
+      "clip": "lafan/aiming2_subject3__f014559_015284",
+      "frame": 517,
+      "initial_q": [
+        0.09909491240978241,
+        0.2560555040836334,
+        0.4617998003959656,
+        0.43462979793548584,
+        -0.30867838859558105,
+        -0.18559081852436066,
+        0.06051371246576309,
+        -0.059691332280635834,
+        -0.26803725957870483,
+        0.41052961349487305,
+        -0.321927934885025,
+        0.07505932450294495,
+        -0.0254050362855196,
+        0.06349247694015503,
+        0.33568114042282104,
+        -0.08917605131864548,
+        0.19057349860668182,
+        -0.6957651376724243,
+        -0.5742276906967163,
+        0.018676377832889557,
+        0.20521706342697144,
+        0.4497135877609253,
+        -0.03511228412389755,
+        -0.19163185358047485,
+        0.6119675040245056,
+        -0.6383081674575806,
+        0.220587819814682,
+        0.28828102350234985,
+        -0.5684764981269836
+      ],
+      "initial_height": 0.9706758856773376,
+      "initial_quat": [
+        0.6488471031188965,
+        -0.05898989364504814,
+        -0.027345050126314163,
+        -0.7581358551979065
+      ]
+    },
+    {
+      "clip": "lafan/walk3_subject2__f000002_000557",
+      "frame": 27,
+      "initial_q": [
+        -0.26206734776496887,
+        -0.11019362509250641,
+        0.30419665575027466,
+        0.526890218257904,
+        -0.28291425108909607,
+        0.179751917719841,
+        -0.4038104712963104,
+        -0.21473468840122223,
+        -0.13782459497451782,
+        0.5578997135162354,
+        -0.11243437975645065,
+        0.10869981348514557,
+        0.04197593778371811,
+        -0.0674758106470108,
+        0.24009829759597778,
+        0.47620224952697754,
+        1.1454721689224243,
+        1.0615841150283813,
+        -1.0933281183242798,
+        -0.2100585550069809,
+        0.23653453588485718,
+        0.6297668814659119,
+        -0.09276095032691956,
+        -1.300585389137268,
+        -0.36604514718055725,
+        -0.8736526370048523,
+        0.22826431691646576,
+        0.09520953893661499,
+        -0.35317009687423706
+      ],
+      "initial_height": 0.9607190489768982,
+      "initial_quat": [
+        0.5978979468345642,
+        -0.006273702718317509,
+        -0.012940663844347,
+        -0.8014432191848755
+      ]
+    }
+  ],
+  "scope": "Independent 30-second standing check from quiet, double-support data poses.\n\nThe tracker receives fixed contact points and a fixed root goal. No future\nmotion frames enter its command. This is a reference-tracker stage gate, not\nacceptance of the eventual reference-free aiming policy.\n",
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/lafan_wave1_physics16/train/ckpt_001000.pt",
+  "checkpoint_sha256": "389a81fd40f8e4e561d08ec47d7ee28402403c42aa4020debcfa6143c77014f2",
+  "physics_substeps": 16,
+  "success_rate": 0.0,
+  "passed": false,
+  "scenario_count": 100,
+  "scenario_seed_ids": [
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0
+  ],
+  "reset_noise": {
+    "position_half_ranges": [
+      0.05,
+      0.05,
+      0.01
+    ],
+    "rotation_half_ranges_rad": [
+      0.1,
+      0.1,
+      0.2
+    ],
+    "joint_half_range_rad": 0.1,
+    "initial_velocity": "zero"
+  },
+  "continuous_without_reset": true,
+  "elapsed_sim_seconds": 0.7000000000000001,
+  "scenarios": [
+    {
+      "passed": false,
+      "max_root_drift_m": 0.06188013777136803,
+      "max_foot_drift_m": 0.15348196029663086,
+      "max_tilt_deg": 9.803353309631348
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3122309744358063,
+      "max_foot_drift_m": 0.5904266834259033,
+      "max_tilt_deg": 18.0334415435791
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.41604477167129517,
+      "max_foot_drift_m": 0.6626800894737244,
+      "max_tilt_deg": 13.844292640686035
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.04246838390827179,
+      "max_foot_drift_m": 0.10129249840974808,
+      "max_tilt_deg": 10.786712646484375
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.23737482726573944,
+      "max_foot_drift_m": 0.24166715145111084,
+      "max_tilt_deg": 7.454588890075684
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.31697219610214233,
+      "max_foot_drift_m": 0.4632800221443176,
+      "max_tilt_deg": 12.482505798339844
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.24265055358409882,
+      "max_foot_drift_m": 0.3793628513813019,
+      "max_tilt_deg": 11.255224227905273
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3703143000602722,
+      "max_foot_drift_m": 0.39186325669288635,
+      "max_tilt_deg": 9.355257034301758
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.4282954931259155,
+      "max_foot_drift_m": 0.9821537733078003,
+      "max_tilt_deg": 14.14338207244873
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.16377927362918854,
+      "max_foot_drift_m": 0.31744614243507385,
+      "max_tilt_deg": 15.064311981201172
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.39141929149627686,
+      "max_foot_drift_m": 0.3629424273967743,
+      "max_tilt_deg": 7.978851318359375
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.14283667504787445,
+      "max_foot_drift_m": 0.2481863647699356,
+      "max_tilt_deg": 8.490817070007324
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.21709822118282318,
+      "max_foot_drift_m": 0.24873699247837067,
+      "max_tilt_deg": 9.405691146850586
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.31185945868492126,
+      "max_foot_drift_m": 0.3940858244895935,
+      "max_tilt_deg": 10.37312126159668
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.17427502572536469,
+      "max_foot_drift_m": 0.4723726212978363,
+      "max_tilt_deg": 17.567384719848633
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.15051671862602234,
+      "max_foot_drift_m": 0.28474053740501404,
+      "max_tilt_deg": 8.981810569763184
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2880200147628784,
+      "max_foot_drift_m": 0.1936836540699005,
+      "max_tilt_deg": 7.866066932678223
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.1542394459247589,
+      "max_foot_drift_m": 0.3504202365875244,
+      "max_tilt_deg": 12.319280624389648
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2697537839412689,
+      "max_foot_drift_m": 0.36101558804512024,
+      "max_tilt_deg": 8.646382331848145
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.13923928141593933,
+      "max_foot_drift_m": 0.22217069566249847,
+      "max_tilt_deg": 9.504438400268555
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.40304306149482727,
+      "max_foot_drift_m": 0.6290809512138367,
+      "max_tilt_deg": 13.88071060180664
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3084348440170288,
+      "max_foot_drift_m": 0.5915105938911438,
+      "max_tilt_deg": 13.573305130004883
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.33179736137390137,
+      "max_foot_drift_m": 0.47083160281181335,
+      "max_tilt_deg": 8.90838623046875
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.05136509984731674,
+      "max_foot_drift_m": 0.11706395447254181,
+      "max_tilt_deg": 8.414262771606445
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.09464975446462631,
+      "max_foot_drift_m": 0.12165955454111099,
+      "max_tilt_deg": 9.073461532592773
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.23245398700237274,
+      "max_foot_drift_m": 0.3999185562133789,
+      "max_tilt_deg": 10.282735824584961
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.31472963094711304,
+      "max_foot_drift_m": 0.43651413917541504,
+      "max_tilt_deg": 12.070860862731934
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.23661769926548004,
+      "max_foot_drift_m": 0.5362916588783264,
+      "max_tilt_deg": 11.711019515991211
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2504977285861969,
+      "max_foot_drift_m": 0.40176573395729065,
+      "max_tilt_deg": 11.014724731445312
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.37811142206192017,
+      "max_foot_drift_m": 0.6422370076179504,
+      "max_tilt_deg": 14.135763168334961
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2892053425312042,
+      "max_foot_drift_m": 0.5116945505142212,
+      "max_tilt_deg": 12.506689071655273
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.33711814880371094,
+      "max_foot_drift_m": 0.27539530396461487,
+      "max_tilt_deg": 9.864639282226562
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.07145131379365921,
+      "max_foot_drift_m": 0.16187182068824768,
+      "max_tilt_deg": 14.116074562072754
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.36925002932548523,
+      "max_foot_drift_m": 0.5573167204856873,
+      "max_tilt_deg": 11.386624336242676
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.0880218893289566,
+      "max_foot_drift_m": 0.06789307296276093,
+      "max_tilt_deg": 11.703680992126465
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2839798927307129,
+      "max_foot_drift_m": 0.2879452705383301,
+      "max_tilt_deg": 12.14120864868164
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.24702730774879456,
+      "max_foot_drift_m": 0.4005129635334015,
+      "max_tilt_deg": 20.152713775634766
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.34877195954322815,
+      "max_foot_drift_m": 0.35439687967300415,
+      "max_tilt_deg": 8.438616752624512
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.05917259678244591,
+      "max_foot_drift_m": 0.0671728178858757,
+      "max_tilt_deg": 10.312003135681152
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.11970825493335724,
+      "max_foot_drift_m": 0.21426095068454742,
+      "max_tilt_deg": 10.491768836975098
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.404422789812088,
+      "max_foot_drift_m": 0.6035031080245972,
+      "max_tilt_deg": 16.98877716064453
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.28848740458488464,
+      "max_foot_drift_m": 0.5319819450378418,
+      "max_tilt_deg": 12.244129180908203
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.026999978348612785,
+      "max_foot_drift_m": 0.10016819834709167,
+      "max_tilt_deg": 8.99007511138916
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.06825512647628784,
+      "max_foot_drift_m": 0.0948440283536911,
+      "max_tilt_deg": 11.10654354095459
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.13718552887439728,
+      "max_foot_drift_m": 0.2819496989250183,
+      "max_tilt_deg": 12.456597328186035
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.28834283351898193,
+      "max_foot_drift_m": 0.5620105266571045,
+      "max_tilt_deg": 14.971939086914062
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2617689371109009,
+      "max_foot_drift_m": 0.3310128152370453,
+      "max_tilt_deg": 9.384603500366211
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.34442487359046936,
+      "max_foot_drift_m": 0.6512917280197144,
+      "max_tilt_deg": 16.61804962158203
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.21329742670059204,
+      "max_foot_drift_m": 0.37465041875839233,
+      "max_tilt_deg": 13.05224323272705
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.20890453457832336,
+      "max_foot_drift_m": 0.2646425664424896,
+      "max_tilt_deg": 12.301277160644531
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.22998864948749542,
+      "max_foot_drift_m": 0.44858506321907043,
+      "max_tilt_deg": 10.382088661193848
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.20455758273601532,
+      "max_foot_drift_m": 0.34814101457595825,
+      "max_tilt_deg": 10.232757568359375
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.40130284428596497,
+      "max_foot_drift_m": 0.49931785464286804,
+      "max_tilt_deg": 8.551800727844238
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.07574333995580673,
+      "max_foot_drift_m": 0.06885789334774017,
+      "max_tilt_deg": 9.476456642150879
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.24497073888778687,
+      "max_foot_drift_m": 0.48372402787208557,
+      "max_tilt_deg": 12.324753761291504
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.4155256450176239,
+      "max_foot_drift_m": 0.5720046162605286,
+      "max_tilt_deg": 15.071012496948242
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.05269338935613632,
+      "max_foot_drift_m": 0.10392653197050095,
+      "max_tilt_deg": 10.154973030090332
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2577257454395294,
+      "max_foot_drift_m": 0.4104538559913635,
+      "max_tilt_deg": 12.518952369689941
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3021389842033386,
+      "max_foot_drift_m": 0.4829886853694916,
+      "max_tilt_deg": 11.538349151611328
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.08090867102146149,
+      "max_foot_drift_m": 0.24627363681793213,
+      "max_tilt_deg": 8.518020629882812
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.24707470834255219,
+      "max_foot_drift_m": 0.3227613568305969,
+      "max_tilt_deg": 15.48110580444336
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3488537073135376,
+      "max_foot_drift_m": 0.3693074584007263,
+      "max_tilt_deg": 10.958853721618652
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.32514968514442444,
+      "max_foot_drift_m": 0.5125280618667603,
+      "max_tilt_deg": 15.11215877532959
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.12789738178253174,
+      "max_foot_drift_m": 0.15345031023025513,
+      "max_tilt_deg": 12.550957679748535
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.38540923595428467,
+      "max_foot_drift_m": 0.5641134977340698,
+      "max_tilt_deg": 16.784997940063477
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.42757201194763184,
+      "max_foot_drift_m": 0.6394397020339966,
+      "max_tilt_deg": 14.858854293823242
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.24549832940101624,
+      "max_foot_drift_m": 0.4772464632987976,
+      "max_tilt_deg": 13.114701271057129
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.025786638259887695,
+      "max_foot_drift_m": 0.11277062445878983,
+      "max_tilt_deg": 10.335404396057129
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.16086642444133759,
+      "max_foot_drift_m": 0.3427453935146332,
+      "max_tilt_deg": 12.733816146850586
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.24140983819961548,
+      "max_foot_drift_m": 0.28074806928634644,
+      "max_tilt_deg": 8.479962348937988
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.42057061195373535,
+      "max_foot_drift_m": 0.734651505947113,
+      "max_tilt_deg": 10.599381446838379
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.34411299228668213,
+      "max_foot_drift_m": 0.5545859336853027,
+      "max_tilt_deg": 16.067264556884766
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.18565407395362854,
+      "max_foot_drift_m": 0.20347289741039276,
+      "max_tilt_deg": 8.461740493774414
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3771738111972809,
+      "max_foot_drift_m": 0.5861107110977173,
+      "max_tilt_deg": 7.917479515075684
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3191669285297394,
+      "max_foot_drift_m": 0.8926966786384583,
+      "max_tilt_deg": 23.47284507751465
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.14468775689601898,
+      "max_foot_drift_m": 0.15557686984539032,
+      "max_tilt_deg": 15.67760181427002
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3690369129180908,
+      "max_foot_drift_m": 0.41817599534988403,
+      "max_tilt_deg": 7.685437202453613
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2023119479417801,
+      "max_foot_drift_m": 0.5264463424682617,
+      "max_tilt_deg": 18.77984619140625
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.10433992743492126,
+      "max_foot_drift_m": 0.05059570446610451,
+      "max_tilt_deg": 7.878782749176025
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.4191417694091797,
+      "max_foot_drift_m": 0.525055468082428,
+      "max_tilt_deg": 13.783792495727539
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.20891623198986053,
+      "max_foot_drift_m": 0.39054059982299805,
+      "max_tilt_deg": 16.846315383911133
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.29185375571250916,
+      "max_foot_drift_m": 0.5481219291687012,
+      "max_tilt_deg": 29.142717361450195
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2595590054988861,
+      "max_foot_drift_m": 0.3657325208187103,
+      "max_tilt_deg": 13.085982322692871
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.11759287863969803,
+      "max_foot_drift_m": 0.12218846380710602,
+      "max_tilt_deg": 7.351858615875244
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2305455356836319,
+      "max_foot_drift_m": 0.2910383641719818,
+      "max_tilt_deg": 13.452610969543457
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.41483956575393677,
+      "max_foot_drift_m": 0.43594688177108765,
+      "max_tilt_deg": 9.559686660766602
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.4299972951412201,
+      "max_foot_drift_m": 0.6894368529319763,
+      "max_tilt_deg": 13.400531768798828
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.20682451128959656,
+      "max_foot_drift_m": 0.2810882031917572,
+      "max_tilt_deg": 10.761575698852539
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.34939664602279663,
+      "max_foot_drift_m": 0.528717577457428,
+      "max_tilt_deg": 17.474374771118164
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.4469389021396637,
+      "max_foot_drift_m": 0.6787106990814209,
+      "max_tilt_deg": 14.338253021240234
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.30914485454559326,
+      "max_foot_drift_m": 0.5505850315093994,
+      "max_tilt_deg": 15.919332504272461
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.368754506111145,
+      "max_foot_drift_m": 0.52800452709198,
+      "max_tilt_deg": 15.207764625549316
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.09846539050340652,
+      "max_foot_drift_m": 0.12536247074604034,
+      "max_tilt_deg": 9.203851699829102
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.07332814484834671,
+      "max_foot_drift_m": 0.18343600630760193,
+      "max_tilt_deg": 9.837972640991211
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.41805174946784973,
+      "max_foot_drift_m": 0.680625855922699,
+      "max_tilt_deg": 11.747708320617676
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.0544549897313118,
+      "max_foot_drift_m": 0.1039101630449295,
+      "max_tilt_deg": 9.050107955932617
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2606273889541626,
+      "max_foot_drift_m": 0.5210921168327332,
+      "max_tilt_deg": 15.228994369506836
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.21824535727500916,
+      "max_foot_drift_m": 0.2602517008781433,
+      "max_tilt_deg": 7.098874568939209
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.3082630932331085,
+      "max_foot_drift_m": 0.5553398132324219,
+      "max_tilt_deg": 17.224090576171875
+    },
+    {
+      "passed": false,
+      "max_root_drift_m": 0.2277965396642685,
+      "max_foot_drift_m": 0.4504440128803253,
+      "max_tilt_deg": 11.229825019836426
+    }
+  ]
+}

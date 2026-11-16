@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 3,
+      "pi": 3,
+      "critic": 3
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 759581184,
+        "torch_peak_reserved": 926941184,
+        "device_used": 14761263104,
+        "warp_pool_used": 317534695,
+        "warp_pool_peak": 317535655
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 759581184,
+        "torch_peak_reserved": 926941184,
+        "device_used": 14380761088,
+        "warp_pool_used": 317534695,
+        "warp_pool_peak": 317535655
+      }
+    ],
+    "state_sha256": "ef1f8599a8548aed1e41663af4e4d86bce568915fda10f7e98663ce8c15dc7d6"
+  },
+  "scope": "Diagnostic only; do not use smoke checkpoint for formal training"
+}

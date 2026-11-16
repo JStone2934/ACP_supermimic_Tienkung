@@ -1,0 +1,21 @@
+{
+  "scale": 0.25,
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/stance_bias_candidates/inward_0.25.pt",
+  "checkpoint_sha256": "53c7300ae2bd7248b723e53371f5b67a0a17522db51079d4562a100e43d72ca0",
+  "passed": true,
+  "reports": [
+    {
+      "seed": 17,
+      "passed": true,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.97
+    },
+    {
+      "seed": 53,
+      "passed": true,
+      "fixed_grid_all_pass": true,
+      "random_success_rate": 0.98
+    }
+  ],
+  "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+}

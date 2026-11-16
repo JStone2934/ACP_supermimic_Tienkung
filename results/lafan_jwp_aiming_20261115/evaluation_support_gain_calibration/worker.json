@@ -1,0 +1,21 @@
+{
+  "checkpoints": [
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_1.5.pt",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_2.pt",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_3.pt",
+    "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/support_gain_candidates/gain_4.pt"
+  ],
+  "seeds": [
+    17,
+    53
+  ],
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "fixed_count": 1,
+  "random_count": 100,
+  "seconds": 30,
+  "stop_after_first_passing_gain": true,
+  "scope": "Balance-stage development calibration; no final aiming or moving acceptance."
+}

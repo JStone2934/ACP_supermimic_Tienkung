@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "scope": "Formal artifact identity, finite values, distributed synchronization and frozen policy preservation. Not physical policy acceptance.",
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/support_error_adapter/train/ckpt_000250.pt",
+  "checkpoint_sha256": "de2d0d01ead358459718fc5e876ae9cf6d300abf16f75a290abe3d7755762436",
+  "initialization_sha256": "52fb9962f243b3ad4cc4a5765932e2ded68df756f1cb5a14d1247ec042685dc7",
+  "iteration": 250,
+  "updates": {
+    "wm": 2500,
+    "critic": 3000,
+    "pi": 50
+  },
+  "all_previous_policy_tensors_preserved": true,
+  "new_columns_changed": true,
+  "new_columns_l2_norm": 0.34465980529785156,
+  "new_columns_max_abs": 0.005178488325327635,
+  "all_weights_finite": {
+    "pi": true,
+    "wm": true,
+    "critic": true
+  },
+  "world_size": 2,
+  "state_sha256": "9991dfccca0afc4e570b9df943e4295c3cc27e6e10b886c5353ed3788edbda65",
+  "model_ready": true,
+  "policy_acceptance": false
+}

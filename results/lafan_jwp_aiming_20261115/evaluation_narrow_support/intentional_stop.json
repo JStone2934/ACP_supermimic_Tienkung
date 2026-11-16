@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-16 11:14:22.034226",
+  "reason": "User explicitly requested setting aside current fall scenarios and proceeding; exact400weights transferred tolevel3 with recorded exceptions",
+  "source": "medium_user_exception_transfer/ckpt_000001.pt",
+  "source_sha256": "5904ae9f4fe68a9d0ebd6ca9876a05c2cb24c07e57a81050139672175b0ef609",
+  "cancelled_future_evaluations": [
+    600,
+    1000
+  ],
+  "native_goal_active": true
+}

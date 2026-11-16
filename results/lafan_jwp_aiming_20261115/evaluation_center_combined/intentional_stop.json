@@ -1,0 +1,42 @@
+{
+  "time": "2026-11-16 08:46:35.385434",
+  "reason": "Full400 evaluation worsened both balance(44/101,41/101) and aim(error medians1.22m/1.21m) against source250(94/101each,error~.64m)",
+  "last_status": {
+    "iteration": 475,
+    "phase": "joint",
+    "level": 1,
+    "stage": "center",
+    "sim_reward": 0.22545462846755981,
+    "physical_termination_fraction": 0.0013020833721384406,
+    "physical_timeout_fraction": 0.0,
+    "mean_physical_episode_age_s": 5.370728969573975,
+    "completed_physical_episodes": 8,
+    "mean_completed_physical_episode_s": 5.90749979019165,
+    "observed_support_locked_fraction": 0.94140625,
+    "wm_loss": 0.0011974641820415854,
+    "model_ready": true,
+    "critic_warmup_done": 100,
+    "updates": {
+      "wm": 4750,
+      "critic": 7500,
+      "pi": 275
+    },
+    "elapsed_s": 1143.89742815902,
+    "actor_loss": -15.666374206542969,
+    "critic_loss": 0.06934050470590591,
+    "actor_grad": 4.568877696990967,
+    "critic_grad": 3.975982666015625,
+    "actor_value_gradient": 0.0,
+    "imagined_reward_objective": 5.336352348327637,
+    "bootstrap_objective": 10.330022811889648,
+    "bootstrap_max": 27.62309455871582,
+    "return_target_max": 27.60794448852539
+  },
+  "comparison": "center_combined400_comparison.json",
+  "cancelled_future_evaluations": [
+    600,
+    1000,
+    1500
+  ],
+  "policy_acceptance": false
+}
