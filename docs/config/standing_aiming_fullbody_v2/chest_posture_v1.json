@@ -1,0 +1,19 @@
+{
+  "scope": "Configuration patch for a NEW upright-body branch; do not apply as a reward-only resume of old weights",
+  "chest_posture": {
+    "normal_limit_deg": 10.0,
+    "low_target_limit_deg": 25.0,
+    "low_target_start_deg": -15.0,
+    "low_target_full_deg": -30.0,
+    "lateral_limit_deg": 10.0,
+    "backward_limit_deg": 10.0,
+    "hard_limit_deg": 35.0,
+    "reward_scale_deg": 10.0,
+    "grace_seconds": 3.0,
+    "required_fraction": 0.95
+  },
+  "reward_weights": {
+    "chest_upright": 2.0,
+    "chest_excess": -2.0
+  }
+}

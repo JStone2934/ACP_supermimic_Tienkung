@@ -1,0 +1,23 @@
+{
+  "iteration": 1825,
+  "phase": "wm_gate",
+  "level": 0,
+  "stage": "balance",
+  "sim_reward": -0.01924552395939827,
+  "physical_termination_fraction": 0.02099609375,
+  "physical_timeout_fraction": 0.0,
+  "mean_physical_episode_age_s": 0.45192059874534607,
+  "completed_physical_episodes": 129,
+  "mean_completed_physical_episode_s": 0.8942635655403137,
+  "observed_support_locked_fraction": 0.0,
+  "wm_loss": 0.039740417152643204,
+  "model_ready": false,
+  "critic_warmup_done": 200,
+  "updates": {
+    "wm": 18250,
+    "distill": 1000,
+    "critic": 6000,
+    "pi": 100
+  },
+  "elapsed_s": 2350.4423155699988
+}

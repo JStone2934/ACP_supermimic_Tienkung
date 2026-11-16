@@ -1,0 +1,93 @@
+{
+  "status": "posture_gate_model_adaptation",
+  "goal_status": "active",
+  "requirement": "Keep torso upright whenever special aiming posture is unnecessary; allow bounded forward lean for low targets while always preferring upright",
+  "settings_provisional": true,
+  "final_posture_settings": {
+    "normal_limit_deg": 10.0,
+    "low_target_limit_deg": 25.0,
+    "low_target_start_deg": -15.0,
+    "low_target_full_deg": -30.0,
+    "lateral_limit_deg": 10.0,
+    "backward_limit_deg": 10.0,
+    "hard_limit_deg": 35.0,
+    "reward_scale_deg": 10.0,
+    "grace_seconds": 3.0,
+    "required_fraction": 0.95
+  },
+  "original_acceptance_preserved": true,
+  "additional_acceptance": [
+    "Separate pelvis and chest orientation",
+    "Shared initial pose must satisfy normal chest limit",
+    "After3s adjustment at each target switch, chest posture compliance>=95%",
+    "Hard chest tilt<=35deg throughout; normal<=10deg; low-target allowance ramps15deg extra between elevations-15 and-30",
+    "Sideways/backward lean remain<=10deg; return upright when target rises",
+    "Final export and moving initialization require new chest evidence; old pelvis-only reports insufficient"
+  ],
+  "training_order": [
+    "Preserve existing LAFAN thenJWP provenance and all existing weights as historical baselines.",
+    "Choose/reconstruct an upright ready pose using native torso FK; solve waist/hip/knee/ankle together with foot contact, COM, joint limits and gravity checks. Do not merely zero waist angle or reuse31deg ready pose.",
+    "Train upright standing in a new branch with revised posture rewards and fresh critic/model adaptation; verify shared-body capacity, unfreeze appropriate layers in stages if needed. Do not resume rejected body-output-only branch.",
+    "Re-establish arm reachability and recalibrate/retrain aiming for the NEW upright geometry; old bent-pose head is not presumed valid. Center targets then widen range,5cm precision and switching.",
+    "Run unchanged standing and moving criteria plus chest posture checks on fresh independent seeds; supply upright/default and low-target/return-to-upright videos."
+  ],
+  "curriculum_note": "May use looser posture limits only in explicitly labeled training stages; final exporter rejects them.",
+  "existing_policy_status": "No current policy accepted against the new posture requirement",
+  "tests": {
+    "command": "python -m unittest tools.test_chest_posture tools.test_aiming_fullbody tools.test_aiming_moving tools.test_moving_curriculum -q",
+    "passed": 24
+  },
+  "scope": "Formal new branch; no policy acceptance yet",
+  "pose_scan": {
+    "clips": 565,
+    "frames": 333718,
+    "stable_window_frames": 2152,
+    "candidates": 35,
+    "geometry_passed": 26
+  },
+  "user_selects_ready_pose": true,
+  "gallery_complete": true,
+  "awaiting_user_pose_selection": false,
+  "blocker": null,
+  "gallery": "pose_gallery/index.html",
+  "selected_pose": {
+    "gallery": "jwp_random_candidates/pose_gallery/index.html",
+    "id": "01",
+    "source": "jwp/take006_chr00",
+    "frame": 452,
+    "selection": "explicit user choice"
+  },
+  "ready_pose": "take006_ready/ready_pose.npz",
+  "repair_evidence": "take006_ready/repair.json",
+  "dynamic_evidence": "take006_ready/pd_native_branch16_compensated.json",
+  "next_step": "Diagnose decomposed reward gradient and physical trajectory tradeoffs before new training; preserve chosen take006 reference and strict acceptance",
+  "active_training": "take006-posture-gate-adaptation.service",
+  "runner": "frozen_take006_upright_v4",
+  "smoke_evidence": "take006_smoke_verification.json",
+  "training_log": "logs/tienkung3_29dof/lafan_jwp_20261115/take006_posture_gate/train",
+  "last_verified_iteration": 1800,
+  "critic_warmup_done": 200,
+  "world_model_validation": "logs/tienkung3_29dof/lafan_jwp_20261115/take006_upright/train/wm_validation/001700.json",
+  "last_physical_evaluation": {
+    "branch": "rewardonly",
+    "iteration": 1750,
+    "seeds": [
+      17,
+      53
+    ],
+    "scenarios": 202,
+    "terminated": 0,
+    "standing_pass": 0,
+    "chest_pass": 0,
+    "accepted": false
+  },
+  "active_evaluation": null,
+  "stop_reason": "After100 actor updates mean completed physical episode .808s; stop experiment at saved1800 and independently evaluate; goal remains active",
+  "recovery_source_iteration": 1700,
+  "actor_value_gradient": 0,
+  "actor_lr": 2e-06,
+  "experiment_scope": "Combined recovery intervention, not isolated causal comparison; physical evaluation required",
+  "warmup_updates": 200,
+  "maximum_following_actor_updates": 25,
+  "wm_posture_p95_limit_deg": 2.0
+}

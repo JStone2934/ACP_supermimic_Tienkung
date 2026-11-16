@@ -1,0 +1,266 @@
+{
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/take006_upright/train/ckpt_001800.pt",
+  "scope": "CPU eager; two nominal initial states, frozen production runner; output-layer gradients, not replay-distribution or compiled audit",
+  "config": {
+    "curriculum_level": 0,
+    "policy_training_scope": "full",
+    "actor_value_gradient": null,
+    "soft_termination_mode": "compact",
+    "bound_value_bootstrap": true
+  },
+  "terms": {
+    "aim": {
+      "value": 0.1267586499452591,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 0.5546467900276184,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      }
+    },
+    "root": {
+      "value": 0.9999487400054932,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 0.014402400702238083,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.000576095946598798,
+        "finite": true
+      }
+    },
+    "feet": {
+      "value": 0.7680751085281372,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 11.257767677307129,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      }
+    },
+    "height": {
+      "value": 0.9940614104270935,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 1.6757665872573853,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.033515311777591705,
+        "finite": true
+      }
+    },
+    "upright": {
+      "value": 0.8242055773735046,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 11.627115249633789,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.23254236578941345,
+        "finite": true
+      }
+    },
+    "velocity": {
+      "value": 0.22435949742794037,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 39.00519561767578,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.7801035642623901,
+        "finite": true
+      }
+    },
+    "angular_velocity": {
+      "value": 0.02362227812409401,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 3.0925240516662598,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.012370098382234573,
+        "finite": true
+      }
+    },
+    "foot_velocity": {
+      "value": 0.0007330861990340054,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 0.04792109131813049,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.0004792108666151762,
+        "finite": true
+      }
+    },
+    "heading": {
+      "value": 0.9997369647026062,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 1.1836332082748413,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      }
+    },
+    "foot_boundary": {
+      "value": 0.0,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      }
+    },
+    "action_rate": {
+      "value": 111.11946868896484,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 2209.7890625,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 4.419579029083252,
+        "finite": true
+      }
+    },
+    "joint_limit": {
+      "value": 0.00491579994559288,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 3.282480239868164,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.1312991976737976,
+        "finite": true
+      }
+    },
+    "chest_upright": {
+      "value": 0.9060221314430237,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 7.421192169189453,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.29684773087501526,
+        "finite": true
+      }
+    },
+    "chest_excess": {
+      "value": 0.0,
+      "raw_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      },
+      "weighted_gradient": {
+        "requires_grad": true,
+        "norm": 0.0,
+        "finite": true
+      }
+    }
+  },
+  "aim_if_enabled": {
+    "requires_grad": true,
+    "norm": 0.044371746480464935,
+    "finite": true
+  },
+  "action_clip": {
+    "saturated_count": 16,
+    "total": 58,
+    "zero_derivative_count": 16,
+    "request_limit_weight": 0.0
+  },
+  "soft_termination": [
+    {
+      "tilt_deg": 0.0,
+      "failure": 0.0,
+      "derivative_per_rad": 0.0
+    },
+    {
+      "tilt_deg": 28.0,
+      "failure": 0.0,
+      "derivative_per_rad": 0.0
+    },
+    {
+      "tilt_deg": 29.0,
+      "failure": 0.14364856481552124,
+      "derivative_per_rad": 30.286285400390625
+    },
+    {
+      "tilt_deg": 30.0,
+      "failure": 0.47733157873153687,
+      "derivative_per_rad": 42.94127655029297
+    },
+    {
+      "tilt_deg": 31.0,
+      "failure": 0.8308489918708801,
+      "derivative_per_rad": 34.18290328979492
+    },
+    {
+      "tilt_deg": 32.0,
+      "failure": 1.0,
+      "derivative_per_rad": 0.0001158458981080912
+    },
+    {
+      "tilt_deg": 35.0,
+      "failure": 1.0,
+      "derivative_per_rad": 0.0
+    }
+  ],
+  "rollout32": {
+    "reward": 1.5910649299621582,
+    "tail": 5.379070281982422,
+    "survival": [
+      1.0,
+      1.0
+    ],
+    "reward_gradient": {
+      "requires_grad": true,
+      "norm": 135.8558349609375,
+      "finite": true
+    },
+    "tail_gradient": {
+      "requires_grad": true,
+      "norm": 1661.316162109375,
+      "finite": true
+    },
+    "combined_gradient": {
+      "requires_grad": true,
+      "norm": 1700.05810546875,
+      "finite": true
+    }
+  }
+}

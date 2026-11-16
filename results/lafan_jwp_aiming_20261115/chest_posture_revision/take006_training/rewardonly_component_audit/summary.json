@@ -1,0 +1,30 @@
+{
+  "comparison": "1700 source -> rewardonly recovery1750 (25actor updates; fullscope lr2e-6 actorvalue0)",
+  "fixed_wm": 1700,
+  "horizon": 32,
+  "starts16": true,
+  "total_predicted_reward_before": 2.8978479094803333,
+  "total_predicted_reward_after": 3.424245249480009,
+  "delta_theta_norm": 0.3732852637767792,
+  "reward_gradient_norm": 38.608238220214844,
+  "reward_update_dot": 1.8183093070983887,
+  "chest_update_dots": {
+    "chest_upright": 0.5712929964065552,
+    "chest_excess": 1.0192419290542603
+  },
+  "pelvis_update_dot": -0.029285846278071404,
+  "interpretation": "Small imagined pelvis-upright sacrifice for large chest improvement is present. However the rewardonly policy does NOT sacrifice imagined chest reward; both chest terms improve strongly. Separate exact-action H32 physical replay shows source WM becomes systematically optimistic on chest and pessimistic on pelvis after policy shift, so model mismatch is demonstrated and chest reward tradeoff alone cannot explain failure.",
+  "paired_action_chest_mae_before_deg": 0.10387778282165527,
+  "paired_action_chest_mae_after_deg": 2.350691795349121,
+  "minimal_next_step": [
+    "Keep immutable1700 source and actorvalue0; add chest/pelvis orientation errors to actual same-action WM validation. Root/feet positional gates alone miss this orientation shift.",
+    "Proposed diagnostic gate: chest/pelvis H32 MAE <=1deg and P95 <=2deg on fresh current-policy trajectories; these are proposed additional gates, not existing acceptance changes.",
+    "When gate fails, freeze actor and adapt WM on current-policy physical replay, then revalidate orientations before another <=25update actor block. Record per-joint fixed-state action change as policy trust diagnostic.",
+    "Do not first increase chest reward weight: this actor update already follows strong imagined chest gradients; stronger weighting could increase exploitation of the same inaccurate directional response."
+  ],
+  "limits": [
+    "Closed-loop source-window chest prediction1.329deg is on old1700 real starts; physical1750 evaluation chest17+deg is on its own evolving states. They are not an exact paired physical closed-loop counterfactual.",
+    "Exact-action matched replay isolates forward prediction mismatch, not policy-gradient Jacobian error or individual update causality.",
+    "WM validation includes recorded exploration actions, distinct from deterministic30s evaluation."
+  ]
+}

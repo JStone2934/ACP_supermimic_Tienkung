@@ -1,0 +1,1472 @@
+[
+  {
+    "candidate": 1,
+    "key": "lafan/walk2_subject1__f003144_004807",
+    "frame50": 4154,
+    "time_s": 83.08,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk2_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3/motions/lafan/walk2_subject1__f003144_004807_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 59.9307746887207,
+        "elbow_bend_deg": 27.655702590942383,
+        "shoulder_wrist_distance_m": 0.41026976704597473
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 65.7155532836914,
+        "elbow_bend_deg": 82.78531646728516,
+        "shoulder_wrist_distance_m": 0.322187602519989
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 58.73171615600586,
+        "elbow_bend_deg": 29.892406463623047,
+        "shoulder_wrist_distance_m": 0.4084247946739197
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 63.20512771606445,
+        "elbow_bend_deg": 85.0771255493164,
+        "shoulder_wrist_distance_m": 0.3171807825565338
+      }
+    },
+    "max_arm_joint_change_deg": 2.724963665008545,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -1.8505542278289795,
+      "shoulder_roll_l_joint": 2.724963665008545,
+      "shoulder_yaw_l_joint": -1.1037994623184204,
+      "elbow_pitch_l_joint": -2.1734821796417236,
+      "elbow_yaw_l_joint": 1.8771612644195557,
+      "wrist_pitch_l_joint": -0.6674690842628479,
+      "wrist_roll_l_joint": -0.9751827716827393,
+      "shoulder_pitch_r_joint": -1.6817137002944946,
+      "shoulder_roll_r_joint": 0.5630397796630859,
+      "shoulder_yaw_r_joint": 0.9489557147026062,
+      "elbow_pitch_r_joint": -2.3960437774658203,
+      "elbow_yaw_r_joint": -0.315677672624588,
+      "wrist_pitch_r_joint": 1.132994294166565,
+      "wrist_roll_r_joint": 2.211782455444336
+    }
+  },
+  {
+    "candidate": 2,
+    "key": "lafan/aiming2_subject2__f000002_002243",
+    "frame50": 20,
+    "time_s": 0.4,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/aiming2_subject2.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_first2_v4/motions/lafan/aiming2_subject2__f000002_002243_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.3319358825683594,
+        "elbow_bend_deg": 11.793010711669922,
+        "shoulder_wrist_distance_m": 0.41957104206085205
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 5.19231653213501,
+        "elbow_bend_deg": 12.202561378479004,
+        "shoulder_wrist_distance_m": 0.41967782378196716
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 0.7561848163604736,
+        "elbow_bend_deg": 12.86978530883789,
+        "shoulder_wrist_distance_m": 0.41916221380233765
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 5.790006637573242,
+        "elbow_bend_deg": 13.20707893371582,
+        "shoulder_wrist_distance_m": 0.4192972183227539
+      }
+    },
+    "max_arm_joint_change_deg": 1.0919286012649536,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.1992092877626419,
+      "shoulder_roll_l_joint": 1.0861434936523438,
+      "shoulder_yaw_l_joint": 0.09233732521533966,
+      "elbow_pitch_l_joint": -1.0919286012649536,
+      "elbow_yaw_l_joint": -0.06830402463674545,
+      "wrist_pitch_l_joint": 0.05960022658109665,
+      "wrist_roll_l_joint": -0.3367897868156433,
+      "shoulder_pitch_r_joint": -0.6951356530189514,
+      "shoulder_roll_r_joint": 0.9463568329811096,
+      "shoulder_yaw_r_joint": 0.055467963218688965,
+      "elbow_pitch_r_joint": -0.9844863414764404,
+      "elbow_yaw_r_joint": 0.31187838315963745,
+      "wrist_pitch_r_joint": -0.0758330225944519,
+      "wrist_roll_r_joint": 0.41416898369789124
+    }
+  },
+  {
+    "candidate": 3,
+    "key": "lafan/walk1_subject1__f000004_000479",
+    "frame50": 75,
+    "time_s": 1.5,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk1_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/motions/lafan/walk1_subject1__f000004_000479_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.9229800701141357,
+        "elbow_bend_deg": 4.993241310119629,
+        "shoulder_wrist_distance_m": 0.42120370268821716
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 4.8827128410339355,
+        "elbow_bend_deg": 0.47229820489883423,
+        "shoulder_wrist_distance_m": 0.42154747247695923
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.044166326522827,
+        "elbow_bend_deg": 4.139240741729736,
+        "shoulder_wrist_distance_m": 0.42116740345954895
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 4.513274192810059,
+        "elbow_bend_deg": 0.4592754542827606,
+        "shoulder_wrist_distance_m": 0.4214906096458435
+      }
+    },
+    "max_arm_joint_change_deg": 1.3980576992034912,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -1.148380160331726,
+      "shoulder_roll_l_joint": -0.3047288656234741,
+      "shoulder_yaw_l_joint": -0.390031099319458,
+      "elbow_pitch_l_joint": -1.1311842203140259,
+      "elbow_yaw_l_joint": -0.6647669076919556,
+      "wrist_pitch_l_joint": 1.0419316291809082,
+      "wrist_roll_l_joint": -0.09224895387887955,
+      "shoulder_pitch_r_joint": -1.2847106456756592,
+      "shoulder_roll_r_joint": -0.6899993419647217,
+      "shoulder_yaw_r_joint": 1.3980576992034912,
+      "elbow_pitch_r_joint": -0.13753950595855713,
+      "elbow_yaw_r_joint": -0.21983645856380463,
+      "wrist_pitch_r_joint": 0.3996906876564026,
+      "wrist_roll_r_joint": 0.39251047372817993
+    }
+  },
+  {
+    "candidate": 4,
+    "key": "lafan/dance2_subject5__f000002_000282",
+    "frame50": 23,
+    "time_s": 0.46,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject5.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject5__f000002_000282_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.0902737379074097,
+        "elbow_bend_deg": 10.154778480529785,
+        "shoulder_wrist_distance_m": 0.419005423784256
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.7030740976333618,
+        "elbow_bend_deg": 2.673055410385132,
+        "shoulder_wrist_distance_m": 0.4216598868370056
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.1490834951400757,
+        "elbow_bend_deg": 10.305513381958008,
+        "shoulder_wrist_distance_m": 0.4189218282699585
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.7276394963264465,
+        "elbow_bend_deg": 2.6507747173309326,
+        "shoulder_wrist_distance_m": 0.4216840863227844
+      }
+    },
+    "max_arm_joint_change_deg": 0.19173192977905273,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.05476103723049164,
+      "shoulder_roll_l_joint": -0.08560958504676819,
+      "shoulder_yaw_l_joint": 0.06525220721960068,
+      "elbow_pitch_l_joint": 0.11546135693788528,
+      "elbow_yaw_l_joint": -0.01727183908224106,
+      "wrist_pitch_l_joint": 0.17035174369812012,
+      "wrist_roll_l_joint": 0.1828245222568512,
+      "shoulder_pitch_r_joint": 0.0010040377965196967,
+      "shoulder_roll_r_joint": 0.045311473309993744,
+      "shoulder_yaw_r_joint": 0.009227585047483444,
+      "elbow_pitch_r_joint": 0.023275576531887054,
+      "elbow_yaw_r_joint": -0.0178208164870739,
+      "wrist_pitch_r_joint": -0.19173192977905273,
+      "wrist_roll_r_joint": 0.06901222467422485
+    }
+  },
+  {
+    "candidate": 5,
+    "key": "lafan/walk1_subject1__f004361_006094",
+    "frame50": 5983,
+    "time_s": 119.66,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk1_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/motions/lafan/walk1_subject1__f004361_006094_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 68.26532745361328,
+        "elbow_bend_deg": 21.62934112548828,
+        "shoulder_wrist_distance_m": 0.41515693068504333
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 76.88041687011719,
+        "elbow_bend_deg": 15.571304321289062,
+        "shoulder_wrist_distance_m": 0.41857779026031494
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 67.09562683105469,
+        "elbow_bend_deg": 23.461591720581055,
+        "shoulder_wrist_distance_m": 0.4139210283756256
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 75.94214630126953,
+        "elbow_bend_deg": 18.262617111206055,
+        "shoulder_wrist_distance_m": 0.4172002673149109
+      }
+    },
+    "max_arm_joint_change_deg": 2.890747547149658,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.42570945620536804,
+      "shoulder_roll_l_joint": 0.15402375161647797,
+      "shoulder_yaw_l_joint": -0.25260770320892334,
+      "elbow_pitch_l_joint": -2.1435728073120117,
+      "elbow_yaw_l_joint": 0.2995772063732147,
+      "wrist_pitch_l_joint": 1.3626123666763306,
+      "wrist_roll_l_joint": -0.3314707577228546,
+      "shoulder_pitch_r_joint": 0.0376100093126297,
+      "shoulder_roll_r_joint": -1.7258691787719727,
+      "shoulder_yaw_r_joint": 0.5643853545188904,
+      "elbow_pitch_r_joint": -2.890747547149658,
+      "elbow_yaw_r_joint": -0.8912064433097839,
+      "wrist_pitch_r_joint": 0.8347963690757751,
+      "wrist_roll_r_joint": 0.4566476345062256
+    }
+  },
+  {
+    "candidate": 7,
+    "key": "lafan/walk1_subject1__f000004_000479",
+    "frame50": 24,
+    "time_s": 0.48,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk1_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_repair_v1/motions/lafan/walk1_subject1__f000004_000479_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.583526849746704,
+        "elbow_bend_deg": 7.009777545928955,
+        "shoulder_wrist_distance_m": 0.42084982991218567
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 4.706207752227783,
+        "elbow_bend_deg": 0.49098625779151917,
+        "shoulder_wrist_distance_m": 0.42157426476478577
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.7898120880126953,
+        "elbow_bend_deg": 6.50164794921875,
+        "shoulder_wrist_distance_m": 0.42088282108306885
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 4.4341139793396,
+        "elbow_bend_deg": 0.6766640543937683,
+        "shoulder_wrist_distance_m": 0.4215647876262665
+      }
+    },
+    "max_arm_joint_change_deg": 0.6296870708465576,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.5717107057571411,
+      "shoulder_roll_l_joint": 0.08481045067310333,
+      "shoulder_yaw_l_joint": -0.2689216136932373,
+      "elbow_pitch_l_joint": -0.6296870708465576,
+      "elbow_yaw_l_joint": -0.26703476905822754,
+      "wrist_pitch_l_joint": 0.4970994293689728,
+      "wrist_roll_l_joint": -0.14074073731899261,
+      "shoulder_pitch_r_joint": -0.3082156777381897,
+      "shoulder_roll_r_joint": -0.45873597264289856,
+      "shoulder_yaw_r_joint": 0.3978824019432068,
+      "elbow_pitch_r_joint": 0.22914771735668182,
+      "elbow_yaw_r_joint": -0.13495641946792603,
+      "wrist_pitch_r_joint": 0.04750566929578781,
+      "wrist_roll_r_joint": 0.2820799648761749
+    }
+  },
+  {
+    "candidate": 9,
+    "key": "lafan/aiming2_subject2__f000002_002243",
+    "frame50": 73,
+    "time_s": 1.46,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/aiming2_subject2.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_first2_v4/motions/lafan/aiming2_subject2__f000002_002243_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.3946259021759033,
+        "elbow_bend_deg": 12.08859920501709,
+        "shoulder_wrist_distance_m": 0.419467031955719
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 4.703197002410889,
+        "elbow_bend_deg": 12.969571113586426,
+        "shoulder_wrist_distance_m": 0.4193923771381378
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.7908434867858887,
+        "elbow_bend_deg": 13.150548934936523,
+        "shoulder_wrist_distance_m": 0.41903072595596313
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 5.301562786102295,
+        "elbow_bend_deg": 13.729765892028809,
+        "shoulder_wrist_distance_m": 0.4191017746925354
+      }
+    },
+    "max_arm_joint_change_deg": 1.1149429082870483,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.03366941586136818,
+      "shoulder_roll_l_joint": 1.0396708250045776,
+      "shoulder_yaw_l_joint": -0.09514111280441284,
+      "elbow_pitch_l_joint": -1.1149429082870483,
+      "elbow_yaw_l_joint": 0.27283743023872375,
+      "wrist_pitch_l_joint": 0.23544855415821075,
+      "wrist_roll_l_joint": -0.3097439408302307,
+      "shoulder_pitch_r_joint": -0.6082761287689209,
+      "shoulder_roll_r_joint": 0.8467521667480469,
+      "shoulder_yaw_r_joint": 0.06931275874376297,
+      "elbow_pitch_r_joint": -0.7167497873306274,
+      "elbow_yaw_r_joint": 0.17831574380397797,
+      "wrist_pitch_r_joint": -0.18883679807186127,
+      "wrist_roll_r_joint": 0.40361806750297546
+    }
+  },
+  {
+    "candidate": 10,
+    "key": "lafan/walk2_subject4__f000004_000657",
+    "frame50": 118,
+    "time_s": 2.36,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk2_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3/motions/lafan/walk2_subject4__f000004_000657_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 8.039942741394043,
+        "elbow_bend_deg": 6.957167625427246,
+        "shoulder_wrist_distance_m": 0.42142602801322937
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.1028504371643066,
+        "elbow_bend_deg": 1.8750278949737549,
+        "shoulder_wrist_distance_m": 0.4209088087081909
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 8.666357040405273,
+        "elbow_bend_deg": 8.003416061401367,
+        "shoulder_wrist_distance_m": 0.42120692133903503
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.612637996673584,
+        "elbow_bend_deg": 2.8557446002960205,
+        "shoulder_wrist_distance_m": 0.42098549008369446
+      }
+    },
+    "max_arm_joint_change_deg": 1.1809968948364258,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.3410842716693878,
+      "shoulder_roll_l_joint": 0.7840647101402283,
+      "shoulder_yaw_l_joint": -0.13852988183498383,
+      "elbow_pitch_l_joint": 1.131661057472229,
+      "elbow_yaw_l_joint": -0.10731998085975647,
+      "wrist_pitch_l_joint": -0.3607833683490753,
+      "wrist_roll_l_joint": -0.4170248508453369,
+      "shoulder_pitch_r_joint": 0.20891498029232025,
+      "shoulder_roll_r_joint": -0.642707109451294,
+      "shoulder_yaw_r_joint": -0.2849622964859009,
+      "elbow_pitch_r_joint": 1.1809968948364258,
+      "elbow_yaw_r_joint": -0.008971452713012695,
+      "wrist_pitch_r_joint": -0.7873021960258484,
+      "wrist_roll_r_joint": 0.447677880525589
+    }
+  },
+  {
+    "candidate": 11,
+    "key": "lafan/dance2_subject4__f000002_000513",
+    "frame50": 44,
+    "time_s": 0.88,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject4__f000002_000513_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 6.330170154571533,
+        "elbow_bend_deg": 8.28161907196045,
+        "shoulder_wrist_distance_m": 0.4207432270050049
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.7743406891822815,
+        "elbow_bend_deg": 2.9602859020233154,
+        "shoulder_wrist_distance_m": 0.42056378722190857
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 6.641862392425537,
+        "elbow_bend_deg": 9.060479164123535,
+        "shoulder_wrist_distance_m": 0.4205664396286011
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.211252212524414,
+        "elbow_bend_deg": 3.708134174346924,
+        "shoulder_wrist_distance_m": 0.42070814967155457
+      }
+    },
+    "max_arm_joint_change_deg": 1.621097445487976,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -1.621097445487976,
+      "shoulder_roll_l_joint": -0.17177242040634155,
+      "shoulder_yaw_l_joint": -0.7353039979934692,
+      "elbow_pitch_l_joint": 0.8436909317970276,
+      "elbow_yaw_l_joint": -0.7543132305145264,
+      "wrist_pitch_l_joint": -0.2589725852012634,
+      "wrist_roll_l_joint": 0.0726044774055481,
+      "shoulder_pitch_r_joint": 0.5112874507904053,
+      "shoulder_roll_r_joint": -0.5336631536483765,
+      "shoulder_yaw_r_joint": -0.3411414623260498,
+      "elbow_pitch_r_joint": 1.008766770362854,
+      "elbow_yaw_r_joint": -0.2003776729106903,
+      "wrist_pitch_r_joint": -1.0796189308166504,
+      "wrist_roll_r_joint": 0.5440689325332642
+    }
+  },
+  {
+    "candidate": 12,
+    "key": "lafan/dance2_subject4__f010689_011036",
+    "frame50": 11009,
+    "time_s": 220.18,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject4__f010689_011036_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.518706798553467,
+        "elbow_bend_deg": 5.565951347351074,
+        "shoulder_wrist_distance_m": 0.4213733673095703
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.014620304107666,
+        "elbow_bend_deg": 1.0896625518798828,
+        "shoulder_wrist_distance_m": 0.4205622673034668
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.030363082885742,
+        "elbow_bend_deg": 1.5707221031188965,
+        "shoulder_wrist_distance_m": 0.4215254783630371
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.9308719038963318,
+        "elbow_bend_deg": 0.7888231873512268,
+        "shoulder_wrist_distance_m": 0.420569509267807
+      }
+    },
+    "max_arm_joint_change_deg": 4.531754970550537,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -2.041529655456543,
+      "shoulder_roll_l_joint": 1.787043809890747,
+      "shoulder_yaw_l_joint": 0.5555334091186523,
+      "elbow_pitch_l_joint": -4.531754970550537,
+      "elbow_yaw_l_joint": -2.1077237129211426,
+      "wrist_pitch_l_joint": 2.230095148086548,
+      "wrist_roll_l_joint": -0.5963582992553711,
+      "shoulder_pitch_r_joint": -0.902133047580719,
+      "shoulder_roll_r_joint": -2.013355255126953,
+      "shoulder_yaw_r_joint": 0.898149311542511,
+      "elbow_pitch_r_joint": -1.5782585144042969,
+      "elbow_yaw_r_joint": -0.38203850388526917,
+      "wrist_pitch_r_joint": 0.011794028803706169,
+      "wrist_roll_r_joint": 1.6172555685043335
+    }
+  },
+  {
+    "candidate": 13,
+    "key": "lafan/dance1_subject2__f000002_000374",
+    "frame50": 149,
+    "time_s": 2.98,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance1_subject2.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_final_v3/motions/lafan/dance1_subject2__f000002_000374_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 6.43753719329834,
+        "elbow_bend_deg": 23.286087036132812,
+        "shoulder_wrist_distance_m": 0.4140376150608063
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.9696812629699707,
+        "elbow_bend_deg": 25.114866256713867,
+        "shoulder_wrist_distance_m": 0.41272687911987305
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 5.789119243621826,
+        "elbow_bend_deg": 23.44110870361328,
+        "shoulder_wrist_distance_m": 0.4139271676540375
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.2886257469654083,
+        "elbow_bend_deg": 24.79114532470703,
+        "shoulder_wrist_distance_m": 0.41297122836112976
+      }
+    },
+    "max_arm_joint_change_deg": 1.0369797945022583,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.69050133228302,
+      "shoulder_roll_l_joint": 0.973459005355835,
+      "shoulder_yaw_l_joint": 0.06564409285783768,
+      "elbow_pitch_l_joint": -0.1507491022348404,
+      "elbow_yaw_l_joint": 0.8097496032714844,
+      "wrist_pitch_l_joint": -0.004513901192694902,
+      "wrist_roll_l_joint": -0.13555192947387695,
+      "shoulder_pitch_r_joint": 0.42160534858703613,
+      "shoulder_roll_r_joint": -1.0369797945022583,
+      "shoulder_yaw_r_joint": 0.04358428716659546,
+      "elbow_pitch_r_joint": 0.37258678674697876,
+      "elbow_yaw_r_joint": -0.7621397972106934,
+      "wrist_pitch_r_joint": -0.21886657178401947,
+      "wrist_roll_r_joint": 0.3898330330848694
+    }
+  },
+  {
+    "candidate": 14,
+    "key": "lafan/dance2_subject4__f000002_000513",
+    "frame50": 95,
+    "time_s": 1.9,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject4__f000002_000513_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 5.355531215667725,
+        "elbow_bend_deg": 6.3762125968933105,
+        "shoulder_wrist_distance_m": 0.42122045159339905
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.9194631576538086,
+        "elbow_bend_deg": 2.8255615234375,
+        "shoulder_wrist_distance_m": 0.42054274678230286
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 5.557210445404053,
+        "elbow_bend_deg": 6.670650005340576,
+        "shoulder_wrist_distance_m": 0.4211733341217041
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.2649308443069458,
+        "elbow_bend_deg": 3.7301411628723145,
+        "shoulder_wrist_distance_m": 0.420683354139328
+      }
+    },
+    "max_arm_joint_change_deg": 1.4734971523284912,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -1.4734971523284912,
+      "shoulder_roll_l_joint": 0.1944691389799118,
+      "shoulder_yaw_l_joint": -0.4605254828929901,
+      "elbow_pitch_l_joint": 0.32667598128318787,
+      "elbow_yaw_l_joint": -0.8530052304267883,
+      "wrist_pitch_l_joint": -0.12146039307117462,
+      "wrist_roll_l_joint": 0.16286030411720276,
+      "shoulder_pitch_r_joint": 0.6131652593612671,
+      "shoulder_roll_r_joint": -0.4642820954322815,
+      "shoulder_yaw_r_joint": -0.435037761926651,
+      "elbow_pitch_r_joint": 1.1822903156280518,
+      "elbow_yaw_r_joint": -0.20469605922698975,
+      "wrist_pitch_r_joint": -1.1200706958770752,
+      "wrist_roll_r_joint": 0.4246516227722168
+    }
+  },
+  {
+    "candidate": 15,
+    "key": "lafan/ground1_subject5__f000002_000385",
+    "frame50": 115,
+    "time_s": 2.3,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/ground1_subject5.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_final_v3/motions/lafan/ground1_subject5__f000002_000385_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.691117763519287,
+        "elbow_bend_deg": 9.773965835571289,
+        "shoulder_wrist_distance_m": 0.41989991068840027
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 5.7730488777160645,
+        "elbow_bend_deg": 7.371740818023682,
+        "shoulder_wrist_distance_m": 0.4208624064922333
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.6024699211120605,
+        "elbow_bend_deg": 9.471622467041016,
+        "shoulder_wrist_distance_m": 0.4198046326637268
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 5.597736358642578,
+        "elbow_bend_deg": 7.449506759643555,
+        "shoulder_wrist_distance_m": 0.42077967524528503
+      }
+    },
+    "max_arm_joint_change_deg": 1.072737455368042,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.6843985915184021,
+      "shoulder_roll_l_joint": -0.5054476261138916,
+      "shoulder_yaw_l_joint": -0.0766005665063858,
+      "elbow_pitch_l_joint": -0.5409440994262695,
+      "elbow_yaw_l_joint": -0.6401150226593018,
+      "wrist_pitch_l_joint": 1.072737455368042,
+      "wrist_roll_l_joint": -0.015659011900424957,
+      "shoulder_pitch_r_joint": 0.10580645501613617,
+      "shoulder_roll_r_joint": -0.6742284297943115,
+      "shoulder_yaw_r_joint": -0.7099161744117737,
+      "elbow_pitch_r_joint": -0.037951089441776276,
+      "elbow_yaw_r_joint": 0.6299325227737427,
+      "wrist_pitch_r_joint": 0.49299106001853943,
+      "wrist_roll_r_joint": -0.3201243281364441
+    }
+  },
+  {
+    "candidate": 16,
+    "key": "lafan/walk2_subject4__f000004_000657",
+    "frame50": 35,
+    "time_s": 0.7,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk2_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3/motions/lafan/walk2_subject4__f000004_000657_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 8.47313117980957,
+        "elbow_bend_deg": 7.23063325881958,
+        "shoulder_wrist_distance_m": 0.4213103950023651
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.3864476680755615,
+        "elbow_bend_deg": 2.244196891784668,
+        "shoulder_wrist_distance_m": 0.420796662569046
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 9.149609565734863,
+        "elbow_bend_deg": 7.956283092498779,
+        "shoulder_wrist_distance_m": 0.42115235328674316
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.9109721183776855,
+        "elbow_bend_deg": 2.8120200634002686,
+        "shoulder_wrist_distance_m": 0.4208815097808838
+      }
+    },
+    "max_arm_joint_change_deg": 0.7818244099617004,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.18009671568870544,
+      "shoulder_roll_l_joint": 0.7818244099617004,
+      "shoulder_yaw_l_joint": -0.09687598049640656,
+      "elbow_pitch_l_joint": 0.7584523558616638,
+      "elbow_yaw_l_joint": -0.00950756948441267,
+      "wrist_pitch_l_joint": -0.13843512535095215,
+      "wrist_roll_l_joint": -0.45069172978401184,
+      "shoulder_pitch_r_joint": 0.1382148414850235,
+      "shoulder_roll_r_joint": -0.6048951745033264,
+      "shoulder_yaw_r_joint": -0.07303350418806076,
+      "elbow_pitch_r_joint": 0.7289493083953857,
+      "elbow_yaw_r_joint": -0.14868125319480896,
+      "wrist_pitch_r_joint": -0.6601565480232239,
+      "wrist_roll_r_joint": 0.5322014689445496
+    }
+  },
+  {
+    "candidate": 17,
+    "key": "lafan/dance2_subject3__f000002_000410",
+    "frame50": 282,
+    "time_s": 5.64,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject3.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject3__f000002_000410_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.246819972991943,
+        "elbow_bend_deg": 0.3195939064025879,
+        "shoulder_wrist_distance_m": 0.42156925797462463
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 4.432101249694824,
+        "elbow_bend_deg": 11.205228805541992,
+        "shoulder_wrist_distance_m": 0.41919973492622375
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 6.146002292633057,
+        "elbow_bend_deg": 1.5416735410690308,
+        "shoulder_wrist_distance_m": 0.4213050901889801
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 2.623767852783203,
+        "elbow_bend_deg": 11.042271614074707,
+        "shoulder_wrist_distance_m": 0.4192614257335663
+      }
+    },
+    "max_arm_joint_change_deg": 2.180431842803955,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.36958834528923035,
+      "shoulder_roll_l_joint": 1.8429967164993286,
+      "shoulder_yaw_l_joint": -0.5883174538612366,
+      "elbow_pitch_l_joint": -2.180431842803955,
+      "elbow_yaw_l_joint": 0.566707193851471,
+      "wrist_pitch_l_joint": 1.5181221961975098,
+      "wrist_roll_l_joint": -1.1199367046356201,
+      "shoulder_pitch_r_joint": -1.3613812923431396,
+      "shoulder_roll_r_joint": -2.0750796794891357,
+      "shoulder_yaw_r_joint": 1.9689505100250244,
+      "elbow_pitch_r_joint": 0.15479427576065063,
+      "elbow_yaw_r_joint": -1.1294665336608887,
+      "wrist_pitch_r_joint": -0.020434217527508736,
+      "wrist_roll_r_joint": 1.295149803161621
+    }
+  },
+  {
+    "candidate": 18,
+    "key": "lafan/aiming1_subject4__f000002_002142",
+    "frame50": 21,
+    "time_s": 0.42,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/aiming1_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3/motions/lafan/aiming1_subject4__f000002_002142_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.515348434448242,
+        "elbow_bend_deg": 6.382237434387207,
+        "shoulder_wrist_distance_m": 0.4211232662200928
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.11576049774885178,
+        "elbow_bend_deg": 1.0036619901657104,
+        "shoulder_wrist_distance_m": 0.42127999663352966
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.849514961242676,
+        "elbow_bend_deg": 6.641894340515137,
+        "shoulder_wrist_distance_m": 0.4210701882839203
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.3984161615371704,
+        "elbow_bend_deg": 1.254762053489685,
+        "shoulder_wrist_distance_m": 0.4213355779647827
+      }
+    },
+    "max_arm_joint_change_deg": 0.4017346203327179,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.022018393501639366,
+      "shoulder_roll_l_joint": 0.3476771116256714,
+      "shoulder_yaw_l_joint": 0.02307237684726715,
+      "elbow_pitch_l_joint": 0.25584179162979126,
+      "elbow_yaw_l_joint": 0.027433453127741814,
+      "wrist_pitch_l_joint": 0.017074618488550186,
+      "wrist_roll_l_joint": -0.14336395263671875,
+      "shoulder_pitch_r_joint": 0.09031003713607788,
+      "shoulder_roll_r_joint": -0.3150083124637604,
+      "shoulder_yaw_r_joint": -0.0036255496088415384,
+      "elbow_pitch_r_joint": 0.34460437297821045,
+      "elbow_yaw_r_joint": -0.11951928585767746,
+      "wrist_pitch_r_joint": -0.39363572001457214,
+      "wrist_roll_r_joint": 0.4017346203327179
+    }
+  },
+  {
+    "candidate": 19,
+    "key": "lafan/aiming1_subject4__f000002_002142",
+    "frame50": 72,
+    "time_s": 1.44,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/aiming1_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3/motions/lafan/aiming1_subject4__f000002_002142_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 5.765499591827393,
+        "elbow_bend_deg": 6.864813327789307,
+        "shoulder_wrist_distance_m": 0.4207778871059418
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.9574361443519592,
+        "elbow_bend_deg": 0.9387862086296082,
+        "shoulder_wrist_distance_m": 0.4212581515312195
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 5.896692752838135,
+        "elbow_bend_deg": 7.557591915130615,
+        "shoulder_wrist_distance_m": 0.42062315344810486
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.231481909751892,
+        "elbow_bend_deg": 1.1740319728851318,
+        "shoulder_wrist_distance_m": 0.4213084578514099
+      }
+    },
+    "max_arm_joint_change_deg": 0.6955983638763428,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.03544184938073158,
+      "shoulder_roll_l_joint": 0.4033363163471222,
+      "shoulder_yaw_l_joint": 0.41102027893066406,
+      "elbow_pitch_l_joint": 0.6955983638763428,
+      "elbow_yaw_l_joint": -0.43230485916137695,
+      "wrist_pitch_l_joint": 0.011100764386355877,
+      "wrist_roll_l_joint": 0.21742625534534454,
+      "shoulder_pitch_r_joint": 0.059284329414367676,
+      "shoulder_roll_r_joint": -0.31420233845710754,
+      "shoulder_yaw_r_joint": 0.004946764092892408,
+      "elbow_pitch_r_joint": 0.3204604983329773,
+      "elbow_yaw_r_joint": -0.09634322673082352,
+      "wrist_pitch_r_joint": -0.34911999106407166,
+      "wrist_roll_r_joint": 0.3438521921634674
+    }
+  },
+  {
+    "candidate": 21,
+    "key": "lafan/dance2_subject4__f010689_011036",
+    "frame50": 10841,
+    "time_s": 216.82,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject4__f010689_011036_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.88370418548584,
+        "elbow_bend_deg": 7.486240386962891,
+        "shoulder_wrist_distance_m": 0.4207923710346222
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 2.3338804244995117,
+        "elbow_bend_deg": 2.7560529708862305,
+        "shoulder_wrist_distance_m": 0.4201680123806
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 4.377498626708984,
+        "elbow_bend_deg": 7.112485408782959,
+        "shoulder_wrist_distance_m": 0.42081981897354126
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.149536609649658,
+        "elbow_bend_deg": 1.772109031677246,
+        "shoulder_wrist_distance_m": 0.4202823340892792
+      }
+    },
+    "max_arm_joint_change_deg": 2.5917491912841797,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -2.5917491912841797,
+      "shoulder_roll_l_joint": 0.1860133558511734,
+      "shoulder_yaw_l_joint": -0.8104770183563232,
+      "elbow_pitch_l_joint": -0.4631294906139374,
+      "elbow_yaw_l_joint": -1.5264534950256348,
+      "wrist_pitch_l_joint": 0.39129638671875,
+      "wrist_roll_l_joint": 0.04607773572206497,
+      "shoulder_pitch_r_joint": -0.34858208894729614,
+      "shoulder_roll_r_joint": -1.0124661922454834,
+      "shoulder_yaw_r_joint": 0.15152432024478912,
+      "elbow_pitch_r_joint": -0.947553813457489,
+      "elbow_yaw_r_joint": 0.030238313600420952,
+      "wrist_pitch_r_joint": -0.1993834525346756,
+      "wrist_roll_r_joint": 0.700017511844635
+    }
+  },
+  {
+    "candidate": 22,
+    "key": "lafan/pushAndFall1_subject4__f000002_000443",
+    "frame50": 51,
+    "time_s": 1.02,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/pushAndFall1_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/pushAndFall1_subject4__f000002_000443_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.6138551235198975,
+        "elbow_bend_deg": 5.192785263061523,
+        "shoulder_wrist_distance_m": 0.4217289686203003
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 10.265539169311523,
+        "elbow_bend_deg": 1.939367413520813,
+        "shoulder_wrist_distance_m": 0.4208891689777374
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.2933053970336914,
+        "elbow_bend_deg": 5.9362030029296875,
+        "shoulder_wrist_distance_m": 0.4216258227825165
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 9.92063045501709,
+        "elbow_bend_deg": 2.431157350540161,
+        "shoulder_wrist_distance_m": 0.4209687113761902
+      }
+    },
+    "max_arm_joint_change_deg": 1.2374714612960815,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.6472914218902588,
+      "shoulder_roll_l_joint": 0.39308419823646545,
+      "shoulder_yaw_l_joint": 0.45072969794273376,
+      "elbow_pitch_l_joint": 0.850853681564331,
+      "elbow_yaw_l_joint": 0.17654842138290405,
+      "wrist_pitch_l_joint": -0.4406607151031494,
+      "wrist_roll_l_joint": -0.2829371690750122,
+      "shoulder_pitch_r_joint": 1.2374714612960815,
+      "shoulder_roll_r_joint": -0.37023037672042847,
+      "shoulder_yaw_r_joint": -0.9067127108573914,
+      "elbow_pitch_r_joint": 0.6307166814804077,
+      "elbow_yaw_r_joint": -0.25564733147621155,
+      "wrist_pitch_r_joint": -0.5912348031997681,
+      "wrist_roll_r_joint": 0.3475660979747772
+    }
+  },
+  {
+    "candidate": 23,
+    "key": "lafan/dance2_subject3__f000002_000410",
+    "frame50": 335,
+    "time_s": 6.7,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject3.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject3__f000002_000410_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.523200511932373,
+        "elbow_bend_deg": 0.6617518067359924,
+        "shoulder_wrist_distance_m": 0.421796053647995
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 5.2386474609375,
+        "elbow_bend_deg": 11.531431198120117,
+        "shoulder_wrist_distance_m": 0.4191281795501709
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 5.255616188049316,
+        "elbow_bend_deg": 2.431962251663208,
+        "shoulder_wrist_distance_m": 0.42153722047805786
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.569627285003662,
+        "elbow_bend_deg": 11.228789329528809,
+        "shoulder_wrist_distance_m": 0.41925227642059326
+      }
+    },
+    "max_arm_joint_change_deg": 2.1261439323425293,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.45928922295570374,
+      "shoulder_roll_l_joint": 1.7178130149841309,
+      "shoulder_yaw_l_joint": -0.5568259954452515,
+      "elbow_pitch_l_joint": -2.1261439323425293,
+      "elbow_yaw_l_joint": 0.44054120779037476,
+      "wrist_pitch_l_joint": 1.4139233827590942,
+      "wrist_roll_l_joint": -0.9882233142852783,
+      "shoulder_pitch_r_joint": -1.156962275505066,
+      "shoulder_roll_r_joint": -1.972995638847351,
+      "shoulder_yaw_r_joint": 1.7437915802001953,
+      "elbow_pitch_r_joint": 0.3120235204696655,
+      "elbow_yaw_r_joint": -1.1062254905700684,
+      "wrist_pitch_r_joint": -0.09500280022621155,
+      "wrist_roll_r_joint": 1.1870322227478027
+    }
+  },
+  {
+    "candidate": 24,
+    "key": "lafan/pushAndFall1_subject4__f000002_000443",
+    "frame50": 125,
+    "time_s": 2.5,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/pushAndFall1_subject4.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/pushAndFall1_subject4__f000002_000443_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.428699254989624,
+        "elbow_bend_deg": 5.1834187507629395,
+        "shoulder_wrist_distance_m": 0.42174652218818665
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 9.534903526306152,
+        "elbow_bend_deg": 2.590876579284668,
+        "shoulder_wrist_distance_m": 0.42072394490242004
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.177201747894287,
+        "elbow_bend_deg": 5.257770538330078,
+        "shoulder_wrist_distance_m": 0.4217332601547241
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 9.194873809814453,
+        "elbow_bend_deg": 2.7654831409454346,
+        "shoulder_wrist_distance_m": 0.42078283429145813
+      }
+    },
+    "max_arm_joint_change_deg": 0.3809554874897003,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.0371067076921463,
+      "shoulder_roll_l_joint": 0.2633720934391022,
+      "shoulder_yaw_l_joint": 0.0349801704287529,
+      "elbow_pitch_l_joint": 0.06956547498703003,
+      "elbow_yaw_l_joint": 0.038882557302713394,
+      "wrist_pitch_l_joint": 0.022118711844086647,
+      "wrist_roll_l_joint": -0.0748622864484787,
+      "shoulder_pitch_r_joint": 0.28438514471054077,
+      "shoulder_roll_r_joint": -0.37402114272117615,
+      "shoulder_yaw_r_joint": -0.1926625519990921,
+      "elbow_pitch_r_joint": 0.26111215353012085,
+      "elbow_yaw_r_joint": -0.1256786733865738,
+      "wrist_pitch_r_joint": -0.3649557828903198,
+      "wrist_roll_r_joint": 0.3809554874897003
+    }
+  },
+  {
+    "candidate": 25,
+    "key": "lafan/walk2_subject1__f010242_011161",
+    "frame50": 10652,
+    "time_s": 213.04,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/walk2_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3/motions/lafan/walk2_subject1__f010242_011161_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 61.29888916015625,
+        "elbow_bend_deg": 87.30783081054688,
+        "shoulder_wrist_distance_m": 0.31178781390190125
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 66.96163940429688,
+        "elbow_bend_deg": 90.48567199707031,
+        "shoulder_wrist_distance_m": 0.30276018381118774
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 57.12089538574219,
+        "elbow_bend_deg": 81.94566345214844,
+        "shoulder_wrist_distance_m": 0.32370132207870483
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 62.454891204833984,
+        "elbow_bend_deg": 86.35091400146484,
+        "shoulder_wrist_distance_m": 0.31228354573249817
+      }
+    },
+    "max_arm_joint_change_deg": 9.173727989196777,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -9.173727989196777,
+      "shoulder_roll_l_joint": -2.4897847175598145,
+      "shoulder_yaw_l_joint": -3.8644797801971436,
+      "elbow_pitch_l_joint": 5.648962497711182,
+      "elbow_yaw_l_joint": 3.4621543884277344,
+      "wrist_pitch_l_joint": -1.3761601448059082,
+      "wrist_roll_l_joint": -0.3232523500919342,
+      "shoulder_pitch_r_joint": -9.107757568359375,
+      "shoulder_roll_r_joint": -0.8195645809173584,
+      "shoulder_yaw_r_joint": 3.438767910003662,
+      "elbow_pitch_r_joint": 4.47946310043335,
+      "elbow_yaw_r_joint": -4.161811828613281,
+      "wrist_pitch_r_joint": -0.4295317828655243,
+      "wrist_roll_r_joint": 0.6606602668762207
+    }
+  },
+  {
+    "candidate": 26,
+    "key": "lafan/pushAndStumble1_subject3__f000002_000429",
+    "frame50": 14,
+    "time_s": 0.28,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/pushAndStumble1_subject3.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3/motions/lafan/pushAndStumble1_subject3__f000002_000429_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 0.909666121006012,
+        "elbow_bend_deg": 0.7298097014427185,
+        "shoulder_wrist_distance_m": 0.4212270975112915
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 2.6177122592926025,
+        "elbow_bend_deg": 5.386997222900391,
+        "shoulder_wrist_distance_m": 0.4203089773654938
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.2384735345840454,
+        "elbow_bend_deg": 2.1743886470794678,
+        "shoulder_wrist_distance_m": 0.4212909936904907
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 2.145559787750244,
+        "elbow_bend_deg": 4.562010765075684,
+        "shoulder_wrist_distance_m": 0.420575350522995
+      }
+    },
+    "max_arm_joint_change_deg": 1.647292137145996,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 1.3432574272155762,
+      "shoulder_roll_l_joint": 0.6181116104125977,
+      "shoulder_yaw_l_joint": 1.6183449029922485,
+      "elbow_pitch_l_joint": 1.647292137145996,
+      "elbow_yaw_l_joint": -0.23196324706077576,
+      "wrist_pitch_l_joint": -0.7690417170524597,
+      "wrist_roll_l_joint": -0.2900848984718323,
+      "shoulder_pitch_r_joint": 1.1261811256408691,
+      "shoulder_roll_r_joint": -0.8455432057380676,
+      "shoulder_yaw_r_joint": -0.8227935433387756,
+      "elbow_pitch_r_joint": 0.9815510511398315,
+      "elbow_yaw_r_joint": -0.42991939187049866,
+      "wrist_pitch_r_joint": -0.6898354291915894,
+      "wrist_roll_r_joint": 0.29906535148620605
+    }
+  },
+  {
+    "candidate": 28,
+    "key": "lafan/jumps1_subject1__f000002_000819",
+    "frame50": 42,
+    "time_s": 0.84,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/jumps1_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch4_v4/motions/lafan/jumps1_subject1__f000002_000819_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.056610584259033,
+        "elbow_bend_deg": 8.7149658203125,
+        "shoulder_wrist_distance_m": 0.418186753988266
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.947913646697998,
+        "elbow_bend_deg": 6.806336402893066,
+        "shoulder_wrist_distance_m": 0.4211636781692505
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 3.030883312225342,
+        "elbow_bend_deg": 8.840157508850098,
+        "shoulder_wrist_distance_m": 0.41810548305511475
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.9063642024993896,
+        "elbow_bend_deg": 7.330048561096191,
+        "shoulder_wrist_distance_m": 0.42100095748901367
+      }
+    },
+    "max_arm_joint_change_deg": 1.062336802482605,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -1.062336802482605,
+      "shoulder_roll_l_joint": -0.32644203305244446,
+      "shoulder_yaw_l_joint": -0.565833330154419,
+      "elbow_pitch_l_joint": -0.116948202252388,
+      "elbow_yaw_l_joint": -0.37041139602661133,
+      "wrist_pitch_l_joint": 0.14115780591964722,
+      "wrist_roll_l_joint": -0.14037102460861206,
+      "shoulder_pitch_r_joint": -0.9148645401000977,
+      "shoulder_roll_r_joint": 0.15020951628684998,
+      "shoulder_yaw_r_joint": 0.6106205582618713,
+      "elbow_pitch_r_joint": -0.6262070536613464,
+      "elbow_yaw_r_joint": 0.2340543419122696,
+      "wrist_pitch_r_joint": 0.4614672064781189,
+      "wrist_roll_r_joint": 0.11441761255264282
+    }
+  },
+  {
+    "candidate": 29,
+    "key": "lafan/fightAndSports1_subject1__f000002_000868",
+    "frame50": 38,
+    "time_s": 0.76,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/fightAndSports1_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch4_v4/motions/lafan/fightAndSports1_subject1__f000002_000868_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 8.858757972717285,
+        "elbow_bend_deg": 7.55346155166626,
+        "shoulder_wrist_distance_m": 0.41923490166664124
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 11.2316255569458,
+        "elbow_bend_deg": 6.346747398376465,
+        "shoulder_wrist_distance_m": 0.421441912651062
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 8.348145484924316,
+        "elbow_bend_deg": 8.184388160705566,
+        "shoulder_wrist_distance_m": 0.4190029203891754
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 10.781132698059082,
+        "elbow_bend_deg": 6.493196964263916,
+        "shoulder_wrist_distance_m": 0.4213528633117676
+      }
+    },
+    "max_arm_joint_change_deg": 1.9338245391845703,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -1.9218738079071045,
+      "shoulder_roll_l_joint": 0.36310648918151855,
+      "shoulder_yaw_l_joint": -1.6426531076431274,
+      "elbow_pitch_l_joint": -0.7172637581825256,
+      "elbow_yaw_l_joint": -0.1029650941491127,
+      "wrist_pitch_l_joint": 0.32726848125457764,
+      "wrist_roll_l_joint": -0.6780312061309814,
+      "shoulder_pitch_r_joint": -1.9338245391845703,
+      "shoulder_roll_r_joint": -0.5176190137863159,
+      "shoulder_yaw_r_joint": 1.667508602142334,
+      "elbow_pitch_r_joint": -0.32099154591560364,
+      "elbow_yaw_r_joint": 0.030064783990383148,
+      "wrist_pitch_r_joint": 0.7509365677833557,
+      "wrist_roll_r_joint": 0.3751242160797119
+    }
+  },
+  {
+    "candidate": 30,
+    "key": "lafan/pushAndStumble1_subject3__f000002_000429",
+    "frame50": 148,
+    "time_s": 2.96,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/pushAndStumble1_subject3.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3/motions/lafan/pushAndStumble1_subject3__f000002_000429_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.0788674354553223,
+        "elbow_bend_deg": 0.8146935105323792,
+        "shoulder_wrist_distance_m": 0.42146575450897217
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.8185057640075684,
+        "elbow_bend_deg": 5.7679948806762695,
+        "shoulder_wrist_distance_m": 0.42025476694107056
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.7325364351272583,
+        "elbow_bend_deg": 1.8201593160629272,
+        "shoulder_wrist_distance_m": 0.42150458693504333
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 3.185943603515625,
+        "elbow_bend_deg": 5.117300987243652,
+        "shoulder_wrist_distance_m": 0.42052721977233887
+      }
+    },
+    "max_arm_joint_change_deg": 1.1490495204925537,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.7049139142036438,
+      "shoulder_roll_l_joint": 0.9149720668792725,
+      "shoulder_yaw_l_joint": 0.46364688873291016,
+      "elbow_pitch_l_joint": 1.1490495204925537,
+      "elbow_yaw_l_joint": 0.3367983102798462,
+      "wrist_pitch_l_joint": -0.545853316783905,
+      "wrist_roll_l_joint": -0.6503680944442749,
+      "shoulder_pitch_r_joint": 1.058356523513794,
+      "shoulder_roll_r_joint": -1.0282713174819946,
+      "shoulder_yaw_r_joint": -0.5885496735572815,
+      "elbow_pitch_r_joint": 0.8062525391578674,
+      "elbow_yaw_r_joint": -0.6272862553596497,
+      "wrist_pitch_r_joint": -0.8021049499511719,
+      "wrist_roll_r_joint": 0.39950329065322876
+    }
+  },
+  {
+    "candidate": 31,
+    "key": "lafan/jumps1_subject5__f010432_011267",
+    "frame50": 10632,
+    "time_s": 212.64,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/jumps1_subject5.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch5_v3/motions/lafan/jumps1_subject5__f010432_011267_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 62.08423614501953,
+        "elbow_bend_deg": 108.1042251586914,
+        "shoulder_wrist_distance_m": 0.26077941060066223
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 74.55613708496094,
+        "elbow_bend_deg": 17.26530647277832,
+        "shoulder_wrist_distance_m": 0.4174676239490509
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 62.04573440551758,
+        "elbow_bend_deg": 107.50209045410156,
+        "shoulder_wrist_distance_m": 0.2623726427555084
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 74.39813995361328,
+        "elbow_bend_deg": 17.311433792114258,
+        "shoulder_wrist_distance_m": 0.4174214005470276
+      }
+    },
+    "max_arm_joint_change_deg": 0.663566529750824,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -0.2026243805885315,
+      "shoulder_roll_l_joint": -0.08548664301633835,
+      "shoulder_yaw_l_joint": -0.0883689820766449,
+      "elbow_pitch_l_joint": 0.663566529750824,
+      "elbow_yaw_l_joint": 0.11403170973062515,
+      "wrist_pitch_l_joint": -0.28318268060684204,
+      "wrist_roll_l_joint": -0.11618585884571075,
+      "shoulder_pitch_r_joint": -0.23602955043315887,
+      "shoulder_roll_r_joint": 0.13474254310131073,
+      "shoulder_yaw_r_joint": 0.06948009878396988,
+      "elbow_pitch_r_joint": -0.10399303585290909,
+      "elbow_yaw_r_joint": -0.03708365559577942,
+      "wrist_pitch_r_joint": 0.24916614592075348,
+      "wrist_roll_r_joint": 0.028152329847216606
+    }
+  },
+  {
+    "candidate": 32,
+    "key": "lafan/dance2_subject1__f000002_000728",
+    "frame50": 123,
+    "time_s": 2.46,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject1.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch6_v3/motions/lafan/dance2_subject1__f000002_000728_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.606783866882324,
+        "elbow_bend_deg": 7.672171592712402,
+        "shoulder_wrist_distance_m": 0.41865983605384827
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 8.156278610229492,
+        "elbow_bend_deg": 5.677406311035156,
+        "shoulder_wrist_distance_m": 0.4214600920677185
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 2.5213232040405273,
+        "elbow_bend_deg": 8.502534866333008,
+        "shoulder_wrist_distance_m": 0.4182482063770294
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 8.03176212310791,
+        "elbow_bend_deg": 6.463898658752441,
+        "shoulder_wrist_distance_m": 0.4212261140346527
+      }
+    },
+    "max_arm_joint_change_deg": 2.1808109283447266,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": -2.17527174949646,
+      "shoulder_roll_l_joint": -0.3371995985507965,
+      "shoulder_yaw_l_joint": -1.5114787817001343,
+      "elbow_pitch_l_joint": -0.9491691589355469,
+      "elbow_yaw_l_joint": -0.600397527217865,
+      "wrist_pitch_l_joint": 0.708775520324707,
+      "wrist_roll_l_joint": -0.4721769392490387,
+      "shoulder_pitch_r_joint": -2.1808109283447266,
+      "shoulder_roll_r_joint": 0.1244528666138649,
+      "shoulder_yaw_r_joint": 1.6625311374664307,
+      "elbow_pitch_r_joint": -0.986484169960022,
+      "elbow_yaw_r_joint": 0.38749197125434875,
+      "wrist_pitch_r_joint": 0.8934535980224609,
+      "wrist_roll_r_joint": 0.2962099313735962
+    }
+  },
+  {
+    "candidate": 33,
+    "key": "lafan/fallAndGetUp2_subject3__f000002_000255",
+    "frame50": 44,
+    "time_s": 0.88,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/fallAndGetUp2_subject3.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/fallAndGetUp2_subject3__f000002_000255_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 0.5104546546936035,
+        "elbow_bend_deg": 2.111924886703491,
+        "shoulder_wrist_distance_m": 0.4216684103012085
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.3908261060714722,
+        "elbow_bend_deg": 11.449777603149414,
+        "shoulder_wrist_distance_m": 0.41929829120635986
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 0.1964855045080185,
+        "elbow_bend_deg": 1.8114292621612549,
+        "shoulder_wrist_distance_m": 0.421661376953125
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.7199790477752686,
+        "elbow_bend_deg": 9.918514251708984,
+        "shoulder_wrist_distance_m": 0.4200453758239746
+      }
+    },
+    "max_arm_joint_change_deg": 1.9048526287078857,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.5480979084968567,
+      "shoulder_roll_l_joint": -0.28050902485847473,
+      "shoulder_yaw_l_joint": 0.46692344546318054,
+      "elbow_pitch_l_joint": 0.26723796129226685,
+      "elbow_yaw_l_joint": -0.005636613350361586,
+      "wrist_pitch_l_joint": 0.2029787003993988,
+      "wrist_roll_l_joint": 0.2285759001970291,
+      "shoulder_pitch_r_joint": 0.4446008801460266,
+      "shoulder_roll_r_joint": 0.007608830463141203,
+      "shoulder_yaw_r_joint": -0.4172028601169586,
+      "elbow_pitch_r_joint": 1.9048526287078857,
+      "elbow_yaw_r_joint": -0.04082830622792244,
+      "wrist_pitch_r_joint": -1.6393511295318604,
+      "wrist_roll_r_joint": -0.31226491928100586
+    }
+  },
+  {
+    "candidate": 34,
+    "key": "lafan/dance2_subject3__f010622_011282",
+    "frame50": 11231,
+    "time_s": 224.62,
+    "source": "/home/js/robot/locomotion/SuperMimic_TienKung/data/npz/tiangong3/dance2_subject3.npz",
+    "motion": "/home/js/robot/locomotion/SuperMimic_TienKung/data/lafan_tienkung3_29dof/screened_batch7_v3/motions/lafan/dance2_subject3__f010622_011282_motion.npz",
+    "source_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 1.8095742464065552,
+        "elbow_bend_deg": 0.8170918822288513,
+        "shoulder_wrist_distance_m": 0.4213804602622986
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 1.5554794073104858,
+        "elbow_bend_deg": 6.1472039222717285,
+        "shoulder_wrist_distance_m": 0.4206176996231079
+      }
+    },
+    "target_geometry": {
+      "l": {
+        "shoulder_wrist_horizontal_deg": 0.4314690828323364,
+        "elbow_bend_deg": 2.438793897628784,
+        "shoulder_wrist_distance_m": 0.4211631715297699
+      },
+      "r": {
+        "shoulder_wrist_horizontal_deg": 0.6937685012817383,
+        "elbow_bend_deg": 6.280444622039795,
+        "shoulder_wrist_distance_m": 0.4204827547073364
+      }
+    },
+    "max_arm_joint_change_deg": 4.549220085144043,
+    "arm_changes_deg": {
+      "shoulder_pitch_l_joint": 0.01590067893266678,
+      "shoulder_roll_l_joint": -2.9925105571746826,
+      "shoulder_yaw_l_joint": -0.44888001680374146,
+      "elbow_pitch_l_joint": 1.4598674774169922,
+      "elbow_yaw_l_joint": 0.7948188185691833,
+      "wrist_pitch_l_joint": 0.8330661654472351,
+      "wrist_roll_l_joint": -1.375174880027771,
+      "shoulder_pitch_r_joint": -4.549220085144043,
+      "shoulder_roll_r_joint": 0.8462603688240051,
+      "shoulder_yaw_r_joint": 3.0247764587402344,
+      "elbow_pitch_r_joint": -0.26692891120910645,
+      "elbow_yaw_r_joint": 0.3850962817668915,
+      "wrist_pitch_r_joint": 0.6071303486824036,
+      "wrist_roll_r_joint": 1.501847505569458
+    }
+  }
+]

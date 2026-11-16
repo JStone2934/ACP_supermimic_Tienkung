@@ -1,0 +1,78 @@
+{
+  "1700": {
+    "trajectory": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/take006_rewardonly_recovery/train/wm_validation/001700.npz",
+    "fixed_wm_iteration": 1700,
+    "starts": [
+      32,
+      96
+    ],
+    "sample_count": 16,
+    "valid_windows": 16,
+    "horizon": 32,
+    "action_protocol": "Replay identical recorded executed physical actions open-loop; exact recorded state and xi, no reconstructed velocity or history.",
+    "metrics": {
+      "chest_deg": {
+        "initial_mean": 12.33067798614502,
+        "predicted_mean": 10.73888111114502,
+        "physical_mean": 10.76487922668457,
+        "bias": -0.025997698307037354,
+        "mae": 0.10387778282165527,
+        "max_absolute_error": 0.24694442749023438
+      },
+      "pelvis_deg": {
+        "initial_mean": 9.543438911437988,
+        "predicted_mean": 10.169303894042969,
+        "physical_mean": 10.144319534301758,
+        "bias": 0.024984747171401978,
+        "mae": 0.08537206053733826,
+        "max_absolute_error": 0.22546863555908203
+      },
+      "root_z_m": {
+        "initial_mean": 0.9802829623222351,
+        "predicted_mean": 0.9797719717025757,
+        "physical_mean": 0.9799704551696777,
+        "bias": -0.00019849464297294617,
+        "mae": 0.0003010369837284088,
+        "max_absolute_error": 0.0022717714309692383
+      }
+    }
+  },
+  "1750": {
+    "trajectory": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/take006_rewardonly_recovery/train/wm_validation/001750.npz",
+    "fixed_wm_iteration": 1700,
+    "starts": [
+      32,
+      96
+    ],
+    "sample_count": 16,
+    "valid_windows": 16,
+    "horizon": 32,
+    "action_protocol": "Replay identical recorded executed physical actions open-loop; exact recorded state and xi, no reconstructed velocity or history.",
+    "metrics": {
+      "chest_deg": {
+        "initial_mean": 18.643115997314453,
+        "predicted_mean": 15.020870208740234,
+        "physical_mean": 17.371562957763672,
+        "bias": -2.350691795349121,
+        "mae": 2.350691795349121,
+        "max_absolute_error": 3.4311389923095703
+      },
+      "pelvis_deg": {
+        "initial_mean": 5.021129608154297,
+        "predicted_mean": 6.745301246643066,
+        "physical_mean": 4.580306053161621,
+        "bias": 2.164994716644287,
+        "mae": 2.164994716644287,
+        "max_absolute_error": 3.6072144508361816
+      },
+      "root_z_m": {
+        "initial_mean": 0.9778814315795898,
+        "predicted_mean": 0.9749297499656677,
+        "physical_mean": 0.9809248447418213,
+        "bias": -0.005995132029056549,
+        "mae": 0.005995132029056549,
+        "max_absolute_error": 0.011462688446044922
+      }
+    }
+  }
+}

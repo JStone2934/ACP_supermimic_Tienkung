@@ -1,0 +1,67 @@
+{
+  "official_archive_url": "https://media.githubusercontent.com/media/ubisoft/ubisoft-laforge-animation-dataset/master/lafan1/lafan1.zip",
+  "official_archive_lfs_sha256": "ea918082b500a5d158e9d3aa39039df04cd42e25f5c02fe8f7e88e8e9365a977",
+  "method": "Extracted verified zip-member CRC via HTTP ranges, archive was not downloaded completely",
+  "bvh_sha256": {
+    "aiming2_subject2.bvh": "76ddbd67bd40710f2196f732e7686823744c3fdfcd5c3410838f4c8508508d98",
+    "walk1_subject1.bvh": "4c9d591f323ffa660d9de6ef20c5d7077e66b2102a009feedf01afa22a6fbc73",
+    "aiming1_subject4.bvh": "651f3c00bfe50fd19f6757faa31df2407ad70de11c30ae1f8525c6e49ab4b07b"
+  },
+  "source_31_geometry_thresholds": {
+    "shoulder_wrist_horizontal_deg": 15,
+    "elbow_bend_deg": 25
+  },
+  "source_31_spread_candidates": [
+    2,
+    3,
+    4,
+    7,
+    9,
+    10,
+    11,
+    12,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    26,
+    28,
+    29,
+    30,
+    32,
+    33,
+    34
+  ],
+  "source_first_2_seconds_candidates": [
+    2,
+    3,
+    4,
+    7,
+    9,
+    11,
+    14,
+    16,
+    18,
+    19,
+    22,
+    26,
+    28,
+    29,
+    33
+  ],
+  "lafan_audited_count": 30,
+  "all_candidates_count": 35,
+  "original_bvh_verified_candidates": [
+    2,
+    3,
+    18
+  ],
+  "conclusion": "Original BVH already contains initial arms-spread stance for 02/03/18. 31->29 repair changes arm joints only 1.09/1.40/0.40 degrees at these frames. Broad retarget quality is not established; source BVH elbow flexion differs by up to ~22 degrees from 31-joint robot. Screening score rewards quiet upright stance and does not exclude initial stance or test arm readiness.",
+  "semantic_boundary": "Geometric arms-spread initial stance; calibration purpose is inferred, not documented BVH metadata. Other candidate original BVHs not checked. JWP five candidates excluded from 31-joint-source audit."
+}

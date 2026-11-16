@@ -1,0 +1,287 @@
+{
+  "count": 35,
+  "static_images": 105,
+  "all_assets_present": true,
+  "video_validation": [
+    {
+      "id": "01",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "02",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "03",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "04",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "05",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "06",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "07",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "08",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "09",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "10",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "11",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "12",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "13",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "14",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "15",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "16",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "17",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "18",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "19",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "20",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "1.840000",
+      "nb_frames": "46"
+    },
+    {
+      "id": "21",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "22",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "23",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "24",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "25",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "26",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "27",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "28",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "29",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "30",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "31",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "32",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "33",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "34",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    },
+    {
+      "id": "35",
+      "width": 640,
+      "height": 640,
+      "r_frame_rate": "25/1",
+      "duration": "2.000000",
+      "nb_frames": "50"
+    }
+  ]
+}

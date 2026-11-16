@@ -1,0 +1,13 @@
+{
+  "count": 101,
+  "standing": 72,
+  "chest": 0,
+  "full": 0,
+  "terminated": 0,
+  "max_chest_range": [
+    25.98184585571289,
+    36.269554138183594
+  ],
+  "checkpoint_sha256": "79da2553947c5c887668d09e3b4c758a3b1d695d12b4de9e712f554eb337b849",
+  "scope": "Distillation-end development baseline, not acceptance"
+}

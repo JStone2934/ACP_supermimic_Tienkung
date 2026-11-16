@@ -10,6 +10,10 @@ from ..rotations import yaw_mat
 
 
 class MovingAimingTask(WideAimingTask):
+    def bootstrap_aim_weight(self):
+        # Moving curricula always use aim_weight=4, including speed level0.
+        return 4.
+
     def advance_context(self,ctx,steps):
         ctx=super().advance_context(ctx,steps)
         steps=torch.as_tensor(steps,device=self.alpha.device,dtype=self.alpha.dtype)

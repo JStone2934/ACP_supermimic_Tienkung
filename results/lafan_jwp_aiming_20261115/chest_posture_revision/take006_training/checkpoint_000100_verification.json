@@ -1,0 +1,39 @@
+{
+  "checkpoint": "/home/js/robot/locomotion/standing-aiming/logs/tienkung3_29dof/lafan_jwp_20261115/take006_upright/train/ckpt_000100.pt",
+  "sha256": "de10a55a0fc6f84700dc8134aace1da86b456323b39fc752f2ab480d546cef21",
+  "iteration": 100,
+  "finite_weights": true,
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 1000,
+      "distill": 100
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 2932594176,
+        "torch_peak_reserved": 2990538752,
+        "device_used": 5069668352,
+        "warp_pool_used": 787369870,
+        "warp_pool_peak": 787370818
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 2932513280,
+        "torch_peak_reserved": 2990538752,
+        "device_used": 4415815680,
+        "warp_pool_used": 473809235,
+        "warp_pool_peak": 473810183
+      }
+    ],
+    "state_sha256": "22db89e009e24b4e4eb5f01414a9412f1fcf0af192682474d4f55a7d00d64ace"
+  },
+  "horizon": 32,
+  "wm_window": 32,
+  "scope": "Checkpoint integrity and two-rank training verification only; distillation, no independent physical acceptance"
+}

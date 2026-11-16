@@ -1,11 +1,35 @@
 """Held-out episodes for open-loop WM validation; never inserted into training replay."""
 from pathlib import Path
+import math
 import numpy as np
 import torch
 from .aiming_fullbody import flat_boxes
 from .aiming_fullbody_env import FullbodySim
 from .aiming_fullbody_io import json_save
 from .mdp import unflatten_state, normalize_xi
+
+
+def world_up_error_deg(predicted_rotation, true_rotation):
+    """Angle between body local +Z axes expressed in world coordinates.
+
+    This measures lean direction as well as tilt; pure yaw of an upright
+    body deliberately has zero error, matching the posture reward axis.
+    """
+    p, t = predicted_rotation[..., :, 2], true_rotation[..., :, 2]
+    return torch.rad2deg(torch.atan2(torch.linalg.cross(p,t).norm(dim=-1),
+                                    (p*t).sum(-1)))
+
+
+def add_posture_thresholds(thresholds, cfg):
+    result = dict(thresholds)
+    for body in ('chest','pelvis'):
+        key = f'wm_gate_{body}_deg'
+        if key in cfg:
+            limit = float(cfg[key])
+            if not math.isfinite(limit) or limit <= 0:
+                raise ValueError(f'{key} must be finite and positive')
+            result[f'{body}_up_deg_p95'] = limit
+    return result
 
 
 @torch.no_grad()
@@ -55,6 +79,8 @@ def validate_world_model(pi, wm, task, sampler, cfg, out, *, env=None, command_c
         target = data['aim_target_w'][starts].flatten(0, 1)
         distance = (target - ht).norm(dim=-1)
         errors = dict(root_m=(S[0] - truth[0]).norm(dim=-1),
+                      chest_up_deg=world_up_error_deg(predicted_fk[1][:,task.torso],true_fk[1][:,task.torso]),
+                      pelvis_up_deg=world_up_error_deg(S[1],truth[1]),
                       feet_m=(feet - true_feet).norm(dim=-1).amax(-1),
                       feet_velocity_m_s=(predicted_fk[2][:, task.feet] - true_fk[2][:, task.feet]).norm(dim=-1).amax(-1),
                       joints_rad=(S[4] - truth[4]).square().mean(-1).sqrt(),
@@ -68,6 +94,7 @@ def validate_world_model(pi, wm, task, sampler, cfg, out, *, env=None, command_c
             report[key + '_rmse'] = float(values.square().mean().sqrt()) if len(values) else float('inf')
         reports[str(horizon)] = report
     thresholds = dict(root_m_p95=cfg['wm_gate_root_m'], feet_m_p95=cfg['wm_gate_feet_m'])
+    thresholds = add_posture_thresholds(thresholds,cfg)
     if (data['aim_weight'] > 0).any():
         thresholds['tip_m_p95'] = min(cfg['wm_gate_tip_m'], float(data['aim_tolerance'].min()) / 2)
     passed_by_horizon = {h: r['windows'] > 0 and all(np.isfinite(r[k]) and r[k] <= limit for k, limit in thresholds.items())

@@ -1,0 +1,11 @@
+{
+  "policy_unchanged": true,
+  "critic_unchanged": true,
+  "updates": {
+    "wm": 20000,
+    "distill": 1000,
+    "critic": 4500,
+    "pi": 25
+  },
+  "validation": "logs/tienkung3_29dof/lafan_jwp_20261115/take006_posture_gate/train/wm_validation/002000.json"
+}

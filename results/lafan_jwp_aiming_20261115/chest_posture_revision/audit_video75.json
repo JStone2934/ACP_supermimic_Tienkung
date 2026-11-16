@@ -1,0 +1,39 @@
+{
+  "scope": "Read-only re-audit of the previously selected successful video under the new chest requirement; no training",
+  "trajectory": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/evaluation_switching_load_feedback/iteration_000001/seed_17.npz",
+  "scenario": 75,
+  "settings": {
+    "version": 1,
+    "normal_limit_deg": 10.0,
+    "low_target_limit_deg": 25.0,
+    "low_target_start_deg": -15.0,
+    "low_target_full_deg": -30.0,
+    "lateral_limit_deg": 10.0,
+    "backward_limit_deg": 10.0,
+    "hard_limit_deg": 35.0,
+    "reward_scale_deg": 10.0,
+    "grace_seconds": 3.0,
+    "required_fraction": 0.95,
+    "body_axis": "native torso local +Z vs world +Z",
+    "allowance": "fixed commanded target-normal elevation; forward lean only",
+    "preference": "upright remains preferred even for low targets",
+    "initial_pose": "normal upright limit required before every episode"
+  },
+  "chest_tilt_deg_at_0_15_30": [
+    33.64532470703125,
+    32.50788116455078,
+    36.08346176147461
+  ],
+  "posture": {
+    "passed": false,
+    "initial_upright": false,
+    "hard_limit_pass": false,
+    "segment_post_grace_fractions": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_chest_tilt_deg": 37.36851119995117
+  },
+  "old_full_pass": true
+}

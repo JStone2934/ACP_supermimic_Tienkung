@@ -6,6 +6,7 @@ import shutil
 import torch
 from supermimic.acp.robots import sha256
 from supermimic.acp.aiming_policy import AimingPolicy
+from supermimic.acp.chest_posture import verify_posture_reports
 from supermimic.acp.aiming_fullbody_io import save_checkpoint,json_save
 from tools.prepare_moving_aiming_init import verify_standing_acceptance
 
@@ -48,12 +49,13 @@ def main():
     ck=torch.load(a.checkpoint,map_location='cpu',weights_only=False)
     if ck.get('task') not in ('wide_aiming_v1','moving_aiming_v1') or ck.get('smoke'):raise ValueError('Expected formal aiming weights')
     moving=ck['task']=='moving_aiming_v1';reports=[json.loads(x.read_text()) for x in a.reports]
+    verify_posture_reports(reports)
     digest=verify_acceptance(a.checkpoint,reports,moving)
     videos=[verify_video(x,a.reports,reports,digest) for x in a.videos]
     # Retain only fields that define the actual inference task; remove training
     # paths, teacher dependencies, replay settings and optimizer hyperparameters.
     keys=('initial_q','initial_height','initial_quat','physics_substeps','switch_interval_steps',
-          'reward_weights','feet_position_scale_m','term_height','term_tilt_deg',
+          'reward_weights','chest_posture','feet_position_scale_m','term_height','term_tilt_deg',
           'soft_termination_mode','soft_termination_tilt_margin_deg','soft_termination_height_margin_m',
           'reset_position_noise_m','reset_rotation_noise_rad','reset_joint_noise_rad','support_capture_steps','support_command_mode','distal_command_skip','distal_kinematic_head')
     config={k:ck['config'][k] for k in keys if k in ck['config']}

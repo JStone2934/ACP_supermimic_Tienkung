@@ -13,6 +13,7 @@ from .standing import ARM_NAMES, held_pose, freeze_normalizers
 from .task import goal_command, to_base
 from .terrain import grid_offsets, height_scan
 from ..rotations import yaw_mat
+from .chest_posture import ChestPosture
 
 TASK_NAME = 'standing_aiming_fullbody_v2'
 DEFAULT_CONFIG = 'docs/config/standing_aiming_fullbody_v2/default.json'
@@ -161,13 +162,27 @@ class FullbodyTask:
                             angular_velocity=.2, foot_velocity=.5, heading=.5,
                             foot_boundary=-4., action_rate=-.1, joint_limit=-2.)
         self.weights.update(self.config.get('reward_weights', {}))
+        self.chest_posture=ChestPosture(self.config.get('chest_posture'))
+        if self.chest_posture.enabled:
+            self.weights.setdefault('chest_upright',2.)
+            self.weights.setdefault('chest_excess',-2.)
+            if not (self.weights['chest_upright']>0 and self.weights['chest_excess']<0):
+                raise ValueError('Chest posture requires positive upright reward and negative excess penalty')
+        elif any(k in self.weights for k in ('chest_upright','chest_excess')):
+            raise ValueError('Chest reward weights require chest_posture configuration')
         # Saved configs predating this field used a hard-coded 5 cm foot scale.
         self.feet_position_scale_m = float(self.config.get('feet_position_scale_m', .05 if config is not None else .10))
         if not math.isfinite(self.feet_position_scale_m) or self.feet_position_scale_m <= 0:
             raise ValueError('feet_position_scale_m must be finite and positive')
         if self.weights.get('request_limit', 0.) > 0:
             raise ValueError('request_limit must be a nonpositive reward weight')
-        self.max_step_reward = sum(max(0., w) for w in self.weights.values()) * self.dt
+        # All positive reward kernels are in [0,1]; these terms are instead
+        # nonnegative, unbounded costs and cannot have positive weights.
+        for name in ('action_rate','joint_limit','request_limit','chest_excess'):
+            if self.weights.get(name,0.) > 0:
+                raise ValueError(f'{name} must be a nonpositive reward weight')
+        self.max_step_reward = (sum(max(0., w) for k,w in self.weights.items() if k!='aim')
+                                + max(0., self.bootstrap_aim_weight())) * self.dt
         self.term_height = self.config.get('term_height', .25)
         self.term_rzz = math.cos(math.radians(self.config.get('term_tilt_deg', 45.)))
         self.soft_termination_mode=self.config.get('soft_termination_mode','legacy_sigmoid')
@@ -184,6 +199,9 @@ class FullbodyTask:
             self.soft_rzz_failed=math.cos(math.radians(tilt+self.soft_tilt_margin))
         self.critic_dim = robot.inv_dim + 107 + 3 + 1 + 1 + 6 + 29 + robot.xi_dim + self.mdp.scan_dim + 1 + 990 + 1
 
+    def bootstrap_aim_weight(self):
+        return self.weights['aim']
+
     def metadata(self):
         result=dict(name=TASK_NAME, version=2, command_layout=COMMAND_LAYOUT, obs_dim=99, hist=10,
                     command_dim=107, axis=[0, 0, -1], tcp='right_tcp_link', episode_steps=1500,
@@ -199,6 +217,7 @@ class FullbodyTask:
                 joints=['elbow_yaw_r_joint', 'wrist_pitch_r_joint', 'wrist_roll_r_joint'], outputs='additive_normalized_actions')
         if self.config.get('distal_kinematic_head',False):
             result['distal_kinematic_head'] = dict(version=1,inputs='unit_target_xyz',hidden=[32,32],activation='tanh',joints=['elbow_yaw_r_joint','wrist_pitch_r_joint','wrist_roll_r_joint'],outputs='additive_normalized_actions')
+        if self.chest_posture.enabled:result['chest_posture']=self.chest_posture.metadata()
         return result
 
     def initial_state(self, n):
@@ -287,6 +306,9 @@ class FullbodyTask:
             if raw is None or xi is None:
                 raise ValueError('Request penalty requires the original raw action and xi')
             terms['request_limit'] = self.request_excess(raw, xi).square().sum(-1)
+        if self.chest_posture.enabled:
+            _,posture_terms=self.chest_posture.measure(fk[1][:,self.torso],ctx['aim_normal_w'])
+            terms.update(posture_terms)
         contributions = {k: x * (ctx['aim_weight'] if k == 'aim' else self.weights[k]) * self.dt for k, x in terms.items()}
         return terms, contributions
 

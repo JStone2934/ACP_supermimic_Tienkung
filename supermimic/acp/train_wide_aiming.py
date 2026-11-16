@@ -178,7 +178,7 @@ def main():
         cfg['wm_only_iters']=100
     if args.smoke:
         capture=cfg.get('support_capture_steps') or 0
-        cfg.update(num_envs=32,wm_batch=32,pi_batch=32,buffer_steps=64,initial_collect_steps=max(16,capture+10),
+        cfg.update(num_envs=32,wm_batch=32,pi_batch=32,buffer_steps=64,initial_collect_steps=max(16,capture+10,cfg['wm_window']+1),
             wm_batches=1,wm_only_iters=0,critic_warmup_iters=0,distill_iters=0,critic_epochs=1,
             critic_minibatches=1,iterations=2,ckpt_every=2,log_every=1,wm_validation_steps=max(16,cfg['horizon'],capture+16),wm_validation_envs=2)
     args.log_dir.mkdir(parents=True,exist_ok=True)

@@ -1,0 +1,77 @@
+{
+  "seed": 20261116,
+  "sampling": "uniform shuffled JWP training clips; uniform random eligible frame per clip; max20; no score sorting",
+  "clips": 90,
+  "frames": 29424,
+  "instantaneous_good_frames": 634,
+  "continuous_good_frames": 168,
+  "eligible_clips": 3,
+  "selected_count": 3,
+  "geometry_passes": 0,
+  "clips_with_no_instantaneous_good_frames": 71,
+  "clips_with_instantaneous_good_but_no_continuous_window": 16,
+  "soft_limit_details": [
+    {
+      "key": "jwp/take013_chr00",
+      "frame": 276,
+      "soft_limit_failures": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "q_rad": -0.034694138914346695,
+          "soft_lo_rad": 0.043633460998535156,
+          "soft_hi_rad": 2.3998301029205322
+        },
+        {
+          "joint": "knee_pitch_r_joint",
+          "q_rad": -0.015301038511097431,
+          "soft_lo_rad": 0.043633460998535156,
+          "soft_hi_rad": 2.3998301029205322
+        },
+        {
+          "joint": "shoulder_roll_r_joint",
+          "q_rad": 0.057580359280109406,
+          "soft_lo_rad": -3.157301664352417,
+          "soft_hi_rad": 0.015707731246948242
+        }
+      ]
+    },
+    {
+      "key": "jwp/take036_chr00",
+      "frame": 67,
+      "soft_limit_failures": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "q_rad": -0.012161974795162678,
+          "soft_lo_rad": 0.043633460998535156,
+          "soft_hi_rad": 2.3998301029205322
+        },
+        {
+          "joint": "shoulder_roll_r_joint",
+          "q_rad": 0.03372662141919136,
+          "soft_lo_rad": -3.157301664352417,
+          "soft_hi_rad": 0.015707731246948242
+        }
+      ]
+    },
+    {
+      "key": "jwp/take006_chr00",
+      "frame": 452,
+      "soft_limit_failures": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "q_rad": -0.020335830748081207,
+          "soft_lo_rad": 0.043633460998535156,
+          "soft_hi_rad": 2.3998301029205322
+        },
+        {
+          "joint": "knee_pitch_r_joint",
+          "q_rad": -0.08726649731397629,
+          "soft_lo_rad": 0.043633460998535156,
+          "soft_hi_rad": 2.3998301029205322
+        }
+      ]
+    }
+  ],
+  "validation_data_used": false,
+  "training_started": false
+}

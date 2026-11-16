@@ -1,0 +1,158 @@
+{
+  "scope": "Read-only ACP reward-gradient decomposition on recorded physical states. Not physical acceptance.",
+  "source_sha256": "ba44581559fd0356d018343b652312f9176f2179ce55c96312cc4dcd4ec1d5aa",
+  "trained_sha256": "732fffd9cbf75fe2ceeb983fec321f642105677d2ff77dd758391652b99ac57c",
+  "trajectory_sha256": "847305c4319a730072f2cfcc7213a1810f71b494644183c017c77ec1f9126657",
+  "groups": {
+    "aim": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "chest_upright": {
+      "reward": 0.6986944079399109,
+      "gradient_norm": 23.10500144958496,
+      "actual_update_dot_gradient": 0.5712929964065552,
+      "actual_update_cosine": 0.06623873859643936
+    },
+    "chest_excess": {
+      "reward": -0.20232722163200378,
+      "gradient_norm": 22.855751037597656,
+      "actual_update_dot_gradient": 1.0192419290542603,
+      "actual_update_cosine": 0.11946506798267365
+    },
+    "upright": {
+      "reward": 0.2550760805606842,
+      "gradient_norm": 4.438499450683594,
+      "actual_update_dot_gradient": -0.029285846278071404,
+      "actual_update_cosine": -0.017675867304205894
+    },
+    "height": {
+      "reward": 0.5043971538543701,
+      "gradient_norm": 1.4066576957702637,
+      "actual_update_dot_gradient": 0.03651316836476326,
+      "actual_update_cosine": 0.0695376843214035
+    },
+    "feet": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "foot_motion": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "foot_velocity": {
+      "reward": 0.18175745010375977,
+      "gradient_norm": 4.292523384094238,
+      "actual_update_dot_gradient": 0.09075108915567398,
+      "actual_update_cosine": 0.0566367506980896
+    },
+    "velocity": {
+      "reward": 0.4124782383441925,
+      "gradient_norm": 2.4513871669769287,
+      "actual_update_dot_gradient": 0.0235526654869318,
+      "actual_update_cosine": 0.02573874033987522
+    },
+    "angular_velocity": {
+      "reward": 0.08328863233327866,
+      "gradient_norm": 1.0460175275802612,
+      "actual_update_dot_gradient": 0.053166624158620834,
+      "actual_update_cosine": 0.13616305589675903
+    },
+    "root": {
+      "reward": 0.988168478012085,
+      "gradient_norm": 1.4407336711883545,
+      "actual_update_dot_gradient": 0.01579049602150917,
+      "actual_update_cosine": 0.029361024498939514
+    },
+    "heading": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "foot_boundary": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "regularization": {
+      "reward": -0.023685310035943985,
+      "gradient_norm": 2.8273191452026367,
+      "actual_update_dot_gradient": 0.03728610277175903,
+      "actual_update_cosine": 0.035328999161720276
+    },
+    "total_reward": {
+      "gradient_norm": 38.608238220214844,
+      "actual_update_dot_gradient": 1.8183093070983887,
+      "actual_update_cosine": 0.12616734206676483
+    },
+    "reward_tail_geometry": {
+      "gradient_cosine": 0.0,
+      "parameter_update_norm": 0.3732852637767792,
+      "tail_norm_over_reward_norm": 0.0
+    }
+  },
+  "group_order": [
+    "aim",
+    "chest_upright",
+    "chest_excess",
+    "upright",
+    "height",
+    "feet",
+    "foot_motion",
+    "foot_velocity",
+    "velocity",
+    "angular_velocity",
+    "root",
+    "heading",
+    "foot_boundary",
+    "regularization"
+  ],
+  "source_predicted_rewards": [
+    0.0,
+    0.6986944079399109,
+    -0.20232722163200378,
+    0.2550760805606842,
+    0.5043971538543701,
+    0.0,
+    0.0,
+    0.18175745010375977,
+    0.4124782383441925,
+    0.08328863233327866,
+    0.988168478012085,
+    0.0,
+    0.0,
+    -0.023685310035943985
+  ],
+  "trained_predicted_rewards": [
+    0.0,
+    0.9795915484428406,
+    -0.02003146894276142,
+    0.2502789795398712,
+    0.5186592936515808,
+    0.0,
+    0.0,
+    0.19856809079647064,
+    0.4157235026359558,
+    0.09075725078582764,
+    0.9979555010795593,
+    0.0,
+    0.0,
+    -0.007257448509335518
+  ],
+  "fixed_source_world_model": true,
+  "recorded_start_times": [
+    64,
+    112
+  ],
+  "sample_count": 16,
+  "horizon": 32,
+  "physical_policy_weights_modified": false
+}

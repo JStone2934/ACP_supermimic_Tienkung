@@ -1,0 +1,26 @@
+[
+  {
+    "seed": 17,
+    "count": 101,
+    "standing": 0,
+    "chest": 0,
+    "full": 0,
+    "terminated": 0,
+    "max_chest_range": [
+      23.67578887939453,
+      41.52838134765625
+    ]
+  },
+  {
+    "seed": 53,
+    "count": 101,
+    "standing": 0,
+    "chest": 0,
+    "full": 0,
+    "terminated": 0,
+    "max_chest_range": [
+      23.238452911376953,
+      32.28879165649414
+    ]
+  }
+]

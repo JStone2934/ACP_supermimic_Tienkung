@@ -1,0 +1,193 @@
+{
+ "ckpt": "logs/tienkung3_29dof/lafan_jwp_20261115/jwp_finetune_support/train/ckpt_001000.pt",
+ "checkpoint_sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+ "robot_metadata": {
+  "robot_id": "tienkung3_29dof",
+  "model_hash": "b6105ab23a8494624068ab304c73e51d79a10b6504768730b741e42bf935ef3a",
+  "config_hash": "7edd0695f24b307df7a282729428d99b7da33f8a471ea1dd16206422070eb25d",
+  "joint_order": [
+   "hip_pitch_l_joint",
+   "hip_roll_l_joint",
+   "hip_yaw_l_joint",
+   "knee_pitch_l_joint",
+   "ankle_pitch_l_joint",
+   "ankle_roll_l_joint",
+   "hip_pitch_r_joint",
+   "hip_roll_r_joint",
+   "hip_yaw_r_joint",
+   "knee_pitch_r_joint",
+   "ankle_pitch_r_joint",
+   "ankle_roll_r_joint",
+   "waist_yaw_joint",
+   "waist_roll_joint",
+   "waist_pitch_joint",
+   "shoulder_pitch_l_joint",
+   "shoulder_roll_l_joint",
+   "shoulder_yaw_l_joint",
+   "elbow_pitch_l_joint",
+   "elbow_yaw_l_joint",
+   "wrist_pitch_l_joint",
+   "wrist_roll_l_joint",
+   "shoulder_pitch_r_joint",
+   "shoulder_roll_r_joint",
+   "shoulder_yaw_r_joint",
+   "elbow_pitch_r_joint",
+   "elbow_yaw_r_joint",
+   "wrist_pitch_r_joint",
+   "wrist_roll_r_joint"
+  ],
+  "control_dt": 0.02
+ },
+ "data_hash": "369846b64aac45dd77ad864856c3a7c4a414e389aa393bd02dfc8e0c10994fd4",
+ "checkpoint_data_hash": "865edb8e0c6c05dabec51fbbe2e1c42e1fd1838979d584c747b948f844741b26",
+ "evaluation_motion_dir": "results/take006_tracker_validation/dataset/motions",
+ "seed": 0,
+ "per_joint_rmse_rad": {
+  "hip_pitch_l_joint": 0.19101431965827942,
+  "hip_roll_l_joint": 0.08784608542919159,
+  "hip_yaw_l_joint": 0.31537577509880066,
+  "knee_pitch_l_joint": 0.11566342413425446,
+  "ankle_pitch_l_joint": 0.1360434591770172,
+  "ankle_roll_l_joint": 0.05257819965481758,
+  "hip_pitch_r_joint": 0.18712469935417175,
+  "hip_roll_r_joint": 0.14325988292694092,
+  "hip_yaw_r_joint": 0.15077897906303406,
+  "knee_pitch_r_joint": 0.13222263753414154,
+  "ankle_pitch_r_joint": 0.15131832659244537,
+  "ankle_roll_r_joint": 0.08272824436426163,
+  "waist_yaw_joint": 0.06528449058532715,
+  "waist_roll_joint": 0.07806743681430817,
+  "waist_pitch_joint": 0.23352918028831482,
+  "shoulder_pitch_l_joint": 0.09207513928413391,
+  "shoulder_roll_l_joint": 0.15465965867042542,
+  "shoulder_yaw_l_joint": 0.11834987252950668,
+  "elbow_pitch_l_joint": 0.2645464837551117,
+  "elbow_yaw_l_joint": 0.12230946123600006,
+  "wrist_pitch_l_joint": 0.07138222455978394,
+  "wrist_roll_l_joint": 0.1855497807264328,
+  "shoulder_pitch_r_joint": 0.305319607257843,
+  "shoulder_roll_r_joint": 0.07722105830907822,
+  "shoulder_yaw_r_joint": 0.13476362824440002,
+  "elbow_pitch_r_joint": 0.45022350549697876,
+  "elbow_yaw_r_joint": 0.18614314496517181,
+  "wrist_pitch_r_joint": 0.17157888412475586,
+  "wrist_roll_r_joint": 0.2398858368396759
+ },
+ "per_clip": {
+  "jwp/take006_chr00": {
+   "failed": false,
+   "alive_steps": 743,
+   "expected_steps": 743,
+   "finite": true,
+   "root_rmse_m": 0.08851604163646698,
+   "root_max_m": 0.22110217809677124,
+   "joint_rmse_rad": 0.18394695222377777,
+   "torque_saturation_fraction": 0.00013923051301389933,
+   "velocity_exceed_fraction": 0.0
+  }
+ },
+ "interface": "reference",
+ "eta_obs": 0.0,
+ "term_window": 0.0,
+ "norm_return": 0.7126,
+ "n_failed": 0,
+ "failed": [],
+ "per_folder": {
+  "jwp": {
+   "norm_return": 0.7126,
+   "fail_rate": 0.0
+  }
+ },
+ "contacts": {
+  "left_foot": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "label_frames": 743,
+   "touch_frames": 743,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_foot": {
+   "precision": 1.0,
+   "recall": 0.995,
+   "label_frames": 743,
+   "touch_frames": 739,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_knee": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_knee": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_hand": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_hand": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "left_elbow": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "right_elbow": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  },
+  "pelvis": {
+   "precision": null,
+   "recall": null,
+   "label_frames": 0,
+   "touch_frames": 0,
+   "placement_err": null,
+   "placement_median": null,
+   "placement_within_0.1": null,
+   "onsets": 0
+  }
+ }
+}

@@ -1,0 +1,15 @@
+{
+  "checkpoint_sha256": "de10a55a0fc6f84700dc8134aace1da86b456323b39fc752f2ab480d546cef21",
+  "seed": 17,
+  "phase": "distillation",
+  "count": 101,
+  "terminated": 0,
+  "standing_pass": 76,
+  "chest_pass": 0,
+  "full_pass": 0,
+  "max_chest_tilt_deg_range": [
+    27.199974060058594,
+    38.94718551635742
+  ],
+  "decision": "No promotion. Continue planned model adaptation and chest-aware ACP actor optimization; no relaxation of acceptance. Training teacher-mixture logs are not independent policy evidence."
+}

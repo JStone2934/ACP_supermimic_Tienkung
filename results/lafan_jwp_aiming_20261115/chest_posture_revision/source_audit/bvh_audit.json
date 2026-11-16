@@ -1,0 +1,140 @@
+[
+  {
+    "thresholds": {
+      "horizontal_deg": 20,
+      "elbow_bend_deg": 40
+    },
+    "name": "aiming2_subject2",
+    "frames": 9172,
+    "frame30": 12,
+    "time_s": 0.4,
+    "bones": [
+      "Hips",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "LeftToe",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot",
+      "RightToe",
+      "Spine",
+      "Spine1",
+      "Spine2",
+      "Neck",
+      "Head",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand"
+    ],
+    "selected": {
+      "Left": {
+        "horizontal_deg": 8.089621162696824,
+        "elbow_bend_deg": 33.14023706996886
+      },
+      "Right": {
+        "horizontal_deg": 9.448414648110088,
+        "elbow_bend_deg": 28.553003950846623
+      }
+    },
+    "initial_tpose_like_end_frame": 51,
+    "initial_tpose_like_duration_s": 1.7
+  },
+  {
+    "thresholds": {
+      "horizontal_deg": 20,
+      "elbow_bend_deg": 40
+    },
+    "name": "walk1_subject1",
+    "frames": 7840,
+    "frame30": 45,
+    "time_s": 1.5,
+    "bones": [
+      "Hips",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "LeftToe",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot",
+      "RightToe",
+      "Spine",
+      "Spine1",
+      "Spine2",
+      "Neck",
+      "Head",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand"
+    ],
+    "selected": {
+      "Left": {
+        "horizontal_deg": 7.213122543818454,
+        "elbow_bend_deg": 15.33388986903549
+      },
+      "Right": {
+        "horizontal_deg": 1.262138390713977,
+        "elbow_bend_deg": 21.679018742005074
+      }
+    },
+    "initial_tpose_like_end_frame": 73,
+    "initial_tpose_like_duration_s": 2.433333333333333
+  },
+  {
+    "thresholds": {
+      "horizontal_deg": 20,
+      "elbow_bend_deg": 40
+    },
+    "name": "aiming1_subject4",
+    "frames": 7184,
+    "frame30": 13,
+    "time_s": 0.43333333333333335,
+    "bones": [
+      "Hips",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "LeftToe",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot",
+      "RightToe",
+      "Spine",
+      "Spine1",
+      "Spine2",
+      "Neck",
+      "Head",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand"
+    ],
+    "selected": {
+      "Left": {
+        "horizontal_deg": 10.132068354217509,
+        "elbow_bend_deg": 15.994876495496236
+      },
+      "Right": {
+        "horizontal_deg": 7.727819988545543,
+        "elbow_bend_deg": 22.978202923313912
+      }
+    },
+    "initial_tpose_like_end_frame": 61,
+    "initial_tpose_like_duration_s": 2.033333333333333
+  }
+]

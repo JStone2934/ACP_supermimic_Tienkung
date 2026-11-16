@@ -1,0 +1,23 @@
+{
+  "implementation": "Working tree only; no frozen runner, checkpoint or active training changed",
+  "files": [
+    "supermimic/acp/aiming_fullbody_validation.py",
+    "tools/test_wm_posture_gate.py"
+  ],
+  "metrics": [
+    "chest_up_deg_p95",
+    "chest_up_deg_rmse",
+    "pelvis_up_deg_p95",
+    "pelvis_up_deg_rmse"
+  ],
+  "definition": "atan2(norm(cross(pred_world_localZ,true_world_localZ)), dot(...)) in degrees. FK torso rotation for chest; root rotation for pelvis. Same tilt with opposite lean is distinguished; pure upright yaw intentionally has zero error.",
+  "thresholds": "Only explicit positive finite wm_gate_chest_deg / wm_gate_pelvis_deg activate respective p95 gate. Absent keys retain legacy acceptance behavior, with new diagnostics always reported. Existing window masks/horizon gate semantics unchanged.",
+  "recommendation": {
+    "wm_gate_chest_deg": 3.0,
+    "wm_gate_pelvis_deg": 3.0,
+    "status": "Provisional upper limits only; parent will choose after paired physical data. <=3deg reserves margin against user10deg posture tolerance. No runtime config enabled or changed."
+  },
+  "scope": "New training model-quality gate only; physical posture and final acceptance unchanged",
+  "tests": "2 CPU numeric/optional-gate tests passed; world rotations0/10/20deg, equal tilt opposite lean, pure yaw, batch axes, disabled compatibility and invalid thresholds",
+  "training_started": false
+}

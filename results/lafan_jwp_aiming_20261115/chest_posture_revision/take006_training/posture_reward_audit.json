@@ -1,0 +1,51 @@
+{
+  "status": "Read-only source and CPU initial-pose audit; no runner or weight changes; no training",
+  "conclusion": "No evidence of reward implementation forcing a bowed torso or low head. Root-height target is selected repaired root height, not robot nominal stand_height; chest reward acts on FK torso world rotation and remains differentiable. Physical drift can still result from model gradient error or unconstrained policy drift.",
+  "findings": {
+    "root_height": {
+      "selected_reference_m": 0.9897393028350274,
+      "implementation": "Wide initial_state replaces generic robot height with config initial_height. Simulator context is created AFTER reset and terrain penetration correction; height_anchor is actual reset rootZ. Height term uses rootZ error with5cm scale, maximized at that anchor.",
+      "coupling": "Maintaining selected pelvis height while straightening tilted pelvis may require leg adjustment; height term does not directly reward bending. This is a potential optimization tradeoff, not demonstrated causal bug."
+    },
+    "pose_reward": "No reference joint-pose or default-pose attraction in Fullbody reward. Terms are physical root/height/upright/velocity/feet/action-rate/limits and chest. Level0 aim contribution is zero. Neither head angle nor gaze is separately controlled.",
+    "chest_gradient": "task.kin.forward returns world body rotations; fk[1][:,task.torso] feeds local+Z vs world+Z. Torch trigonometry and matrix FK remain in autograd for WM actor rollout; no detach in chest reward path. Initial chest_upright=.74529636, contribution=.02981185/step; chest_excess=0. Prefers zero tilt; no downward target allowance at level0.",
+    "root_upright": "Uses world root rotation R[:,2,2], distinct from chest FK rotation. Initial kernel=.65773767, contribution=.01315475; improving root and chest upright is encouraged but joint coupling can create transient competition.",
+    "action_reference": "MDP default_q is RobotSpec default, while reset initial_q is selected repaired pose. This is intentional teacher-compatible action coordinates: q_des=default_q+xi_offset+alpha*raw, soft limit clamp; reset previous action=(initial_q-default_q-offset)/alpha. Simulator asserts native default consistency. Changing default_q to initial_q without migrating output/obs/WM would be incorrect.",
+    "normalization": "Tracker transfer preserves teacher observation normalization and first93 goal statistics, folds constant repaired pose condition and pose_skip into biases, adds14 command inputs with zero weights. Teacher normalizers frozen. Actual contact inputs change teacher fixed-support vs student initially zero; distillation exists to adapt this interface. Frozen statistics may become out-of-distribution after full actor drift, but no evidence of a coordinate mismatch.",
+    "wm_physical_match": "Both imagined reward and physical reward call the same task reward on next state, including FK torso world rotations; no root-only replacement for chest. Reward equality does not guarantee WM gradients match real contact dynamics."
+  },
+  "initial_pose_cpu_probe": {
+    "root": 0.04,
+    "height": 0.02,
+    "upright": 0.01315475348,
+    "velocity": 0.02,
+    "angular_velocity": 0.004,
+    "foot_velocity": 0.01,
+    "chest_upright": 0.02981185354,
+    "chest_excess": 0.0,
+    "joint_limit": 0.0,
+    "aim": 0.0
+  },
+  "minimal_next_actions": [
+    {
+      "action": "No corrective reward patch justified yet. Compare per-term physical and imagined rewards on identical failure states, with actual FK chest rotations and pelvis/root heights.",
+      "execution": "Use recorded rollout NPZ/state history; CPU FK or deferred GPU after training releases resource."
+    },
+    {
+      "action": "CPU action-coordinate regression on selected state and random validxi: raw=(q-default-offset)/alpha, compose_action(raw,xi) must recover q; teacher-transferred output parity should use repaired q.",
+      "purpose": "Rule out adapter/reference coordinate mistakes before tuning rewards."
+    },
+    {
+      "action": "If physical height tradeoff is demonstrated, prepare separate versioned branch reducing only height weight or widening only height scale; preserve upright/chest acceptance and compare against same checkpoint/seeds.",
+      "caution": "Do not lower reference height or change default_q merely because robot crouches. No such fix applied."
+    },
+    {
+      "action": "If actor changes chest/root despite favorable true gradients, constrain parameter/action drift or improve current-policy WM validation in isolated branch; gradient decomposition from other audit should select intervention.",
+      "caution": "Reward-only tail removal already failed physically, so bootstrap alone is not a sufficient diagnosis."
+    }
+  ],
+  "limitations": [
+    "No physical acceptance asserted",
+    "CPU probe is initial pose only; does not establish rollout gradients or stability"
+  ]
+}

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import torch
 from supermimic.acp.robots import sha256
+from supermimic.acp.chest_posture import verify_posture_reports
 from supermimic.acp.aiming_wide import WideAimingTask
 from supermimic.acp.aiming_moving import MovingAimingTask
 from supermimic.acp.aiming_fullbody import validate_checkpoint
@@ -30,7 +31,9 @@ def main():
     p.add_argument('--reports',nargs=2,required=True,type=Path);p.add_argument('--out',required=True,type=Path)
     a=p.parse_args();torch.set_num_threads(2)
     if a.out.exists():raise FileExistsError(a.out)
-    digest=verify_standing_acceptance(a.checkpoint,[json.loads(x.read_text()) for x in a.reports])
+    reports=[json.loads(x.read_text()) for x in a.reports]
+    verify_posture_reports(reports)
+    digest=verify_standing_acceptance(a.checkpoint,reports)
     ck=torch.load(a.checkpoint,map_location='cpu',weights_only=False)
     validate_checkpoint(ck,WideAimingTask('cpu',ck['config']))
     if ck.get('smoke') or ck.get('task')!='wide_aiming_v1':raise ValueError('Expected formal standing checkpoint')

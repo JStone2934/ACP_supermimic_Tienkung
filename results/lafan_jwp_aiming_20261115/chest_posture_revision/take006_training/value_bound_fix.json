@@ -1,0 +1,34 @@
+{
+  "status": "Implemented in working tree only; no training launched",
+  "changed_files": [
+    "supermimic/acp/aiming_fullbody.py",
+    "supermimic/acp/aiming_wide.py",
+    "supermimic/acp/aiming_moving.py",
+    "tools/test_aiming_value_bound.py"
+  ],
+  "behavior": {
+    "wide_level0": {
+      "previous_max_step_reward": 0.234,
+      "corrected_max_step_reward": 0.154,
+      "long_episode_cap_gamma99": 15.4
+    },
+    "wide_levels1_to6": {
+      "actual_aim_weight": 4,
+      "max_step_reward": 0.234
+    },
+    "moving_levels": "Actual aim_weight4 retained at every velocity stage including0",
+    "other_tasks": "Configured aim coefficient retained"
+  },
+  "upper_bound_audit": {
+    "bounded_positive_terms": "aim, root, feet, height, upright, velocity, angular_velocity, foot_velocity, heading, chest_upright all in[0,1]; foot_boundary also bounded[0,1]",
+    "unbounded_nonnegative_costs": "action_rate,joint_limit,request_limit,chest_excess now reject positive weights so cannot invalidate finite upper bound"
+  },
+  "reward_changed": false,
+  "compatibility": "No task metadata fields changed; cap is derived runtime training semantics. Legacy compatible task metadata remains readable. Existing frozen runners and weights untouched; a new freeze is required to use corrected bound. Record source and corrected runner provenance for branch. Moving task override prevents confusing moving level0 with standing balance.",
+  "validation": {
+    "command": "python -m unittest tools.test_aiming_value_bound tools.test_aiming_fullbody tools.test_aiming_wide",
+    "result": "20 tests passed in55.691s",
+    "new_tests": "all seven standing stages plus moving level0 cap, bootstrap cap, legacy metadata, positive unbounded costs, identical physical reward under fixed context"
+  },
+  "physical_acceptance": false
+}

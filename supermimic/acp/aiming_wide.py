@@ -50,6 +50,12 @@ class WideAimingTask(FullbodyTask):
         self.foot_owners = spheres.owner[mask].to(device)
         self.foot_links = torch.tensor(self.feet, device=device)[self.foot_owners]
 
+    def bootstrap_aim_weight(self):
+        if 'curriculum_level' in self.config:
+            from .wide_curriculum import STAGES
+            return STAGES[self.config['curriculum_level']]['aim_weight']
+        return super().bootstrap_aim_weight()
+
     def metadata(self):
         result = super().metadata()
         result.update(name='wide_aiming_v1', version=1, contact_valid=[False]*9,

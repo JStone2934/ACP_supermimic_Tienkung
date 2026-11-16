@@ -1,0 +1,84 @@
+{
+  "scope": "Read-only ACP reward-gradient decomposition on recorded physical states. Not physical acceptance.",
+  "source_sha256": "ba44581559fd0356d018343b652312f9176f2179ce55c96312cc4dcd4ec1d5aa",
+  "trained_sha256": "39b3998a5b13bd9371190e5a3a02a53d3ade4b1bed77dc598c166c657eb467f3",
+  "trajectory_sha256": "847305c4319a730072f2cfcc7213a1810f71b494644183c017c77ec1f9126657",
+  "groups": {
+    "aim": {
+      "reward": 0.0,
+      "gradient_norm": 0.0,
+      "actual_update_dot_gradient": 0.0,
+      "actual_update_cosine": 0.0
+    },
+    "stability": {
+      "reward": 2.9215331077575684,
+      "gradient_norm": 38.0974235534668,
+      "actual_update_dot_gradient": -0.7193537950515747,
+      "actual_update_cosine": -0.005117824301123619
+    },
+    "regularization": {
+      "reward": -0.023685310035943985,
+      "gradient_norm": 2.8273191452026367,
+      "actual_update_dot_gradient": -0.28374314308166504,
+      "actual_update_cosine": -0.027201255783438683
+    },
+    "bootstrap": {
+      "reward": 4.991065979003906,
+      "gradient_norm": 278.1175842285156,
+      "actual_update_dot_gradient": 7.139543533325195,
+      "actual_update_cosine": 0.006957935635000467
+    },
+    "total_reward": {
+      "gradient_norm": 38.60823059082031,
+      "actual_update_dot_gradient": -1.0030966997146606,
+      "actual_update_cosine": -0.0070420862175524235
+    },
+    "reward_tail_geometry": {
+      "gradient_cosine": 0.4527309238910675,
+      "parameter_update_norm": 3.6894495487213135,
+      "tail_norm_over_reward_norm": 7.203582763671875
+    }
+  },
+  "group_order": [
+    "aim",
+    "stability",
+    "regularization",
+    "bootstrap"
+  ],
+  "source_predicted_rewards": [
+    0.0,
+    2.9215331077575684,
+    -0.023685310035943985,
+    4.991065979003906
+  ],
+  "trained_predicted_rewards": [
+    0.0,
+    1.5179073810577393,
+    -0.3889853060245514,
+    15.846763610839844
+  ],
+  "fixed_source_world_model": true,
+  "recorded_start_times": [
+    64,
+    112
+  ],
+  "sample_count": 16,
+  "horizon": 32,
+  "physical_policy_weights_modified": false,
+  "training_scope": "full",
+  "reference_world_model_and_critic_iteration": 1700,
+  "checkpoint_comparison": [
+    1700,
+    1800
+  ],
+  "frozen_code_root": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/frozen_take006_upright_v1",
+  "source_reward_total": 2.8978477977216244,
+  "trained_reward_total": 1.1289220750331879,
+  "interpretation": "On these16 recorded physical starts, the100-update parameter displacement opposes source immediate-reward gradient and aligns source tail gradient. Under fixed source WM and critic, learned policy reduces32-step reward and increases tail. This supports tail exploitation / sacrifice of short-horizon reward, not proof of per-update causality or physical Jacobian accuracy.",
+  "limitations": [
+    "16 starts only, times64/112 x8environments from validation1700; context reconstructed by task.observe_context/advance_context from recorded physical states and aim targets.",
+    "Gradient evaluated at1700;100 Adam updates are finite displacement, not individual gradients.",
+    "1700 WM and critic held fixed; no physics perturbation finite-difference test in this diagnostic.",
+    "Physical deterioration known independently from parent evaluation; this report is imagined objective attribution, not physical acceptance."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "user_requested_revision": true,
+  "preserves": "acceptance_contract.json",
+  "additional_requirement": "Keep torso upright whenever special aiming posture is unnecessary; allow bounded forward lean for low targets while always preferring upright",
+  "chest_posture": {
+    "normal_limit_deg": 10.0,
+    "low_target_limit_deg": 25.0,
+    "low_target_start_deg": -15.0,
+    "low_target_full_deg": -30.0,
+    "lateral_limit_deg": 10.0,
+    "backward_limit_deg": 10.0,
+    "hard_limit_deg": 35.0,
+    "reward_scale_deg": 10.0,
+    "grace_seconds": 3.0,
+    "required_fraction": 0.95
+  },
+  "settings_provisional": true,
+  "old_reports_do_not_prove_new_requirement": true
+}

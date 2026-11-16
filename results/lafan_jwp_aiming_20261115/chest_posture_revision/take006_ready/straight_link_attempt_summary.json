@@ -1,0 +1,10 @@
+{
+  "method": "Initial attempt: foot link horizontal, native collision mesh lowest1mm patch",
+  "solver_success": true,
+  "all_soft_limits": true,
+  "root_z_change_m": -0.0012874736997959824,
+  "com_margin_m": -0.07265900732839324,
+  "static_lp_success": false,
+  "reason": "Foot link horizontal does not align native sole plane. Lowest1mm patch is concentrated at heel. Replaced by native collision hull main sole facet; failure retained.",
+  "physical_acceptance": false
+}

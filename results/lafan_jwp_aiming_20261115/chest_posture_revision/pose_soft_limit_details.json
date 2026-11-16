@@ -1,0 +1,308 @@
+{
+  "scope": "Read-only candidate audit; no pose modification or training",
+  "candidates": [
+    {
+      "id": 1,
+      "key": "lafan/walk2_subject1__f003144_004807",
+      "frame": 1010,
+      "violations": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "angle_deg": 1.8289970205693,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 0.6710161401954471
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "key": "lafan/aiming2_subject2__f000002_002243",
+      "frame": 18,
+      "violations": []
+    },
+    {
+      "id": 3,
+      "key": "lafan/walk1_subject1__f000004_000479",
+      "frame": 71,
+      "violations": []
+    },
+    {
+      "id": 4,
+      "key": "lafan/dance2_subject5__f000002_000282",
+      "frame": 21,
+      "violations": []
+    },
+    {
+      "id": 5,
+      "key": "lafan/walk1_subject1__f004361_006094",
+      "frame": 1622,
+      "violations": []
+    },
+    {
+      "id": 6,
+      "key": "jwp/take013_chr00",
+      "frame": 325,
+      "violations": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "angle_deg": -1.8853006177752425,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 4.38531377853999
+        },
+        {
+          "joint": "knee_pitch_r_joint",
+          "angle_deg": -4.924011011822307,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 7.424024172587054
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "key": "lafan/walk1_subject1__f000004_000479",
+      "frame": 20,
+      "violations": []
+    },
+    {
+      "id": 8,
+      "key": "jwp/take013_chr00",
+      "frame": 684,
+      "violations": [
+        {
+          "joint": "shoulder_roll_r_joint",
+          "angle_deg": 7.344960890962748,
+          "soft_min_deg": -180.90005493164062,
+          "soft_max_deg": 0.8999866843223572,
+          "excess_deg": 6.444974184786848
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "key": "lafan/aiming2_subject2__f000002_002243",
+      "frame": 71,
+      "violations": []
+    },
+    {
+      "id": 10,
+      "key": "lafan/walk2_subject4__f000004_000657",
+      "frame": 114,
+      "violations": []
+    },
+    {
+      "id": 11,
+      "key": "lafan/dance2_subject4__f000002_000513",
+      "frame": 42,
+      "violations": []
+    },
+    {
+      "id": 12,
+      "key": "lafan/dance2_subject4__f010689_011036",
+      "frame": 320,
+      "violations": []
+    },
+    {
+      "id": 13,
+      "key": "lafan/dance1_subject2__f000002_000374",
+      "frame": 147,
+      "violations": []
+    },
+    {
+      "id": 14,
+      "key": "lafan/dance2_subject4__f000002_000513",
+      "frame": 93,
+      "violations": []
+    },
+    {
+      "id": 15,
+      "key": "lafan/ground1_subject5__f000002_000385",
+      "frame": 113,
+      "violations": []
+    },
+    {
+      "id": 16,
+      "key": "lafan/walk2_subject4__f000004_000657",
+      "frame": 31,
+      "violations": []
+    },
+    {
+      "id": 17,
+      "key": "lafan/dance2_subject3__f000002_000410",
+      "frame": 280,
+      "violations": []
+    },
+    {
+      "id": 18,
+      "key": "lafan/aiming1_subject4__f000002_002142",
+      "frame": 19,
+      "violations": []
+    },
+    {
+      "id": 19,
+      "key": "lafan/aiming1_subject4__f000002_002142",
+      "frame": 70,
+      "violations": []
+    },
+    {
+      "id": 20,
+      "key": "jwp/take036_chr00",
+      "frame": 75,
+      "violations": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "angle_deg": -0.3824187964931496,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 2.882431957257897
+        },
+        {
+          "joint": "shoulder_roll_r_joint",
+          "angle_deg": 2.1156434114486333,
+          "soft_min_deg": -180.90005493164062,
+          "soft_max_deg": 0.8999866843223572,
+          "excess_deg": 1.2156567052727332
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "key": "lafan/dance2_subject4__f010689_011036",
+      "frame": 152,
+      "violations": []
+    },
+    {
+      "id": 22,
+      "key": "lafan/pushAndFall1_subject4__f000002_000443",
+      "frame": 49,
+      "violations": []
+    },
+    {
+      "id": 23,
+      "key": "lafan/dance2_subject3__f000002_000410",
+      "frame": 333,
+      "violations": []
+    },
+    {
+      "id": 24,
+      "key": "lafan/pushAndFall1_subject4__f000002_000443",
+      "frame": 123,
+      "violations": []
+    },
+    {
+      "id": 25,
+      "key": "lafan/walk2_subject1__f010242_011161",
+      "frame": 410,
+      "violations": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "angle_deg": 1.0213789112425964,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 1.478634249522151
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "key": "lafan/pushAndStumble1_subject3__f000002_000429",
+      "frame": 12,
+      "violations": []
+    },
+    {
+      "id": 27,
+      "key": "jwp/take006_chr00",
+      "frame": 199,
+      "violations": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "angle_deg": -0.09274931986446505,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 2.592762480629212
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "key": "lafan/jumps1_subject1__f000002_000819",
+      "frame": 40,
+      "violations": []
+    },
+    {
+      "id": 29,
+      "key": "lafan/fightAndSports1_subject1__f000002_000868",
+      "frame": 36,
+      "violations": []
+    },
+    {
+      "id": 30,
+      "key": "lafan/pushAndStumble1_subject3__f000002_000429",
+      "frame": 146,
+      "violations": []
+    },
+    {
+      "id": 31,
+      "key": "lafan/jumps1_subject5__f010432_011267",
+      "frame": 200,
+      "violations": [
+        {
+          "joint": "shoulder_yaw_l_joint",
+          "angle_deg": 162.91182793206823,
+          "soft_min_deg": -146.70016479492188,
+          "soft_max_deg": 146.70016479492188,
+          "excess_deg": 16.211658900700364
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "key": "lafan/dance2_subject1__f000002_000728",
+      "frame": 121,
+      "violations": []
+    },
+    {
+      "id": 33,
+      "key": "lafan/fallAndGetUp2_subject3__f000002_000255",
+      "frame": 42,
+      "violations": []
+    },
+    {
+      "id": 34,
+      "key": "lafan/dance2_subject3__f010622_011282",
+      "frame": 609,
+      "violations": [
+        {
+          "joint": "shoulder_pitch_l_joint",
+          "angle_deg": -162.98429623916206,
+          "soft_min_deg": -146.70016479492188,
+          "soft_max_deg": 146.70016479492188,
+          "excess_deg": 16.2841272077942
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "key": "jwp/take006_chr00",
+      "frame": 453,
+      "violations": [
+        {
+          "joint": "knee_pitch_l_joint",
+          "angle_deg": -2.6844022282588806,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 5.184415389023628
+        },
+        {
+          "joint": "knee_pitch_r_joint",
+          "angle_deg": -5.000001988980576,
+          "soft_min_deg": 2.5000131130218506,
+          "soft_max_deg": 137.5001220703125,
+          "excess_deg": 7.500015149745323
+        }
+      ]
+    }
+  ]
+}

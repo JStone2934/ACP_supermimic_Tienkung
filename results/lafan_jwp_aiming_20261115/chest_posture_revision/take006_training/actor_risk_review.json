@@ -1,0 +1,60 @@
+{
+  "status": "Read-only audit; no code/config change or GPU work",
+  "evidence": {
+    "iteration1700": {
+      "imagined_reward": 1.8197032,
+      "tail": 4.1263342,
+      "critic_loss": 0.10984194
+    },
+    "iteration1725": {
+      "physical_termination_fraction": 0.02766927,
+      "imagined_reward": 2.13951969,
+      "tail": 13.79175377,
+      "critic_loss": 4.27004433,
+      "actor_preclip_gradnorm": 188.93625,
+      "critic_preclip_gradnorm": 154.95587
+    },
+    "tail_to_reward_ratio": 6.446191560873178
+  },
+  "implementation": {
+    "actor_value_gradient": "Default1; tail differentiated through WM, terminal critic features and soft survival. scale_value_gradient retains reporting value at all weights, so tail magnitude alone is not gradient attribution. Weight0 disables all tail graph gradients, including survival tail gradients.",
+    "bound": "Upper only minimum(value,max_step_reward*discounted_remaining_steps); no lower bound or uncertainty calibration. Critic targets bounded, critic predictions fitted without clipping. Cap saturation kills critic-value derivative but surviving soft-survival derivative remains.",
+    "cap": {
+      "max_step_reward": 0.23399999999999999,
+      "long_episode_cap": 23.4,
+      "level0_actual_positive_reward_upper": 0.15399999999999997,
+      "note": "Configured aim4 contributes .08 to bound although level0 aim_weight0; conservative but loose by8 in long-horizon value."
+    },
+    "clip": "Distributed gradients averaged then global L2 norm clipped1 then elementwise .1; actor_grad logged is PRE-clip norm. Clipping does not constrain Adam parameter displacement or policy action change. Full scope exposes all encoder/decoder weights.",
+    "chest": "upright bounded[0,1]*2*.02 <=.04 per step, comparable to root2 and twice pelvis-upright1; excess -2*.02*sum(normalized squared violations), unbounded below. Chest terms retain level0 weight.",
+    "validation": "WM validation each100 iterations; cached model_ready permits updates until next validation. Low averaged WM loss does not establish policy-relevant Jacobian correctness."
+  },
+  "interpretation": "Concurrent physical degradation, growing tail and critic error suggest model/critic/actor distribution shift; cannot identify a single cause. Previous body-output actorvalue0 degradation rules out bootstrap-only explanation.",
+  "next_steps": [
+    {
+      "priority": 1,
+      "action": "Evaluate immutable1700 and1800 policies on same seed17/53 level0 physical protocol after GPUs available; compare falls, root/feet/chest trajectories and termination onset. This isolates preactor versus actor policy change."
+    },
+    {
+      "priority": 2,
+      "action": "On matched held-out physical states/xi/history from those rollouts, compare32-step open-loop WM predictions to simulator: root, feet, chest, reward terms, termination timing. Stratify failure states; do not trust only average WM error."
+    },
+    {
+      "priority": 3,
+      "action": "Offline paired batches: separately differentiate reward objective and tail, record gradient norms/cosine by encoder/body/right-arm, cap saturation fraction, raw critic range, survival derivative contribution and pre/post clipping. Compare finite differences to autograd and real physical short-rollout action perturbations."
+    },
+    {
+      "priority": 4,
+      "action": "Calibrate critic versus reference-free physical discounted returns from identical states and compare imagined returns; quantify bias before changing bootstrap weight."
+    },
+    {
+      "priority": 5,
+      "action": "Measure fixed-state action changes1700->1800 per joint, saturation/request limits, joint effort, contact timing, chest and negative-excess contributions. Distinguish global policy drift from torso-reward gradient problems."
+    },
+    {
+      "priority": 6,
+      "action": "Only after evidence, prepare separate immutable branches from same1700 with matched replay/seeds/update counts: reduced/zero tail gradient, smaller actor step or restricted scope, more current-policy WM adaptation; change one factor at a time. Never mutate current run or claim planned ablation results."
+    }
+  ],
+  "acceptance": "Seed17/53 are development evaluation only; no final fresh acceptance claim"
+}

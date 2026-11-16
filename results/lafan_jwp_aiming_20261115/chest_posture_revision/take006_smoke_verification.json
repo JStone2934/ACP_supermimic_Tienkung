@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "scope": "Two-rank execution and finite weights only; not physical acceptance",
+  "checkpoint": "logs/tienkung3_29dof/lafan_jwp_20261115/take006_upright_smoke_wm32/last.pt",
+  "distributed": {
+    "version": 1,
+    "world_size": 2,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "skipped": {},
+    "ranks": [
+      {
+        "rank": 0,
+        "device": "cuda:0",
+        "torch_peak_allocated": 384112128,
+        "torch_peak_reserved": 465567744,
+        "device_used": 2368536576,
+        "warp_pool_used": 627436720,
+        "warp_pool_peak": 627437668
+      },
+      {
+        "rank": 1,
+        "device": "cuda:1",
+        "torch_peak_allocated": 384040448,
+        "torch_peak_reserved": 465567744,
+        "device_used": 1714683904,
+        "warp_pool_used": 314822435,
+        "warp_pool_peak": 314823383
+      }
+    ],
+    "state_sha256": "295939d6a5bcc9a96534340b51c1ce110cc0f397d512d656b8ba63b4a90e9747"
+  }
+}

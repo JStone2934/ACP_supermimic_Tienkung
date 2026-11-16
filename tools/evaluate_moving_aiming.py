@@ -12,6 +12,7 @@ from supermimic.acp.moving_aiming_validation import moving_episode_metrics
 from supermimic.acp import moving_curriculum as curriculum
 from supermimic.acp.robots import sha256
 from supermimic.rotations import mat_to_quat
+from supermimic.acp.chest_posture import apply_posture_acceptance
 
 
 @torch.no_grad()
@@ -29,6 +30,9 @@ def evaluate(policy,task,out,*,seed=0,checkpoint=None,level=None):
     failed=torch.zeros(n,dtype=torch.bool,device=device);bad_action=torch.zeros_like(failed);history=None
     keys=('root','root_quat','q','velocity','command','path_goal','tilt','error','finite_state','targets','target_normals')
     records={k:[] for k in keys};policy.eval();speed_cap=curriculum.STAGES[stage]['speed']
+    if task.chest_posture.enabled:
+        records.update({k:[] for k in ('chest_tilt_deg','chest_forward_deg','chest_lateral_deg','chest_limit_deg','chest_posture_valid')})
+
     def record():
         state=env.state();error,*_=task.metrics(state,env.context)
         values=dict(root=state[0],root_quat=mat_to_quat(state[1]),q=state[4],velocity=state[2],
@@ -36,6 +40,10 @@ def evaluate(policy,task,out,*,seed=0,checkpoint=None,level=None):
             tilt=torch.rad2deg(torch.acos(state[1][:,2,2].clamp(-1,1))),error=error,
             finite_state=torch.stack([x.flatten(1).isfinite().all(-1) for x in state]).all(0)&~bad_action,
             targets=env.context['aim_target_w'],target_normals=env.context['aim_normal_w'])
+        if task.chest_posture.enabled:
+            rotations=task.kin.forward(*state)[1]
+            posture,_=task.chest_posture.measure(rotations[:,task.torso],env.context['aim_normal_w'])
+            values.update(posture)
         for k,x in values.items():records[k].append(x.cpu().numpy().copy())
     for step in range(1500):
         if step%250==0:
@@ -51,6 +59,7 @@ def evaluate(policy,task,out,*,seed=0,checkpoint=None,level=None):
     record();arrays={k:np.stack(v) for k,v in records.items()};failures=failed.cpu().numpy()
     scenarios=[moving_episode_metrics(*(arrays[k][:,i] for k in ('root','velocity','command','path_goal','tilt','error','finite_state')),
                                       failures[i],maximum_speed=speed_cap) for i in range(n)]
+    apply_posture_acceptance(task,arrays,scenarios,lambda i:True)
     fixed=all(x['passed'] for x in scenarios[:len(grid)]);rate=sum(x['passed'] for x in scenarios[len(grid):])/100
     if checkpoint and sha256(checkpoint)!=digest:raise ValueError('Checkpoint changed during evaluation')
     result=dict(passed=bool(fixed and rate>=.95),fixed_grid_all_pass=fixed,random_success_rate=rate,

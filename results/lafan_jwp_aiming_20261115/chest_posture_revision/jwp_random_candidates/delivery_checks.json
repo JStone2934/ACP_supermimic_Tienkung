@@ -1,0 +1,62 @@
+{
+  "candidate_count": 3,
+  "images": 9,
+  "videos": 3,
+  "native_short_clip": "03 has 91 frames at50Hz (1.82s); stride2 encoding46 frames at25Hz gives1.84s; no freeze/padding",
+  "checks": [
+    {
+      "id": "01",
+      "key": "jwp/take006_chr00",
+      "video_probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 640,
+            "height": 640,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
+        }
+      },
+      "source_window_seconds": 2.0
+    },
+    {
+      "id": "02",
+      "key": "jwp/take013_chr00",
+      "video_probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 640,
+            "height": 640,
+            "nb_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
+        }
+      },
+      "source_window_seconds": 2.0
+    },
+    {
+      "id": "03",
+      "key": "jwp/take036_chr00",
+      "video_probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 640,
+            "height": 640,
+            "nb_frames": "46"
+          }
+        ],
+        "format": {
+          "duration": "1.840000"
+        }
+      },
+      "source_window_seconds": 1.82
+    }
+  ]
+}

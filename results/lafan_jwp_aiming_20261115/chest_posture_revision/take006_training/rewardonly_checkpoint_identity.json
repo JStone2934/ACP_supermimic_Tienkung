@@ -1,0 +1,11 @@
+{
+  "pi1750_equal_pi1800": true,
+  "updates1800": {
+    "wm": 18000,
+    "distill": 1000,
+    "critic": 4500,
+    "pi": 25
+  },
+  "actor_lr": 2e-06,
+  "actor_value_gradient": 0.0
+}

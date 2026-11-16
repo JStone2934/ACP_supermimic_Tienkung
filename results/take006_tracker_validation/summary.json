@@ -1,0 +1,69 @@
+{
+  "checkpoint_sha256": "87ae28376b7262c93309d1fa862cdd91fc7fb3f0a73b201de805c8a05655735e",
+  "same_checkpoint": true,
+  "full_clip": {
+    "failed": false,
+    "alive_steps": 743,
+    "expected_steps": 743,
+    "finite": true,
+    "root_rmse_m": 0.08851604163646698,
+    "root_max_m": 0.22110217809677124,
+    "joint_rmse_rad": 0.18394695222377777,
+    "torque_saturation_fraction": 0.00013923051301389933,
+    "velocity_exceed_fraction": 0.0
+  },
+  "full_duration_s": 14.86,
+  "hold": [
+    {
+      "name": "original_fixed_contacts",
+      "balance_pass": true,
+      "first_balance_failure_s": -1.0,
+      "max_pelvis_deg": 13.207215309143066,
+      "max_chest_deg": 30.971513748168945,
+      "post_grace_chest_valid_fraction": 0.026646928201332347,
+      "max_root_drift_m": 0.19310705363750458,
+      "post_grace_max_foot_drift_m": 0.2934707999229431,
+      "joint_rmse_rad": 0.1954285353422165
+    },
+    {
+      "name": "original_no_upcoming_contacts",
+      "balance_pass": false,
+      "first_balance_failure_s": 6.039999961853027,
+      "max_pelvis_deg": 17.74484634399414,
+      "max_chest_deg": 27.47018051147461,
+      "post_grace_chest_valid_fraction": 0.41598815692079943,
+      "max_root_drift_m": 0.18550318479537964,
+      "post_grace_max_foot_drift_m": 0.19301708042621613,
+      "joint_rmse_rad": 0.1532014161348343
+    },
+    {
+      "name": "repaired_fixed_contacts",
+      "balance_pass": true,
+      "first_balance_failure_s": -1.0,
+      "max_pelvis_deg": 12.781834602355957,
+      "max_chest_deg": 31.095317840576172,
+      "post_grace_chest_valid_fraction": 0.025906735751295335,
+      "max_root_drift_m": 0.2499466836452484,
+      "post_grace_max_foot_drift_m": 0.371412068605423,
+      "joint_rmse_rad": 0.18716901540756226
+    },
+    {
+      "name": "repaired_no_upcoming_contacts",
+      "balance_pass": false,
+      "first_balance_failure_s": 6.28000020980835,
+      "max_pelvis_deg": 18.36381721496582,
+      "max_chest_deg": 26.55364990234375,
+      "post_grace_chest_valid_fraction": 0.3493708364174685,
+      "max_root_drift_m": 0.2274230420589447,
+      "post_grace_max_foot_drift_m": 0.32194438576698303,
+      "joint_rmse_rad": 0.1534745693206787
+    }
+  ],
+  "conclusion": "Frozen source tracker completes the dynamic clip under original termination, but none of the four nominal fixed-reference cases satisfies both quiet feet and upright chest. Reference-free transfer cannot be the sole cause of the static-hold deficiency. This does not prove the pose physically infeasible.",
+  "limitations": [
+    "One deterministic dynamic rollout and four deterministic nominal hold cases; not robustness certification.",
+    "Hold stops motion velocities and freezes reference q, root goal and chosen support convention; this is a different task from the moving clip.",
+    "Hold balance diagnostic uses root height25cm, root horizontal radius50cm and pelvis15deg; not falling is not strict standing acceptance.",
+    "Existing training services were not modified. No policy weights updated."
+  ]
+}

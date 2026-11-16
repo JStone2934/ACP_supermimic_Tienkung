@@ -16,6 +16,7 @@ from supermimic.acp.aiming_fullbody_io import json_save
 from supermimic.acp.wide_aiming_validation import episode_metrics
 from supermimic.acp.robots import sha256
 from supermimic.rotations import mat_to_quat
+from supermimic.acp.chest_posture import apply_posture_acceptance
 
 
 @torch.no_grad()
@@ -49,6 +50,9 @@ def evaluate(policy, task, out, *, seed=0, checkpoint=None, stage=None):
     records={k:[] for k in ('root','root_quat','q','feet','tilt','error','finite_state','targets','target_normals')}
     policy.eval()
 
+    if task.chest_posture.enabled:
+        records.update({k:[] for k in ('chest_tilt_deg','chest_forward_deg','chest_lateral_deg','chest_limit_deg','chest_posture_valid')})
+
     def record():
         state=env.state()
         feet=task.kin.forward(*state)[0][:,task.feet]
@@ -57,6 +61,10 @@ def evaluate(policy, task, out, *, seed=0, checkpoint=None, stage=None):
         values=dict(root=state[0],root_quat=mat_to_quat(state[1]),q=state[4],feet=feet,
                     tilt=torch.rad2deg(torch.acos(state[1][:,2,2].clamp(-1,1))),
                     error=error,finite_state=finite,targets=env.context['aim_target_w'],target_normals=env.context['aim_normal_w'])
+        if task.chest_posture.enabled:
+            rotations=task.kin.forward(*state)[1]
+            posture,_=task.chest_posture.measure(rotations[:,task.torso],env.context['aim_normal_w'])
+            values.update(posture)
         for key,value in values.items():records[key].append(value.detach().cpu().numpy().copy())
 
     for step in range(1500):
@@ -80,6 +88,7 @@ def evaluate(policy, task, out, *, seed=0, checkpoint=None, stage=None):
     failures=failed.cpu().numpy()
     scenarios=[episode_metrics(*(arrays[k][:,i] for k in ('root','feet','tilt','error','finite_state')),
                                failures[i],switching=do_switches and i>=len(grid),radius=radius,aim_required=aim_required) for i in range(n)]
+    apply_posture_acceptance(task,arrays,scenarios,lambda i:do_switches and i>=len(grid))
     fixed_pass=all(s['passed'] for s in scenarios[:len(grid)])
     random_rate=sum(s['passed'] for s in scenarios[len(grid):])/100
     if checkpoint and sha256(checkpoint)!=checkpoint_hash:

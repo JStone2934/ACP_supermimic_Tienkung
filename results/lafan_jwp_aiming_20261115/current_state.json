@@ -81,7 +81,7 @@
   "additional_diagnostic": "completed_both_devices_failed",
   "additional_report": "evaluation_narrow_support250_device_check/seed_53_cuda0.json",
   "evaluation400": "narrow_support400_comparison.json",
-  "next_independent_work": "Inspect COMpose half/full precise evaluations onv19. Allgeometry/functionaltranslationchecks passed: full feetshift8.181mm,-2.418mm maxlegdelta.042204rad, nativeFKerrors<1.04e-7. Initiallegs changed butheight/quat/resetnoise/armheadsunchanged; sourcewidekinematicheadcandidate1 nolegloadbias. Preserve bestreversehalf312static/313switching until improved full physicalproof. No final policyaccepted.",
+  "next_independent_work": "User explicitly wants to inspect ALL35pose candidates and choose. GPT6.1Sol child upright_pose_gallery is creating numbered contact sheet/images/videos/HTML. Do not select a pose or start pose-dependent initialization/training before user choice. Existing goal remains active; previous paused marker superseded.",
   "user_steering": "Proceed past current fall scenarios as explicit temporary exceptions",
   "exception_manifest": "user_authorized_narrow_stage_exceptions.json",
   "current_checkpoint": "precise_translated_load_candidates/ckpt_000001.pt",
@@ -216,7 +216,7 @@
     "time": "2026-11-16T12:39:19.202257+08:00",
     "existing_artifacts_preserved": true
   },
-  "active_evaluation": "precise-com-pose-evaluation.service",
+  "active_evaluation": null,
   "next_candidate": "precise_support_restore_diagnostic/ckpt_000001.pt",
   "next_candidate_scope": "Diagnostic restore of pre-narrow-training six support input columns; unchanged aiming outputs and zero-support actions verified. Not accepted.",
   "best_precise_development_checkpoint": "precise_body_direction_candidates/ckpt_000001.pt",
@@ -310,5 +310,10 @@
   ],
   "body_gradient_finding": "SourceWM predicts positiveupdate improvesallrewardcomponents andbootstrap, whereasphysicalfallsworsen; not obviousaim-vs-balancegradientconflict. Bootstrapgradientnorm1192.78 vsstability9.65, alignedwithbadupdate(+1.30dot); donotblindlyenablebootstrap.",
   "com_pose_geometry": "com_preserving_pose_geometry.json",
-  "com_pose_candidates": "precise_com_pose_candidates"
+  "com_pose_candidates": "precise_com_pose_candidates",
+  "user_goal_status": "active",
+  "posture_revision": "chest_posture_revision/plan.json",
+  "awaiting_user_pose_selection": true,
+  "upright_pose_candidates": "chest_posture_revision/pose_candidates_ranked.json",
+  "upright_pose_geometry": "chest_posture_revision/pose_geometry.json"
 }

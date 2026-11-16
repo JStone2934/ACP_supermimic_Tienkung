@@ -1,0 +1,79 @@
+{
+  "scope": "Read-only ACP reward-gradient decomposition on recorded physical states. Not physical acceptance.",
+  "source_sha256": "ba44581559fd0356d018343b652312f9176f2179ce55c96312cc4dcd4ec1d5aa",
+  "trained_sha256": "732fffd9cbf75fe2ceeb983fec321f642105677d2ff77dd758391652b99ac57c",
+  "trajectory_sha256": "847305c4319a730072f2cfcc7213a1810f71b494644183c017c77ec1f9126657",
+  "predicted_endpoint_metrics": [
+    {
+      "chest_mean_deg": 9.213568687438965,
+      "chest_max_deg": 22.062538146972656,
+      "pelvis_mean_deg": 10.147144317626953,
+      "root_z_mean_m": 0.9812940359115601,
+      "alive_mean": 1.0
+    },
+    {
+      "chest_mean_deg": 1.3294734954833984,
+      "chest_max_deg": 2.9587574005126953,
+      "pelvis_mean_deg": 11.063861846923828,
+      "root_z_mean_m": 0.9839228391647339,
+      "alive_mean": 1.0
+    }
+  ],
+  "groups": {},
+  "group_order": [
+    "aim",
+    "chest_upright",
+    "chest_excess",
+    "upright",
+    "height",
+    "feet",
+    "foot_motion",
+    "foot_velocity",
+    "velocity",
+    "angular_velocity",
+    "root",
+    "heading",
+    "foot_boundary",
+    "regularization"
+  ],
+  "source_predicted_rewards": [
+    0.0,
+    0.6986944079399109,
+    -0.20232722163200378,
+    0.2550760805606842,
+    0.5043971538543701,
+    0.0,
+    0.0,
+    0.18175745010375977,
+    0.4124782383441925,
+    0.08328863233327866,
+    0.988168478012085,
+    0.0,
+    0.0,
+    -0.023685310035943985
+  ],
+  "trained_predicted_rewards": [
+    0.0,
+    0.9795915484428406,
+    -0.02003146894276142,
+    0.2502789795398712,
+    0.5186592936515808,
+    0.0,
+    0.0,
+    0.19856809079647064,
+    0.4157235026359558,
+    0.09075725078582764,
+    0.9979555010795593,
+    0.0,
+    0.0,
+    -0.007257448509335518
+  ],
+  "fixed_source_world_model": true,
+  "recorded_start_times": [
+    64,
+    112
+  ],
+  "sample_count": 16,
+  "horizon": 32,
+  "physical_policy_weights_modified": false
+}

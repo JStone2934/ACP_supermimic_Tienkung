@@ -1,0 +1,277 @@
+{
+  "actuator_mapping": [
+    {
+      "joint": "hip_pitch_l_joint",
+      "actuator_joint": "hip_pitch_l_joint",
+      "qpos": 7,
+      "dof": 6
+    },
+    {
+      "joint": "hip_roll_l_joint",
+      "actuator_joint": "hip_roll_l_joint",
+      "qpos": 8,
+      "dof": 7
+    },
+    {
+      "joint": "hip_yaw_l_joint",
+      "actuator_joint": "hip_yaw_l_joint",
+      "qpos": 9,
+      "dof": 8
+    },
+    {
+      "joint": "knee_pitch_l_joint",
+      "actuator_joint": "knee_pitch_l_joint",
+      "qpos": 10,
+      "dof": 9
+    },
+    {
+      "joint": "ankle_pitch_l_joint",
+      "actuator_joint": "ankle_pitch_l_joint",
+      "qpos": 11,
+      "dof": 10
+    },
+    {
+      "joint": "ankle_roll_l_joint",
+      "actuator_joint": "ankle_roll_l_joint",
+      "qpos": 12,
+      "dof": 11
+    },
+    {
+      "joint": "hip_pitch_r_joint",
+      "actuator_joint": "hip_pitch_r_joint",
+      "qpos": 13,
+      "dof": 12
+    },
+    {
+      "joint": "hip_roll_r_joint",
+      "actuator_joint": "hip_roll_r_joint",
+      "qpos": 14,
+      "dof": 13
+    },
+    {
+      "joint": "hip_yaw_r_joint",
+      "actuator_joint": "hip_yaw_r_joint",
+      "qpos": 15,
+      "dof": 14
+    },
+    {
+      "joint": "knee_pitch_r_joint",
+      "actuator_joint": "knee_pitch_r_joint",
+      "qpos": 16,
+      "dof": 15
+    },
+    {
+      "joint": "ankle_pitch_r_joint",
+      "actuator_joint": "ankle_pitch_r_joint",
+      "qpos": 17,
+      "dof": 16
+    },
+    {
+      "joint": "ankle_roll_r_joint",
+      "actuator_joint": "ankle_roll_r_joint",
+      "qpos": 18,
+      "dof": 17
+    },
+    {
+      "joint": "waist_yaw_joint",
+      "actuator_joint": "waist_yaw_joint",
+      "qpos": 19,
+      "dof": 18
+    },
+    {
+      "joint": "waist_roll_joint",
+      "actuator_joint": "waist_roll_joint",
+      "qpos": 20,
+      "dof": 19
+    },
+    {
+      "joint": "waist_pitch_joint",
+      "actuator_joint": "waist_pitch_joint",
+      "qpos": 21,
+      "dof": 20
+    },
+    {
+      "joint": "shoulder_pitch_l_joint",
+      "actuator_joint": "shoulder_pitch_l_joint",
+      "qpos": 22,
+      "dof": 21
+    },
+    {
+      "joint": "shoulder_roll_l_joint",
+      "actuator_joint": "shoulder_roll_l_joint",
+      "qpos": 23,
+      "dof": 22
+    },
+    {
+      "joint": "shoulder_yaw_l_joint",
+      "actuator_joint": "shoulder_yaw_l_joint",
+      "qpos": 24,
+      "dof": 23
+    },
+    {
+      "joint": "elbow_pitch_l_joint",
+      "actuator_joint": "elbow_pitch_l_joint",
+      "qpos": 25,
+      "dof": 24
+    },
+    {
+      "joint": "elbow_yaw_l_joint",
+      "actuator_joint": "elbow_yaw_l_joint",
+      "qpos": 26,
+      "dof": 25
+    },
+    {
+      "joint": "wrist_pitch_l_joint",
+      "actuator_joint": "wrist_pitch_l_joint",
+      "qpos": 27,
+      "dof": 26
+    },
+    {
+      "joint": "wrist_roll_l_joint",
+      "actuator_joint": "wrist_roll_l_joint",
+      "qpos": 28,
+      "dof": 27
+    },
+    {
+      "joint": "shoulder_pitch_r_joint",
+      "actuator_joint": "shoulder_pitch_r_joint",
+      "qpos": 29,
+      "dof": 28
+    },
+    {
+      "joint": "shoulder_roll_r_joint",
+      "actuator_joint": "shoulder_roll_r_joint",
+      "qpos": 30,
+      "dof": 29
+    },
+    {
+      "joint": "shoulder_yaw_r_joint",
+      "actuator_joint": "shoulder_yaw_r_joint",
+      "qpos": 31,
+      "dof": 30
+    },
+    {
+      "joint": "elbow_pitch_r_joint",
+      "actuator_joint": "elbow_pitch_r_joint",
+      "qpos": 32,
+      "dof": 31
+    },
+    {
+      "joint": "elbow_yaw_r_joint",
+      "actuator_joint": "elbow_yaw_r_joint",
+      "qpos": 33,
+      "dof": 32
+    },
+    {
+      "joint": "wrist_pitch_r_joint",
+      "actuator_joint": "wrist_pitch_r_joint",
+      "qpos": 34,
+      "dof": 33
+    },
+    {
+      "joint": "wrist_roll_r_joint",
+      "actuator_joint": "wrist_roll_r_joint",
+      "qpos": 35,
+      "dof": 34
+    }
+  ],
+  "actuator_vs_lp_torque_max_error_nm": 2.6645352591003757e-14,
+  "initial_root_acceleration": [
+    0.7075678166160915,
+    1.0499784847697615,
+    -6.455297791643144,
+    -44.65589022534121,
+    16.944124560320557,
+    0.3113313663323857
+  ],
+  "initial_native_contact_forces": [
+    134.6426723813941
+  ],
+  "initial_constraint_force_norm": 287.08406507530447,
+  "integrator": 3,
+  "dt": 0.005,
+  "friction_range": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "effort_saturation": 0.4465463784729002,
+  "explanation": "LP contact wrench is a feasibility witness, not the contact wrench generated by compliant MuJoCo contacts; fixed PD targets derived from an arbitrary feasible static load distribution do not enforce that distribution or balance feedback. Native contact initial acceleration is nonzero. A matched native PD rollout also falls, so prior explicit-control mismatch does not explain away the failure.",
+  "scope_correction": "This earlier diagnostic matches RobotSpec default4substeps (dt5ms), NOT the actual take006 task branch inherited16substeps (dt1.25ms). See pd_native_branch16_*.json for corrected branch-specific results."
+}
