@@ -75,6 +75,11 @@ def imagination_step(pi,wm,task,S,history,ap,t,xi,ctx,start_step):
     a,_=task.compose_action(raw,xi)
     next_state=wm.step(S,a,normalize_xi(xi),task.mdp.scan(S,flat_boxes(S)))
     reward=task.reward(next_state,a,ap,next_ctx,raw=raw,xi=xi)
+    if hasattr(task,'retention_teacher'):
+        from .posture_transfer import retention_cost
+        with torch.no_grad():
+            teacher_raw=task.retention_teacher(history.detach(),task.command(S,current_ctx).detach())
+        reward=reward-task.dt*retention_cost(raw,teacher_raw,task.alpha,task.config['policy_retention']['weight'])
     done=task.soft_termination(next_state,t+1,next_ctx)
     next_history=torch.cat((history[:,1:],task.mdp.obs(next_state,a,xi)[:,None]),1)
     return next_state,next_history,a,reward,done

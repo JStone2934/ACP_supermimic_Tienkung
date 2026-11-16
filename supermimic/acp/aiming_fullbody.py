@@ -162,6 +162,15 @@ class FullbodyTask:
                             angular_velocity=.2, foot_velocity=.5, heading=.5,
                             foot_boundary=-4., action_rate=-.1, joint_limit=-2.)
         self.weights.update(self.config.get('reward_weights', {}))
+        self.posture_reference = self.config.get('posture_reference')
+        if self.posture_reference is not None:
+            reference=self.alpha.new_tensor(self.posture_reference['q'])
+            scale=float(self.posture_reference['scale_rad'])
+            if reference.shape!=(29,) or not reference.isfinite().all() or not math.isfinite(scale) or scale<=0:
+                raise ValueError('Expected 29 finite posture angles and a positive scale')
+            if not 0 < self.weights.get('posture_reference',0):
+                raise ValueError('Posture reference requires a positive weight')
+            self.posture_reference_q=reference
         self.chest_posture=ChestPosture(self.config.get('chest_posture'))
         if self.chest_posture.enabled:
             self.weights.setdefault('chest_upright',2.)
@@ -218,6 +227,7 @@ class FullbodyTask:
         if self.config.get('distal_kinematic_head',False):
             result['distal_kinematic_head'] = dict(version=1,inputs='unit_target_xyz',hidden=[32,32],activation='tanh',joints=['elbow_yaw_r_joint','wrist_pitch_r_joint','wrist_roll_r_joint'],outputs='additive_normalized_actions')
         if self.chest_posture.enabled:result['chest_posture']=self.chest_posture.metadata()
+        if self.posture_reference is not None:result['posture_reference']=self.posture_reference
         return result
 
     def initial_state(self, n):
@@ -309,6 +319,9 @@ class FullbodyTask:
         if self.chest_posture.enabled:
             _,posture_terms=self.chest_posture.measure(fk[1][:,self.torso],ctx['aim_normal_w'])
             terms.update(posture_terms)
+        if self.posture_reference is not None:
+            from .posture_transfer import reference_reward
+            terms['posture_reference']=reference_reward(q,self.posture_reference_q,self.posture_reference['scale_rad'])
         contributions = {k: x * (ctx['aim_weight'] if k == 'aim' else self.weights[k]) * self.dt for k, x in terms.items()}
         return terms, contributions
 

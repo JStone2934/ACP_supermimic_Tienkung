@@ -195,6 +195,8 @@ def main():
     for k in ('num_envs','wm_batch','pi_batch'):local[k]=getattr(execution,k)
     validate_checkpoint(ck,task_class('cpu',ck['config']))
     task=task_class(rt.device,cfg)
+    from .posture_transfer import attach_teacher
+    attach_teacher(task,cfg)
     pi=FullbodyPolicy(task.robot).to(rt.device);pi.load_state_dict(ck['pi'])
     from .aiming_adapters import configure_policy_training
     configure_policy_training(pi,cfg)

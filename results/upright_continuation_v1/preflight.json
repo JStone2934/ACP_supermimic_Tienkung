@@ -1,0 +1,38 @@
+{
+  "policy_exactly_preserved": true,
+  "initial_pose_exactly_preserved": true,
+  "tests": "10 tests passed: posture transfer, chest posture, value bound",
+  "smoke": {
+    "iteration": 2,
+    "phase": "joint",
+    "level": 4,
+    "stage": "wide",
+    "sim_reward": 0.27496957778930664,
+    "physical_termination_fraction": 0.0,
+    "physical_timeout_fraction": 0.0,
+    "mean_physical_episode_age_s": 0.7999999523162842,
+    "completed_physical_episodes": 0,
+    "mean_completed_physical_episode_s": null,
+    "observed_support_locked_fraction": 1.0,
+    "wm_loss": 1.0366705656051636,
+    "model_ready": false,
+    "critic_warmup_done": 0,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "elapsed_s": 6.718808841000282,
+    "actor_loss": -1.442852258682251,
+    "critic_loss": 0.794028103351593,
+    "actor_grad": 4.963722229003906,
+    "critic_grad": 3.871659517288208,
+    "actor_value_gradient": 0.0,
+    "imagined_reward_objective": 1.4314024448394775,
+    "bootstrap_objective": 0.011449814774096012,
+    "bootstrap_max": 0.40374845266342163,
+    "return_target_max": 1.7586827278137207
+  },
+  "source_commit": "cbdb1f0",
+  "scope": "Implementation verification, not physical acceptance"
+}
