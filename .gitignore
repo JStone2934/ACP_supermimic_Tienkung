@@ -18,3 +18,24 @@ results/standing_aiming_curriculum/
 # third-party paper
 *.pdf
 results/standing_aiming_fullbody_v2/
+
+# Generated experiment assets and dataset links (keep source/config/report JSON).
+/MUJOCO_LOG.TXT
+/results/**/*.npy
+/results/**/*.png
+/results/**/*.jpg
+/results/**/*.jpeg
+/results/**/pose_gallery/index.html
+/results/**/*.log
+/results/**/*.stdout
+/results/**/*.lock
+/results/**/source_audit/*.bvh
+
+# Runtime source snapshots duplicate versioned code; keep their manifests.
+/results/**/frozen_*/
+/results/**/runner/
+
+# Live training state is recorded by the bounded experiment's final reports.
+/results/upright_continuation_v1/train/
+/results/upright_continuation_v1/smoke/
+/results/upright_continuation_v1/experiment_status.json
