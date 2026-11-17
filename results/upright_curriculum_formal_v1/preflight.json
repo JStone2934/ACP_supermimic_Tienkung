@@ -1,0 +1,8 @@
+{
+  "tests_passed": 21,
+  "dual_gpu_resume_actor_updates": 2,
+  "source_policy_exact": true,
+  "original_rewards_preserved": true,
+  "posture_joint_count": 22,
+  "total_iteration_limit": null
+}

@@ -58,6 +58,8 @@ class WideAimingTask(FullbodyTask):
 
     def metadata(self):
         result = super().metadata()
+        if 'reset_mixture' in self.config:
+            result['reset_mixture']=self.config['reset_mixture']
         result.update(name='wide_aiming_v1', version=1, contact_valid=[False]*9,
                       contact_command='zero; no future reference or fixed foot anchors',
                       target_coordinates='world-fixed, spherical range/azimuth/elevation from initial chest',
@@ -120,6 +122,11 @@ class WideAimingTask(FullbodyTask):
         state[0][:, 2] = self.initial_height
         rotation = quat_to_mat(self.initial_quat[None]).expand(n, -1, -1).clone()
         return state[0], rotation, *state[2:]
+
+    def reset_state(self,n):
+        from .posture_curriculum import mixed_reset_state
+        return mixed_reset_state(self.initial_state(n),self.config.get('reset_mixture'),
+                                 getattr(self,'evaluation_reset_pose',None))
 
     def context(self, S, parameters, aim_weight=None):
         context = super().context(S, parameters, aim_weight)

@@ -3,9 +3,11 @@ import math
 import torch
 
 
-def reference_reward(q, reference, scale):
-    # Legs and waist only. Arms remain free to compensate for moving shoulders.
-    return 1 / (1 + ((q[..., :15] - reference[..., :15]) / scale).square().mean(-1))
+def reference_reward(q, reference, scale, joint_ids=None):
+    # Preserve historical experiments' 15-joint default. New contracts supply
+    # explicit native joint IDs, including the left arm but excluding the right.
+    selected = slice(0, 15) if joint_ids is None else joint_ids
+    return 1 / (1 + ((q[..., selected] - reference[..., selected]) / scale).square().mean(-1))
 
 
 def retention_cost(raw, teacher_raw, alpha, weight):

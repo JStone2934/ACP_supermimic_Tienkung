@@ -36,6 +36,11 @@ results/standing_aiming_fullbody_v2/
 /results/**/runner/
 
 # Live training state is recorded by the bounded experiment's final reports.
-/results/upright_continuation_v1/train/
-/results/upright_continuation_v1/smoke/
-/results/upright_continuation_v1/experiment_status.json
+/results/upright_continuation_v*/train/
+/results/upright_continuation_v*/smoke/
+/results/upright_continuation_v*/experiment_status.json
+/results/upright_curriculum_formal_*/train/
+/results/upright_curriculum_formal_*/smoke/
+/results/upright_curriculum_formal_*/controller_state.json
+/results/upright_curriculum_formal_*/progress.json
+/results/upright_curriculum_formal_*/reviews.jsonl

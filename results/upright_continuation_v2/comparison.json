@@ -1,0 +1,125 @@
+{
+  "rows": [
+    {
+      "seed": 17,
+      "baseline_passes": 159,
+      "candidate_passes": 159,
+      "lost_scenarios": [
+        38,
+        73,
+        86,
+        99,
+        116,
+        120,
+        160
+      ],
+      "baseline_chest_median_deg": 35.052459716796875,
+      "candidate_chest_median_deg": 35.027435302734375,
+      "baseline_error_median": 0.010823248885571957,
+      "candidate_error_median": 0.010536945424973965,
+      "baseline_error_p95": 1.6070886850357056,
+      "candidate_error_p95": 1.148988962173462,
+      "original_task_acceptance": false,
+      "baseline_error_summary": {
+        "median_m": 0.010823248885571957,
+        "p95_m": 1.6070886850357056,
+        "invalid_count": 150,
+        "sample_count": 236425,
+        "invalid_fraction": 0.000634450671460294,
+        "finite_only_p95_m": 1.4274719953536987,
+        "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+      },
+      "candidate_error_summary": {
+        "median_m": 0.010536945424973965,
+        "p95_m": 1.148988962173462,
+        "invalid_count": 1508,
+        "sample_count": 236425,
+        "invalid_fraction": 0.006378344083747488,
+        "finite_only_p95_m": 0.30590271949768066,
+        "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+      },
+      "retention_pass": false,
+      "baseline_reference22_rmse_median_deg": 17.367425381637688,
+      "candidate_reference22_rmse_median_deg": 17.359080922780787,
+      "posture_improved": false
+    },
+    {
+      "seed": 53,
+      "baseline_passes": 152,
+      "candidate_passes": 149,
+      "lost_scenarios": [
+        0,
+        78,
+        91,
+        95,
+        101,
+        105,
+        111,
+        152
+      ],
+      "baseline_chest_median_deg": 35.1973991394043,
+      "candidate_chest_median_deg": 35.055728912353516,
+      "baseline_error_median": 0.012115621007978916,
+      "candidate_error_median": 0.011965490877628326,
+      "baseline_error_p95": 1.721136212348938,
+      "candidate_error_p95": 2.0024192333221436,
+      "original_task_acceptance": false,
+      "baseline_error_summary": {
+        "median_m": 0.012115621007978916,
+        "p95_m": 1.721136212348938,
+        "invalid_count": 1788,
+        "sample_count": 236425,
+        "invalid_fraction": 0.007562652003806704,
+        "finite_only_p95_m": 1.4945805072784424,
+        "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+      },
+      "candidate_error_summary": {
+        "median_m": 0.011965490877628326,
+        "p95_m": 2.0024192333221436,
+        "invalid_count": 1409,
+        "sample_count": 236425,
+        "invalid_fraction": 0.005959606640583695,
+        "finite_only_p95_m": 1.231717586517334,
+        "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+      },
+      "retention_pass": false,
+      "baseline_reference22_rmse_median_deg": 17.405964982471897,
+      "candidate_reference22_rmse_median_deg": 17.388545816665562,
+      "posture_improved": false
+    }
+  ],
+  "training": {
+    "iteration": 101,
+    "phase": "joint",
+    "level": 4,
+    "stage": "wide",
+    "sim_reward": 0.27899742126464844,
+    "physical_termination_fraction": 0.0,
+    "physical_timeout_fraction": 0.0,
+    "mean_physical_episode_age_s": 7.936797142028809,
+    "completed_physical_episodes": 0,
+    "mean_completed_physical_episode_s": null,
+    "observed_support_locked_fraction": 0.998046875,
+    "wm_loss": 0.0034030750393867493,
+    "model_ready": true,
+    "critic_warmup_done": 0,
+    "updates": {
+      "wm": 505,
+      "pi": 1,
+      "critic": 20
+    },
+    "elapsed_s": 288.72515986899816,
+    "actor_loss": -7.031122207641602,
+    "critic_loss": 4.60567569732666,
+    "actor_grad": 13.840892791748047,
+    "critic_grad": 9.780906677246094,
+    "actor_value_gradient": 0.0,
+    "imagined_reward_objective": 7.21774435043335,
+    "bootstrap_objective": -0.18662187457084656,
+    "bootstrap_max": 0.35569891333580017,
+    "return_target_max": 4.327050685882568
+  },
+  "eligible_for_next_review": false,
+  "final_acceptance": false,
+  "scope": "Paired stage4 diagnostic only; 22-joint reference RMS excludes right arm; chest medians diagnostic only sampled0.2s; no final posture or switching certification; no automatic stage advance"
+}

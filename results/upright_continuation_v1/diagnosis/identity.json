@@ -1,0 +1,11 @@
+{
+  "policy_unchanged_during_warmup": true,
+  "reset_config_unchanged": true,
+  "teacher_identity": {
+    "checkpoint": "/home/js/robot/locomotion/standing-aiming/results/lafan_jwp_aiming_20261115/wide_translated_full_gain7/ckpt_000001.pt",
+    "sha256": "9ce3d12ec31c12a584f73b4907b03d8844c15f04726b860b8788fed5372f14e5",
+    "weight": 2.0
+  },
+  "actor_value_gradient": 0.0,
+  "actor_updates": 5
+}

@@ -73,7 +73,8 @@ class FullbodySim:
     def reset(self, ids):
         if len(ids) == 0:
             return
-        S = perturb_initial_state(self.task.initial_state(len(ids)),self.task.config,
+        initial=getattr(self.task,'reset_state',self.task.initial_state)(len(ids))
+        S = perturb_initial_state(initial,self.task.config,
                                   self.mdp.soft_lo,self.mdp.soft_hi)
         p, R, v, w, q, qd = S
         self.sim.reset(ids); self.scene.reset(ids)
@@ -86,6 +87,10 @@ class FullbodySim:
         self.robot.write_root_link_pose_to_sim(pose, env_ids=ids)
         self.robot.set_joint_position_target(q[:, self.to_internal], env_ids=ids)
         self.sim.forward()
+        measured=self.state()
+        if not hasattr(self,'episode_initial_state'):
+            self.episode_initial_state=tuple(x.clone() for x in measured)
+        for saved,value in zip(self.episode_initial_state,measured):saved[ids]=value[ids]
         self.ep_step[ids] = 0
         self.a_prev[ids] = (q - self.mdp.default_q - self.xi[ids, 1:30]) / self.task.alpha
         parameters, weights = self.sampler(len(ids))

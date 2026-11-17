@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import time
+from itertools import count
 import torch
 from .aiming_fullbody import FullbodyPolicy,FullbodyReplay,CONTEXT_FIELDS,REPLAY_FIELDS,flat_boxes,validate_checkpoint
 from .aiming_fullbody_env import FullbodySim
@@ -55,10 +56,11 @@ def check_promotion(checkpoint,reports,previous_level,*,moving=False):
     return digest
 
 
-def switch_targets(task,context,ids,level):
+def switch_targets(task,context,ids,level,episode_initial_state=None):
     """Keep the original episode frame even after the robot has turned."""
     if not len(ids):return
-    initial=task.initial_state(len(ids))
+    initial=(task.initial_state(len(ids)) if episode_initial_state is None
+             else tuple(x[ids] for x in episode_initial_state))
     initial=(context['root_anchor_w'][ids],*initial[1:])
     params,weight=sample(level,len(ids),task.alpha.device)
     new=task.context(initial,params,weight)
@@ -90,11 +92,13 @@ def main():
     p.add_argument('--policy-training-scope',choices=('full','support_error_inputs','aiming_support_error_inputs','support_and_right_arm_outputs','right_arm_outputs','right_distal_outputs','right_distal_with_command_skip','body_outputs'))
     p.add_argument('--support-actor-lr',type=float,help='Separate feedback learning rate for combined support/right-arm adaptation')
     p.add_argument('--resume-wm-iters',type=int,default=0,help='Model-only adaptation updates after this resume')
+    p.add_argument('--actor-update-target',type=int,help='Absolute cumulative actor update boundary; checkpoint and yield, not a total training budget')
+    p.add_argument('--keep-last-checkpoints',type=int,default=0,help='Keep this many numbered recovery checkpoints; milestone copies belong to controller')
     args=p.parse_args();source=args.resume or args.init
     source_digest=sha256(source)
     ck=torch.load(source,map_location='cpu',weights_only=False)
     if sha256(source)!=source_digest:raise ValueError('Source checkpoint changed during load')
-    if ck.get('task') not in ('wide_aiming_v1','moving_aiming_v1') or ck.get('smoke'):
+    if ck.get('task') not in ('wide_aiming_v1','moving_aiming_v1') or (ck.get('smoke') and not args.smoke):
         raise ValueError('Requires an identified, non-smoke wide-task initialization or training checkpoint')
     if ck.get('stage') not in ('initialization','training','calibration'):
         raise ValueError('Unknown policy artifact stage')
@@ -167,7 +171,8 @@ def main():
     if ck.get('stage')=='initialization' and level!=0:raise ValueError('The first stage is balance')
     cfg.update(curriculum_level=level,iterations=args.iterations,
                switch_interval_steps=250 if moving else (500 if level==len(stages)-1 else None))
-    if args.iterations<1:raise ValueError('Positive iteration limit required')
+    if args.iterations<0:raise ValueError('Use iterations=0 for unlimited training')
+    if args.actor_update_target is not None and args.actor_update_target<1:raise ValueError('Positive actor target required')
     defaults=dict(distill_iters=1000 if ck.get('stage')=='initialization' and not moving else 0,
         distill_lr=1e-4,wm_validation_every=100,wm_validation_steps=128,wm_validation_envs=8,
         wm_gate_root_m=.05,wm_gate_feet_m=.025,wm_gate_tip_m=.1,validation_horizons=[1,8],enforce_wm_gate=True,
@@ -214,9 +219,11 @@ def main():
         start=ck['iteration']
         critic_warmup_done=ck.get('critic_warmup_done',min(cfg['critic_warmup_iters'],
             ck.get('distributed',{}).get('updates',{}).get('critic',0)//(cfg['critic_epochs']*cfg['critic_minibatches'])))
-    warm_until=start+args.resume_wm_iters
+    warm_until=max(ck.get('model_warm_until',0),start+args.resume_wm_iters)
     rt.register(dict(pi=pi,wm=wm,critic=critic),dict(pi=op,wm=ow,critic=ov))
     if args.resume:rt.restore(ck)
+    if args.actor_update_target is not None and rt.updates.get('pi',0)>=args.actor_update_target:
+        rt.close();return
     teacher=None
     if start<cfg['distill_iters']:
         source_tracker=cfg['source']['checkpoint']
@@ -245,7 +252,7 @@ def main():
                 moving_curriculum.apply_commands(env,level)
             elif level==len(stages)-1:
                 ids=((env.ep_step>0)&(env.ep_step%500==0)).nonzero().flatten()
-                switch_targets(task,env.context,ids,level)
+                switch_targets(task,env.context,ids,level,env.episode_initial_state)
             obs=env.observe()
             history=torch.where((env.ep_step==0)[:,None,None],obs[:,None].expand_as(history),history)
             raw=pi(history,task.command(env.state(),env.context))
@@ -275,7 +282,7 @@ def main():
             observed_support_locked_fraction=float(rt.average((env.context['support_age_steps']<0).float().mean())))
 
     collect(cfg['initial_collect_steps'],1. if teacher is not None else 0.)
-    for iteration in range(start,cfg['iterations']):
+    for iteration in (range(start,cfg['iterations']) if cfg['iterations'] else count(start)):
         distilling=iteration<cfg['distill_iters']
         teacher_fraction=max(0.,1.-iteration/max(1,cfg['distill_iters'])) if distilling else 0.
         collection=collect(cfg['collect_steps'],teacher_fraction)
@@ -314,7 +321,7 @@ def main():
                     if not actor:critic_warmup_done+=1
                 else:phase='wm_gate'
         if rt.skipped:raise FloatingPointError(f'Nonfinite optimizer update: {rt.skipped}')
-        if (iteration+1)%cfg['log_every']==0:
+        if (iteration+1)%cfg['log_every']==0 or (args.actor_update_target is not None and rt.updates.get('pi',0)>=args.actor_update_target):
             row=dict(iteration=iteration+1,phase=phase,level=level,stage=stages[level]['name'],
                 **collection,wm_loss=float(rt.average(loss.detach())),model_ready=model_ready,
                 critic_warmup_done=critic_warmup_done,
@@ -327,16 +334,22 @@ def main():
         # recovery and comparisons that do not reuse an unstable actor.
         finished_critic_warmup=phase=='critic' and critic_warmup_done==cfg['critic_warmup_iters']
         finished_model_warmup=args.resume_wm_iters>0 and iteration+1==warm_until
-        if (iteration+1)%cfg['ckpt_every']==0 or iteration+1==cfg['iterations'] or finished_critic_warmup or finished_model_warmup:
+        yield_for_evaluation=(args.actor_update_target is not None and rt.updates.get('pi',0)>=args.actor_update_target)
+        if (iteration+1)%cfg['ckpt_every']==0 or iteration+1==cfg['iterations'] or finished_critic_warmup or finished_model_warmup or yield_for_evaluation:
             artifact=dict(task=ck['task'],stage='training',smoke=args.smoke,
                 robot_metadata=task.robot.metadata(),task_config=task.metadata(),config=cfg,
                 pi=pi.state_dict(),wm=wm.state_dict(),critic=critic.state_dict(),
                 optimizers=[x.state_dict() for x in (op,ow,ov)],iteration=iteration+1,
                 model_ready=model_ready,source_checkpoint=dict(path=str(source.resolve()),sha256=source_digest),
                 critic_warmup_done=critic_warmup_done,
+                model_warm_until=warm_until,
                 provenance=ck.get('provenance'),promotion_reports=[str(x) for x in args.promotion_reports or []])
             artifact['training_arguments']=vars(args)
             rt.save(artifact,numbered=f'ckpt_{iteration+1:06d}.pt',full=True)
+            if rt.main and args.keep_last_checkpoints>0:
+                numbered=sorted(args.log_dir.glob('ckpt_*.pt'),key=lambda p:int(p.stem.split('_')[-1]))
+                for old in numbered[:-args.keep_last_checkpoints]:old.unlink()
+        if yield_for_evaluation:break
     rt.close()
 
 

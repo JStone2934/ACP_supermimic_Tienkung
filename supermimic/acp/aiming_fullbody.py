@@ -171,6 +171,10 @@ class FullbodyTask:
             if not 0 < self.weights.get('posture_reference',0):
                 raise ValueError('Posture reference requires a positive weight')
             self.posture_reference_q=reference
+            names=self.posture_reference.get('joint_names',list(robot.joint_names[:15]))
+            if not names or len(set(names))!=len(names) or any(n not in robot.joint_names for n in names):
+                raise ValueError('Posture reference joint names must be unique native joints')
+            self.posture_reference_ids=torch.tensor([robot.joint_names.index(n) for n in names],device=device)
         self.chest_posture=ChestPosture(self.config.get('chest_posture'))
         if self.chest_posture.enabled:
             self.weights.setdefault('chest_upright',2.)
@@ -321,7 +325,7 @@ class FullbodyTask:
             terms.update(posture_terms)
         if self.posture_reference is not None:
             from .posture_transfer import reference_reward
-            terms['posture_reference']=reference_reward(q,self.posture_reference_q,self.posture_reference['scale_rad'])
+            terms['posture_reference']=reference_reward(q,self.posture_reference_q,self.posture_reference['scale_rad'],self.posture_reference_ids)
         contributions = {k: x * (ctx['aim_weight'] if k == 'aim' else self.weights[k]) * self.dt for k, x in terms.items()}
         return terms, contributions
 

@@ -1,0 +1,73 @@
+{
+  "policy_exact": true,
+  "initial_pose_exact": true,
+  "original_reward_weights_exact": true,
+  "extra_terms": [
+    "posture_reference"
+  ],
+  "excluded_right_arm": [
+    "shoulder_pitch_r_joint",
+    "shoulder_roll_r_joint",
+    "shoulder_yaw_r_joint",
+    "elbow_pitch_r_joint",
+    "elbow_yaw_r_joint",
+    "wrist_pitch_r_joint",
+    "wrist_roll_r_joint"
+  ],
+  "reference_joint_names": [
+    "hip_pitch_l_joint",
+    "hip_roll_l_joint",
+    "hip_yaw_l_joint",
+    "knee_pitch_l_joint",
+    "ankle_pitch_l_joint",
+    "ankle_roll_l_joint",
+    "hip_pitch_r_joint",
+    "hip_roll_r_joint",
+    "hip_yaw_r_joint",
+    "knee_pitch_r_joint",
+    "ankle_pitch_r_joint",
+    "ankle_roll_r_joint",
+    "waist_yaw_joint",
+    "waist_roll_joint",
+    "waist_pitch_joint",
+    "shoulder_pitch_l_joint",
+    "shoulder_roll_l_joint",
+    "shoulder_yaw_l_joint",
+    "elbow_pitch_l_joint",
+    "elbow_yaw_l_joint",
+    "wrist_pitch_l_joint",
+    "wrist_roll_l_joint"
+  ],
+  "tests": "10 passed: posture transfer, value bound, error statistics",
+  "smoke": {
+    "iteration": 2,
+    "phase": "joint",
+    "level": 4,
+    "stage": "wide",
+    "sim_reward": 0.28383180499076843,
+    "physical_termination_fraction": 0.0,
+    "physical_timeout_fraction": 0.0,
+    "mean_physical_episode_age_s": 0.7999999523162842,
+    "completed_physical_episodes": 0,
+    "mean_completed_physical_episode_s": null,
+    "observed_support_locked_fraction": 1.0,
+    "wm_loss": 1.034899115562439,
+    "model_ready": false,
+    "critic_warmup_done": 0,
+    "updates": {
+      "wm": 2,
+      "pi": 2,
+      "critic": 2
+    },
+    "elapsed_s": 7.986094160001812,
+    "actor_loss": -1.4562697410583496,
+    "critic_loss": 0.9091213345527649,
+    "actor_grad": 5.174519062042236,
+    "critic_grad": 4.310443878173828,
+    "actor_value_gradient": 0.0,
+    "imagined_reward_objective": 1.4908058643341064,
+    "bootstrap_objective": -0.03453614562749863,
+    "bootstrap_max": 0.3930201232433319,
+    "return_target_max": 1.8568977117538452
+  }
+}

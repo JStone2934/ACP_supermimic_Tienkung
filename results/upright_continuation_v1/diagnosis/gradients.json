@@ -1,0 +1,113 @@
+{
+  "same_input_action_change": {
+    "rms_deg": 0.19318488240242004,
+    "max_deg": 0.7202655673027039,
+    "per_joint_rms_deg": {
+      "hip_pitch_l_joint": 0.17372524738311768,
+      "hip_roll_l_joint": 0.11642260104417801,
+      "hip_yaw_l_joint": 0.13713936507701874,
+      "knee_pitch_l_joint": 0.06485734134912491,
+      "ankle_pitch_l_joint": 0.4375631511211395,
+      "ankle_roll_l_joint": 0.08244553953409195,
+      "hip_pitch_r_joint": 0.2944619655609131,
+      "hip_roll_r_joint": 0.05904087424278259,
+      "hip_yaw_r_joint": 0.03093569725751877,
+      "knee_pitch_r_joint": 0.3077130615711212,
+      "ankle_pitch_r_joint": 0.6029775142669678,
+      "ankle_roll_r_joint": 0.177344411611557,
+      "waist_yaw_joint": 0.027550041675567627,
+      "waist_roll_joint": 0.1226179227232933,
+      "waist_pitch_joint": 0.289332777261734,
+      "shoulder_pitch_l_joint": 0.07684753835201263,
+      "shoulder_roll_l_joint": 0.039496175944805145,
+      "shoulder_yaw_l_joint": 0.036045510321855545,
+      "elbow_pitch_l_joint": 0.12841443717479706,
+      "elbow_yaw_l_joint": 0.270348459482193,
+      "wrist_pitch_l_joint": 0.08015607297420502,
+      "wrist_roll_l_joint": 0.16937118768692017,
+      "shoulder_pitch_r_joint": 0.008573334664106369,
+      "shoulder_roll_r_joint": 0.005695242900401354,
+      "shoulder_yaw_r_joint": 0.017705997452139854,
+      "elbow_pitch_r_joint": 0.017198804765939713,
+      "elbow_yaw_r_joint": 0.03221505507826805,
+      "wrist_pitch_r_joint": 0.030505431815981865,
+      "wrist_roll_r_joint": 0.027701685205101967
+    }
+  },
+  "normalizers_unchanged": true,
+  "source": {
+    "aim": {
+      "value": 2.0810606479644775,
+      "gradient_norm": 16.393630981445312,
+      "update_dot_gradient": 0.017193252220749855
+    },
+    "stability": {
+      "value": 5.484432220458984,
+      "gradient_norm": 20.02633285522461,
+      "update_dot_gradient": 0.026824533939361572
+    },
+    "chest": {
+      "value": -0.3781302273273468,
+      "gradient_norm": 15.586204528808594,
+      "update_dot_gradient": 0.021228764206171036
+    },
+    "pose": {
+      "value": 0.01718825288116932,
+      "gradient_norm": 0.1034533679485321,
+      "update_dot_gradient": 0.00018288065621163696
+    },
+    "request": {
+      "value": -0.0035342962946742773,
+      "gradient_norm": 0.9018577933311462,
+      "update_dot_gradient": 0.0013565317494794726
+    },
+    "regularization": {
+      "value": -0.0053444234654307365,
+      "gradient_norm": 0.702087938785553,
+      "update_dot_gradient": 0.0001865335798356682
+    },
+    "retention": {
+      "value": 0.0,
+      "gradient_norm": 0.0,
+      "update_dot_gradient": 0.0
+    }
+  },
+  "candidate": {
+    "aim": {
+      "value": 2.095336437225342,
+      "gradient_norm": 17.777381896972656,
+      "update_dot_gradient": -0.012687943875789642
+    },
+    "stability": {
+      "value": 5.521788597106934,
+      "gradient_norm": 14.77521800994873,
+      "update_dot_gradient": 0.012189335189759731
+    },
+    "chest": {
+      "value": -0.3554801344871521,
+      "gradient_norm": 14.424968719482422,
+      "update_dot_gradient": 0.018987998366355896
+    },
+    "pose": {
+      "value": 0.017372513189911842,
+      "gradient_norm": 0.10336834192276001,
+      "update_dot_gradient": 0.0001856325106928125
+    },
+    "request": {
+      "value": -0.002545805647969246,
+      "gradient_norm": 0.7453188896179199,
+      "update_dot_gradient": 0.001158204860985279
+    },
+    "regularization": {
+      "value": -0.004490552470088005,
+      "gradient_norm": 0.9286584854125977,
+      "update_dot_gradient": -0.00035478585050441325
+    },
+    "retention": {
+      "value": -1.2259060895303264e-05,
+      "gradient_norm": 0.03309349715709686,
+      "update_dot_gradient": -6.253793981159106e-05
+    }
+  },
+  "scope": "16 recorded physical starts; 32-step eager CPU rollout; fixed pre-update world model; gradients all trainable parameters; source-gradient dots with finite five-update displacement are not per-step causality"
+}

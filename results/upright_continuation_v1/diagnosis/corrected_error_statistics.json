@@ -1,0 +1,42 @@
+{
+  "17": {
+    "baseline": {
+      "median_m": 0.010823248885571957,
+      "p95_m": 1.6070886850357056,
+      "invalid_count": 150,
+      "sample_count": 236425,
+      "invalid_fraction": 0.000634450671460294,
+      "finite_only_p95_m": 1.4274719953536987,
+      "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+    },
+    "evaluation": {
+      "median_m": 0.052995361387729645,
+      "p95_m": null,
+      "invalid_count": 15414,
+      "sample_count": 236425,
+      "invalid_fraction": 0.06519615099925981,
+      "finite_only_p95_m": 5.533120155334473,
+      "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+    }
+  },
+  "53": {
+    "baseline": {
+      "median_m": 0.012115621007978916,
+      "p95_m": 1.721136212348938,
+      "invalid_count": 1788,
+      "sample_count": 236425,
+      "invalid_fraction": 0.007562652003806704,
+      "finite_only_p95_m": 1.4945805072784424,
+      "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+    },
+    "evaluation": {
+      "median_m": 0.0645071417093277,
+      "p95_m": null,
+      "invalid_count": 17919,
+      "sample_count": 236425,
+      "invalid_fraction": 0.07579147721264672,
+      "finite_only_p95_m": 6.8715009689331055,
+      "quantile_method": "nearest_rank_invalid_as_worst; null means invalid ray"
+    }
+  }
+}

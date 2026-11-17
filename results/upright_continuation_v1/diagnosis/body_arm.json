@@ -1,0 +1,1211 @@
+{
+  "scope": "16 selected seed17 scenarios; exact saved initial pose; mix output actions from old/new policies on identical current observations, not parameter mixing; no training",
+  "source_ids": [
+    0,
+    7,
+    14,
+    21,
+    28,
+    35,
+    42,
+    49,
+    56,
+    63,
+    70,
+    77,
+    100,
+    120,
+    150,
+    174
+  ],
+  "results": {
+    "old": {
+      "full": 15,
+      "standing": 15,
+      "terminated": 1,
+      "error_median": 0.012835914269089699,
+      "chest_median": 34.54951477050781,
+      "scenarios": [
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.015108046121895313,
+          "max_tilt_deg": 0.6988559365272522,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.027826931327581406
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.013857013545930386,
+          "max_tilt_deg": 1.289070963859558,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04715045541524887
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.01719730906188488,
+          "max_tilt_deg": 1.7721091508865356,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.043696075677871704
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.019257325679063797,
+          "max_tilt_deg": 1.5459833145141602,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03506383299827576
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.005563545972108841,
+          "max_tilt_deg": 1.1660041809082031,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.26,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03999112918972969
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.00785776786506176,
+          "max_tilt_deg": 1.0162559747695923,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04200056567788124
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.021349892020225525,
+          "max_tilt_deg": 2.094243288040161,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.038354869931936264
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.008451730012893677,
+          "max_tilt_deg": 1.342609167098999,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.16,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03439640626311302
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.039215072989463806,
+          "max_tilt_deg": 5.574361324310303,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0427190363407135
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.009821557439863682,
+          "max_tilt_deg": 1.4180313348770142,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.08,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.041959248483181
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.131417989730835,
+          "max_tilt_deg": 125.1004638671875,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.06587712805329386,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.020207107067108154,
+          "max_tilt_deg": 1.6870203018188477,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04534509405493736
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.01872425340116024,
+          "max_tilt_deg": 1.7244226932525635,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.22,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03329286351799965
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.031396590173244476,
+          "max_tilt_deg": 4.371749401092529,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.76,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03964386507868767
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.01575956679880619,
+          "max_tilt_deg": 1.0656943321228027,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04286742955446243
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.023118093609809875,
+          "max_tilt_deg": 1.4407575130462646,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04191029816865921
+            }
+          ]
+        }
+      ]
+    },
+    "new": {
+      "full": 3,
+      "standing": 8,
+      "terminated": 5,
+      "error_median": 0.026138361543416977,
+      "chest_median": 35.43046188354492,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.051863089203834534,
+          "max_tilt_deg": 5.043020725250244,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.06168241426348686
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 1.9714233875274658,
+          "max_tilt_deg": 9.354333877563477,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 2.7600000000000002,
+              "post_grace_hit_rate": 0.3301258327165063,
+              "stable_foot_drift_m": 2.365088701248169
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 2.0814242362976074,
+          "max_tilt_deg": 117.43667602539062,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.3560325684678016,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.05297629535198212,
+          "max_tilt_deg": 5.105686187744141,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.5,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.042042914777994156
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.101665735244751,
+          "max_tilt_deg": 125.6964111328125,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.16210214655810512,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 2.4795453548431396,
+          "max_tilt_deg": 105.65888977050781,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 0.3752775721687639,
+              "stable_foot_drift_m": 2.768009662628174
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.03780345991253853,
+          "max_tilt_deg": 4.964318752288818,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.36,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04601631686091423
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 0.9246805310249329,
+          "max_tilt_deg": 139.23374938964844,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.09104367135455219,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.0364890992641449,
+          "max_tilt_deg": 4.776473045349121,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.22,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0488978773355484
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.08119199424982071,
+          "max_tilt_deg": 6.3040337562561035,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 4.08,
+              "post_grace_hit_rate": 0.9888971132494448,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.08796263486146927,
+          "max_tilt_deg": 5.864678859710693,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 3.66,
+              "post_grace_hit_rate": 0.9888971132494448,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 3.2084827423095703,
+          "max_tilt_deg": 27.495277404785156,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.2664692820133235,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.05199515447020531,
+          "max_tilt_deg": 5.8986382484436035,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 5.12,
+              "post_grace_hit_rate": 0.996299037749815,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 1.8002400398254395,
+          "max_tilt_deg": 9.442898750305176,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.39378238341968913,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.06185996159911156,
+          "max_tilt_deg": 5.27477502822876,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 3.4,
+              "post_grace_hit_rate": 0.997779422649889,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0795694589614868,
+          "max_tilt_deg": 120.65775299072266,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 0.28867505551443373,
+              "stable_foot_drift_m": 0.8455201983451843
+            }
+          ]
+        }
+      ]
+    },
+    "new_body_old_arm": {
+      "full": 6,
+      "standing": 9,
+      "terminated": 3,
+      "error_median": 0.018964694812893867,
+      "chest_median": 35.037757873535156,
+      "scenarios": [
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 3.331583261489868,
+          "max_tilt_deg": 28.557479858398438,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 0.3752775721687639,
+              "stable_foot_drift_m": 3.70703125
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 2.471850633621216,
+          "max_tilt_deg": 14.77361011505127,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 6.48,
+              "post_grace_hit_rate": 0.4855662472242783,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.06351876258850098,
+          "max_tilt_deg": 5.229483604431152,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.58,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04172270745038986
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.07687988132238388,
+          "max_tilt_deg": 7.213846206665039,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.84,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.02358274906873703
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.3940989971160889,
+          "max_tilt_deg": 120.80852508544922,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.3308660251665433,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 2.2925429344177246,
+          "max_tilt_deg": 14.632396697998047,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 0.5307179866765359,
+              "stable_foot_drift_m": 2.633925676345825
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.03557785227894783,
+          "max_tilt_deg": 4.972599506378174,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 1.24,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0481320358812809
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.013132988475263119,
+          "max_tilt_deg": 2.072071075439453,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.66,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.049986209720373154
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.06920424103736877,
+          "max_tilt_deg": 7.410527229309082,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.0,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.029147526249289513
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.08978503942489624,
+          "max_tilt_deg": 9.018790245056152,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 3.92,
+              "post_grace_hit_rate": 0.9777942264988897,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 2.591545820236206,
+          "max_tilt_deg": 135.132568359375,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.08956328645447817,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.08074913918972015,
+          "max_tilt_deg": 7.364951133728027,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 2.74,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.02291742153465748
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.051308900117874146,
+          "max_tilt_deg": 5.79619836807251,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 4.68,
+              "post_grace_hit_rate": 0.9985196150999259,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 2.2755768299102783,
+          "max_tilt_deg": 12.29045295715332,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 1.74,
+              "post_grace_hit_rate": 0.37971872686898595,
+              "stable_foot_drift_m": 2.8839340209960938
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.1064482927322388,
+          "max_tilt_deg": 130.5551300048828,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.17838638045891933,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.08353596180677414,
+          "max_tilt_deg": 6.959366798400879,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": 3.86,
+              "post_grace_hit_rate": 0.997779422649889,
+              "stable_foot_drift_m": null
+            }
+          ]
+        }
+      ]
+    },
+    "old_body_new_arm": {
+      "full": 14,
+      "standing": 14,
+      "terminated": 2,
+      "error_median": 0.012672224082052708,
+      "chest_median": 35.0530891418457,
+      "scenarios": [
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.01513324212282896,
+          "max_tilt_deg": 0.7206360697746277,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.02806825377047062
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.015360775403678417,
+          "max_tilt_deg": 1.289070963859558,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04966482147574425
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.017607171088457108,
+          "max_tilt_deg": 1.771998643875122,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0437338761985302
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.020286910235881805,
+          "max_tilt_deg": 1.5462366342544556,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.035074930638074875
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.004533490631729364,
+          "max_tilt_deg": 1.165500521659851,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.24,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03979219123721123
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.008112388662993908,
+          "max_tilt_deg": 1.0160633325576782,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04192102327942848
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.021335363388061523,
+          "max_tilt_deg": 1.994490385055542,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.2,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03559127822518349
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.007051641587167978,
+          "max_tilt_deg": 1.3424633741378784,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.16,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03718576580286026
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.020291227847337723,
+          "max_tilt_deg": 3.0092782974243164,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.03789940103888512
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.008961876854300499,
+          "max_tilt_deg": 1.370450735092163,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.08,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.04325372725725174
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.117860198020935,
+          "max_tilt_deg": 130.2144775390625,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.026646928201332347,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.02085992321372032,
+          "max_tilt_deg": 1.6618926525115967,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.06,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0477348193526268
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.01886690966784954,
+          "max_tilt_deg": 1.7241957187652588,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.22,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.030912362039089203
+            }
+          ]
+        },
+        {
+          "passed": false,
+          "standing_pass": false,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": true,
+          "finite": true,
+          "root_activity_radius_m": 1.0855941772460938,
+          "max_tilt_deg": 133.05836486816406,
+          "segments": [
+            {
+              "passed": false,
+              "capture_s": null,
+              "post_grace_hit_rate": 0.3323464100666173,
+              "stable_foot_drift_m": null
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.01498266402631998,
+          "max_tilt_deg": 1.0655107498168945,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.041338130831718445
+            }
+          ]
+        },
+        {
+          "passed": true,
+          "standing_pass": true,
+          "frames": 1501,
+          "full_30_seconds": true,
+          "terminated": false,
+          "finite": true,
+          "root_activity_radius_m": 0.022652260959148407,
+          "max_tilt_deg": 1.4240903854370117,
+          "segments": [
+            {
+              "passed": true,
+              "capture_s": 0.12,
+              "post_grace_hit_rate": 1.0,
+              "stable_foot_drift_m": 0.0401512011885643
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

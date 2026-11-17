@@ -1,0 +1,50 @@
+{
+  "status": "stopped_by_user",
+  "date": "2026-11-17",
+  "last_training_status": {
+    "iteration": 17240,
+    "phase": "joint",
+    "level": 0,
+    "stage": "balance",
+    "sim_reward": 0.1431596279144287,
+    "physical_termination_fraction": 0.01106770895421505,
+    "physical_timeout_fraction": 0.0,
+    "mean_physical_episode_age_s": 0.6445443034172058,
+    "completed_physical_episodes": 17,
+    "mean_completed_physical_episode_s": 0.9399999976158142,
+    "observed_support_locked_fraction": 0.818359375,
+    "wm_loss": 0.0015268088318407536,
+    "model_ready": true,
+    "critic_warmup_done": 0,
+    "updates": {
+      "wm": 86200,
+      "pi": 5200,
+      "critic": 104000
+    },
+    "elapsed_s": 462.02241641700675,
+    "actor_loss": -1.4071580171585083,
+    "critic_loss": 0.00010779116564663127,
+    "actor_grad": 14.32676887512207,
+    "critic_grad": 0.06655111908912659,
+    "actor_value_gradient": 0.0,
+    "imagined_reward_objective": 1.4071580171585083,
+    "bootstrap_objective": 0.0,
+    "bootstrap_max": 10.211877822875977,
+    "return_target_max": 3.841508150100708
+  },
+  "completed_evaluation_blocks": 51,
+  "best_combined_scenario_pass_count": 0,
+  "last_review": {
+    "phase_id": 0,
+    "level": 0,
+    "reset_index": 0,
+    "actor_updates": 5100,
+    "passed": false,
+    "reports": [
+      "/home/js/robot/locomotion/standing-aiming/results/upright_curriculum_formal_v1/evaluations/phase0_actor5100/old/seed17.json",
+      "/home/js/robot/locomotion/standing-aiming/results/upright_curriculum_formal_v1/evaluations/phase0_actor5100/old/seed53.json"
+    ]
+  },
+  "accepted": false,
+  "note": "Training stopped on explicit user request. World-model checks can pass despite failed physical standing. No root cause established yet."
+}
